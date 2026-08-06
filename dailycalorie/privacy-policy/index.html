@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · DailyCalorie</title>
+<style>
+  :root{
+    --canvas:#F4EFE8; --surface:#FFFCF8; --ink:#241C16;
+    --text:#241C16; --text2:#655749; --sep:#E7DDD1; --clay:#B4573A; --clayDeep:#8C3F27;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --canvas:#13100D; --surface:#201A15; --text:#F2EDE5; --text2:#A79684;
+           --sep:#322A23; --clay:#E08560; --clayDeep:#EDA083; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0 20px 80px; background:var(--canvas); color:var(--text);
+    font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;
+  }
+  .wrap{max-width:720px;margin:0 auto}
+  header{padding:56px 0 28px;border-bottom:1px solid var(--sep)}
+  h1{font-family:"New York",Georgia,"Songti SC",serif;font-size:32px;line-height:1.25;margin:0 0 10px;font-weight:600}
+  .meta{color:var(--text2);font-size:14px;margin:0}
+  h2{font-family:"New York",Georgia,"Songti SC",serif;font-size:22px;margin:40px 0 12px;font-weight:600}
+  h3{font-size:16px;margin:26px 0 6px;font-weight:600}
+  p,li{color:var(--text);margin:0 0 12px}
+  li{margin-bottom:8px}
+  a{color:var(--clay);text-decoration:none;border-bottom:1px solid rgba(180,87,58,.35)}
+  a:hover{color:var(--clayDeep)}
+  .card{background:var(--surface);border:1px solid var(--sep);border-radius:20px;padding:20px 24px;margin:20px 0}
+  .switch{display:flex;gap:8px;margin:24px 0 0}
+  .switch button{
+    font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--sep);background:transparent;color:var(--text2);
+  }
+  .switch button[aria-pressed="true"]{background:var(--clay);border-color:var(--clay);color:#fff}
+  section[hidden]{display:none}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--sep);color:var(--text2);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>DailyCalorie Privacy Policy</h1>
+  <p class="meta">Effective 6 August 2026 · 生效日期 2026 年 8 月 6 日</p>
+  <div class="switch">
+    <button id="btn-en" aria-pressed="true">English</button>
+    <button id="btn-zh" aria-pressed="false">简体中文</button>
+  </div>
+</header>
+
+<!-- ================= ENGLISH ================= -->
+<section id="en">
+
+<p>DailyCalorie (“the app”) is a calorie and weight logging app for iPhone. This policy explains what the app collects, where it goes, and what it never does. It applies to the DailyCalorie iOS app only.</p>
+
+<div class="card">
+  <p><strong>The short version.</strong> There is no account to create. Your records live on your device and sync through your own iCloud, which we cannot read. The one thing that leaves your phone by design is a meal photo you choose to have recognised, and it is sent only to run that recognition.</p>
+</div>
+
+<h2>1. What the app handles</h2>
+
+<h3>Meal photos</h3>
+<p>When you take or pick a photo for food recognition, the app downscales it, and sends it to <a href="https://www.alibabacloud.com/help/en/model-studio/" rel="nofollow">Alibaba Cloud Model Studio (DashScope)</a> to identify the food and estimate calories and macronutrients. The photo is sent for that single request and is not stored on our servers — we do not operate a server that keeps your photos. Alibaba Cloud’s handling is governed by its own privacy terms. If you never use photo recognition, no image ever leaves your device.</p>
+
+<h3>Your profile and records</h3>
+<p>The app stores what you enter: an optional display name, sex, age, height, current and goal weight, target date, weekly pace, activity level, and your food, exercise and weight entries. This is kept on your device and synced between <em>your own</em> Apple devices through Apple’s iCloud (CloudKit private database). It is stored under your Apple Account, and the developer has no access to it.</p>
+
+<h3>Diagnostics and usage</h3>
+<p>The app uses Google Firebase Analytics and Firebase Crashlytics to understand which screens are used and to receive crash reports. These collect events, device model, OS version, coarse region and crash diagnostics. They are not used to identify you, and your food entries, photos, weight and profile are never sent to them.</p>
+
+<h3>Motion</h3>
+<p>The app reads device motion to make the markers inside the calorie window drift with gravity. This is used for on-screen animation only and never leaves your device.</p>
+
+<h3>Purchases</h3>
+<p>Subscriptions are processed by Apple. The app receives only whether a valid subscription exists. We never see your payment details.</p>
+
+<h2>2. What the app does not do</h2>
+<ul>
+  <li>No account, sign-up, email capture or password.</li>
+  <li>No advertising, and no advertising identifier.</li>
+  <li>No selling or sharing of personal data with data brokers.</li>
+  <li>No social feed, friends, leaderboard or public profile.</li>
+  <li>No access to Apple Health. The app does not request HealthKit permission.</li>
+  <li>No location tracking.</li>
+</ul>
+
+<h2>3. Permissions you can revoke</h2>
+<p>Camera, Photos and Motion &amp; Fitness are each requested only when first needed, and you can withdraw any of them at any time in <em>iOS Settings › DailyCalorie</em>. The rest of the app keeps working without them; only the feature that needs a given permission stops.</p>
+
+<h2>4. Keeping and deleting your data</h2>
+<p>Records stay until you delete them. You can delete individual entries in the app, and deleting the app together with its iCloud data removes them from your devices and from your iCloud storage. Pro subscribers can export the full history to CSV before deleting. Because the developer holds no copy of your records, there is nothing further for us to erase; if you have a question about this, write to us at the address below.</p>
+
+<h2>5. Children</h2>
+<p>DailyCalorie is not directed to children under 13, and we do not knowingly collect information from them.</p>
+
+<h2>6. Changes</h2>
+<p>If this policy changes materially, the effective date at the top will change and the updated policy will be posted at this address.</p>
+
+<h2>7. Contact</h2>
+<p>Questions about this policy or your data: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a>.</p>
+
+</section>
+
+<!-- ================= 简体中文 ================= -->
+<section id="zh" hidden>
+
+<p>DailyCalorie（下称「本 App」）是一款 iPhone 上的热量与体重记录工具。这份政策说明本 App 会处理哪些信息、这些信息去了哪里，以及哪些事它从不做。本政策仅适用于 DailyCalorie iOS App。</p>
+
+<div class="card">
+  <p><strong>一句话版本。</strong>不需要注册账号。你的记录存在自己的设备上，通过你自己的 iCloud 同步，开发者读不到。唯一会主动离开手机的，是你选择去识别的那张餐食照片，而它只用于完成这一次识别。</p>
+</div>
+
+<h2>1. 本 App 会处理什么</h2>
+
+<h3>餐食照片</h3>
+<p>当你拍照或从相册选图做食物识别时，本 App 会先把图片压缩，再发送给<a href="https://help.aliyun.com/zh/model-studio/" rel="nofollow">阿里云百炼（DashScope）</a>，用于识别食物并估算热量与营养素。照片只为这一次请求发送，不会保存在我们的服务器上——我们并不运营保存你照片的服务器。阿里云对数据的处理适用其自身的隐私条款。如果你从不使用拍照识别，就不会有任何图片离开你的设备。</p>
+
+<h3>你的资料与记录</h3>
+<p>本 App 会保存你填写的内容：可选的称呼、性别、年龄、身高、当前体重与目标体重、目标日期、每周节奏、活动水平，以及你的饮食、运动与体重记录。这些数据存在你的设备上，并通过 Apple 的 iCloud（CloudKit 私有数据库）在<em>你自己的</em> Apple 设备之间同步。它们存放在你的 Apple 账户下，开发者无权访问。</p>
+
+<h3>诊断与使用情况</h3>
+<p>本 App 使用 Google Firebase Analytics 与 Firebase Crashlytics，用于了解各页面的使用情况并接收崩溃报告。它们会收集事件、设备型号、系统版本、粗略地区和崩溃诊断信息，不用于识别你的身份；你的饮食记录、照片、体重与个人资料都不会发送给它们。</p>
+
+<h3>运动传感器</h3>
+<p>本 App 读取设备的重力方向，让热量窗口里的小球随之浮动。该数据仅用于屏幕上的动画，不会离开你的设备。</p>
+
+<h3>购买</h3>
+<p>订阅由 Apple 处理。本 App 只会得知「是否存在有效订阅」这一个结果，我们看不到你的任何支付信息。</p>
+
+<h2>2. 本 App 不做的事</h2>
+<ul>
+  <li>不注册账号，不收集邮箱或密码。</li>
+  <li>没有广告，也不使用广告标识符。</li>
+  <li>不向数据经纪商出售或共享个人数据。</li>
+  <li>没有社区、好友、排行榜或公开主页。</li>
+  <li>不接入「健康」App，不申请 HealthKit 权限。</li>
+  <li>不采集位置。</li>
+</ul>
+
+<h2>3. 你可以随时收回的权限</h2>
+<p>相机、相册、运动与健身权限都只在首次需要时才申请，你可以随时在 <em>iOS 设置 › DailyCalorie</em> 中关闭。关掉之后 App 其余部分照常工作，只有依赖该权限的那一项功能会停用。</p>
+
+<h2>4. 数据的保存与删除</h2>
+<p>记录会一直保留，直到你删除它。你可以在 App 内逐条删除；删除 App 并一并删除其 iCloud 数据，即可把记录从你的设备和 iCloud 存储中清除。Pro 用户可以在删除前把完整历史导出为 CSV。由于开发者不持有你记录的副本，我们这边没有额外需要清除的内容；如对此有疑问，请通过下方邮箱联系我们。</p>
+
+<h2>5. 儿童</h2>
+<p>DailyCalorie 并非面向 13 周岁以下儿童，我们也不会有意收集他们的信息。</p>
+
+<h2>6. 政策更新</h2>
+<p>若本政策发生实质性变更，页面顶部的生效日期会随之更新，更新后的版本仍发布在本页面地址。</p>
+
+<h2>7. 联系方式</h2>
+<p>关于本政策或你的数据的问题，请联系：<a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a>。</p>
+
+</section>
+
+<footer>
+  <p><a href="../">Support · 支持页面</a> · <a href="../terms-of-use/">Terms of Use · 使用条款</a></p>
+</footer>
+
+</div>
+
+<script>
+  var en = document.getElementById('en'), zh = document.getElementById('zh');
+  var bEn = document.getElementById('btn-en'), bZh = document.getElementById('btn-zh');
+  function show(lang){
+    var isZh = lang === 'zh';
+    zh.hidden = !isZh; en.hidden = isZh;
+    bZh.setAttribute('aria-pressed', String(isZh));
+    bEn.setAttribute('aria-pressed', String(!isZh));
+    document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
+  }
+  bEn.onclick = function(){ show('en'); };
+  bZh.onclick = function(){ show('zh'); };
+  show((navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+</script>
+
+</body>
+</html>

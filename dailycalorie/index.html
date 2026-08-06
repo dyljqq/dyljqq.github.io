@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyCalorie · Support</title>
+<style>
+  :root{
+    --canvas:#F4EFE8; --surface:#FFFCF8; --ink:#241C16;
+    --text:#241C16; --text2:#655749; --sep:#E7DDD1; --clay:#B4573A; --clayDeep:#8C3F27;
+    --claySoft:#F0E2DA;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --canvas:#13100D; --surface:#201A15; --text:#F2EDE5; --text2:#A79684;
+           --sep:#322A23; --clay:#E08560; --clayDeep:#EDA083; --claySoft:#38251C; }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; padding:0 20px 80px; background:var(--canvas); color:var(--text);
+    font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",sans-serif;
+  }
+  .wrap{max-width:720px;margin:0 auto}
+  header{padding:56px 0 28px;border-bottom:1px solid var(--sep)}
+  h1{font-family:"New York",Georgia,"Songti SC",serif;font-size:34px;line-height:1.2;margin:0 0 8px;font-weight:600}
+  .tag{color:var(--text2);font-size:15px;margin:0}
+  h2{font-family:"New York",Georgia,"Songti SC",serif;font-size:22px;margin:40px 0 4px;font-weight:600}
+  h3{font-size:16px;margin:24px 0 4px;font-weight:600}
+  p,li{margin:0 0 12px}
+  li{margin-bottom:8px}
+  a{color:var(--clay);text-decoration:none;border-bottom:1px solid rgba(180,87,58,.35)}
+  a:hover{color:var(--clayDeep)}
+  .card{background:var(--surface);border:1px solid var(--sep);border-radius:20px;padding:22px 24px;margin:22px 0}
+  .contact{background:var(--claySoft);border-color:transparent}
+  .switch{display:flex;gap:8px;margin:24px 0 0}
+  .switch button{
+    font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;cursor:pointer;
+    border:1px solid var(--sep);background:transparent;color:var(--text2);
+  }
+  .switch button[aria-pressed="true"]{background:var(--clay);border-color:var(--clay);color:#fff}
+  section[hidden]{display:none}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--sep);color:var(--text2);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>DailyCalorie</h1>
+  <p class="tag">Support &amp; frequently asked questions · 支持与常见问题</p>
+  <div class="switch">
+    <button id="btn-en" aria-pressed="true">English</button>
+    <button id="btn-zh" aria-pressed="false">简体中文</button>
+  </div>
+</header>
+
+<!-- ================= ENGLISH ================= -->
+<section id="en">
+
+<div class="card contact">
+  <p style="margin:0"><strong>Need a hand?</strong> Email <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a>. Please include your iPhone model and iOS version — it usually saves a round trip. We aim to reply within two business days.</p>
+</div>
+
+<h2>Using the app</h2>
+
+<h3>What is the “window”?</h3>
+<p>The dark panel on the Today screen is your day. The empty space above the waterline is how much you can still eat. Logging a meal raises the water; logging exercise widens the window. The idea is that you can read your day without reading a number.</p>
+
+<h3>How does photo recognition work?</h3>
+<p>Point the camera at your plate, or pick a photo from your library. The image is sent to a vision model that returns the dish, an estimated portion, calories, and a protein/carb/fat split — usually in two to four seconds. If it guesses wrong, tap the item and correct it; the corrected version is saved to your food library for next time.</p>
+
+<h3>How accurate is it?</h3>
+<p>Treat the numbers as a good estimate, not a measurement. A photo cannot see oil, sugar or what is underneath, so a dish can be off in either direction. It is accurate enough to show a trend over weeks, which is what the app is built for. It is not a medical device and does not give medical advice.</p>
+
+<h3>Does it connect to Apple Health?</h3>
+<p>Not currently. The Health sync row in Settings shows “not connected” because there is no HealthKit integration yet.</p>
+
+<h3>Does it sync between my devices?</h3>
+<p>Yes, through your own iCloud account. Sign in to the same Apple Account on both devices and make sure iCloud Drive is on. Nothing goes through a server we run, and we cannot read your records.</p>
+
+<h3>How do I export my data?</h3>
+<p>Me › Export all data › CSV. Exporting is a Pro feature.</p>
+
+<h2>Free and Pro</h2>
+
+<h3>What do I get for free?</h3>
+<p>Three photo recognitions a day, seven days of history, and all of the core logging: the window, meals, exercise and weight. Manual entry is unlimited.</p>
+
+<h3>What does Pro add?</h3>
+<ul>
+  <li>Unlimited photo recognition</li>
+  <li>Full history and long-term trends</li>
+  <li>Protein, carb and fat targets for every meal</li>
+  <li>Custom goal weight, target date, weekly pace and activity level</li>
+  <li>CSV export</li>
+</ul>
+
+<h3>Pricing and the free trial</h3>
+<p>Pro is offered as a monthly or a yearly subscription; the exact price for your region is shown on the subscription screen before you confirm. The yearly plan starts with a 7-day free trial. Cancel during the trial and you are not charged.</p>
+
+<h3>How do I cancel?</h3>
+<p>Open <em>iOS Settings › your name › Subscriptions</em>, choose DailyCalorie, then Cancel Subscription. You keep Pro until the end of the period you already paid for. Cancelling never deletes your records — you return to three recognitions a day and seven days of visible history, and everything you logged is still there if you resubscribe.</p>
+
+<h3>I already paid but the app shows Free</h3>
+<p>Open the subscription screen and tap <em>Restore purchases</em>, and check you are signed in with the same Apple Account used for the purchase. If it still does not unlock, email us and mention the Apple Account region and roughly when you bought it.</p>
+
+<h3>Refunds</h3>
+<p>All purchases are handled by Apple, so refunds go through Apple at <a href="https://reportaproblem.apple.com" rel="nofollow">reportaproblem.apple.com</a>. We cannot issue them ourselves, but tell us what went wrong and we will try to fix it.</p>
+
+<h2>Language</h2>
+<p>The interface is currently available in Simplified Chinese only. If you would like an English interface, say so by email — it helps us prioritise.</p>
+
+</section>
+
+<!-- ================= 简体中文 ================= -->
+<section id="zh" hidden>
+
+<div class="card contact">
+  <p style="margin:0"><strong>需要帮忙？</strong>发邮件到 <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a>。麻烦附上 iPhone 型号和 iOS 版本，通常能省一轮来回。我们争取在两个工作日内回复。</p>
+</div>
+
+<h2>怎么用</h2>
+
+<h3>「窗口」是什么？</h3>
+<p>今日页上那一整块墨色就是你的一天。水位线以上空出来的部分，就是今天还能吃的额度。记一餐，水位上涨；记一次运动，窗口撑开。它想做到的是：不读数字，也能看出今天还剩不剩。</p>
+
+<h3>拍照识别是怎么工作的？</h3>
+<p>把镜头对准餐盘，或从相册选一张。图片会发送给视觉模型，返回菜名、估算份量、热量，以及蛋白质 / 碳水 / 脂肪的拆分，通常 2–4 秒出结果。认错了就点开那一项改掉，改过的版本会存进食物库，下次直接用。</p>
+
+<h3>准不准？</h3>
+<p>请把这些数字当作合理估算，而不是测量结果。照片看不见油、糖和藏在下面的东西，所以单道菜可能偏高也可能偏低。它的精度足以反映几周之内的趋势，这也正是这个 App 的用途。它不是医疗器械，也不提供医疗建议。</p>
+
+<h3>会同步到「健康」App 吗？</h3>
+<p>暂时不会。设置里「健康 App 同步」显示「未连接」，是因为目前还没有接入 HealthKit。</p>
+
+<h3>多台设备之间会同步吗？</h3>
+<p>会，走你自己的 iCloud。两台设备登录同一个 Apple 账户，并确认 iCloud Drive 已开启即可。数据不经过我们运营的服务器，我们也读不到你的记录。</p>
+
+<h3>怎么导出数据？</h3>
+<p>我的 › 导出全部数据 › CSV。导出是 Pro 功能。</p>
+
+<h2>免费版与 Pro</h2>
+
+<h3>免费能用到什么？</h3>
+<p>每天 3 次拍照识别、最近 7 天历史，以及全部核心记录功能：窗口、三餐、运动和体重。手动录入不限次数。</p>
+
+<h3>Pro 多了什么？</h3>
+<ul>
+  <li>不限次数拍照识别</li>
+  <li>完整历史与长期趋势</li>
+  <li>每一餐的蛋白质 / 碳水 / 脂肪目标</li>
+  <li>自定义目标体重、目标日期、每周节奏与活动水平</li>
+  <li>CSV 导出</li>
+</ul>
+
+<h3>价格与免费试用</h3>
+<p>Pro 分月度与年度两档，你所在区域的实际价格会在确认购买前显示在订阅页上。年度档含 7 天免费试用，试用期内取消不扣款。</p>
+
+<h3>怎么取消订阅？</h3>
+<p>打开 <em>iOS 设置 › 你的名字 › 订阅</em>，选择 DailyCalorie，然后「取消订阅」。已经付费的当期仍可用到期满。取消不会删除任何记录——你会回到每天 3 次识别、可见历史 7 天，之前记下的内容都还在，重新订阅即可继续查看。</p>
+
+<h3>已经付款了，但 App 还显示免费版</h3>
+<p>打开订阅页点「恢复购买」，并确认当前登录的是购买时使用的那个 Apple 账户。如果仍未解锁，请发邮件告诉我们 Apple 账户所在区域和大致购买时间。</p>
+
+<h3>退款</h3>
+<p>所有购买都由 Apple 处理，退款请通过 Apple 提交：<a href="https://reportaproblem.apple.com" rel="nofollow">reportaproblem.apple.com</a>。我们无法直接退款，但欢迎把遇到的问题告诉我们，我们会尽量修好。</p>
+
+<h2>界面语言</h2>
+<p>目前界面只有简体中文。如果你希望有英文界面，欢迎发邮件告诉我们，这会影响我们的优先级。</p>
+
+</section>
+
+<footer>
+  <p><a href="./privacy-policy/">Privacy Policy · 隐私政策</a> · <a href="./terms-of-use/">Terms of Use · 使用条款</a></p>
+</footer>
+
+</div>
+
+<script>
+  var en = document.getElementById('en'), zh = document.getElementById('zh');
+  var bEn = document.getElementById('btn-en'), bZh = document.getElementById('btn-zh');
+  function show(lang){
+    var isZh = lang === 'zh';
+    zh.hidden = !isZh; en.hidden = isZh;
+    bZh.setAttribute('aria-pressed', String(isZh));
+    bEn.setAttribute('aria-pressed', String(!isZh));
+    document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
+  }
+  bEn.onclick = function(){ show('en'); };
+  bZh.onclick = function(){ show('zh'); };
+  show((navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+</script>
+
+</body>
+</html>
