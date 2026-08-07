@@ -44,7 +44,7 @@
 
 <header>
   <h1>DailyCalorie Privacy Policy</h1>
-  <p class="meta">Effective 6 August 2026 · 生效日期 2026 年 8 月 6 日</p>
+  <p class="meta">Effective 7 August 2026 · 生效日期 2026 年 8 月 7 日</p>
   <div class="switch">
     <button id="btn-en" aria-pressed="true">English</button>
     <button id="btn-zh" aria-pressed="false">简体中文</button>
@@ -63,7 +63,7 @@
 <h2>1. What the app handles</h2>
 
 <h3>Meal photos</h3>
-<p>When you take or pick a photo for food recognition, the app downscales it, and sends it to <a href="https://www.alibabacloud.com/help/en/model-studio/" rel="nofollow">Alibaba Cloud Model Studio (DashScope)</a> to identify the food and estimate calories and macronutrients. The photo is sent for that single request and is not stored on our servers — we do not operate a server that keeps your photos. Alibaba Cloud’s handling is governed by its own privacy terms. If you never use photo recognition, no image ever leaves your device.</p>
+<p>When you take or pick a photo for food recognition, the app downscales it and sends it to a vision model to identify the food and estimate calories and macronutrients. Which service receives it depends on where you are: in mainland China the photo goes to <a href="https://help.aliyun.com/zh/model-studio/" rel="nofollow">Alibaba Cloud Model Studio (DashScope)</a>; everywhere else it goes to Google’s <a href="https://firebase.google.com/docs/ai-logic" rel="nofollow">Gemini through Firebase AI Logic</a>. The photo is sent for that single request and is not stored on our servers — we do not operate a server that keeps your photos. Each provider’s handling is governed by its own privacy terms. If you never use photo recognition, no image ever leaves your device.</p>
 
 <h3>Your profile and records</h3>
 <p>The app stores what you enter: an optional display name, sex, age, height, current and goal weight, target date, weekly pace, activity level, and your food, exercise and weight entries. This is kept on your device and synced between <em>your own</em> Apple devices through Apple’s iCloud (CloudKit private database). It is stored under your Apple Account, and the developer has no access to it.</p>
@@ -116,7 +116,7 @@
 <h2>1. 本 App 会处理什么</h2>
 
 <h3>餐食照片</h3>
-<p>当你拍照或从相册选图做食物识别时，本 App 会先把图片压缩，再发送给<a href="https://help.aliyun.com/zh/model-studio/" rel="nofollow">阿里云百炼（DashScope）</a>，用于识别食物并估算热量与营养素。照片只为这一次请求发送，不会保存在我们的服务器上——我们并不运营保存你照片的服务器。阿里云对数据的处理适用其自身的隐私条款。如果你从不使用拍照识别，就不会有任何图片离开你的设备。</p>
+<p>当你拍照或从相册选图做食物识别时，本 App 会先把图片压缩，再发送给视觉模型，用于识别食物并估算热量与营养素。发给哪一家取决于你所在的地区：中国大陆发给<a href="https://help.aliyun.com/zh/model-studio/" rel="nofollow">阿里云百炼（DashScope）</a>，其他地区发给 Google 的 <a href="https://firebase.google.com/docs/ai-logic" rel="nofollow">Gemini（经 Firebase AI Logic）</a>。照片只为这一次请求发送，不会保存在我们的服务器上——我们并不运营保存你照片的服务器。各服务商对数据的处理适用其自身的隐私条款。如果你从不使用拍照识别，就不会有任何图片离开你的设备。</p>
 
 <h3>你的资料与记录</h3>
 <p>本 App 会保存你填写的内容：可选的称呼、性别、年龄、身高、当前体重与目标体重、目标日期、每周节奏、活动水平，以及你的饮食、运动与体重记录。这些数据存在你的设备上，并通过 Apple 的 iCloud（CloudKit 私有数据库）在<em>你自己的</em> Apple 设备之间同步。它们存放在你的 Apple 账户下，开发者无权访问。</p>
