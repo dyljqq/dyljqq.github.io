@@ -3,7 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DailyCalorie · Support</title>
+<title>DailyCalorie – AI Photo Calorie Tracker for iPhone · Support</title>
+<meta name="description" content="DailyCalorie is an AI photo calorie tracker for iPhone. Snap a photo of your meal to log calories, protein, carbs and fat in seconds, and see how much you can still eat today. No account needed.">
+<link rel="canonical" href="https://dyljqq.github.io/dailycalorie/">
+<link rel="icon" href="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c2/98/dc/c298dc3c-c48b-4ad3-6de2-e37a1d8e4930/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/64x64bb.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DailyCalorie – AI Photo Calorie Tracker for iPhone">
+<meta property="og:description" content="Snap a photo of your meal to log calories, protein, carbs and fat in seconds — and see how much you can still eat today. No account needed.">
+<meta property="og:url" content="https://dyljqq.github.io/dailycalorie/">
+<meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c2/98/dc/c298dc3c-c48b-4ad3-6de2-e37a1d8e4930/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DailyCalorie",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "iOS",
+  "description": "AI photo calorie tracker for iPhone. Snap a photo of your meal to log calories, protein, carbs and fat in seconds, and see how much you can still eat today.",
+  "url": "https://dyljqq.github.io/dailycalorie/",
+  "downloadUrl": "https://apps.apple.com/app/id6798095407",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c2/98/dc/c298dc3c-c48b-4ad3-6de2-e37a1d8e4930/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the “window”?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The dark panel on the Today screen is your day. The empty space above the waterline is how much you can still eat. Logging a meal raises the water; logging exercise widens the window. The idea is that you can read your day without reading a number." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does photo recognition work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Point the camera at your plate, or pick a photo from your library. The image is sent to a vision model that returns the dish, an estimated portion, calories, and a protein/carb/fat split — usually in two to four seconds. If it guesses wrong, tap the item and correct it; the corrected version is saved to your food library for next time." }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Treat the numbers as a good estimate, not a measurement. A photo cannot see oil, sugar or what is underneath, so a dish can be off in either direction. It is accurate enough to show a trend over weeks, which is what the app is built for. It is not a medical device and does not give medical advice." }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I get for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Three photo recognitions in total — enough to see how well it reads your plate — plus all of the core logging: the window, meals, exercise and weight, with full history, trends and the month calendar. Manual entry is unlimited." }
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --canvas:#F4EFE8; --surface:#FFFCF8; --ink:#241C16;
@@ -31,6 +82,11 @@
   a:hover{color:var(--clayDeep)}
   .card{background:var(--surface);border:1px solid var(--sep);border-radius:20px;padding:22px 24px;margin:22px 0}
   .contact{background:var(--claySoft);border-color:transparent}
+  .cta{
+    display:inline-block;margin:18px 0 0;padding:11px 22px;border-radius:999px;
+    background:var(--clay);color:#fff !important;border-bottom:none;font-weight:600;font-size:15px;
+  }
+  .cta:hover{background:var(--clayDeep);color:#fff}
   .switch{display:flex;gap:8px;margin:24px 0 0}
   .switch button{
     font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;cursor:pointer;
@@ -46,7 +102,9 @@
 
 <header>
   <h1>DailyCalorie</h1>
-  <p class="tag">Support &amp; frequently asked questions · 支持与常见问题</p>
+  <p class="tag">AI photo calorie tracker for iPhone — snap a meal, see what you can still eat today.<br>拍照记热量的 iPhone 卡路里 App：拍一张，看还能吃多少。</p>
+  <a class="cta" href="https://apps.apple.com/app/id6798095407">Download on the App&nbsp;Store · 前往 App&nbsp;Store 下载</a>
+  <p class="tag" style="margin-top:20px">Support &amp; frequently asked questions · 支持与常见问题</p>
   <div class="switch">
     <button id="btn-en" aria-pressed="true">English</button>
     <button id="btn-zh" aria-pressed="false">简体中文</button>
@@ -83,12 +141,11 @@
 <h2>Free and Pro</h2>
 
 <h3>What do I get for free?</h3>
-<p>Three photo recognitions a day, seven days of history, and all of the core logging: the window, meals, exercise and weight. Manual entry is unlimited.</p>
+<p>Three photo recognitions in total — enough to see how well it reads your plate — plus all of the core logging: the window, meals, exercise and weight, with full history, trends and the month calendar. Manual entry is unlimited.</p>
 
 <h3>What does Pro add?</h3>
 <ul>
   <li>Unlimited photo recognition</li>
-  <li>Full history and long-term trends</li>
   <li>Protein, carb and fat targets for every meal</li>
   <li>Custom goal weight, target date, weekly pace and activity level</li>
   <li>CSV export</li>
@@ -98,7 +155,7 @@
 <p>Pro is offered as a monthly or a yearly subscription; the exact price for your region is shown on the subscription screen before you confirm. The yearly plan starts with a 7-day free trial. Cancel during the trial and you are not charged.</p>
 
 <h3>How do I cancel?</h3>
-<p>Open <em>iOS Settings › your name › Subscriptions</em>, choose DailyCalorie, then Cancel Subscription. You keep Pro until the end of the period you already paid for. Cancelling never deletes your records — you return to three recognitions a day and seven days of visible history, and everything you logged is still there if you resubscribe.</p>
+<p>Open <em>iOS Settings › your name › Subscriptions</em>, choose DailyCalorie, then Cancel Subscription. You keep Pro until the end of the period you already paid for. Cancelling never deletes your records — you return to the free tier, with whatever free recognitions you have left, and your history, trends and everything you logged are still there.</p>
 
 <h3>I already paid but the app shows Free</h3>
 <p>Open the subscription screen and tap <em>Restore purchases</em>, and check you are signed in with the same Apple Account used for the purchase. If it still does not unlock, email us and mention the Apple Account region and roughly when you bought it.</p>
@@ -142,12 +199,11 @@
 <h2>免费版与 Pro</h2>
 
 <h3>免费能用到什么？</h3>
-<p>每天 3 次拍照识别、最近 7 天历史，以及全部核心记录功能：窗口、三餐、运动和体重。手动录入不限次数。</p>
+<p>一共 3 次拍照识别，够你试出来它准不准；再加上全部核心记录功能：窗口、三餐、运动和体重，历史、趋势与月历都是完整的。手动录入不限次数。</p>
 
 <h3>Pro 多了什么？</h3>
 <ul>
   <li>不限次数拍照识别</li>
-  <li>完整历史与长期趋势</li>
   <li>每一餐的蛋白质 / 碳水 / 脂肪目标</li>
   <li>自定义目标体重、目标日期、每周节奏与活动水平</li>
   <li>CSV 导出</li>
@@ -157,7 +213,7 @@
 <p>Pro 分月度与年度两档，你所在区域的实际价格会在确认购买前显示在订阅页上。年度档含 7 天免费试用，试用期内取消不扣款。</p>
 
 <h3>怎么取消订阅？</h3>
-<p>打开 <em>iOS 设置 › 你的名字 › 订阅</em>，选择 DailyCalorie，然后「取消订阅」。已经付费的当期仍可用到期满。取消不会删除任何记录——你会回到每天 3 次识别、可见历史 7 天，之前记下的内容都还在，重新订阅即可继续查看。</p>
+<p>打开 <em>iOS 设置 › 你的名字 › 订阅</em>，选择 DailyCalorie，然后「取消订阅」。已经付费的当期仍可用到期满。取消不会删除任何记录——你会回到免费版：拍照识别按剩余的免费次数算，历史、趋势和之前记下的内容都还在。</p>
 
 <h3>已经付款了，但 App 还显示免费版</h3>
 <p>打开订阅页点「恢复购买」，并确认当前登录的是购买时使用的那个 Apple 账户。如果仍未解锁，请发邮件告诉我们 Apple 账户所在区域和大致购买时间。</p>
