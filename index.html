@@ -1,80 +1,138 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BeforeGo Legal</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #12313a;
-      --muted: #607879;
-      --moss: #1f9b8a;
-      --paper: #edf7f5;
-      --line: #d0e3df;
-    }
-
-    body {
-      margin: 0;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(135deg, var(--paper), #fff);
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 20px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(32px, 8vw, 56px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-
-    p {
-      color: var(--muted);
-      margin: 0 0 28px;
-    }
-
-    a {
-      display: block;
-      margin: 12px 0;
-      padding: 18px 20px;
-      color: var(--ink);
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
-
-    a strong {
-      display: block;
-      font-size: 20px;
-    }
-
-    a span {
-      color: var(--moss);
-      font-weight: 700;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeforeGo — Packing List &amp; Trip Prep for iPhone</title>
+<meta name="description" content="BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing lists, reminders and widgets, and a journal that remembers what you forgot last time.">
+<link rel="canonical" href="https://dyljqq.github.io/">
+<link rel="icon" href="./assets/beforego/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BeforeGo — Packing List &amp; Trip Prep">
+<meta property="og:description" content="Destination-specific packing checklists, reminders and widgets, and a travel journal that remembers what you forgot last time.">
+<meta property="og:url" content="https://dyljqq.github.io/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/beforego/checklist.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6786561175">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#12313a; --muted:#5b7375; --moss:#1f9b8a; --moss-deep:#157a6c;
+    --paper:#edf7f5; --card:rgba(255,255,255,.86); --line:#d0e3df; --shadow:0 18px 44px -28px rgba(18,49,58,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#e8f3f1; --muted:#9db3b3; --moss:#3fc0ad; --moss-deep:#3fc0ad;
+      --paper:#0e1a1d; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--moss-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--moss);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--moss-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+  .disclaimer{font-size:13.5px;margin-top:18px;line-height:1.6}
+</style>
 </head>
 <body>
-  <main>
-    <h1>BeforeGo Legal</h1>
-    <p>Privacy and terms for BeforeGo.</p>
+<main>
 
-    <a href="./privacy-policy/">
-      <strong>Privacy Policy</strong>
-      <span>How BeforeGo handles app data and permissions</span>
-    </a>
+  <section class="hero">
+    <img class="icon" src="./assets/beforego/icon.png" alt="BeforeGo app icon" width="92" height="92">
+    <h1>Stop packing from memory.</h1>
+    <p class="tagline">BeforeGo turns travel prep into a checklist you actually finish — documents, packing, adapters, money, apps — and then remembers what you forgot, so the next trip starts smarter.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6786561175">Download on the App Store</a>
+    <p class="meta">Free · iPhone &amp; iPad · iOS 17+ · No account required</p>
+  </section>
 
-    <a href="./terms-of-use/">
-      <strong>Terms of Use</strong>
-      <span>Rules for using BeforeGo and BeforeGo VIP</span>
-    </a>
-  </main>
+  <section class="shots">
+    <img src="./assets/beforego/checklist.jpg" alt="A destination checklist in BeforeGo, grouped by preparation phase" loading="lazy">
+    <img src="./assets/beforego/countdown.jpg" alt="A trip countdown widget on the iPhone Home Screen" loading="lazy">
+    <img src="./assets/beforego/journal.jpg" alt="A trip journal entry with notes and photos" loading="lazy">
+    <img src="./assets/beforego/album.jpg" alt="Trip photo album view" loading="lazy">
+  </section>
+
+  <h2>What it does</h2>
+  <p class="lede">Every trip has the same twenty small things, and one of them always gets missed. BeforeGo makes that list explicit, keeps it in front of you, and carries the lesson forward.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Lists that know where you are going</h3>
+      <p>Create a trip, pick a destination, and start from a practical preparation list — documents, packing, power adapters, money, apps, reminders, personal notes.</p>
+    </div>
+    <div class="card">
+      <h3>Visible until it is done</h3>
+      <p>What is finished and what still needs attention, split by phase. Urgent items stay on your Home Screen through reminders and widgets, not buried in a note.</p>
+    </div>
+    <div class="card">
+      <h3>A journal, not just a list</h3>
+      <p>Notes, photos and voice memories from each trip stay with the trip — including the things you wished you had brought.</p>
+    </div>
+    <div class="card">
+      <h3>The next trip starts smarter</h3>
+      <p>Anything you marked as forgotten comes back on the next list automatically. The app gets more useful the more you travel.</p>
+    </div>
+    <div class="card">
+      <h3>Yours, on your phone</h3>
+      <p>No account to create and nothing to sign up for. Open it and start a trip.</p>
+    </div>
+    <div class="card">
+      <h3>Ten languages</h3>
+      <p>English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย.</p>
+    </div>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Hear about real updates</h2>
+    <p>No newsletter, no schedule — just an email from the developer when there is an actual new version or a feature worth knowing about. Reply to any of it and a human reads it.</p>
+    <p style="margin-top:16px"><a href="mailto:qinqiangji@gmail.com?subject=BeforeGo%20updates&amp;body=Add%20me%20to%20the%20BeforeGo%20update%20list.">Email me to be added →</a></p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Support</h2>
+    <p>Questions, feedback, a bug, or help with a purchase? Email <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">qinqiangji@gmail.com</a>. Every message is read, usually answered within two business days.</p>
+    <p class="disclaimer">BeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline or government guidance — always verify important requirements with official sources before you travel.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Other apps</h2>
+    <div class="apps">
+      <a href="./countdown/">Countdown Widget</a>
+      <a href="./invoiceqr/">Invoice Maker</a>
+      <a href="./dailycalorie/">DailyCalorie</a>
+      <a href="./qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="./privacy-policy/">Privacy Policy</a>
+    <a href="./terms-of-use/">Terms of Use</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">Contact</a>
+    <p style="margin-top:18px">BeforeGo is an independent app. Made by one developer.</p>
+  </footer>
+
+</main>
 </body>
 </html>

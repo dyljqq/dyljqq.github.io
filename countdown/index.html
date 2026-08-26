@@ -1,98 +1,158 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Countdown — Support</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink: #0b0b0c;
-      --muted: #6e6e76;
-      --brand: #d2643c;
-      --paper: #f7f7f9;
-      --line: #e6e6ea;
-    }
-
-    body {
-      margin: 0;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(135deg, var(--paper), #fff);
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 20px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(32px, 8vw, 56px);
-      line-height: 1;
-    }
-
-    p {
-      color: var(--muted);
-      margin: 0 0 28px;
-    }
-
-    a.card {
-      display: block;
-      margin: 12px 0;
-      padding: 18px 20px;
-      color: var(--ink);
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
-
-    a.card strong {
-      display: block;
-      font-size: 20px;
-    }
-
-    a.card span {
-      color: var(--brand);
-      font-weight: 700;
-    }
-
-    .contact {
-      margin-top: 28px;
-      padding: 18px 20px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
-
-    .contact a {
-      color: var(--brand);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countdown Widget — Every Widget Free, No Event Limit</title>
+<meta name="description" content="A countdown that never loses your days. Every widget size on the Home and Lock Screen, unlimited events, daily on-device backups. Pro sells the backdrops, never the function.">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/">
+<link rel="icon" href="../assets/countdown/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Countdown Widget — Every widget free, no event limit">
+<meta property="og:description" content="Most countdown apps put the widget behind a paywall and cap your events. This one does neither — and takes a backup of your days every single day.">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
 </head>
 <body>
-  <main>
-    <h1>Countdown</h1>
-    <p>Count the days to what matters, and put them on your Home Screen. Support and legal information for the app.</p>
+<main>
 
-    <a class="card" href="./privacy-policy/">
-      <strong>Privacy Policy</strong>
-      <span>Read →</span>
-    </a>
+  <section class="hero">
+    <img class="icon" src="../assets/countdown/icon.png" alt="Countdown app icon" width="92" height="92">
+    <h1>A countdown that never loses your days.</h1>
+    <p class="tagline">Every widget size, on the Home Screen and the Lock Screen, free. As many events as you like — there is no cap, and there never will be.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6799846628">Download on the App Store</a>
+    <p class="meta">Free · iPhone &amp; iPad · iOS 17+ · No account required · No ads, ever</p>
+  </section>
 
-    <a class="card" href="./terms-of-service/">
-      <strong>Terms of Service</strong>
-      <span>Read →</span>
-    </a>
+  <section class="shots">
+    <img src="../assets/countdown/home.jpg" alt="Countdown widgets on the iPhone Home Screen" loading="lazy">
+    <img src="../assets/countdown/detail.jpg" alt="A full-screen countdown showing days remaining" loading="lazy">
+    <img src="../assets/countdown/backdrops.jpg" alt="The backdrop picker with full-screen backgrounds" loading="lazy">
+    <img src="../assets/countdown/backups.jpg" alt="Thirty days of on-device backups, restorable in one tap" loading="lazy">
+  </section>
 
-    <div class="contact">
-      <strong>Support</strong>
-      <p style="margin-top:8px">Questions, feedback, or help with a purchase? Email
-        <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>.
-        We read every message and aim to reply within two business days.</p>
+  <h2>Two things most countdown apps get wrong</h2>
+  <p class="lede">The widget is the entire point of a countdown app, and the events are the entire point of the widget. Most apps charge for the first and cap the second.</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>Typical countdown app</th><th>This one</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Widgets</strong></td><td>Locked behind Pro, or one size only</td><td class="yes">Every size, Home and Lock Screen, free</td></tr>
+      <tr><td><strong>Events</strong></td><td>Three to five on the free tier</td><td class="yes">Unlimited, permanently</td></tr>
+      <tr><td><strong>Reminders</strong></td><td>Pro feature</td><td class="yes">Free, on the day and as far ahead as you want</td></tr>
+      <tr><td><strong>Your data</strong></td><td>Gone after a bad update or a reinstall</td><td class="yes">Backed up on device daily, 30 days of history</td></tr>
+      <tr><td><strong>What Pro sells</strong></td><td>The features you already needed</td><td class="yes">Backdrops. Nothing that makes the app work</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The rest of it</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Count down, or count up</h3>
+      <p>To a date, or from one. Repeats yearly, monthly, weekly, or every few days.</p>
     </div>
-  </main>
+    <div class="card">
+      <h3>Nothing leaves your phone</h3>
+      <p>A snapshot of everything on this device every single day, and always before anything risky. One tap to restore.</p>
+    </div>
+    <div class="card">
+      <h3>Days that passed are kept</h3>
+      <p>Finished countdowns collect into a timeline you can look back through, with the longest wait of each year written next to it.</p>
+    </div>
+    <div class="card">
+      <h3>The moment itself</h3>
+      <p>At a hundred days, a week, or the morning of, the app opens on the number, full screen, and hands you a card worth sharing.</p>
+    </div>
+    <div class="card">
+      <h3>Set up in one tap</h3>
+      <p>Thirty-six ready-made events, each already carrying the right repeat and reminders. Two hundred drawn icons and the whole emoji keyboard.</p>
+    </div>
+    <div class="card">
+      <h3>Bring your events with you</h3>
+      <p>Import from a calendar, a spreadsheet, or another countdown app — and export any time. iCloud sync, with no account to make.</p>
+    </div>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">About Pro</h2>
+    <p>Pro sells the finish, never the function. It unlocks the Pro backdrops — 90 of the 122 — with a new drop every month. Whatever you unlock while subscribed stays yours for good; cancelling only stops the new ones arriving. Your countdowns, reminders and widgets work exactly the same whether you subscribe or not.</p>
+    <p>US$14.99 per year with a 7-day free trial, or US$4.99 per month. A one-time Lifetime purchase is US$29.99 and does not renew.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Hear about real updates</h2>
+    <p>A new backdrop drop lands every month, and occasionally something bigger. No schedule, no newsletter — just an email from the developer when there is something to say.</p>
+    <p style="margin-top:16px"><a href="mailto:qinqiangji@gmail.com?subject=Countdown%20updates&amp;body=Add%20me%20to%20the%20Countdown%20update%20list.">Email me to be added →</a></p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Support</h2>
+    <p>Questions, feedback, or help with a purchase? Email <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>. Every message is read, usually answered within two business days.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Other apps</h2>
+    <div class="apps">
+      <a href="../">BeforeGo — Packing List</a>
+      <a href="../invoiceqr/">Invoice Maker</a>
+      <a href="../dailycalorie/">DailyCalorie</a>
+      <a href="../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="./privacy-policy/">Privacy Policy</a>
+    <a href="./terms-of-service/">Terms of Service</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Contact</a>
+    <p style="margin-top:18px">Countdown is an independent app. Made by one developer.</p>
+  </footer>
+
+</main>
 </body>
 </html>
