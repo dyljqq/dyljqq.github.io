@@ -1,0 +1,41 @@
+# https://dyljqq.github.io
+# 全站允许抓取。这里显式列出 AI 检索爬虫，是为了防止将来加 CDN/WAF 时
+# 有人按默认规则把它们一起拦掉——OAI-SearchBot 被拦 = 不会出现在 ChatGPT 的搜索结果里。
+
+User-agent: *
+Allow: /
+
+# AI 检索（回答里会引用并给出链接）
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# 训练用爬虫。允许——这些页面本来就是公开的产品介绍，
+# 被写进模型权重反而是我们想要的结果。
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://dyljqq.github.io/sitemap.xml

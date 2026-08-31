@@ -1,0 +1,360 @@
+{
+  "_comment": [
+    "全站实体数据的唯一来源。robots.txt / sitemap.xml / llms.txt 和每个页面 head 里的",
+    "canonical / description / og / JSON-LD 都由 tools/build_seo.py 从这里生成，改文案改这里。",
+    "",
+    "name 必须和 App Store 商店页上的名字逐字一致——AI 回答引擎靠这个把网页和商店页认成",
+    "同一个实体，写成简称（比如 'Invoice QR Studio'）等于两个页面互相不认识。",
+    "",
+    "live=false 的 app 还没上架：不进 sitemap、页面加 noindex、不生成 App Store 链接",
+    "（链到未发布的 id 会 404）。上架当天把 live 改成 true 重跑脚本即可。"
+  ],
+  "site": {
+    "origin": "https://dyljqq.github.io",
+    "brand": "go ka",
+    "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
+    "email": "qinqiangji@gmail.com"
+  },
+  "apps": [
+    {
+      "key": "beforego",
+      "path": "/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "Packing List & Trips: BeforeGo",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo — Packing List & Trip Prep for iPhone",
+      "oneLiner": "A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.",
+      "description": "BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.",
+      "audience": "People who pack from memory and keep forgetting the same one thing.",
+      "free": "Trips, checklists, reminders, widgets and the journal. No account required.",
+      "languages": "English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย",
+      "legal": [
+        [
+          "/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/terms-of-use/",
+          "Terms of Use"
+        ]
+      ],
+      "faq": [
+        {
+          "q": "What does BeforeGo do that a notes app does not?",
+          "a": "It starts from a destination-specific preparation list — documents, packing, power adapters, money, apps, reminders — instead of a blank page, splits it by phase so you can see what is still open, and keeps urgent items on the Home Screen through reminders and widgets."
+        },
+        {
+          "q": "Does it remember what I forgot last time?",
+          "a": "Yes. When a trip ends, whatever you never ticked off is collected in one tap and comes back three days before the next trip as “last time you forgot”. Forget the same thing twice and it still shows up once."
+        },
+        {
+          "q": "Does it need an account?",
+          "a": "No. There is no account to create and nothing to sign up for — open it and start a trip."
+        },
+        {
+          "q": "What languages does it support?",
+          "a": "Ten: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português and ไทย."
+        },
+        {
+          "q": "Can I keep photos and notes from the trip itself?",
+          "a": "Yes. Notes, photos and voice memories stay attached to the trip, including the things you wished you had brought."
+        },
+        {
+          "q": "What does BeforeGo Premium cost?",
+          "a": "Premium is an auto-renewing subscription, monthly or yearly, and the yearly plan includes a 7-day free trial for new subscribers. A one-time lifetime unlock is also available. The exact price is shown on the purchase screen before you confirm."
+        },
+        {
+          "q": "Can I rely on it for visa or entry requirements?",
+          "a": "No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources."
+        }
+      ]
+    },
+    {
+      "key": "countdown",
+      "path": "/countdown/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "Countdown Widget: Any Event",
+      "shortName": "Countdown Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "Countdown Widget — Every Widget Free, No Event Limit",
+      "oneLiner": "A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.",
+      "description": "A countdown that never loses your days. Every widget size on the Home and Lock Screen is free, events are unlimited, reminders are free, and the app takes a backup of your countdowns on device every day. Pro sells backdrops, never the function.",
+      "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
+      "free": "Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
+      "paid": "Pro unlocks 90 of the 122 backdrops. US$14.99/year with a 7-day free trial, US$4.99/month, or US$29.99 once for Lifetime.",
+      "legal": [
+        [
+          "/countdown/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/countdown/terms-of-service/",
+          "Terms of Service"
+        ]
+      ],
+      "faq": [
+        {
+          "q": "Is there a countdown widget app for iPhone that is actually free?",
+          "a": "Yes. In Countdown Widget: Any Event every widget size works on both the Home Screen and the Lock Screen without paying, and the number of events is unlimited. Reminders, repeats and count-up are free as well. The paid tier only unlocks backdrops."
+        },
+        {
+          "q": "How many countdowns can I create on the free tier?",
+          "a": "There is no limit. Most countdown apps cap the free tier at three to five events; this one does not cap it at any tier."
+        },
+        {
+          "q": "Can it count up from a date that already passed?",
+          "a": "Yes. Any event can count down to a date or count up from one, and repeats can be yearly, monthly, weekly or every few days."
+        },
+        {
+          "q": "What happens to my countdowns if the app updates badly or I reinstall?",
+          "a": "The app takes a snapshot of everything on the device once a day, and always before anything risky. Thirty days of history are kept and any snapshot restores in one tap. iCloud sync is available and needs no account."
+        },
+        {
+          "q": "What does Countdown Widget Pro cost, and what does it unlock?",
+          "a": "Pro unlocks 90 of the 122 backdrops, with a new drop every month. It is US$14.99 per year with a 7-day free trial, US$4.99 per month, or US$29.99 once for Lifetime. Countdowns, reminders and widgets behave identically with or without it."
+        },
+        {
+          "q": "Does it need an account or an internet connection?",
+          "a": "No account and no sign-up. The app works offline; iCloud sync uses your own Apple Account when you turn it on."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr",
+      "path": "/invoiceqr/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Invoice Maker: Estimate & QR",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "title": "Invoice Maker — Invoices, Estimates and Scan-to-Pay QR Codes on iPhone",
+      "oneLiner": "An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.",
+      "description": "Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.",
+      "audience": "Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.",
+      "free": "Three documents a month (invoices, estimates and quotes share the allowance), and four of the ready-made QR designs.",
+      "legal": [
+        [
+          "/invoiceqr/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/invoiceqr/terms-of-service/",
+          "Terms of Service"
+        ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "faq": [
+        {
+          "q": "Is there an invoice app for iPhone that works without creating an account?",
+          "a": "Yes. Invoice Maker: Estimate & QR has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device."
+        },
+        {
+          "q": "How many invoices can I send for free?",
+          "a": "Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free."
+        },
+        {
+          "q": "Can a client pay directly from the invoice?",
+          "a": "Yes. Every invoice can carry a payment QR code the client scans to pay. You then record the payment in the app, and the invoice moves between unpaid, partial, paid and overdue."
+        },
+        {
+          "q": "Can I turn an estimate or quote into an invoice?",
+          "a": "Yes, in one tap. Clients, line items and tax rates are saved once and reused, and you can add discounts, shipping, payment methods and reusable terms."
+        },
+        {
+          "q": "Does it make QR codes for anything other than payment?",
+          "a": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free."
+        },
+        {
+          "q": "Can I recover an invoice I deleted by accident?",
+          "a": "Yes. Recently Deleted keeps invoices for 30 days."
+        },
+        {
+          "q": "What does Invoice Maker Pro unlock?",
+          "a": "Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames."
+        }
+      ]
+    },
+    {
+      "key": "dailycalorie",
+      "path": "/dailycalorie/",
+      "live": true,
+      "appId": "6798095407",
+      "name": "DailyCalorie: Calorie Counter",
+      "shortName": "DailyCalorie",
+      "category": "HealthApplication",
+      "genre": "Health & Fitness",
+      "title": "DailyCalorie — AI Photo Calorie Tracker for iPhone",
+      "oneLiner": "An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.",
+      "description": "Photograph a meal and DailyCalorie estimates the dish, portion, calories and the protein/carb/fat split in a few seconds. The Today screen shows the calories you have left as remaining space, not as a number you have to interpret.",
+      "audience": "People who quit other calorie apps because logging every item by hand was too slow.",
+      "free": "Manual logging, the daily window, and a limited number of photo scans.",
+      "legal": [
+        [
+          "/dailycalorie/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/dailycalorie/terms-of-use/",
+          "Terms of Use"
+        ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "key": "qrcodestudio",
+      "path": "/qrcodestudio/",
+      "live": true,
+      "appId": "6799589471",
+      "name": "Custom QR Code Maker & Scan",
+      "shortName": "QR Code Studio",
+      "category": "UtilitiesApplication",
+      "genre": "Utilities",
+      "title": "Custom QR Code Maker & Scan — Design QR Codes That Still Scan",
+      "oneLiner": "An iPhone QR code generator and scanner that lets you style a code with colours, shapes and a logo without breaking it.",
+      "description": "Make a QR code for a link, Wi-Fi network, contact card, text or phone number, then style it — colours, corner shapes, a logo in the middle — while the app keeps enough error correction that the code still scans. Includes a scanner and a history of what you made.",
+      "audience": "Anyone putting a QR code on a menu, poster, business card or shop window and wanting it to look like it belongs there.",
+      "free": "Generating and scanning codes, and the standard styles.",
+      "legal": [
+        [
+          "/qrcodestudio/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/qrcodestudio/terms-of-service/",
+          "Terms of Service"
+        ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+      "faq": [
+        {
+          "q": "Do the QR codes made with this app expire?",
+          "a": "No. Every code is static — it carries its own content rather than pointing at a redirect the developer owns, so it keeps working even if the app disappears. Dynamic-QR services stop working when the subscription lapses; these do not."
+        },
+        {
+          "q": "Can I put a logo in the middle of a QR code without breaking it?",
+          "a": "Yes. When you add a logo the app raises the error correction level automatically to make room, and decoration is always drawn around the code rather than over it."
+        },
+        {
+          "q": "How do I know a styled QR code will still scan?",
+          "a": "The app runs a live contrast check while you design and gives a plain verdict: good, risky, or won't scan. A design that would fail cannot be saved, and one tap repairs the colours while keeping the rest of the design."
+        },
+        {
+          "q": "What kinds of QR codes can it make?",
+          "a": "Twelve: link, social profile, Wi-Fi, contact card, email, phone, SMS, WhatsApp, location, calendar event, payment link and plain text."
+        },
+        {
+          "q": "Is the built-in scanner safe to use?",
+          "a": "Nothing opens on its own. After a scan you see the exact contents first, every time. Scan history stays on the device and is never uploaded."
+        },
+        {
+          "q": "Does it need an account or internet access?",
+          "a": "No account, no sign-up and no server. Codes sync through your own iCloud or stay on one device."
+        },
+        {
+          "q": "What is free and what does Pro unlock?",
+          "a": "Generating and scanning codes and the standard styles are free. Pro unlocks all 18 illustrated scenes, every frame and dot shape, gradients, custom colours and your own logo in the middle. It is a monthly or yearly auto-renewing subscription; the yearly plan has a 7-day free trial for new subscribers and the price is shown before you confirm."
+        }
+      ]
+    },
+    {
+      "key": "citu",
+      "path": "/citu/",
+      "live": true,
+      "appId": "6796596826",
+      "name": "Word Beast: English Vocabulary",
+      "shortName": "Word Beast",
+      "category": "EducationalApplication",
+      "genre": "Education",
+      "lang": "zh-CN",
+      "title": "单词兽 Word Beast — 中小学英语单词闯关背诵",
+      "oneLiner": "把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。",
+      "description": "单词兽把中小学英语单词表拆成一组一关：学一组、闯一关、收集一只单词兽。不用注册账号，核心课程离线可用。",
+      "audience": "需要背课本单词表的中小学生和家长。",
+      "free": "核心课程、闯关和收集，无需注册。",
+      "legal": [
+        [
+          "/citu/privacy-policy/",
+          "隐私政策"
+        ],
+        [
+          "/citu/terms-of-use/",
+          "使用条款"
+        ]
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+      "faq": [
+        {
+          "q": "单词兽适合谁用？",
+          "a": "需要背课本单词表的中小学生。它把单词表拆成一组一关，学完一组闯一关，闯过后收集一只单词兽。"
+        },
+        {
+          "q": "需要注册账号吗？",
+          "a": "不需要。打开就能用，App 会随机送一个名字和头像，在个人中心可以随时改成孩子自己的。核心课程离线可用。"
+        },
+        {
+          "q": "学习记录存在哪里？",
+          "a": "存在设备上。开了 iCloud 同步则存在你自己的 iCloud 里，开发者拿不到。"
+        }
+      ]
+    },
+    {
+      "key": "repdex",
+      "path": "/repdex/",
+      "live": false,
+      "appId": "6803828068",
+      "name": "Repdex: Gym Workout Log",
+      "shortName": "Repdex",
+      "category": "HealthApplication",
+      "genre": "Health & Fitness",
+      "title": "Repdex — Gym Workout Log for iPhone",
+      "oneLiner": "A gym workout log for iPhone.",
+      "description": "A workout log for tracking sets, reps and weight in the gym.",
+      "audience": "People logging strength training sessions.",
+      "legal": [
+        [
+          "/repdex/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/repdex/terms-of-use/",
+          "Terms of Use"
+        ]
+      ]
+    },
+    {
+      "key": "diary",
+      "path": "/diary/",
+      "live": false,
+      "appId": null,
+      "name": "Diary",
+      "shortName": "Diary",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Diary — Private Journal for iPhone",
+      "oneLiner": "A private journal for iPhone where entries stay on your device.",
+      "description": "A private journal for writing your days as pages of text and photos, with no developer-operated backend.",
+      "audience": "People who want a journal that never reaches someone else's server.",
+      "noPage": true,
+      "legal": [
+        [
+          "/diary/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/diary/terms-of-service/",
+          "Terms of Service"
+        ]
+      ]
+    }
+  ]
+}

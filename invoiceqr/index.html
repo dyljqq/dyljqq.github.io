@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invoice QR Studio — Support</title>
+  <title>Invoice Maker — Invoices, Estimates and Scan-to-Pay QR Codes on iPhone</title>
   <style>
     :root {
       color-scheme: light;
@@ -13,72 +13,222 @@
       --paper: #eef2fb;
       --line: #dbe3f5;
     }
-
-    body {
-      margin: 0;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(135deg, var(--paper), #fff);
-    }
-
-    main {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 20px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(32px, 8vw, 56px);
-      line-height: 1;
-    }
-
-    p {
-      color: var(--muted);
-      margin: 0 0 28px;
-    }
-
-    a.card {
-      display: block;
-      margin: 12px 0;
-      padding: 18px 20px;
-      color: var(--ink);
-      text-decoration: none;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
-
-    a.card strong {
-      display: block;
-      font-size: 20px;
-    }
-
-    a.card span {
-      color: var(--brand);
-      font-weight: 700;
-    }
-
-    .contact {
-      margin-top: 32px;
-      padding: 22px 24px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      color: var(--ink);
-    }
-
-    .contact a {
-      color: var(--brand);
-      font-weight: 700;
-      text-decoration: none;
-    }
+    body { margin:0; font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink); background:linear-gradient(135deg,var(--paper),#fff); }
+    main { max-width:760px; margin:0 auto; padding:56px 20px; }
+    header { text-align:center; padding-bottom:8px; }
+    h1 { margin:0 0 10px; font-size:clamp(32px,8vw,52px); line-height:1.05; letter-spacing:-.02em; }
+    .tag { color:var(--muted); margin:0 auto 26px; max-width:34em; font-size:clamp(17px,2.4vw,19px); }
+    p { color:var(--muted); margin:0 0 18px; }
+    .cta { display:inline-flex; align-items:center; gap:10px; background:var(--brand); color:#fff;
+      text-decoration:none; font-weight:600; padding:15px 28px; border-radius:999px; }
+    .cta:hover { background:#1c46b0; }
+    .meta { margin-top:14px; color:var(--muted); font-size:14px; }
+    h2 { margin:44px 0 6px; font-size:26px; letter-spacing:-.01em; color:var(--ink); }
+    h3 { margin:26px 0 6px; font-size:19px; color:var(--ink); }
+    ul { color:var(--muted); margin:0 0 18px; padding-left:1.2em; }
+    li { margin:5px 0; }
+    a.card { display:block; margin:12px 0; padding:18px 20px; color:var(--ink); text-decoration:none;
+      background:rgba(255,255,255,.85); border:1px solid var(--line); border-radius:16px; }
+    a.card strong { display:block; font-size:20px; }
+    a.card span { color:var(--brand); font-weight:700; }
+    .contact { margin-top:32px; padding:22px 24px; background:rgba(255,255,255,.85);
+      border:1px solid var(--line); border-radius:16px; color:var(--ink); }
+    .contact a { color:var(--brand); font-weight:700; text-decoration:none; }
+    footer { margin-top:44px; padding-top:22px; border-top:1px solid var(--line);
+      color:var(--muted); font-size:14px; }
+    footer a { color:var(--brand); }
   </style>
+<!-- seo:start -->
+<meta name="description" content="Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.">
+<link rel="canonical" href="https://dyljqq.github.io/invoiceqr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Invoice Maker — Invoices, Estimates and Scan-to-Pay QR Codes on iPhone">
+<meta property="og:description" content="Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.">
+<meta property="og:url" content="https://dyljqq.github.io/invoiceqr/">
+<meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:title" content="Invoice Maker — Invoices, Estimates and Scan-to-Pay QR Codes on iPhone">
+<meta name="twitter:description" content="Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.">
+<meta name="apple-itunes-app" content="app-id=6790383156">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/invoiceqr/#app",
+  "name": "Invoice Maker: Estimate & QR",
+  "alternateName": "Invoice Maker",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.",
+  "url": "https://dyljqq.github.io/invoiceqr/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6790383156",
+  "installUrl": "https://apps.apple.com/app/id6790383156",
+  "sameAs": [
+    "https://apps.apple.com/app/id6790383156"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/invoiceqr/#faq",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there an invoice app for iPhone that works without creating an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Invoice Maker: Estimate & QR has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many invoices can I send for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a client pay directly from the invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every invoice can carry a payment QR code the client scans to pay. You then record the payment in the app, and the invoice moves between unpaid, partial, paid and overdue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I turn an estimate or quote into an invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in one tap. Clients, line items and tax rates are saved once and reused, and you can add discounts, shipping, payment methods and reusable terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it make QR codes for anything other than payment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I recover an invoice I deleted by accident?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Recently Deleted keeps invoices for 30 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Invoice Maker Pro unlock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
 </head>
 <body>
   <main>
-    <h1>Invoice QR Studio</h1>
-    <p>Create professional invoices with scan-to-pay QR codes, and get paid faster. Support and legal information for the app.</p>
+    <header>
+      <h1>Invoice Maker</h1>
+      <p class="tag">An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.</p>
+      <a class="cta" href="https://apps.apple.com/app/id6790383156">Download on the App&nbsp;Store</a>
+      <p class="meta">Free to start · iPhone &amp; iPad · No account required · Works offline</p>
+    </header>
+
+    <h2>What it does</h2>
+
+    <h3>Invoices, estimates and receipts</h3>
+    <p>Pick one of 20 templates, add the client and the line items, and share a clean PDF. Start with an estimate or a quote and turn it into an invoice with one tap once it is accepted. Clients, items and tax rates are saved and reused, and you can add discounts, shipping, payment methods and your own reusable terms — then sign it by hand, drawn on the iPhone.</p>
+
+    <h3>Get paid with a scan</h3>
+    <p>Every invoice can carry a payment QR code your client scans to pay. Status is visible at a glance — paid, unpaid, partial, overdue — and recording a payment keeps the outstanding balance exact. Sales reports show income by month, your top clients, and what is still owed.</p>
+
+    <h3>Your brand, set once</h3>
+    <p>Set your logo, brand colour and fonts one time. Invoices, templates and QR designs pick them up automatically.</p>
+
+    <h3>A QR code studio, included</h3>
+    <p>Twelve kinds of code — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — with 16 ready-made designs. Contrast and quiet zone are checked as you design, so the result actually scans, and it exports as an image you can share, print or stand on a counter.</p>
+
+    <h3>On your Home Screen</h3>
+    <p>Three widgets: what you are owed, shortcuts to create, and a payment QR drawn large enough to be scanned straight off the Home Screen without opening the app.</p>
+
+    <h3>Private, and in sync</h3>
+    <p>Invoices, clients and QR codes sync through your own iCloud, so a new iPhone already has your work. Recently Deleted holds invoices for 30 days. There is no account and no sign-up, it works offline, and it speaks 11 languages in both light and dark appearance.</p>
+
+    <h2>Questions</h2>
+
+    <h3>Is there an invoice app for iPhone that works without creating an account?</h3>
+    <p>Yes. Invoice Maker: Estimate & QR has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device.</p>
+
+    <h3>How many invoices can I send for free?</h3>
+    <p>Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free.</p>
+
+    <h3>Can a client pay directly from the invoice?</h3>
+    <p>Yes. Every invoice can carry a payment QR code the client scans to pay. You then record the payment in the app, and the invoice moves between unpaid, partial, paid and overdue.</p>
+
+    <h3>Can I turn an estimate or quote into an invoice?</h3>
+    <p>Yes, in one tap. Clients, line items and tax rates are saved once and reused, and you can add discounts, shipping, payment methods and reusable terms.</p>
+
+    <h3>Does it make QR codes for anything other than payment?</h3>
+    <p>Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free.</p>
+
+    <h3>Can I recover an invoice I deleted by accident?</h3>
+    <p>Yes. Recently Deleted keeps invoices for 30 days.</p>
+
+    <h3>What does Invoice Maker Pro unlock?</h3>
+    <p>Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames.</p>
+
+    <h2>More questions</h2>
+
+    <h3>What does Pro cost, and is there a trial?</h3>
+    <p>Pro is a subscription, and the exact price for your region is shown on the subscription screen before you confirm anything. It starts with a 3-day free trial; cancel before the trial ends and you are not charged.</p>
+
+    <h3>How do I cancel?</h3>
+    <p>Open iOS Settings › your name › Subscriptions, choose Invoice Maker, then Cancel Subscription. You keep Pro until the end of the period you already paid for, and cancelling never deletes an invoice — you return to the free tier with everything you made still there.</p>
+
+    <h3>I paid but the app still shows Free</h3>
+    <p>Open the subscription screen and tap Restore purchases, and check you are signed in with the same Apple Account used for the purchase. If it still does not unlock, email us with your Apple Account region and roughly when you bought it.</p>
+
+    <h3>Refunds</h3>
+    <p>All purchases are handled by Apple, so refunds go through Apple at <a href="https://reportaproblem.apple.com" rel="nofollow">reportaproblem.apple.com</a>. We cannot issue them ourselves, but tell us what went wrong and we will try to fix it.</p>
+
+    <h3>Does the payment QR code process the payment?</h3>
+    <p>No. The code carries your own payment link or details, so the client scans it and pays through their own banking or payment app. Invoice Maker never touches the money and takes no cut.</p>
+
+    <h3>What languages does it speak?</h3>
+    <p>Eleven. It follows your device language on first launch.</p>
+
+    <h2>Support and legal</h2>
 
     <a class="card" href="./privacy-policy/">
       <strong>Privacy Policy</strong>
@@ -96,6 +246,9 @@
         <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a>.
         We read every message and aim to reply within two business days.</p>
     </div>
+
+    <footer>Invoice Maker: Estimate &amp; QR is made by go ka. <a href="/">Other apps →</a></footer>
   </main>
+
 </body>
 </html>

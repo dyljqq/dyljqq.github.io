@@ -1,0 +1,81 @@
+# go ka
+
+> 6 个独立开发的 iPhone app。每个 app 一个产品页，页面上写的功能、
+> 免费范围和价格就是应用内的实际情况，没有第二套说法。
+
+Contact: qinqiangji@gmail.com
+
+## Apps
+
+### Packing List & Trips: BeforeGo
+
+A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.
+
+- Page: https://dyljqq.github.io/
+- App Store: https://apps.apple.com/app/id6786561175
+- Platform: iOS (iPhone, iPad)
+- Category: Travel
+- For: People who pack from memory and keep forgetting the same one thing.
+- Free: Trips, checklists, reminders, widgets and the journal. No account required.
+
+### Countdown Widget: Any Event
+
+A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.
+
+- Page: https://dyljqq.github.io/countdown/
+- App Store: https://apps.apple.com/app/id6799846628
+- Platform: iOS (iPhone, iPad)
+- Category: Productivity
+- For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
+- Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
+- Paid: Pro unlocks 90 of the 122 backdrops. US$14.99/year with a 7-day free trial, US$4.99/month, or US$29.99 once for Lifetime.
+
+### Invoice Maker: Estimate & QR
+
+An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.
+
+- Page: https://dyljqq.github.io/invoiceqr/
+- App Store: https://apps.apple.com/app/id6790383156
+- Platform: iOS (iPhone, iPad)
+- Category: Business
+- For: Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.
+- Free: Three documents a month (invoices, estimates and quotes share the allowance), and four of the ready-made QR designs.
+
+### DailyCalorie: Calorie Counter
+
+An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.
+
+- Page: https://dyljqq.github.io/dailycalorie/
+- App Store: https://apps.apple.com/app/id6798095407
+- Platform: iOS (iPhone, iPad)
+- Category: Health & Fitness
+- For: People who quit other calorie apps because logging every item by hand was too slow.
+- Free: Manual logging, the daily window, and a limited number of photo scans.
+
+### Custom QR Code Maker & Scan
+
+An iPhone QR code generator and scanner that lets you style a code with colours, shapes and a logo without breaking it.
+
+- Page: https://dyljqq.github.io/qrcodestudio/
+- App Store: https://apps.apple.com/app/id6799589471
+- Platform: iOS (iPhone, iPad)
+- Category: Utilities
+- For: Anyone putting a QR code on a menu, poster, business card or shop window and wanting it to look like it belongs there.
+- Free: Generating and scanning codes, and the standard styles.
+
+### Word Beast: English Vocabulary
+
+把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。
+
+- Page: https://dyljqq.github.io/citu/
+- App Store: https://apps.apple.com/app/id6796596826
+- Platform: iOS (iPhone, iPad)
+- Category: Education
+- For: 需要背课本单词表的中小学生和家长。
+- Free: 核心课程、闯关和收集，无需注册。
+
+## Notes
+
+- 所有 app 都是免费下载。付费部分（如果有）写在各自的产品页上。
+- 没有服务器账号体系；数据留在设备和用户自己的 iCloud 里。
+- 支持与反馈：qinqiangji@gmail.com
