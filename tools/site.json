@@ -129,6 +129,57 @@
       ]
     },
     {
+      "key": "countdown-pt-br",
+      "variantOf": "countdown",
+      "lang": "pt-BR",
+      "path": "/countdown/pt-br/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "Countdown: Contagem regressiva",
+      "shortName": "Contagem regressiva",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "Contagem Regressiva com Widget — Grátis, Eventos Ilimitados",
+      "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos de widget são grátis e o número de eventos é ilimitado.",
+      "description": "App de contagem regressiva para iPhone: todos os tamanhos de widget na tela de início e na tela de bloqueio são grátis, eventos ilimitados, lembretes grátis, sem anúncios. O Pro vende só planos de fundo, nunca a função.",
+      "audience": "Quem conta os dias para o ENEM, o Réveillon, o Carnaval, uma viagem, um casamento ou um aniversário — ou conta os dias desde uma data.",
+      "free": "Todos os tamanhos de widget, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
+      "paid": "O Pro desbloqueia 90 dos 122 planos de fundo. R$ 69,90/ano com 7 dias grátis, R$ 9,90/mês, ou R$ 89,90 uma única vez (vitalício).",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Existe um app de contagem regressiva com widget para iPhone que seja grátis de verdade?",
+          "a": "Sim. No Countdown: Contagem regressiva todos os tamanhos de widget funcionam na tela de início e na tela de bloqueio sem pagar, e o número de eventos é ilimitado. Lembretes, repetição e contagem progressiva também são grátis. O Pro só desbloqueia planos de fundo."
+        },
+        {
+          "q": "Quantas contagens regressivas posso criar na versão grátis?",
+          "a": "Não há limite. A maioria dos apps de contagem regressiva trava a versão grátis em três a cinco eventos; este não trava em nenhum plano."
+        },
+        {
+          "q": "Serve para contar os dias até o ENEM, o Réveillon ou o Carnaval?",
+          "a": "Serve. Você cria o evento em um toque, escolhe se ele repete todo ano e recebe lembrete no dia e com a antecedência que quiser. Os feriados nacionais do Brasil já vêm prontos na lista."
+        },
+        {
+          "q": "Dá para contar os dias desde uma data que já passou?",
+          "a": "Dá. Qualquer evento pode fazer contagem regressiva até uma data ou contagem progressiva a partir dela, e a repetição pode ser anual, mensal, semanal ou a cada poucos dias."
+        },
+        {
+          "q": "O que acontece com as minhas contagens se o app atualizar mal ou eu reinstalar?",
+          "a": "O app guarda uma cópia de tudo no aparelho uma vez por dia, e sempre antes de qualquer operação arriscada. Trinta dias de histórico ficam salvos e qualquer cópia é restaurada em um toque. A sincronização pelo iCloud está disponível e não precisa de conta."
+        },
+        {
+          "q": "Quanto custa o Pro no Brasil e o que ele desbloqueia?",
+          "a": "O Pro desbloqueia 90 dos 122 planos de fundo, com novos todo mês. Custa R$ 69,90 por ano com 7 dias grátis, R$ 9,90 por mês, ou R$ 89,90 uma única vez (vitalício). Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
+        },
+        {
+          "q": "Precisa de conta ou de internet?",
+          "a": "Não precisa de conta nem de cadastro. O app funciona offline; a sincronização pelo iCloud usa a sua própria Conta Apple quando você a liga."
+        }
+      ]
+    },
+    {
       "key": "invoiceqr",
       "path": "/invoiceqr/",
       "live": true,

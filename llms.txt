@@ -23,6 +23,7 @@ A travel packing list and trip-prep checklist for iPhone that remembers what you
 A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.
 
 - Page: https://dyljqq.github.io/countdown/
+- Page (pt-BR): https://dyljqq.github.io/countdown/pt-br/
 - App Store: https://apps.apple.com/app/id6799846628
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity

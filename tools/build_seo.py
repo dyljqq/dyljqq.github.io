@@ -40,6 +40,22 @@ def git_lastmod(path: Path) -> str:
         pass
     return date.today().isoformat()
 
+def variants_of(app):
+    """同一个 app 的其它语言页：site.json 里 variantOf 指向主条目 key 的条目。
+    它们不是新的 app——llms.txt 和 Organization 里不单列，只在主条目下挂一行。"""
+    return [a for a in APPS if a.get("variantOf") == app["key"] and a.get("live")]
+
+def hreflang_links(app):
+    """同一个 app 有多语言页时，每页都列出全家（含自己）+ x-default 指向主条目。"""
+    parent = next((a for a in APPS if a["key"] == app.get("variantOf")), None) or app
+    family = [parent] + variants_of(parent)
+    if len(family) < 2:
+        return []
+    out = [f'<link rel="alternate" hreflang="{a.get("lang", "en")}" href="{ORIGIN}{a["path"]}">'
+           for a in family]
+    out.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{parent["path"]}">')
+    return out
+
 def pages():
     """产出 (url_path, html_path, app, kind)。kind: product / legal。"""
     for app in APPS:
@@ -112,7 +128,7 @@ def build_sitemap():
 
 # ---------------------------------------------------------------- llms.txt
 def build_llms():
-    live = [a for a in APPS if a.get("live")]
+    live = [a for a in APPS if a.get("live") and not a.get("variantOf")]
     out = [f"# {BRAND}", "",
            f"> {len(live)} 个独立开发的 iPhone app。每个 app 一个产品页，页面上写的功能、",
            "> 免费范围和价格就是应用内的实际情况，没有第二套说法。",
@@ -125,6 +141,8 @@ def build_llms():
         out.append(a["oneLiner"])
         out.append("")
         out.append(f"- Page: {ORIGIN}{a['path']}")
+        for v in variants_of(a):
+            out.append(f"- Page ({v['lang']}): {ORIGIN}{v['path']}")
         if su:
             out.append(f"- App Store: {su}")
         out.append(f"- Platform: iOS (iPhone, iPad)")
@@ -177,7 +195,9 @@ FAQ_START, FAQ_END = "<!-- faq:start -->", "<!-- faq:end -->"
 def faq_html(app):
     """可见 FAQ。schema 里的问答必须在页面上看得见、且逐字一致（清单 7.7），
     所以两边都从 site.json 的同一份数据生成，杜绝改了一边忘了另一边。"""
-    heading = "常见问题" if app.get("lang", "en").startswith("zh") else "Questions people ask"
+    lang = app.get("lang", "en")
+    heading = ("常见问题" if lang.startswith("zh") else
+               "Perguntas frequentes" if lang.startswith("pt") else "Questions people ask")
     rows = "\n".join(
         '    <div class="card">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
         % (esc_text(f["q"]), esc_text(f["a"])) for f in app["faq"])
@@ -191,8 +211,8 @@ def org_jsonld():
     return {"@context": "https://schema.org", "@type": "Organization",
             "@id": f"{ORIGIN}/#org", "name": BRAND, "url": f"{ORIGIN}/",
             "email": EMAIL,
-            "description": f"Independent iOS developer. {len([a for a in APPS if a.get('live')])} apps on the App Store.",
-            "sameAs": [u for u in (store_url(a) for a in APPS) if u]}
+            "description": f"Independent iOS developer. {len([a for a in APPS if a.get('live') and not a.get('variantOf')])} apps on the App Store.",
+            "sameAs": list(dict.fromkeys(u for u in (store_url(a) for a in APPS) if u))}
 
 def head_block(url, app, kind):
     is_product = kind == "product"
@@ -210,6 +230,8 @@ def head_block(url, app, kind):
     lines = [START,
              '<meta name="description" content="%s">' % esc(desc),
              f'<link rel="canonical" href="{canonical}">']
+    if is_product:
+        lines += hreflang_links(app)
     if not app.get("live"):
         lines.append('<meta name="robots" content="noindex,follow">')
     lines += ['<meta property="og:type" content="website">',
