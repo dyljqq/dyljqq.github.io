@@ -14,13 +14,13 @@
     "商店文案改了就回来同步这里，别在这里改出第二套说法。label 是站内短名，storeNameEn 只给中文产品页的 app 用。"
   ],
   "site": {
-    "origin": "https://dyljqq.github.io",
+    "origin": "https://goka-xi.vercel.app",
     "brand": "go ka",
     "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
     "email": "qinqiangji@gmail.com",
     "developerUrl": "https://apps.apple.com/developer/id1854274317",
     "developerNote": "App Store 上七个 app 都挂在这个开发者账号下（显示名是个人实名，不是 go ka）。首页和 Organization.sameAs 用它把品牌和账号连起来。",
-    "originNote": "2026-09-26：先按 dyljqq.github.io 上线。自有域名 apps.jiqinqiang.com 的 CNAME 在 DNSPod 控制台加不上（用户人在海外，控制台空白），等能加了再把 origin 改回 https://apps.jiqinqiang.com 并恢复根目录 CNAME 文件。主域 jiqinqiang.com 有备案、接入商腾讯云，永远不要指到 GitHub。"
+    "originNote": "2026-09-26 起线上是 Vercel：项目 goka（team qinqiangji-3410），生产别名 https://goka-xi.vercel.app，`vercel --prod` 从仓库根目录直接发（静态站，无构建）。dyljqq.github.io 上还是旧站，未同步。自有域名 apps.jiqinqiang.com 等能操作 DNSPod 时再挂到 Vercel 并把 origin 改过去；主域 jiqinqiang.com 有备案、接入商腾讯云，永远不要指到境外。"
   },
   "apps": [
     {
