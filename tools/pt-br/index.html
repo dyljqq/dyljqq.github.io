@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferramentas e guias grátis — go ka</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+
+.crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
+.crumbs li+li::before{content:"›";margin-right:8px}
+.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
+.article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
+.article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
+.article table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
+.count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.calc label{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
+.calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+#calc-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a{font-size:14px}
+.pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
+.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
+.appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
+.ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
+.meta{font-size:13px;color:var(--soft);margin:16px 0 0}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0 0}.hub a{text-decoration:none;border:1px solid var(--rule);border-radius:20px;padding:22px;display:block;transition:background .2s}.hub a:hover{background:var(--cream)}
+.hub b{display:block;font:500 22px/1.25 var(--display);letter-spacing:-.02em}.hub span{display:block;color:var(--muted);font-size:14.5px;margin-top:8px}.hub small{display:block;margin-top:12px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.inv{border:1.5px solid var(--ink);border-radius:16px;padding:32px;background:#fff;font-size:15px;color:var(--ink)}
+.inv [contenteditable]{outline:none;border-bottom:1px dashed #cfcac0;min-width:2ch}.inv [contenteditable]:focus{background:var(--cream)}
+.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-head h2{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties h4,.inv-meta h4{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv table{width:100%;border-collapse:collapse;margin:8px 0}.inv th{font:700 11px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--ink)}
+.inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
+.inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
+.inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
+@media (max-width:760px){.calc{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+@media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.">
+<link rel="canonical" href="https://goka-xi.vercel.app/tools/pt-br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Ferramentas e guias grátis — go ka">
+<meta property="og:description" content="Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.">
+<meta property="og:url" content="https://goka-xi.vercel.app/tools/pt-br/">
+<meta property="og:image" content="https://goka-xi.vercel.app/assets/brand/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ferramentas e guias grátis — go ka">
+<meta name="twitter:description" content="Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.">
+<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/brand/og-home.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://goka-xi.vercel.app/tools/pt-br/#page",
+  "url": "https://goka-xi.vercel.app/tools/pt-br/",
+  "name": "Ferramentas e guias grátis — go ka",
+  "headline": "Ferramentas e guias grátis — go ka",
+  "description": "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.",
+  "inLanguage": "pt-BR",
+  "isPartOf": {
+    "@id": "https://goka-xi.vercel.app/#website"
+  },
+  "publisher": {
+    "@id": "https://goka-xi.vercel.app/#org"
+  },
+  "author": {
+    "@id": "https://goka-xi.vercel.app/#org"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://goka-xi.vercel.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://goka-xi.vercel.app/tools/pt-br/"
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">Todos os apps</a>
+    <a href="/tools/pt-br/">Ferramentas</a>
+    <a href="mailto:qinqiangji@gmail.com">Suporte</a>
+  </nav>
+</header>
+<main class="wrap">
+<ol class="crumbs"><li><a href="/">Início</a></li><li><a href="/tools/pt-br/">Ferramentas</a></li></ol>
+<article class="article">
+<h1>Ferramentas e guias grátis</h1>
+<p class="lede">Pequenas, grátis, sem cadastro. Cada uma faz no navegador a mesma coisa do dia a dia que os nossos apps fazem.</p>
+<div class="hub">
+  <a href="/tools/pt-br/dias-para-o-enem-2026/"><b>Quantos dias faltam para o ENEM 2026?</b><span>Contagem regressiva para os dois domingos de prova, 8 e 15 de novembro.</span><small>Countdown</small></a>
+  <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/"><b>Quantos dias faltam para o Réveillon 2027?</b><span>Réveillon, Ano-Novo e Carnaval 2027 na mesma página, com contagem ao vivo.</span><small>Countdown</small></a>
+</div>
+
+</article>
+
+
+<p class="ask">Pergunte a uma IA sobre esta página: <a href="https://chatgpt.com/?q=Leia%20https%3A//goka-xi.vercel.app/tools/pt-br/%20e%20resuma%20os%20pontos%20principais%20em%20poucas%20frases." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=Leia%20https%3A//goka-xi.vercel.app/tools/pt-br/%20e%20resuma%20os%20pontos%20principais%20em%20poucas%20frases." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=Leia%20https%3A//goka-xi.vercel.app/tools/pt-br/%20e%20resuma%20os%20pontos%20principais%20em%20poucas%20frases." rel="nofollow noopener">Claude</a></p>
+<p style="margin:28px 0 0;font-size:14px"><a href="/tools/" hreflang="en">Also in English →</a></p>
+</main>
+<footer><div class="wrap"><p>go ka · <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a> · <a href="/">Todos os apps</a></p></div></footer>
+
+</body>
+</html>

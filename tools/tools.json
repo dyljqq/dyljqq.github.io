@@ -1,0 +1,300 @@
+[
+ {
+  "path": "/tools/days-until/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Days Until Calculator — how many days until any date",
+  "description": "Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.",
+  "faq": [
+   {
+    "q": "How are the days counted?",
+    "a": "The calculator counts whole calendar days between today and the date you enter, in your device's time zone. Today counts as 0; tomorrow counts as 1. The day of the event itself is not added on top."
+   },
+   {
+    "q": "Does it handle leap years?",
+    "a": "Yes. It uses the calendar of the browser, so 29 February is counted in leap years such as 2028."
+   },
+   {
+    "q": "Can I count up from a date in the past?",
+    "a": "Yes. Enter a past date and it shows how many days ago it was. The Countdown Widget app does the same on your Home Screen, counting up from a birthday, a sober date or a first day at work."
+   },
+   {
+    "q": "Can I share the result?",
+    "a": "Yes. After you calculate, the page gives you a link that contains the date and name, so anyone who opens it sees the same countdown, updated to the day they open it."
+   },
+   {
+    "q": "Is there an app that keeps the countdown on my phone?",
+    "a": "Countdown Widget: Any Event is our free iPhone app: unlimited events, every widget size on the Home Screen and Lock Screen, reminders and iCloud sync, with no account to create."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Days until calculator"
+ },
+ {
+  "path": "/tools/days-until-christmas/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "How many days until Christmas 2026? Live countdown",
+  "description": "Christmas Day 2026 is on Friday, 25 December 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
+  "faq": [
+   {
+    "q": "What day of the week is Christmas 2026?",
+    "a": "Christmas Day 2026 is a Friday. That gives most people a long weekend from Friday 25 December to Sunday 27 December, and many workplaces add Christmas Eve, Thursday 24 December."
+   },
+   {
+    "q": "How many weeks until Christmas 2026?",
+    "a": "Divide the days by seven: on 26 September 2026 there were 90 days, which is about 12 weeks. The counter at the top of this page recalculates it on the day you visit."
+   },
+   {
+    "q": "How many days between Halloween and Christmas?",
+    "a": "55 days. Halloween is 31 October and Christmas Day is 25 December, so there are 55 days from one to the other in any year."
+   },
+   {
+    "q": "When is Christmas 2027?",
+    "a": "Saturday, 25 December 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."
+   },
+   {
+    "q": "How do I put a Christmas countdown on my iPhone Home Screen?",
+    "a": "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget, and choose Countdown. The widgets are free in every size, and the event can repeat every year."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "How many days until Christmas 2026?"
+ },
+ {
+  "path": "/tools/days-until-halloween/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "How many days until Halloween 2026? Live countdown",
+  "description": "Halloween 2026 is on Saturday, 31 October 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
+  "faq": [
+   {
+    "q": "What day of the week is Halloween 2026?",
+    "a": "Saturday. Halloween 2026 is on Saturday, 31 October 2026, so parties and trick-or-treating fall on a weekend."
+   },
+   {
+    "q": "How many weeks until Halloween 2026?",
+    "a": "On 26 September 2026 there were 35 days, about 5 weeks. The counter on this page recalculates when you open it."
+   },
+   {
+    "q": "When is Halloween 2027?",
+    "a": "Sunday, 31 October 2027. Halloween 2028 falls on a Tuesday."
+   },
+   {
+    "q": "How do I get a Halloween countdown widget on iPhone?",
+    "a": "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget menu. Every widget size is free."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "How many days until Halloween 2026?"
+ },
+ {
+  "path": "/tools/days-until-new-year/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "How many days until New Year 2027? Live countdown",
+  "description": "New Year's Day 2027 is on Friday, 1 January 2027; New Year's Eve is Thursday, 31 December 2026. Live countdown plus a free iPhone widget.",
+  "faq": [
+   {
+    "q": "What day of the week is New Year's Day 2027?",
+    "a": "Friday. New Year's Eve 2026 is a Thursday and 1 January 2027 is a Friday, which makes a three-day weekend for many people."
+   },
+   {
+    "q": "How many days are left in 2026?",
+    "a": "As of 26 September 2026 there were 97 days left in 2026, counting today. The counter on this page recalculates when you open it."
+   },
+   {
+    "q": "When is Lunar New Year 2027?",
+    "a": "Saturday, 6 February 2027. It begins the Year of the Goat."
+   },
+   {
+    "q": "How do I keep a New Year countdown on my Lock Screen?",
+    "a": "Add 1 January 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "How many days until New Year 2027?"
+ },
+ {
+  "path": "/tools/pt-br/dias-para-o-enem-2026/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Quantos dias faltam para o ENEM 2026? Contagem regressiva",
+  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de início do iPhone.",
+  "faq": [
+   {
+    "q": "Quando é o ENEM 2026?",
+    "a": "As provas serão aplicadas nos domingos 8 de novembro e 15 de novembro de 2026, conforme o Edital nº 64, publicado pelo Inep em 22 de maio de 2026."
+   },
+   {
+    "q": "Quando foram as inscrições do ENEM 2026?",
+    "a": "De 25 de maio a 12 de junho de 2026, pela Página do Participante do Inep."
+   },
+   {
+    "q": "O que cai em cada dia do ENEM 2026?",
+    "a": "No primeiro dia (8/11): Linguagens, Códigos e suas Tecnologias, Redação e Ciências Humanas e suas Tecnologias. No segundo dia (15/11): Ciências da Natureza e suas Tecnologias e Matemática e suas Tecnologias, com 90 questões objetivas."
+   },
+   {
+    "q": "Quando sai o gabarito do ENEM 2026?",
+    "a": "Segundo o edital, até o 10º dia útil após o segundo dia de prova."
+   },
+   {
+    "q": "Como coloco a contagem regressiva do ENEM na tela de início?",
+    "a": "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a tela de início → Editar → Adicionar widget → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para o ENEM 2026?"
+ },
+ {
+  "path": "/tools/pt-br/contagem-regressiva-reveillon-2027/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Quantos dias faltam para o Réveillon 2027 e o Carnaval 2027?",
+  "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "faq": [
+   {
+    "q": "Em que dia da semana cai o Réveillon 2026/2027?",
+    "a": "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."
+   },
+   {
+    "q": "Quando é o Carnaval 2027?",
+    "a": "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."
+   },
+   {
+    "q": "Quantos dias faltam para o Ano-Novo?",
+    "a": "Em 26/09/2026 faltavam 97 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
+   },
+   {
+    "q": "Como coloco a contagem do Réveillon na tela de bloqueio?",
+    "a": "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na tela de bloqueio segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para o Réveillon 2027?"
+ },
+ {
+  "path": "/tools/invoice-template/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Free Invoice Template — fill in, print or save as PDF (no sign-up)",
+  "description": "A free invoice template you fill in right on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up, nothing uploaded.",
+  "faq": [
+   {
+    "q": "Is this invoice template really free?",
+    "a": "Yes. Everything happens in your browser: nothing is uploaded, there is no account and no watermark. Fill in the fields, then print or save as PDF."
+   },
+   {
+    "q": "What must an invoice include?",
+    "a": "The word Invoice, a unique invoice number, the issue date and due date, your business name and contact details, the client's name and address, a description of each item with quantity and price, the subtotal, any tax with its rate, the total due, and how to pay."
+   },
+   {
+    "q": "How do I save the invoice as a PDF?",
+    "a": "Click Print / Save as PDF. In the print dialog choose 'Save as PDF' as the destination. Only the invoice is printed — the rest of the page is hidden."
+   },
+   {
+    "q": "Does it calculate tax?",
+    "a": "Yes. Type a tax rate in the Tax field and the tax amount and total update. Leave it at 0 if you do not charge tax."
+   },
+   {
+    "q": "Is there an app that keeps invoices, clients and payments?",
+    "a": "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Three documents are free, with no account."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "invoiceqr",
+  "hubTitle": "Free invoice template"
+ },
+ {
+  "path": "/tools/how-to-write-an-invoice/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "How to Write an Invoice (freelancers & small businesses) — 8 steps",
+  "description": "How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.",
+  "faq": [
+   {
+    "q": "What should I put on an invoice?",
+    "a": "The word Invoice, a unique number, issue and due dates, your business details, the client's details, each item with quantity and price, subtotal, tax and total, and how to pay. Add your tax ID if your country requires it."
+   },
+   {
+    "q": "How do I number invoices?",
+    "a": "Sequentially and never reused: INV-0001, INV-0002… Many freelancers prefix the year (2026-001) so the sequence resets each January. Gaps are fine; duplicates are not."
+   },
+   {
+    "q": "What payment terms should a freelancer use?",
+    "a": "Net 14 or Net 30 are the most common — payment due 14 or 30 days after the invoice date. For new clients or small jobs, 'due on receipt' is normal. State the terms and the due date on the invoice itself."
+   },
+   {
+    "q": "Can I charge a late fee?",
+    "a": "Usually yes if the terms were agreed before the work — put them on the estimate or contract and repeat them on the invoice. Check local rules; some countries cap late interest."
+   },
+   {
+    "q": "What's the difference between an invoice and a receipt?",
+    "a": "An invoice asks for payment and has a due date. A receipt confirms that payment was made. Once an invoice is paid, the same document marked Paid with the paid date can serve as the receipt."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "invoiceqr",
+  "hubTitle": "How to write an invoice"
+ },
+ {
+  "path": "/tools/packing-list/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Packing List Generator — free travel checklist you can tick off and print",
+  "description": "Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.",
+  "faq": [
+   {
+    "q": "How many clothes should I pack for a 7-day trip?",
+    "a": "A good rule is one set of underwear and socks per day and half as many tops, then wear each pair of trousers two or three times. For a week: 7 underwear, 7 socks, 4 tops, 2 trousers, one warm layer. Plan one laundry day for anything longer than 10 days."
+   },
+   {
+    "q": "Does the checklist remember what I ticked?",
+    "a": "Yes, in this browser. Ticks are stored on your device and come back when you reopen the page; nothing is sent anywhere. Use the app if you want the list on your phone with reminders."
+   },
+   {
+    "q": "What do people forget most often?",
+    "a": "Chargers and the right power adapter, medication, a copy of the passport, sunscreen, and the one thing they forgot on the last trip too — which is exactly what BeforeGo carries over to the next packing list."
+   },
+   {
+    "q": "When should I start packing?",
+    "a": "Put the documents and bookings together a week out, pack clothes and toiletries three days before, and do a final check the night before: passport, tickets, wallet, phone, charger, keys."
+   },
+   {
+    "q": "Is there an app that makes the packing list for my destination?",
+    "a": "BeforeGo: AI Itinerary Planner writes the packing list from your destination and dates — plugs, currency, entry rules and transit apps for where you are going — with reminders at 7 days, 3 days, 24 hours and 3 hours before departure."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "beforego",
+  "hubTitle": "Packing list generator"
+ },
+ {
+  "path": "/tools/",
+  "lang": "en",
+  "kind": "CollectionPage",
+  "title": "Free tools & guides — go ka",
+  "description": "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.",
+  "faq": [],
+  "published": null,
+  "app": null,
+  "hubTitle": "Free tools & guides — go ka"
+ },
+ {
+  "path": "/tools/pt-br/",
+  "lang": "pt-BR",
+  "kind": "CollectionPage",
+  "title": "Ferramentas e guias grátis — go ka",
+  "description": "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.",
+  "faq": [],
+  "published": null,
+  "app": null,
+  "hubTitle": "Ferramentas e guias grátis — go ka"
+ }
+]

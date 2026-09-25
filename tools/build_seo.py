@@ -25,6 +25,8 @@ BRAND = CFG["site"]["brand"]
 EMAIL = CFG["site"]["email"]
 APPS = [a for a in CFG["apps"] if not a["key"].startswith("_")]
 HOME = CFG.get("home")
+TOOLS_PATH = ROOT / "tools/tools.json"      # build_tools.py 写的工具页清单
+TOOLS = json.loads(TOOLS_PATH.read_text(encoding="utf-8")) if TOOLS_PATH.exists() else []
 DEV_URL = CFG["site"].get("developerUrl")
 HOME_APPS = sorted((a for a in APPS if a.get("home") and a.get("live")), key=lambda a: a["home"]["order"])
 CHECK = "--check" in sys.argv
@@ -66,6 +68,10 @@ def pages():
     """产出 (url_path, html_path, app, kind)。kind: home / product / legal；home 的 app 是 None。"""
     if HOME and (ROOT / "index.html").exists():
         yield "/", ROOT / "index.html", None, "home"
+    for tp in TOOLS:
+        f = ROOT / tp["path"].strip("/") / "index.html"
+        if f.exists():
+            yield tp["path"], f, tp, "tool"
     for app in APPS:
         p = ROOT / app["path"].strip("/") / "index.html" if app["path"] != "/" else ROOT / "index.html"
         if p.exists():
@@ -123,9 +129,9 @@ Sitemap: {ORIGIN}/sitemap.xml
 def build_sitemap():
     rows = []
     for url, path, app, kind in pages():
-        if app is not None and not app.get("live"):
+        if app is not None and kind != "tool" and not app.get("live"):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
-        rows.append((url, git_lastmod(path), {"home": "1.0", "product": "0.9"}.get(kind, "0.3")))
+        rows.append((url, git_lastmod(path), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
     rows.sort(key=lambda r: (r[0] != "/", r[0]))
     body = "\n".join(
         f"  <url>\n    <loc>{ORIGIN}{u}</loc>\n    <lastmod>{m}</lastmod>\n"
@@ -164,6 +170,11 @@ def build_llms():
             out.append(f"- Free: {a['free']}")
         if a.get("paid"):
             out.append(f"- Paid: {a['paid']}")
+        out.append("")
+    if TOOLS:
+        out += ["## Free tools & guides", ""]
+        for tp in TOOLS:
+            out.append(f"- [{tp['hubTitle']}]({ORIGIN}{tp['path']}) — {tp['description']}")
         out.append("")
     if HOME and HOME.get("faq"):
         out += ["## FAQ", ""]
@@ -410,6 +421,51 @@ def home_legal_html():
     return ('<!-- legal:start -->\n        <ul class="legal">\n' + "\n".join(rows)
             + "\n        </ul>\n        <!-- legal:end -->")
 
+def tool_head(tp):
+    url, lang = tp["path"], tp["lang"]; canonical = f"{ORIGIN}{url}"
+    title, desc = tp["title"], tp["description"]; img = asset(HOME["ogImage"])
+    lines = [START, '<meta name="description" content="%s">' % esc(desc), f'<link rel="canonical" href="{canonical}">',
+             '<meta property="og:type" content="%s">' % ("article" if tp["kind"] == "Article" else "website"),
+             '<meta property="og:site_name" content="%s">' % esc(BRAND), '<meta property="og:title" content="%s">' % esc(title),
+             '<meta property="og:description" content="%s">' % esc(desc), f'<meta property="og:url" content="{canonical}">',
+             f'<meta property="og:image" content="{img}">', '<meta name="twitter:card" content="summary_large_image">',
+             '<meta name="twitter:title" content="%s">' % esc(title), '<meta name="twitter:description" content="%s">' % esc(desc),
+             f'<meta name="twitter:image" content="{img}">']
+    hub = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
+    page = {"@context": "https://schema.org", "@type": tp["kind"], "@id": f"{canonical}#page", "url": canonical, "name": title,
+            "headline": title, "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{ORIGIN}/#website"},
+            "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True}
+    if tp.get("published"):
+        page["datePublished"] = tp["published"]; page["dateModified"] = git_lastmod(ROOT / url.strip("/") / "index.html")
+    if tp["kind"] == "WebApplication":
+        page.update({"applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript",
+                     "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}})
+    if tp.get("app"):
+        page["about"] = {"@id": f"{ORIGIN}{next(a['path'] for a in APPS if a['key'] == tp['app'])}#app"}
+    crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home" if lang == "en" else "Início", "item": f"{ORIGIN}/"},
+        {"@type": "ListItem", "position": 2, "name": "Tools" if lang == "en" else "Ferramentas", "item": f"{ORIGIN}{hub}"}]}
+    if url != hub:
+        crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
+    blobs = [page, crumbs]
+    if tp.get("faq"):
+        blobs.append({"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{canonical}#faq", "inLanguage": lang,
+                      "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})
+    for b in blobs:
+        lines.append('<script type="application/ld+json">\n%s\n</script>' % json.dumps(b, ensure_ascii=False, indent=2))
+    lines.append(END)
+    return "\n".join(lines) + "\n"
+
+def patch_tool(path: Path, tp):
+    html = path.read_text(encoding="utf-8")
+    head_end = html.lower().find("</head>")
+    if head_end == -1:
+        return None
+    head, rest = html[:head_end], html[head_end:]
+    for pat in OWNED:
+        head = re.sub(pat, "", head, flags=re.S | re.I)
+    return head.rstrip() + "\n" + tool_head(tp) + rest
+
 def patch_home(path: Path):
     html = path.read_text(encoding="utf-8")
     head_end = html.lower().find("</head>")
@@ -481,7 +537,7 @@ def main():
     write("sitemap.xml", sitemap)
     write("llms.txt", build_llms())
     for url, path, app, kind in pages():
-        out = patch_home(path) if kind == "home" else patch(path, url, app, kind)
+        out = patch_home(path) if kind == "home" else patch_tool(path, app) if kind == "tool" else patch(path, url, app, kind)
         if out is None:
             print(f"  !! 没有 </head>，跳过：{path}")
             continue
