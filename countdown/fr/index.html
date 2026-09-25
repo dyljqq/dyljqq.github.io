@@ -1,54 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compte à rebours avec widget — Gratuit, événements illimités</title>
-<link rel="icon" href="../../assets/countdown/icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root{
-    color-scheme: light dark;
-    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
-    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
-      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
-    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
-  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
-  a{color:var(--brand-deep)}
-  .hero{padding:64px 0 8px;text-align:center}
-  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
-  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
-  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
-  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
-    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
-  .cta:hover{background:var(--brand-deep)}
-  .meta{margin-top:14px;color:var(--muted);font-size:14px}
-  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
-  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
-  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
-  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
-  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-  .card h3{margin:0 0 8px;font-size:18px}
-  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
-  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
-  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
-  td.yes{color:var(--brand-deep);font-weight:600}
-  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
-  .band p{color:var(--muted);margin:8px 0 0}
-  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
-    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
-  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
-  footer a{margin-right:18px}
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.">
@@ -107,7 +126,24 @@
   "sameAs": [
     "https://apps.apple.com/app/id6799846628"
   ],
-  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png"
+  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/12/5e/d7/125ed72a-3171-1e13-e53a-5dcadf86e518/01-watch-it-closer.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a3/e1/d5a3e130-83d4-84ee-4462-7951bfd3a73c/02-turn-it-over.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/06/a7/1e06a70b-a7f4-fec0-c797-50ffc9893558/03-see-every-day.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/43/7a/57437a87-02b6-c609-a131-d05059676ed9/04-dress-it-up.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/40/ec/1140ec37-991f-e428-aad2-4c5813e52801/05-your-photo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/9b/47/409b4762-dadf-e596-d5b8-8789edc52eff/06-keep-the-memories.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "Countdown Widget: Décompte — app preview",
+    "description": "Un compte à rebours qui ne perd jamais vos jours — et qui ne vous prive jamais d'un widget.",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/countdown/preview/fr.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/countdown/preview/fr.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "fr"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -179,94 +215,58 @@
 <!-- seo:end -->
 </head>
 <body>
-<main>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">Toutes les applications</a>
+    <a href="/countdown/privacy-policy/">Confidentialité</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown Widget">Support</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <img class="icon" src="../../assets/countdown/icon.png" alt="Icône de l'appli Countdown Widget: Décompte" width="92" height="92">
-    <h1>Compte à rebours avec widget, gratuit et sans limite d'événements.</h1>
-    <p class="tagline">Combien de jours avant les vacances, le mariage, le bac, la retraite ? Le widget répond sur l'écran d'accueil et l'écran de verrouillage — toutes les tailles, gratuitement. Autant d'événements que vous voulez : il n'y a pas de limite, et il n'y en aura jamais.</p>
-    <a class="cta" href="https://apps.apple.com/fr/app/id6799846628">Télécharger dans l'App Store</a>
-    <p class="meta">Gratuit · iPhone et iPad · iOS 17+ · Sans compte · Sans publicité, jamais · <a href="../" hreflang="en" lang="en">English</a></p>
-  </section>
-
-  <section class="shots">
-    <img src="../../assets/countdown/home.jpg" alt="Widgets de compte à rebours sur l'écran d'accueil de l'iPhone" loading="lazy">
-    <img src="../../assets/countdown/detail.jpg" alt="Compte à rebours en plein écran avec les jours restants" loading="lazy">
-    <img src="../../assets/countdown/backdrops.jpg" alt="Sélecteur de fonds d'écran en plein écran" loading="lazy">
-    <img src="../../assets/countdown/backups.jpg" alt="Trente jours de sauvegardes sur l'appareil, restaurables d'un geste" loading="lazy">
-  </section>
-
-  <h2>Deux choses que la plupart des applis de compte à rebours ratent</h2>
-  <p class="lede">Le widget est toute la raison d'être d'une appli de compte à rebours, et les événements sont toute la raison d'être du widget. La plupart des applis font payer le premier et limitent les seconds.</p>
-  <table>
-    <thead><tr><th>&nbsp;</th><th>Appli de compte à rebours typique</th><th>Celle-ci</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Widgets</strong></td><td>Réservés à Pro, ou une seule taille</td><td class="yes">Toutes les tailles, écran d'accueil et de verrouillage, gratuit</td></tr>
-      <tr><td><strong>Événements</strong></td><td>Trois à cinq en version gratuite</td><td class="yes">Illimités, pour toujours</td></tr>
-      <tr><td><strong>Rappels</strong></td><td>Fonction Pro</td><td class="yes">Gratuits, le jour même et aussi tôt que vous voulez</td></tr>
-      <tr><td><strong>Vos données</strong></td><td>Perdues après une mauvaise mise à jour ou une réinstallation</td><td class="yes">Sauvegardées chaque jour sur l'appareil, 30 jours d'historique</td></tr>
-      <tr><td><strong>Ce que Pro vend</strong></td><td>Les fonctions dont vous aviez déjà besoin</td><td class="yes">Des fonds d'écran. Rien qui fasse marcher l'appli</td></tr>
-    </tbody>
-  </table>
-
-  <h2>Ce pour quoi on compte les jours en France</h2>
-  <p class="lede">Un geste, l'événement est créé ; vous choisissez s'il revient chaque année. Les jours fériés sont déjà dans la liste.</p>
-  <div class="grid">
-    <div class="card">
-      <h3>Vacances &amp; voyage</h3>
-      <p>Combien de jours avant le départ. Après le voyage, l'événement devient un souvenir, avec photo et note au dos.</p>
-    </div>
-    <div class="card">
-      <h3>Mariage</h3>
-      <p>Une date qui ne doit pas passer inaperçue. Le jour même, compte à rebours en plein écran et une carte prête à partager.</p>
-    </div>
-    <div class="card">
-      <h3>Noël &amp; Nouvel An</h3>
-      <p>Le décompte jusqu'au réveillon, qui repart tout seul chaque année. Les années passées restent dans la frise.</p>
-    </div>
-    <div class="card">
-      <h3>Bac &amp; examens</h3>
-      <p>Le chiffre reste dans le widget, sur l'écran de verrouillage, sans ouvrir l'appli. Rappel à 100 jours, à une semaine et le matin même.</p>
-    </div>
-    <div class="card">
-      <h3>Retraite</h3>
-      <p>Compter les jours avant la retraite — ou avant la fin du CDD, la remise des clés, le déménagement. Pâques, le 14 juillet et la Toussaint sont déjà prêts.</p>
-    </div>
-    <div class="card">
-      <h3>Anniversaire, bébé, jours ensemble</h3>
-      <p>Anniversaires et fêtes reviennent chaque année. La date prévue d'accouchement est un compte à rebours ; « ensemble depuis » compte dans l'autre sens : combien de jours depuis la date.</p>
-    </div>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Countdown Widget: Décompte</h1>
+    <div class="lede"><p>Un compte à rebours qui ne perd jamais vos jours — et qui ne vous prive jamais d&#x27;un widget.</p><p>Ajoutez le jour qui compte, posez-le sur votre écran d&#x27;accueil, et regardez-le approcher. Aucune limite au nombre que vous gardez, et rien entre vous et le nombre.</p></div>
+    <a class="cta" href="https://apps.apple.com/fr/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Télécharger dans l&#x27;App Store</a>
+    <ul class="chips"><li>Gratuit à télécharger</li><li>iPhone et iPad</li><li>iOS 17 ou ultérieur</li><li>Aucun compte requis</li></ul>
   </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/countdown/preview/fr.jpg" aria-label="Countdown Widget: Décompte — aperçu de l&#x27;application"><source src="/assets/countdown/preview/fr.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
 
-  <h2>Le reste</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Compter à rebours, ou depuis</h3>
-      <p>Jusqu'à une date, ou à partir d'une date. Répétition annuelle, mensuelle, hebdomadaire ou tous les quelques jours.</p>
-    </div>
-    <div class="card">
-      <h3>Rien ne quitte votre iPhone</h3>
-      <p>Une sauvegarde de tout sur cet appareil, chaque jour, et toujours avant une opération risquée. Un geste pour restaurer.</p>
-    </div>
-    <div class="card">
-      <h3>Les jours passés restent</h3>
-      <p>Les comptes à rebours terminés forment une frise à parcourir, avec la plus longue attente de chaque année notée à côté.</p>
-    </div>
-    <div class="card">
-      <h3>Le moment lui-même</h3>
-      <p>À cent jours, à une semaine ou le matin même, l'appli s'ouvre sur le chiffre, en plein écran, et vous tend une carte à partager.</p>
-    </div>
-    <div class="card">
-      <h3>Prêt en un geste</h3>
-      <p>Trente-six événements prêts, chacun déjà avec la bonne répétition et les bons rappels. Deux cents icônes dessinées et tout le clavier emoji.</p>
-    </div>
-    <div class="card">
-      <h3>Apportez vos événements</h3>
-      <p>Import depuis un calendrier, un tableur ou une autre appli de compte à rebours — et export à tout moment. Synchronisation iCloud, sans créer de compte.</p>
-    </div>
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">Captures d&#x27;écran</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/12/5e/d7/125ed72a-3171-1e13-e53a-5dcadf86e518/01-watch-it-closer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/12/5e/d7/125ed72a-3171-1e13-e53a-5dcadf86e518/01-watch-it-closer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/12/5e/d7/125ed72a-3171-1e13-e53a-5dcadf86e518/01-watch-it-closer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a3/e1/d5a3e130-83d4-84ee-4462-7951bfd3a73c/02-turn-it-over.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a3/e1/d5a3e130-83d4-84ee-4462-7951bfd3a73c/02-turn-it-over.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d5/a3/e1/d5a3e130-83d4-84ee-4462-7951bfd3a73c/02-turn-it-over.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/06/a7/1e06a70b-a7f4-fec0-c797-50ffc9893558/03-see-every-day.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/06/a7/1e06a70b-a7f4-fec0-c797-50ffc9893558/03-see-every-day.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/06/a7/1e06a70b-a7f4-fec0-c797-50ffc9893558/03-see-every-day.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/43/7a/57437a87-02b6-c609-a131-d05059676ed9/04-dress-it-up.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/43/7a/57437a87-02b6-c609-a131-d05059676ed9/04-dress-it-up.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/43/7a/57437a87-02b6-c609-a131-d05059676ed9/04-dress-it-up.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/40/ec/1140ec37-991f-e428-aad2-4c5813e52801/05-your-photo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/40/ec/1140ec37-991f-e428-aad2-4c5813e52801/05-your-photo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/40/ec/1140ec37-991f-e428-aad2-4c5813e52801/05-your-photo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/9b/47/409b4762-dadf-e596-d5b8-8789edc52eff/06-keep-the-memories.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/9b/47/409b4762-dadf-e596-d5b8-8789edc52eff/06-keep-the-memories.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/9b/47/409b4762-dadf-e596-d5b8-8789edc52eff/06-keep-the-memories.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7d/79/437d795a-cf1d-a168-0af7-cd3892d1db7a/07-pick-your-widget.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7d/79/437d795a-cf1d-a168-0af7-cd3892d1db7a/07-pick-your-widget.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/7d/79/437d795a-cf1d-a168-0af7-cd3892d1db7a/07-pick-your-widget.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/0b/81/390b81bf-13a3-78e2-eaf7-f79e1c520175/08-every-event-one-place.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/0b/81/390b81bf-13a3-78e2-eaf7-f79e1c520175/08-every-event-one-place.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/0b/81/390b81bf-13a3-78e2-eaf7-f79e1c520175/08-every-event-one-place.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9e/54/219e5428-291a-fb33-fa9a-77d747ae2180/09-start-from-a-template.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9e/54/219e5428-291a-fb33-fa9a-77d747ae2180/09-start-from-a-template.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/9e/54/219e5428-291a-fb33-fa9a-77d747ae2180/09-start-from-a-template.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/f6/c5/ecf6c527-85a6-4400-4591-072351dfcd64/10-keep-every-day-safe.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/f6/c5/ecf6c527-85a6-4400-4591-072351dfcd64/10-keep-every-day-safe.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/f6/c5/ecf6c527-85a6-4400-4591-072351dfcd64/10-keep-every-day-safe.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Décompte — capture d&#x27;écran 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">Ce qu&#x27;il contient</h2>
+  <div class="feats">
+    <div class="feat"><h3>Chaque widget, gratuit</h3><ul><li>Quatre widgets : un compte à rebours, les prochains en liste, un grand format, ou une tuile par événement</li><li>Toutes les tailles de widget, sur l&#x27;écran d&#x27;accueil et l&#x27;écran verrouillé</li><li>Événements illimités — sans plafond, aujourd&#x27;hui comme demain</li><li>Comptez jusqu&#x27;à une date, ou depuis une date</li><li>Événements récurrents : chaque année, chaque mois, chaque semaine, ou tous les quelques jours</li><li>Rappels le jour même, et aussi longtemps à l&#x27;avance que vous le souhaitez</li><li>Synchronisation iCloud, sans compte à créer</li><li>Importez depuis un calendrier, un tableur ou une autre app de compte à rebours — et exportez quand vous voulez</li><li>Aucune publicité</li></ul></div>
+    <div class="feat"><h3>Vos jours, gardés</h3><p>Le reproche le plus courant dans cette catégorie : « la mise à jour a tout effacé ». Cette app enregistre chaque jour un instantané de tous vos événements sur cet appareil, et toujours avant une opération risquée. Trente jours d&#x27;historique, une touche pour restaurer, et rien ne quitte jamais votre téléphone. Les jours déjà passés ne sont pas supprimés non plus : ils forment une frise que vous pouvez remonter, avec la plus longue attente de chaque année inscrite à côté.</p></div>
+    <div class="feat"><h3>Le moment lui-même</h3><p>Quand un compte à rebours atteint une étape — cent jours, une semaine, le matin même — l&#x27;app s&#x27;ouvre sur le nombre en plein écran et vous donne une carte à partager.</p></div>
+    <div class="feat"><h3>Le dos de chaque événement</h3><p>Touchez un événement : il se retourne sur une page à lui. Écrivez quelques lignes, ajoutez des photos, enregistrez une voix — l’histoire du jour, gardée avec le jour. Elle se synchronise avec iCloud, entre dans chaque sauvegarde et se partage en une seule image.</p></div>
+    <div class="feat"><h3>Fait pour vous ressembler</h3><p>Trente-six modèles prêts à l&#x27;emploi, de l&#x27;anniversaire au premier jour de travail, avec la bonne répétition et les bons rappels déjà réglés. Deux cents icônes dessinées et tout le clavier emoji. Cent quarante fonds plein écran, dont vingt-deux photographies et quatre-vingt-huit en Pro.</p></div>
+    <div class="feat"><h3>Countdown Pro</h3><p>Pro vend la finition, jamais la fonction. Il déverrouille les fonds Pro, avec une nouveauté chaque mois. Tout ce que vous déverrouillez pendant l&#x27;abonnement reste à vous — l&#x27;annulation empêche seulement l&#x27;arrivée des nouveautés. Vos comptes à rebours, rappels et widgets fonctionnent pareil, abonné ou non.</p></div>
   </div>
+  <details class="fine"><summary>Tarification et conditions d&#x27;abonnement</summary><p>Countdown Pro est un abonnement à renouvellement automatique. Les prix de la formule annuelle, qui comprend un essai gratuit de 7 jours, et de la formule mensuelle sont affichés dans l’app avant l’achat. Le paiement est débité de votre compte Apple à la confirmation de l’achat. Il se renouvelle automatiquement sauf résiliation au moins 24 heures avant la fin de la période en cours ; vous pouvez le gérer ou le résilier à tout moment dans les réglages de votre compte Apple. Un achat unique à vie est également proposé ; il ne se renouvelle pas.</p></details>
+</section>
 
-<!-- faq:start -->
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
   <h2 id="faq">Questions fréquentes</h2>
   <div class="grid">
     <div class="card">
@@ -299,35 +299,47 @@
     </div>
   </div>
   <!-- faq:end -->
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">À propos de Pro</h2>
-    <p>Pro vend la finition, jamais la fonction. Il débloque les fonds d'écran Pro — 90 des 122 — avec des nouveaux chaque mois. Ce que vous débloquez pendant l'abonnement reste à vous pour toujours ; résilier arrête seulement l'arrivée des nouveaux. Vos comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans.</p>
-    <p>9,99 € par an avec 7 jours d'essai gratuit, ou 1,99 € par mois. L'achat unique à vie coûte 17,99 € et ne se renouvelle pas.</p>
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">Cette page dans d&#x27;autres langues</p>
+  <ul class="langs">
+      <li><a href="/countdown/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/countdown/fr/" hreflang="fr" lang="fr" aria-current="page">Français</a></li>
+      <li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+      <li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/countdown/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">Plus de go ka</h2>
+  <div class="others">
+      <a href="/beforego/fr/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/invoiceqr/fr/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
   </div>
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">Assistance</h2>
-    <p>Une question, un retour, un souci avec un achat ? Écrivez à <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (en français ou en anglais). Chaque message est lu, avec une réponse en général sous deux jours ouvrés.</p>
-  </div>
-
-  <div class="band">
-    <h2 style="margin-top:0">Autres applis</h2>
-    <div class="apps">
-      <a href="../../">BeforeGo — Packing List</a>
-      <a href="../../invoiceqr/">Invoice Maker</a>
-      <a href="../../dailycalorie/">DailyCalorie</a>
-      <a href="../../qrcodestudio/">QR Code Studio</a>
-    </div>
-  </div>
-
-  <footer>
-    <a href="../privacy-policy/">Politique de confidentialité (en anglais)</a>
-    <a href="../terms-of-service/">Conditions d'utilisation (en anglais)</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Contact</a>
-    <p style="margin-top:18px">Countdown est une appli indépendante. Faite par un seul développeur.</p>
-  </footer>
-
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/fr/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Obtenir Countdown Widget: Décompte</a>
+</div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p>Countdown Widget: Décompte est créé par go ka. Questions ou commentaires : <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/countdown/privacy-policy/">Politique de confidentialité</a> · <a href="/countdown/terms-of-service/">Conditions d&#x27;utilisation</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
 </body>
 </html>

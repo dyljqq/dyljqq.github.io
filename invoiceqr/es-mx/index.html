@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nota de Venta, Cotización — Notas de venta, cotizaciones y QR de pago al instante</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.">
+<link rel="canonical" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/invoiceqr/">
+<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/invoiceqr/de/">
+<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/invoiceqr/fr/">
+<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/invoiceqr/it/">
+<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/invoiceqr/es/">
+<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/invoiceqr/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/invoiceqr/ja/">
+<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/invoiceqr/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/invoiceqr/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/invoiceqr/th/">
+<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/invoiceqr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Nota de Venta, Cotización — Notas de venta, cotizaciones y QR de pago al instante">
+<meta property="og:description" content="Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.">
+<meta property="og:url" content="https://goka-xi.vercel.app/invoiceqr/es-mx/">
+<meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:title" content="Nota de Venta, Cotización — Notas de venta, cotizaciones y QR de pago al instante">
+<meta name="twitter:description" content="Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.">
+<meta name="apple-itunes-app" content="app-id=6790383156">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/es-mx/#app",
+  "name": "Nota de Venta, Cotización",
+  "alternateName": "Invoice Maker",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
+  "url": "https://goka-xi.vercel.app/invoiceqr/es-mx/",
+  "inLanguage": "es-MX",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6790383156",
+  "installUrl": "https://apps.apple.com/app/id6790383156",
+  "sameAs": [
+    "https://apps.apple.com/app/id6790383156"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/b5/06/b1b50610-e40f-5a6c-640c-e5a86b2ed147/02-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/12/4a/c1124a86-6cab-a29c-e3b7-c080f10c2ce0/05-templates.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/c7/c9/2fc7c94e-9753-112c-7dbb-63e601ea9921/01-home.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/4a/26/4b4a267f-082b-d42b-ef18-96263893d368/12-scan-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/42/ae/fd42ae33-0698-3c95-3ff9-57f9b2733536/08-payment.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/6b/f1/3a6bf1fa-69a4-9fb6-07b8-7f48b67039ee/09-reports.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "Nota de Venta, Cotización — app preview",
+    "description": "La forma más rápida para freelancers y pequeñas empresas de crear cotizaciones, notas de venta, remisiones y recibos profesionales — y cobrar antes por transferencia (CLABE) o con un código QR de pago",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "es-MX"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/es-mx/#faq",
+  "inLanguage": "es-MX",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay una app de notas de venta para iPhone que no necesite crear cuenta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Nota de Venta, Cotización no tiene cuenta ni registro, y funciona sin conexión. Notas de venta, clientes y códigos QR se sincronizan por tu iCloud si los necesitas en varios dispositivos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos documentos puedo crear gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres documentos al mes. Se cuentan cuando los creas, no cuando los envías, y notas de venta, cotizaciones y remisiones comparten el mismo límite. Un documento ya creado se cuenta una sola vez, así que editarlo o reenviarlo después es gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puede el cliente pagar directo desde la nota de venta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cada nota de venta puede incluir un código QR de pago que el cliente escanea para pagar. Luego registras el pago en la app y la nota pasa entre pendiente, parcial, pagada y vencida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo convertir una cotización en nota de venta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y reutilizan, y puedes añadir descuentos, envío, formas de pago y términos reutilizables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hace códigos QR para algo más que pagos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de ellos gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo recuperar un documento que eliminé por error?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Eliminados recientemente guarda los documentos durante 30 días."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué desbloquea Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Documentos y exportaciones QR ilimitadas, todos los modelos de nota de venta, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">Todas las apps</a>
+    <a href="/invoiceqr/privacy-policy/">Privacidad</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Invoice Maker">Soporte</a>
+  </nav>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/a5/0d/59a50d64-478d-ca8f-1d9e-22d7a27354de/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Nota de Venta, Cotización</h1>
+    <div class="lede"><p>La forma más rápida para freelancers y pequeñas empresas de crear cotizaciones, notas de venta, remisiones y recibos profesionales — y cobrar antes por transferencia (CLABE) o con un código QR de pago.</p><p>Esta app crea documentos comerciales. No emite CFDI ni facturas fiscales ante el SAT: guarda el RFC, código postal, régimen y uso CFDI de tu cliente para que tu contador facture con ellos.</p></div>
+    <a class="cta" href="https://apps.apple.com/mx/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Descargar en el App Store</a>
+    <ul class="chips"><li>Gratis para descargar</li><li>iPhone e iPad</li><li>iOS 17 o posterior</li><li>Sin cuenta necesaria</li></ul>
+  </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="Nota de Venta, Cotización — vista previa de la app"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
+
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">Capturas de pantalla</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/b5/06/b1b50610-e40f-5a6c-640c-e5a86b2ed147/02-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/b5/06/b1b50610-e40f-5a6c-640c-e5a86b2ed147/02-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/b5/06/b1b50610-e40f-5a6c-640c-e5a86b2ed147/02-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/12/4a/c1124a86-6cab-a29c-e3b7-c080f10c2ce0/05-templates.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/12/4a/c1124a86-6cab-a29c-e3b7-c080f10c2ce0/05-templates.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/12/4a/c1124a86-6cab-a29c-e3b7-c080f10c2ce0/05-templates.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/c7/c9/2fc7c94e-9753-112c-7dbb-63e601ea9921/01-home.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/c7/c9/2fc7c94e-9753-112c-7dbb-63e601ea9921/01-home.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/c7/c9/2fc7c94e-9753-112c-7dbb-63e601ea9921/01-home.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/4a/26/4b4a267f-082b-d42b-ef18-96263893d368/12-scan-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/4a/26/4b4a267f-082b-d42b-ef18-96263893d368/12-scan-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/4a/26/4b4a267f-082b-d42b-ef18-96263893d368/12-scan-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/42/ae/fd42ae33-0698-3c95-3ff9-57f9b2733536/08-payment.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/42/ae/fd42ae33-0698-3c95-3ff9-57f9b2733536/08-payment.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/42/ae/fd42ae33-0698-3c95-3ff9-57f9b2733536/08-payment.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/6b/f1/3a6bf1fa-69a4-9fb6-07b8-7f48b67039ee/09-reports.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/6b/f1/3a6bf1fa-69a4-9fb6-07b8-7f48b67039ee/09-reports.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3a/6b/f1/3a6bf1fa-69a4-9fb6-07b8-7f48b67039ee/09-reports.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/52/98/ae529861-80e8-b4fe-1aa6-caf53fb57756/06-invoice-design.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/52/98/ae529861-80e8-b4fe-1aa6-caf53fb57756/06-invoice-design.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/52/98/ae529861-80e8-b4fe-1aa6-caf53fb57756/06-invoice-design.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/1c/04/331c04dc-cfd0-023e-af09-7f6d689a912c/07-brand-kit.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/1c/04/331c04dc-cfd0-023e-af09-7f6d689a912c/07-brand-kit.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/1c/04/331c04dc-cfd0-023e-af09-7f6d689a912c/07-brand-kit.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e3/f3/7b/e3f37b89-a3a5-0a07-c82a-c864093253b0/11-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e3/f3/7b/e3f37b89-a3a5-0a07-c82a-c864093253b0/11-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e3/f3/7b/e3f37b89-a3a5-0a07-c82a-c864093253b0/11-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/f6/b8/f3f6b89b-66e4-152b-f07e-b444bb43deb5/03-qr-designer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/f6/b8/f3f6b89b-66e4-152b-f07e-b444bb43deb5/03-qr-designer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/f6/b8/f3f6b89b-66e4-152b-f07e-b444bb43deb5/03-qr-designer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Nota de Venta, Cotización — captura 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">Qué contiene</h2>
+  <div class="feats">
+    <div class="feat"><h3>Crea documentos en minutos</h3><ul><li>Elige una de 100+ plantillas, agrega cliente y conceptos y comparte un PDF impecable</li><li>Escanea una factura en papel —o elige una foto— y se convierte en un borrador editable; la página se lee en tu dispositivo — la revisión de IA opcional solo la envía a Google si tú lo pides</li><li>Envía primero una cotización y conviértela en nota de venta con un toque; la remisión lleva la firma de quien recibe</li><li>Guarda clientes, artículos e impuestos para reutilizarlos con un toque</li><li>Descuentos, envío, formas de pago y condiciones reutilizables</li><li>Firma a mano alzada directamente en la pantalla del iPhone</li></ul></div>
+    <div class="feat"><h3>Cobra con un escaneo</h3><ul><li>Cada documento puede llevar tus datos de transferencia (banco, CLABE, beneficiario) o un código QR con tu link de pago</li><li>Retenciones de ISR (10 % o 1.25 % RESICO) e IVA (dos terceras partes) con un interruptor: el documento termina en «Total a pagar»</li><li>Comparte por WhatsApp, correo o impresión</li><li>Controla el estado de un vistazo: pagada, pendiente, parcial y vencida</li><li>Registra pagos y mantén el saldo pendiente siempre exacto</li><li>Los informes de ventas muestran ingresos por mes, tus mejores clientes y lo pendiente de cobro</li><li>¿Está pagada por completo? Comparte el documento como recibo: el mismo documento, marcado como pagado y con la fecha de cobro</li></ul></div>
+    <div class="feat"><h3>Tu marca en todo</h3><ul><li>Configura tu logo, color de marca y fuentes una sola vez</li><li>Documentos, plantillas y diseños QR adoptan tu marca automáticamente</li></ul></div>
+    <div class="feat"><h3>Y un estudio de códigos QR</h3><ul><li>12 tipos de QR: enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix</li><li>16 diseños listos: cartel, carta de menú, etiqueta de oferta, neón, tarjeta de presentación y más, además de tus colores, puntos, marcos y degradados</li><li>Se comprueba el contraste y la zona de silencio: siempre escaneable y listo para exportar como imagen, compartir o imprimir</li></ul></div>
+    <div class="feat"><h3>En tu pantalla de inicio</h3><ul><li>Tres widgets: lo que te deben, accesos para crear al instante y un QR de cobro listo para escanear</li><li>El código se muestra a tamaño grande: enséñalo sin abrir la app</li><li>50 fondos, más tipografía y color de texto a tu gusto</li></ul></div>
+    <div class="feat"><h3>Seguro y sincronizado</h3><ul><li>Documentos, clientes y códigos QR se sincronizan en privado con tu propio iCloud</li><li>Cambia de iPhone y todo sigue ahí</li><li>Eliminados recientemente guarda los documentos 30 días: un toque en falso nunca es definitivo</li><li>Sin cuenta ni registro, y funciona sin conexión</li><li>13 idiomas de interfaz, apariencia clara y oscura</li></ul></div>
+    <div class="feat"><h3>Empieza gratis</h3><ul><li>Crea 3 documentos gratis, sin cuenta ni registro</li><li>Son 3 en total, no 3 al mes: notas de venta y cotizaciones comparten el mismo cupo; las remisiones no lo consumen</li><li>Se cuenta al crearlo y solo una vez por documento: editarlo o volver a enviarlo después no consume nada</li><li>4 de los diseños QR listos son gratis, sin necesidad de Pro</li><li>Los archivos exportados llevan al pie de página una línea pequeña con el nombre de la app; con Pro se desactiva</li></ul></div>
+    <div class="feat"><h3>Pro</h3><ul><li>Documentos y exportaciones QR ilimitados</li><li>100+ plantillas de documento, los 12+ estilos QR y los 16+ diseños listos</li><li>Kit de marca completo: color, fuente y logo</li><li>Colores, puntos y marcos QR personalizados</li><li>Quitar la línea con el nombre de la app de los archivos exportados</li></ul><p>¿Dudas o comentarios? Escríbenos desde el enlace de soporte de esta página.</p><p>Nota: esta app crea cotizaciones, recibos y notas de venta comerciales. No emite CFDI ni facturas fiscales ante el SAT.</p><p>Privacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/ Terms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/</p></div>
+  </div>
+
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">Questions people ask</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>¿Hay una app de notas de venta para iPhone que no necesite crear cuenta?</h3>
+      <p>Sí. Nota de Venta, Cotización no tiene cuenta ni registro, y funciona sin conexión. Notas de venta, clientes y códigos QR se sincronizan por tu iCloud si los necesitas en varios dispositivos.</p>
+    </div>
+    <div class="card">
+      <h3>¿Cuántos documentos puedo crear gratis?</h3>
+      <p>Tres documentos al mes. Se cuentan cuando los creas, no cuando los envías, y notas de venta, cotizaciones y remisiones comparten el mismo límite. Un documento ya creado se cuenta una sola vez, así que editarlo o reenviarlo después es gratis.</p>
+    </div>
+    <div class="card">
+      <h3>¿Puede el cliente pagar directo desde la nota de venta?</h3>
+      <p>Sí. Cada nota de venta puede incluir un código QR de pago que el cliente escanea para pagar. Luego registras el pago en la app y la nota pasa entre pendiente, parcial, pagada y vencida.</p>
+    </div>
+    <div class="card">
+      <h3>¿Puedo convertir una cotización en nota de venta?</h3>
+      <p>Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y reutilizan, y puedes añadir descuentos, envío, formas de pago y términos reutilizables.</p>
+    </div>
+    <div class="card">
+      <h3>¿Hace códigos QR para algo más que pagos?</h3>
+      <p>Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de ellos gratis.</p>
+    </div>
+    <div class="card">
+      <h3>¿Puedo recuperar un documento que eliminé por error?</h3>
+      <p>Sí. Eliminados recientemente guarda los documentos durante 30 días.</p>
+    </div>
+    <div class="card">
+      <h3>¿Qué desbloquea Pro?</h3>
+      <p>Documentos y exportaciones QR ilimitadas, todos los modelos de nota de venta, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">Esta página en otros idiomas</p>
+  <ul class="langs">
+      <li><a href="/invoiceqr/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX" aria-current="page">Español (México)</a></li>
+      <li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">Más de go ka</h2>
+  <div class="others">
+      <a href="/countdown/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/beforego/es-mx/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/mx/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Obtener Nota de Venta, Cotización</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Nota de Venta, Cotización lo hace go ka. ¿Preguntas o comentarios?: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/invoiceqr/privacy-policy/">Política de privacidad</a> · <a href="/invoiceqr/terms-of-service/">Términos de uso</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+</body>
+</html>

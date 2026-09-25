@@ -195,6 +195,28 @@ def software_jsonld(app):
         d["sameAs"] = [su]
     if app.get("icon"):
         d["image"] = asset(app["icon"])
+    # 生成页：截图和预览视频来自商店缓存 / assets/<key>/preview（与页面上展示的一致）
+    parent = next((a for a in APPS if a["key"] == app.get("variantOf")), None) or app
+    if parent.get("generated"):
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("bp", ROOT / "tools/build_pages.py")
+        cache = json.loads((ROOT / f"tools/store/{parent['key']}.json").read_text(encoding="utf-8"))
+        lang = app.get("lang", "en")
+        L2S = {"en": "en-US", "en-GB": "en-GB", "de": "de-DE", "fr": "fr-FR", "it": "it", "es": "es-ES", "es-MX": "es-MX",
+               "pt-BR": "pt-BR", "ja": "ja", "ko": "ko", "zh-Hans": "zh-Hans", "zh-Hant": "zh-Hant", "th": "th"}
+        st = cache.get(L2S.get(lang, "en-US")) or cache["en-US"]
+        d["screenshot"] = [re.sub(r"/[^/]+$", "/920x0w.webp", u) for u in st["screenshots"][:6]]
+        d["inLanguage"] = lang
+        vf = {"en": "en", "en-GB": "en", "pt-BR": "pt", "es": "en", "es-MX": "en"}.get(lang, lang)
+        for cand in (vf, "en"):
+            f = ROOT / "assets" / parent["key"] / "preview" / f"{cand}.mp4"
+            if f.exists():
+                d["video"] = {"@type": "VideoObject", "name": f"{st['name']} — app preview",
+                              "description": st["description"].split("\n")[0][:200],
+                              "thumbnailUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.jpg",
+                              "contentUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.mp4",
+                              "uploadDate": git_lastmod(f), "inLanguage": lang}
+                break
     return d
 
 def faq_jsonld(app):

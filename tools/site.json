@@ -34,11 +34,11 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo — Packing List & Trip Prep for iPhone",
-      "oneLiner": "A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.",
-      "description": "BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.",
-      "audience": "People who pack from memory and keep forgetting the same one thing.",
-      "free": "Trips, checklists, reminders, widgets and the journal. No account required.",
+      "title": "BeforeGo: AI Itinerary Planner — Trip plans from screenshots, packing list included",
+      "oneLiner": "An AI itinerary planner for iPhone that turns a travel post, link or note into a day-by-day trip plan, and writes the packing list from your destination and dates.",
+      "description": "Screenshot a travel post or paste a link and BeforeGo files it into a day-by-day trip plan. The packing list writes itself from your destination and dates. Free to start, no account.",
+      "audience": "People who plan trips from other people's posts and guides, and pack from memory.",
+      "free": "Free to start — no ads, no account required. Premium unlocks everything; a one-time lifetime purchase is also available.",
       "languages": "English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย",
       "legal": [
         [
@@ -52,24 +52,24 @@
       ],
       "faq": [
         {
-          "q": "What does BeforeGo do that a notes app does not?",
-          "a": "It starts from a destination-specific preparation list — documents, packing, power adapters, money, apps, reminders — instead of a blank page, splits it by phase so you can see what is still open, and keeps urgent items on the Home Screen through reminders and widgets."
+          "q": "What does BeforeGo do with a screenshot of a travel post?",
+          "a": "It files what it finds into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. A pasted link or typed plans work the same way, and a scanned ticket or booking confirmation lands on the plan too."
+        },
+        {
+          "q": "Does it make a packing list?",
+          "a": "Yes. The packing list writes itself from your destination and dates — plugs, currency, entry rules and transit apps for where you are going — grouped by category or by timeline, with packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure."
         },
         {
           "q": "Does it remember what I forgot last time?",
-          "a": "Yes. When a trip ends, whatever you never ticked off is collected in one tap and comes back three days before the next trip as “last time you forgot”. Forget the same thing twice and it still shows up once."
+          "a": "Yes. Forgotten items carry over, so the next packing list starts smarter."
         },
         {
           "q": "Does it need an account?",
-          "a": "No. There is no account to create and nothing to sign up for — open it and start a trip."
+          "a": "No. Free to start — no ads, no account required."
         },
         {
           "q": "What languages does it support?",
           "a": "Ten: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português and ไทย."
-        },
-        {
-          "q": "Can I keep photos and notes from the trip itself?",
-          "a": "Yes. Notes, photos and voice memories stay attached to the trip, including the things you wished you had brought."
         },
         {
           "q": "What does BeforeGo Premium cost?",
@@ -77,7 +77,7 @@
         },
         {
           "q": "Can I rely on it for visa or entry requirements?",
-          "a": "No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources."
+          "a": "No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources before you travel."
         }
       ],
       "home": {
@@ -85,7 +85,537 @@
         "label": "BeforeGo",
         "tagline": "Trip plans from screenshots",
         "blurb": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates."
-      }
+      },
+      "generated": true,
+      "noAccount": true
+    },
+    {
+      "key": "beforego-de",
+      "variantOf": "beforego",
+      "lang": "de",
+      "path": "/beforego/de/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo: KI-Reiseplaner",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo: KI-Reiseplaner — Reiseplan vom Screenshot, Packliste inklusive",
+      "oneLiner": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten.",
+      "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Was macht BeforeGo mit einem Screenshot eines Reise-Posts?",
+          "a": "Es sortiert alles in einen Reiseplan Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht. Ein eingefügter Link oder getippte Pläne funktionieren genauso, und ein gescanntes Ticket oder eine Buchungsbestätigung landet auch im Plan."
+        },
+        {
+          "q": "Erstellt es eine Packliste?",
+          "a": "Ja. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten – Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps für dein Ziel – gruppiert nach Kategorie oder nach Zeitplan, mit Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise."
+        },
+        {
+          "q": "Merkt es sich, was ich letztes Mal vergessen habe?",
+          "a": "Ja. Vergessene Sachen werden übernommen, also startet die nächste Packliste schlauer."
+        },
+        {
+          "q": "Braucht es ein Konto?",
+          "a": "Nein. Kostenlos starten – keine Werbung, kein Konto erforderlich."
+        },
+        {
+          "q": "Welche Sprachen werden unterstützt?",
+          "a": "Zehn: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português und ไทย."
+        },
+        {
+          "q": "Wie viel kostet BeforeGo Premium?",
+          "a": "Premium ist ein automatisch verlängerndes Abo monatlich oder jährlich, und der Jahresplan enthält 7 Tage kostenlos testen für neue Abonnenten. Ein einmaliger lebenslanger Kauf ist auch verfügbar. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt."
+        },
+        {
+          "q": "Kann ich mich auf Visa- oder Einreisebestimmungen verlassen?",
+          "a": "Nein. BeforeGo ist für persönliche Reiseorganisation gedacht und ersetzt keine offiziellen Visa-, Sicherheits-, Gesundheits-, Airline- oder staatlichen Informationen. Überprüfe immer wichtige Anforderungen bei offiziellen Stellen, bevor du reist."
+        }
+      ]
+    },
+    {
+      "key": "beforego-fr",
+      "variantOf": "beforego",
+      "lang": "fr",
+      "path": "/beforego/fr/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "Planificateur voyage BeforeGo",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "Planificateur voyage BeforeGo — Plan de voyage depuis une capture, liste de bagages incluse",
+      "oneLiner": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour. La liste de bagages se fait toute seule selon la destination et les dates.",
+      "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour. La liste de bagages se fait toute seule selon la destination et les dates.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Que fait BeforeGo avec une capture d'un post voyage ?",
+          "a": "Elle classe tout dans un plan de voyage jour par jour : les lieux à voir, ce qu'il faut régler avant le départ et chaque journée prévue dans le post. Un lien collé ou un programme tapé font la même chose, et un billet ou une confirmation de réservation scannée rejoint le plan aussi."
+        },
+        {
+          "q": "Fait-elle une liste de bagages ?",
+          "a": "Oui. La liste de bagages se fait toute seule selon la destination et les dates — prises, monnaie, formalités d'entrée et applis de transport — groupée par catégorie ou par chronologie, avec rappels 7 jours, 3 jours, 24 h et 3 h du départ."
+        },
+        {
+          "q": "Se souvient-elle de ce que j'ai oublié la dernière fois ?",
+          "a": "Oui. Les oublis sont repris, donc la prochaine liste démarre plus futée."
+        },
+        {
+          "q": "Faut-il un compte ?",
+          "a": "Non. Gratuit pour commencer — sans pub, sans compte."
+        },
+        {
+          "q": "Quelles langues sont supportées ?",
+          "a": "Dix : English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português et ไทย."
+        },
+        {
+          "q": "Combien coûte BeforeGo Premium ?",
+          "a": "Premium est un abonnement à renouvellement automatique, mensuel ou annuel, et l'abonnement annuel inclut 7 jours d'essai gratuit pour les nouveaux abonnés. Un achat unique à vie est aussi disponible. Le prix exact est indiqué sur l'écran d'achat avant confirmation."
+        },
+        {
+          "q": "Puis-je m'y fier pour les visas ou les formalités d'entrée ?",
+          "a": "Non. BeforeGo est un outil d'organisation personnelle ; il ne remplace pas les informations officielles de visa, sécurité, santé, compagnies aériennes ou gouvernement. Vérifiez toujours les exigences importantes auprès des sources officielles avant de voyager."
+        }
+      ]
+    },
+    {
+      "key": "beforego-it",
+      "variantOf": "beforego",
+      "lang": "it",
+      "path": "/beforego/it/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo: Itinerari e Bagagli",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo: Itinerari e Bagagli — Piano di viaggio dallo screenshot, lista bagagli inclusa",
+      "oneLiner": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno. La lista bagagli si fa da sola, in base a destinazione e date.",
+      "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno. La lista bagagli si fa da sola, in base a destinazione e date.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Che cosa fa BeforeGo con uno screenshot di un post di viaggio?",
+          "a": "Lo classifica in un piano di viaggio giorno per giorno: i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Un link incollato o piani scritti funzionano allo stesso modo, e un biglietto scansionato o una conferma di prenotazione finisce anche lei nel piano."
+        },
+        {
+          "q": "Fa una lista bagagli?",
+          "a": "Sì. La lista bagagli si fa da sola, in base a destinazione e date — prese, valuta, requisiti d'ingresso e app di trasporto — ordinata per categoria o per cronologia, con promemoria 7 giorni, 3 giorni, 24 ore e 3 ore dalla partenza."
+        },
+        {
+          "q": "Si ricorda di quello che ho dimenticato la volta scorsa?",
+          "a": "Sì. Gli oggetti dimenticati si trasferiscono, quindi la prossima lista parte più preparata."
+        },
+        {
+          "q": "Serve un account?",
+          "a": "No. Gratis per iniziare — senza pubblicità, senza account."
+        },
+        {
+          "q": "Quali lingue sono supportate?",
+          "a": "Dieci: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português e ไทย."
+        },
+        {
+          "q": "Quanto costa BeforeGo Premium?",
+          "a": "Premium è un abbonamento a rinnovo automatico, mensile o annuale, e il piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. È disponibile anche un acquisto singolo a vita. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma."
+        },
+        {
+          "q": "Posso affidarmi a questo per visti o requisiti d'ingresso?",
+          "a": "No. BeforeGo è uno strumento di organizzazione personale; non sostituisce le informazioni ufficiali su visti, salute, sicurezza, compagnie aeree o governo. Verifica sempre i requisiti importanti presso fonti ufficiali prima di viaggiare."
+        }
+      ]
+    },
+    {
+      "key": "beforego-es",
+      "variantOf": "beforego",
+      "lang": "es",
+      "path": "/beforego/es/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "Planificador viajes BeforeGo",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "Planificador viajes BeforeGo — Plan de viaje desde screenshot, lista de equipaje incluida",
+      "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día. La lista de equipaje se escribe sola según tu destino y tus fechas.",
+      "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día. La lista de equipaje se escribe sola según tu destino y tus fechas.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "¿Qué hace BeforeGo con una captura de un post de viajes?",
+          "a": "Lo ordena en un plan de viaje día a día: los lugares que merecen la pena, lo que tienes que hacer antes de salir y cada día que propone el post. Un enlace pegado o planes escritos funcionan igual, y un billete o una confirmación de reserva escaneados también se añaden al plan."
+        },
+        {
+          "q": "¿Hace una lista de equipaje?",
+          "a": "Sí. La lista de equipaje se escribe sola según tu destino y tus fechas — enchufes, moneda, requisitos de entrada y apps de transporte — agrupada por categoría o por cronología, con recordatorios 7 días, 3 días, 24 h y 3 h antes de salir."
+        },
+        {
+          "q": "¿Recuerda lo que olvidé la última vez?",
+          "a": "Sí. Lo olvidado pasa a la próxima lista, así que la próxima empieza más preparada."
+        },
+        {
+          "q": "¿Necesita una cuenta?",
+          "a": "No. Empieza gratis — sin anuncios, sin cuenta."
+        },
+        {
+          "q": "¿Qué idiomas soporta?",
+          "a": "Diez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português y ไทย."
+        },
+        {
+          "q": "¿Cuánto cuesta BeforeGo Premium?",
+          "a": "Premium es una suscripción con renovación automática, mensual o anual, y el plan anual incluye 7 días de prueba gratis para nuevos suscriptores. También hay un desbloqueo vitalicio de pago único. El precio exacto se muestra en la pantalla de compra antes de confirmar."
+        },
+        {
+          "q": "¿Puedo confiar en esto para visados o requisitos de entrada?",
+          "a": "No. BeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad, aerolíneas o gobierno. Verifica siempre los requisitos importantes en fuentes oficiales antes de viajar."
+        }
+      ]
+    },
+    {
+      "key": "beforego-es-mx",
+      "variantOf": "beforego",
+      "lang": "es-MX",
+      "path": "/beforego/es-mx/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "Planificador viajes BeforeGo",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "Planificador viajes BeforeGo — Plan de viaje desde screenshot, lista de equipaje incluida",
+      "oneLiner": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día. La lista de equipaje se arma sola según tu destino y tus fechas.",
+      "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día. La lista de equipaje se arma sola según tu destino y tus fechas.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "¿Qué hace BeforeGo con una captura de un post de viajes?",
+          "a": "Lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post. Un link pegado o planes escritos funcionan igual, y un boleto o una confirmación de reservación escaneados también se agregan al plan."
+        },
+        {
+          "q": "¿Hace una lista de equipaje?",
+          "a": "Sí. La lista de equipaje se arma sola según tu destino y tus fechas — enchufes, moneda, requisitos de entrada y apps de transporte — agrupada por categoría o por cronología, con recordatorios 7 días, 3 días, 24 h y 3 h antes de salir."
+        },
+        {
+          "q": "¿Recuerda lo que olvidé la última vez?",
+          "a": "Sí. Lo olvidado pasa a la próxima lista, así que la próxima empieza más preparada."
+        },
+        {
+          "q": "¿Necesita una cuenta?",
+          "a": "No. Empieza gratis — sin anuncios, sin cuenta."
+        },
+        {
+          "q": "¿Qué idiomas soporta?",
+          "a": "Diez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português y ไทย."
+        },
+        {
+          "q": "¿Cuánto cuesta BeforeGo Premium?",
+          "a": "Premium es una suscripción con renovación automática, mensual o anual, y el plan anual incluye 7 días de prueba gratis para nuevos suscriptores. También hay un desbloqueo vitalicio de pago único. El precio exacto se muestra en la pantalla de compra antes de confirmar."
+        },
+        {
+          "q": "¿Puedo confiar en esto para visados o requisitos de entrada?",
+          "a": "No. BeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad, aerolíneas o gobierno. Verifica siempre los requisitos importantes en fuentes oficiales antes de viajar."
+        }
+      ]
+    },
+    {
+      "key": "beforego-pt-br",
+      "variantOf": "beforego",
+      "lang": "pt-BR",
+      "path": "/beforego/pt-br/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo: Roteiro de Viagem IA",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo: Roteiro de Viagem IA — Roteiro de viagem do screenshot, lista de bagagem incluída",
+      "oneLiner": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia. A lista de bagagem se monta sozinha a partir do destino e das datas.",
+      "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia. A lista de bagagem se monta sozinha a partir do destino e das datas.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "O que BeforeGo faz com um print de um post de viagem?",
+          "a": "Organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere. Um link colado ou planos digitados funcionam do mesmo jeito, e um bilhete ou confirmação de reserva escaneados também entram no roteiro."
+        },
+        {
+          "q": "Faz uma lista de bagagem?",
+          "a": "Sim. A lista de bagagem se monta sozinha a partir do destino e das datas — tomadas, moeda, requisitos de entrada e apps de transporte — agrupada por categoria ou por cronologia, com lembretes 7 dias, 3 dias, 24 h e 3 h antes da partida."
+        },
+        {
+          "q": "Lembra o que eu esqueci da última vez?",
+          "a": "Sim. O que você esqueceu passa para a próxima lista, então a próxima sai mais preparada."
+        },
+        {
+          "q": "Precisa de uma conta?",
+          "a": "Não. Comece grátis — sem anúncios, sem conta."
+        },
+        {
+          "q": "Qual é o suporte de idiomas?",
+          "a": "Dez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português e ไทย."
+        },
+        {
+          "q": "Quanto custa o BeforeGo Premium?",
+          "a": "Premium é uma assinatura com renovação automática, mensal ou anual, e o plano anual inclui 7 dias de teste grátis para novos assinantes. Também há um desbloqueio vitalício de pagamento único. O preço exato aparece na tela de compra antes de confirmar."
+        },
+        {
+          "q": "Posso confiar nisso para vistos ou requisitos de entrada?",
+          "a": "Não. BeforeGo é para organização pessoal de viagens; não substitui informações oficiais de visto, saúde, segurança, companhias aéreas ou governo. Sempre confirme requisitos importantes em fontes oficiais antes de viajar."
+        }
+      ]
+    },
+    {
+      "key": "beforego-ja",
+      "variantOf": "beforego",
+      "lang": "ja",
+      "path": "/beforego/ja/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo：AI旅行計画・旅行チェックリスト",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo：AI旅行計画・旅行チェックリスト — 旅行計画をスクショから作成、持ち物リストも含む",
+      "oneLiner": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
+      "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "BeforeGo は旅の投稿のスクショで何をしますか？",
+          "a": "スクショから日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。リンクを貼ったり、予定を打ち込んだりしても同じように動き、航空券や予約確認をスキャンすればプランに加わります。"
+        },
+        {
+          "q": "持ち物リストを作りますか？",
+          "a": "はい。持ち物リストは行き先と日程から自動で作られます——プラグ、通貨、入国準備、交通アプリ——カテゴリー別・タイムライン別のビューで、出発 7 日前・3 日前・24 時間前・3 時間前にリマインドします。"
+        },
+        {
+          "q": "前に忘れたものを覚えていますか？",
+          "a": "はい。忘れ物は次の持ち物リストへ自動引き継ぎされるので、次の旅行のリストはより準備が整った状態で始まります。"
+        },
+        {
+          "q": "アカウントが必要ですか？",
+          "a": "いいえ。無料で開始——広告なし、アカウント不要です。"
+        },
+        {
+          "q": "どの言語に対応していますか？",
+          "a": "10 言語です：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português、ไทย。"
+        },
+        {
+          "q": "BeforeGo Premium はいくらですか？",
+          "a": "Premium は自動更新のサブスクリプションで、月額と年額があり、年間プランには新規のお客様向けの 7 日間無料トライアルが付いています。買い切りの永久アンロックもあります。正確な価格は購入確認画面に表示されます。"
+        },
+        {
+          "q": "ビザと入国要件に信頼できますか？",
+          "a": "いいえ。BeforeGo は個人の旅行整理のためのアプリです。ビザ、安全、健康、航空会社、政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。"
+        }
+      ]
+    },
+    {
+      "key": "beforego-ko",
+      "variantOf": "beforego",
+      "lang": "ko",
+      "path": "/beforego/ko/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo: AI 여행 플래너·패킹리스트",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo: AI 여행 플래너·패킹리스트 — 스크린샷에서 여행 일정, 패킹리스트 포함",
+      "oneLiner": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
+      "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "BeforeGo는 여행 게시물의 스크린샷으로 무엇을 합니까?",
+          "a": "날짜별 여행 일정으로 정리해 줍니다. 가볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 링크를 붙여넣거나 계획을 입력해도 똑같이 작동하고, 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어갑니다."
+        },
+        {
+          "q": "패킹리스트를 만듭니까?",
+          "a": "네. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다——플러그, 환전, 입국 준비, 교통 앱——카테고리별·타임라인별로 정리되고, 출발 7일·3일·24시간·3시간 전에 알림을 보냅니다."
+        },
+        {
+          "q": "지난번에 잊었던 물건을 기억합니까?",
+          "a": "네. 잊었던 물건은 다음 여행 리스트로 자동 이월되므로, 다음 리스트는 더 준비된 상태로 시작합니다."
+        },
+        {
+          "q": "계정이 필요합니까?",
+          "a": "아니요. 무료로 시작 — 광고 없음, 계정 불필요입니다."
+        },
+        {
+          "q": "어떤 언어를 지원합니까?",
+          "a": "열 가지입니다: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย."
+        },
+        {
+          "q": "BeforeGo Premium의 가격은?",
+          "a": "Premium은 자동 갱신 구독으로 월간·연간이 있고, 연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. 일회성 평생 이용권도 제공됩니다. 정확한 가격은 구매 확인 화면에 표시됩니다."
+        },
+        {
+          "q": "비자와 입국 요건에 신뢰할 수 있습니까?",
+          "a": "아니요. BeforeGo는 개인 여행 준비용 도구이며 비자·안전·건강·항공사·정부의 공식 안내를 대체하지 않습니다. 중요한 요건은 반드시 공식 출처에서 확인하세요."
+        }
+      ]
+    },
+    {
+      "key": "beforego-zh-hans",
+      "variantOf": "beforego",
+      "lang": "zh-Hans",
+      "path": "/beforego/zh-hans/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo：AI行程规划·出国清单",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo：AI行程规划·出国清单 — 从截图生成行程，包含打包清单",
+      "oneLiner": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
+      "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "BeforeGo 如何处理旅行帖子的截图？",
+          "a": "把截图整理成按天的行程：值得去的地方、出发前要办的事，还有帖子里每一天的安排。贴链接或打计划也能做同样的事；机票或订单确认一扫就进行程。"
+        },
+        {
+          "q": "它能生成行李清单吗？",
+          "a": "能。行李清单按目的地和日期自动生成——插座、货币、入境准备、当地 App——分类与时间线两种视图，出发前 7 天/3 天/24 小时/3 小时提醒。"
+        },
+        {
+          "q": "它能记得我上次忘带的东西吗？",
+          "a": "能。忘带的东西自动带入下一次清单，所以下一次出行的清单起点更全面。"
+        },
+        {
+          "q": "需要账号吗？",
+          "a": "不需要。免费开始——无广告、无需账号。"
+        },
+        {
+          "q": "支持哪些语言？",
+          "a": "十种：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português 和 ไทย。"
+        },
+        {
+          "q": "BeforeGo Premium 多少钱？",
+          "a": "Premium 是自动续订的订阅，分月度和年度。年度订阅为新用户提供 7 天免费试用。也提供一次性永久解锁。具体价格会在购买页确认前显示。"
+        },
+        {
+          "q": "我能靠它查签证和入境要求吗？",
+          "a": "不能。BeforeGo 用于个人旅行整理，不能替代签证、安全、健康、航司或政府的官方信息。重要要求请以官方渠道为准。"
+        }
+      ]
+    },
+    {
+      "key": "beforego-zh-hant",
+      "variantOf": "beforego",
+      "lang": "zh-Hant",
+      "path": "/beforego/zh-hant/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo：AI行程規劃·行前清單",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo：AI行程規劃·行前清單 — 從截圖生成行程，包含行李清單",
+      "oneLiner": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
+      "description": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "BeforeGo 如何處理旅行貼文的截圖？",
+          "a": "把截圖整理成每天的行程：值得去的地方、出發前要辦的事，還有貼文裡每一天的安排。貼連結或打計畫也能做同樣的事；機票或訂單確認一掃就進行程。"
+        },
+        {
+          "q": "它能生成行李清單嗎？",
+          "a": "能。行李清單依目的地與日期自動生成——插座、貨幣、入境準備、交通 App——依分類或時間線檢視，出發前 7 天、3 天、24 小時、3 小時提醒。"
+        },
+        {
+          "q": "它能記得我上次忘帶的東西嗎？",
+          "a": "能。忘記帶的東西自動帶入下一次清單，所以下一次出行的清單起點更全面。"
+        },
+        {
+          "q": "需要帳號嗎？",
+          "a": "不需要。免費開始——無廣告、無需帳號。"
+        },
+        {
+          "q": "支持哪些語言？",
+          "a": "十種：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português 和 ไทย。"
+        },
+        {
+          "q": "BeforeGo Premium 多少錢？",
+          "a": "Premium 是自動續訂的訂閱，分月訂閱和年訂閱。年度訂閱為新用戶提供 7 天免費試用。也提供一次性永久解鎖。實際價格會在購買頁確認前顯示。"
+        },
+        {
+          "q": "我能靠它查簽證和入國要求嗎？",
+          "a": "不能。BeforeGo 用於個人旅行整理，不能取代簽證、安全、健康、航空公司或政府的官方資訊。重要事項請務必以官方來源為準。"
+        }
+      ]
+    },
+    {
+      "key": "beforego-th",
+      "variantOf": "beforego",
+      "lang": "th",
+      "path": "/beforego/th/",
+      "live": true,
+      "appId": "6786561175",
+      "name": "BeforeGo: วางแผนเที่ยวด้วย AI",
+      "shortName": "BeforeGo",
+      "category": "TravelApplication",
+      "genre": "Travel",
+      "icon": "/assets/beforego/icon.png",
+      "ogImage": "/assets/beforego/checklist.jpg",
+      "title": "BeforeGo: วางแผนเที่ยวด้วย AI — วางแผนเที่ยวจากแคปโพสต์ รวมลิสต์จัดกระเป๋า",
+      "oneLiner": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง",
+      "description": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง",
+      "legal": [],
+      "faq": [
+        {
+          "q": "BeforeGo ทำอะไรกับแคปแพสต์เที่ยว?",
+          "a": "จัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้ วางลิงก์หรือพิมพ์แผนก็ได้เช่นเดียวกัน สแกนตั๋วหรือใบยืนยันการจองก็เพิ่มลงในแผนได้เลย"
+        },
+        {
+          "q": "มันสร้างลิสต์จัดกระเป๋าได้ไหม?",
+          "a": "ได้ ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง — ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง แอปเดินทาง — แบบหมวดหมู่หรือไทม์ไลน์ มีแจ้งเตือน 7 วัน 3 วัน 24 ชม. และ 3 ชม. ก่อนออก"
+        },
+        {
+          "q": "มันจำของที่ลืมครั้งที่แล้วได้ไหม?",
+          "a": "ได้ ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้า ดังนั้นลิสต์ครั้งต่อไปก็ดีที่สุด"
+        },
+        {
+          "q": "ต้องมีบัญชีไหม?",
+          "a": "ไม่ต้อง เริ่มใช้ฟรี — ไม่มีโฆษณา ไม่ต้องสมัครบัญชี"
+        },
+        {
+          "q": "รองรับภาษาใดบ้าง?",
+          "a": "สิบภาษา: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português และ ไทย"
+        },
+        {
+          "q": "BeforeGo Premium ราคาเท่าไร?",
+          "a": "Premium เป็นการสมัครสมาชิกแบบต่ออายุอัตโนมัติ รายเดือนหรือรายปี แผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ มีตัวเลือกซื้อขาดแบบใช้ได้ตลอดชีพด้วย ราคาจะแสดงในหน้าชำระเงินก่อนยืนยัน"
+        },
+        {
+          "q": "ฉันเชื่อใจได้ไหมเรื่องวีซ่าและข้อกำหนดเข้าเมือง?",
+          "a": "ไม่ได้ BeforeGo ใช้สำหรับจัดระเบียบการเดินทางส่วนตัว ไม่แทนข้อมูลทางการเรื่องวีซ่า สุขภาพ ความปลอดภัย หรือสายการบิน โปรดตรวจสอบข้อกำหนดสำคัญจากแหล่งทางการเสมอ"
+        }
+      ]
     },
     {
       "key": "countdown",
@@ -145,7 +675,9 @@
         "label": "Countdown",
         "tagline": "Days to Go & Memories to Keep",
         "blurb": "A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number."
-      }
+      },
+      "generated": true,
+      "noAccount": true
     },
     {
       "key": "countdown-pt-br",
@@ -666,7 +1198,489 @@
         "label": "Invoice Maker",
         "tagline": "Quote, receipt & PDF generator",
         "blurb": "The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes."
-      }
+      },
+      "generated": true,
+      "noAccount": true
+    },
+    {
+      "key": "invoiceqr-de",
+      "variantOf": "invoiceqr",
+      "lang": "de",
+      "path": "/invoiceqr/de/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Smart Rechnung & Angebot",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Smart Rechnung & Angebot — Rechnungen, Angebote und QR-Zahlungen in Minuten",
+      "oneLiner": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
+      "description": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Gibt es eine Rechnungs-App für das iPhone, die ohne Kontenerstellung funktioniert?",
+          "a": "Ja. Smart Rechnung & Angebot hat kein Konto und keine Anmeldung, und es funktioniert offline. Rechnungen, Kunden und QR-Codes werden über Ihre eigene iCloud synchronisiert, wenn Sie sie auf mehreren Geräten benötigen."
+        },
+        {
+          "q": "Wie viele Rechnungen kann ich kostenlos versenden?",
+          "a": "Drei Dokumente pro Monat. Der Zähler wird beim Erstellen eines Dokuments erhöht, nicht beim Versenden, und Kostenvoranschläge und Angebote teilen sich das gleiche Monatskontingent wie Rechnungen. Ein bereits erstelltes Dokument wird nur einmal gezählt, also ist das Bearbeiten oder spätere erneute Versenden kostenlos."
+        },
+        {
+          "q": "Kann ein Kunde direkt von der Rechnung aus bezahlen?",
+          "a": "Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Sie können dann die Zahlung in der App erfassen und die Rechnung zwischen unbezahlt, teilweise, bezahlt und überfällig verschieben."
+        },
+        {
+          "q": "Kann ich ein Angebot oder Kostenvoranschlag in eine Rechnung umwandeln?",
+          "a": "Ja, mit einem Tipp. Kunden, Positionen und Steuersätze werden einmal gespeichert und wiederverwendet, und Sie können Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen."
+        },
+        {
+          "q": "Macht es QR-Codes für etwas anderes als Zahlungen?",
+          "a": "Ja. Es enthält ein QR-Studio mit 12 Typen — Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Kalender, Text, Zahlung und Pix — und 16 fertige Designs, davon vier kostenlos."
+        },
+        {
+          "q": "Kann ich eine versehentlich gelöschte Rechnung wiederherstellen?",
+          "a": "Ja. Zuletzt gelöscht speichert Rechnungen für 30 Tage."
+        },
+        {
+          "q": "Was entsperrt Invoice Maker Pro?",
+          "a": "Unbegrenzte Rechnungen und QR-Exporte, alle 20 Rechnungsvorlagen, alle 12 QR-Stile und 16 Designs, das komplette Brand Kit (Farbe, Schrift und Logo) sowie benutzerdefinierte QR-Farben, -Punkte und -Rahmen."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-fr",
+      "variantOf": "invoiceqr",
+      "lang": "fr",
+      "path": "/invoiceqr/fr/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Facture, Devis et Reçu",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Facture, Devis et Reçu — Factures, devis et QR de paiement en quelques minutes",
+      "oneLiner": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
+      "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Existe-t-il une app de facturation pour iPhone qui fonctionne sans créer de compte ?",
+          "a": "Oui. Facture, Devis et Reçu n'a pas de compte ni d'inscription, et elle fonctionne hors ligne. Factures, clients et codes QR se synchronisent via votre propre iCloud si vous les avez sur plusieurs appareils."
+        },
+        {
+          "q": "Combien de factures puis-je envoyer gratuitement ?",
+          "a": "Trois documents par mois. Le décompte se fait à la création, non à l'envoi, et les devis et estimations puisent dans le même quota mensuel que les factures. Un document déjà créé n'est compté qu'une fois, donc le modifier ou le renvoyer plus tard est gratuit."
+        },
+        {
+          "q": "Un client peut-il payer directement depuis la facture ?",
+          "a": "Oui. Chaque facture peut avoir un code QR de paiement que le client scanne pour payer. Vous enregistrez ensuite le paiement dans l'app et la facture passe entre impayée, partielle, payée et en retard."
+        },
+        {
+          "q": "Puis-je convertir un devis ou une estimation en facture ?",
+          "a": "Oui, d'un seul geste. Les clients, les articles et les taux de TVA sont enregistrés une fois et réutilisés, et vous pouvez ajouter des remises, des frais de port, des modes de paiement et des conditions réutilisables."
+        },
+        {
+          "q": "Fait-elle des codes QR pour autre chose que le paiement ?",
+          "a": "Oui. Elle inclut un studio QR avec 12 types — lien, Wi-Fi, carte de visite, e-mail, téléphone, SMS, chat, lieu, agenda, texte, paiement et Pix — et 16 designs prêts à l'emploi, dont quatre gratuits."
+        },
+        {
+          "q": "Puis-je récupérer une facture supprimée accidentellement ?",
+          "a": "Oui. Suppressions récentes conserve les factures pendant 30 jours."
+        },
+        {
+          "q": "Qu'est-ce que Pro déverrouille ?",
+          "a": "Factures et exports QR illimités, tous les 20 modèles de facture, les 12 styles QR et 16 designs, le kit de marque complet (couleur, police et logo), ainsi que les couleurs, points et cadres QR personnalisés."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-it",
+      "variantOf": "invoiceqr",
+      "lang": "it",
+      "path": "/invoiceqr/it/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Fattura, Preventivo e Ricevuta",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Fattura, Preventivo e Ricevuta — Fatture, preventivi e QR di pagamento in minuti",
+      "oneLiner": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
+      "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Esiste un'app di fatturazione per iPhone che funziona senza creare un account?",
+          "a": "Sì. Fattura, Preventivo e Ricevuta non ha account e non richiede iscrizione, e funziona offline. Fatture, clienti e codici QR si sincronizzano tramite il tuo iCloud se li hai su più dispositivi."
+        },
+        {
+          "q": "Quante fatture posso inviare gratuitamente?",
+          "a": "Tre documenti al mese. Il conteggio avviene alla creazione, non all'invio, e i preventivi e le stime condividono lo stesso limite mensile delle fatture. Un documento già creato viene contato una sola volta, quindi modificarlo o inviarlo di nuovo è gratuito."
+        },
+        {
+          "q": "Un cliente può pagare direttamente dalla fattura?",
+          "a": "Sì. Ogni fattura può avere un codice QR di pagamento che il cliente scansiona per pagare. Registri quindi il pagamento nell'app e la fattura passa tra non pagata, parziale, pagata e scaduta."
+        },
+        {
+          "q": "Posso convertire un preventivo o una stima in fattura?",
+          "a": "Sì, con un tocco. Clienti, articoli e aliquote sono salvati una volta e riutilizzati, e puoi aggiungere sconti, spedizione, metodi di pagamento e condizioni riutilizzabili."
+        },
+        {
+          "q": "Fa codici QR per qualcosa di diverso dal pagamento?",
+          "a": "Sì. Include uno studio QR con 12 tipi — link, Wi-Fi, biglietto da visita, e-mail, telefono, SMS, chat, luogo, calendario, testo, pagamento e Pix — e 16 design pronti, di cui quattro gratuiti."
+        },
+        {
+          "q": "Posso recuperare una fattura eliminata per errore?",
+          "a": "Sì. Eliminati di recente conserva le fatture per 30 giorni."
+        },
+        {
+          "q": "Cosa sblocca Pro?",
+          "a": "Fatture ed esportazioni QR illimitate, tutti i 20 modelli di fattura, i 12 stili QR e 16 design, il brand kit completo (colore, font e logo), oltre a colori, punti e cornici QR personalizzati."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-es",
+      "variantOf": "invoiceqr",
+      "lang": "es",
+      "path": "/invoiceqr/es/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Smart Factura y Presupuesto",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Smart Factura y Presupuesto — Facturas, presupuestos y QR de pago en minutos",
+      "oneLiner": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
+      "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "¿Existe una app de facturación para iPhone que funcione sin crear una cuenta?",
+          "a": "Sí. Smart Factura y Presupuesto no tiene cuenta ni registro, y funciona offline. Facturas, clientes y códigos QR se sincronizan a través de tu iCloud si los necesitas en varios dispositivos."
+        },
+        {
+          "q": "¿Cuántas facturas puedo enviar gratuitamente?",
+          "a": "Tres documentos al mes. El conteo es cuando creas un documento, no cuando lo envías, y los presupuestos y cotizaciones comparten el mismo límite mensual que las facturas. Un documento ya creado se cuenta solo una vez, así que editarlo o reenviarlo después es gratis."
+        },
+        {
+          "q": "¿Puede un cliente pagar directamente desde la factura?",
+          "a": "Sí. Cada factura puede incluir un código QR de pago que el cliente escanea para pagar. Entonces registras el pago en la app y la factura pasa entre pendiente, parcial, pagada y vencida."
+        },
+        {
+          "q": "¿Puedo convertir un presupuesto o cotización en factura?",
+          "a": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y se reutilizan, y puedes añadir descuentos, envío, formas de pago y condiciones reutilizables."
+        },
+        {
+          "q": "¿Hace códigos QR para algo más que pagos?",
+          "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de los cuales son gratis."
+        },
+        {
+          "q": "¿Puedo recuperar una factura que eliminé por error?",
+          "a": "Sí. Eliminado recientemente conserva las facturas durante 30 días."
+        },
+        {
+          "q": "¿Qué desbloquea Pro?",
+          "a": "Facturas y exportaciones QR ilimitadas, los 20 modelos de factura, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-es-mx",
+      "variantOf": "invoiceqr",
+      "lang": "es-MX",
+      "path": "/invoiceqr/es-mx/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Nota de Venta, Cotización",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Nota de Venta, Cotización — Notas de venta, cotizaciones y QR de pago al instante",
+      "oneLiner": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
+      "description": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "¿Hay una app de notas de venta para iPhone que no necesite crear cuenta?",
+          "a": "Sí. Nota de Venta, Cotización no tiene cuenta ni registro, y funciona sin conexión. Notas de venta, clientes y códigos QR se sincronizan por tu iCloud si los necesitas en varios dispositivos."
+        },
+        {
+          "q": "¿Cuántos documentos puedo crear gratis?",
+          "a": "Tres documentos al mes. Se cuentan cuando los creas, no cuando los envías, y notas de venta, cotizaciones y remisiones comparten el mismo límite. Un documento ya creado se cuenta una sola vez, así que editarlo o reenviarlo después es gratis."
+        },
+        {
+          "q": "¿Puede el cliente pagar directo desde la nota de venta?",
+          "a": "Sí. Cada nota de venta puede incluir un código QR de pago que el cliente escanea para pagar. Luego registras el pago en la app y la nota pasa entre pendiente, parcial, pagada y vencida."
+        },
+        {
+          "q": "¿Puedo convertir una cotización en nota de venta?",
+          "a": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y reutilizan, y puedes añadir descuentos, envío, formas de pago y términos reutilizables."
+        },
+        {
+          "q": "¿Hace códigos QR para algo más que pagos?",
+          "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de ellos gratis."
+        },
+        {
+          "q": "¿Puedo recuperar un documento que eliminé por error?",
+          "a": "Sí. Eliminados recientemente guarda los documentos durante 30 días."
+        },
+        {
+          "q": "¿Qué desbloquea Pro?",
+          "a": "Documentos y exportaciones QR ilimitadas, todos los modelos de nota de venta, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-pt-br",
+      "variantOf": "invoiceqr",
+      "lang": "pt-BR",
+      "path": "/invoiceqr/pt-br/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "Fatura, Orçamento e Recibo",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "Fatura, Orçamento e Recibo — Faturas, orçamentos e QR de pagamento em minutos",
+      "oneLiner": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
+      "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Existe um app de faturamento para iPhone que funciona sem criar conta?",
+          "a": "Sim. Fatura, Orçamento e Recibo não tem conta nem cadastro, e funciona offline. Faturas, clientes e códigos QR são sincronizados pela sua iCloud se você os precisar em vários dispositivos."
+        },
+        {
+          "q": "Quantas faturas posso enviar gratuitamente?",
+          "a": "Três documentos por mês. A contagem é quando você cria um documento, não quando o envia, e orçamentos e propostas compartilham o mesmo limite mensal das faturas. Um documento já criado é contado uma única vez, então editá-lo ou enviá-lo novamente é grátis."
+        },
+        {
+          "q": "O cliente pode pagar direto pela fatura?",
+          "a": "Sim. Cada fatura pode incluir um código QR de pagamento que o cliente escaneia para pagar. Você registra o pagamento no app e a fatura passa entre não paga, parcial, paga e vencida."
+        },
+        {
+          "q": "Posso converter um orçamento ou proposta em fatura?",
+          "a": "Sim, em um toque. Clientes, itens e alíquotas são salvos uma vez e reutilizados, e você pode adicionar descontos, frete, formas de pagamento e termos reutilizáveis."
+        },
+        {
+          "q": "Faz códigos QR para algo além de pagamento?",
+          "a": "Sim. Inclui um estúdio QR com 12 tipos — link, Wi-Fi, cartão de visita, e-mail, telefone, SMS, chat, localização, calendário, texto, pagamento e Pix — e 16 designs prontos, quatro deles gratuitos."
+        },
+        {
+          "q": "Posso recuperar uma fatura que deletei por engano?",
+          "a": "Sim. Deletados recentemente mantém as faturas por 30 dias."
+        },
+        {
+          "q": "O que o Pro desbloqueia?",
+          "a": "Faturas e exportações QR ilimitadas, todos os 20 modelos de fatura, 12 estilos QR e 16 designs, kit de marca completo (cor, fonte e logo), além de cores, pontos e molduras QR personalizados."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-ja",
+      "variantOf": "invoiceqr",
+      "lang": "ja",
+      "path": "/invoiceqr/ja/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "請求書・見積書・領収書作成 インボイス対応",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "請求書・見積書・領収書作成 インボイス対応 — 請求書・見積書・領収書を数分で作成",
+      "oneLiner": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
+      "description": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhoneで、アカウント登録なしで使える請求書アプリはありますか？",
+          "a": "あります。請求書・見積書・領収書作成は、アカウント登録不要で、オフライン動作します。請求書・顧客・QRコードは、複数のデバイスで必要なら自分のiCloudで同期されます。"
+        },
+        {
+          "q": "無料で何件まで請求書を送れますか？",
+          "a": "月3件のドキュメント。カウントは作成時（送信時ではなく）に進み、見積書と提案書は請求書と同じ月額枠を使います。作成済みドキュメントは1回だけカウントされ、後で編集または再送信する分は無料です。"
+        },
+        {
+          "q": "顧客は請求書から直接支払えますか？",
+          "a": "はい。すべての請求書に支払いQRコードを付けることができ、顧客がスキャンして支払います。その後、アプリで支払いを記録すると、請求書の状態が未払い・一部支払い・支払い済み・期限切れの間で変わります。"
+        },
+        {
+          "q": "見積書や提案書を請求書に変換できますか？",
+          "a": "はい、ワンタップで。顧客・品目・税率は1回保存されて再利用でき、割引・送料・支払い方法・再利用可能な条件を追加できます。"
+        },
+        {
+          "q": "支払い以外のQRコードも作れますか？",
+          "a": "はい。QRスタジオに12のタイプがあります。リンク・Wi-Fi・連絡先・メール・電話・SMS・チャット・位置情報・カレンダー・テキスト・支払い・Pixで、計16のテンプレートがあり、うち4つは無料です。"
+        },
+        {
+          "q": "誤って削除した請求書を復元できますか？",
+          "a": "はい。最近削除した項目に、30日間の請求書が保存されます。"
+        },
+        {
+          "q": "Proで何が解放されますか？",
+          "a": "無制限の請求書・QR書き出し、20の請求書テンプレート、12のQRスタイルと16のデザイン、完全なブランドキット（色・フォント・ロゴ）、カスタムQRの色・ドット・フレームが利用できます。"
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-ko",
+      "variantOf": "invoiceqr",
+      "lang": "ko",
+      "path": "/invoiceqr/ko/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "프리랜서 청구서·견적서·영수증",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "프리랜서 청구서·견적서·영수증 — 청구서, 견적서, 결제 QR을 몇 분 안에",
+      "oneLiner": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
+      "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "계정 가입 없이 쓸 수 있는 iPhone 청구서 앱이 있나요?",
+          "a": "있습니다. 프리랜서 청구서·견적서·영수증은 계정이 없고 가입도 없으며 오프라인으로 작동합니다. 청구서·고객·QR코드는 필요하면 자신의 iCloud로 동기화되어 여러 기기에서 사용할 수 있습니다."
+        },
+        {
+          "q": "무료로 청구서를 몇 개까지 만들 수 있나요?",
+          "a": "월 3개 문서. 카운트는 작성 시(발송 시가 아님)에 증가하며, 견적서와 제안서는 청구서와 같은 월별 한도를 공유합니다. 작성한 문서는 1회만 계산되므로 나중에 편집하거나 재발송하는 것은 무료입니다."
+        },
+        {
+          "q": "고객이 청구서에서 바로 결제할 수 있나요?",
+          "a": "네. 모든 청구서에 결제 QR코드를 넣을 수 있고, 고객이 스캔해서 결제합니다. 앱에서 결제를 기록하면 청구서 상태가 미결제·부분결제·결제완료·연체 사이를 오갑니다."
+        },
+        {
+          "q": "견적서나 제안서를 청구서로 바꿀 수 있나요?",
+          "a": "네, 한 번의 탭으로. 고객·품목·세율은 한 번만 저장하고 재사용하며, 할인·배송·결제 수단·재사용 가능한 조건을 추가할 수 있습니다."
+        },
+        {
+          "q": "결제 외에 다른 QR코드도 만드나요?",
+          "a": "네. QR 스튜디오에 12가지 유형이 있습니다. 링크·Wi-Fi·연락처·이메일·전화·SMS·채팅·위치·달력·텍스트·결제·Pix이며, 준비된 디자인은 16가지고 이 중 4가지는 무료입니다."
+        },
+        {
+          "q": "실수로 삭제한 청구서를 복구할 수 있나요?",
+          "a": "네. 최근 삭제 항목에 청구서가 30일간 보관됩니다."
+        },
+        {
+          "q": "Pro는 뭘 열어주나요?",
+          "a": "청구서와 QR 내보내기 무제한, 20개 청구서 템플릿, 12가지 QR 스타일과 16가지 디자인, 완전한 브랜드 키트(색상·글꼴·로고), 맞춤형 QR 색상·점·프레임을 제공합니다."
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-zh-hant",
+      "variantOf": "invoiceqr",
+      "lang": "zh-Hant",
+      "path": "/invoiceqr/zh-hant/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "開單、報價單、收據、送貨單產生器",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "開單、報價單、收據、送貨單產生器 — 開單、報價、掃碼付款的一體化工具",
+      "oneLiner": "在iPhone上建立開單、報價和收據，匯出為PDF，並加上付款QR碼，讓客戶直接支付。",
+      "description": "在iPhone上建立開單、報價和收據，匯出為PDF，並加上付款QR碼，讓客戶直接支付。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhone上有不用建立帳號的開單app嗎？",
+          "a": "有。開單、報價單、收據、送貨單產生器不需要帳號，也不用註冊，可以離線使用。開單、客戶和QR碼如果需要在多台裝置使用，會透過你自己的iCloud同步。"
+        },
+        {
+          "q": "免費可以開幾張單？",
+          "a": "一個月3張文件。計算是在你建立文件時（不是發送時），報價和提案共用和開單一樣的月度額度。一旦建立過的文件只算1次，所以之後編輯或重新發送都是免費。"
+        },
+        {
+          "q": "客戶可以直接從開單上付款嗎？",
+          "a": "可以。每張開單都可以附加付款QR碼，客戶掃描就能付款。你在app裡記錄付款後，開單的狀態會在未付、部分支付、已付、逾期之間變更。"
+        },
+        {
+          "q": "可以把報價單變成開單嗎？",
+          "a": "可以，一下子就行。客戶、品項、稅率只需要存一次就能重複使用，而且可以加折扣、運費、付款方式和可重複使用的條款。"
+        },
+        {
+          "q": "除了付款還能做其他QR碼嗎？",
+          "a": "可以。QR工作室有12種類型——連結、Wi-Fi、聯絡資訊、電子郵件、電話、簡訊、聊天、位置、日曆、文字、付款和Pix——以及16種現成設計，其中4種免費。"
+        },
+        {
+          "q": "不小心刪除的開單能救回嗎？",
+          "a": "能。最近刪除會保存開單30天。"
+        },
+        {
+          "q": "Pro解鎖什麼？",
+          "a": "無限開單和QR匯出、全部20套開單範本、12種QR風格和16種設計、完整品牌套件（色彩、字型、標誌），以及自訂QR色彩、圓點、邊框。"
+        }
+      ]
+    },
+    {
+      "key": "invoiceqr-th",
+      "variantOf": "invoiceqr",
+      "lang": "th",
+      "path": "/invoiceqr/th/",
+      "live": true,
+      "appId": "6790383156",
+      "name": "ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษี",
+      "shortName": "Invoice Maker",
+      "category": "BusinessApplication",
+      "genre": "Business",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "title": "ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษี — ใบแจ้งหนี้ ใบเสร็จ และQRชำระเงินในนาที",
+      "oneLiner": "สร้างใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษีบนiPhone ส่งออกเป็นPDF และเพิ่มQRชำระเงินเพื่อให้ลูกค้าชำระได้ทันที",
+      "description": "สร้างใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษีบนiPhone ส่งออกเป็นPDF และเพิ่มQRชำระเงินเพื่อให้ลูกค้าชำระได้ทันที",
+      "legal": [],
+      "faq": [
+        {
+          "q": "มีแอปสร้างใบแจ้งหนี้สำหรับiPhoneที่ไม่ต้องสร้างบัญชีไหม",
+          "a": "มี ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษีไม่มีบัญชีและไม่ต้องสมัคร และใช้ได้แบบออฟไลน์ ใบแจ้งหนี้ ลูกค้า และQRโค้ดจะซิงค์ผ่านiCloudของคุณเองถ้าคุณต้องใช้บนหลายอุปกรณ์"
+        },
+        {
+          "q": "ฟรีได้สร้างใบแจ้งหนี้กี่ใบ",
+          "a": "3เอกสารต่อเดือน การนับจะเกิดขึ้นเมื่อคุณสร้างเอกสาร ไม่ใช่เมื่อส่ง และใบประเมิน ใบเสนอราคาใช้วงเงินเดือนเดียวกับใบแจ้งหนี้ เอกสารที่สร้างแล้วนับเพียงครั้งเดียว ดังนั้นการแก้ไขหรือส่งใหม่ทีหลังจึงฟรี"
+        },
+        {
+          "q": "ลูกค้าสามารถชำระเงินจากใบแจ้งหนี้ได้โดยตรงหรือไม่",
+          "a": "ได้ ใบแจ้งหนี้ทุกใบสามารถมีQRโค้ดชำระเงิน ลูกค้าแสกนเพื่อชำระเงิน จากนั้นคุณบันทึกการชำระในแอป และใบแจ้งหนี้เปลี่ยนระหว่างยังไม่ชำระ ชำระบางส่วน ชำระแล้ว และเกินกำหนด"
+        },
+        {
+          "q": "สามารถเปลี่ยนใบประเมินหรือใบเสนอราคาเป็นใบแจ้งหนี้ได้หรือไม่",
+          "a": "ได้ เพียงแตะครั้งเดียว ลูกค้า รายการ และอัตราภาษีบันทึกไว้ครั้งเดียวและนำกลับมาใช้ใหม่ได้ และคุณสามารถเพิ่มส่วนลด ค่าจัดส่ง วิธีการชำระเงิน และเงื่อนไขที่นำกลับมาใช้ใหม่ได้"
+        },
+        {
+          "q": "มันสร้างQRโค้ดสำหรับอย่างอื่นที่ไม่ใช่การชำระเงินหรือไม่",
+          "a": "มี QRสตูดิโอมี 12ประเภท คือ ลิงก์ Wi-Fi บัตรติดต่อ อีเมล โทรศัพท์ SMS แชท สถานที่ ปฏิทิน ข้อความ ชำระเงิน และPix และมีดีไซน์สำเร็จรูป 16แบบ ซึ่ง 4แบบฟรี"
+        },
+        {
+          "q": "สามารถกู้คืนใบแจ้งหนี้ที่ลบโดยไม่ตั้งใจได้หรือไม่",
+          "a": "ได้ ลบไปเร็วๆนี้เก็บใบแจ้งหนี้เป็นเวลา 30วัน"
+        },
+        {
+          "q": "Pro ปลดล็อกอะไร",
+          "a": "ใบแจ้งหนี้และQRส่งออกไม่จำกัด แม่แบบใบแจ้งหนี้ 20รายการ สไตล์QR 12รูปแบบและดีไซน์ 16รูปแบบ ชุดแบรนด์ที่สมบูรณ์ (สี ฟอนต์ โลโก้) และสีQRที่กำหนดเอง จุด และเฟรม"
+        }
+      ]
     },
     {
       "key": "dailycalorie",

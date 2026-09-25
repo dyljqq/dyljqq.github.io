@@ -1,0 +1,376 @@
+{
+  "de": {
+    "tagline": "Reiseplan vom Screenshot, Packliste inklusive",
+    "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten.",
+    "faq": [
+      {
+        "q": "Was macht BeforeGo mit einem Screenshot eines Reise-Posts?",
+        "a": "Es sortiert alles in einen Reiseplan Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht. Ein eingefügter Link oder getippte Pläne funktionieren genauso, und ein gescanntes Ticket oder eine Buchungsbestätigung landet auch im Plan."
+      },
+      {
+        "q": "Erstellt es eine Packliste?",
+        "a": "Ja. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten – Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps für dein Ziel – gruppiert nach Kategorie oder nach Zeitplan, mit Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise."
+      },
+      {
+        "q": "Merkt es sich, was ich letztes Mal vergessen habe?",
+        "a": "Ja. Vergessene Sachen werden übernommen, also startet die nächste Packliste schlauer."
+      },
+      {
+        "q": "Braucht es ein Konto?",
+        "a": "Nein. Kostenlos starten – keine Werbung, kein Konto erforderlich."
+      },
+      {
+        "q": "Welche Sprachen werden unterstützt?",
+        "a": "Zehn: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português und ไทย."
+      },
+      {
+        "q": "Wie viel kostet BeforeGo Premium?",
+        "a": "Premium ist ein automatisch verlängerndes Abo monatlich oder jährlich, und der Jahresplan enthält 7 Tage kostenlos testen für neue Abonnenten. Ein einmaliger lebenslanger Kauf ist auch verfügbar. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt."
+      },
+      {
+        "q": "Kann ich mich auf Visa- oder Einreisebestimmungen verlassen?",
+        "a": "Nein. BeforeGo ist für persönliche Reiseorganisation gedacht und ersetzt keine offiziellen Visa-, Sicherheits-, Gesundheits-, Airline- oder staatlichen Informationen. Überprüfe immer wichtige Anforderungen bei offiziellen Stellen, bevor du reist."
+      }
+    ]
+  },
+  "fr": {
+    "tagline": "Plan de voyage depuis une capture, liste de bagages incluse",
+    "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour. La liste de bagages se fait toute seule selon la destination et les dates.",
+    "faq": [
+      {
+        "q": "Que fait BeforeGo avec une capture d'un post voyage ?",
+        "a": "Elle classe tout dans un plan de voyage jour par jour : les lieux à voir, ce qu'il faut régler avant le départ et chaque journée prévue dans le post. Un lien collé ou un programme tapé font la même chose, et un billet ou une confirmation de réservation scannée rejoint le plan aussi."
+      },
+      {
+        "q": "Fait-elle une liste de bagages ?",
+        "a": "Oui. La liste de bagages se fait toute seule selon la destination et les dates — prises, monnaie, formalités d'entrée et applis de transport — groupée par catégorie ou par chronologie, avec rappels 7 jours, 3 jours, 24 h et 3 h du départ."
+      },
+      {
+        "q": "Se souvient-elle de ce que j'ai oublié la dernière fois ?",
+        "a": "Oui. Les oublis sont repris, donc la prochaine liste démarre plus futée."
+      },
+      {
+        "q": "Faut-il un compte ?",
+        "a": "Non. Gratuit pour commencer — sans pub, sans compte."
+      },
+      {
+        "q": "Quelles langues sont supportées ?",
+        "a": "Dix : English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português et ไทย."
+      },
+      {
+        "q": "Combien coûte BeforeGo Premium ?",
+        "a": "Premium est un abonnement à renouvellement automatique, mensuel ou annuel, et l'abonnement annuel inclut 7 jours d'essai gratuit pour les nouveaux abonnés. Un achat unique à vie est aussi disponible. Le prix exact est indiqué sur l'écran d'achat avant confirmation."
+      },
+      {
+        "q": "Puis-je m'y fier pour les visas ou les formalités d'entrée ?",
+        "a": "Non. BeforeGo est un outil d'organisation personnelle ; il ne remplace pas les informations officielles de visa, sécurité, santé, compagnies aériennes ou gouvernement. Vérifiez toujours les exigences importantes auprès des sources officielles avant de voyager."
+      }
+    ]
+  },
+  "it": {
+    "tagline": "Piano di viaggio dallo screenshot, lista bagagli inclusa",
+    "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno. La lista bagagli si fa da sola, in base a destinazione e date.",
+    "faq": [
+      {
+        "q": "Che cosa fa BeforeGo con uno screenshot di un post di viaggio?",
+        "a": "Lo classifica in un piano di viaggio giorno per giorno: i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Un link incollato o piani scritti funzionano allo stesso modo, e un biglietto scansionato o una conferma di prenotazione finisce anche lei nel piano."
+      },
+      {
+        "q": "Fa una lista bagagli?",
+        "a": "Sì. La lista bagagli si fa da sola, in base a destinazione e date — prese, valuta, requisiti d'ingresso e app di trasporto — ordinata per categoria o per cronologia, con promemoria 7 giorni, 3 giorni, 24 ore e 3 ore dalla partenza."
+      },
+      {
+        "q": "Si ricorda di quello che ho dimenticato la volta scorsa?",
+        "a": "Sì. Gli oggetti dimenticati si trasferiscono, quindi la prossima lista parte più preparata."
+      },
+      {
+        "q": "Serve un account?",
+        "a": "No. Gratis per iniziare — senza pubblicità, senza account."
+      },
+      {
+        "q": "Quali lingue sono supportate?",
+        "a": "Dieci: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português e ไทย."
+      },
+      {
+        "q": "Quanto costa BeforeGo Premium?",
+        "a": "Premium è un abbonamento a rinnovo automatico, mensile o annuale, e il piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. È disponibile anche un acquisto singolo a vita. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma."
+      },
+      {
+        "q": "Posso affidarmi a questo per visti o requisiti d'ingresso?",
+        "a": "No. BeforeGo è uno strumento di organizzazione personale; non sostituisce le informazioni ufficiali su visti, salute, sicurezza, compagnie aeree o governo. Verifica sempre i requisiti importanti presso fonti ufficiali prima di viaggiare."
+      }
+    ]
+  },
+  "es": {
+    "tagline": "Plan de viaje desde screenshot, lista de equipaje incluida",
+    "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día. La lista de equipaje se escribe sola según tu destino y tus fechas.",
+    "faq": [
+      {
+        "q": "¿Qué hace BeforeGo con una captura de un post de viajes?",
+        "a": "Lo ordena en un plan de viaje día a día: los lugares que merecen la pena, lo que tienes que hacer antes de salir y cada día que propone el post. Un enlace pegado o planes escritos funcionan igual, y un billete o una confirmación de reserva escaneados también se añaden al plan."
+      },
+      {
+        "q": "¿Hace una lista de equipaje?",
+        "a": "Sí. La lista de equipaje se escribe sola según tu destino y tus fechas — enchufes, moneda, requisitos de entrada y apps de transporte — agrupada por categoría o por cronología, con recordatorios 7 días, 3 días, 24 h y 3 h antes de salir."
+      },
+      {
+        "q": "¿Recuerda lo que olvidé la última vez?",
+        "a": "Sí. Lo olvidado pasa a la próxima lista, así que la próxima empieza más preparada."
+      },
+      {
+        "q": "¿Necesita una cuenta?",
+        "a": "No. Empieza gratis — sin anuncios, sin cuenta."
+      },
+      {
+        "q": "¿Qué idiomas soporta?",
+        "a": "Diez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português y ไทย."
+      },
+      {
+        "q": "¿Cuánto cuesta BeforeGo Premium?",
+        "a": "Premium es una suscripción con renovación automática, mensual o anual, y el plan anual incluye 7 días de prueba gratis para nuevos suscriptores. También hay un desbloqueo vitalicio de pago único. El precio exacto se muestra en la pantalla de compra antes de confirmar."
+      },
+      {
+        "q": "¿Puedo confiar en esto para visados o requisitos de entrada?",
+        "a": "No. BeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad, aerolíneas o gobierno. Verifica siempre los requisitos importantes en fuentes oficiales antes de viajar."
+      }
+    ]
+  },
+  "es-MX": {
+    "tagline": "Plan de viaje desde screenshot, lista de equipaje incluida",
+    "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día. La lista de equipaje se arma sola según tu destino y tus fechas.",
+    "faq": [
+      {
+        "q": "¿Qué hace BeforeGo con una captura de un post de viajes?",
+        "a": "Lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post. Un link pegado o planes escritos funcionan igual, y un boleto o una confirmación de reservación escaneados también se agregan al plan."
+      },
+      {
+        "q": "¿Hace una lista de equipaje?",
+        "a": "Sí. La lista de equipaje se arma sola según tu destino y tus fechas — enchufes, moneda, requisitos de entrada y apps de transporte — agrupada por categoría o por cronología, con recordatorios 7 días, 3 días, 24 h y 3 h antes de salir."
+      },
+      {
+        "q": "¿Recuerda lo que olvidé la última vez?",
+        "a": "Sí. Lo olvidado pasa a la próxima lista, así que la próxima empieza más preparada."
+      },
+      {
+        "q": "¿Necesita una cuenta?",
+        "a": "No. Empieza gratis — sin anuncios, sin cuenta."
+      },
+      {
+        "q": "¿Qué idiomas soporta?",
+        "a": "Diez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português y ไทย."
+      },
+      {
+        "q": "¿Cuánto cuesta BeforeGo Premium?",
+        "a": "Premium es una suscripción con renovación automática, mensual o anual, y el plan anual incluye 7 días de prueba gratis para nuevos suscriptores. También hay un desbloqueo vitalicio de pago único. El precio exacto se muestra en la pantalla de compra antes de confirmar."
+      },
+      {
+        "q": "¿Puedo confiar en esto para visados o requisitos de entrada?",
+        "a": "No. BeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad, aerolíneas o gobierno. Verifica siempre los requisitos importantes en fuentes oficiales antes de viajar."
+      }
+    ]
+  },
+  "pt-BR": {
+    "tagline": "Roteiro de viagem do screenshot, lista de bagagem incluída",
+    "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia. A lista de bagagem se monta sozinha a partir do destino e das datas.",
+    "faq": [
+      {
+        "q": "O que BeforeGo faz com um print de um post de viagem?",
+        "a": "Organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere. Um link colado ou planos digitados funcionam do mesmo jeito, e um bilhete ou confirmação de reserva escaneados também entram no roteiro."
+      },
+      {
+        "q": "Faz uma lista de bagagem?",
+        "a": "Sim. A lista de bagagem se monta sozinha a partir do destino e das datas — tomadas, moeda, requisitos de entrada e apps de transporte — agrupada por categoria ou por cronologia, com lembretes 7 dias, 3 dias, 24 h e 3 h antes da partida."
+      },
+      {
+        "q": "Lembra o que eu esqueci da última vez?",
+        "a": "Sim. O que você esqueceu passa para a próxima lista, então a próxima sai mais preparada."
+      },
+      {
+        "q": "Precisa de uma conta?",
+        "a": "Não. Comece grátis — sem anúncios, sem conta."
+      },
+      {
+        "q": "Qual é o suporte de idiomas?",
+        "a": "Dez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português e ไทย."
+      },
+      {
+        "q": "Quanto custa o BeforeGo Premium?",
+        "a": "Premium é uma assinatura com renovação automática, mensal ou anual, e o plano anual inclui 7 dias de teste grátis para novos assinantes. Também há um desbloqueio vitalício de pagamento único. O preço exato aparece na tela de compra antes de confirmar."
+      },
+      {
+        "q": "Posso confiar nisso para vistos ou requisitos de entrada?",
+        "a": "Não. BeforeGo é para organização pessoal de viagens; não substitui informações oficiais de visto, saúde, segurança, companhias aéreas ou governo. Sempre confirme requisitos importantes em fontes oficiais antes de viajar."
+      }
+    ]
+  },
+  "ja": {
+    "tagline": "旅行計画をスクショから作成、持ち物リストも含む",
+    "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
+    "faq": [
+      {
+        "q": "BeforeGo は旅の投稿のスクショで何をしますか？",
+        "a": "スクショから日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。リンクを貼ったり、予定を打ち込んだりしても同じように動き、航空券や予約確認をスキャンすればプランに加わります。"
+      },
+      {
+        "q": "持ち物リストを作りますか？",
+        "a": "はい。持ち物リストは行き先と日程から自動で作られます——プラグ、通貨、入国準備、交通アプリ——カテゴリー別・タイムライン別のビューで、出発 7 日前・3 日前・24 時間前・3 時間前にリマインドします。"
+      },
+      {
+        "q": "前に忘れたものを覚えていますか？",
+        "a": "はい。忘れ物は次の持ち物リストへ自動引き継ぎされるので、次の旅行のリストはより準備が整った状態で始まります。"
+      },
+      {
+        "q": "アカウントが必要ですか？",
+        "a": "いいえ。無料で開始——広告なし、アカウント不要です。"
+      },
+      {
+        "q": "どの言語に対応していますか？",
+        "a": "10 言語です：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português、ไทย。"
+      },
+      {
+        "q": "BeforeGo Premium はいくらですか？",
+        "a": "Premium は自動更新のサブスクリプションで、月額と年額があり、年間プランには新規のお客様向けの 7 日間無料トライアルが付いています。買い切りの永久アンロックもあります。正確な価格は購入確認画面に表示されます。"
+      },
+      {
+        "q": "ビザと入国要件に信頼できますか？",
+        "a": "いいえ。BeforeGo は個人の旅行整理のためのアプリです。ビザ、安全、健康、航空会社、政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。"
+      }
+    ]
+  },
+  "ko": {
+    "tagline": "스크린샷에서 여행 일정, 패킹리스트 포함",
+    "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
+    "faq": [
+      {
+        "q": "BeforeGo는 여행 게시물의 스크린샷으로 무엇을 합니까?",
+        "a": "날짜별 여행 일정으로 정리해 줍니다. 가볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 링크를 붙여넣거나 계획을 입력해도 똑같이 작동하고, 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어갑니다."
+      },
+      {
+        "q": "패킹리스트를 만듭니까?",
+        "a": "네. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다——플러그, 환전, 입국 준비, 교통 앱——카테고리별·타임라인별로 정리되고, 출발 7일·3일·24시간·3시간 전에 알림을 보냅니다."
+      },
+      {
+        "q": "지난번에 잊었던 물건을 기억합니까?",
+        "a": "네. 잊었던 물건은 다음 여행 리스트로 자동 이월되므로, 다음 리스트는 더 준비된 상태로 시작합니다."
+      },
+      {
+        "q": "계정이 필요합니까?",
+        "a": "아니요. 무료로 시작 — 광고 없음, 계정 불필요입니다."
+      },
+      {
+        "q": "어떤 언어를 지원합니까?",
+        "a": "열 가지입니다: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย."
+      },
+      {
+        "q": "BeforeGo Premium의 가격은?",
+        "a": "Premium은 자동 갱신 구독으로 월간·연간이 있고, 연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. 일회성 평생 이용권도 제공됩니다. 정확한 가격은 구매 확인 화면에 표시됩니다."
+      },
+      {
+        "q": "비자와 입국 요건에 신뢰할 수 있습니까?",
+        "a": "아니요. BeforeGo는 개인 여행 준비용 도구이며 비자·안전·건강·항공사·정부의 공식 안내를 대체하지 않습니다. 중요한 요건은 반드시 공식 출처에서 확인하세요."
+      }
+    ]
+  },
+  "zh-Hans": {
+    "tagline": "从截图生成行程，包含打包清单",
+    "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
+    "faq": [
+      {
+        "q": "BeforeGo 如何处理旅行帖子的截图？",
+        "a": "把截图整理成按天的行程：值得去的地方、出发前要办的事，还有帖子里每一天的安排。贴链接或打计划也能做同样的事；机票或订单确认一扫就进行程。"
+      },
+      {
+        "q": "它能生成行李清单吗？",
+        "a": "能。行李清单按目的地和日期自动生成——插座、货币、入境准备、当地 App——分类与时间线两种视图，出发前 7 天/3 天/24 小时/3 小时提醒。"
+      },
+      {
+        "q": "它能记得我上次忘带的东西吗？",
+        "a": "能。忘带的东西自动带入下一次清单，所以下一次出行的清单起点更全面。"
+      },
+      {
+        "q": "需要账号吗？",
+        "a": "不需要。免费开始——无广告、无需账号。"
+      },
+      {
+        "q": "支持哪些语言？",
+        "a": "十种：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português 和 ไทย。"
+      },
+      {
+        "q": "BeforeGo Premium 多少钱？",
+        "a": "Premium 是自动续订的订阅，分月度和年度。年度订阅为新用户提供 7 天免费试用。也提供一次性永久解锁。具体价格会在购买页确认前显示。"
+      },
+      {
+        "q": "我能靠它查签证和入境要求吗？",
+        "a": "不能。BeforeGo 用于个人旅行整理，不能替代签证、安全、健康、航司或政府的官方信息。重要要求请以官方渠道为准。"
+      }
+    ]
+  },
+  "zh-Hant": {
+    "tagline": "從截圖生成行程，包含行李清單",
+    "description": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
+    "faq": [
+      {
+        "q": "BeforeGo 如何處理旅行貼文的截圖？",
+        "a": "把截圖整理成每天的行程：值得去的地方、出發前要辦的事，還有貼文裡每一天的安排。貼連結或打計畫也能做同樣的事；機票或訂單確認一掃就進行程。"
+      },
+      {
+        "q": "它能生成行李清單嗎？",
+        "a": "能。行李清單依目的地與日期自動生成——插座、貨幣、入境準備、交通 App——依分類或時間線檢視，出發前 7 天、3 天、24 小時、3 小時提醒。"
+      },
+      {
+        "q": "它能記得我上次忘帶的東西嗎？",
+        "a": "能。忘記帶的東西自動帶入下一次清單，所以下一次出行的清單起點更全面。"
+      },
+      {
+        "q": "需要帳號嗎？",
+        "a": "不需要。免費開始——無廣告、無需帳號。"
+      },
+      {
+        "q": "支持哪些語言？",
+        "a": "十種：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português 和 ไทย。"
+      },
+      {
+        "q": "BeforeGo Premium 多少錢？",
+        "a": "Premium 是自動續訂的訂閱，分月訂閱和年訂閱。年度訂閱為新用戶提供 7 天免費試用。也提供一次性永久解鎖。實際價格會在購買頁確認前顯示。"
+      },
+      {
+        "q": "我能靠它查簽證和入國要求嗎？",
+        "a": "不能。BeforeGo 用於個人旅行整理，不能取代簽證、安全、健康、航空公司或政府的官方資訊。重要事項請務必以官方來源為準。"
+      }
+    ]
+  },
+  "th": {
+    "tagline": "วางแผนเที่ยวจากแคปโพสต์ รวมลิสต์จัดกระเป๋า",
+    "description": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง",
+    "faq": [
+      {
+        "q": "BeforeGo ทำอะไรกับแคปแพสต์เที่ยว?",
+        "a": "จัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้ วางลิงก์หรือพิมพ์แผนก็ได้เช่นเดียวกัน สแกนตั๋วหรือใบยืนยันการจองก็เพิ่มลงในแผนได้เลย"
+      },
+      {
+        "q": "มันสร้างลิสต์จัดกระเป๋าได้ไหม?",
+        "a": "ได้ ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง — ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง แอปเดินทาง — แบบหมวดหมู่หรือไทม์ไลน์ มีแจ้งเตือน 7 วัน 3 วัน 24 ชม. และ 3 ชม. ก่อนออก"
+      },
+      {
+        "q": "มันจำของที่ลืมครั้งที่แล้วได้ไหม?",
+        "a": "ได้ ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้า ดังนั้นลิสต์ครั้งต่อไปก็ดีที่สุด"
+      },
+      {
+        "q": "ต้องมีบัญชีไหม?",
+        "a": "ไม่ต้อง เริ่มใช้ฟรี — ไม่มีโฆษณา ไม่ต้องสมัครบัญชี"
+      },
+      {
+        "q": "รองรับภาษาใดบ้าง?",
+        "a": "สิบภาษา: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português และ ไทย"
+      },
+      {
+        "q": "BeforeGo Premium ราคาเท่าไร?",
+        "a": "Premium เป็นการสมัครสมาชิกแบบต่ออายุอัตโนมัติ รายเดือนหรือรายปี แผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ มีตัวเลือกซื้อขาดแบบใช้ได้ตลอดชีพด้วย ราคาจะแสดงในหน้าชำระเงินก่อนยืนยัน"
+      },
+      {
+        "q": "ฉันเชื่อใจได้ไหมเรื่องวีซ่าและข้อกำหนดเข้าเมือง?",
+        "a": "ไม่ได้ BeforeGo ใช้สำหรับจัดระเบียบการเดินทางส่วนตัว ไม่แทนข้อมูลทางการเรื่องวีซ่า สุขภาพ ความปลอดภัย หรือสายการบิน โปรดตรวจสอบข้อกำหนดสำคัญจากแหล่งทางการเสมอ"
+      }
+    ]
+  }
+}

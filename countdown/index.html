@@ -1,54 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Countdown Widget — Every Widget Free, No Event Limit</title>
-<link rel="icon" href="../assets/countdown/icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root{
-    color-scheme: light dark;
-    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
-    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
-      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
-    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
-  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
-  a{color:var(--brand-deep)}
-  .hero{padding:64px 0 8px;text-align:center}
-  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
-  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
-  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
-  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
-    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
-  .cta:hover{background:var(--brand-deep)}
-  .meta{margin-top:14px;color:var(--muted);font-size:14px}
-  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
-  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
-  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
-  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
-  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-  .card h3{margin:0 0 8px;font-size:18px}
-  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
-  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
-  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
-  td.yes{color:var(--brand-deep);font-weight:600}
-  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
-  .band p{color:var(--muted);margin:8px 0 0}
-  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
-    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
-  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
-  footer a{margin-right:18px}
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="A countdown that never loses your days. Every widget size on the Home and Lock Screen is free, events are unlimited, reminders are free, and the app takes a backup of your countdowns on device every day. Pro sells backdrops, never the function.">
@@ -107,7 +126,24 @@
   "sameAs": [
     "https://apps.apple.com/app/id6799846628"
   ],
-  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png"
+  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/59/65/38596528-80b4-cf40-16b4-19e290811aeb/02-turn-it-over.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/16/e6/3f16e618-d231-d79a-1d8f-a4a1652b9b36/03-see-every-day.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/23/86/6b238673-1b3e-a565-4ab1-c904f51d01b7/04-dress-it-up.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/94/37/81/94378197-df63-be6c-f685-192ef920fda1/05-your-photo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/fd/0c/5afd0c5f-65c5-bb9d-4a29-805bcc9167c8/06-keep-the-memories.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "Countdown Widget: Any Event — app preview",
+    "description": "A countdown that never loses your days — and never holds a widget back.",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/countdown/preview/en.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/countdown/preview/en.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "en"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -171,66 +207,58 @@
 <!-- seo:end -->
 </head>
 <body>
-<main>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">All apps</a>
+    <a href="/countdown/privacy-policy/">Privacy</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown Widget">Support</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <img class="icon" src="../assets/countdown/icon.png" alt="Countdown app icon" width="92" height="92">
-    <h1>A countdown that never loses your days.</h1>
-    <p class="tagline">Every widget size, on the Home Screen and the Lock Screen, free. As many events as you like — there is no cap, and there never will be.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6799846628">Download on the App Store</a>
-    <p class="meta">Free · iPhone &amp; iPad · iOS 17+ · No account required · No ads, ever</p>
-    <p class="meta" lang="zxx"><a href="./pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <a href="./de/" hreflang="de" lang="de">Deutsch</a> · <a href="./fr/" hreflang="fr" lang="fr">Français</a> · <a href="./it/" hreflang="it" lang="it">Italiano</a> · <a href="./ja/" hreflang="ja" lang="ja">日本語</a> · <a href="./ko/" hreflang="ko" lang="ko">한국어</a> · <a href="./th/" hreflang="th" lang="th">ไทย</a> · <a href="./zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> · <a href="./zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></p>
-  </section>
-
-  <section class="shots">
-    <img src="../assets/countdown/home.jpg" alt="Countdown widgets on the iPhone Home Screen" loading="lazy">
-    <img src="../assets/countdown/detail.jpg" alt="A full-screen countdown showing days remaining" loading="lazy">
-    <img src="../assets/countdown/backdrops.jpg" alt="The backdrop picker with full-screen backgrounds" loading="lazy">
-    <img src="../assets/countdown/backups.jpg" alt="Thirty days of on-device backups, restorable in one tap" loading="lazy">
-  </section>
-
-  <h2>Two things most countdown apps get wrong</h2>
-  <p class="lede">The widget is the entire point of a countdown app, and the events are the entire point of the widget. Most apps charge for the first and cap the second.</p>
-  <table>
-    <thead><tr><th>&nbsp;</th><th>Typical countdown app</th><th>This one</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Widgets</strong></td><td>Locked behind Pro, or one size only</td><td class="yes">Every size, Home and Lock Screen, free</td></tr>
-      <tr><td><strong>Events</strong></td><td>Three to five on the free tier</td><td class="yes">Unlimited, permanently</td></tr>
-      <tr><td><strong>Reminders</strong></td><td>Pro feature</td><td class="yes">Free, on the day and as far ahead as you want</td></tr>
-      <tr><td><strong>Your data</strong></td><td>Gone after a bad update or a reinstall</td><td class="yes">Backed up on device daily, 30 days of history</td></tr>
-      <tr><td><strong>What Pro sells</strong></td><td>The features you already needed</td><td class="yes">Backdrops. Nothing that makes the app work</td></tr>
-    </tbody>
-  </table>
-
-  <h2>The rest of it</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Count down, or count up</h3>
-      <p>To a date, or from one. Repeats yearly, monthly, weekly, or every few days.</p>
-    </div>
-    <div class="card">
-      <h3>Nothing leaves your phone</h3>
-      <p>A snapshot of everything on this device every single day, and always before anything risky. One tap to restore.</p>
-    </div>
-    <div class="card">
-      <h3>Days that passed are kept</h3>
-      <p>Finished countdowns collect into a timeline you can look back through, with the longest wait of each year written next to it.</p>
-    </div>
-    <div class="card">
-      <h3>The moment itself</h3>
-      <p>At a hundred days, a week, or the morning of, the app opens on the number, full screen, and hands you a card worth sharing.</p>
-    </div>
-    <div class="card">
-      <h3>Set up in one tap</h3>
-      <p>Thirty-six ready-made events, each already carrying the right repeat and reminders. Two hundred drawn icons and the whole emoji keyboard.</p>
-    </div>
-    <div class="card">
-      <h3>Bring your events with you</h3>
-      <p>Import from a calendar, a spreadsheet, or another countdown app — and export any time. iCloud sync, with no account to make.</p>
-    </div>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Countdown Widget: Any Event</h1>
+    <div class="lede"><p>A countdown that never loses your days — and never holds a widget back.</p><p>Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number.</p></div>
+    <a class="cta" href="https://apps.apple.com/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Download on the App Store</a>
+    <ul class="chips"><li>Free to download</li><li>iPhone &amp; iPad</li><li>iOS 17 or later</li><li>No account needed</li></ul>
   </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/countdown/preview/en.jpg" aria-label="Countdown Widget: Any Event — app preview"><source src="/assets/countdown/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
 
-<!-- faq:start -->
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">Screenshots</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/59/65/38596528-80b4-cf40-16b4-19e290811aeb/02-turn-it-over.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/59/65/38596528-80b4-cf40-16b4-19e290811aeb/02-turn-it-over.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/38/59/65/38596528-80b4-cf40-16b4-19e290811aeb/02-turn-it-over.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/16/e6/3f16e618-d231-d79a-1d8f-a4a1652b9b36/03-see-every-day.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/16/e6/3f16e618-d231-d79a-1d8f-a4a1652b9b36/03-see-every-day.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/16/e6/3f16e618-d231-d79a-1d8f-a4a1652b9b36/03-see-every-day.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/23/86/6b238673-1b3e-a565-4ab1-c904f51d01b7/04-dress-it-up.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/23/86/6b238673-1b3e-a565-4ab1-c904f51d01b7/04-dress-it-up.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/23/86/6b238673-1b3e-a565-4ab1-c904f51d01b7/04-dress-it-up.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/94/37/81/94378197-df63-be6c-f685-192ef920fda1/05-your-photo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/94/37/81/94378197-df63-be6c-f685-192ef920fda1/05-your-photo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/94/37/81/94378197-df63-be6c-f685-192ef920fda1/05-your-photo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/fd/0c/5afd0c5f-65c5-bb9d-4a29-805bcc9167c8/06-keep-the-memories.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/fd/0c/5afd0c5f-65c5-bb9d-4a29-805bcc9167c8/06-keep-the-memories.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/fd/0c/5afd0c5f-65c5-bb9d-4a29-805bcc9167c8/06-keep-the-memories.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/e7/27/3de727f4-d9b0-6860-2397-6096e8695a83/07-pick-your-widget.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/e7/27/3de727f4-d9b0-6860-2397-6096e8695a83/07-pick-your-widget.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/e7/27/3de727f4-d9b0-6860-2397-6096e8695a83/07-pick-your-widget.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/3a/24/a03a24ac-e58c-6e48-e0c7-6754c257966b/08-every-event-one-place.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/3a/24/a03a24ac-e58c-6e48-e0c7-6754c257966b/08-every-event-one-place.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/3a/24/a03a24ac-e58c-6e48-e0c7-6754c257966b/08-every-event-one-place.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/64/d5/fb64d531-d362-2433-72e2-0891b45cb03a/09-start-from-a-template.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/64/d5/fb64d531-d362-2433-72e2-0891b45cb03a/09-start-from-a-template.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/64/d5/fb64d531-d362-2433-72e2-0891b45cb03a/09-start-from-a-template.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/e0/a9/4fe0a9e8-614e-f838-5b17-bbf78a7bbb91/10-keep-every-day-safe.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/e0/a9/4fe0a9e8-614e-f838-5b17-bbf78a7bbb91/10-keep-every-day-safe.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4f/e0/a9/4fe0a9e8-614e-f838-5b17-bbf78a7bbb91/10-keep-every-day-safe.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Countdown Widget: Any Event — screenshot 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">What&#x27;s inside</h2>
+  <div class="feats">
+    <div class="feat"><h3>Every widget, free</h3><ul><li>Four widgets: one countdown, the next few in a list, a spotlight, or a tile for each</li><li>Every widget size, on the Home Screen and the Lock Screen</li><li>Unlimited events — there is no cap, and there never will be</li><li>Count down to a date, or count up from one</li><li>Recurring events: yearly, monthly, weekly, or every few days</li><li>Reminders on the day, and as far ahead as you want</li><li>iCloud sync, with no account to make</li><li>Import from a calendar, a spreadsheet, or another countdown app — and export any time</li><li>No ads, ever</li></ul></div>
+    <div class="feat"><h3>Your days, kept</h3><p>Most countdown apps lose your events at the worst moment — an update, a reinstall, a phone that died. This one takes a snapshot of everything on this device every single day, and always before anything risky. Thirty days of history, one tap to restore, and nothing ever leaves your phone. Days that have already passed are never deleted either: they collect into a timeline you can look back through, with the longest wait of each year written next to it.</p></div>
+    <div class="feat"><h3>The moment itself</h3><p>When a countdown reaches a milestone — a hundred days, a week, the morning of — the app opens on the number, full screen, and gives you a card worth sharing.</p></div>
+    <div class="feat"><h3>The back of every event</h3><p>Tap an event and it turns over to a page of its own. Write a few lines, add photos, record a voice — the story of the day, kept with the day. It syncs with iCloud, goes into every backup, and shares as one picture.</p></div>
+    <div class="feat"><h3>Made to look like yours</h3><p>Thirty-six ready-made events, from a birthday to a first day at work, each already set up with the right repeat and the right reminders. Two hundred drawn icons and the whole emoji keyboard. A hundred and forty full-screen backdrops — twenty-two of them photographs — eighty-eight in Pro.</p></div>
+    <div class="feat"><h3>Countdown Pro</h3><p>Pro sells the finish, never the function. It unlocks the Pro backdrops, with a new drop every month. Whatever you unlock while subscribed stays yours for good — cancelling only stops the new ones arriving. Your countdowns, reminders and widgets work the same whether you subscribe or not.</p></div>
+  </div>
+  <details class="fine"><summary>Pricing and subscription terms</summary><p>Countdown Pro is an auto-renewing subscription. Prices for the annual plan, which includes a 7-day free trial, and the monthly plan are shown in the app before purchase. Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless cancelled at least 24 hours before the current period ends, and you can manage or cancel it in your Apple Account settings at any time. A one-time Lifetime purchase is also available; it does not renew.</p></details>
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
   <h2 id="faq">Questions people ask</h2>
   <div class="grid">
     <div class="card">
@@ -259,41 +287,47 @@
     </div>
   </div>
   <!-- faq:end -->
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">About Pro</h2>
-    <p>Pro sells the finish, never the function. It unlocks the Pro backdrops — 90 of the 122 — with a new drop every month. Whatever you unlock while subscribed stays yours for good; cancelling only stops the new ones arriving. Your countdowns, reminders and widgets work exactly the same whether you subscribe or not.</p>
-    <p>US$9.99 per year with a 7-day free trial, or US$1.49 per month. A one-time Lifetime purchase is US$14.99 and does not renew.</p>
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">This page in other languages</p>
+  <ul class="langs">
+      <li><a href="/countdown/" hreflang="en" lang="en" aria-current="page">English</a></li>
+      <li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/countdown/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+      <li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/countdown/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">More from go ka</h2>
+  <div class="others">
+      <a href="/beforego/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/invoiceqr/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
   </div>
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">Hear about real updates</h2>
-    <p>A new backdrop drop lands every month, and occasionally something bigger. No schedule, no newsletter — just an email from the developer when there is something to say.</p>
-    <p style="margin-top:16px"><a href="mailto:qinqiangji@gmail.com?subject=Countdown%20updates&amp;body=Add%20me%20to%20the%20Countdown%20update%20list.">Email me to be added →</a></p>
-  </div>
-
-  <div class="band">
-    <h2 style="margin-top:0">Support</h2>
-    <p>Questions, feedback, or help with a purchase? Email <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>. Every message is read, usually answered within two business days.</p>
-  </div>
-
-  <div class="band">
-    <h2 style="margin-top:0">Other apps</h2>
-    <div class="apps">
-      <a href="../">BeforeGo — Packing List</a>
-      <a href="../invoiceqr/">Invoice Maker</a>
-      <a href="../dailycalorie/">DailyCalorie</a>
-      <a href="../qrcodestudio/">QR Code Studio</a>
-    </div>
-  </div>
-
-  <footer>
-    <a href="./privacy-policy/">Privacy Policy</a>
-    <a href="./terms-of-service/">Terms of Service</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Contact</a>
-    <p style="margin-top:18px">Countdown is an independent app. Made by one developer.</p>
-  </footer>
-
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Get Countdown Widget: Any Event</a>
+</div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p>Countdown Widget: Any Event is made by go ka. Questions or feedback: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/countdown/privacy-policy/">Privacy Policy</a> · <a href="/countdown/terms-of-service/">Terms of Use</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
 </body>
 </html>

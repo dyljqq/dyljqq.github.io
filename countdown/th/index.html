@@ -1,54 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด</title>
-<link rel="icon" href="../../assets/countdown/icon.png">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root{
-    color-scheme: light dark;
-    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
-    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
-      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
-    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
-  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
-  a{color:var(--brand-deep)}
-  .hero{padding:64px 0 8px;text-align:center}
-  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
-  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
-  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
-  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
-    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
-  .cta:hover{background:var(--brand-deep)}
-  .meta{margin-top:14px;color:var(--muted);font-size:14px}
-  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
-  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
-  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
-  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
-  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
-  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
-  .card h3{margin:0 0 8px;font-size:18px}
-  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
-  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
-  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
-  td.yes{color:var(--brand-deep);font-weight:600}
-  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
-  .band p{color:var(--muted);margin:8px 0 0}
-  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
-    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
-  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
-  footer a{margin-right:18px}
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน">
@@ -107,7 +126,24 @@
   "sameAs": [
     "https://apps.apple.com/app/id6799846628"
   ],
-  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png"
+  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/19/a7/92/19a792f3-fabf-9d0e-0aed-5720560971d5/01-watch-it-closer.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/8c/5c/ad8c5c68-bbc1-b97c-2e2e-2d208644bfd3/02-turn-it-over.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/1a/92/6d1a922e-a3d4-5e36-f8af-4dcaeb71fd71/03-see-every-day.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0b/07/0f/0b070f35-d3cc-277a-4401-2798d83d562b/04-dress-it-up.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/9c/c7/329cc721-24c8-70dc-02b5-cb2cdba07483/05-your-photo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/29/4a/f6294a4f-17dd-7346-6d75-49eb31d0ad1a/06-keep-the-memories.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "นับถอยหลัง Widget: วันสำคัญ — app preview",
+    "description": "แอปนับถอยหลังที่ไม่ทำวันสำคัญของคุณหาย และไม่ล็อกวิดเจ็ตไว้",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/countdown/preview/th.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/countdown/preview/th.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "th"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -179,94 +215,58 @@
 <!-- seo:end -->
 </head>
 <body>
-<main>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">แอปทั้งหมด</a>
+    <a href="/countdown/privacy-policy/">ความเป็นส่วนตัว</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown Widget">การสนับสนุน</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <img class="icon" src="../../assets/countdown/icon.png" alt="ไอคอนแอป นับถอยหลัง Widget: วันสำคัญ" width="92" height="92">
-    <h1>นับถอยหลังพร้อมวิดเจ็ต ฟรี และไม่จำกัดจำนวนอีเวนต์</h1>
-    <p class="tagline">อีกกี่วันถึงวันสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง? วิดเจ็ตบนหน้าจอหลักและหน้าจอล็อกตอบให้ ทุกขนาด ฟรี อีเวนต์กี่รายการก็ได้ ไม่มีขีดจำกัด และจะไม่มีวันมี</p>
-    <a class="cta" href="https://apps.apple.com/th/app/id6799846628">ดาวน์โหลดบน App Store</a>
-    <p class="meta">ฟรี · iPhone และ iPad · iOS 17 ขึ้นไป · ไม่ต้องมีบัญชี · ไม่มีโฆษณา ตลอดไป · <a href="../" hreflang="en" lang="en">English</a></p>
-  </section>
-
-  <section class="shots">
-    <img src="../../assets/countdown/home.jpg" alt="วิดเจ็ตนับถอยหลังบนหน้าจอหลักของ iPhone" loading="lazy">
-    <img src="../../assets/countdown/detail.jpg" alt="นับถอยหลังแบบเต็มจอแสดงจำนวนวันที่เหลือ" loading="lazy">
-    <img src="../../assets/countdown/backdrops.jpg" alt="หน้าเลือกพื้นหลังแบบเต็มจอ" loading="lazy">
-    <img src="../../assets/countdown/backups.jpg" alt="ข้อมูลสำรองในเครื่อง 30 วัน กู้คืนได้ในแตะเดียว" loading="lazy">
-  </section>
-
-  <h2>สองอย่างที่แอปนับถอยหลังส่วนใหญ่ทำพลาด</h2>
-  <p class="lede">วิดเจ็ตคือเหตุผลทั้งหมดของแอปนับถอยหลัง และอีเวนต์คือเหตุผลทั้งหมดของวิดเจ็ต แอปส่วนใหญ่เก็บเงินกับอย่างแรกและจำกัดอย่างหลัง</p>
-  <table>
-    <thead><tr><th>&nbsp;</th><th>แอปนับถอยหลังทั่วไป</th><th>แอปนี้</th></tr></thead>
-    <tbody>
-      <tr><td><strong>วิดเจ็ต</strong></td><td>ล็อกไว้ใน Pro หรือมีขนาดเดียว</td><td class="yes">ทุกขนาด ทั้งหน้าจอหลักและหน้าจอล็อก ฟรี</td></tr>
-      <tr><td><strong>อีเวนต์</strong></td><td>เวอร์ชันฟรีได้ 3–5 รายการ</td><td class="yes">ไม่จำกัด ตลอดไป</td></tr>
-      <tr><td><strong>แจ้งเตือน</strong></td><td>ฟีเจอร์ Pro</td><td class="yes">ฟรี ทั้งในวันนั้นและล่วงหน้าเท่าที่ต้องการ</td></tr>
-      <tr><td><strong>ข้อมูลของคุณ</strong></td><td>หายหลังอัปเดตพังหรือลงใหม่</td><td class="yes">สำรองในเครื่องทุกวัน เก็บประวัติ 30 วัน</td></tr>
-      <tr><td><strong>Pro ขายอะไร</strong></td><td>ฟีเจอร์ที่คุณต้องใช้อยู่แล้ว</td><td class="yes">พื้นหลัง ไม่มีอะไรที่ทำให้แอปทำงาน</td></tr>
-    </tbody>
-  </table>
-
-  <h2>คนไทยนับวันรออะไรบ้าง</h2>
-  <p class="lede">แตะเดียวอีเวนต์ก็พร้อม แล้วคุณเลือกเองว่าจะให้ซ้ำทุกปีไหม วันหยุดราชการอยู่ในรายการอยู่แล้ว</p>
-  <div class="grid">
-    <div class="card">
-      <h3>สอบ</h3>
-      <p>ตัวเลขอยู่ในวิดเจ็ตบนหน้าจอล็อก ไม่ต้องเปิดแอป แจ้งเตือนที่ 100 วัน 1 สัปดาห์ และเช้าวันสอบ</p>
-    </div>
-    <div class="card">
-      <h3>ปีใหม่ &amp; สงกรานต์</h3>
-      <p>นับถอยหลังถึงเคานต์ดาวน์ปีใหม่ ซ้ำเองทุกปี ปีที่ผ่านมาอยู่ในไทม์ไลน์ สงกรานต์ มาฆบูชา วิสาขบูชา ก็มีวันที่ถูกต้องของแต่ละปีให้แล้ว</p>
-    </div>
-    <div class="card">
-      <h3>เที่ยว</h3>
-      <p>อีกกี่วันจะได้บิน พอทริปจบ อีเวนต์กลายเป็นความทรงจำ ใส่รูปและโน้ตไว้ด้านหลังได้</p>
-    </div>
-    <div class="card">
-      <h3>แต่งงาน</h3>
-      <p>วันที่ปล่อยผ่านไม่ได้ วันนั้นมีนับถอยหลังเต็มจอและการ์ดพร้อมแชร์</p>
-    </div>
-    <div class="card">
-      <h3>คอนเสิร์ต</h3>
-      <p>จากวันกดบัตรถึงวันโชว์ จบแล้วก็ยังอยู่ในไทม์ไลน์พร้อมจำนวนวันที่รอ</p>
-    </div>
-    <div class="card">
-      <h3>วันเกิด คลอด วันครบรอบ</h3>
-      <p>วันเกิดและวันครบรอบซ้ำทุกปี วันกำหนดคลอดเป็นนับถอยหลัง ส่วน “คบกันมา” นับไปข้างหน้า: ผ่านมากี่วันแล้วจากวันนั้น</p>
-    </div>
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>นับถอยหลัง Widget: วันสำคัญ</h1>
+    <div class="lede"><p>แอปนับถอยหลังที่ไม่ทำวันสำคัญของคุณหาย และไม่ล็อกวิดเจ็ตไว้</p><p>เพิ่มวันที่สำคัญ วางไว้บนหน้าจอโฮม แล้วดูมันใกล้เข้ามาทีละวัน ไม่จำกัดจำนวน และไม่มีอะไรมาขวางระหว่างคุณกับตัวเลข</p></div>
+    <a class="cta" href="https://apps.apple.com/th/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>ดาวน์โหลดบน App Store</a>
+    <ul class="chips"><li>ฟรีดาวน์โหลด</li><li>iPhone และ iPad</li><li>iOS 17 ขึ้นไป</li><li>ไม่ต้องใช้บัญชี</li></ul>
   </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/countdown/preview/th.jpg" aria-label="นับถอยหลัง Widget: วันสำคัญ — ตัวอย่างแอป"><source src="/assets/countdown/preview/th.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
 
-  <h2>ที่เหลือ</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>นับถอยหลัง หรือนับไปข้างหน้า</h3>
-      <p>ถึงวันหนึ่ง หรือจากวันหนึ่ง ซ้ำได้รายปี รายเดือน รายสัปดาห์ หรือทุกสองสามวัน</p>
-    </div>
-    <div class="card">
-      <h3>ไม่มีอะไรออกจากเครื่องคุณ</h3>
-      <p>สำรองทุกอย่างในเครื่องนี้ทุกวัน และก่อนทำอะไรที่เสี่ยงเสมอ กู้คืนในแตะเดียว</p>
-    </div>
-    <div class="card">
-      <h3>วันที่ผ่านไปยังอยู่</h3>
-      <p>นับถอยหลังที่จบแล้วรวมเป็นไทม์ไลน์ให้ย้อนดู พร้อมการรอที่ยาวที่สุดของแต่ละปีเขียนไว้ข้าง ๆ</p>
-    </div>
-    <div class="card">
-      <h3>ช่วงเวลานั้นเอง</h3>
-      <p>ที่ 100 วัน 1 สัปดาห์ หรือเช้าวันนั้น แอปเปิดมาที่ตัวเลขเต็มจอ และยื่นการ์ดที่น่าแชร์ให้</p>
-    </div>
-    <div class="card">
-      <h3>พร้อมในแตะเดียว</h3>
-      <p>อีเวนต์สำเร็จรูป 36 แบบ แต่ละแบบมีการซ้ำและแจ้งเตือนที่เหมาะสมมาให้ ไอคอนวาดมือ 200 แบบ และคีย์บอร์ดอิโมจิทั้งหมด</p>
-    </div>
-    <div class="card">
-      <h3>พาอีเวนต์มาด้วย</h3>
-      <p>นำเข้าจากปฏิทิน สเปรดชีต หรือแอปนับถอยหลังอื่น — และส่งออกได้ทุกเมื่อ ซิงก์ iCloud โดยไม่ต้องสร้างบัญชี</p>
-    </div>
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">ภาพหน้าจอ</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/19/a7/92/19a792f3-fabf-9d0e-0aed-5720560971d5/01-watch-it-closer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/19/a7/92/19a792f3-fabf-9d0e-0aed-5720560971d5/01-watch-it-closer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/19/a7/92/19a792f3-fabf-9d0e-0aed-5720560971d5/01-watch-it-closer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/8c/5c/ad8c5c68-bbc1-b97c-2e2e-2d208644bfd3/02-turn-it-over.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/8c/5c/ad8c5c68-bbc1-b97c-2e2e-2d208644bfd3/02-turn-it-over.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ad/8c/5c/ad8c5c68-bbc1-b97c-2e2e-2d208644bfd3/02-turn-it-over.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/1a/92/6d1a922e-a3d4-5e36-f8af-4dcaeb71fd71/03-see-every-day.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/1a/92/6d1a922e-a3d4-5e36-f8af-4dcaeb71fd71/03-see-every-day.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/1a/92/6d1a922e-a3d4-5e36-f8af-4dcaeb71fd71/03-see-every-day.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0b/07/0f/0b070f35-d3cc-277a-4401-2798d83d562b/04-dress-it-up.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0b/07/0f/0b070f35-d3cc-277a-4401-2798d83d562b/04-dress-it-up.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0b/07/0f/0b070f35-d3cc-277a-4401-2798d83d562b/04-dress-it-up.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/9c/c7/329cc721-24c8-70dc-02b5-cb2cdba07483/05-your-photo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/9c/c7/329cc721-24c8-70dc-02b5-cb2cdba07483/05-your-photo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/32/9c/c7/329cc721-24c8-70dc-02b5-cb2cdba07483/05-your-photo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/29/4a/f6294a4f-17dd-7346-6d75-49eb31d0ad1a/06-keep-the-memories.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/29/4a/f6294a4f-17dd-7346-6d75-49eb31d0ad1a/06-keep-the-memories.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/29/4a/f6294a4f-17dd-7346-6d75-49eb31d0ad1a/06-keep-the-memories.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/56/17/b8561721-2ba8-026a-d8ed-04df659a61f5/07-pick-your-widget.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/56/17/b8561721-2ba8-026a-d8ed-04df659a61f5/07-pick-your-widget.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/56/17/b8561721-2ba8-026a-d8ed-04df659a61f5/07-pick-your-widget.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/41/e3/cb41e300-4ada-c6e1-72c0-0734a90779c9/08-every-event-one-place.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/41/e3/cb41e300-4ada-c6e1-72c0-0734a90779c9/08-every-event-one-place.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/41/e3/cb41e300-4ada-c6e1-72c0-0734a90779c9/08-every-event-one-place.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/45/31/cd4531b2-ac0d-d0cb-4123-c07649168854/09-start-from-a-template.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/45/31/cd4531b2-ac0d-d0cb-4123-c07649168854/09-start-from-a-template.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cd/45/31/cd4531b2-ac0d-d0cb-4123-c07649168854/09-start-from-a-template.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e7/7e/f2/e77ef272-7ae4-9692-1014-54b96b94895f/10-keep-every-day-safe.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e7/7e/f2/e77ef272-7ae4-9692-1014-54b96b94895f/10-keep-every-day-safe.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e7/7e/f2/e77ef272-7ae4-9692-1014-54b96b94895f/10-keep-every-day-safe.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="นับถอยหลัง Widget: วันสำคัญ — ภาพหน้าจอ 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">อะไรอยู่ข่างใน</h2>
+  <div class="feats">
+    <div class="feat"><h3>วิดเจ็ตทุกแบบ ฟรี</h3><ul><li>วิดเจ็ต 4 แบบ: นับถอยหลังรายการเดียว รายการถัดไป แบบเด่นหนึ่งรายการ หรือไทล์ของแต่ละกิจกรรม</li><li>วิดเจ็ตครบทุกขนาด ทั้งหน้าจอโฮมและหน้าจอล็อก</li><li>เพิ่มกิจกรรมได้ไม่จำกัด ทั้งตอนนี้และตลอดไป</li><li>นับถอยหลังถึงวันหนึ่ง หรือนับเดินหน้าจากวันหนึ่ง</li><li>ทำซ้ำ: ทุกปี ทุกเดือน ทุกสัปดาห์ หรือทุกกี่วันก็ได้</li><li>เตือนในวันนั้น และล่วงหน้าได้ตามต้องการ</li><li>ซิงก์ iCloud โดยไม่ต้องสมัครบัญชี</li><li>นำเข้าจากปฏิทิน สเปรดชีต หรือแอปนับถอยหลังอื่น — และส่งออกได้ทุกเมื่อ</li><li>ไม่มีโฆษณา</li></ul></div>
+    <div class="feat"><h3>เก็บวันของคุณไว้ให้</h3><p>คำบ่นที่พบบ่อยที่สุดในหมวดนี้คือ &quot;อัปเดตแล้วหายหมด&quot; แอปนี้บันทึกสแนปช็อตของทุกกิจกรรมไว้ในเครื่องนี้ทุกวัน และก่อนทำสิ่งที่เสี่ยงเสมอ ประวัติ 30 วัน กู้คืนด้วยการแตะครั้งเดียว และไม่มีอะไรออกจากเครื่องของคุณ และวันที่ผ่านมาแล้วก็ไม่ถูกลบเช่นกัน มันจะรวมเป็นไทม์ไลน์ที่ย้อนกลับไปดูได้ พร้อมบอกว่าปีนั้นคุณรอนานที่สุดกี่วัน</p></div>
+    <div class="feat"><h3>ตัวช่วงเวลานั้นเอง</h3><p>เมื่อการนับถอยหลังถึงหมุดหมาย — 100 วัน หนึ่งสัปดาห์ หรือเช้าวันนั้น — แอปจะเปิดเป็นตัวเลขเต็มจอ พร้อมการ์ดที่ควรค่าแก่การแชร์</p></div>
+    <div class="feat"><h3>ด้านหลังของทุกอีเวนต์</h3><p>แตะอีเวนต์แล้วการ์ดจะพลิกไปเป็นหน้าของมันเอง เขียนข้อความ เพิ่มรูปภาพ อัดเสียง เก็บเรื่องราวของวันนั้นไว้กับวันนั้น ซิงค์ผ่าน iCloud อยู่ในทุกข้อมูลสำรอง และแชร์เป็นรูปเดียวได้</p></div>
+    <div class="feat"><h3>ให้ดูเป็นของคุณ</h3><p>เทมเพลตพร้อมใช้ 36 แบบ ตั้งแต่วันเกิดไปจนถึงวันแรกของงานใหม่ ตั้งค่าการทำซ้ำและการเตือนไว้ให้แล้ว ไอคอนวาดมือ 200 แบบ พร้อมคีย์บอร์ดอีโมจิทั้งชุด และพื้นหลังเต็มจอ 140 แบบ ในจำนวนนี้ 22 แบบเป็นภาพถ่าย และ 88 แบบเป็นของ Pro</p></div>
+    <div class="feat"><h3>Countdown Pro</h3><p>Pro ขายความสวยงาม ไม่ได้ขายฟังก์ชัน มันปลดล็อกพื้นหลัง Pro พร้อมของใหม่ทุกเดือน สิ่งที่คุณปลดล็อกระหว่างเป็นสมาชิกจะเป็นของคุณตลอดไป การยกเลิกเพียงหยุดรับของใหม่ ไม่ว่าจะสมัครหรือไม่ การนับถอยหลัง การแจ้งเตือน และวิดเจ็ตก็ใช้ได้เหมือนเดิม</p></div>
   </div>
+  <details class="fine"><summary>ราคาและเงื่อนไขการสมัครสมาชิก</summary><p>Countdown Pro เป็นการสมัครสมาชิกแบบต่ออายุอัตโนมัติ ราคาแผนรายปีซึ่งรวมการทดลองใช้ฟรี 7 วัน และราคาแผนรายเดือนจะแสดงในแอปก่อนซื้อ ระบบจะเรียกเก็บเงินจาก Apple Account ของคุณเมื่อยืนยันการซื้อ และจะต่ออายุอัตโนมัติหากไม่ยกเลิกอย่างน้อย 24 ชั่วโมงก่อนสิ้นรอบปัจจุบัน คุณจัดการหรือยกเลิกได้ทุกเมื่อในการตั้งค่า Apple Account นอกจากนี้ยังมีตัวเลือกซื้อขาดแบบจ่ายครั้งเดียว ซึ่งไม่มีการต่ออายุอัตโนมัติ</p></details>
+</section>
 
-<!-- faq:start -->
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
   <h2 id="faq">คำถามที่พบบ่อย</h2>
   <div class="grid">
     <div class="card">
@@ -299,35 +299,47 @@
     </div>
   </div>
   <!-- faq:end -->
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">เกี่ยวกับ Pro</h2>
-    <p>Pro ขายความสวย ไม่เคยขายฟังก์ชัน ปลดล็อกพื้นหลัง Pro — 90 จาก 122 แบบ — และมีชุดใหม่ทุกเดือน อะไรที่ปลดล็อกระหว่างสมัครเป็นของคุณตลอดไป ยกเลิกแล้วแค่ไม่ได้ชุดใหม่ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนเดิมทุกอย่างไม่ว่าจะสมัครหรือไม่</p>
-    <p>399 บาทต่อปี พร้อมทดลองฟรี 7 วัน หรือ 49 บาทต่อเดือน ซื้อขาดครั้งเดียว 499 บาท ไม่ต่ออายุ</p>
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">หน้านี้ในภาษาอื่น</p>
+  <ul class="langs">
+      <li><a href="/countdown/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/countdown/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/countdown/th/" hreflang="th" lang="th" aria-current="page">ไทย</a></li>
+      <li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+      <li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/countdown/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">เพิ่มเติมจาก go ka</h2>
+  <div class="others">
+      <a href="/beforego/th/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/invoiceqr/th/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
   </div>
+</section>
 
-  <div class="band">
-    <h2 style="margin-top:0">ซัพพอร์ต</h2>
-    <p>มีคำถาม ข้อเสนอแนะ หรือปัญหาเรื่องการซื้อ? อีเมลมาที่ <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (ภาษาไทยหรืออังกฤษ) อ่านทุกฉบับ ปกติตอบภายใน 2 วันทำการ</p>
-  </div>
-
-  <div class="band">
-    <h2 style="margin-top:0">แอปอื่น ๆ</h2>
-    <div class="apps">
-      <a href="../../">BeforeGo — Packing List</a>
-      <a href="../../invoiceqr/">Invoice Maker</a>
-      <a href="../../dailycalorie/">DailyCalorie</a>
-      <a href="../../qrcodestudio/">QR Code Studio</a>
-    </div>
-  </div>
-
-  <footer>
-    <a href="../privacy-policy/">นโยบายความเป็นส่วนตัว (ภาษาอังกฤษ)</a>
-    <a href="../terms-of-service/">ข้อกำหนดการใช้งาน (ภาษาอังกฤษ)</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">ติดต่อ</a>
-    <p style="margin-top:18px">Countdown เป็นแอปอิสระ สร้างโดยนักพัฒนาคนเดียว</p>
-  </footer>
-
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/th/app/id6799846628"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>ดาวน์โหลด นับถอยหลัง Widget: วันสำคัญ</a>
+</div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p>นับถอยหลัง Widget: วันสำคัญ สร้างโดย go ka คำถามหรือข้อเสนอแนะ: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/countdown/privacy-policy/">นโยบายความเป็นส่วนตัว</a> · <a href="/countdown/terms-of-service/">เงื่อนไขการใช้งาน</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
 </body>
 </html>

@@ -12,14 +12,25 @@
 
 ### BeforeGo: AI Itinerary Planner
 
-A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.
+An AI itinerary planner for iPhone that turns a travel post, link or note into a day-by-day trip plan, and writes the packing list from your destination and dates.
 
 - Page: https://goka-xi.vercel.app/beforego/
+- Page (de): https://goka-xi.vercel.app/beforego/de/
+- Page (fr): https://goka-xi.vercel.app/beforego/fr/
+- Page (it): https://goka-xi.vercel.app/beforego/it/
+- Page (es): https://goka-xi.vercel.app/beforego/es/
+- Page (es-MX): https://goka-xi.vercel.app/beforego/es-mx/
+- Page (pt-BR): https://goka-xi.vercel.app/beforego/pt-br/
+- Page (ja): https://goka-xi.vercel.app/beforego/ja/
+- Page (ko): https://goka-xi.vercel.app/beforego/ko/
+- Page (zh-Hans): https://goka-xi.vercel.app/beforego/zh-hans/
+- Page (zh-Hant): https://goka-xi.vercel.app/beforego/zh-hant/
+- Page (th): https://goka-xi.vercel.app/beforego/th/
 - App Store: https://apps.apple.com/app/id6786561175
 - Platform: iOS (iPhone, iPad)
 - Category: Travel
-- For: People who pack from memory and keep forgetting the same one thing.
-- Free: Trips, checklists, reminders, widgets and the journal. No account required.
+- For: People who plan trips from other people's posts and guides, and pack from memory.
+- Free: Free to start — no ads, no account required. Premium unlocks everything; a one-time lifetime purchase is also available.
 
 ### Countdown Widget: Any Event
 
@@ -47,6 +58,16 @@ A countdown widget app for iPhone where every widget size is free and the number
 An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.
 
 - Page: https://goka-xi.vercel.app/invoiceqr/
+- Page (de): https://goka-xi.vercel.app/invoiceqr/de/
+- Page (fr): https://goka-xi.vercel.app/invoiceqr/fr/
+- Page (it): https://goka-xi.vercel.app/invoiceqr/it/
+- Page (es): https://goka-xi.vercel.app/invoiceqr/es/
+- Page (es-MX): https://goka-xi.vercel.app/invoiceqr/es-mx/
+- Page (pt-BR): https://goka-xi.vercel.app/invoiceqr/pt-br/
+- Page (ja): https://goka-xi.vercel.app/invoiceqr/ja/
+- Page (ko): https://goka-xi.vercel.app/invoiceqr/ko/
+- Page (zh-Hant): https://goka-xi.vercel.app/invoiceqr/zh-hant/
+- Page (th): https://goka-xi.vercel.app/invoiceqr/th/
 - App Store: https://apps.apple.com/app/id6790383156
 - Platform: iOS (iPhone, iPad)
 - Category: Business

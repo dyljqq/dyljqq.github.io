@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeforeGo：AI旅行計画・旅行チェックリスト — 旅行計画をスクショから作成、持ち物リストも含む</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。">
+<link rel="canonical" href="https://goka-xi.vercel.app/beforego/ja/">
+<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/beforego/">
+<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/beforego/de/">
+<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/beforego/fr/">
+<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/beforego/it/">
+<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/beforego/es/">
+<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/beforego/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/beforego/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/beforego/ja/">
+<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/beforego/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://goka-xi.vercel.app/beforego/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/beforego/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/beforego/th/">
+<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/beforego/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="BeforeGo：AI旅行計画・旅行チェックリスト — 旅行計画をスクショから作成、持ち物リストも含む">
+<meta property="og:description" content="旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。">
+<meta property="og:url" content="https://goka-xi.vercel.app/beforego/ja/">
+<meta property="og:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
+<meta name="twitter:title" content="BeforeGo：AI旅行計画・旅行チェックリスト — 旅行計画をスクショから作成、持ち物リストも含む">
+<meta name="twitter:description" content="旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。">
+<meta name="apple-itunes-app" content="app-id=6786561175">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://goka-xi.vercel.app/beforego/ja/#app",
+  "name": "BeforeGo：AI旅行計画・旅行チェックリスト",
+  "alternateName": "BeforeGo",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
+  "url": "https://goka-xi.vercel.app/beforego/ja/",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6786561175",
+  "installUrl": "https://apps.apple.com/app/id6786561175",
+  "sameAs": [
+    "https://apps.apple.com/app/id6786561175"
+  ],
+  "image": "https://goka-xi.vercel.app/assets/beforego/icon.png",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/7f/c7/277fc727-fd9a-7ff4-6188-b92016742ad8/02-thingstodo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/62/bf/9162bf37-e72e-3785-7ae2-b56727bcd2a9/03-bookings.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/30/8d/72308d0d-d206-ac8c-5590-dc1e99918f09/04-checklist.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/30/ac/df30ac1b-8711-5965-ba97-43db746c2d9b/05-countdown.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/52/ae/ce52ae84-2074-4115-c9d6-976f847836e7/06-lens.png/920x0w.webp"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://goka-xi.vercel.app/beforego/ja/#faq",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "BeforeGo は旅の投稿のスクショで何をしますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "スクショから日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。リンクを貼ったり、予定を打ち込んだりしても同じように動き、航空券や予約確認をスキャンすればプランに加わります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "持ち物リストを作りますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。持ち物リストは行き先と日程から自動で作られます——プラグ、通貨、入国準備、交通アプリ——カテゴリー別・タイムライン別のビューで、出発 7 日前・3 日前・24 時間前・3 時間前にリマインドします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "前に忘れたものを覚えていますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。忘れ物は次の持ち物リストへ自動引き継ぎされるので、次の旅行のリストはより準備が整った状態で始まります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アカウントが必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。無料で開始——広告なし、アカウント不要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どの言語に対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "10 言語です：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português、ไทย。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "BeforeGo Premium はいくらですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Premium は自動更新のサブスクリプションで、月額と年額があり、年間プランには新規のお客様向けの 7 日間無料トライアルが付いています。買い切りの永久アンロックもあります。正確な価格は購入確認画面に表示されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ビザと入国要件に信頼できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。BeforeGo は個人の旅行整理のためのアプリです。ビザ、安全、健康、航空会社、政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">すべてのアプリ</a>
+    <a href="/privacy-policy/">プライバシー</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">サポート</a>
+  </nav>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8a/1f/98/8a1f9850-7a0b-0cc7-376b-e0293f0eb840/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>BeforeGo：AI旅行計画・旅行チェックリスト</h1>
+    <div class="lede"><p>旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。航空券や予約確認をスキャンすればプランに加わり、持ち物リストは行き先と日程から自動で作られます。</p></div>
+    <a class="cta" href="https://apps.apple.com/jp/app/id6786561175"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store でダウンロード</a>
+    <ul class="chips"><li>無料でダウンロード</li><li>iPhone と iPad</li><li>iOS 17 以降</li><li>アカウント不要</li></ul>
+  </div>
+  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 1" fetchpriority="high"></div>
+</section>
+
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">スクリーンショット</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/7f/c7/277fc727-fd9a-7ff4-6188-b92016742ad8/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/7f/c7/277fc727-fd9a-7ff4-6188-b92016742ad8/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/7f/c7/277fc727-fd9a-7ff4-6188-b92016742ad8/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/62/bf/9162bf37-e72e-3785-7ae2-b56727bcd2a9/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/62/bf/9162bf37-e72e-3785-7ae2-b56727bcd2a9/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/62/bf/9162bf37-e72e-3785-7ae2-b56727bcd2a9/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/30/8d/72308d0d-d206-ac8c-5590-dc1e99918f09/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/30/8d/72308d0d-d206-ac8c-5590-dc1e99918f09/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/30/8d/72308d0d-d206-ac8c-5590-dc1e99918f09/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/30/ac/df30ac1b-8711-5965-ba97-43db746c2d9b/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/30/ac/df30ac1b-8711-5965-ba97-43db746c2d9b/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/30/ac/df30ac1b-8711-5965-ba97-43db746c2d9b/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/52/ae/ce52ae84-2074-4115-c9d6-976f847836e7/06-lens.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/52/ae/ce52ae84-2074-4115-c9d6-976f847836e7/06-lens.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/52/ae/ce52ae84-2074-4115-c9d6-976f847836e7/06-lens.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/3f/f1/203ff1b2-5a93-a3fe-3900-3c6ee910a0f0/07-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/3f/f1/203ff1b2-5a93-a3fe-3900-3c6ee910a0f0/07-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/3f/f1/203ff1b2-5a93-a3fe-3900-3c6ee910a0f0/07-album.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/c6/ac/15c6ac7b-c9c2-0257-0b7a-04b5e0b0e268/08-voice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/c6/ac/15c6ac7b-c9c2-0257-0b7a-04b5e0b0e268/08-voice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/c6/ac/15c6ac7b-c9c2-0257-0b7a-04b5e0b0e268/08-voice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/23/17/552317c3-5d7f-dfe3-338e-d89868baf1d7/09-receipt.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/23/17/552317c3-5d7f-dfe3-338e-d89868baf1d7/09-receipt.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/23/17/552317c3-5d7f-dfe3-338e-d89868baf1d7/09-receipt.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/c3/39/7ec33908-e1cd-72a6-6ae1-97fd459aca73/10-brand.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/c3/39/7ec33908-e1cd-72a6-6ae1-97fd459aca73/10-brand.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/c3/39/7ec33908-e1cd-72a6-6ae1-97fd459aca73/10-brand.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI旅行計画・旅行チェックリスト — スクリーンショット 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">機能</h2>
+  <div class="feats">
+    <div class="feat"><h3>持ち物リスト、自動作成</h3><ul><li>目的地に合わせたリスト——プラグ、通貨、入国準備、交通アプリ</li><li>カテゴリー別・タイムライン別のチェックリスト</li><li>出発 7日前・3日前・24時間前・3時間前のリマインド</li><li>カウントダウンとチェックリストのウィジェット</li><li>項目ごとに写真とメモ</li></ul></div>
+    <div class="feat"><h3>旅行中</h3><ul><li>保存したスポットがチェックリストに——名所、グルメ、体験をひとつずつ</li><li>1日の予定が最短ルートに並び替え</li><li>音声メモは自動で文字起こし</li></ul></div>
+    <div class="feat"><h3>旅のあと</h3><ul><li>写真・メモ・音声を旅ごとに整理</li><li>印刷できる旅日記アルバム、ラゲッジタグ、チケット、旅の記録</li><li>忘れ物は次の持ち物リストへ自動引き継ぎ</li></ul></div>
+    <div class="feat"><h3>価格</h3><p>無料で開始——広告なし、アカウント不要。プレミアムで全機能を解放。サブスクが苦手な方には買い切りもあります。</p><p>BeforeGo は個人の旅行整理のためのアプリです。ビザ・安全・健康・航空会社・政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。</p></div>
+  </div>
+  <details class="fine"><summary>価格とサブスクリプション条件</summary><p>BeforeGo Premium（自動更新サブスクリプション） サブスクリプションですべてのプレミアム機能を利用できます： • 月額プラン——1か月ごとに課金 • 年額プラン——1年ごとに課金 年間プランには新規のお客様向けの7日間無料トライアルが付いています。正確な価格は購入確認画面に表示されます。買い切りの永久アンロックもご用意しています。</p><p>お支払いは購入確定時にApple アカウントへ請求されます。現在の期間終了の24時間前までに自動更新をオフにしない限り、サブスクリプションは自動的に更新されます。更新料は期間終了前の24時間以内に請求されます。購入後はApp Storeのアカウント設定でいつでも管理・解約できます。</p></details>
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">よくある質問</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>BeforeGo は旅の投稿のスクショで何をしますか？</h3>
+      <p>スクショから日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。リンクを貼ったり、予定を打ち込んだりしても同じように動き、航空券や予約確認をスキャンすればプランに加わります。</p>
+    </div>
+    <div class="card">
+      <h3>持ち物リストを作りますか？</h3>
+      <p>はい。持ち物リストは行き先と日程から自動で作られます——プラグ、通貨、入国準備、交通アプリ——カテゴリー別・タイムライン別のビューで、出発 7 日前・3 日前・24 時間前・3 時間前にリマインドします。</p>
+    </div>
+    <div class="card">
+      <h3>前に忘れたものを覚えていますか？</h3>
+      <p>はい。忘れ物は次の持ち物リストへ自動引き継ぎされるので、次の旅行のリストはより準備が整った状態で始まります。</p>
+    </div>
+    <div class="card">
+      <h3>アカウントが必要ですか？</h3>
+      <p>いいえ。無料で開始——広告なし、アカウント不要です。</p>
+    </div>
+    <div class="card">
+      <h3>どの言語に対応していますか？</h3>
+      <p>10 言語です：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português、ไทย。</p>
+    </div>
+    <div class="card">
+      <h3>BeforeGo Premium はいくらですか？</h3>
+      <p>Premium は自動更新のサブスクリプションで、月額と年額があり、年間プランには新規のお客様向けの 7 日間無料トライアルが付いています。買い切りの永久アンロックもあります。正確な価格は購入確認画面に表示されます。</p>
+    </div>
+    <div class="card">
+      <h3>ビザと入国要件に信頼できますか？</h3>
+      <p>いいえ。BeforeGo は個人の旅行整理のためのアプリです。ビザ、安全、健康、航空会社、政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">他の言語でこのページを表示</p>
+  <ul class="langs">
+      <li><a href="/beforego/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/beforego/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
+      <li><a href="/beforego/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/beforego/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/beforego/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/beforego/ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+      <li><a href="/beforego/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+      <li><a href="/beforego/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">go ka からのその他</h2>
+  <div class="others">
+      <a href="/countdown/ja/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/invoiceqr/ja/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/jp/app/id6786561175"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>BeforeGo：AI旅行計画・旅行チェックリスト を入手</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>BeforeGo：AI旅行計画・旅行チェックリスト は go ka が制作しています。 ご質問やフィードバック: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/privacy-policy/">プライバシーポリシー</a> · <a href="/terms-of-use/">利用規約</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+</body>
+</html>

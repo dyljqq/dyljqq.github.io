@@ -1,0 +1,342 @@
+{
+  "de": {
+    "tagline": "Rechnungen, Angebote und QR-Zahlungen in Minuten",
+    "description": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
+    "faq": [
+      {
+        "q": "Gibt es eine Rechnungs-App für das iPhone, die ohne Kontenerstellung funktioniert?",
+        "a": "Ja. Smart Rechnung & Angebot hat kein Konto und keine Anmeldung, und es funktioniert offline. Rechnungen, Kunden und QR-Codes werden über Ihre eigene iCloud synchronisiert, wenn Sie sie auf mehreren Geräten benötigen."
+      },
+      {
+        "q": "Wie viele Rechnungen kann ich kostenlos versenden?",
+        "a": "Drei Dokumente pro Monat. Der Zähler wird beim Erstellen eines Dokuments erhöht, nicht beim Versenden, und Kostenvoranschläge und Angebote teilen sich das gleiche Monatskontingent wie Rechnungen. Ein bereits erstelltes Dokument wird nur einmal gezählt, also ist das Bearbeiten oder spätere erneute Versenden kostenlos."
+      },
+      {
+        "q": "Kann ein Kunde direkt von der Rechnung aus bezahlen?",
+        "a": "Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Sie können dann die Zahlung in der App erfassen und die Rechnung zwischen unbezahlt, teilweise, bezahlt und überfällig verschieben."
+      },
+      {
+        "q": "Kann ich ein Angebot oder Kostenvoranschlag in eine Rechnung umwandeln?",
+        "a": "Ja, mit einem Tipp. Kunden, Positionen und Steuersätze werden einmal gespeichert und wiederverwendet, und Sie können Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen."
+      },
+      {
+        "q": "Macht es QR-Codes für etwas anderes als Zahlungen?",
+        "a": "Ja. Es enthält ein QR-Studio mit 12 Typen — Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Kalender, Text, Zahlung und Pix — und 16 fertige Designs, davon vier kostenlos."
+      },
+      {
+        "q": "Kann ich eine versehentlich gelöschte Rechnung wiederherstellen?",
+        "a": "Ja. Zuletzt gelöscht speichert Rechnungen für 30 Tage."
+      },
+      {
+        "q": "Was entsperrt Invoice Maker Pro?",
+        "a": "Unbegrenzte Rechnungen und QR-Exporte, alle 20 Rechnungsvorlagen, alle 12 QR-Stile und 16 Designs, das komplette Brand Kit (Farbe, Schrift und Logo) sowie benutzerdefinierte QR-Farben, -Punkte und -Rahmen."
+      }
+    ]
+  },
+  "fr": {
+    "tagline": "Factures, devis et QR de paiement en quelques minutes",
+    "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
+    "faq": [
+      {
+        "q": "Existe-t-il une app de facturation pour iPhone qui fonctionne sans créer de compte ?",
+        "a": "Oui. Facture, Devis et Reçu n'a pas de compte ni d'inscription, et elle fonctionne hors ligne. Factures, clients et codes QR se synchronisent via votre propre iCloud si vous les avez sur plusieurs appareils."
+      },
+      {
+        "q": "Combien de factures puis-je envoyer gratuitement ?",
+        "a": "Trois documents par mois. Le décompte se fait à la création, non à l'envoi, et les devis et estimations puisent dans le même quota mensuel que les factures. Un document déjà créé n'est compté qu'une fois, donc le modifier ou le renvoyer plus tard est gratuit."
+      },
+      {
+        "q": "Un client peut-il payer directement depuis la facture ?",
+        "a": "Oui. Chaque facture peut avoir un code QR de paiement que le client scanne pour payer. Vous enregistrez ensuite le paiement dans l'app et la facture passe entre impayée, partielle, payée et en retard."
+      },
+      {
+        "q": "Puis-je convertir un devis ou une estimation en facture ?",
+        "a": "Oui, d'un seul geste. Les clients, les articles et les taux de TVA sont enregistrés une fois et réutilisés, et vous pouvez ajouter des remises, des frais de port, des modes de paiement et des conditions réutilisables."
+      },
+      {
+        "q": "Fait-elle des codes QR pour autre chose que le paiement ?",
+        "a": "Oui. Elle inclut un studio QR avec 12 types — lien, Wi-Fi, carte de visite, e-mail, téléphone, SMS, chat, lieu, agenda, texte, paiement et Pix — et 16 designs prêts à l'emploi, dont quatre gratuits."
+      },
+      {
+        "q": "Puis-je récupérer une facture supprimée accidentellement ?",
+        "a": "Oui. Suppressions récentes conserve les factures pendant 30 jours."
+      },
+      {
+        "q": "Qu'est-ce que Pro déverrouille ?",
+        "a": "Factures et exports QR illimités, tous les 20 modèles de facture, les 12 styles QR et 16 designs, le kit de marque complet (couleur, police et logo), ainsi que les couleurs, points et cadres QR personnalisés."
+      }
+    ]
+  },
+  "it": {
+    "tagline": "Fatture, preventivi e QR di pagamento in minuti",
+    "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
+    "faq": [
+      {
+        "q": "Esiste un'app di fatturazione per iPhone che funziona senza creare un account?",
+        "a": "Sì. Fattura, Preventivo e Ricevuta non ha account e non richiede iscrizione, e funziona offline. Fatture, clienti e codici QR si sincronizzano tramite il tuo iCloud se li hai su più dispositivi."
+      },
+      {
+        "q": "Quante fatture posso inviare gratuitamente?",
+        "a": "Tre documenti al mese. Il conteggio avviene alla creazione, non all'invio, e i preventivi e le stime condividono lo stesso limite mensile delle fatture. Un documento già creato viene contato una sola volta, quindi modificarlo o inviarlo di nuovo è gratuito."
+      },
+      {
+        "q": "Un cliente può pagare direttamente dalla fattura?",
+        "a": "Sì. Ogni fattura può avere un codice QR di pagamento che il cliente scansiona per pagare. Registri quindi il pagamento nell'app e la fattura passa tra non pagata, parziale, pagata e scaduta."
+      },
+      {
+        "q": "Posso convertire un preventivo o una stima in fattura?",
+        "a": "Sì, con un tocco. Clienti, articoli e aliquote sono salvati una volta e riutilizzati, e puoi aggiungere sconti, spedizione, metodi di pagamento e condizioni riutilizzabili."
+      },
+      {
+        "q": "Fa codici QR per qualcosa di diverso dal pagamento?",
+        "a": "Sì. Include uno studio QR con 12 tipi — link, Wi-Fi, biglietto da visita, e-mail, telefono, SMS, chat, luogo, calendario, testo, pagamento e Pix — e 16 design pronti, di cui quattro gratuiti."
+      },
+      {
+        "q": "Posso recuperare una fattura eliminata per errore?",
+        "a": "Sì. Eliminati di recente conserva le fatture per 30 giorni."
+      },
+      {
+        "q": "Cosa sblocca Pro?",
+        "a": "Fatture ed esportazioni QR illimitate, tutti i 20 modelli di fattura, i 12 stili QR e 16 design, il brand kit completo (colore, font e logo), oltre a colori, punti e cornici QR personalizzati."
+      }
+    ]
+  },
+  "es": {
+    "tagline": "Facturas, presupuestos y QR de pago en minutos",
+    "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
+    "faq": [
+      {
+        "q": "¿Existe una app de facturación para iPhone que funcione sin crear una cuenta?",
+        "a": "Sí. Smart Factura y Presupuesto no tiene cuenta ni registro, y funciona offline. Facturas, clientes y códigos QR se sincronizan a través de tu iCloud si los necesitas en varios dispositivos."
+      },
+      {
+        "q": "¿Cuántas facturas puedo enviar gratuitamente?",
+        "a": "Tres documentos al mes. El conteo es cuando creas un documento, no cuando lo envías, y los presupuestos y cotizaciones comparten el mismo límite mensual que las facturas. Un documento ya creado se cuenta solo una vez, así que editarlo o reenviarlo después es gratis."
+      },
+      {
+        "q": "¿Puede un cliente pagar directamente desde la factura?",
+        "a": "Sí. Cada factura puede incluir un código QR de pago que el cliente escanea para pagar. Entonces registras el pago en la app y la factura pasa entre pendiente, parcial, pagada y vencida."
+      },
+      {
+        "q": "¿Puedo convertir un presupuesto o cotización en factura?",
+        "a": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y se reutilizan, y puedes añadir descuentos, envío, formas de pago y condiciones reutilizables."
+      },
+      {
+        "q": "¿Hace códigos QR para algo más que pagos?",
+        "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de los cuales son gratis."
+      },
+      {
+        "q": "¿Puedo recuperar una factura que eliminé por error?",
+        "a": "Sí. Eliminado recientemente conserva las facturas durante 30 días."
+      },
+      {
+        "q": "¿Qué desbloquea Pro?",
+        "a": "Facturas y exportaciones QR ilimitadas, los 20 modelos de factura, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+      }
+    ]
+  },
+  "es-MX": {
+    "tagline": "Notas de venta, cotizaciones y QR de pago al instante",
+    "description": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
+    "faq": [
+      {
+        "q": "¿Hay una app de notas de venta para iPhone que no necesite crear cuenta?",
+        "a": "Sí. Nota de Venta, Cotización no tiene cuenta ni registro, y funciona sin conexión. Notas de venta, clientes y códigos QR se sincronizan por tu iCloud si los necesitas en varios dispositivos."
+      },
+      {
+        "q": "¿Cuántos documentos puedo crear gratis?",
+        "a": "Tres documentos al mes. Se cuentan cuando los creas, no cuando los envías, y notas de venta, cotizaciones y remisiones comparten el mismo límite. Un documento ya creado se cuenta una sola vez, así que editarlo o reenviarlo después es gratis."
+      },
+      {
+        "q": "¿Puede el cliente pagar directo desde la nota de venta?",
+        "a": "Sí. Cada nota de venta puede incluir un código QR de pago que el cliente escanea para pagar. Luego registras el pago en la app y la nota pasa entre pendiente, parcial, pagada y vencida."
+      },
+      {
+        "q": "¿Puedo convertir una cotización en nota de venta?",
+        "a": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y reutilizan, y puedes añadir descuentos, envío, formas de pago y términos reutilizables."
+      },
+      {
+        "q": "¿Hace códigos QR para algo más que pagos?",
+        "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de ellos gratis."
+      },
+      {
+        "q": "¿Puedo recuperar un documento que eliminé por error?",
+        "a": "Sí. Eliminados recientemente guarda los documentos durante 30 días."
+      },
+      {
+        "q": "¿Qué desbloquea Pro?",
+        "a": "Documentos y exportaciones QR ilimitadas, todos los modelos de nota de venta, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+      }
+    ]
+  },
+  "pt-BR": {
+    "tagline": "Faturas, orçamentos e QR de pagamento em minutos",
+    "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
+    "faq": [
+      {
+        "q": "Existe um app de faturamento para iPhone que funciona sem criar conta?",
+        "a": "Sim. Fatura, Orçamento e Recibo não tem conta nem cadastro, e funciona offline. Faturas, clientes e códigos QR são sincronizados pela sua iCloud se você os precisar em vários dispositivos."
+      },
+      {
+        "q": "Quantas faturas posso enviar gratuitamente?",
+        "a": "Três documentos por mês. A contagem é quando você cria um documento, não quando o envia, e orçamentos e propostas compartilham o mesmo limite mensal das faturas. Um documento já criado é contado uma única vez, então editá-lo ou enviá-lo novamente é grátis."
+      },
+      {
+        "q": "O cliente pode pagar direto pela fatura?",
+        "a": "Sim. Cada fatura pode incluir um código QR de pagamento que o cliente escaneia para pagar. Você registra o pagamento no app e a fatura passa entre não paga, parcial, paga e vencida."
+      },
+      {
+        "q": "Posso converter um orçamento ou proposta em fatura?",
+        "a": "Sim, em um toque. Clientes, itens e alíquotas são salvos uma vez e reutilizados, e você pode adicionar descontos, frete, formas de pagamento e termos reutilizáveis."
+      },
+      {
+        "q": "Faz códigos QR para algo além de pagamento?",
+        "a": "Sim. Inclui um estúdio QR com 12 tipos — link, Wi-Fi, cartão de visita, e-mail, telefone, SMS, chat, localização, calendário, texto, pagamento e Pix — e 16 designs prontos, quatro deles gratuitos."
+      },
+      {
+        "q": "Posso recuperar uma fatura que deletei por engano?",
+        "a": "Sim. Deletados recentemente mantém as faturas por 30 dias."
+      },
+      {
+        "q": "O que o Pro desbloqueia?",
+        "a": "Faturas e exportações QR ilimitadas, todos os 20 modelos de fatura, 12 estilos QR e 16 designs, kit de marca completo (cor, fonte e logo), além de cores, pontos e molduras QR personalizados."
+      }
+    ]
+  },
+  "ja": {
+    "tagline": "請求書・見積書・領収書を数分で作成",
+    "description": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
+    "faq": [
+      {
+        "q": "iPhoneで、アカウント登録なしで使える請求書アプリはありますか？",
+        "a": "あります。請求書・見積書・領収書作成は、アカウント登録不要で、オフライン動作します。請求書・顧客・QRコードは、複数のデバイスで必要なら自分のiCloudで同期されます。"
+      },
+      {
+        "q": "無料で何件まで請求書を送れますか？",
+        "a": "月3件のドキュメント。カウントは作成時（送信時ではなく）に進み、見積書と提案書は請求書と同じ月額枠を使います。作成済みドキュメントは1回だけカウントされ、後で編集または再送信する分は無料です。"
+      },
+      {
+        "q": "顧客は請求書から直接支払えますか？",
+        "a": "はい。すべての請求書に支払いQRコードを付けることができ、顧客がスキャンして支払います。その後、アプリで支払いを記録すると、請求書の状態が未払い・一部支払い・支払い済み・期限切れの間で変わります。"
+      },
+      {
+        "q": "見積書や提案書を請求書に変換できますか？",
+        "a": "はい、ワンタップで。顧客・品目・税率は1回保存されて再利用でき、割引・送料・支払い方法・再利用可能な条件を追加できます。"
+      },
+      {
+        "q": "支払い以外のQRコードも作れますか？",
+        "a": "はい。QRスタジオに12のタイプがあります。リンク・Wi-Fi・連絡先・メール・電話・SMS・チャット・位置情報・カレンダー・テキスト・支払い・Pixで、計16のテンプレートがあり、うち4つは無料です。"
+      },
+      {
+        "q": "誤って削除した請求書を復元できますか？",
+        "a": "はい。最近削除した項目に、30日間の請求書が保存されます。"
+      },
+      {
+        "q": "Proで何が解放されますか？",
+        "a": "無制限の請求書・QR書き出し、20の請求書テンプレート、12のQRスタイルと16のデザイン、完全なブランドキット（色・フォント・ロゴ）、カスタムQRの色・ドット・フレームが利用できます。"
+      }
+    ]
+  },
+  "ko": {
+    "tagline": "청구서, 견적서, 결제 QR을 몇 분 안에",
+    "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
+    "faq": [
+      {
+        "q": "계정 가입 없이 쓸 수 있는 iPhone 청구서 앱이 있나요?",
+        "a": "있습니다. 프리랜서 청구서·견적서·영수증은 계정이 없고 가입도 없으며 오프라인으로 작동합니다. 청구서·고객·QR코드는 필요하면 자신의 iCloud로 동기화되어 여러 기기에서 사용할 수 있습니다."
+      },
+      {
+        "q": "무료로 청구서를 몇 개까지 만들 수 있나요?",
+        "a": "월 3개 문서. 카운트는 작성 시(발송 시가 아님)에 증가하며, 견적서와 제안서는 청구서와 같은 월별 한도를 공유합니다. 작성한 문서는 1회만 계산되므로 나중에 편집하거나 재발송하는 것은 무료입니다."
+      },
+      {
+        "q": "고객이 청구서에서 바로 결제할 수 있나요?",
+        "a": "네. 모든 청구서에 결제 QR코드를 넣을 수 있고, 고객이 스캔해서 결제합니다. 앱에서 결제를 기록하면 청구서 상태가 미결제·부분결제·결제완료·연체 사이를 오갑니다."
+      },
+      {
+        "q": "견적서나 제안서를 청구서로 바꿀 수 있나요?",
+        "a": "네, 한 번의 탭으로. 고객·품목·세율은 한 번만 저장하고 재사용하며, 할인·배송·결제 수단·재사용 가능한 조건을 추가할 수 있습니다."
+      },
+      {
+        "q": "결제 외에 다른 QR코드도 만드나요?",
+        "a": "네. QR 스튜디오에 12가지 유형이 있습니다. 링크·Wi-Fi·연락처·이메일·전화·SMS·채팅·위치·달력·텍스트·결제·Pix이며, 준비된 디자인은 16가지고 이 중 4가지는 무료입니다."
+      },
+      {
+        "q": "실수로 삭제한 청구서를 복구할 수 있나요?",
+        "a": "네. 최근 삭제 항목에 청구서가 30일간 보관됩니다."
+      },
+      {
+        "q": "Pro는 뭘 열어주나요?",
+        "a": "청구서와 QR 내보내기 무제한, 20개 청구서 템플릿, 12가지 QR 스타일과 16가지 디자인, 완전한 브랜드 키트(색상·글꼴·로고), 맞춤형 QR 색상·점·프레임을 제공합니다."
+      }
+    ]
+  },
+  "zh-Hant": {
+    "tagline": "開單、報價、掃碼付款的一體化工具",
+    "description": "在iPhone上建立開單、報價和收據，匯出為PDF，並加上付款QR碼，讓客戶直接支付。",
+    "faq": [
+      {
+        "q": "iPhone上有不用建立帳號的開單app嗎？",
+        "a": "有。開單、報價單、收據、送貨單產生器不需要帳號，也不用註冊，可以離線使用。開單、客戶和QR碼如果需要在多台裝置使用，會透過你自己的iCloud同步。"
+      },
+      {
+        "q": "免費可以開幾張單？",
+        "a": "一個月3張文件。計算是在你建立文件時（不是發送時），報價和提案共用和開單一樣的月度額度。一旦建立過的文件只算1次，所以之後編輯或重新發送都是免費。"
+      },
+      {
+        "q": "客戶可以直接從開單上付款嗎？",
+        "a": "可以。每張開單都可以附加付款QR碼，客戶掃描就能付款。你在app裡記錄付款後，開單的狀態會在未付、部分支付、已付、逾期之間變更。"
+      },
+      {
+        "q": "可以把報價單變成開單嗎？",
+        "a": "可以，一下子就行。客戶、品項、稅率只需要存一次就能重複使用，而且可以加折扣、運費、付款方式和可重複使用的條款。"
+      },
+      {
+        "q": "除了付款還能做其他QR碼嗎？",
+        "a": "可以。QR工作室有12種類型——連結、Wi-Fi、聯絡資訊、電子郵件、電話、簡訊、聊天、位置、日曆、文字、付款和Pix——以及16種現成設計，其中4種免費。"
+      },
+      {
+        "q": "不小心刪除的開單能救回嗎？",
+        "a": "能。最近刪除會保存開單30天。"
+      },
+      {
+        "q": "Pro解鎖什麼？",
+        "a": "無限開單和QR匯出、全部20套開單範本、12種QR風格和16種設計、完整品牌套件（色彩、字型、標誌），以及自訂QR色彩、圓點、邊框。"
+      }
+    ]
+  },
+  "th": {
+    "tagline": "ใบแจ้งหนี้ ใบเสร็จ และQRชำระเงินในนาที",
+    "description": "สร้างใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษีบนiPhone ส่งออกเป็นPDF และเพิ่มQRชำระเงินเพื่อให้ลูกค้าชำระได้ทันที",
+    "faq": [
+      {
+        "q": "มีแอปสร้างใบแจ้งหนี้สำหรับiPhoneที่ไม่ต้องสร้างบัญชีไหม",
+        "a": "มี ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษีไม่มีบัญชีและไม่ต้องสมัคร และใช้ได้แบบออฟไลน์ ใบแจ้งหนี้ ลูกค้า และQRโค้ดจะซิงค์ผ่านiCloudของคุณเองถ้าคุณต้องใช้บนหลายอุปกรณ์"
+      },
+      {
+        "q": "ฟรีได้สร้างใบแจ้งหนี้กี่ใบ",
+        "a": "3เอกสารต่อเดือน การนับจะเกิดขึ้นเมื่อคุณสร้างเอกสาร ไม่ใช่เมื่อส่ง และใบประเมิน ใบเสนอราคาใช้วงเงินเดือนเดียวกับใบแจ้งหนี้ เอกสารที่สร้างแล้วนับเพียงครั้งเดียว ดังนั้นการแก้ไขหรือส่งใหม่ทีหลังจึงฟรี"
+      },
+      {
+        "q": "ลูกค้าสามารถชำระเงินจากใบแจ้งหนี้ได้โดยตรงหรือไม่",
+        "a": "ได้ ใบแจ้งหนี้ทุกใบสามารถมีQRโค้ดชำระเงิน ลูกค้าแสกนเพื่อชำระเงิน จากนั้นคุณบันทึกการชำระในแอป และใบแจ้งหนี้เปลี่ยนระหว่างยังไม่ชำระ ชำระบางส่วน ชำระแล้ว และเกินกำหนด"
+      },
+      {
+        "q": "สามารถเปลี่ยนใบประเมินหรือใบเสนอราคาเป็นใบแจ้งหนี้ได้หรือไม่",
+        "a": "ได้ เพียงแตะครั้งเดียว ลูกค้า รายการ และอัตราภาษีบันทึกไว้ครั้งเดียวและนำกลับมาใช้ใหม่ได้ และคุณสามารถเพิ่มส่วนลด ค่าจัดส่ง วิธีการชำระเงิน และเงื่อนไขที่นำกลับมาใช้ใหม่ได้"
+      },
+      {
+        "q": "มันสร้างQRโค้ดสำหรับอย่างอื่นที่ไม่ใช่การชำระเงินหรือไม่",
+        "a": "มี QRสตูดิโอมี 12ประเภท คือ ลิงก์ Wi-Fi บัตรติดต่อ อีเมล โทรศัพท์ SMS แชท สถานที่ ปฏิทิน ข้อความ ชำระเงิน และPix และมีดีไซน์สำเร็จรูป 16แบบ ซึ่ง 4แบบฟรี"
+      },
+      {
+        "q": "สามารถกู้คืนใบแจ้งหนี้ที่ลบโดยไม่ตั้งใจได้หรือไม่",
+        "a": "ได้ ลบไปเร็วๆนี้เก็บใบแจ้งหนี้เป็นเวลา 30วัน"
+      },
+      {
+        "q": "Pro ปลดล็อกอะไร",
+        "a": "ใบแจ้งหนี้และQRส่งออกไม่จำกัด แม่แบบใบแจ้งหนี้ 20รายการ สไตล์QR 12รูปแบบและดีไซน์ 16รูปแบบ ชุดแบรนด์ที่สมบูรณ์ (สี ฟอนต์ โลโก้) และสีQRที่กำหนดเอง จุด และเฟรม"
+      }
+    ]
+  }
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>請求書・見積書・領収書作成 インボイス対応 — 請求書・見積書・領収書を数分で作成</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。">
+<link rel="canonical" href="https://goka-xi.vercel.app/invoiceqr/ja/">
+<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/invoiceqr/">
+<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/invoiceqr/de/">
+<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/invoiceqr/fr/">
+<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/invoiceqr/it/">
+<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/invoiceqr/es/">
+<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/invoiceqr/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/invoiceqr/ja/">
+<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/invoiceqr/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/invoiceqr/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/invoiceqr/th/">
+<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/invoiceqr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="請求書・見積書・領収書作成 インボイス対応 — 請求書・見積書・領収書を数分で作成">
+<meta property="og:description" content="iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。">
+<meta property="og:url" content="https://goka-xi.vercel.app/invoiceqr/ja/">
+<meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:title" content="請求書・見積書・領収書作成 インボイス対応 — 請求書・見積書・領収書を数分で作成">
+<meta name="twitter:description" content="iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。">
+<meta name="apple-itunes-app" content="app-id=6790383156">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/ja/#app",
+  "name": "請求書・見積書・領収書作成 インボイス対応",
+  "alternateName": "Invoice Maker",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
+  "url": "https://goka-xi.vercel.app/invoiceqr/ja/",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6790383156",
+  "installUrl": "https://apps.apple.com/app/id6790383156",
+  "sameAs": [
+    "https://apps.apple.com/app/id6790383156"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e1/ba/f4/e1baf408-6e5e-9d20-07b4-38d55252f2e5/02-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ad/45/23ad454a-2f0a-26fc-f012-1959a5caae9f/05-templates.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/35/ba/df35bab4-aa7d-fb02-6e96-addf71c12eee/01-home.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/7c/d3/957cd317-e6b9-90be-4b18-cd54d99af84e/12-scan-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/90/cc/cc90ccca-aec1-511a-2b74-b9f7eb3efebb/08-payment.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/4b/9d/3a4b9d44-74ba-ba9d-9894-ff0f62d0681b/09-reports.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "請求書・見積書・領収書作成 インボイス対応 — app preview",
+    "description": "フリーランスや個人事業主・小規模事業者のための、請求書・見積書・納品書・領収書づくりのアプリです。適格請求書の記載事項も、源泉徴収も、スマホだけで整います。",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "ja"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/ja/#faq",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "iPhoneで、アカウント登録なしで使える請求書アプリはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "あります。請求書・見積書・領収書作成は、アカウント登録不要で、オフライン動作します。請求書・顧客・QRコードは、複数のデバイスで必要なら自分のiCloudで同期されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "無料で何件まで請求書を送れますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "月3件のドキュメント。カウントは作成時（送信時ではなく）に進み、見積書と提案書は請求書と同じ月額枠を使います。作成済みドキュメントは1回だけカウントされ、後で編集または再送信する分は無料です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "顧客は請求書から直接支払えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。すべての請求書に支払いQRコードを付けることができ、顧客がスキャンして支払います。その後、アプリで支払いを記録すると、請求書の状態が未払い・一部支払い・支払い済み・期限切れの間で変わります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "見積書や提案書を請求書に変換できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、ワンタップで。顧客・品目・税率は1回保存されて再利用でき、割引・送料・支払い方法・再利用可能な条件を追加できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "支払い以外のQRコードも作れますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。QRスタジオに12のタイプがあります。リンク・Wi-Fi・連絡先・メール・電話・SMS・チャット・位置情報・カレンダー・テキスト・支払い・Pixで、計16のテンプレートがあり、うち4つは無料です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "誤って削除した請求書を復元できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。最近削除した項目に、30日間の請求書が保存されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proで何が解放されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "無制限の請求書・QR書き出し、20の請求書テンプレート、12のQRスタイルと16のデザイン、完全なブランドキット（色・フォント・ロゴ）、カスタムQRの色・ドット・フレームが利用できます。"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">すべてのアプリ</a>
+    <a href="/invoiceqr/privacy-policy/">プライバシー</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Invoice Maker">サポート</a>
+  </nav>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/a5/0d/59a50d64-478d-ca8f-1d9e-22d7a27354de/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>請求書・見積書・領収書作成 インボイス対応</h1>
+    <div class="lede"><p>フリーランスや個人事業主・小規模事業者のための、請求書・見積書・納品書・領収書づくりのアプリです。適格請求書の記載事項も、源泉徴収も、スマホだけで整います。</p></div>
+    <a class="cta" href="https://apps.apple.com/jp/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store でダウンロード</a>
+    <ul class="chips"><li>無料でダウンロード</li><li>iPhone と iPad</li><li>iOS 17 以降</li><li>アカウント不要</li></ul>
+  </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="請求書・見積書・領収書作成 インボイス対応 — アプリプレビュー"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
+
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">スクリーンショット</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e1/ba/f4/e1baf408-6e5e-9d20-07b4-38d55252f2e5/02-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e1/ba/f4/e1baf408-6e5e-9d20-07b4-38d55252f2e5/02-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e1/ba/f4/e1baf408-6e5e-9d20-07b4-38d55252f2e5/02-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ad/45/23ad454a-2f0a-26fc-f012-1959a5caae9f/05-templates.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ad/45/23ad454a-2f0a-26fc-f012-1959a5caae9f/05-templates.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/ad/45/23ad454a-2f0a-26fc-f012-1959a5caae9f/05-templates.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/35/ba/df35bab4-aa7d-fb02-6e96-addf71c12eee/01-home.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/35/ba/df35bab4-aa7d-fb02-6e96-addf71c12eee/01-home.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/35/ba/df35bab4-aa7d-fb02-6e96-addf71c12eee/01-home.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/7c/d3/957cd317-e6b9-90be-4b18-cd54d99af84e/12-scan-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/7c/d3/957cd317-e6b9-90be-4b18-cd54d99af84e/12-scan-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/7c/d3/957cd317-e6b9-90be-4b18-cd54d99af84e/12-scan-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/90/cc/cc90ccca-aec1-511a-2b74-b9f7eb3efebb/08-payment.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/90/cc/cc90ccca-aec1-511a-2b74-b9f7eb3efebb/08-payment.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cc/90/cc/cc90ccca-aec1-511a-2b74-b9f7eb3efebb/08-payment.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/4b/9d/3a4b9d44-74ba-ba9d-9894-ff0f62d0681b/09-reports.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/4b/9d/3a4b9d44-74ba-ba9d-9894-ff0f62d0681b/09-reports.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/4b/9d/3a4b9d44-74ba-ba9d-9894-ff0f62d0681b/09-reports.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/9b/1a/cb9b1a64-d4f2-76a2-17ab-9a3c4e09d3e2/06-invoice-design.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/9b/1a/cb9b1a64-d4f2-76a2-17ab-9a3c4e09d3e2/06-invoice-design.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/9b/1a/cb9b1a64-d4f2-76a2-17ab-9a3c4e09d3e2/06-invoice-design.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6d/7f/52/6d7f522a-8133-2d92-d0da-0d22ed5b13ae/07-brand-kit.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6d/7f/52/6d7f522a-8133-2d92-d0da-0d22ed5b13ae/07-brand-kit.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6d/7f/52/6d7f522a-8133-2d92-d0da-0d22ed5b13ae/07-brand-kit.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/8f/d1/e18fd156-705d-236e-9f87-dc499630dd1e/11-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/8f/d1/e18fd156-705d-236e-9f87-dc499630dd1e/11-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/8f/d1/e18fd156-705d-236e-9f87-dc499630dd1e/11-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b4/d0/90/b4d09074-dfc5-bcdd-7217-b9892fa8dad3/03-qr-designer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b4/d0/90/b4d09074-dfc5-bcdd-7217-b9892fa8dad3/03-qr-designer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b4/d0/90/b4d09074-dfc5-bcdd-7217-b9892fa8dad3/03-qr-designer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="請求書・見積書・領収書作成 インボイス対応 — スクリーンショット 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">機能</h2>
+  <div class="feats">
+    <div class="feat"><h3>適格請求書（インボイス制度）に対応</h3><ul><li>登録番号、税率ごとの対象額と消費税額（端数処理は税率ごとに1回）、軽減税率の「※」表示</li><li>源泉徴収税額と差引請求額を自動計算（100万円以下10.21%、超える部分20.42%）</li><li>取引先名に合わせて「御中」「様」を自動で使い分け</li><li>振込先（銀行・支店・口座種別・口座番号・名義）を書類に記載</li><li>PDFで渡す領収書は収入印紙の対象外。領収書には但し書きも入ります</li></ul></div>
+    <div class="feat"><h3>数分で請求書を作成</h3><ul><li>100+ 種類のテンプレートから選び、取引先と項目を入れて、そのまま PDF で共有</li><li>紙の請求書を撮影、または写真を選ぶと編集できる下書きになります。読み取りは端末内で行われます — 任意のAIレビューを使ったときだけ、そのページがGoogleに送信されます</li><li>概算見積書・見積書を送り、先方の合意後にワンタップで請求書へ変換。納品書も作れます</li><li>取引先・項目・税率を保存してワンタップで再利用</li><li>値引き・送料・支払方法・定型文言もそのまま反映</li><li>iPhone の画面に直接、手書きで署名</li></ul></div>
+    <div class="feat"><h3>入金をひと目で</h3><ul><li>決済リンクがある場合は、スキャンで支払えるQRコードも付けられます</li><li>支払済み／未払い／一部入金／期限超過をひと目で把握</li><li>入金を記録し、未回収残高を正確に管理</li><li>売上レポートで月別の入金、主要な取引先、未回収額をひと目で確認</li><li>全額入金された請求書は、そのまま領収書として共有できます。同じ書類に「支払済み」と入金日が入ります</li></ul></div>
+    <div class="feat"><h3>すべてにブランドを</h3><ul><li>ロゴ・ブランドカラー・フォントを一度設定するだけ</li><li>請求書・テンプレート・QRデザインに自動反映</li></ul></div>
+    <div class="feat"><h3>QR コードスタジオも</h3><ul><li>12 種類の QR：リンク、Wi-Fi、名刺、メール、電話、SMS、チャット、位置情報、カレンダー、テキスト、決済、Pix</li><li>完成デザイン 16 種類：ポスター、メニューカード、セールタグ、ネオン、名刺など。色・ドット・フレーム・グラデーションも自由に調整</li><li>コントラストとクワイエットゾーンを自動チェック。常に読み取れる状態で画像に書き出し、共有・印刷・POP に利用</li></ul></div>
+    <div class="feat"><h3>ホーム画面にも</h3><ul><li>ウィジェットは3種類：未回収額、クイック作成、すぐ見せられる決済QR</li><li>コードは大きく表示されるので、アプリを開かずにそのままスキャンしてもらえます</li><li>背景は50種類。フォントと文字色も選べます</li></ul></div>
+    <div class="feat"><h3>安全に、いつでも同期</h3><ul><li>請求書・取引先・QR コードは、ご自身の iCloud 経由でプライベートに同期</li><li>iPhone を買い替えても、開けばそのまま続きから</li><li>「最近削除した項目」は 30 日間保持。誤操作でも元に戻せます</li><li>アカウント登録は不要。オフラインでも使えます</li><li>13 言語の表示に対応、ライト／ダーク外観</li></ul></div>
+    <div class="feat"><h3>まずは無料で</h3><ul><li>3 件まで無料で作成 — アカウント登録は不要</li><li>この 3 件は毎月ではなく合計です。請求書・概算見積書・見積書は同じ枠を共有します（納品書は枠を使いません）</li><li>カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません</li><li>完成デザイン 16 種類のうち 4 種類は Pro なしで無料で使えます</li><li>書き出したファイルには、ページ下部にアプリ名の小さな一行が入ります。Pro ではオフにできます</li></ul></div>
+    <div class="feat"><h3>Pro でできること</h3><ul><li>無制限の請求書とQR書き出し</li><li>100+ 種類の請求書テンプレート、12+ 種類の QR スタイル、16+ 種類の完成デザイン</li><li>完全なブランドキット（色・フォント・ロゴ）</li><li>QRの色・ドット・フレームのカスタム</li><li>書き出したファイルからアプリ名の一行を削除</li></ul><p>ご質問・ご要望は、このページのサポートリンクからお気軽にどうぞ。</p><p>※本アプリは請求書・見積書を作成するツールです。適格請求書（インボイス制度）の記載要件を満たすかどうかは、記載内容をご自身でご確認ください。</p><p>Privacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/ Terms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/</p></div>
+  </div>
+
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">よくある質問</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iPhoneで、アカウント登録なしで使える請求書アプリはありますか？</h3>
+      <p>あります。請求書・見積書・領収書作成は、アカウント登録不要で、オフライン動作します。請求書・顧客・QRコードは、複数のデバイスで必要なら自分のiCloudで同期されます。</p>
+    </div>
+    <div class="card">
+      <h3>無料で何件まで請求書を送れますか？</h3>
+      <p>月3件のドキュメント。カウントは作成時（送信時ではなく）に進み、見積書と提案書は請求書と同じ月額枠を使います。作成済みドキュメントは1回だけカウントされ、後で編集または再送信する分は無料です。</p>
+    </div>
+    <div class="card">
+      <h3>顧客は請求書から直接支払えますか？</h3>
+      <p>はい。すべての請求書に支払いQRコードを付けることができ、顧客がスキャンして支払います。その後、アプリで支払いを記録すると、請求書の状態が未払い・一部支払い・支払い済み・期限切れの間で変わります。</p>
+    </div>
+    <div class="card">
+      <h3>見積書や提案書を請求書に変換できますか？</h3>
+      <p>はい、ワンタップで。顧客・品目・税率は1回保存されて再利用でき、割引・送料・支払い方法・再利用可能な条件を追加できます。</p>
+    </div>
+    <div class="card">
+      <h3>支払い以外のQRコードも作れますか？</h3>
+      <p>はい。QRスタジオに12のタイプがあります。リンク・Wi-Fi・連絡先・メール・電話・SMS・チャット・位置情報・カレンダー・テキスト・支払い・Pixで、計16のテンプレートがあり、うち4つは無料です。</p>
+    </div>
+    <div class="card">
+      <h3>誤って削除した請求書を復元できますか？</h3>
+      <p>はい。最近削除した項目に、30日間の請求書が保存されます。</p>
+    </div>
+    <div class="card">
+      <h3>Proで何が解放されますか？</h3>
+      <p>無制限の請求書・QR書き出し、20の請求書テンプレート、12のQRスタイルと16のデザイン、完全なブランドキット（色・フォント・ロゴ）、カスタムQRの色・ドット・フレームが利用できます。</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">他の言語でこのページを表示</p>
+  <ul class="langs">
+      <li><a href="/invoiceqr/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li>
+      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
+      <li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja" aria-current="page">日本語</a></li>
+      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">go ka からのその他</h2>
+  <div class="others">
+      <a href="/countdown/ja/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/beforego/ja/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/jp/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>請求書・見積書・領収書作成 インボイス対応 を入手</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>請求書・見積書・領収書作成 インボイス対応 は go ka が制作しています。 ご質問やフィードバック: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/invoiceqr/privacy-policy/">プライバシーポリシー</a> · <a href="/invoiceqr/terms-of-service/">利用規約</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+</body>
+</html>

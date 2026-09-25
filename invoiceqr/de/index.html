@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Rechnung &amp; Angebot — Rechnungen, Angebote und QR-Zahlungen in Minuten</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand svg{width:30px;height:30px}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
+@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.">
+<link rel="canonical" href="https://goka-xi.vercel.app/invoiceqr/de/">
+<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/invoiceqr/">
+<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/invoiceqr/de/">
+<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/invoiceqr/fr/">
+<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/invoiceqr/it/">
+<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/invoiceqr/es/">
+<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/invoiceqr/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/invoiceqr/ja/">
+<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/invoiceqr/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/invoiceqr/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/invoiceqr/th/">
+<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/invoiceqr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Smart Rechnung &amp; Angebot — Rechnungen, Angebote und QR-Zahlungen in Minuten">
+<meta property="og:description" content="Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.">
+<meta property="og:url" content="https://goka-xi.vercel.app/invoiceqr/de/">
+<meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
+<meta name="twitter:title" content="Smart Rechnung &amp; Angebot — Rechnungen, Angebote und QR-Zahlungen in Minuten">
+<meta name="twitter:description" content="Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.">
+<meta name="apple-itunes-app" content="app-id=6790383156">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/de/#app",
+  "name": "Smart Rechnung & Angebot",
+  "alternateName": "Invoice Maker",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
+  "url": "https://goka-xi.vercel.app/invoiceqr/de/",
+  "inLanguage": "de",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://goka-xi.vercel.app/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6790383156",
+  "installUrl": "https://apps.apple.com/app/id6790383156",
+  "sameAs": [
+    "https://apps.apple.com/app/id6790383156"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/84/ed/9284ed96-eb5e-ddb2-1795-90e6ca5980db/02-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/05/b5/ac05b591-f84a-d792-99da-762d8eb7fb32/05-templates.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/2f/f5/0d2ff51c-e0ad-ae51-8fa1-ad1b1b766de7/01-home.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/1d/f0/451df04e-e438-fb9a-2bec-3612770d371d/12-scan-invoice.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/9a/58/5d9a5800-52d9-b8d7-ab20-d9ca1a68297d/08-payment.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e2/30/cbe23091-d893-807c-ed1e-00a727ebc0a9/09-reports.png/920x0w.webp"
+  ],
+  "video": {
+    "@type": "VideoObject",
+    "name": "Smart Rechnung & Angebot — app preview",
+    "description": "Der schnellste Weg für Freiberufler und kleine Unternehmen, professionelle Rechnungen, Kostenvoranschläge und Angebote zu erstellen – und dank integrierter Bezahl-QR-Codes schneller bezahlt zu werden.",
+    "thumbnailUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.jpg",
+    "contentUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.mp4",
+    "uploadDate": "2026-09-26",
+    "inLanguage": "de"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://goka-xi.vercel.app/invoiceqr/de/#faq",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gibt es eine Rechnungs-App für das iPhone, die ohne Kontenerstellung funktioniert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Smart Rechnung & Angebot hat kein Konto und keine Anmeldung, und es funktioniert offline. Rechnungen, Kunden und QR-Codes werden über Ihre eigene iCloud synchronisiert, wenn Sie sie auf mehreren Geräten benötigen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Rechnungen kann ich kostenlos versenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drei Dokumente pro Monat. Der Zähler wird beim Erstellen eines Dokuments erhöht, nicht beim Versenden, und Kostenvoranschläge und Angebote teilen sich das gleiche Monatskontingent wie Rechnungen. Ein bereits erstelltes Dokument wird nur einmal gezählt, also ist das Bearbeiten oder spätere erneute Versenden kostenlos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ein Kunde direkt von der Rechnung aus bezahlen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Sie können dann die Zahlung in der App erfassen und die Rechnung zwischen unbezahlt, teilweise, bezahlt und überfällig verschieben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich ein Angebot oder Kostenvoranschlag in eine Rechnung umwandeln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mit einem Tipp. Kunden, Positionen und Steuersätze werden einmal gespeichert und wiederverwendet, und Sie können Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Macht es QR-Codes für etwas anderes als Zahlungen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Es enthält ein QR-Studio mit 12 Typen — Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Kalender, Text, Zahlung und Pix — und 16 fertige Designs, davon vier kostenlos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich eine versehentlich gelöschte Rechnung wiederherstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Zuletzt gelöscht speichert Rechnungen für 30 Tage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was entsperrt Invoice Maker Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unbegrenzte Rechnungen und QR-Exporte, alle 20 Rechnungsvorlagen, alle 12 QR-Stile und 16 Designs, das komplette Brand Kit (Farbe, Schrift und Logo) sowie benutzerdefinierte QR-Farben, -Punkte und -Rahmen."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">Alle Apps</a>
+    <a href="/invoiceqr/privacy-policy/">Datenschutz</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Invoice Maker">Unterstützung</a>
+  </nav>
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/a5/0d/59a50d64-478d-ca8f-1d9e-22d7a27354de/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Smart Rechnung &amp; Angebot</h1>
+    <div class="lede"><p>Der schnellste Weg für Freiberufler und kleine Unternehmen, professionelle Rechnungen, Kostenvoranschläge und Angebote zu erstellen – und dank integrierter Bezahl-QR-Codes schneller bezahlt zu werden.</p></div>
+    <a class="cta" href="https://apps.apple.com/de/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Laden im App Store</a>
+    <ul class="chips"><li>Kostenlos zum Herunterladen</li><li>iPhone &amp; iPad</li><li>iOS 17 oder später</li><li>Kein Konto erforderlich</li></ul>
+  </div>
+  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="Smart Rechnung &amp; Angebot — App-Vorschau"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+</section>
+
+<section class="sec" id="screenshots" aria-labelledby="h-screens">
+  <h2 id="h-screens">Screenshots</h2>
+  <ul class="shots">
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/84/ed/9284ed96-eb5e-ddb2-1795-90e6ca5980db/02-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/84/ed/9284ed96-eb5e-ddb2-1795-90e6ca5980db/02-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/92/84/ed/9284ed96-eb5e-ddb2-1795-90e6ca5980db/02-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/05/b5/ac05b591-f84a-d792-99da-762d8eb7fb32/05-templates.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/05/b5/ac05b591-f84a-d792-99da-762d8eb7fb32/05-templates.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/05/b5/ac05b591-f84a-d792-99da-762d8eb7fb32/05-templates.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/2f/f5/0d2ff51c-e0ad-ae51-8fa1-ad1b1b766de7/01-home.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/2f/f5/0d2ff51c-e0ad-ae51-8fa1-ad1b1b766de7/01-home.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/2f/f5/0d2ff51c-e0ad-ae51-8fa1-ad1b1b766de7/01-home.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/1d/f0/451df04e-e438-fb9a-2bec-3612770d371d/12-scan-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/1d/f0/451df04e-e438-fb9a-2bec-3612770d371d/12-scan-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/45/1d/f0/451df04e-e438-fb9a-2bec-3612770d371d/12-scan-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/9a/58/5d9a5800-52d9-b8d7-ab20-d9ca1a68297d/08-payment.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/9a/58/5d9a5800-52d9-b8d7-ab20-d9ca1a68297d/08-payment.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/9a/58/5d9a5800-52d9-b8d7-ab20-d9ca1a68297d/08-payment.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e2/30/cbe23091-d893-807c-ed1e-00a727ebc0a9/09-reports.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e2/30/cbe23091-d893-807c-ed1e-00a727ebc0a9/09-reports.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/e2/30/cbe23091-d893-807c-ed1e-00a727ebc0a9/09-reports.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/59/00/ac59008f-f583-e5f9-1e73-6ffb2e53baaa/06-invoice-design.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/59/00/ac59008f-f583-e5f9-1e73-6ffb2e53baaa/06-invoice-design.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/59/00/ac59008f-f583-e5f9-1e73-6ffb2e53baaa/06-invoice-design.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/69/f2/6569f252-4be1-b33c-58e6-0a1c143faff2/07-brand-kit.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/69/f2/6569f252-4be1-b33c-58e6-0a1c143faff2/07-brand-kit.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/65/69/f2/6569f252-4be1-b33c-58e6-0a1c143faff2/07-brand-kit.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/dc/5d/69dc5da6-344f-5fbd-dac5-8ef30481f66d/11-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/dc/5d/69dc5da6-344f-5fbd-dac5-8ef30481f66d/11-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/dc/5d/69dc5da6-344f-5fbd-dac5-8ef30481f66d/11-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/62/29/ae62290d-201b-a354-116b-93d19ad3dd53/03-qr-designer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/62/29/ae62290d-201b-a354-116b-93d19ad3dd53/03-qr-designer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/62/29/ae62290d-201b-a354-116b-93d19ad3dd53/03-qr-designer.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Smart Rechnung &amp; Angebot — Screenshot 10"></li>
+  </ul>
+</section>
+
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">Was ist enthalten</h2>
+  <div class="feats">
+    <div class="feat"><h3>Rechnungen in minuten</h3><ul><li>Eine von 100+ Vorlagen wählen, Kunde und Positionen ergänzen, sauberes PDF teilen</li><li>Rechnung fotografieren oder ein Foto auswählen – daraus wird ein bearbeitbarer Entwurf; die Seite wird auf deinem Gerät gelesen — die optionale KI-Prüfung sendet sie nur auf deine Anfrage an Google</li><li>Erst ein Angebot schicken, nach der Zusage mit einem Tipp in eine Rechnung umwandeln</li><li>Kunden, Artikel und Steuersätze speichern und mit einem Tipp wiederverwenden</li><li>Rabatte, Versand, Zahlungsarten und wiederverwendbare Bedingungen</li><li>Mit einer handschriftlichen Unterschrift direkt auf dem iPhone abzeichnen</li></ul></div>
+    <div class="feat"><h3>Bezahlt per scan</h3><ul><li>Jede Rechnung kann einen Bezahl-QR-Code tragen, den Kunden zum Zahlen scannen</li><li>Status auf einen Blick: bezahlt, offen, teilweise und überfällig</li><li>Zahlungen erfassen und den offenen Betrag exakt im Blick behalten</li><li>Umsatzberichte zeigen Einnahmen pro Monat, deine wichtigsten Kunden und offene Beträge</li><li>Vollständig bezahlte Rechnungen als Beleg teilen – dasselbe Dokument, als bezahlt markiert, mit dem Datum des Zahlungseingangs</li></ul></div>
+    <div class="feat"><h3>Deine marke überall</h3><ul><li>Logo, Markenfarbe und Schriften einmal festlegen</li><li>Rechnungen, Vorlagen und QR-Designs übernehmen deine Marke automatisch</li></ul></div>
+    <div class="feat"><h3>Dazu ein qr-code-studio</h3><ul><li>12 QR-Typen: Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Termin, Text, Zahlung und Pix</li><li>16 fertige Designs: Poster, Menükarte, Preisschild, Neon, Visitenkarte und mehr – plus eigene Farben, Punkte, Rahmen und Verläufe</li><li>Kontrast und Ruhezone werden geprüft – der Code bleibt immer scanbar und lässt sich als Bild exportieren, drucken oder aufstellen</li></ul></div>
+    <div class="feat"><h3>Auf deinem home-bildschirm</h3><ul><li>Drei Widgets: offene Beträge, Schnellaktionen und ein Bezahl-QR zum Vorzeigen</li><li>Der Code ist groß genug zum Scannen — ohne die App zu öffnen</li><li>50 Hintergründe, dazu Schrift und Textfarbe nach Wahl</li></ul></div>
+    <div class="feat"><h3>Sicher und synchron</h3><ul><li>Rechnungen, Kunden und QR-Codes synchronisieren privat über deine eigene iCloud</li><li>Neues iPhone aufsetzen und direkt weiterarbeiten</li><li>Zuletzt gelöscht bewahrt Rechnungen 30 Tage auf – ein Fehltipp ist nie endgültig</li><li>Kein Konto, keine Anmeldung – funktioniert auch offline</li><li>13 App-Sprachen, helles und dunkles Erscheinungsbild</li></ul></div>
+    <div class="feat"><h3>Kostenlos starten</h3><ul><li>3 Dokumente kostenlos erstellen – ohne Konto, ohne Anmeldung</li><li>Diese 3 gelten insgesamt, nicht pro Monat – Rechnungen, Kostenvoranschläge und Angebote teilen sich dasselbe Kontingent</li><li>Gezählt wird beim Erstellen, und nur einmal pro Dokument – späteres Bearbeiten oder erneutes Senden kostet nichts</li><li>4 der fertigen QR-Designs sind gratis – ganz ohne Pro</li><li>Exporte tragen unten auf der Seite eine kleine Zeile mit dem Namen der App – mit Pro lässt sie sich abschalten</li></ul></div>
+    <div class="feat"><h3>Pro</h3><ul><li>Unbegrenzte Rechnungen und QR-Exporte</li><li>100+ Rechnungsvorlagen, 12+ QR-Stile und 16+ fertige Designs</li><li>Komplettes Marken-Kit: Farbe, Schrift und Logo</li><li>Individuelle QR-Farben, -Punkte und -Rahmen</li><li>Die Zeile mit dem App-Namen aus Exporten entfernen</li></ul><p>Fragen oder Feedback? Schreib uns über den Support-Link auf dieser Seite.</p><p>Privacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/ Terms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/</p></div>
+  </div>
+
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">Häufige Fragen</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gibt es eine Rechnungs-App für das iPhone, die ohne Kontenerstellung funktioniert?</h3>
+      <p>Ja. Smart Rechnung &amp; Angebot hat kein Konto und keine Anmeldung, und es funktioniert offline. Rechnungen, Kunden und QR-Codes werden über Ihre eigene iCloud synchronisiert, wenn Sie sie auf mehreren Geräten benötigen.</p>
+    </div>
+    <div class="card">
+      <h3>Wie viele Rechnungen kann ich kostenlos versenden?</h3>
+      <p>Drei Dokumente pro Monat. Der Zähler wird beim Erstellen eines Dokuments erhöht, nicht beim Versenden, und Kostenvoranschläge und Angebote teilen sich das gleiche Monatskontingent wie Rechnungen. Ein bereits erstelltes Dokument wird nur einmal gezählt, also ist das Bearbeiten oder spätere erneute Versenden kostenlos.</p>
+    </div>
+    <div class="card">
+      <h3>Kann ein Kunde direkt von der Rechnung aus bezahlen?</h3>
+      <p>Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Sie können dann die Zahlung in der App erfassen und die Rechnung zwischen unbezahlt, teilweise, bezahlt und überfällig verschieben.</p>
+    </div>
+    <div class="card">
+      <h3>Kann ich ein Angebot oder Kostenvoranschlag in eine Rechnung umwandeln?</h3>
+      <p>Ja, mit einem Tipp. Kunden, Positionen und Steuersätze werden einmal gespeichert und wiederverwendet, und Sie können Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen.</p>
+    </div>
+    <div class="card">
+      <h3>Macht es QR-Codes für etwas anderes als Zahlungen?</h3>
+      <p>Ja. Es enthält ein QR-Studio mit 12 Typen — Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Kalender, Text, Zahlung und Pix — und 16 fertige Designs, davon vier kostenlos.</p>
+    </div>
+    <div class="card">
+      <h3>Kann ich eine versehentlich gelöschte Rechnung wiederherstellen?</h3>
+      <p>Ja. Zuletzt gelöscht speichert Rechnungen für 30 Tage.</p>
+    </div>
+    <div class="card">
+      <h3>Was entsperrt Invoice Maker Pro?</h3>
+      <p>Unbegrenzte Rechnungen und QR-Exporte, alle 20 Rechnungsvorlagen, alle 12 QR-Stile und 16 Designs, das komplette Brand Kit (Farbe, Schrift und Logo) sowie benutzerdefinierte QR-Farben, -Punkte und -Rahmen.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+<section class="sec" id="languages" aria-labelledby="h-langs">
+  <p class="label" id="h-langs">Diese Seite in anderen Sprachen</p>
+  <ul class="langs">
+      <li><a href="/invoiceqr/" hreflang="en" lang="en">English</a></li>
+      <li><a href="/invoiceqr/de/" hreflang="de" lang="de" aria-current="page">Deutsch</a></li>
+      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
+      <li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li>
+      <li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
+      <li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko">한국어</a></li>
+  </ul>
+</section>
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">Mehr von go ka</h2>
+  <div class="others">
+      <a href="/countdown/de/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/beforego/de/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/de/app/id6790383156"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Smart Rechnung &amp; Angebot herunterladen</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Smart Rechnung &amp; Angebot wird von go ka erstellt. Fragen oder Feedback: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p><a href="/invoiceqr/privacy-policy/">Datenschutzerklärung</a> · <a href="/invoiceqr/terms-of-service/">Nutzungsbedingungen</a> · <a href="/">go ka</a></p>
+  </div>
+</footer>
+<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+</body>
+</html>
