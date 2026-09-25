@@ -103,8 +103,8 @@
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
       "title": "BeforeGo: KI-Reiseplaner — Reiseplan vom Screenshot, Packliste inklusive",
-      "oneLiner": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten.",
-      "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten.",
+      "oneLiner": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
+      "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
       "legal": [],
       "faq": [
         {
@@ -151,8 +151,8 @@
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
       "title": "Planificateur voyage BeforeGo — Plan de voyage depuis une capture, liste de bagages incluse",
-      "oneLiner": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour. La liste de bagages se fait toute seule selon la destination et les dates.",
-      "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour. La liste de bagages se fait toute seule selon la destination et les dates.",
+      "oneLiner": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
+      "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
       "legal": [],
       "faq": [
         {
@@ -199,8 +199,8 @@
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
       "title": "BeforeGo: Itinerari e Bagagli — Piano di viaggio dallo screenshot, lista bagagli inclusa",
-      "oneLiner": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno. La lista bagagli si fa da sola, in base a destinazione e date.",
-      "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno. La lista bagagli si fa da sola, in base a destinazione e date.",
+      "oneLiner": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per…",
+      "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per…",
       "legal": [],
       "faq": [
         {
@@ -247,8 +247,8 @@
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
       "title": "Planificador viajes BeforeGo — Plan de viaje desde screenshot, lista de equipaje incluida",
-      "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día. La lista de equipaje se escribe sola según tu destino y tus fechas.",
-      "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día. La lista de equipaje se escribe sola según tu destino y tus fechas.",
+      "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
+      "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "legal": [],
       "faq": [
         {
@@ -294,9 +294,9 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "Planificador viajes BeforeGo — Plan de viaje desde screenshot, lista de equipaje incluida",
-      "oneLiner": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día. La lista de equipaje se arma sola según tu destino y tus fechas.",
-      "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día. La lista de equipaje se arma sola según tu destino y tus fechas.",
+      "title": "Planificador viajes BeforeGo (México) — Plan de viaje desde screenshot, lista de equipaje incluida",
+      "oneLiner": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
+      "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
       "legal": [],
       "faq": [
         {
@@ -343,8 +343,8 @@
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
       "title": "BeforeGo: Roteiro de Viagem IA — Roteiro de viagem do screenshot, lista de bagagem incluída",
-      "oneLiner": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia. A lista de bagagem se monta sozinha a partir do destino e das datas.",
-      "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia. A lista de bagagem se monta sozinha a partir do destino e das datas.",
+      "oneLiner": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
+      "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
       "legal": [],
       "faq": [
         {
