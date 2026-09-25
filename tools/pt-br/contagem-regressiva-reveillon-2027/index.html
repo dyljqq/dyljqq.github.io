@@ -74,7 +74,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 .article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
 .article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
 .article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
-.article table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -234,7 +234,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 <h2>Carnaval 2027 — terça-feira, 9 de fevereiro</h2>
 <div class="count" data-date="2027-02-09"><span data-n>136</span><small data-unit>dias</small></div><p class="count-sub">Terça de Carnaval · terça-feira, 9 de fevereiro de 2027 · <span data-weeks>19 semanas + 3 dias</span></p>
 <h2>Datas de uma vez</h2>
-<table><tbody>
+<div class="tbl"><table><tbody>
 <tr><th>Réveillon</th><td>quinta-feira, 31 de dezembro de 2026</td></tr>
 <tr><th>Ano-Novo</th><td>sexta-feira, 1º de janeiro de 2027</td></tr>
 <tr><th>Sábado de Carnaval</th><td>6 de fevereiro de 2027</td></tr>
@@ -242,7 +242,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 <tr><th>Quarta-feira de Cinzas</th><td>10 de fevereiro de 2027</td></tr>
 <tr><th>Páscoa 2027</th><td>domingo, 28 de março de 2027</td></tr>
 <tr><th>Dias que restam em 2026</th><td>97 (em 26/09/2026, contando hoje)</td></tr>
-</tbody></table>
+</tbody></table></div>
 <h2>A contagem na tela de início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na tela de início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
 <ol><li>Toque em <strong>+</strong>, escolha o modelo Réveillon ou digite o nome.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a tela de início → Editar → Adicionar widget → Countdown.</li></ol>
