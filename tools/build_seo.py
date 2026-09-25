@@ -448,6 +448,10 @@ def tool_head(tp):
     if url != hub:
         crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
     blobs = [page, crumbs]
+    if tp.get("items"):
+        blobs.append({"@context": "https://schema.org", "@type": "ItemList", "@id": f"{canonical}#list", "name": title,
+                      "itemListOrder": "https://schema.org/ItemListOrderAscending", "numberOfItems": len(tp["items"]),
+                      "itemListElement": [{"@type": "ListItem", "position": i, "name": it["name"], "url": it["url"]} for i, it in enumerate(tp["items"], 1)]})
     if tp.get("faq"):
         blobs.append({"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{canonical}#faq", "inLanguage": lang,
                       "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})

@@ -29,7 +29,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "Days until calculator"
+  "hubTitle": "Days until calculator",
+  "items": []
  },
  {
   "path": "/tools/days-until-christmas/",
@@ -61,7 +62,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "How many days until Christmas 2026?"
+  "hubTitle": "How many days until Christmas 2026?",
+  "items": []
  },
  {
   "path": "/tools/days-until-halloween/",
@@ -89,7 +91,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "How many days until Halloween 2026?"
+  "hubTitle": "How many days until Halloween 2026?",
+  "items": []
  },
  {
   "path": "/tools/days-until-new-year/",
@@ -117,7 +120,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "How many days until New Year 2027?"
+  "hubTitle": "How many days until New Year 2027?",
+  "items": []
  },
  {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
@@ -149,7 +153,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "Quantos dias faltam para o ENEM 2026?"
+  "hubTitle": "Quantos dias faltam para o ENEM 2026?",
+  "items": []
  },
  {
   "path": "/tools/pt-br/contagem-regressiva-reveillon-2027/",
@@ -177,7 +182,8 @@
   ],
   "published": "2026-09-26",
   "app": "countdown",
-  "hubTitle": "Quantos dias faltam para o Réveillon 2027?"
+  "hubTitle": "Quantos dias faltam para o Réveillon 2027?",
+  "items": []
  },
  {
   "path": "/tools/invoice-template/",
@@ -209,7 +215,8 @@
   ],
   "published": "2026-09-26",
   "app": "invoiceqr",
-  "hubTitle": "Free invoice template"
+  "hubTitle": "Free invoice template",
+  "items": []
  },
  {
   "path": "/tools/how-to-write-an-invoice/",
@@ -241,7 +248,8 @@
   ],
   "published": "2026-09-26",
   "app": "invoiceqr",
-  "hubTitle": "How to write an invoice"
+  "hubTitle": "How to write an invoice",
+  "items": []
  },
  {
   "path": "/tools/packing-list/",
@@ -273,7 +281,70 @@
   ],
   "published": "2026-09-26",
   "app": "beforego",
-  "hubTitle": "Packing list generator"
+  "hubTitle": "Packing list generator",
+  "items": []
+ },
+ {
+  "path": "/tools/best-countdown-widget-apps-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Best Countdown Widget Apps for iPhone (2026) — free tiers compared",
+  "description": "Seven iPhone countdown widget apps compared on what the free tier includes, which widgets cost money, repeats, reminders and sync — from their App Store listings, September 2026.",
+  "faq": [
+   {
+    "q": "Which countdown app has free Lock Screen widgets on iPhone?",
+    "a": "Countdown Widget: Any Event (ours) makes every widget size free, on both the Home Screen and the Lock Screen. In Countdown by Find Appiness and Countdown: Event Countdown, the Lock Screen widget is part of the paid tier according to their listings; DayCount and Days list Lock Screen widgets without stating a limit."
+   },
+   {
+    "q": "Which countdown apps allow unlimited events for free?",
+    "a": "Countdown Widget: Any Event, Countdown Star ('add as many events as you like'), Countdown by Find Appiness ('create as many events as you'd like') and Countdown: Event Countdown ('unlimited countdowns') all state unlimited events in their free version."
+   },
+   {
+    "q": "Do these apps sync between iPhone and iPad?",
+    "a": "Countdown Widget: Any Event, Countdown Star and Countdown by Find Appiness list iCloud sync. The other listings do not state it."
+   },
+   {
+    "q": "Can I count up from a past date?",
+    "a": "Yes in Countdown Widget: Any Event, Countdown Star, Countdown by Find Appiness, DayCount, Countdown Buddy and Days — all list count-up from a past date."
+   },
+   {
+    "q": "Is this list independent?",
+    "a": "We make Countdown Widget: Any Event, so no. Everything in the table comes from the public App Store listings, the fields are the same for every app, and each competitor is linked so you can check. We did not test paid tiers."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Best countdown widget apps for iPhone (2026)",
+  "items": [
+   {
+    "name": "Countdown Widget: Any Event",
+    "url": "https://apps.apple.com/us/app/id6799846628"
+   },
+   {
+    "name": "Countdown Star",
+    "url": "https://apps.apple.com/us/app/id576177593"
+   },
+   {
+    "name": "Countdown",
+    "url": "https://apps.apple.com/us/app/id1403367428"
+   },
+   {
+    "name": "Countdown: Event Countdown",
+    "url": "https://apps.apple.com/us/app/id983258067"
+   },
+   {
+    "name": "DayCount",
+    "url": "https://apps.apple.com/us/app/id1121088244"
+   },
+   {
+    "name": "Countdown Buddy",
+    "url": "https://apps.apple.com/us/app/id1534850579"
+   },
+   {
+    "name": "Days • Countdown & Widgets",
+    "url": "https://apps.apple.com/us/app/id939368917"
+   }
+  ]
  },
  {
   "path": "/tools/",
@@ -284,7 +355,8 @@
   "faq": [],
   "published": null,
   "app": null,
-  "hubTitle": "Free tools & guides — go ka"
+  "hubTitle": "Free tools & guides — go ka",
+  "items": []
  },
  {
   "path": "/tools/pt-br/",
@@ -295,6 +367,7 @@
   "faq": [],
   "published": null,
   "app": null,
-  "hubTitle": "Ferramentas e guias grátis — go ka"
+  "hubTitle": "Ferramentas e guias grátis — go ka",
+  "items": []
  }
 ]

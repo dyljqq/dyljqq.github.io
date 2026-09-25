@@ -128,6 +128,7 @@ A gym workout log for iPhone.
 - [Free invoice template](https://goka-xi.vercel.app/tools/invoice-template/) — A free invoice template you fill in right on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up, nothing uploaded.
 - [How to write an invoice](https://goka-xi.vercel.app/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Packing list generator](https://goka-xi.vercel.app/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
+- [Best countdown widget apps for iPhone (2026)](https://goka-xi.vercel.app/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on what the free tier includes, which widgets cost money, repeats, reminders and sync — from their App Store listings, September 2026.
 - [Free tools & guides — go ka](https://goka-xi.vercel.app/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
 - [Ferramentas e guias grátis — go ka](https://goka-xi.vercel.app/tools/pt-br/) — Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.
 
