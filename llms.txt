@@ -4,7 +4,7 @@
 > Every app has its own page here; the features, free parts and prices written on it
 > are what the app actually does.
 
-- Home: https://dyljqq.github.io/
+- Home: https://apps.jiqinqiang.com/
 - All apps on the App Store: https://apps.apple.com/developer/id1854274317
 - Contact: qinqiangji@gmail.com
 
@@ -14,7 +14,7 @@
 
 A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.
 
-- Page: https://dyljqq.github.io/beforego/
+- Page: https://apps.jiqinqiang.com/beforego/
 - App Store: https://apps.apple.com/app/id6786561175
 - Platform: iOS (iPhone, iPad)
 - Category: Travel
@@ -25,16 +25,16 @@ A travel packing list and trip-prep checklist for iPhone that remembers what you
 
 A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.
 
-- Page: https://dyljqq.github.io/countdown/
-- Page (pt-BR): https://dyljqq.github.io/countdown/pt-br/
-- Page (de): https://dyljqq.github.io/countdown/de/
-- Page (fr): https://dyljqq.github.io/countdown/fr/
-- Page (it): https://dyljqq.github.io/countdown/it/
-- Page (ja): https://dyljqq.github.io/countdown/ja/
-- Page (ko): https://dyljqq.github.io/countdown/ko/
-- Page (th): https://dyljqq.github.io/countdown/th/
-- Page (zh-Hans): https://dyljqq.github.io/countdown/zh-hans/
-- Page (zh-Hant): https://dyljqq.github.io/countdown/zh-hant/
+- Page: https://apps.jiqinqiang.com/countdown/
+- Page (pt-BR): https://apps.jiqinqiang.com/countdown/pt-br/
+- Page (de): https://apps.jiqinqiang.com/countdown/de/
+- Page (fr): https://apps.jiqinqiang.com/countdown/fr/
+- Page (it): https://apps.jiqinqiang.com/countdown/it/
+- Page (ja): https://apps.jiqinqiang.com/countdown/ja/
+- Page (ko): https://apps.jiqinqiang.com/countdown/ko/
+- Page (th): https://apps.jiqinqiang.com/countdown/th/
+- Page (zh-Hans): https://apps.jiqinqiang.com/countdown/zh-hans/
+- Page (zh-Hant): https://apps.jiqinqiang.com/countdown/zh-hant/
 - App Store: https://apps.apple.com/app/id6799846628
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity
@@ -46,7 +46,7 @@ A countdown widget app for iPhone where every widget size is free and the number
 
 An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.
 
-- Page: https://dyljqq.github.io/invoiceqr/
+- Page: https://apps.jiqinqiang.com/invoiceqr/
 - App Store: https://apps.apple.com/app/id6790383156
 - Platform: iOS (iPhone, iPad)
 - Category: Business
@@ -57,7 +57,7 @@ An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with 
 
 An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.
 
-- Page: https://dyljqq.github.io/dailycalorie/
+- Page: https://apps.jiqinqiang.com/dailycalorie/
 - App Store: https://apps.apple.com/app/id6798095407
 - Platform: iOS (iPhone, iPad)
 - Category: Health & Fitness
@@ -68,7 +68,7 @@ An AI photo calorie counter for iPhone that shows what you can still eat today r
 
 An iPhone QR code generator and scanner that lets you style a code with colours, shapes and a logo without breaking it.
 
-- Page: https://dyljqq.github.io/qrcodestudio/
+- Page: https://apps.jiqinqiang.com/qrcodestudio/
 - App Store: https://apps.apple.com/app/id6799589471
 - Platform: iOS (iPhone, iPad)
 - Category: Utilities
@@ -79,7 +79,7 @@ An iPhone QR code generator and scanner that lets you style a code with colours,
 
 把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。
 
-- Page: https://dyljqq.github.io/citu/
+- Page: https://apps.jiqinqiang.com/citu/
 - App Store: https://apps.apple.com/app/id6796596826
 - Platform: iOS (iPhone, iPad)
 - Category: Education
@@ -90,7 +90,7 @@ An iPhone QR code generator and scanner that lets you style a code with colours,
 
 A gym workout log for iPhone.
 
-- Page: https://dyljqq.github.io/repdex/
+- Page: https://apps.jiqinqiang.com/repdex/
 - App Store: https://apps.apple.com/app/id6803828068
 - Platform: iOS (iPhone, iPad)
 - Category: Health & Fitness

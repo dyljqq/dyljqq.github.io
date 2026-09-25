@@ -14,12 +14,13 @@
     "商店文案改了就回来同步这里，别在这里改出第二套说法。label 是站内短名，storeNameEn 只给中文产品页的 app 用。"
   ],
   "site": {
-    "origin": "https://dyljqq.github.io",
+    "origin": "https://apps.jiqinqiang.com",
     "brand": "go ka",
     "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
     "email": "qinqiangji@gmail.com",
     "developerUrl": "https://apps.apple.com/developer/id1854274317",
-    "developerNote": "App Store 上七个 app 都挂在这个开发者账号下（显示名是个人实名，不是 go ka）。首页和 Organization.sameAs 用它把品牌和账号连起来。"
+    "developerNote": "App Store 上七个 app 都挂在这个开发者账号下（显示名是个人实名，不是 go ka）。首页和 Organization.sameAs 用它把品牌和账号连起来。",
+    "originNote": "2026-09-25 起用自己的域名。主域 jiqinqiang.com 有 ICP/公安备案且接入商是腾讯云（上面跑 WordQuest），不能指到 GitHub；go ka 站挂在子域 apps.，CNAME → dyljqq.github.io，旧地址 dyljqq.github.io 由 GitHub 整站 301 过来。仓库根目录的 CNAME 文件必须和这里一致。"
   },
   "apps": [
     {
