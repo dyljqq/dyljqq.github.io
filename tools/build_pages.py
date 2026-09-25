@@ -56,9 +56,13 @@ def store_of(a):
     p = parent_of(a); cache = json.loads((ROOT / f"tools/store/{p['key']}.json").read_text(encoding="utf-8"))
     return cache.get(LANG2STORE[lang_of(a)]) or cache["en-US"]
 def cdn(url, w): return re.sub(r"/[^/]+$", f"/{w}x0w.webp", url)
-def store_link(a, s):
+PT = "128309253"   # App Store 活动归因 provider token（见 build_seo.py 的说明）
+def store_link(a, s, where="app"):
+    """页面上的下载按钮：带活动参数 ct=web-<app>-<入口>，非英文页落到对应国家的商店。"""
     p = parent_of(a); cc = s.get("storefront", "us")
-    return f"https://apps.apple.com/app/id{p['appId']}" if lang_of(a) == "en" else f"https://apps.apple.com/{cc}/app/id{p['appId']}"
+    ct = f"web-{p['key']}-{where}"; assert len(ct) <= 30
+    region = "" if lang_of(a) == "en" else f"{cc}/"
+    return f"https://apps.apple.com/{region}app/apple-store/id{p['appId']}?pt={PT}&ct={ct}&mt=8"
 
 def parse_desc(text):
     """商店描述 → lede 段落 / 小标题板块 / 订阅条款小字。所有语言结构一致：空行分块，块首行是小标题，• 开头是要点。"""
@@ -270,7 +274,7 @@ def render(a):
     <img class="icon" src="{icon}" width="84" height="84" alt="">
     <h1>{esc(name)}</h1>
     <div class="lede">{"".join(f"<p>{esc(x)}</p>" for x in lede)}</div>
-    <a class="cta" href="{store_link(a, s)}">{APPLE}{esc(T("cta_store"))}</a>
+    <a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(T("cta_store"))}</a>
     <ul class="chips">{"".join(f"<li>{esc(c)}</li>" for c in chips)}</ul>
   </div>
   {media}
@@ -311,7 +315,7 @@ def render(a):
 </section>
 
 <div class="end">
-  <a class="cta" href="{store_link(a, s)}">{APPLE}{esc(T("get_app", name=name))}</a>
+  <a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(T("get_app", name=name))}</a>
 </div>
 </main>
 

@@ -33,6 +33,21 @@ CHECK = "--check" in sys.argv
 
 START, END = "<!-- seo:start -->", "<!-- seo:end -->"
 
+# App Store 活动归因：ASC → App Analytics → 营销活动。pt 是开发者账号的 provider token（09-26 从 ASC 生成器取）。
+# ct 只按「app × 入口类型」切（web-<key>-app / -home / -tool），每个活动 ≥5 个安装才显示数据，切太细会全部看不见。
+# 结构化数据和 llms.txt 里保持干净的商店链接，只有页面上可点的按钮带参数。
+PT = "128309253"
+# Vercel Web Analytics（无 cookie）。/_vercel/insights/script.js 由 Vercel 在生产环境提供。
+ANALYTICS = ('<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>\n'
+             '<script defer src="/_vercel/insights/script.js"></script>')
+
+def root_key(app):
+    return app.get("variantOf") or app["key"]
+
+def campaign_url(app_id, ct, cc=None):
+    assert len(ct) <= 30, ct   # ASC 活动名上限 30
+    return f"https://apps.apple.com/{cc + '/' if cc else ''}app/apple-store/id{app_id}?pt={PT}&ct={ct}&mt=8"
+
 def store_url(app):
     return f"https://apps.apple.com/app/id{app['appId']}" if app.get("live") and app.get("appId") else None
 
@@ -313,7 +328,8 @@ def head_block(url, app, kind):
     lines += ['<meta name="twitter:title" content="%s">' % esc(title),
               '<meta name="twitter:description" content="%s">' % esc(desc)]
     if app.get("live") and app.get("appId"):
-        lines.append(f'<meta name="apple-itunes-app" content="app-id={app["appId"]}">')
+        lines.append(f'<meta name="apple-itunes-app" content="app-id={app["appId"]}, '
+                     f'affiliate-data=ct=web-{root_key(app)}-app&amp;pt={PT}">')
 
     blobs = [software_jsonld(app)]
     if is_product and app.get("faq"):
@@ -321,6 +337,7 @@ def head_block(url, app, kind):
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
                      % json.dumps(b, ensure_ascii=False, indent=2))
+    lines.append(ANALYTICS)
     lines.append(END)
     return "\n".join(lines) + "\n"
 
@@ -384,6 +401,7 @@ def home_head():
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
                      % json.dumps(b, ensure_ascii=False, indent=2))
+    lines.append(ANALYTICS)
     lines.append(END)
     return "\n".join(lines) + "\n"
 
@@ -395,7 +413,7 @@ def home_apps_html():
         svg = "\n".join("        " + l for l in svg.splitlines())
         hl = f' hreflang="{h["hreflang"]}"' if h.get("hreflang") else ""
         label = esc_text(h["label"])
-        su = store_url(a)
+        su = campaign_url(a["appId"], f"web-{key}-home") if store_url(a) else None
         get = f'\n      <a class="get" href="{su}">{label} on the App Store ↗</a>' if su else ""
         cards.append(f"""    <article class="app" id="app-{key}">
       <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
@@ -467,6 +485,7 @@ def tool_head(tp):
                       "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>' % json.dumps(b, ensure_ascii=False, indent=2))
+    lines.append(ANALYTICS)
     lines.append(END)
     return "\n".join(lines) + "\n"
 
@@ -515,6 +534,17 @@ OWNED = [
     r'<meta\s+name="robots"[^>]*>\s*',
 ]
 
+STORE_HREF = re.compile(r'href="https://apps\.apple\.com/(?:([a-z]{2})/)?app/(?:[^"/?]+/)?id(\d+)(?:\?[^"]*)?"')
+
+def campaignize_body(body):
+    """手写页正文里的商店按钮统一换成活动链接（只动 </head> 之后，不碰结构化数据）。"""
+    by_id = {a["appId"]: root_key(a) for a in APPS if a.get("appId") and a.get("live")}
+    def sub(m):
+        if "pt=" in m.group(0) or m.group(2) not in by_id:
+            return m.group(0)
+        return f'href="{campaign_url(m.group(2), f"web-{by_id[m.group(2)]}-app", m.group(1))}"'
+    return STORE_HREF.sub(sub, body)
+
 def patch(path: Path, url, app, kind):
     html = path.read_text(encoding="utf-8")
     head_end = html.lower().find("</head>")
@@ -530,7 +560,7 @@ def patch(path: Path, url, app, kind):
     head = re.sub(r'<script type="application/ld\+json">(?:(?!</script>).)*?"SoftwareApplication"'
                   r'(?:(?!</script>).)*?</script>\s*', "", head, flags=re.S)
     head = head.rstrip() + "\n" + head_block(url, app, kind)
-    out = head + rest
+    out = head + campaignize_body(rest)
     if kind == "product" and app.get("faq") and FAQ_START in out:
         out = re.sub(re.escape(FAQ_START) + r".*?" + re.escape(FAQ_END),
                      lambda m: faq_html(app), out, flags=re.S)

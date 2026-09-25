@@ -124,7 +124,7 @@ def app_card(app_key, lang):
     icon = bp.cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else p["icon"]
     return (f'<aside class="appcard"><img src="{icon}" width="72" height="72" alt="" loading="lazy"><div>'
             f'<p class="label" style="margin:0 0 6px">{esc(ts(lang, "get"))}</p><b>{esc(s["name"])}</b><p>{esc(p["home"]["blurb"] if lang == "en" else s["description"].split(chr(10))[0][:160])}</p>'
-            f'<a class="btn" href="{bp.store_link(p, s)}">{bp.APPLE}{esc(bp.t(lang, "cta_store"))}</a> &nbsp; <a href="{page}" style="font-size:14px">{esc(p["home"]["label"])} →</a></div></aside>')
+            f'<a class="btn" href="{esc(bp.store_link({"variantOf": app_key, "lang": lang} if lang != "en" else p, s, "tool"))}">{bp.APPLE}{esc(bp.t(lang, "cta_store"))}</a> &nbsp; <a href="{page}" style="font-size:14px">{esc(p["home"]["label"])} →</a></div></aside>')
 
 def ask_ai(url, lang):
     q = f"Read {url} and summarise its key points in a few sentences." if lang == "en" else f"Leia {url} e resuma os pontos principais em poucas frases."
