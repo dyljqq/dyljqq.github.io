@@ -1,0 +1,12 @@
+<path d="M24 158H216"/>
+<path d="M66 54V44a8 8 0 0 1 8-8h10M156 36h10a8 8 0 0 1 8 8v10M174 126v10a8 8 0 0 1-8 8h-10M84 144H74a8 8 0 0 1-8-8v-10"/>
+<path class="y" d="M90 98c2-15 14-24 30-24s28 9 30 24z"/>
+<path class="w" d="M122 76c-1-10 5-17 14-19 1 9-4 16-14 19z"/>
+<path class="w" d="M84 98h72c0 21-16 36-36 36s-36-15-36-36z"/>
+<path d="M110 134h20"/>
+<path d="M104 66c-4-5 3-9-1-15M92 70c-4-5 3-9-1-15"/>
+<g class="float">
+  <rect class="w" x="160" y="82" width="58" height="24" rx="12"/>
+  <text class="t-cap" x="189" y="98" text-anchor="middle">320 kcal</text>
+</g>
+<use href="#bird" x="14" y="121" width="44" height="37"/>

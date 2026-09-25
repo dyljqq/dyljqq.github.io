@@ -1,0 +1,18 @@
+<path d="M24 158H216"/>
+<path class="w" d="M102 74l-8-18 16 9M146 74l8-18-16 9"/>
+<path class="y" d="M84 120c0-34 16-56 40-56s40 22 40 56z"/>
+<circle class="w" cx="112" cy="90" r="8"/>
+<circle class="k" cx="114" cy="91" r="3.2"/>
+<circle class="w" cx="136" cy="90" r="8"/>
+<circle class="k" cx="138" cy="91" r="3.2"/>
+<path d="M117 105c4 4 10 4 14 0"/>
+<path class="w" d="M60 122c20-8 44-8 64 4 20-12 44-12 64-4v34c-20-8-44-8-64 4-20-12-44-12-64-4z"/>
+<path d="M124 126v34"/>
+<path class="w" d="M96 124c2-6 8-6 10 0M142 124c2-6 8-6 10 0"/>
+<text class="t-mid" x="92" y="148" text-anchor="middle">Aa</text>
+<text class="t-mid" x="156" y="148" text-anchor="middle">Bb</text>
+<g class="float">
+  <path class="w" d="M172 28h36a8 8 0 0 1 8 8v14a8 8 0 0 1-8 8h-22l-10 8 2-8h-6a8 8 0 0 1-8-8V36a8 8 0 0 1 8-8z"/>
+  <text class="t-cap" x="190" y="48" text-anchor="middle">apple!</text>
+</g>
+<use href="#bird" x="14" y="121" width="40" height="34"/>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeforeGo — Packing List &amp; Trip Prep for iPhone</title>
+<link rel="icon" href="/assets/beforego/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#12313a; --muted:#5b7375; --moss:#1f9b8a; --moss-deep:#157a6c;
+    --paper:#edf7f5; --card:rgba(255,255,255,.86); --line:#d0e3df; --shadow:0 18px 44px -28px rgba(18,49,58,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#e8f3f1; --muted:#9db3b3; --moss:#3fc0ad; --moss-deep:#3fc0ad;
+      --paper:#0e1a1d; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--moss-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--moss);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--moss-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+  .disclaimer{font-size:13.5px;margin-top:18px;line-height:1.6}
+</style>
+<!-- seo:start -->
+<meta name="description" content="BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.">
+<link rel="canonical" href="https://dyljqq.github.io/beforego/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="BeforeGo — Packing List &amp; Trip Prep for iPhone">
+<meta property="og:description" content="BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.">
+<meta property="og:url" content="https://dyljqq.github.io/beforego/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/beforego/checklist.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/beforego/checklist.jpg">
+<meta name="twitter:title" content="BeforeGo — Packing List &amp; Trip Prep for iPhone">
+<meta name="twitter:description" content="BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.">
+<meta name="apple-itunes-app" content="app-id=6786561175">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/beforego/#app",
+  "name": "BeforeGo: AI Itinerary Planner",
+  "alternateName": "BeforeGo",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "BeforeGo turns travel prep into a checklist you actually finish: destination-specific packing, documents, adapters, money and apps, plus a trip journal. Whatever you never ticked off comes back three days before the next trip.",
+  "url": "https://dyljqq.github.io/beforego/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6786561175",
+  "installUrl": "https://apps.apple.com/app/id6786561175",
+  "sameAs": [
+    "https://apps.apple.com/app/id6786561175"
+  ],
+  "image": "https://dyljqq.github.io/assets/beforego/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/beforego/#faq",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does BeforeGo do that a notes app does not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It starts from a destination-specific preparation list — documents, packing, power adapters, money, apps, reminders — instead of a blank page, splits it by phase so you can see what is still open, and keeps urgent items on the Home Screen through reminders and widgets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it remember what I forgot last time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When a trip ends, whatever you never ticked off is collected in one tap and comes back three days before the next trip as “last time you forgot”. Forget the same thing twice and it still shows up once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no account to create and nothing to sign up for — open it and start a trip."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages does it support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ten: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português and ไทย."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep photos and notes from the trip itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Notes, photos and voice memories stay attached to the trip, including the things you wished you had brought."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does BeforeGo Premium cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Premium is an auto-renewing subscription, monthly or yearly, and the yearly plan includes a 7-day free trial for new subscribers. A one-time lifetime unlock is also available. The exact price is shown on the purchase screen before you confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I rely on it for visa or entry requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="/assets/beforego/icon.png" alt="BeforeGo app icon" width="92" height="92">
+    <h1>Stop packing from memory.</h1>
+    <p class="tagline">BeforeGo turns travel prep into a checklist you actually finish — documents, packing, adapters, money, apps — and then remembers what you forgot, so the next trip starts smarter.</p>
+    <a class="cta" href="https://apps.apple.com/app/id6786561175">Download on the App Store</a>
+    <p class="meta">Free · iPhone &amp; iPad · iOS 17+ · No account required</p>
+  </section>
+
+  <section class="shots">
+    <img src="/assets/beforego/checklist.jpg" alt="A destination checklist in BeforeGo, grouped by preparation phase" loading="lazy">
+    <img src="/assets/beforego/countdown.jpg" alt="A trip countdown widget on the iPhone Home Screen" loading="lazy">
+    <img src="/assets/beforego/journal.jpg" alt="A trip journal entry with notes and photos" loading="lazy">
+    <img src="/assets/beforego/album.jpg" alt="Trip photo album view" loading="lazy">
+  </section>
+
+  <h2>What it does</h2>
+  <p class="lede">Every trip has the same twenty small things, and one of them always gets missed. BeforeGo makes that list explicit, keeps it in front of you, and carries the lesson forward.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Lists that know where you are going</h3>
+      <p>Create a trip, pick a destination, and start from a practical preparation list — documents, packing, power adapters, money, apps, reminders, personal notes.</p>
+    </div>
+    <div class="card">
+      <h3>Visible until it is done</h3>
+      <p>What is finished and what still needs attention, split by phase. Urgent items stay on your Home Screen through reminders and widgets, not buried in a note.</p>
+    </div>
+    <div class="card">
+      <h3>A journal, not just a list</h3>
+      <p>Notes, photos and voice memories from each trip stay with the trip — including the things you wished you had brought.</p>
+    </div>
+    <div class="card">
+      <h3>The next trip starts smarter</h3>
+      <p>When a trip ends, whatever you never ticked off is collected for you in one tap — and comes back three days before the next trip as &ldquo;last time you forgot&rdquo;. Forget the same thing twice and it still shows up once.</p>
+    </div>
+    <div class="card">
+      <h3>Yours, on your phone</h3>
+      <p>No account to create and nothing to sign up for. Open it and start a trip.</p>
+    </div>
+    <div class="card">
+      <h3>Ten languages</h3>
+      <p>English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย.</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">Questions people ask</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>What does BeforeGo do that a notes app does not?</h3>
+      <p>It starts from a destination-specific preparation list — documents, packing, power adapters, money, apps, reminders — instead of a blank page, splits it by phase so you can see what is still open, and keeps urgent items on the Home Screen through reminders and widgets.</p>
+    </div>
+    <div class="card">
+      <h3>Does it remember what I forgot last time?</h3>
+      <p>Yes. When a trip ends, whatever you never ticked off is collected in one tap and comes back three days before the next trip as “last time you forgot”. Forget the same thing twice and it still shows up once.</p>
+    </div>
+    <div class="card">
+      <h3>Does it need an account?</h3>
+      <p>No. There is no account to create and nothing to sign up for — open it and start a trip.</p>
+    </div>
+    <div class="card">
+      <h3>What languages does it support?</h3>
+      <p>Ten: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português and ไทย.</p>
+    </div>
+    <div class="card">
+      <h3>Can I keep photos and notes from the trip itself?</h3>
+      <p>Yes. Notes, photos and voice memories stay attached to the trip, including the things you wished you had brought.</p>
+    </div>
+    <div class="card">
+      <h3>What does BeforeGo Premium cost?</h3>
+      <p>Premium is an auto-renewing subscription, monthly or yearly, and the yearly plan includes a 7-day free trial for new subscribers. A one-time lifetime unlock is also available. The exact price is shown on the purchase screen before you confirm.</p>
+    </div>
+    <div class="card">
+      <h3>Can I rely on it for visa or entry requirements?</h3>
+      <p>No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">Hear about real updates</h2>
+    <p>No newsletter, no schedule — just an email from the developer when there is an actual new version or a feature worth knowing about. Reply to any of it and a human reads it.</p>
+    <p style="margin-top:16px"><a href="mailto:qinqiangji@gmail.com?subject=BeforeGo%20updates&amp;body=Add%20me%20to%20the%20BeforeGo%20update%20list.">Email me to be added →</a></p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Support</h2>
+    <p>Questions, feedback, a bug, or help with a purchase? Email <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">qinqiangji@gmail.com</a>. Every message is read, usually answered within two business days.</p>
+    <p class="disclaimer">BeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline or government guidance — always verify important requirements with official sources before you travel.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Other apps</h2>
+    <div class="apps">
+      <a href="/countdown/">Countdown Widget</a>
+      <a href="/invoiceqr/">Invoice Maker</a>
+      <a href="/dailycalorie/">DailyCalorie</a>
+      <a href="/qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/privacy-policy/">Privacy Policy</a>
+    <a href="/terms-of-use/">Terms of Use</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">Contact</a>
+    <p style="margin-top:18px">BeforeGo is an independent app. Made by one developer.</p>
+  </footer>
+
+</main>
+</body>
+</html>

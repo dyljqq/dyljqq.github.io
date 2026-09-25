@@ -1,17 +1,20 @@
 # go ka
 
-> 6 个独立开发的 iPhone app。每个 app 一个产品页，页面上写的功能、
-> 免费范围和价格就是应用内的实际情况，没有第二套说法。
+> Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.
+> Every app has its own page here; the features, free parts and prices written on it
+> are what the app actually does.
 
-Contact: qinqiangji@gmail.com
+- Home: https://dyljqq.github.io/
+- All apps on the App Store: https://apps.apple.com/developer/id1854274317
+- Contact: qinqiangji@gmail.com
 
 ## Apps
 
-### Packing List & Trips: BeforeGo
+### BeforeGo: AI Itinerary Planner
 
 A travel packing list and trip-prep checklist for iPhone that remembers what you forgot last time.
 
-- Page: https://dyljqq.github.io/
+- Page: https://dyljqq.github.io/beforego/
 - App Store: https://apps.apple.com/app/id6786561175
 - Platform: iOS (iPhone, iPad)
 - Category: Travel
@@ -39,7 +42,7 @@ A countdown widget app for iPhone where every widget size is free and the number
 - Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
 - Paid: Pro unlocks 90 of the 122 backdrops. US$9.99/year with a 7-day free trial, US$1.49/month, or US$14.99 once for Lifetime.
 
-### Invoice Maker: Estimate & QR
+### Smart Invoice & Estimate Maker
 
 An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.
 
@@ -50,7 +53,7 @@ An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with 
 - For: Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.
 - Free: Three documents a month (invoices, estimates and quotes share the allowance), and four of the ready-made QR designs.
 
-### DailyCalorie: Calorie Counter
+### DailyCalorie: Calories Left
 
 An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.
 
@@ -72,7 +75,7 @@ An iPhone QR code generator and scanner that lets you style a code with colours,
 - For: Anyone putting a QR code on a menu, poster, business card or shop window and wanting it to look like it belongs there.
 - Free: Generating and scanning codes, and the standard styles.
 
-### Word Beast: English Vocabulary
+### 单词兽-拍照学单词·小学初中英语闯关
 
 把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。
 
@@ -83,8 +86,44 @@ An iPhone QR code generator and scanner that lets you style a code with colours,
 - For: 需要背课本单词表的中小学生和家长。
 - Free: 核心课程、闯关和收集，无需注册。
 
+### Repdex: Gym Workout Tracker
+
+A gym workout log for iPhone.
+
+- Page: https://dyljqq.github.io/repdex/
+- App Store: https://apps.apple.com/app/id6803828068
+- Platform: iOS (iPhone, iPad)
+- Category: Health & Fitness
+- For: People logging strength training sessions.
+
+## FAQ
+
+### What is go ka?
+
+go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account.
+
+### Are the apps free?
+
+All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm.
+
+### Do I need to create an account?
+
+No. None of the apps asks you to sign up or create an account. Where an app syncs between your devices, it uses your own iCloud.
+
+### Which devices do the apps run on?
+
+iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later.
+
+### Which languages are the apps available in?
+
+Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English.
+
+### How do I get help with one of the apps?
+
+Email qinqiangji@gmail.com and say which app it is about. Every message is read. Each app also has its own page on this site with its privacy policy and terms.
+
 ## Notes
 
-- 所有 app 都是免费下载。付费部分（如果有）写在各自的产品页上。
-- 没有服务器账号体系；数据留在设备和用户自己的 iCloud 里。
-- 支持与反馈：qinqiangji@gmail.com
+- Every app is free to download. Paid parts, where there are any, are listed on each app's page.
+- No app asks for an account or sign-up. Where an app syncs, it uses the user's own iCloud.
+- Support and feedback: qinqiangji@gmail.com

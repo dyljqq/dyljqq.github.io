@@ -1,0 +1,19 @@
+<path d="M24 158H216"/>
+<path d="M112 64V52a8 8 0 0 1 8-8h20a8 8 0 0 1 8 8v12"/>
+<rect class="w" x="84" y="64" width="92" height="82" rx="12"/>
+<path class="y" d="M104 64h14v82h-14zM142 64h14v82h-14z"/>
+<rect x="84" y="64" width="92" height="82" rx="12"/>
+<circle class="w" cx="102" cy="152" r="5"/>
+<circle class="w" cx="158" cy="152" r="5"/>
+<path d="M92 70c-6 8-12 14-22 18"/>
+<g transform="rotate(-12 64 104)">
+  <rect class="w" x="50" y="86" width="28" height="36" rx="5"/>
+  <circle cx="64" cy="93" r="2"/>
+  <path d="M57 106l5 5 9-11"/>
+</g>
+<g class="float">
+  <path class="w" d="M180 40l36-14-14 34-8-12z"/>
+  <path d="M194 48l22-22"/>
+</g>
+<path class="dash" d="M176 50c-10 6-16 12-18 22"/>
+<use href="#bird" x="182" y="121" width="44" height="37" transform="translate(408 0) scale(-1 1)"/>

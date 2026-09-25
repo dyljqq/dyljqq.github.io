@@ -1,0 +1,16 @@
+<path d="M24 158H216"/>
+<rect class="w" x="78" y="48" width="96" height="106" rx="12"/>
+<path class="y" d="M78 74V60a12 12 0 0 1 12-12h72a12 12 0 0 1 12 12v14z"/>
+<path d="M78 74h96"/>
+<rect class="w" x="100" y="38" width="8" height="20" rx="4"/>
+<rect class="w" x="144" y="38" width="8" height="20" rx="4"/>
+<text class="t-num" x="126" y="124" text-anchor="middle">12</text>
+<text class="t-cap" x="126" y="143" text-anchor="middle">DAYS TO GO</text>
+<g class="float" transform="rotate(16 197 50)">
+  <rect class="w" x="180" y="28" width="34" height="42" rx="6"/>
+  <path class="y" d="M180 40v-6a6 6 0 0 1 6-6h22a6 6 0 0 1 6 6v6z"/>
+  <path d="M180 40h34"/>
+  <text class="t-mid" x="197" y="62" text-anchor="middle">13</text>
+</g>
+<path d="M170 30l-7 5M172 46l-9 1"/>
+<use href="#bird" x="28" y="121" width="44" height="37"/>

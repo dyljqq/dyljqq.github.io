@@ -13,15 +13,17 @@
     "origin": "https://dyljqq.github.io",
     "brand": "go ka",
     "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
-    "email": "qinqiangji@gmail.com"
+    "email": "qinqiangji@gmail.com",
+    "developerUrl": "https://apps.apple.com/developer/id1854274317",
+    "developerNote": "App Store 上七个 app 都挂在这个开发者账号下（显示名是个人实名，不是 go ka）。首页和 Organization.sameAs 用它把品牌和账号连起来。"
   },
   "apps": [
     {
       "key": "beforego",
-      "path": "/",
+      "path": "/beforego/",
       "live": true,
       "appId": "6786561175",
-      "name": "Packing List & Trips: BeforeGo",
+      "name": "BeforeGo: AI Itinerary Planner",
       "shortName": "BeforeGo",
       "category": "TravelApplication",
       "genre": "Travel",
@@ -72,7 +74,13 @@
           "q": "Can I rely on it for visa or entry requirements?",
           "a": "No. BeforeGo is made for personal travel organization and does not replace official visa, safety, health, airline or government guidance. Always verify important requirements with official sources."
         }
-      ]
+      ],
+      "home": {
+        "order": 2,
+        "label": "BeforeGo",
+        "tagline": "From a travel post to a day-by-day plan.",
+        "blurb": "An AI itinerary planner and packing list app. Screenshot a travel post, paste a link or type your plans, and BeforeGo turns it into a day-by-day trip plan — while a packing list writes itself from your destination and dates."
+      }
     },
     {
       "key": "countdown",
@@ -126,7 +134,13 @@
           "q": "Does it need an account or an internet connection?",
           "a": "No account and no sign-up. The app works offline; iCloud sync uses your own Apple Account when you turn it on."
         }
-      ]
+      ],
+      "home": {
+        "order": 1,
+        "label": "Countdown",
+        "tagline": "Every day that matters, on your Home Screen.",
+        "blurb": "A countdown widget app for iPhone. Unlimited events, recurring birthdays and anniversaries, reminders, and every widget size on the Home Screen and Lock Screen — all free. Syncs with iCloud, no account."
+      }
     },
     {
       "key": "countdown-pt-br",
@@ -592,7 +606,7 @@
       "path": "/invoiceqr/",
       "live": true,
       "appId": "6790383156",
-      "name": "Invoice Maker: Estimate & QR",
+      "name": "Smart Invoice & Estimate Maker",
       "shortName": "Invoice Maker",
       "category": "BusinessApplication",
       "genre": "Business",
@@ -615,7 +629,7 @@
       "faq": [
         {
           "q": "Is there an invoice app for iPhone that works without creating an account?",
-          "a": "Yes. Invoice Maker: Estimate & QR has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device."
+          "a": "Yes. Smart Invoice & Estimate Maker has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device."
         },
         {
           "q": "How many invoices can I send for free?",
@@ -641,14 +655,20 @@
           "q": "What does Invoice Maker Pro unlock?",
           "a": "Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames."
         }
-      ]
+      ],
+      "home": {
+        "order": 3,
+        "label": "Invoice Maker",
+        "tagline": "Send the invoice. Get paid by QR.",
+        "blurb": "An invoice maker for freelancers and small businesses. Pick from 100+ templates, send PDF invoices, estimates and quotes, and add a payment QR code so clients can pay faster. See what is paid, unpaid and overdue."
+      }
     },
     {
       "key": "dailycalorie",
       "path": "/dailycalorie/",
       "live": true,
       "appId": "6798095407",
-      "name": "DailyCalorie: Calorie Counter",
+      "name": "DailyCalorie: Calories Left",
       "shortName": "DailyCalorie",
       "category": "HealthApplication",
       "genre": "Health & Fitness",
@@ -667,7 +687,14 @@
           "Terms of Use"
         ]
       ],
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg"
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+      "minOS": "18.0",
+      "home": {
+        "order": 4,
+        "label": "DailyCalorie",
+        "tagline": "See what is left, not what is gone.",
+        "blurb": "A calorie counter and food diary you fill in with your camera. Snap your plate and get the dish, the portion, the calories and the macros — protein, carbs and fat — in seconds. The day shows how many calories you have left."
+      }
     },
     {
       "key": "qrcodestudio",
@@ -723,14 +750,20 @@
           "q": "What is free and what does Pro unlock?",
           "a": "Generating and scanning codes and the standard styles are free. Pro unlocks all 18 illustrated scenes, every frame and dot shape, gradients, custom colours and your own logo in the middle. It is a monthly or yearly auto-renewing subscription; the yearly plan has a 7-day free trial for new subscribers and the price is shown before you confirm."
         }
-      ]
+      ],
+      "home": {
+        "order": 5,
+        "label": "QR Studio",
+        "tagline": "A QR code people want to scan.",
+        "blurb": "A custom QR code generator and scanner. Pick colours, dot shapes and gradients, put your logo in the middle or set the code into one of 18 illustrated scenes — and it checks every time that the code still scans."
+      }
     },
     {
       "key": "citu",
       "path": "/citu/",
       "live": true,
       "appId": "6796596826",
-      "name": "Word Beast: English Vocabulary",
+      "name": "单词兽-拍照学单词·小学初中英语闯关",
       "shortName": "Word Beast",
       "category": "EducationalApplication",
       "genre": "Education",
@@ -764,14 +797,22 @@
           "q": "学习记录存在哪里？",
           "a": "存在设备上。开了 iCloud 同步则存在你自己的 iCloud 里，开发者拿不到。"
         }
-      ]
+      ],
+      "home": {
+        "order": 6,
+        "label": "Word Beast",
+        "tagline": "Point. Snap. Learn the word.",
+        "blurb": "An English vocabulary app for kids. Point the camera at anything and the AI tells you the English word, with phonetics, meaning and an example sentence to listen to. 1,671 words and sentences across 271 levels; core lessons work offline.",
+        "storeNameEn": "Word Beast: AI Photo Words",
+        "hreflang": "zh-CN"
+      }
     },
     {
       "key": "repdex",
       "path": "/repdex/",
-      "live": false,
+      "live": true,
       "appId": "6803828068",
-      "name": "Repdex: Gym Workout Log",
+      "name": "Repdex: Gym Workout Tracker",
       "shortName": "Repdex",
       "category": "HealthApplication",
       "genre": "Health & Fitness",
@@ -788,7 +829,13 @@
           "/repdex/terms-of-use/",
           "Terms of Use"
         ]
-      ]
+      ],
+      "home": {
+        "order": 7,
+        "label": "Repdex",
+        "tagline": "Log the set. Close the app.",
+        "blurb": "A gym workout tracker and strength training log. 1,324 exercises with animations and step-by-step instructions, all offline. Edit weight and reps right on the workout screen; tick a set and the rest timer starts."
+      }
     },
     {
       "key": "diary",
@@ -815,5 +862,37 @@
         ]
       ]
     }
-  ]
+  ],
+  "home": {
+    "title": "go ka — Small iPhone apps for everyday things",
+    "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
+    "ogImage": "/assets/brand/og-home.png",
+    "logo": "/assets/brand/logo-512.png",
+    "faq": [
+      {
+        "q": "What is go ka?",
+        "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account."
+      },
+      {
+        "q": "Are the apps free?",
+        "a": "All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
+      },
+      {
+        "q": "Do I need to create an account?",
+        "a": "No. None of the apps asks you to sign up or create an account. Where an app syncs between your devices, it uses your own iCloud."
+      },
+      {
+        "q": "Which devices do the apps run on?",
+        "a": "iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
+      },
+      {
+        "q": "Which languages are the apps available in?",
+        "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
+      },
+      {
+        "q": "How do I get help with one of the apps?",
+        "a": "Email qinqiangji@gmail.com and say which app it is about. Every message is read. Each app also has its own page on this site with its privacy policy and terms."
+      }
+    ]
+  }
 }

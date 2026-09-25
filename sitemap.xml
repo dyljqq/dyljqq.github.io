@@ -3,6 +3,11 @@
   <url>
     <loc>https://dyljqq.github.io/</loc>
     <lastmod>2026-08-31</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://dyljqq.github.io/beforego/</loc>
+    <lastmod>2026-09-25</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -127,6 +132,21 @@
   </url>
   <url>
     <loc>https://dyljqq.github.io/qrcodestudio/terms-of-service/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dyljqq.github.io/repdex/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dyljqq.github.io/repdex/privacy-policy/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dyljqq.github.io/repdex/terms-of-use/</loc>
     <lastmod>2026-08-31</lastmod>
     <priority>0.3</priority>
   </url>

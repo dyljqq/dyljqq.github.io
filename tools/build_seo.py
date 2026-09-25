@@ -8,6 +8,9 @@
 改写：每个 *.html 的 head——canonical / description / og / twitter /
       SoftwareApplication JSON-LD，全部放在 <!-- seo:start --> 标记块里，
       重跑先删旧块再写新块，所以脚本可以反复跑。
+首页（/）：品牌首页，数据在 site.json 的 home 和各 app 的 home 字段。除了 head，
+      还生成正文里的 <!-- apps --> 作品卡片、<!-- homefaq --> 可见 FAQ、<!-- legal --> 页脚法务链接；
+      插画在 tools/home/illus/<key>.svg（只写 <svg> 内部，脚本内联进页面）。
 
 手写的 FAQPage JSON-LD 不动：那是页面自己的内容，标记块之外的东西一律保留。
 """
@@ -21,6 +24,9 @@ ORIGIN = CFG["site"]["origin"]
 BRAND = CFG["site"]["brand"]
 EMAIL = CFG["site"]["email"]
 APPS = [a for a in CFG["apps"] if not a["key"].startswith("_")]
+HOME = CFG.get("home")
+DEV_URL = CFG["site"].get("developerUrl")
+HOME_APPS = sorted((a for a in APPS if a.get("home") and a.get("live")), key=lambda a: a["home"]["order"])
 CHECK = "--check" in sys.argv
 
 START, END = "<!-- seo:start -->", "<!-- seo:end -->"
@@ -57,7 +63,9 @@ def hreflang_links(app):
     return out
 
 def pages():
-    """产出 (url_path, html_path, app, kind)。kind: product / legal。"""
+    """产出 (url_path, html_path, app, kind)。kind: home / product / legal；home 的 app 是 None。"""
+    if HOME and (ROOT / "index.html").exists():
+        yield "/", ROOT / "index.html", None, "home"
     for app in APPS:
         p = ROOT / app["path"].strip("/") / "index.html" if app["path"] != "/" else ROOT / "index.html"
         if p.exists():
@@ -115,9 +123,9 @@ Sitemap: {ORIGIN}/sitemap.xml
 def build_sitemap():
     rows = []
     for url, path, app, kind in pages():
-        if not app.get("live"):
+        if app is not None and not app.get("live"):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
-        rows.append((url, git_lastmod(path), "0.9" if kind == "product" else "0.3"))
+        rows.append((url, git_lastmod(path), {"home": "1.0", "product": "0.9"}.get(kind, "0.3")))
     rows.sort(key=lambda r: (r[0] != "/", r[0]))
     body = "\n".join(
         f"  <url>\n    <loc>{ORIGIN}{u}</loc>\n    <lastmod>{m}</lastmod>\n"
@@ -130,10 +138,13 @@ def build_sitemap():
 def build_llms():
     live = [a for a in APPS if a.get("live") and not a.get("variantOf")]
     out = [f"# {BRAND}", "",
-           f"> {len(live)} 个独立开发的 iPhone app。每个 app 一个产品页，页面上写的功能、",
-           "> 免费范围和价格就是应用内的实际情况，没有第二套说法。",
+           f"> {HOME['description']}" if HOME else f"> {len(live)} iPhone apps.",
+           "> Every app has its own page here; the features, free parts and prices written on it",
+           "> are what the app actually does.",
            "",
-           f"Contact: {EMAIL}", "", "## Apps", ""]
+           f"- Home: {ORIGIN}/",
+           *([f"- All apps on the App Store: {DEV_URL}"] if DEV_URL else []),
+           f"- Contact: {EMAIL}", "", "## Apps", ""]
     for a in live:
         su = store_url(a)
         out.append(f"### {a['name']}")
@@ -154,10 +165,14 @@ def build_llms():
         if a.get("paid"):
             out.append(f"- Paid: {a['paid']}")
         out.append("")
+    if HOME and HOME.get("faq"):
+        out += ["## FAQ", ""]
+        for f in HOME["faq"]:
+            out += [f"### {f['q']}", "", f["a"], ""]
     out += ["## Notes", "",
-            "- 所有 app 都是免费下载。付费部分（如果有）写在各自的产品页上。",
-            "- 没有服务器账号体系；数据留在设备和用户自己的 iCloud 里。",
-            f"- 支持与反馈：{EMAIL}", ""]
+            "- Every app is free to download. Paid parts, where there are any, are listed on each app's page.",
+            "- No app asks for an account or sign-up. Where an app syncs, it uses the user's own iCloud.",
+            f"- Support and feedback: {EMAIL}", ""]
     return "\n".join(out)
 
 # ---------------------------------------------------------------- head 改写
@@ -166,7 +181,7 @@ def software_jsonld(app):
          "@id": f"{ORIGIN}{app['path']}#app",
          "name": app["name"], "alternateName": app["shortName"],
          "applicationCategory": app["category"],
-         "operatingSystem": "iOS 17.0 or later",
+         "operatingSystem": f"iOS {app.get('minOS', '17.0')} or later",
          "description": app["description"],
          "url": f"{ORIGIN}{app['path']}",
          "inLanguage": app.get("lang", "en"),
@@ -217,7 +232,9 @@ def org_jsonld():
             "@id": f"{ORIGIN}/#org", "name": BRAND, "url": f"{ORIGIN}/",
             "email": EMAIL,
             "description": f"Independent iOS developer. {len([a for a in APPS if a.get('live') and not a.get('variantOf')])} apps on the App Store.",
-            "sameAs": list(dict.fromkeys(u for u in (store_url(a) for a in APPS) if u))}
+            **({"logo": asset(HOME["logo"])} if HOME and HOME.get("logo") else {}),
+            "sameAs": list(dict.fromkeys(([DEV_URL] if DEV_URL else []) +
+                                         [u for u in (store_url(a) for a in APPS) if u]))}
 
 def head_block(url, app, kind):
     is_product = kind == "product"
@@ -258,16 +275,136 @@ def head_block(url, app, kind):
     blobs = [software_jsonld(app)]
     if is_product and app.get("faq"):
         blobs.append(faq_jsonld(app))
-    if url == "/":
-        blobs.append(org_jsonld())
-        blobs.append({"@context": "https://schema.org", "@type": "WebSite",
-                      "@id": f"{ORIGIN}/#website", "url": f"{ORIGIN}/", "name": BRAND,
-                      "publisher": {"@id": f"{ORIGIN}/#org"}})
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
                      % json.dumps(b, ensure_ascii=False, indent=2))
     lines.append(END)
     return "\n".join(lines) + "\n"
+
+# ---------------------------------------------------------------- 首页
+def home_name(a):
+    """首页是英文页：卡片和 ItemList 用美区商店名；中文产品页的 app（单词兽）另存了英文名。"""
+    return a["home"].get("storeNameEn", a["name"])
+
+def home_head():
+    canonical = f"{ORIGIN}/"
+    title, desc = HOME["title"], HOME["description"]
+    img = asset(HOME["ogImage"])
+    lines = [START,
+             '<meta name="description" content="%s">' % esc(desc),
+             f'<link rel="canonical" href="{canonical}">',
+             '<meta property="og:type" content="website">',
+             '<meta property="og:site_name" content="%s">' % esc(BRAND),
+             '<meta property="og:title" content="%s">' % esc(title),
+             '<meta property="og:description" content="%s">' % esc(desc),
+             f'<meta property="og:url" content="{canonical}">',
+             f'<meta property="og:image" content="{img}">',
+             '<meta property="og:image:width" content="1200">',
+             '<meta property="og:image:height" content="630">',
+             '<meta property="og:image:alt" content="%s">' % esc(title),
+             '<meta name="twitter:card" content="summary_large_image">',
+             '<meta name="twitter:title" content="%s">' % esc(title),
+             '<meta name="twitter:description" content="%s">' % esc(desc),
+             f'<meta name="twitter:image" content="{img}">']
+    items = []
+    for i, a in enumerate(HOME_APPS, 1):
+        su = store_url(a)
+        item = {"@type": "SoftwareApplication", "@id": f"{ORIGIN}{a['path']}#app",
+                "name": home_name(a), "alternateName": a["home"]["label"],
+                "url": f"{ORIGIN}{a['path']}", "description": a["home"]["blurb"],
+                "applicationCategory": a["category"],
+                "operatingSystem": f"iOS {a.get('minOS', '17.0')} or later",
+                "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+                "publisher": {"@id": f"{ORIGIN}/#org"}}
+        if a.get("icon"):
+            item["image"] = asset(a["icon"])
+        if su:
+            item["downloadUrl"] = su
+            item["sameAs"] = [su]
+        items.append({"@type": "ListItem", "position": i, "item": item})
+    blobs = [
+        org_jsonld(),
+        {"@context": "https://schema.org", "@type": "WebSite", "@id": f"{ORIGIN}/#website",
+         "url": canonical, "name": BRAND, "description": desc, "inLanguage": "en",
+         "publisher": {"@id": f"{ORIGIN}/#org"}},
+        {"@context": "https://schema.org", "@type": "CollectionPage", "@id": f"{ORIGIN}/#webpage",
+         "url": canonical, "name": title, "description": desc, "inLanguage": "en",
+         "isPartOf": {"@id": f"{ORIGIN}/#website"}, "about": {"@id": f"{ORIGIN}/#org"},
+         "primaryImageOfPage": img,
+         "mainEntity": {"@type": "ItemList", "@id": f"{ORIGIN}/#apps", "name": f"Apps by {BRAND}",
+                        "numberOfItems": len(items), "itemListElement": items}},
+        {"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{ORIGIN}/#faq",
+         "inLanguage": "en",
+         "mainEntity": [{"@type": "Question", "name": f["q"],
+                         "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in HOME["faq"]]},
+    ]
+    for b in blobs:
+        lines.append('<script type="application/ld+json">\n%s\n</script>'
+                     % json.dumps(b, ensure_ascii=False, indent=2))
+    lines.append(END)
+    return "\n".join(lines) + "\n"
+
+def home_apps_html():
+    cards = []
+    for a in HOME_APPS:
+        h, key, page = a["home"], a["key"], a["path"]
+        svg = (ROOT / "tools" / "home" / "illus" / f"{key}.svg").read_text(encoding="utf-8").strip()
+        svg = "\n".join("        " + l for l in svg.splitlines())
+        hl = f' hreflang="{h["hreflang"]}"' if h.get("hreflang") else ""
+        label = esc_text(h["label"])
+        su = store_url(a)
+        get = f'\n      <a class="get" href="{su}">{label} on the App Store ↗</a>' if su else ""
+        cards.append(f"""    <article class="app" id="app-{key}">
+      <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
+        <svg class="illus" viewBox="0 0 240 180" focusable="false">
+{svg}
+        </svg>
+      </a>
+      <div class="app-head">
+        <h3><a href="{page}"{hl}>{label}.</a></h3>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </div>
+      <p class="store-name">{esc_text(home_name(a))}</p>
+      <p class="tagline">{esc_text(h["tagline"])}</p>
+      <p class="blurb">{esc_text(h["blurb"])}</p>{get}
+    </article>""")
+    return ('<!-- apps:start -->\n  <div class="apps">\n' + "\n".join(cards)
+            + "\n  </div>\n  <!-- apps:end -->")
+
+def home_faq_html():
+    rows = "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                     % (esc_text(f["q"]), esc_text(f["a"])) for f in HOME["faq"])
+    return ('<!-- homefaq:start -->\n  <div class="faq-list">\n' + rows
+            + "\n  </div>\n  <!-- homefaq:end -->")
+
+def home_legal_html():
+    rows = []
+    for a in HOME_APPS:
+        hl = a["home"].get("hreflang")
+        attr = f' hreflang="{hl}" lang="{hl}"' if hl else ""
+        links = " · ".join('<a href="%s"%s>%s</a>' % (href, attr, esc_text(label))
+                           for href, label in a.get("legal", []))
+        rows.append("          <li>%s — %s</li>" % (esc_text(a["home"]["label"]), links))
+    return ('<!-- legal:start -->\n        <ul class="legal">\n' + "\n".join(rows)
+            + "\n        </ul>\n        <!-- legal:end -->")
+
+def patch_home(path: Path):
+    html = path.read_text(encoding="utf-8")
+    head_end = html.lower().find("</head>")
+    if head_end == -1:
+        return None
+    head, rest = html[:head_end], html[head_end:]
+    for pat in OWNED:
+        head = re.sub(pat, "", head, flags=re.S | re.I)
+    head = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % esc_text(HOME["title"]),
+                  head, count=1, flags=re.S)
+    out = head.rstrip() + "\n" + home_head() + rest
+    for tag, fn in (("apps", home_apps_html), ("homefaq", home_faq_html), ("legal", home_legal_html)):
+        a, b = f"<!-- {tag}:start -->", f"<!-- {tag}:end -->"
+        if a not in out or b not in out:
+            raise SystemExit(f"index.html 缺少标记 {a} / {b}")
+        out = re.sub(re.escape(a) + r".*?" + re.escape(b), lambda m: fn(), out, count=1, flags=re.S)
+    return out
 
 def asset(u):
     """icon / ogImage 允许写站内路径或绝对 URL（App Store 的图标 CDN）。"""
@@ -322,7 +459,7 @@ def main():
     write("sitemap.xml", sitemap)
     write("llms.txt", build_llms())
     for url, path, app, kind in pages():
-        out = patch(path, url, app, kind)
+        out = patch_home(path) if kind == "home" else patch(path, url, app, kind)
         if out is None:
             print(f"  !! 没有 </head>，跳过：{path}")
             continue

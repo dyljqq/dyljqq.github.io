@@ -1,0 +1,18 @@
+<path d="M24 158H216"/>
+<path class="w" d="M78 28h64l22 22v108H78z"/>
+<path d="M142 28v22h22"/>
+<path d="M92 46h30M92 56h18"/>
+<path d="M92 78h34M138 78h12M92 90h26M138 90h12M92 102h30M138 102h12"/>
+<path d="M92 114h58"/>
+<rect class="y" x="122" y="122" width="28" height="28" rx="3"/>
+<rect class="k" x="125" y="125" width="7" height="7" rx="1.5"/>
+<rect class="k" x="140" y="125" width="7" height="7" rx="1.5"/>
+<rect class="k" x="125" y="140" width="7" height="7" rx="1.5"/>
+<rect class="k" x="136" y="136" width="3.5" height="3.5"/>
+<rect class="k" x="142" y="141" width="3.5" height="3.5"/>
+<rect class="k" x="136" y="144" width="3.5" height="3.5"/>
+<g class="float" transform="rotate(-14 66 126)">
+  <rect class="w" x="42" y="114" width="50" height="24" rx="5"/>
+  <text class="t-stamp" x="67" y="131" text-anchor="middle">PAID</text>
+</g>
+<use href="#bird" x="172" y="121" width="44" height="37"/>
