@@ -106,8 +106,8 @@ CSS = bp.CSS + """
 .inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
 .inv{border:1.5px solid var(--ink);border-radius:16px;padding:32px;background:#fff;font-size:15px;color:var(--ink)}
 .inv [contenteditable]{outline:none;border-bottom:1px dashed #cfcac0;min-width:2ch}.inv [contenteditable]:focus{background:var(--cream)}
-.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-head h2{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
-.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties h4,.inv-meta h4{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-title{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties .k,.inv-meta .k{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
 .inv table{width:100%;border-collapse:collapse;margin:8px 0}.inv th{font:700 11px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--ink)}
 .inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
 .inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
@@ -368,10 +368,10 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
 <div class="inv-wrap">
 <div class="inv-tools"><button class="btn" id="print" type="button">Print / Save as PDF</button><button class="btn ghost" id="addrow" type="button">+ Add line</button></div>
 <div class="inv" id="inv">
-<div class="inv-head"><div><h2>INVOICE</h2><p style="margin:6px 0 0"><span contenteditable="true">Your Business Name</span><br><span contenteditable="true">Street, City, Country</span><br><span contenteditable="true">you@example.com · +1 000 000 0000</span></p></div>
-<div class="inv-meta"><h4>Invoice number</h4><p style="margin:0 0 10px"><span contenteditable="true">INV-0001</span></p><h4>Date</h4><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><h4>Due</h4><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
-<div class="inv-parties"><div><h4>Bill to</h4><p style="margin:0"><span contenteditable="true">Client name</span><br><span contenteditable="true">Client address</span><br><span contenteditable="true">client@example.com</span></p></div>
-<div><h4>Payment</h4><p style="margin:0"><span contenteditable="true">Bank transfer — IBAN / account number</span><br><span contenteditable="true">Or scan the QR code on your Smart Invoice PDF</span></p></div></div>
+<div class="inv-head"><div><div class="inv-title">INVOICE</div><p style="margin:6px 0 0"><span contenteditable="true">Your Business Name</span><br><span contenteditable="true">Street, City, Country</span><br><span contenteditable="true">you@example.com · +1 000 000 0000</span></p></div>
+<div class="inv-meta"><div class="k">Invoice number</div><p style="margin:0 0 10px"><span contenteditable="true">INV-0001</span></p><div class="k">Date</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Due</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">Bill to</div><p style="margin:0"><span contenteditable="true">Client name</span><br><span contenteditable="true">Client address</span><br><span contenteditable="true">client@example.com</span></p></div>
+<div><div class="k">Payment</div><p style="margin:0"><span contenteditable="true">Bank transfer — IBAN / account number</span><br><span contenteditable="true">Or scan the QR code on your Smart Invoice PDF</span></p></div></div>
 <table><thead><tr><th>Description</th><th>Qty</th><th>Price</th><th>Amount</th></tr></thead>
 <tbody><tr><td contenteditable="true">Design work — logo suite</td><td contenteditable="true">1</td><td contenteditable="true">1200.00</td><td>1,200.00</td></tr>
 <tr><td contenteditable="true">Landing page</td><td contenteditable="true">1</td><td contenteditable="true">800.00</td><td>800.00</td></tr></tbody></table>

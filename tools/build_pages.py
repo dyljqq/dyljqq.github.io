@@ -250,6 +250,8 @@ def render(a):
 <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
+{f'<link rel="preload" as="image" href="{poster}">' if video else (f'<link rel="preload" as="image" href="{cdn(shots[0], 460)}" imagesrcset="{cdn(shots[0], 460)} 460w, {cdn(shots[0], 920)} 920w" imagesizes="(max-width:760px) 72vw, 360px">' if shots else '')}
 <style>{CSS}</style>
 </head>
 <body>
