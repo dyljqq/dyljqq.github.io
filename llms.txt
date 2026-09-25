@@ -24,12 +24,20 @@ A countdown widget app for iPhone where every widget size is free and the number
 
 - Page: https://dyljqq.github.io/countdown/
 - Page (pt-BR): https://dyljqq.github.io/countdown/pt-br/
+- Page (de): https://dyljqq.github.io/countdown/de/
+- Page (fr): https://dyljqq.github.io/countdown/fr/
+- Page (it): https://dyljqq.github.io/countdown/it/
+- Page (ja): https://dyljqq.github.io/countdown/ja/
+- Page (ko): https://dyljqq.github.io/countdown/ko/
+- Page (th): https://dyljqq.github.io/countdown/th/
+- Page (zh-Hans): https://dyljqq.github.io/countdown/zh-hans/
+- Page (zh-Hant): https://dyljqq.github.io/countdown/zh-hant/
 - App Store: https://apps.apple.com/app/id6799846628
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity
 - For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
 - Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
-- Paid: Pro unlocks 90 of the 122 backdrops. US$14.99/year with a 7-day free trial, US$4.99/month, or US$29.99 once for Lifetime.
+- Paid: Pro unlocks 90 of the 122 backdrops. US$9.99/year with a 7-day free trial, US$1.49/month, or US$14.99 once for Lifetime.
 
 ### Invoice Maker: Estimate & QR
 

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カウントダウン ウィジェット — 無料・イベント無制限</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="カウントダウン ウィジェット — 無料・イベント無制限">
+<meta property="og:description" content="iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/ja/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="カウントダウン ウィジェット — 無料・イベント無制限">
+<meta name="twitter:description" content="iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/ja/#app",
+  "name": "カウントダウン ウィジェット: 記念日",
+  "alternateName": "カウントダウン ウィジェット",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。",
+  "url": "https://dyljqq.github.io/countdown/ja/",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/ja/#faq",
+  "inLanguage": "ja",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "iPhoneで本当に無料で使えるカウントダウンウィジェットのアプリはありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proで解放されるのは背景だけです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "無料版でカウントダウンはいくつ作れますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "上限はありません。多くのカウントダウンアプリは無料版を3〜5件に制限しますが、このアプリはどのプランでも制限しません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "受験や旅行、推しのライブまであと何日かを数えるのに使えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "使えます。ワンタップでイベントを作り、毎年繰り返すかを選び、当日と好きなだけ前にリマインダーを受け取れます。日本の祝日は最初からリストに入っています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "過ぎた日からの経過日数も数えられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "数えられます。どのイベントも、ある日までのカウントダウンにも、ある日からのカウントアップにもできます。繰り返しは毎年・毎月・毎週・数日ごとから選べます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アップデートの不具合や再インストールでカウントダウンはどうなりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "アプリは1日1回、そして危険な操作の前には必ず、端末内にすべてのバックアップを取ります。30日分の履歴が残り、どのバックアップもワンタップで復元できます。iCloud同期も使え、アカウント登録は不要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日本でのProの価格と、解放される内容は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Proは122種の背景のうち90種を解放し、毎月新しい背景が追加されます。年額1,500円（7日間の無料トライアル付き）、月額200円、または買い切り2,500円です。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アカウントやインターネット接続は必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "アカウントも登録も不要です。アプリはオフラインで動きます。iCloud同期をオンにした場合はご自身のApple Accountが使われます。"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="アプリ「カウントダウン ウィジェット: 記念日」のアイコン" width="92" height="92">
+    <h1>ウィジェット付きのカウントダウン。無料で、イベント数に上限なし。</h1>
+    <p class="tagline">受験まで、旅行まで、結婚式まで、推しのライブまであと何日？ ホーム画面とロック画面のウィジェットが答えます。全サイズ、無料。イベントはいくつでも。上限はありませんし、これからも作りません。</p>
+    <a class="cta" href="https://apps.apple.com/jp/app/id6799846628">App Storeでダウンロード</a>
+    <p class="meta">無料 · iPhone / iPad · iOS 17以降 · アカウント不要 · 広告なし · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="iPhoneのホーム画面に並ぶカウントダウンウィジェット" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="残り日数を表示する全画面のカウントダウン" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="全画面背景の選択画面" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="端末内に30日分保存されたバックアップ。ワンタップで復元" loading="lazy">
+  </section>
+
+  <h2>多くのカウントダウンアプリが間違えている2つのこと</h2>
+  <p class="lede">カウントダウンアプリの存在理由はウィジェットで、ウィジェットの存在理由はイベントです。多くのアプリは前者に課金し、後者を制限します。</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>よくあるカウントダウンアプリ</th><th>このアプリ</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ウィジェット</strong></td><td>Pro限定、または1サイズだけ</td><td class="yes">全サイズ、ホーム画面もロック画面も、無料</td></tr>
+      <tr><td><strong>イベント</strong></td><td>無料版は3〜5件まで</td><td class="yes">無制限、ずっと</td></tr>
+      <tr><td><strong>リマインダー</strong></td><td>Pro機能</td><td class="yes">無料。当日にも、好きなだけ前にも</td></tr>
+      <tr><td><strong>あなたのデータ</strong></td><td>アップデート不具合や再インストールで消える</td><td class="yes">毎日端末内にバックアップ、30日分の履歴</td></tr>
+      <tr><td><strong>Proが売るもの</strong></td><td>本来必要だったはずの機能</td><td class="yes">背景だけ。アプリを動かすものは何も</td></tr>
+    </tbody>
+  </table>
+
+  <h2>日本で「あと何日」を数えるもの</h2>
+  <p class="lede">ワンタップでイベントができて、毎年繰り返すかはあなたが決めます。日本の祝日は最初からリストに入っています。</p>
+  <div class="grid">
+    <div class="card">
+      <h3>受験・試験</h3>
+      <p>数字はロック画面のウィジェットに出るので、アプリを開く必要はありません。100日前、1週間前、当日の朝にリマインダー。</p>
+    </div>
+    <div class="card">
+      <h3>旅行</h3>
+      <p>出発まであと何日。旅行が終わるとイベントは思い出に変わり、裏面に写真とメモを残せます。</p>
+    </div>
+    <div class="card">
+      <h3>結婚式</h3>
+      <p>見過ごせない日付。当日は全画面のカウントダウンと、そのまま共有できるカードが出ます。</p>
+    </div>
+    <div class="card">
+      <h3>推しのライブ・イベント</h3>
+      <p>チケットを取った日から当日まで。終わったあとも、待った日数ごとタイムラインに残ります。</p>
+    </div>
+    <div class="card">
+      <h3>年末年始・ゴールデンウィーク</h3>
+      <p>元日、成人の日、こどもの日、海の日、敬老の日——祝日は年ごとの正しい日付で最初から入っています。</p>
+    </div>
+    <div class="card">
+      <h3>誕生日・出産予定日・記念日</h3>
+      <p>誕生日と記念日は毎年繰り返し。出産予定日はカウントダウン、「付き合って何日」はカウントアップ。その日から何日経ったかを数えます。</p>
+    </div>
+  </div>
+
+  <h2>そのほか</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>カウントダウンも、カウントアップも</h3>
+      <p>ある日までも、ある日からも。繰り返しは毎年・毎月・毎週・数日ごと。</p>
+    </div>
+    <div class="card">
+      <h3>何もiPhoneの外に出ない</h3>
+      <p>この端末のすべてを毎日、そして危険な操作の前には必ずバックアップ。復元はワンタップ。</p>
+    </div>
+    <div class="card">
+      <h3>過ぎた日々も残る</h3>
+      <p>終わったカウントダウンは振り返れるタイムラインになり、その年いちばん長かった待ち時間が横に記されます。</p>
+    </div>
+    <div class="card">
+      <h3>その瞬間そのもの</h3>
+      <p>100日前、1週間前、当日の朝。アプリは全画面の数字で開き、共有したくなるカードを差し出します。</p>
+    </div>
+    <div class="card">
+      <h3>ワンタップで準備完了</h3>
+      <p>36種のイベントが、それぞれ最適な繰り返しとリマインダー付きで用意済み。200種の手描きアイコンと絵文字キーボード全部。</p>
+    </div>
+    <div class="card">
+      <h3>イベントを持ち込む</h3>
+      <p>カレンダー、スプレッドシート、別のカウントダウンアプリから読み込み。いつでも書き出せます。アカウント不要のiCloud同期。</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">よくある質問</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iPhoneで本当に無料で使えるカウントダウンウィジェットのアプリはありますか？</h3>
+      <p>あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proで解放されるのは背景だけです。</p>
+    </div>
+    <div class="card">
+      <h3>無料版でカウントダウンはいくつ作れますか？</h3>
+      <p>上限はありません。多くのカウントダウンアプリは無料版を3〜5件に制限しますが、このアプリはどのプランでも制限しません。</p>
+    </div>
+    <div class="card">
+      <h3>受験や旅行、推しのライブまであと何日かを数えるのに使えますか？</h3>
+      <p>使えます。ワンタップでイベントを作り、毎年繰り返すかを選び、当日と好きなだけ前にリマインダーを受け取れます。日本の祝日は最初からリストに入っています。</p>
+    </div>
+    <div class="card">
+      <h3>過ぎた日からの経過日数も数えられますか？</h3>
+      <p>数えられます。どのイベントも、ある日までのカウントダウンにも、ある日からのカウントアップにもできます。繰り返しは毎年・毎月・毎週・数日ごとから選べます。</p>
+    </div>
+    <div class="card">
+      <h3>アップデートの不具合や再インストールでカウントダウンはどうなりますか？</h3>
+      <p>アプリは1日1回、そして危険な操作の前には必ず、端末内にすべてのバックアップを取ります。30日分の履歴が残り、どのバックアップもワンタップで復元できます。iCloud同期も使え、アカウント登録は不要です。</p>
+    </div>
+    <div class="card">
+      <h3>日本でのProの価格と、解放される内容は？</h3>
+      <p>Proは122種の背景のうち90種を解放し、毎月新しい背景が追加されます。年額1,500円（7日間の無料トライアル付き）、月額200円、または買い切り2,500円です。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。</p>
+    </div>
+    <div class="card">
+      <h3>アカウントやインターネット接続は必要ですか？</h3>
+      <p>アカウントも登録も不要です。アプリはオフラインで動きます。iCloud同期をオンにした場合はご自身のApple Accountが使われます。</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">Proについて</h2>
+    <p>Proが売るのは見た目であって機能ではありません。Pro背景（122種のうち90種）を解放し、毎月新作が届きます。購読中に解放した背景はずっとあなたのもの。解約すると新作が届かなくなるだけです。カウントダウン、リマインダー、ウィジェットは購読の有無で一切変わりません。</p>
+    <p>年額1,500円（7日間の無料トライアル付き）、または月額200円。買い切りは2,500円で、更新はありません。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">サポート</h2>
+    <p>質問、ご意見、購入についてのお困りごとは <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> まで（日本語でも英語でも）。すべて目を通し、通常2営業日以内に返信します。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">ほかのアプリ</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">プライバシーポリシー（英語）</a>
+    <a href="../terms-of-service/">利用規約（英語）</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">お問い合わせ</a>
+    <p style="margin-top:18px">Countdownは個人開発のアプリです。開発者ひとりで作っています。</p>
+  </footer>
+
+</main>
+</body>
+</html>

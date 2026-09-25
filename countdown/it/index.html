@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conto alla rovescia con widget — Gratis, eventi illimitati</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Conto alla rovescia con widget — Gratis, eventi illimitati">
+<meta property="og:description" content="App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/it/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="Conto alla rovescia con widget — Gratis, eventi illimitati">
+<meta name="twitter:description" content="App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/it/#app",
+  "name": "Countdown Widget: Eventi",
+  "alternateName": "Countdown Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.",
+  "url": "https://dyljqq.github.io/countdown/it/",
+  "inLanguage": "it",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/it/#faq",
+  "inLanguage": "it",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Esiste un'app di conto alla rovescia con widget per iPhone davvero gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro sblocca solo gli sfondi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanti conti alla rovescia posso creare nella versione gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non c'è limite. La maggior parte delle app di conto alla rovescia blocca la versione gratis a tre o cinque eventi; questa non la blocca a nessun livello."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Serve per contare i giorni alla maturità, alle vacanze o alla pensione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Crei l'evento con un tocco, scegli se si ripete ogni anno e ricevi un promemoria il giorno stesso e con l'anticipo che vuoi. Le festività italiane sono già nella lista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Può contare i giorni da una data già passata?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Ogni evento può fare il conto alla rovescia fino a una data o contare i giorni da una data, e la ripetizione può essere annuale, mensile, settimanale o ogni pochi giorni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Che fine fanno i miei conti alla rovescia dopo un aggiornamento sbagliato o una reinstallazione?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'app fa un backup di tutto sul dispositivo una volta al giorno, e sempre prima di un'operazione rischiosa. Trenta giorni di cronologia restano salvati e ogni backup si ripristina con un tocco. La sincronizzazione iCloud è disponibile e non richiede account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa Countdown Widget Pro in Italia e cosa sblocca?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro sblocca 90 dei 122 sfondi, con nuovi sfondi ogni mese. Costa 9,99 € all'anno con 7 giorni di prova gratuita, 1,99 € al mese, oppure 17,99 € una tantum (a vita). Conti alla rovescia, promemoria e widget si comportano esattamente allo stesso modo con o senza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Serve un account o una connessione internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nessun account, nessuna registrazione. L'app funziona offline; la sincronizzazione iCloud usa il tuo account Apple quando la attivi."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="Icona dell'app Countdown Widget: Eventi" width="92" height="92">
+    <h1>Conto alla rovescia con widget, gratis e senza limite di eventi.</h1>
+    <p class="tagline">Quanti giorni mancano alle vacanze, al matrimonio, alla maturità, alla pensione? Il widget risponde nella schermata Home e nella schermata di blocco — tutte le dimensioni, gratis. Tutti gli eventi che vuoi: non c'è limite, e non ci sarà mai.</p>
+    <a class="cta" href="https://apps.apple.com/it/app/id6799846628">Scarica dall'App Store</a>
+    <p class="meta">Gratis · iPhone e iPad · iOS 17+ · Senza account · Senza pubblicità, mai · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="Widget di conto alla rovescia nella schermata Home dell'iPhone" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="Conto alla rovescia a schermo intero con i giorni rimanenti" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="Selettore degli sfondi a schermo intero" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="Trenta giorni di backup sul dispositivo, ripristinabili con un tocco" loading="lazy">
+  </section>
+
+  <h2>Due cose che quasi tutte le app di conto alla rovescia sbagliano</h2>
+  <p class="lede">Il widget è l'unico motivo per cui esiste un'app di conto alla rovescia, e gli eventi sono l'unico motivo per cui esiste il widget. Quasi tutte fanno pagare il primo e limitano i secondi.</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>App di conto alla rovescia tipica</th><th>Questa</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Widget</strong></td><td>Solo in Pro, o una sola dimensione</td><td class="yes">Tutte le dimensioni, schermata Home e di blocco, gratis</td></tr>
+      <tr><td><strong>Eventi</strong></td><td>Da tre a cinque nella versione gratis</td><td class="yes">Illimitati, per sempre</td></tr>
+      <tr><td><strong>Promemoria</strong></td><td>Funzione Pro</td><td class="yes">Gratis, il giorno stesso e con tutto l'anticipo che vuoi</td></tr>
+      <tr><td><strong>I tuoi dati</strong></td><td>Persi dopo un aggiornamento sbagliato o una reinstallazione</td><td class="yes">Backup quotidiano sul dispositivo, 30 giorni di cronologia</td></tr>
+      <tr><td><strong>Cosa vende Pro</strong></td><td>Le funzioni di cui avevi già bisogno</td><td class="yes">Sfondi. Niente che serva a far funzionare l'app</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Per cosa si contano i giorni in Italia</h2>
+  <p class="lede">Un tocco e l'evento è creato; decidi tu se si ripete ogni anno. Le festività nazionali sono già nella lista.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Vacanze &amp; viaggio</h3>
+      <p>Quanti giorni alla partenza. Dopo il viaggio l'evento diventa un ricordo, con foto e nota sul retro.</p>
+    </div>
+    <div class="card">
+      <h3>Matrimonio</h3>
+      <p>Una data che non può passare inosservata. Il giorno stesso, conto alla rovescia a schermo intero e una card pronta da condividere.</p>
+    </div>
+    <div class="card">
+      <h3>Natale &amp; Capodanno</h3>
+      <p>Il conto alla rovescia alla Vigilia, che riparte da solo ogni anno. Gli anni passati restano nella timeline.</p>
+    </div>
+    <div class="card">
+      <h3>Maturità &amp; esami</h3>
+      <p>Il numero resta nel widget, nella schermata di blocco, senza aprire l'app. Promemoria a 100 giorni, a una settimana e la mattina stessa.</p>
+    </div>
+    <div class="card">
+      <h3>Pensione</h3>
+      <p>Contare i giorni alla pensione — o alla fine del contratto, alla consegna delle chiavi, al trasloco. Epifania, Pasqua, 25 aprile e Ferragosto sono già pronti.</p>
+    </div>
+    <div class="card">
+      <h3>Compleanno, bebè, anniversario</h3>
+      <p>Compleanni e anniversari si ripetono ogni anno. La data presunta del parto è un conto alla rovescia; «insieme da» conta al contrario: quanti giorni dalla data.</p>
+    </div>
+  </div>
+
+  <h2>Il resto</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Contare alla rovescia, o in avanti</h3>
+      <p>Fino a una data, o da una data. Ripetizione annuale, mensile, settimanale o ogni pochi giorni.</p>
+    </div>
+    <div class="card">
+      <h3>Niente esce dal tuo iPhone</h3>
+      <p>Un backup di tutto su questo dispositivo, ogni giorno, e sempre prima di un'operazione rischiosa. Un tocco per ripristinare.</p>
+    </div>
+    <div class="card">
+      <h3>I giorni passati restano</h3>
+      <p>I conti alla rovescia conclusi diventano una timeline da sfogliare, con l'attesa più lunga di ogni anno annotata accanto.</p>
+    </div>
+    <div class="card">
+      <h3>Il momento in sé</h3>
+      <p>A cento giorni, a una settimana o la mattina stessa, l'app si apre sul numero, a schermo intero, e ti porge una card da condividere.</p>
+    </div>
+    <div class="card">
+      <h3>Pronto con un tocco</h3>
+      <p>Trentasei eventi pronti, ognuno già con la ripetizione e i promemoria giusti. Duecento icone disegnate e tutta la tastiera emoji.</p>
+    </div>
+    <div class="card">
+      <h3>Porta i tuoi eventi</h3>
+      <p>Importa dal calendario, da un foglio di calcolo o da un'altra app di conto alla rovescia — ed esporta quando vuoi. Sincronizzazione iCloud, senza creare un account.</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">Domande frequenti</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Esiste un'app di conto alla rovescia con widget per iPhone davvero gratis?</h3>
+      <p>Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro sblocca solo gli sfondi.</p>
+    </div>
+    <div class="card">
+      <h3>Quanti conti alla rovescia posso creare nella versione gratis?</h3>
+      <p>Non c'è limite. La maggior parte delle app di conto alla rovescia blocca la versione gratis a tre o cinque eventi; questa non la blocca a nessun livello.</p>
+    </div>
+    <div class="card">
+      <h3>Serve per contare i giorni alla maturità, alle vacanze o alla pensione?</h3>
+      <p>Sì. Crei l'evento con un tocco, scegli se si ripete ogni anno e ricevi un promemoria il giorno stesso e con l'anticipo che vuoi. Le festività italiane sono già nella lista.</p>
+    </div>
+    <div class="card">
+      <h3>Può contare i giorni da una data già passata?</h3>
+      <p>Sì. Ogni evento può fare il conto alla rovescia fino a una data o contare i giorni da una data, e la ripetizione può essere annuale, mensile, settimanale o ogni pochi giorni.</p>
+    </div>
+    <div class="card">
+      <h3>Che fine fanno i miei conti alla rovescia dopo un aggiornamento sbagliato o una reinstallazione?</h3>
+      <p>L'app fa un backup di tutto sul dispositivo una volta al giorno, e sempre prima di un'operazione rischiosa. Trenta giorni di cronologia restano salvati e ogni backup si ripristina con un tocco. La sincronizzazione iCloud è disponibile e non richiede account.</p>
+    </div>
+    <div class="card">
+      <h3>Quanto costa Countdown Widget Pro in Italia e cosa sblocca?</h3>
+      <p>Pro sblocca 90 dei 122 sfondi, con nuovi sfondi ogni mese. Costa 9,99 € all'anno con 7 giorni di prova gratuita, 1,99 € al mese, oppure 17,99 € una tantum (a vita). Conti alla rovescia, promemoria e widget si comportano esattamente allo stesso modo con o senza.</p>
+    </div>
+    <div class="card">
+      <h3>Serve un account o una connessione internet?</h3>
+      <p>Nessun account, nessuna registrazione. L'app funziona offline; la sincronizzazione iCloud usa il tuo account Apple quando la attivi.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">Su Pro</h2>
+    <p>Pro vende la finitura, mai la funzione. Sblocca gli sfondi Pro — 90 dei 122 — con nuovi sfondi ogni mese. Ciò che sblocchi mentre sei abbonato resta tuo per sempre; disdire ferma solo l'arrivo dei nuovi. I tuoi conti alla rovescia, promemoria e widget funzionano esattamente allo stesso modo con o senza abbonamento.</p>
+    <p>9,99 € all'anno con 7 giorni di prova gratuita, oppure 1,99 € al mese. L'acquisto unico a vita costa 17,99 € e non si rinnova.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Assistenza</h2>
+    <p>Domande, suggerimenti o aiuto con un acquisto? Scrivi a <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (in italiano o in inglese). Ogni messaggio viene letto, di solito con risposta entro due giorni lavorativi.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Altre app</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">Privacy (in inglese)</a>
+    <a href="../terms-of-service/">Termini di servizio (in inglese)</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Contatti</a>
+    <p style="margin-top:18px">Countdown è un'app indipendente. Fatta da un solo sviluppatore.</p>
+  </footer>
+
+</main>
+</body>
+</html>

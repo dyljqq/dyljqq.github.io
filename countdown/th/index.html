@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด">
+<meta property="og:description" content="แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/th/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด">
+<meta name="twitter:description" content="แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/th/#app",
+  "name": "นับถอยหลัง Widget: วันสำคัญ",
+  "alternateName": "นับถอยหลัง Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน",
+  "url": "https://dyljqq.github.io/countdown/th/",
+  "inLanguage": "th",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/th/#faq",
+  "inLanguage": "th",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "มีแอปนับถอยหลังพร้อมวิดเจ็ตสำหรับ iPhone ที่ฟรีจริงไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอหลักและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro ปลดล็อกแค่พื้นหลัง"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "เวอร์ชันฟรีสร้างนับถอยหลังได้กี่รายการ",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่มีขีดจำกัด แอปนับถอยหลังส่วนใหญ่ล็อกเวอร์ชันฟรีไว้ที่ 3–5 อีเวนต์ แต่แอปนี้ไม่ล็อกในทุกระดับ"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ใช้นับวันรอสอบ ปีใหม่ หรือสงกรานต์ได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ สร้างอีเวนต์ในแตะเดียว เลือกว่าจะให้ซ้ำทุกปีไหม แล้วรับแจ้งเตือนในวันนั้นและล่วงหน้าเท่าที่ต้องการ วันหยุดราชการของไทยอยู่ในรายการอยู่แล้ว"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "นับว่าผ่านมากี่วันแล้วจากวันที่ผ่านไปได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ ทุกอีเวนต์นับถอยหลังไปถึงวันหนึ่ง หรือนับไปข้างหน้าจากวันหนึ่งก็ได้ และตั้งซ้ำได้ทั้งรายปี รายเดือน รายสัปดาห์ หรือทุกสองสามวัน"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ถ้าแอปอัปเดตพัง หรือลงใหม่ ข้อมูลนับถอยหลังจะเป็นอย่างไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "แอปสำรองข้อมูลทั้งหมดไว้ในเครื่องวันละครั้ง และก่อนทำอะไรที่เสี่ยงเสมอ เก็บประวัติไว้ 30 วัน และกู้คืนได้ในแตะเดียว มีซิงก์ iCloud ให้ใช้โดยไม่ต้องมีบัญชี"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pro ในไทยราคาเท่าไร และปลดล็อกอะไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ และมีพื้นหลังใหม่ทุกเดือน ราคา 399 บาทต่อปี พร้อมทดลองฟรี 7 วัน, 49 บาทต่อเดือน หรือซื้อขาดครั้งเดียว 499 บาท นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ต้องมีบัญชีหรือต่ออินเทอร์เน็ตไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ต้องมีบัญชี ไม่ต้องสมัคร แอปทำงานออฟไลน์ได้ ซิงก์ iCloud ใช้ Apple Account ของคุณเองเมื่อคุณเปิดใช้"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="ไอคอนแอป นับถอยหลัง Widget: วันสำคัญ" width="92" height="92">
+    <h1>นับถอยหลังพร้อมวิดเจ็ต ฟรี และไม่จำกัดจำนวนอีเวนต์</h1>
+    <p class="tagline">อีกกี่วันถึงวันสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง? วิดเจ็ตบนหน้าจอหลักและหน้าจอล็อกตอบให้ ทุกขนาด ฟรี อีเวนต์กี่รายการก็ได้ ไม่มีขีดจำกัด และจะไม่มีวันมี</p>
+    <a class="cta" href="https://apps.apple.com/th/app/id6799846628">ดาวน์โหลดบน App Store</a>
+    <p class="meta">ฟรี · iPhone และ iPad · iOS 17 ขึ้นไป · ไม่ต้องมีบัญชี · ไม่มีโฆษณา ตลอดไป · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="วิดเจ็ตนับถอยหลังบนหน้าจอหลักของ iPhone" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="นับถอยหลังแบบเต็มจอแสดงจำนวนวันที่เหลือ" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="หน้าเลือกพื้นหลังแบบเต็มจอ" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="ข้อมูลสำรองในเครื่อง 30 วัน กู้คืนได้ในแตะเดียว" loading="lazy">
+  </section>
+
+  <h2>สองอย่างที่แอปนับถอยหลังส่วนใหญ่ทำพลาด</h2>
+  <p class="lede">วิดเจ็ตคือเหตุผลทั้งหมดของแอปนับถอยหลัง และอีเวนต์คือเหตุผลทั้งหมดของวิดเจ็ต แอปส่วนใหญ่เก็บเงินกับอย่างแรกและจำกัดอย่างหลัง</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>แอปนับถอยหลังทั่วไป</th><th>แอปนี้</th></tr></thead>
+    <tbody>
+      <tr><td><strong>วิดเจ็ต</strong></td><td>ล็อกไว้ใน Pro หรือมีขนาดเดียว</td><td class="yes">ทุกขนาด ทั้งหน้าจอหลักและหน้าจอล็อก ฟรี</td></tr>
+      <tr><td><strong>อีเวนต์</strong></td><td>เวอร์ชันฟรีได้ 3–5 รายการ</td><td class="yes">ไม่จำกัด ตลอดไป</td></tr>
+      <tr><td><strong>แจ้งเตือน</strong></td><td>ฟีเจอร์ Pro</td><td class="yes">ฟรี ทั้งในวันนั้นและล่วงหน้าเท่าที่ต้องการ</td></tr>
+      <tr><td><strong>ข้อมูลของคุณ</strong></td><td>หายหลังอัปเดตพังหรือลงใหม่</td><td class="yes">สำรองในเครื่องทุกวัน เก็บประวัติ 30 วัน</td></tr>
+      <tr><td><strong>Pro ขายอะไร</strong></td><td>ฟีเจอร์ที่คุณต้องใช้อยู่แล้ว</td><td class="yes">พื้นหลัง ไม่มีอะไรที่ทำให้แอปทำงาน</td></tr>
+    </tbody>
+  </table>
+
+  <h2>คนไทยนับวันรออะไรบ้าง</h2>
+  <p class="lede">แตะเดียวอีเวนต์ก็พร้อม แล้วคุณเลือกเองว่าจะให้ซ้ำทุกปีไหม วันหยุดราชการอยู่ในรายการอยู่แล้ว</p>
+  <div class="grid">
+    <div class="card">
+      <h3>สอบ</h3>
+      <p>ตัวเลขอยู่ในวิดเจ็ตบนหน้าจอล็อก ไม่ต้องเปิดแอป แจ้งเตือนที่ 100 วัน 1 สัปดาห์ และเช้าวันสอบ</p>
+    </div>
+    <div class="card">
+      <h3>ปีใหม่ &amp; สงกรานต์</h3>
+      <p>นับถอยหลังถึงเคานต์ดาวน์ปีใหม่ ซ้ำเองทุกปี ปีที่ผ่านมาอยู่ในไทม์ไลน์ สงกรานต์ มาฆบูชา วิสาขบูชา ก็มีวันที่ถูกต้องของแต่ละปีให้แล้ว</p>
+    </div>
+    <div class="card">
+      <h3>เที่ยว</h3>
+      <p>อีกกี่วันจะได้บิน พอทริปจบ อีเวนต์กลายเป็นความทรงจำ ใส่รูปและโน้ตไว้ด้านหลังได้</p>
+    </div>
+    <div class="card">
+      <h3>แต่งงาน</h3>
+      <p>วันที่ปล่อยผ่านไม่ได้ วันนั้นมีนับถอยหลังเต็มจอและการ์ดพร้อมแชร์</p>
+    </div>
+    <div class="card">
+      <h3>คอนเสิร์ต</h3>
+      <p>จากวันกดบัตรถึงวันโชว์ จบแล้วก็ยังอยู่ในไทม์ไลน์พร้อมจำนวนวันที่รอ</p>
+    </div>
+    <div class="card">
+      <h3>วันเกิด คลอด วันครบรอบ</h3>
+      <p>วันเกิดและวันครบรอบซ้ำทุกปี วันกำหนดคลอดเป็นนับถอยหลัง ส่วน “คบกันมา” นับไปข้างหน้า: ผ่านมากี่วันแล้วจากวันนั้น</p>
+    </div>
+  </div>
+
+  <h2>ที่เหลือ</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>นับถอยหลัง หรือนับไปข้างหน้า</h3>
+      <p>ถึงวันหนึ่ง หรือจากวันหนึ่ง ซ้ำได้รายปี รายเดือน รายสัปดาห์ หรือทุกสองสามวัน</p>
+    </div>
+    <div class="card">
+      <h3>ไม่มีอะไรออกจากเครื่องคุณ</h3>
+      <p>สำรองทุกอย่างในเครื่องนี้ทุกวัน และก่อนทำอะไรที่เสี่ยงเสมอ กู้คืนในแตะเดียว</p>
+    </div>
+    <div class="card">
+      <h3>วันที่ผ่านไปยังอยู่</h3>
+      <p>นับถอยหลังที่จบแล้วรวมเป็นไทม์ไลน์ให้ย้อนดู พร้อมการรอที่ยาวที่สุดของแต่ละปีเขียนไว้ข้าง ๆ</p>
+    </div>
+    <div class="card">
+      <h3>ช่วงเวลานั้นเอง</h3>
+      <p>ที่ 100 วัน 1 สัปดาห์ หรือเช้าวันนั้น แอปเปิดมาที่ตัวเลขเต็มจอ และยื่นการ์ดที่น่าแชร์ให้</p>
+    </div>
+    <div class="card">
+      <h3>พร้อมในแตะเดียว</h3>
+      <p>อีเวนต์สำเร็จรูป 36 แบบ แต่ละแบบมีการซ้ำและแจ้งเตือนที่เหมาะสมมาให้ ไอคอนวาดมือ 200 แบบ และคีย์บอร์ดอิโมจิทั้งหมด</p>
+    </div>
+    <div class="card">
+      <h3>พาอีเวนต์มาด้วย</h3>
+      <p>นำเข้าจากปฏิทิน สเปรดชีต หรือแอปนับถอยหลังอื่น — และส่งออกได้ทุกเมื่อ ซิงก์ iCloud โดยไม่ต้องสร้างบัญชี</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">คำถามที่พบบ่อย</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>มีแอปนับถอยหลังพร้อมวิดเจ็ตสำหรับ iPhone ที่ฟรีจริงไหม</h3>
+      <p>มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอหลักและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro ปลดล็อกแค่พื้นหลัง</p>
+    </div>
+    <div class="card">
+      <h3>เวอร์ชันฟรีสร้างนับถอยหลังได้กี่รายการ</h3>
+      <p>ไม่มีขีดจำกัด แอปนับถอยหลังส่วนใหญ่ล็อกเวอร์ชันฟรีไว้ที่ 3–5 อีเวนต์ แต่แอปนี้ไม่ล็อกในทุกระดับ</p>
+    </div>
+    <div class="card">
+      <h3>ใช้นับวันรอสอบ ปีใหม่ หรือสงกรานต์ได้ไหม</h3>
+      <p>ได้ สร้างอีเวนต์ในแตะเดียว เลือกว่าจะให้ซ้ำทุกปีไหม แล้วรับแจ้งเตือนในวันนั้นและล่วงหน้าเท่าที่ต้องการ วันหยุดราชการของไทยอยู่ในรายการอยู่แล้ว</p>
+    </div>
+    <div class="card">
+      <h3>นับว่าผ่านมากี่วันแล้วจากวันที่ผ่านไปได้ไหม</h3>
+      <p>ได้ ทุกอีเวนต์นับถอยหลังไปถึงวันหนึ่ง หรือนับไปข้างหน้าจากวันหนึ่งก็ได้ และตั้งซ้ำได้ทั้งรายปี รายเดือน รายสัปดาห์ หรือทุกสองสามวัน</p>
+    </div>
+    <div class="card">
+      <h3>ถ้าแอปอัปเดตพัง หรือลงใหม่ ข้อมูลนับถอยหลังจะเป็นอย่างไร</h3>
+      <p>แอปสำรองข้อมูลทั้งหมดไว้ในเครื่องวันละครั้ง และก่อนทำอะไรที่เสี่ยงเสมอ เก็บประวัติไว้ 30 วัน และกู้คืนได้ในแตะเดียว มีซิงก์ iCloud ให้ใช้โดยไม่ต้องมีบัญชี</p>
+    </div>
+    <div class="card">
+      <h3>Pro ในไทยราคาเท่าไร และปลดล็อกอะไร</h3>
+      <p>Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ และมีพื้นหลังใหม่ทุกเดือน ราคา 399 บาทต่อปี พร้อมทดลองฟรี 7 วัน, 49 บาทต่อเดือน หรือซื้อขาดครั้งเดียว 499 บาท นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่</p>
+    </div>
+    <div class="card">
+      <h3>ต้องมีบัญชีหรือต่ออินเทอร์เน็ตไหม</h3>
+      <p>ไม่ต้องมีบัญชี ไม่ต้องสมัคร แอปทำงานออฟไลน์ได้ ซิงก์ iCloud ใช้ Apple Account ของคุณเองเมื่อคุณเปิดใช้</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">เกี่ยวกับ Pro</h2>
+    <p>Pro ขายความสวย ไม่เคยขายฟังก์ชัน ปลดล็อกพื้นหลัง Pro — 90 จาก 122 แบบ — และมีชุดใหม่ทุกเดือน อะไรที่ปลดล็อกระหว่างสมัครเป็นของคุณตลอดไป ยกเลิกแล้วแค่ไม่ได้ชุดใหม่ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนเดิมทุกอย่างไม่ว่าจะสมัครหรือไม่</p>
+    <p>399 บาทต่อปี พร้อมทดลองฟรี 7 วัน หรือ 49 บาทต่อเดือน ซื้อขาดครั้งเดียว 499 บาท ไม่ต่ออายุ</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">ซัพพอร์ต</h2>
+    <p>มีคำถาม ข้อเสนอแนะ หรือปัญหาเรื่องการซื้อ? อีเมลมาที่ <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (ภาษาไทยหรืออังกฤษ) อ่านทุกฉบับ ปกติตอบภายใน 2 วันทำการ</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">แอปอื่น ๆ</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">นโยบายความเป็นส่วนตัว (ภาษาอังกฤษ)</a>
+    <a href="../terms-of-service/">ข้อกำหนดการใช้งาน (ภาษาอังกฤษ)</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">ติดต่อ</a>
+    <p style="margin-top:18px">Countdown เป็นแอปอิสระ สร้างโดยนักพัฒนาคนเดียว</p>
+  </footer>
+
+</main>
+</body>
+</html>

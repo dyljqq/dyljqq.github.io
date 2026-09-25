@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compte à rebours avec widget — Gratuit, événements illimités</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Compte à rebours avec widget — Gratuit, événements illimités">
+<meta property="og:description" content="Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/fr/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="Compte à rebours avec widget — Gratuit, événements illimités">
+<meta name="twitter:description" content="Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/fr/#app",
+  "name": "Countdown Widget: Décompte",
+  "alternateName": "Countdown Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.",
+  "url": "https://dyljqq.github.io/countdown/fr/",
+  "inLanguage": "fr",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/fr/#faq",
+  "inLanguage": "fr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Existe-t-il une appli de compte à rebours avec widget pour iPhone vraiment gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran de verrouillage sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ne débloque que des fonds d'écran."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de comptes à rebours puis-je créer en version gratuite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il n'y a pas de limite. La plupart des applis de compte à rebours bloquent la version gratuite à trois ou cinq événements ; celle-ci ne bloque à aucun niveau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on compter les jours avant les vacances, le bac ou la retraite ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Vous créez l'événement d'un geste, choisissez s'il revient chaque année, et recevez un rappel le jour même et aussi longtemps à l'avance que vous voulez. Les jours fériés français sont déjà dans la liste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on compter les jours depuis une date passée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Chaque événement peut compter à rebours jusqu'à une date ou compter depuis une date, et la répétition peut être annuelle, mensuelle, hebdomadaire ou tous les quelques jours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que deviennent mes comptes à rebours après une mauvaise mise à jour ou une réinstallation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'appli fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien coûte Countdown Widget Pro en France, et que débloque-t-il ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro débloque 90 des 122 fonds d'écran, avec des nouveaux chaque mois. C'est 9,99 € par an avec 7 jours d'essai gratuit, 1,99 € par mois, ou 17,99 € une seule fois (à vie). Comptes à rebours, rappels et widgets se comportent exactement pareil avec ou sans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il un compte ou une connexion internet ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aucun compte, aucune inscription. L'appli fonctionne hors ligne ; la synchronisation iCloud utilise votre propre compte Apple quand vous l'activez."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="Icône de l'appli Countdown Widget: Décompte" width="92" height="92">
+    <h1>Compte à rebours avec widget, gratuit et sans limite d'événements.</h1>
+    <p class="tagline">Combien de jours avant les vacances, le mariage, le bac, la retraite ? Le widget répond sur l'écran d'accueil et l'écran de verrouillage — toutes les tailles, gratuitement. Autant d'événements que vous voulez : il n'y a pas de limite, et il n'y en aura jamais.</p>
+    <a class="cta" href="https://apps.apple.com/fr/app/id6799846628">Télécharger dans l'App Store</a>
+    <p class="meta">Gratuit · iPhone et iPad · iOS 17+ · Sans compte · Sans publicité, jamais · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="Widgets de compte à rebours sur l'écran d'accueil de l'iPhone" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="Compte à rebours en plein écran avec les jours restants" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="Sélecteur de fonds d'écran en plein écran" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="Trente jours de sauvegardes sur l'appareil, restaurables d'un geste" loading="lazy">
+  </section>
+
+  <h2>Deux choses que la plupart des applis de compte à rebours ratent</h2>
+  <p class="lede">Le widget est toute la raison d'être d'une appli de compte à rebours, et les événements sont toute la raison d'être du widget. La plupart des applis font payer le premier et limitent les seconds.</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>Appli de compte à rebours typique</th><th>Celle-ci</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Widgets</strong></td><td>Réservés à Pro, ou une seule taille</td><td class="yes">Toutes les tailles, écran d'accueil et de verrouillage, gratuit</td></tr>
+      <tr><td><strong>Événements</strong></td><td>Trois à cinq en version gratuite</td><td class="yes">Illimités, pour toujours</td></tr>
+      <tr><td><strong>Rappels</strong></td><td>Fonction Pro</td><td class="yes">Gratuits, le jour même et aussi tôt que vous voulez</td></tr>
+      <tr><td><strong>Vos données</strong></td><td>Perdues après une mauvaise mise à jour ou une réinstallation</td><td class="yes">Sauvegardées chaque jour sur l'appareil, 30 jours d'historique</td></tr>
+      <tr><td><strong>Ce que Pro vend</strong></td><td>Les fonctions dont vous aviez déjà besoin</td><td class="yes">Des fonds d'écran. Rien qui fasse marcher l'appli</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ce pour quoi on compte les jours en France</h2>
+  <p class="lede">Un geste, l'événement est créé ; vous choisissez s'il revient chaque année. Les jours fériés sont déjà dans la liste.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Vacances &amp; voyage</h3>
+      <p>Combien de jours avant le départ. Après le voyage, l'événement devient un souvenir, avec photo et note au dos.</p>
+    </div>
+    <div class="card">
+      <h3>Mariage</h3>
+      <p>Une date qui ne doit pas passer inaperçue. Le jour même, compte à rebours en plein écran et une carte prête à partager.</p>
+    </div>
+    <div class="card">
+      <h3>Noël &amp; Nouvel An</h3>
+      <p>Le décompte jusqu'au réveillon, qui repart tout seul chaque année. Les années passées restent dans la frise.</p>
+    </div>
+    <div class="card">
+      <h3>Bac &amp; examens</h3>
+      <p>Le chiffre reste dans le widget, sur l'écran de verrouillage, sans ouvrir l'appli. Rappel à 100 jours, à une semaine et le matin même.</p>
+    </div>
+    <div class="card">
+      <h3>Retraite</h3>
+      <p>Compter les jours avant la retraite — ou avant la fin du CDD, la remise des clés, le déménagement. Pâques, le 14 juillet et la Toussaint sont déjà prêts.</p>
+    </div>
+    <div class="card">
+      <h3>Anniversaire, bébé, jours ensemble</h3>
+      <p>Anniversaires et fêtes reviennent chaque année. La date prévue d'accouchement est un compte à rebours ; « ensemble depuis » compte dans l'autre sens : combien de jours depuis la date.</p>
+    </div>
+  </div>
+
+  <h2>Le reste</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Compter à rebours, ou depuis</h3>
+      <p>Jusqu'à une date, ou à partir d'une date. Répétition annuelle, mensuelle, hebdomadaire ou tous les quelques jours.</p>
+    </div>
+    <div class="card">
+      <h3>Rien ne quitte votre iPhone</h3>
+      <p>Une sauvegarde de tout sur cet appareil, chaque jour, et toujours avant une opération risquée. Un geste pour restaurer.</p>
+    </div>
+    <div class="card">
+      <h3>Les jours passés restent</h3>
+      <p>Les comptes à rebours terminés forment une frise à parcourir, avec la plus longue attente de chaque année notée à côté.</p>
+    </div>
+    <div class="card">
+      <h3>Le moment lui-même</h3>
+      <p>À cent jours, à une semaine ou le matin même, l'appli s'ouvre sur le chiffre, en plein écran, et vous tend une carte à partager.</p>
+    </div>
+    <div class="card">
+      <h3>Prêt en un geste</h3>
+      <p>Trente-six événements prêts, chacun déjà avec la bonne répétition et les bons rappels. Deux cents icônes dessinées et tout le clavier emoji.</p>
+    </div>
+    <div class="card">
+      <h3>Apportez vos événements</h3>
+      <p>Import depuis un calendrier, un tableur ou une autre appli de compte à rebours — et export à tout moment. Synchronisation iCloud, sans créer de compte.</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">Questions fréquentes</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Existe-t-il une appli de compte à rebours avec widget pour iPhone vraiment gratuite ?</h3>
+      <p>Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran de verrouillage sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ne débloque que des fonds d'écran.</p>
+    </div>
+    <div class="card">
+      <h3>Combien de comptes à rebours puis-je créer en version gratuite ?</h3>
+      <p>Il n'y a pas de limite. La plupart des applis de compte à rebours bloquent la version gratuite à trois ou cinq événements ; celle-ci ne bloque à aucun niveau.</p>
+    </div>
+    <div class="card">
+      <h3>Peut-on compter les jours avant les vacances, le bac ou la retraite ?</h3>
+      <p>Oui. Vous créez l'événement d'un geste, choisissez s'il revient chaque année, et recevez un rappel le jour même et aussi longtemps à l'avance que vous voulez. Les jours fériés français sont déjà dans la liste.</p>
+    </div>
+    <div class="card">
+      <h3>Peut-on compter les jours depuis une date passée ?</h3>
+      <p>Oui. Chaque événement peut compter à rebours jusqu'à une date ou compter depuis une date, et la répétition peut être annuelle, mensuelle, hebdomadaire ou tous les quelques jours.</p>
+    </div>
+    <div class="card">
+      <h3>Que deviennent mes comptes à rebours après une mauvaise mise à jour ou une réinstallation ?</h3>
+      <p>L'appli fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte.</p>
+    </div>
+    <div class="card">
+      <h3>Combien coûte Countdown Widget Pro en France, et que débloque-t-il ?</h3>
+      <p>Pro débloque 90 des 122 fonds d'écran, avec des nouveaux chaque mois. C'est 9,99 € par an avec 7 jours d'essai gratuit, 1,99 € par mois, ou 17,99 € une seule fois (à vie). Comptes à rebours, rappels et widgets se comportent exactement pareil avec ou sans.</p>
+    </div>
+    <div class="card">
+      <h3>Faut-il un compte ou une connexion internet ?</h3>
+      <p>Aucun compte, aucune inscription. L'appli fonctionne hors ligne ; la synchronisation iCloud utilise votre propre compte Apple quand vous l'activez.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">À propos de Pro</h2>
+    <p>Pro vend la finition, jamais la fonction. Il débloque les fonds d'écran Pro — 90 des 122 — avec des nouveaux chaque mois. Ce que vous débloquez pendant l'abonnement reste à vous pour toujours ; résilier arrête seulement l'arrivée des nouveaux. Vos comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans.</p>
+    <p>9,99 € par an avec 7 jours d'essai gratuit, ou 1,99 € par mois. L'achat unique à vie coûte 17,99 € et ne se renouvelle pas.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Assistance</h2>
+    <p>Une question, un retour, un souci avec un achat ? Écrivez à <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (en français ou en anglais). Chaque message est lu, avec une réponse en général sous deux jours ouvrés.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Autres applis</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">Politique de confidentialité (en anglais)</a>
+    <a href="../terms-of-service/">Conditions d'utilisation (en anglais)</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Contact</a>
+    <p style="margin-top:18px">Countdown est une appli indépendante. Faite par un seul développeur.</p>
+  </footer>
+
+</main>
+</body>
+</html>

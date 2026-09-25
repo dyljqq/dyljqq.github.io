@@ -90,7 +90,7 @@
       "description": "A countdown that never loses your days. Every widget size on the Home and Lock Screen is free, events are unlimited, reminders are free, and the app takes a backup of your countdowns on device every day. Pro sells backdrops, never the function.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
       "free": "Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
-      "paid": "Pro unlocks 90 of the 122 backdrops. US$14.99/year with a 7-day free trial, US$4.99/month, or US$29.99 once for Lifetime.",
+      "paid": "Pro unlocks 90 of the 122 backdrops. US$9.99/year with a 7-day free trial, US$1.49/month, or US$14.99 once for Lifetime.",
       "legal": [
         [
           "/countdown/privacy-policy/",
@@ -120,7 +120,7 @@
         },
         {
           "q": "What does Countdown Widget Pro cost, and what does it unlock?",
-          "a": "Pro unlocks 90 of the 122 backdrops, with a new drop every month. It is US$14.99 per year with a 7-day free trial, US$4.99 per month, or US$29.99 once for Lifetime. Countdowns, reminders and widgets behave identically with or without it."
+          "a": "Pro unlocks 90 of the 122 backdrops, with a new drop every month. It is US$9.99 per year with a 7-day free trial, US$1.49 per month, or US$14.99 once for Lifetime. Countdowns, reminders and widgets behave identically with or without it."
         },
         {
           "q": "Does it need an account or an internet connection?",
@@ -176,6 +176,414 @@
         {
           "q": "Precisa de conta ou de internet?",
           "a": "Não precisa de conta nem de cadastro. O app funciona offline; a sincronização pelo iCloud usa a sua própria Conta Apple quando você a liga."
+        }
+      ]
+    },
+    {
+      "key": "countdown-de",
+      "variantOf": "countdown",
+      "lang": "de",
+      "path": "/countdown/de/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "Countdown Widget: Tage bis",
+      "shortName": "Countdown Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse",
+      "oneLiner": "Countdown-App für iPhone: jede Widget-Größe ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
+      "description": "Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.",
+      "audience": "Alle, die die Tage bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente oder zum Geburtstag zählen — oder die Tage seit einem Datum.",
+      "free": "Jede Widget-Größe, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
+      "paid": "Pro schaltet 90 der 122 Hintergründe frei. 9,99 €/Jahr mit 7 Tagen kostenlos testen, 1,99 €/Monat oder 17,99 € einmalig (Lifetime).",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Gibt es eine Countdown-App mit Widget für das iPhone, die wirklich kostenlos ist?",
+          "a": "Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Tage-zählen sind ebenfalls kostenlos. Pro schaltet nur Hintergründe frei."
+        },
+        {
+          "q": "Wie viele Countdowns kann ich in der kostenlosen Version anlegen?",
+          "a": "Es gibt keine Grenze. Die meisten Countdown-Apps begrenzen die kostenlose Version auf drei bis fünf Ereignisse; diese begrenzt sie in keiner Stufe."
+        },
+        {
+          "q": "Kann ich damit die Tage bis zur Rente, zum Urlaub oder bis Weihnachten zählen?",
+          "a": "Ja. Du legst das Ereignis mit einem Tipp an, wählst, ob es jedes Jahr wiederkehrt, und bekommst am Tag selbst und so weit im Voraus wie du willst eine Erinnerung. Die gesetzlichen Feiertage in Deutschland sind schon in der Liste."
+        },
+        {
+          "q": "Kann die App auch die Tage seit einem vergangenen Datum zählen?",
+          "a": "Ja. Jedes Ereignis kann bis zu einem Datum herunterzählen oder ab einem Datum hochzählen, und die Wiederholung kann jährlich, monatlich, wöchentlich oder alle paar Tage sein."
+        },
+        {
+          "q": "Was passiert mit meinen Countdowns bei einem fehlerhaften Update oder einer Neuinstallation?",
+          "a": "Die App sichert einmal am Tag alles auf dem Gerät, und immer vor riskanten Vorgängen. Dreißig Tage Verlauf werden aufbewahrt, und jede Sicherung lässt sich mit einem Tipp wiederherstellen. iCloud-Sync ist verfügbar und braucht kein Konto."
+        },
+        {
+          "q": "Was kostet Countdown Widget Pro in Deutschland, und was schaltet es frei?",
+          "a": "Pro schaltet 90 der 122 Hintergründe frei, jeden Monat kommen neue dazu. Es kostet 9,99 € pro Jahr mit 7 Tagen kostenlos testen, 1,99 € pro Monat oder 17,99 € einmalig (Lifetime). Countdowns, Erinnerungen und Widgets verhalten sich mit und ohne Pro genau gleich."
+        },
+        {
+          "q": "Braucht die App ein Konto oder eine Internetverbindung?",
+          "a": "Kein Konto, keine Registrierung. Die App funktioniert offline; iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest."
+        }
+      ]
+    },
+    {
+      "key": "countdown-fr",
+      "variantOf": "countdown",
+      "lang": "fr",
+      "path": "/countdown/fr/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "Countdown Widget: Décompte",
+      "shortName": "Countdown Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "Compte à rebours avec widget — Gratuit, événements illimités",
+      "oneLiner": "Appli de compte à rebours pour iPhone où chaque taille de widget est gratuite et le nombre d'événements illimité.",
+      "description": "Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.",
+      "audience": "Tous ceux qui comptent les jours avant les vacances, le mariage, le bac, la retraite ou un anniversaire — ou les jours depuis une date.",
+      "free": "Chaque taille de widget, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
+      "paid": "Pro débloque 90 des 122 fonds d'écran. 9,99 €/an avec 7 jours d'essai gratuit, 1,99 €/mois, ou 17,99 € une seule fois (à vie).",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Existe-t-il une appli de compte à rebours avec widget pour iPhone vraiment gratuite ?",
+          "a": "Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran de verrouillage sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ne débloque que des fonds d'écran."
+        },
+        {
+          "q": "Combien de comptes à rebours puis-je créer en version gratuite ?",
+          "a": "Il n'y a pas de limite. La plupart des applis de compte à rebours bloquent la version gratuite à trois ou cinq événements ; celle-ci ne bloque à aucun niveau."
+        },
+        {
+          "q": "Peut-on compter les jours avant les vacances, le bac ou la retraite ?",
+          "a": "Oui. Vous créez l'événement d'un geste, choisissez s'il revient chaque année, et recevez un rappel le jour même et aussi longtemps à l'avance que vous voulez. Les jours fériés français sont déjà dans la liste."
+        },
+        {
+          "q": "Peut-on compter les jours depuis une date passée ?",
+          "a": "Oui. Chaque événement peut compter à rebours jusqu'à une date ou compter depuis une date, et la répétition peut être annuelle, mensuelle, hebdomadaire ou tous les quelques jours."
+        },
+        {
+          "q": "Que deviennent mes comptes à rebours après une mauvaise mise à jour ou une réinstallation ?",
+          "a": "L'appli fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte."
+        },
+        {
+          "q": "Combien coûte Countdown Widget Pro en France, et que débloque-t-il ?",
+          "a": "Pro débloque 90 des 122 fonds d'écran, avec des nouveaux chaque mois. C'est 9,99 € par an avec 7 jours d'essai gratuit, 1,99 € par mois, ou 17,99 € une seule fois (à vie). Comptes à rebours, rappels et widgets se comportent exactement pareil avec ou sans."
+        },
+        {
+          "q": "Faut-il un compte ou une connexion internet ?",
+          "a": "Aucun compte, aucune inscription. L'appli fonctionne hors ligne ; la synchronisation iCloud utilise votre propre compte Apple quand vous l'activez."
+        }
+      ]
+    },
+    {
+      "key": "countdown-it",
+      "variantOf": "countdown",
+      "lang": "it",
+      "path": "/countdown/it/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "Countdown Widget: Eventi",
+      "shortName": "Countdown Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "Conto alla rovescia con widget — Gratis, eventi illimitati",
+      "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione di widget è gratis e il numero di eventi è illimitato.",
+      "description": "App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.",
+      "audience": "Chi conta i giorni alle vacanze, al matrimonio, alla maturità, alla pensione o a un compleanno — o i giorni da una data.",
+      "free": "Ogni dimensione di widget, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
+      "paid": "Pro sblocca 90 dei 122 sfondi. 9,99 €/anno con 7 giorni di prova gratuita, 1,99 €/mese, oppure 17,99 € una tantum (a vita).",
+      "legal": [],
+      "faq": [
+        {
+          "q": "Esiste un'app di conto alla rovescia con widget per iPhone davvero gratis?",
+          "a": "Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro sblocca solo gli sfondi."
+        },
+        {
+          "q": "Quanti conti alla rovescia posso creare nella versione gratis?",
+          "a": "Non c'è limite. La maggior parte delle app di conto alla rovescia blocca la versione gratis a tre o cinque eventi; questa non la blocca a nessun livello."
+        },
+        {
+          "q": "Serve per contare i giorni alla maturità, alle vacanze o alla pensione?",
+          "a": "Sì. Crei l'evento con un tocco, scegli se si ripete ogni anno e ricevi un promemoria il giorno stesso e con l'anticipo che vuoi. Le festività italiane sono già nella lista."
+        },
+        {
+          "q": "Può contare i giorni da una data già passata?",
+          "a": "Sì. Ogni evento può fare il conto alla rovescia fino a una data o contare i giorni da una data, e la ripetizione può essere annuale, mensile, settimanale o ogni pochi giorni."
+        },
+        {
+          "q": "Che fine fanno i miei conti alla rovescia dopo un aggiornamento sbagliato o una reinstallazione?",
+          "a": "L'app fa un backup di tutto sul dispositivo una volta al giorno, e sempre prima di un'operazione rischiosa. Trenta giorni di cronologia restano salvati e ogni backup si ripristina con un tocco. La sincronizzazione iCloud è disponibile e non richiede account."
+        },
+        {
+          "q": "Quanto costa Countdown Widget Pro in Italia e cosa sblocca?",
+          "a": "Pro sblocca 90 dei 122 sfondi, con nuovi sfondi ogni mese. Costa 9,99 € all'anno con 7 giorni di prova gratuita, 1,99 € al mese, oppure 17,99 € una tantum (a vita). Conti alla rovescia, promemoria e widget si comportano esattamente allo stesso modo con o senza."
+        },
+        {
+          "q": "Serve un account o una connessione internet?",
+          "a": "Nessun account, nessuna registrazione. L'app funziona offline; la sincronizzazione iCloud usa il tuo account Apple quando la attivi."
+        }
+      ]
+    },
+    {
+      "key": "countdown-ja",
+      "variantOf": "countdown",
+      "lang": "ja",
+      "path": "/countdown/ja/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "カウントダウン ウィジェット: 記念日",
+      "shortName": "カウントダウン ウィジェット",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "カウントダウン ウィジェット — 無料・イベント無制限",
+      "oneLiner": "iPhone向けカウントダウンアプリ。ウィジェットは全サイズ無料、イベント数は無制限。",
+      "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。",
+      "audience": "受験、旅行、結婚式、推しのライブ、誕生日まであと何日かを数える人。ある日からの日数を数える人にも。",
+      "free": "全サイズのウィジェット、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
+      "paid": "Proは122種の背景のうち90種を解放。年額1,500円（7日間無料トライアル付き）、月額200円、または買い切り2,500円。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhoneで本当に無料で使えるカウントダウンウィジェットのアプリはありますか？",
+          "a": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proで解放されるのは背景だけです。"
+        },
+        {
+          "q": "無料版でカウントダウンはいくつ作れますか？",
+          "a": "上限はありません。多くのカウントダウンアプリは無料版を3〜5件に制限しますが、このアプリはどのプランでも制限しません。"
+        },
+        {
+          "q": "受験や旅行、推しのライブまであと何日かを数えるのに使えますか？",
+          "a": "使えます。ワンタップでイベントを作り、毎年繰り返すかを選び、当日と好きなだけ前にリマインダーを受け取れます。日本の祝日は最初からリストに入っています。"
+        },
+        {
+          "q": "過ぎた日からの経過日数も数えられますか？",
+          "a": "数えられます。どのイベントも、ある日までのカウントダウンにも、ある日からのカウントアップにもできます。繰り返しは毎年・毎月・毎週・数日ごとから選べます。"
+        },
+        {
+          "q": "アップデートの不具合や再インストールでカウントダウンはどうなりますか？",
+          "a": "アプリは1日1回、そして危険な操作の前には必ず、端末内にすべてのバックアップを取ります。30日分の履歴が残り、どのバックアップもワンタップで復元できます。iCloud同期も使え、アカウント登録は不要です。"
+        },
+        {
+          "q": "日本でのProの価格と、解放される内容は？",
+          "a": "Proは122種の背景のうち90種を解放し、毎月新しい背景が追加されます。年額1,500円（7日間の無料トライアル付き）、月額200円、または買い切り2,500円です。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
+        },
+        {
+          "q": "アカウントやインターネット接続は必要ですか？",
+          "a": "アカウントも登録も不要です。アプリはオフラインで動きます。iCloud同期をオンにした場合はご自身のApple Accountが使われます。"
+        }
+      ]
+    },
+    {
+      "key": "countdown-ko",
+      "variantOf": "countdown",
+      "lang": "ko",
+      "path": "/countdown/ko/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "카운트다운 위젯: 디데이",
+      "shortName": "카운트다운 위젯",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
+      "oneLiner": "iPhone용 디데이 카운트다운 앱. 위젯은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
+      "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.",
+      "audience": "수능, 전역, 여행, 결혼식, 콘서트, 생일까지 며칠 남았는지 세는 사람. 어떤 날로부터 며칠 지났는지 세는 사람에게도.",
+      "free": "모든 크기의 위젯, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
+      "paid": "Pro는 배경 122종 중 90종을 엽니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제.",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?",
+          "a": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다."
+        },
+        {
+          "q": "무료 버전에서 디데이를 몇 개까지 만들 수 있나요?",
+          "a": "제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다."
+        },
+        {
+          "q": "수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?",
+          "a": "쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다."
+        },
+        {
+          "q": "지난 날로부터 며칠 지났는지도 셀 수 있나요?",
+          "a": "셀 수 있습니다. 모든 이벤트는 어떤 날까지의 디데이(D-)로도, 어떤 날부터의 경과일(D+)로도 쓸 수 있고, 반복은 매년·매월·매주·며칠마다 중에서 고릅니다."
+        },
+        {
+          "q": "업데이트 오류나 재설치 후에 디데이는 어떻게 되나요?",
+          "a": "앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다."
+        },
+        {
+          "q": "한국에서 Pro 가격은 얼마이고 무엇이 열리나요?",
+          "a": "Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+        },
+        {
+          "q": "계정이나 인터넷 연결이 필요한가요?",
+          "a": "계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다."
+        }
+      ]
+    },
+    {
+      "key": "countdown-th",
+      "variantOf": "countdown",
+      "lang": "th",
+      "path": "/countdown/th/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "นับถอยหลัง Widget: วันสำคัญ",
+      "shortName": "นับถอยหลัง Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด",
+      "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
+      "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน",
+      "audience": "คนที่นับวันรอสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง หรือวันเกิด — หรือนับว่าผ่านมากี่วันแล้วจากวันหนึ่ง",
+      "free": "วิดเจ็ตทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
+      "paid": "Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ 399 บาท/ปี พร้อมทดลองฟรี 7 วัน, 49 บาท/เดือน หรือซื้อขาดครั้งเดียว 499 บาท",
+      "legal": [],
+      "faq": [
+        {
+          "q": "มีแอปนับถอยหลังพร้อมวิดเจ็ตสำหรับ iPhone ที่ฟรีจริงไหม",
+          "a": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอหลักและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro ปลดล็อกแค่พื้นหลัง"
+        },
+        {
+          "q": "เวอร์ชันฟรีสร้างนับถอยหลังได้กี่รายการ",
+          "a": "ไม่มีขีดจำกัด แอปนับถอยหลังส่วนใหญ่ล็อกเวอร์ชันฟรีไว้ที่ 3–5 อีเวนต์ แต่แอปนี้ไม่ล็อกในทุกระดับ"
+        },
+        {
+          "q": "ใช้นับวันรอสอบ ปีใหม่ หรือสงกรานต์ได้ไหม",
+          "a": "ได้ สร้างอีเวนต์ในแตะเดียว เลือกว่าจะให้ซ้ำทุกปีไหม แล้วรับแจ้งเตือนในวันนั้นและล่วงหน้าเท่าที่ต้องการ วันหยุดราชการของไทยอยู่ในรายการอยู่แล้ว"
+        },
+        {
+          "q": "นับว่าผ่านมากี่วันแล้วจากวันที่ผ่านไปได้ไหม",
+          "a": "ได้ ทุกอีเวนต์นับถอยหลังไปถึงวันหนึ่ง หรือนับไปข้างหน้าจากวันหนึ่งก็ได้ และตั้งซ้ำได้ทั้งรายปี รายเดือน รายสัปดาห์ หรือทุกสองสามวัน"
+        },
+        {
+          "q": "ถ้าแอปอัปเดตพัง หรือลงใหม่ ข้อมูลนับถอยหลังจะเป็นอย่างไร",
+          "a": "แอปสำรองข้อมูลทั้งหมดไว้ในเครื่องวันละครั้ง และก่อนทำอะไรที่เสี่ยงเสมอ เก็บประวัติไว้ 30 วัน และกู้คืนได้ในแตะเดียว มีซิงก์ iCloud ให้ใช้โดยไม่ต้องมีบัญชี"
+        },
+        {
+          "q": "Pro ในไทยราคาเท่าไร และปลดล็อกอะไร",
+          "a": "Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ และมีพื้นหลังใหม่ทุกเดือน ราคา 399 บาทต่อปี พร้อมทดลองฟรี 7 วัน, 49 บาทต่อเดือน หรือซื้อขาดครั้งเดียว 499 บาท นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
+        },
+        {
+          "q": "ต้องมีบัญชีหรือต่ออินเทอร์เน็ตไหม",
+          "a": "ไม่ต้องมีบัญชี ไม่ต้องสมัคร แอปทำงานออฟไลน์ได้ ซิงก์ iCloud ใช้ Apple Account ของคุณเองเมื่อคุณเปิดใช้"
+        }
+      ]
+    },
+    {
+      "key": "countdown-zh-hans",
+      "variantOf": "countdown",
+      "lang": "zh-Hans",
+      "path": "/countdown/zh-hans/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "倒计时 Widget：纪念日提醒",
+      "shortName": "倒计时 Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "倒数日小组件 — 免费、事件不限量",
+      "oneLiner": "iPhone 倒数日 App：小组件全尺寸免费，事件数量不限。",
+      "description": "iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。",
+      "audience": "给高考、考研、春节、旅行、婚礼、生日倒数的人，也给想知道「在一起多少天」的人。",
+      "free": "全尺寸小组件、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
+      "paid": "Pro 解锁 122 款背景中的 90 款。¥68/年（含 7 天免费试用）、¥12/月，或 ¥98 一次买断。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhone 上有真正免费的倒数日小组件 App 吗？",
+          "a": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 只解锁背景。"
+        },
+        {
+          "q": "免费版能建多少个倒数日？",
+          "a": "没有上限。多数倒数日 App 把免费版卡在 3～5 个事件；这个 App 在任何档位都不设上限。"
+        },
+        {
+          "q": "能给高考、春节、旅行倒数吗？",
+          "a": "能。一键新建事件，选好要不要每年重复，当天和你想要的任何提前量都会收到提醒。中国的法定节假日已经在列表里。"
+        },
+        {
+          "q": "能算某一天已经过去了多少天吗？",
+          "a": "能。任何事件都可以倒数到某一天，也可以从某一天开始正数；重复可以按年、按月、按周或每隔几天。"
+        },
+        {
+          "q": "App 更新出错或者重装了，我的倒数日会怎样？",
+          "a": "App 每天在本机备份一次全部数据，任何有风险的操作前也一定先备份。保留 30 天历史，任何一份备份一键还原。iCloud 同步可用，不需要账号。"
+        },
+        {
+          "q": "Pro 在中国区多少钱，解锁什么？",
+          "a": "Pro 解锁 122 款背景中的 90 款，每月上新。¥68 一年（含 7 天免费试用）、¥12 一个月，或 ¥98 一次买断。倒数日、提醒和小组件有没有 Pro 都完全一样。"
+        },
+        {
+          "q": "需要账号或联网吗？",
+          "a": "不需要账号，不用注册。App 离线可用；开启 iCloud 同步时用的是你自己的 Apple 账户。"
+        }
+      ]
+    },
+    {
+      "key": "countdown-zh-hant",
+      "variantOf": "countdown",
+      "lang": "zh-Hant",
+      "path": "/countdown/zh-hant/",
+      "live": true,
+      "appId": "6799846628",
+      "name": "倒數計時 Widget：紀念日提醒",
+      "shortName": "倒數計時 Widget",
+      "category": "ProductivityApplication",
+      "genre": "Productivity",
+      "icon": "/assets/countdown/icon.png",
+      "ogImage": "/assets/countdown/home.jpg",
+      "title": "倒數日小工具 — 免費、事件不限量",
+      "oneLiner": "iPhone 倒數日 App：小工具全尺寸免費，事件數量不限。",
+      "description": "iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。",
+      "audience": "給學測、會考、過年、旅行、婚禮、演唱會、生日倒數的人，也給想知道「交往幾天」的人。",
+      "free": "全尺寸小工具、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
+      "paid": "Pro 解鎖 122 款背景中的 90 款。台灣 NT$320/年（含 7 天免費試用）、NT$50/月，或 NT$490 一次買斷；香港 HK$88/年、HK$12/月，或 HK$118 買斷。",
+      "legal": [],
+      "faq": [
+        {
+          "q": "iPhone 上有真正免費的倒數日小工具 App 嗎？",
+          "a": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 只解鎖背景。"
+        },
+        {
+          "q": "免費版能建幾個倒數日？",
+          "a": "沒有上限。多數倒數日 App 把免費版卡在 3～5 個事件；這個 App 在任何方案都不設上限。"
+        },
+        {
+          "q": "能給學測、過年、演唱會倒數嗎？",
+          "a": "能。一鍵新增事件，選好要不要每年重複，當天和你想要的任何提前量都會收到提醒。台灣的國定假日已經在清單裡。"
+        },
+        {
+          "q": "能算某一天已經過了幾天嗎？",
+          "a": "能。任何事件都可以倒數到某一天，也可以從某一天開始正數；重複可以按年、按月、按週或每隔幾天。"
+        },
+        {
+          "q": "App 更新出錯或重裝了，我的倒數日會怎樣？",
+          "a": "App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。"
+        },
+        {
+          "q": "Pro 多少錢，解鎖什麼？",
+          "a": "Pro 解鎖 122 款背景中的 90 款，每月上新。台灣 App Store 是 NT$320 一年（含 7 天免費試用）、NT$50 一個月，或 NT$490 一次買斷；香港是 HK$88 一年、HK$12 一個月，或 HK$118 買斷。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
+        },
+        {
+          "q": "需要帳號或連網嗎？",
+          "a": "不需要帳號，不用註冊。App 離線可用；開啟 iCloud 同步時用的是你自己的 Apple 帳號。"
         }
       ]
     },

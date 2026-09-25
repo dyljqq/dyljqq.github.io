@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>디데이 카운트다운 위젯 — 무료, 이벤트 무제한</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="디데이 카운트다운 위젯 — 무료, 이벤트 무제한">
+<meta property="og:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/ko/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="디데이 카운트다운 위젯 — 무료, 이벤트 무제한">
+<meta name="twitter:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/ko/#app",
+  "name": "카운트다운 위젯: 디데이",
+  "alternateName": "카운트다운 위젯",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.",
+  "url": "https://dyljqq.github.io/countdown/ko/",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/ko/#faq",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "무료 버전에서 디데이를 몇 개까지 만들 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "지난 날로부터 며칠 지났는지도 셀 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "셀 수 있습니다. 모든 이벤트는 어떤 날까지의 디데이(D-)로도, 어떤 날부터의 경과일(D+)로도 쓸 수 있고, 반복은 매년·매월·매주·며칠마다 중에서 고릅니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "업데이트 오류나 재설치 후에 디데이는 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "한국에서 Pro 가격은 얼마이고 무엇이 열리나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계정이나 인터넷 연결이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="앱 '카운트다운 위젯: 디데이' 아이콘" width="92" height="92">
+    <h1>위젯이 있는 디데이 카운트다운. 무료이고, 이벤트 수에 제한이 없습니다.</h1>
+    <p class="tagline">수능까지, 전역까지, 여행까지, 결혼식까지 며칠 남았을까? 홈 화면과 잠금 화면의 위젯이 답합니다. 모든 크기, 무료. 이벤트는 원하는 만큼. 제한은 없고, 앞으로도 없습니다.</p>
+    <a class="cta" href="https://apps.apple.com/kr/app/id6799846628">App Store에서 받기</a>
+    <p class="meta">무료 · iPhone / iPad · iOS 17 이상 · 계정 불필요 · 광고 없음 · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="iPhone 홈 화면의 카운트다운 위젯" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="남은 일수를 보여주는 전체 화면 디데이" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="전체 화면 배경 선택 화면" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="기기 안에 30일치 저장된 백업, 한 번의 탭으로 복원" loading="lazy">
+  </section>
+
+  <h2>대부분의 카운트다운 앱이 틀리는 두 가지</h2>
+  <p class="lede">카운트다운 앱의 존재 이유는 위젯이고, 위젯의 존재 이유는 이벤트입니다. 대부분의 앱은 앞의 것에 돈을 받고 뒤의 것을 제한합니다.</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>흔한 카운트다운 앱</th><th>이 앱</th></tr></thead>
+    <tbody>
+      <tr><td><strong>위젯</strong></td><td>Pro 전용이거나 한 가지 크기만</td><td class="yes">모든 크기, 홈 화면과 잠금 화면, 무료</td></tr>
+      <tr><td><strong>이벤트</strong></td><td>무료 버전은 3~5개</td><td class="yes">무제한, 영원히</td></tr>
+      <tr><td><strong>알림</strong></td><td>Pro 기능</td><td class="yes">무료. 당일에도, 원하는 만큼 미리도</td></tr>
+      <tr><td><strong>내 데이터</strong></td><td>잘못된 업데이트나 재설치 후 사라짐</td><td class="yes">매일 기기 안에 백업, 30일치 기록</td></tr>
+      <tr><td><strong>Pro가 파는 것</strong></td><td>원래 필요했던 기능</td><td class="yes">배경뿐. 앱을 돌아가게 하는 건 아무것도</td></tr>
+    </tbody>
+  </table>
+
+  <h2>한국에서 디데이를 세는 것들</h2>
+  <p class="lede">한 번의 탭으로 이벤트가 만들어지고, 매년 반복할지는 직접 정합니다. 공휴일은 처음부터 목록에 있습니다.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>수능·시험</h3>
+      <p>숫자는 잠금 화면 위젯에 떠 있어서 앱을 열 필요가 없습니다. D-100, D-7, 그리고 당일 아침에 알림.</p>
+    </div>
+    <div class="card">
+      <h3>전역</h3>
+      <p>입대일부터 전역일까지. 끝나면 기다린 날수와 함께 타임라인에 남습니다.</p>
+    </div>
+    <div class="card">
+      <h3>여행</h3>
+      <p>출발까지 며칠. 여행이 끝나면 이벤트는 추억이 되고, 뒷면에 사진과 메모를 남깁니다.</p>
+    </div>
+    <div class="card">
+      <h3>결혼식</h3>
+      <p>그냥 지나칠 수 없는 날짜. 당일에는 전체 화면 디데이와 바로 공유할 수 있는 카드가 나옵니다.</p>
+    </div>
+    <div class="card">
+      <h3>콘서트·팬미팅</h3>
+      <p>티켓팅한 날부터 공연 당일까지. 설날, 삼일절, 어린이날, 광복절 같은 공휴일은 해마다 정확한 날짜로 들어 있습니다.</p>
+    </div>
+    <div class="card">
+      <h3>생일·출산·기념일</h3>
+      <p>생일과 기념일은 매년 반복. 출산 예정일은 D-, '사귄 지'는 D+로 그날부터 며칠 지났는지 셉니다.</p>
+    </div>
+  </div>
+
+  <h2>그 밖에</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>D-도, D+도</h3>
+      <p>어떤 날까지든, 어떤 날부터든. 반복은 매년·매월·매주·며칠마다.</p>
+    </div>
+    <div class="card">
+      <h3>아무것도 iPhone 밖으로 나가지 않음</h3>
+      <p>이 기기의 모든 것을 매일, 그리고 위험한 작업 전에는 반드시 백업. 복원은 한 번의 탭.</p>
+    </div>
+    <div class="card">
+      <h3>지난 날들도 남음</h3>
+      <p>끝난 디데이는 돌아볼 수 있는 타임라인이 되고, 그해 가장 길었던 기다림이 옆에 적힙니다.</p>
+    </div>
+    <div class="card">
+      <h3>그 순간 자체</h3>
+      <p>100일 전, 일주일 전, 당일 아침. 앱은 전체 화면의 숫자로 열리고 공유할 만한 카드를 건넵니다.</p>
+    </div>
+    <div class="card">
+      <h3>한 번의 탭으로 준비 끝</h3>
+      <p>36개의 이벤트가 알맞은 반복과 알림을 갖춘 채 준비돼 있습니다. 손으로 그린 아이콘 200개와 이모지 키보드 전부.</p>
+    </div>
+    <div class="card">
+      <h3>이벤트 가져오기</h3>
+      <p>캘린더, 스프레드시트, 다른 카운트다운 앱에서 가져오고 언제든 내보내기. 계정 없는 iCloud 동기화.</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">자주 묻는 질문</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?</h3>
+      <p>있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다.</p>
+    </div>
+    <div class="card">
+      <h3>무료 버전에서 디데이를 몇 개까지 만들 수 있나요?</h3>
+      <p>제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다.</p>
+    </div>
+    <div class="card">
+      <h3>수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?</h3>
+      <p>쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다.</p>
+    </div>
+    <div class="card">
+      <h3>지난 날로부터 며칠 지났는지도 셀 수 있나요?</h3>
+      <p>셀 수 있습니다. 모든 이벤트는 어떤 날까지의 디데이(D-)로도, 어떤 날부터의 경과일(D+)로도 쓸 수 있고, 반복은 매년·매월·매주·며칠마다 중에서 고릅니다.</p>
+    </div>
+    <div class="card">
+      <h3>업데이트 오류나 재설치 후에 디데이는 어떻게 되나요?</h3>
+      <p>앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다.</p>
+    </div>
+    <div class="card">
+      <h3>한국에서 Pro 가격은 얼마이고 무엇이 열리나요?</h3>
+      <p>Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다.</p>
+    </div>
+    <div class="card">
+      <h3>계정이나 인터넷 연결이 필요한가요?</h3>
+      <p>계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">Pro에 대해</h2>
+    <p>Pro는 겉모습을 팔지 기능을 팔지 않습니다. Pro 배경(122종 중 90종)을 열고 매달 새 배경이 도착합니다. 구독 중에 연 배경은 영원히 내 것이고, 해지하면 새 배경만 오지 않을 뿐입니다. 디데이, 알림, 위젯은 구독 여부와 상관없이 똑같이 작동합니다.</p>
+    <p>연 17,000원(7일 무료 체험 포함), 또는 월 2,200원. 평생 이용권은 25,000원 1회 결제이며 갱신되지 않습니다.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">지원</h2>
+    <p>질문, 의견, 결제 관련 도움은 <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>으로 (한국어나 영어). 모든 메일을 읽고 보통 영업일 2일 안에 답합니다.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">다른 앱</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">개인정보 처리방침(영어)</a>
+    <a href="../terms-of-service/">이용약관(영어)</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">문의</a>
+    <p style="margin-top:18px">Countdown은 독립 개발 앱입니다. 개발자 한 사람이 만듭니다.</p>
+  </footer>
+
+</main>
+</body>
+</html>

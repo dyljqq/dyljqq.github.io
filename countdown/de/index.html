@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse">
+<meta property="og:description" content="Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/de/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse">
+<meta name="twitter:description" content="Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/de/#app",
+  "name": "Countdown Widget: Tage bis",
+  "alternateName": "Countdown Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.",
+  "url": "https://dyljqq.github.io/countdown/de/",
+  "inLanguage": "de",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/de/#faq",
+  "inLanguage": "de",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gibt es eine Countdown-App mit Widget für das iPhone, die wirklich kostenlos ist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Tage-zählen sind ebenfalls kostenlos. Pro schaltet nur Hintergründe frei."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Countdowns kann ich in der kostenlosen Version anlegen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es gibt keine Grenze. Die meisten Countdown-Apps begrenzen die kostenlose Version auf drei bis fünf Ereignisse; diese begrenzt sie in keiner Stufe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich damit die Tage bis zur Rente, zum Urlaub oder bis Weihnachten zählen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Du legst das Ereignis mit einem Tipp an, wählst, ob es jedes Jahr wiederkehrt, und bekommst am Tag selbst und so weit im Voraus wie du willst eine Erinnerung. Die gesetzlichen Feiertage in Deutschland sind schon in der Liste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann die App auch die Tage seit einem vergangenen Datum zählen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Jedes Ereignis kann bis zu einem Datum herunterzählen oder ab einem Datum hochzählen, und die Wiederholung kann jährlich, monatlich, wöchentlich oder alle paar Tage sein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert mit meinen Countdowns bei einem fehlerhaften Update oder einer Neuinstallation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die App sichert einmal am Tag alles auf dem Gerät, und immer vor riskanten Vorgängen. Dreißig Tage Verlauf werden aufbewahrt, und jede Sicherung lässt sich mit einem Tipp wiederherstellen. iCloud-Sync ist verfügbar und braucht kein Konto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet Countdown Widget Pro in Deutschland, und was schaltet es frei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro schaltet 90 der 122 Hintergründe frei, jeden Monat kommen neue dazu. Es kostet 9,99 € pro Jahr mit 7 Tagen kostenlos testen, 1,99 € pro Monat oder 17,99 € einmalig (Lifetime). Countdowns, Erinnerungen und Widgets verhalten sich mit und ohne Pro genau gleich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Braucht die App ein Konto oder eine Internetverbindung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kein Konto, keine Registrierung. Die App funktioniert offline; iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest."
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="Symbol der App Countdown Widget: Tage bis" width="92" height="92">
+    <h1>Countdown mit Widget, kostenlos und ohne Limit bei den Ereignissen.</h1>
+    <p class="tagline">Wie viele Tage noch bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente? Das Widget zeigt es auf dem Home-Bildschirm und dem Sperrbildschirm — in jeder Größe, kostenlos. So viele Ereignisse du willst: es gibt keine Grenze, und es wird nie eine geben.</p>
+    <a class="cta" href="https://apps.apple.com/de/app/id6799846628">Im App Store laden</a>
+    <p class="meta">Kostenlos · iPhone &amp; iPad · iOS 17+ · Kein Konto · Keine Werbung, nie · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="Countdown-Widgets auf dem Home-Bildschirm des iPhone" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="Countdown im Vollbild mit den verbleibenden Tagen" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="Auswahl der Vollbild-Hintergründe" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="Dreißig Tage Sicherungen auf dem Gerät, mit einem Tipp wiederherstellbar" loading="lazy">
+  </section>
+
+  <h2>Zwei Dinge, die die meisten Countdown-Apps falsch machen</h2>
+  <p class="lede">Das Widget ist der ganze Sinn einer Countdown-App, und die Ereignisse sind der ganze Sinn des Widgets. Die meisten Apps verlangen Geld für das eine und begrenzen das andere.</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>Typische Countdown-App</th><th>Diese</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Widgets</strong></td><td>Nur in Pro, oder nur eine Größe</td><td class="yes">Jede Größe, Home- und Sperrbildschirm, kostenlos</td></tr>
+      <tr><td><strong>Ereignisse</strong></td><td>Drei bis fünf in der Gratisversion</td><td class="yes">Unbegrenzt, für immer</td></tr>
+      <tr><td><strong>Erinnerungen</strong></td><td>Pro-Funktion</td><td class="yes">Kostenlos, am Tag selbst und so weit im Voraus wie du willst</td></tr>
+      <tr><td><strong>Deine Daten</strong></td><td>Weg nach einem schlechten Update oder einer Neuinstallation</td><td class="yes">Täglich auf dem Gerät gesichert, 30 Tage Verlauf</td></tr>
+      <tr><td><strong>Was Pro verkauft</strong></td><td>Die Funktionen, die du sowieso gebraucht hättest</td><td class="yes">Hintergründe. Nichts, was die App zum Laufen braucht</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Wofür in Deutschland die Tage gezählt werden</h2>
+  <p class="lede">Ein Tipp, und das Ereignis steht; du entscheidest, ob es jedes Jahr wiederkehrt. Die gesetzlichen Feiertage sind schon in der Liste.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Urlaub &amp; Reise</h3>
+      <p>Wie viele Tage noch bis zum Abflug. Nach der Reise wird das Ereignis zur Erinnerung, mit Foto und Notiz auf der Rückseite.</p>
+    </div>
+    <div class="card">
+      <h3>Hochzeit</h3>
+      <p>Ein Datum, das nicht untergehen darf. Am Tag selbst Countdown im Vollbild und eine Karte, die sich teilen lässt.</p>
+    </div>
+    <div class="card">
+      <h3>Weihnachten &amp; Neujahr</h3>
+      <p>Der Countdown bis Heiligabend, der jedes Jahr von allein wieder anläuft. Die vergangenen Jahre bleiben in der Zeitleiste.</p>
+    </div>
+    <div class="card">
+      <h3>Abitur &amp; Prüfungen</h3>
+      <p>Die Zahl steht im Widget auf dem Sperrbildschirm, ohne die App zu öffnen. Erinnerung bei 100 Tagen, einer Woche und am Morgen davor.</p>
+    </div>
+    <div class="card">
+      <h3>Rente</h3>
+      <p>Tage bis zur Rente zählen — oder bis zum Ende der Elternzeit, bis zum Vertragsende, bis zum Umzug. Ostern, Pfingsten und der Tag der Deutschen Einheit liegen schon bereit.</p>
+    </div>
+    <div class="card">
+      <h3>Geburtstag, Baby, Jahrestag</h3>
+      <p>Geburtstage und Jahrestage wiederholen sich jedes Jahr. Errechneter Geburtstermin ist ein Countdown; „zusammen seit“ zählt hoch: wie viele Tage seit dem Datum.</p>
+    </div>
+  </div>
+
+  <h2>Der Rest</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Herunter- oder hochzählen</h3>
+      <p>Bis zu einem Datum, oder ab einem Datum. Wiederholung jährlich, monatlich, wöchentlich oder alle paar Tage.</p>
+    </div>
+    <div class="card">
+      <h3>Nichts verlässt dein iPhone</h3>
+      <p>Jeden Tag eine Sicherung von allem auf diesem Gerät, und immer vor riskanten Vorgängen. Ein Tipp zum Wiederherstellen.</p>
+    </div>
+    <div class="card">
+      <h3>Vergangene Tage bleiben</h3>
+      <p>Abgelaufene Countdowns sammeln sich in einer Zeitleiste zum Zurückblättern, mit dem längsten Warten jedes Jahres daneben.</p>
+    </div>
+    <div class="card">
+      <h3>Der Moment selbst</h3>
+      <p>Bei hundert Tagen, einer Woche oder am Morgen des Tages öffnet sich die App auf der Zahl, im Vollbild, mit einer Karte zum Teilen.</p>
+    </div>
+    <div class="card">
+      <h3>Mit einem Tipp eingerichtet</h3>
+      <p>Sechsunddreißig fertige Ereignisse, jedes schon mit passender Wiederholung und Erinnerungen. Zweihundert gezeichnete Symbole und die ganze Emoji-Tastatur.</p>
+    </div>
+    <div class="card">
+      <h3>Bring deine Ereignisse mit</h3>
+      <p>Import aus Kalender, Tabelle oder einer anderen Countdown-App — und jederzeit Export. iCloud-Sync, ohne ein Konto anzulegen.</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">Häufige Fragen</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Gibt es eine Countdown-App mit Widget für das iPhone, die wirklich kostenlos ist?</h3>
+      <p>Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Tage-zählen sind ebenfalls kostenlos. Pro schaltet nur Hintergründe frei.</p>
+    </div>
+    <div class="card">
+      <h3>Wie viele Countdowns kann ich in der kostenlosen Version anlegen?</h3>
+      <p>Es gibt keine Grenze. Die meisten Countdown-Apps begrenzen die kostenlose Version auf drei bis fünf Ereignisse; diese begrenzt sie in keiner Stufe.</p>
+    </div>
+    <div class="card">
+      <h3>Kann ich damit die Tage bis zur Rente, zum Urlaub oder bis Weihnachten zählen?</h3>
+      <p>Ja. Du legst das Ereignis mit einem Tipp an, wählst, ob es jedes Jahr wiederkehrt, und bekommst am Tag selbst und so weit im Voraus wie du willst eine Erinnerung. Die gesetzlichen Feiertage in Deutschland sind schon in der Liste.</p>
+    </div>
+    <div class="card">
+      <h3>Kann die App auch die Tage seit einem vergangenen Datum zählen?</h3>
+      <p>Ja. Jedes Ereignis kann bis zu einem Datum herunterzählen oder ab einem Datum hochzählen, und die Wiederholung kann jährlich, monatlich, wöchentlich oder alle paar Tage sein.</p>
+    </div>
+    <div class="card">
+      <h3>Was passiert mit meinen Countdowns bei einem fehlerhaften Update oder einer Neuinstallation?</h3>
+      <p>Die App sichert einmal am Tag alles auf dem Gerät, und immer vor riskanten Vorgängen. Dreißig Tage Verlauf werden aufbewahrt, und jede Sicherung lässt sich mit einem Tipp wiederherstellen. iCloud-Sync ist verfügbar und braucht kein Konto.</p>
+    </div>
+    <div class="card">
+      <h3>Was kostet Countdown Widget Pro in Deutschland, und was schaltet es frei?</h3>
+      <p>Pro schaltet 90 der 122 Hintergründe frei, jeden Monat kommen neue dazu. Es kostet 9,99 € pro Jahr mit 7 Tagen kostenlos testen, 1,99 € pro Monat oder 17,99 € einmalig (Lifetime). Countdowns, Erinnerungen und Widgets verhalten sich mit und ohne Pro genau gleich.</p>
+    </div>
+    <div class="card">
+      <h3>Braucht die App ein Konto oder eine Internetverbindung?</h3>
+      <p>Kein Konto, keine Registrierung. Die App funktioniert offline; iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">Über Pro</h2>
+    <p>Pro verkauft die Optik, nie die Funktion. Es schaltet die Pro-Hintergründe frei — 90 der 122 — mit neuen jeden Monat. Was du während des Abos freischaltest, bleibt für immer deins; kündigen stoppt nur die neuen. Deine Countdowns, Erinnerungen und Widgets funktionieren mit und ohne Abo genau gleich.</p>
+    <p>9,99 € pro Jahr mit 7 Tagen kostenlos testen, oder 1,99 € pro Monat. Der einmalige Lifetime-Kauf kostet 17,99 € und verlängert sich nicht.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Support</h2>
+    <p>Fragen, Feedback oder Hilfe bei einem Kauf? Schreib an <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a> (Deutsch oder Englisch). Jede Nachricht wird gelesen, meist innerhalb von zwei Werktagen beantwortet.</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">Weitere Apps</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">Datenschutz (Englisch)</a>
+    <a href="../terms-of-service/">Nutzungsbedingungen (Englisch)</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">Kontakt</a>
+    <p style="margin-top:18px">Countdown ist eine unabhängige App. Gemacht von einem einzelnen Entwickler.</p>
+  </footer>
+
+</main>
+</body>
+</html>

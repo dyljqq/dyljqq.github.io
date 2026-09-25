@@ -191,13 +191,18 @@ def faq_jsonld(app):
                            for f in app["faq"]]}
 
 FAQ_START, FAQ_END = "<!-- faq:start -->", "<!-- faq:end -->"
+# 可见 FAQ 的标题，按 site.json 的 lang 选；先按完整 tag（zh-Hant）找，再退回语言前缀（de-DE → de）
+FAQ_HEADING = {
+    "en": "Questions people ask", "pt": "Perguntas frequentes", "de": "Häufige Fragen",
+    "fr": "Questions fréquentes", "it": "Domande frequenti", "ja": "よくある質問",
+    "ko": "자주 묻는 질문", "th": "คำถามที่พบบ่อย", "zh-Hans": "常见问题", "zh-Hant": "常見問題", "zh": "常见问题",
+}
 
 def faq_html(app):
     """可见 FAQ。schema 里的问答必须在页面上看得见、且逐字一致（清单 7.7），
     所以两边都从 site.json 的同一份数据生成，杜绝改了一边忘了另一边。"""
     lang = app.get("lang", "en")
-    heading = ("常见问题" if lang.startswith("zh") else
-               "Perguntas frequentes" if lang.startswith("pt") else "Questions people ask")
+    heading = FAQ_HEADING.get(lang) or FAQ_HEADING.get(lang.split("-")[0], "Questions people ask")
     rows = "\n".join(
         '    <div class="card">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
         % (esc_text(f["q"]), esc_text(f["a"])) for f in app["faq"])

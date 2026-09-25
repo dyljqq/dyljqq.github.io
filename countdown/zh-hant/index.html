@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>倒數日小工具 — 免費、事件不限量</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="倒數日小工具 — 免費、事件不限量">
+<meta property="og:description" content="iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/zh-hant/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="倒數日小工具 — 免費、事件不限量">
+<meta name="twitter:description" content="iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/zh-hant/#app",
+  "name": "倒數計時 Widget：紀念日提醒",
+  "alternateName": "倒數計時 Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。",
+  "url": "https://dyljqq.github.io/countdown/zh-hant/",
+  "inLanguage": "zh-Hant",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/zh-hant/#faq",
+  "inLanguage": "zh-Hant",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "iPhone 上有真正免費的倒數日小工具 App 嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 只解鎖背景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "免費版能建幾個倒數日？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "沒有上限。多數倒數日 App 把免費版卡在 3～5 個事件；這個 App 在任何方案都不設上限。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能給學測、過年、演唱會倒數嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。一鍵新增事件，選好要不要每年重複，當天和你想要的任何提前量都會收到提醒。台灣的國定假日已經在清單裡。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能算某一天已經過了幾天嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。任何事件都可以倒數到某一天，也可以從某一天開始正數；重複可以按年、按月、按週或每隔幾天。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "App 更新出錯或重裝了，我的倒數日會怎樣？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pro 多少錢，解鎖什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro 解鎖 122 款背景中的 90 款，每月上新。台灣 App Store 是 NT$320 一年（含 7 天免費試用）、NT$50 一個月，或 NT$490 一次買斷；香港是 HK$88 一年、HK$12 一個月，或 HK$118 買斷。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要帳號或連網嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要帳號，不用註冊。App 離線可用；開啟 iCloud 同步時用的是你自己的 Apple 帳號。"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="「倒數計時 Widget：紀念日提醒」App 圖示" width="92" height="92">
+    <h1>帶小工具的倒數日，免費，事件不限量。</h1>
+    <p class="tagline">距離學測、過年、旅行、婚禮、演唱會還有幾天？主畫面和鎖定畫面的小工具直接告訴你——全尺寸，免費。事件想建幾個就建幾個：沒有上限，以後也不會有。</p>
+    <a class="cta" href="https://apps.apple.com/tw/app/id6799846628">在 App Store 下載</a>
+    <p class="meta">免費 · iPhone 和 iPad · iOS 17 以上 · 不用帳號 · 永遠無廣告 · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="iPhone 主畫面上的倒數日小工具" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="全螢幕倒數日，顯示剩餘天數" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="全螢幕背景選擇器" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="本機保留 30 天備份，一鍵還原" loading="lazy">
+  </section>
+
+  <h2>多數倒數日 App 做錯的兩件事</h2>
+  <p class="lede">小工具是倒數日 App 存在的全部意義，事件又是小工具存在的全部意義。多數 App 對前者收費、對後者限量。</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>常見倒數日 App</th><th>這個</th></tr></thead>
+    <tbody>
+      <tr><td><strong>小工具</strong></td><td>鎖在 Pro 裡，或只有一種尺寸</td><td class="yes">全尺寸，主畫面和鎖定畫面，免費</td></tr>
+      <tr><td><strong>事件</strong></td><td>免費版 3～5 個</td><td class="yes">不限量，永久</td></tr>
+      <tr><td><strong>提醒</strong></td><td>Pro 功能</td><td class="yes">免費，當天和任意提前量</td></tr>
+      <tr><td><strong>你的資料</strong></td><td>更新出錯或重裝後就沒了</td><td class="yes">每天本機備份，保留 30 天</td></tr>
+      <tr><td><strong>Pro 賣什麼</strong></td><td>你本來就需要的功能</td><td class="yes">背景。沒有任何讓 App 運作的東西</td></tr>
+    </tbody>
+  </table>
+
+  <h2>大家都在給什麼倒數</h2>
+  <p class="lede">一鍵建好事件，要不要每年重複由你決定。國定假日已經在清單裡。</p>
+  <div class="grid">
+    <div class="card">
+      <h3>學測、會考、國考</h3>
+      <p>數字就在鎖定畫面的小工具上，不用打開 App。倒數 100 天、一週、當天早上各提醒一次。</p>
+    </div>
+    <div class="card">
+      <h3>過年、連假</h3>
+      <p>到除夕的倒數，每年自動重來。過年、清明、端午、中秋、國慶都按每年的實際日期排好了。</p>
+    </div>
+    <div class="card">
+      <h3>旅行</h3>
+      <p>距離出發還有幾天。旅行結束後事件變成回憶，背面可以放照片、寫幾句。</p>
+    </div>
+    <div class="card">
+      <h3>婚禮</h3>
+      <p>一個不能錯過的日子。當天全螢幕倒數，還有一張可以直接分享的卡片。</p>
+    </div>
+    <div class="card">
+      <h3>演唱會</h3>
+      <p>從搶到票那天到開演。結束後連同等待的天數一起留在時間線上。</p>
+    </div>
+    <div class="card">
+      <h3>生日、寶寶、紀念日</h3>
+      <p>生日和紀念日每年重複；預產期是倒數，「交往幾天」是正數日，從那一天起算。</p>
+    </div>
+  </div>
+
+  <h2>其餘的</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>倒數，或者正數</h3>
+      <p>倒數到某一天，或從某一天起正數。按年、按月、按週或每隔幾天重複。</p>
+    </div>
+    <div class="card">
+      <h3>什麼都不離開你的手機</h3>
+      <p>每天把本機所有資料備份一次，任何有風險的操作前也一定先備份。一鍵還原。</p>
+    </div>
+    <div class="card">
+      <h3>過去的日子留著</h3>
+      <p>結束的倒數日匯成一條可以回看的時間線，每年等得最久的那一次記在旁邊。</p>
+    </div>
+    <div class="card">
+      <h3>那一刻本身</h3>
+      <p>還剩 100 天、一週，或當天早上，App 打開就是全螢幕的數字，還遞給你一張值得分享的卡片。</p>
+    </div>
+    <div class="card">
+      <h3>一鍵就緒</h3>
+      <p>36 個現成事件，各自帶好合適的重複和提醒。200 個手繪圖示和整個 emoji 鍵盤。</p>
+    </div>
+    <div class="card">
+      <h3>把你的事件帶過來</h3>
+      <p>從行事曆、試算表或別的倒數日 App 匯入，隨時匯出。iCloud 同步，不用註冊帳號。</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">常見問題</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iPhone 上有真正免費的倒數日小工具 App 嗎？</h3>
+      <p>有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 只解鎖背景。</p>
+    </div>
+    <div class="card">
+      <h3>免費版能建幾個倒數日？</h3>
+      <p>沒有上限。多數倒數日 App 把免費版卡在 3～5 個事件；這個 App 在任何方案都不設上限。</p>
+    </div>
+    <div class="card">
+      <h3>能給學測、過年、演唱會倒數嗎？</h3>
+      <p>能。一鍵新增事件，選好要不要每年重複，當天和你想要的任何提前量都會收到提醒。台灣的國定假日已經在清單裡。</p>
+    </div>
+    <div class="card">
+      <h3>能算某一天已經過了幾天嗎？</h3>
+      <p>能。任何事件都可以倒數到某一天，也可以從某一天開始正數；重複可以按年、按月、按週或每隔幾天。</p>
+    </div>
+    <div class="card">
+      <h3>App 更新出錯或重裝了，我的倒數日會怎樣？</h3>
+      <p>App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。</p>
+    </div>
+    <div class="card">
+      <h3>Pro 多少錢，解鎖什麼？</h3>
+      <p>Pro 解鎖 122 款背景中的 90 款，每月上新。台灣 App Store 是 NT$320 一年（含 7 天免費試用）、NT$50 一個月，或 NT$490 一次買斷；香港是 HK$88 一年、HK$12 一個月，或 HK$118 買斷。倒數日、提醒和小工具有沒有 Pro 都完全一樣。</p>
+    </div>
+    <div class="card">
+      <h3>需要帳號或連網嗎？</h3>
+      <p>不需要帳號，不用註冊。App 離線可用；開啟 iCloud 同步時用的是你自己的 Apple 帳號。</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">關於 Pro</h2>
+    <p>Pro 賣的是好看，不是功能。它解鎖 Pro 背景——122 款裡的 90 款——每月上新。訂閱期間解鎖的背景永遠歸你；取消訂閱只是不再收到新的。倒數日、提醒和小工具有沒有訂閱都完全一樣。</p>
+    <p>台灣 App Store：NT$320 一年（含 7 天免費試用），或 NT$50 一個月；一次性買斷 NT$490，不續費。香港：HK$88 一年、HK$12 一個月，或 HK$118 買斷。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">支援</h2>
+    <p>問題、建議，或購買上的麻煩？寫信到 <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>（中文或英文都可以）。每封都會看，通常兩個工作天內回覆。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">其他 App</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">隱私權政策（英文）</a>
+    <a href="../terms-of-service/">服務條款（英文）</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">聯絡</a>
+    <p style="margin-top:18px">Countdown 是一款獨立 App，由一位開發者製作。</p>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>倒数日小组件 — 免费、事件不限量</title>
+<link rel="icon" href="../../assets/countdown/icon.png">
+<style>
+  :root{
+    color-scheme: light dark;
+    --ink:#0b0b0c; --muted:#66666e; --brand:#d2643c; --brand-deep:#b9502b;
+    --paper:#f7f7f9; --card:rgba(255,255,255,.9); --line:#e6e6ea; --shadow:0 18px 44px -28px rgba(0,0,0,.45);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#f2f2f4; --muted:#a0a0aa; --brand:#e4794f; --brand-deep:#e4794f;
+      --paper:#0d0d10; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.10); --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--paper),transparent 55%),var(--paper);-webkit-font-smoothing:antialiased}
+  main{max-width:960px;margin:0 auto;padding:0 20px 72px}
+  a{color:var(--brand-deep)}
+  .hero{padding:64px 0 8px;text-align:center}
+  .hero img.icon{width:92px;height:92px;border-radius:21px;box-shadow:var(--shadow)}
+  h1{margin:22px 0 10px;font-size:clamp(34px,6.5vw,54px);line-height:1.06;letter-spacing:-.02em}
+  .tagline{color:var(--muted);margin:0 auto 30px;max-width:34em;font-size:clamp(17px,2.4vw,20px)}
+  .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:#fff;text-decoration:none;
+    font-weight:600;padding:15px 28px;border-radius:999px;box-shadow:var(--shadow)}
+  .cta:hover{background:var(--brand-deep)}
+  .meta{margin-top:14px;color:var(--muted);font-size:14px}
+  .shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:52px 0 8px}
+  .shots img{width:100%;border-radius:18px;border:1px solid var(--line);background:var(--card)}
+  @media (max-width:760px){ .shots{grid-template-columns:repeat(2,1fr)} }
+  h2{font-size:clamp(24px,3.4vw,30px);letter-spacing:-.01em;margin:56px 0 6px}
+  .lede{color:var(--muted);margin:0 0 26px;max-width:44em}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:760px){ .grid{grid-template-columns:1fr} }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:22px;font-size:15.5px}
+  th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+  td.yes{color:var(--brand-deep);font-weight:600}
+  .band{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 28px;margin-top:56px}
+  .band p{color:var(--muted);margin:8px 0 0}
+  .apps{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .apps a{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;
+    text-decoration:none;color:var(--ink);font-size:15px;background:var(--card)}
+  footer{margin-top:56px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+  footer a{margin-right:18px}
+</style>
+<!-- seo:start -->
+<meta name="description" content="iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。">
+<link rel="canonical" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://dyljqq.github.io/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://dyljqq.github.io/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://dyljqq.github.io/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://dyljqq.github.io/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://dyljqq.github.io/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://dyljqq.github.io/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://dyljqq.github.io/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://dyljqq.github.io/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://dyljqq.github.io/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://dyljqq.github.io/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://dyljqq.github.io/countdown/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="倒数日小组件 — 免费、事件不限量">
+<meta property="og:description" content="iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。">
+<meta property="og:url" content="https://dyljqq.github.io/countdown/zh-hans/">
+<meta property="og:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://dyljqq.github.io/assets/countdown/home.jpg">
+<meta name="twitter:title" content="倒数日小组件 — 免费、事件不限量">
+<meta name="twitter:description" content="iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。">
+<meta name="apple-itunes-app" content="app-id=6799846628">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://dyljqq.github.io/countdown/zh-hans/#app",
+  "name": "倒计时 Widget：纪念日提醒",
+  "alternateName": "倒计时 Widget",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。",
+  "url": "https://dyljqq.github.io/countdown/zh-hans/",
+  "inLanguage": "zh-Hans",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://dyljqq.github.io/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6799846628",
+  "installUrl": "https://apps.apple.com/app/id6799846628",
+  "sameAs": [
+    "https://apps.apple.com/app/id6799846628"
+  ],
+  "image": "https://dyljqq.github.io/assets/countdown/icon.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://dyljqq.github.io/countdown/zh-hans/#faq",
+  "inLanguage": "zh-Hans",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "iPhone 上有真正免费的倒数日小组件 App 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 只解锁背景。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "免费版能建多少个倒数日？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "没有上限。多数倒数日 App 把免费版卡在 3～5 个事件；这个 App 在任何档位都不设上限。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能给高考、春节、旅行倒数吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。一键新建事件，选好要不要每年重复，当天和你想要的任何提前量都会收到提醒。中国的法定节假日已经在列表里。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能算某一天已经过去了多少天吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "能。任何事件都可以倒数到某一天，也可以从某一天开始正数；重复可以按年、按月、按周或每隔几天。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "App 更新出错或者重装了，我的倒数日会怎样？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App 每天在本机备份一次全部数据，任何有风险的操作前也一定先备份。保留 30 天历史，任何一份备份一键还原。iCloud 同步可用，不需要账号。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pro 在中国区多少钱，解锁什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pro 解锁 122 款背景中的 90 款，每月上新。¥68 一年（含 7 天免费试用）、¥12 一个月，或 ¥98 一次买断。倒数日、提醒和小组件有没有 Pro 都完全一样。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要账号或联网吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要账号，不用注册。App 离线可用；开启 iCloud 同步时用的是你自己的 Apple 账户。"
+      }
+    }
+  ]
+}
+</script>
+<!-- seo:end -->
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <img class="icon" src="../../assets/countdown/icon.png" alt="「倒计时 Widget：纪念日提醒」App 图标" width="92" height="92">
+    <h1>带小组件的倒数日，免费，事件不限量。</h1>
+    <p class="tagline">距离高考、春节、旅行、婚礼还有几天？主屏幕和锁屏的小组件直接告诉你——全尺寸，免费。事件想建多少建多少：没有上限，以后也不会有。</p>
+    <a class="cta" href="https://apps.apple.com/cn/app/id6799846628">在 App Store 下载</a>
+    <p class="meta">免费 · iPhone 和 iPad · iOS 17 及以上 · 不用账号 · 永远无广告 · <a href="../" hreflang="en" lang="en">English</a></p>
+  </section>
+
+  <section class="shots">
+    <img src="../../assets/countdown/home.jpg" alt="iPhone 主屏幕上的倒数日小组件" loading="lazy">
+    <img src="../../assets/countdown/detail.jpg" alt="全屏倒数日，显示剩余天数" loading="lazy">
+    <img src="../../assets/countdown/backdrops.jpg" alt="全屏背景选择器" loading="lazy">
+    <img src="../../assets/countdown/backups.jpg" alt="本机保留 30 天备份，一键还原" loading="lazy">
+  </section>
+
+  <h2>多数倒数日 App 做错的两件事</h2>
+  <p class="lede">小组件是倒数日 App 存在的全部意义，事件又是小组件存在的全部意义。多数 App 对前者收费、对后者限量。</p>
+  <table>
+    <thead><tr><th>&nbsp;</th><th>常见倒数日 App</th><th>这个</th></tr></thead>
+    <tbody>
+      <tr><td><strong>小组件</strong></td><td>锁在 Pro 里，或只有一种尺寸</td><td class="yes">全尺寸，主屏幕和锁屏，免费</td></tr>
+      <tr><td><strong>事件</strong></td><td>免费版 3～5 个</td><td class="yes">不限量，永久</td></tr>
+      <tr><td><strong>提醒</strong></td><td>Pro 功能</td><td class="yes">免费，当天和任意提前量</td></tr>
+      <tr><td><strong>你的数据</strong></td><td>更新出错或重装后就没了</td><td class="yes">每天本机备份，保留 30 天</td></tr>
+      <tr><td><strong>Pro 卖什么</strong></td><td>你本来就需要的功能</td><td class="yes">背景。没有任何让 App 运转的东西</td></tr>
+    </tbody>
+  </table>
+
+  <h2>大家都在给什么倒数</h2>
+  <p class="lede">一键建好事件，要不要每年重复由你定。法定节假日已经在列表里。</p>
+  <div class="grid">
+    <div class="card">
+      <h3>高考、考研</h3>
+      <p>数字就在锁屏小组件上，不用打开 App。倒数 100 天、一周、当天早上各提醒一次。</p>
+    </div>
+    <div class="card">
+      <h3>春节、长假</h3>
+      <p>到除夕的倒数，每年自动重来。春节、清明、端午、中秋、国庆都按每年的实际日期排好了。</p>
+    </div>
+    <div class="card">
+      <h3>旅行</h3>
+      <p>距离出发还有几天。旅行结束后事件变成回忆，背面可以放照片、写几句。</p>
+    </div>
+    <div class="card">
+      <h3>婚礼</h3>
+      <p>一个不能错过的日子。当天全屏倒数，还有一张可以直接分享的卡片。</p>
+    </div>
+    <div class="card">
+      <h3>生日、宝宝</h3>
+      <p>生日每年重复；预产期是倒数，宝宝出生后改成正数：已经来到这个世界多少天。</p>
+    </div>
+    <div class="card">
+      <h3>纪念日、在一起的天数</h3>
+      <p>「在一起多少天」是正数日，从那一天起算；纪念日每年提醒，不会再忘。</p>
+    </div>
+  </div>
+
+  <h2>其余的</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>倒数，或者正数</h3>
+      <p>倒数到某一天，或从某一天起正数。按年、按月、按周或每隔几天重复。</p>
+    </div>
+    <div class="card">
+      <h3>什么都不离开你的手机</h3>
+      <p>每天把本机所有数据备份一次，任何有风险的操作前也一定先备份。一键还原。</p>
+    </div>
+    <div class="card">
+      <h3>过去的日子留着</h3>
+      <p>结束的倒数日汇成一条可以回看的时间线，每年等得最久的那一次记在旁边。</p>
+    </div>
+    <div class="card">
+      <h3>那一刻本身</h3>
+      <p>还剩 100 天、一周，或当天早上，App 打开就是全屏的数字，还递给你一张值得分享的卡片。</p>
+    </div>
+    <div class="card">
+      <h3>一键就绪</h3>
+      <p>36 个现成事件，各自带好合适的重复和提醒。200 个手绘图标和整个 emoji 键盘。</p>
+    </div>
+    <div class="card">
+      <h3>把你的事件带过来</h3>
+      <p>从日历、表格或别的倒数日 App 导入，随时导出。iCloud 同步，不用注册账号。</p>
+    </div>
+  </div>
+
+<!-- faq:start -->
+  <h2 id="faq">常见问题</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>iPhone 上有真正免费的倒数日小组件 App 吗？</h3>
+      <p>有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 只解锁背景。</p>
+    </div>
+    <div class="card">
+      <h3>免费版能建多少个倒数日？</h3>
+      <p>没有上限。多数倒数日 App 把免费版卡在 3～5 个事件；这个 App 在任何档位都不设上限。</p>
+    </div>
+    <div class="card">
+      <h3>能给高考、春节、旅行倒数吗？</h3>
+      <p>能。一键新建事件，选好要不要每年重复，当天和你想要的任何提前量都会收到提醒。中国的法定节假日已经在列表里。</p>
+    </div>
+    <div class="card">
+      <h3>能算某一天已经过去了多少天吗？</h3>
+      <p>能。任何事件都可以倒数到某一天，也可以从某一天开始正数；重复可以按年、按月、按周或每隔几天。</p>
+    </div>
+    <div class="card">
+      <h3>App 更新出错或者重装了，我的倒数日会怎样？</h3>
+      <p>App 每天在本机备份一次全部数据，任何有风险的操作前也一定先备份。保留 30 天历史，任何一份备份一键还原。iCloud 同步可用，不需要账号。</p>
+    </div>
+    <div class="card">
+      <h3>Pro 在中国区多少钱，解锁什么？</h3>
+      <p>Pro 解锁 122 款背景中的 90 款，每月上新。¥68 一年（含 7 天免费试用）、¥12 一个月，或 ¥98 一次买断。倒数日、提醒和小组件有没有 Pro 都完全一样。</p>
+    </div>
+    <div class="card">
+      <h3>需要账号或联网吗？</h3>
+      <p>不需要账号，不用注册。App 离线可用；开启 iCloud 同步时用的是你自己的 Apple 账户。</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+
+  <div class="band">
+    <h2 style="margin-top:0">关于 Pro</h2>
+    <p>Pro 卖的是好看，不是功能。它解锁 Pro 背景——122 款里的 90 款——每月上新。订阅期间解锁的背景永远归你；取消订阅只是不再收到新的。倒数日、提醒和小组件有没有订阅都完全一样。</p>
+    <p>¥68 一年（含 7 天免费试用），或 ¥12 一个月。一次性买断 ¥98，不续费。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">支持</h2>
+    <p>问题、建议，或购买上的麻烦？写信到 <a href="mailto:qinqiangji@gmail.com?subject=Countdown">qinqiangji@gmail.com</a>（中文或英文都行）。每封都会看，通常两个工作日内回复。</p>
+  </div>
+
+  <div class="band">
+    <h2 style="margin-top:0">其他 App</h2>
+    <div class="apps">
+      <a href="../../">BeforeGo — Packing List</a>
+      <a href="../../invoiceqr/">Invoice Maker</a>
+      <a href="../../dailycalorie/">DailyCalorie</a>
+      <a href="../../qrcodestudio/">QR Code Studio</a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="../privacy-policy/">隐私政策（英文）</a>
+    <a href="../terms-of-service/">服务条款（英文）</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown">联系</a>
+    <p style="margin-top:18px">Countdown 是一款独立 App，由一个开发者制作。</p>
+  </footer>
+
+</main>
+</body>
+</html>
