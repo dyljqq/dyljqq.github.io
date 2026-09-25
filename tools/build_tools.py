@@ -349,7 +349,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 # 7. 发票模板
 PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-26",
   "title": "Free Invoice Template — fill in, print or save as PDF (no sign-up)", "crumb": "Invoice template",
-  "description": "A free invoice template you fill in right on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up, nothing uploaded.",
+  "description": "A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.",
   "hub_title": "Free invoice template", "hub_desc": "Fill it in on the page, totals add up by themselves, print or save as PDF.",
   "js": [INVOICE_JS], "faq": [
     ("Is this invoice template really free?", "Yes. Everything happens in your browser: nothing is uploaded, there is no account and no watermark. Fill in the fields, then print or save as PDF."),
@@ -436,7 +436,7 @@ PACK = {"base": {
   "backpacking": [["Clothes", ["Quick-dry clothes", "Rain shell", "Sandals + hiking shoes"]], ["Extras", ["Padlock", "Microfibre towel", "Earplugs and eye mask", "Sewing kit", "Dry bag", "Laundry detergent sheets"]]]}}
 
 PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplication", "app": "beforego", "published": "2026-09-26",
-  "title": "Packing List Generator — free travel checklist you can tick off and print", "crumb": "Packing list",
+  "title": "Packing List Generator — free checklist you can tick off and print", "crumb": "Packing list",
   "description": "Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.",
   "hub_title": "Packing list generator", "hub_desc": "Pick trip type and length, get a checklist you can tick, print or copy.",
   "js": [PACK_JS], "faq": [
@@ -517,7 +517,7 @@ def best_page():
 <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>"""
     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
             "title": "Best Countdown Widget Apps for iPhone (2026) — free tiers compared", "crumb": "Best countdown widget apps",
-            "description": "Seven iPhone countdown widget apps compared on what the free tier includes, which widgets cost money, repeats, reminders and sync — from their App Store listings, September 2026.",
+            "description": "Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.",
             "hub_title": "Best countdown widget apps for iPhone (2026)", "hub_desc": "Seven apps compared on free tier, widgets, repeats, reminders and sync.",
             "items": [{"name": b["name"], "url": ("https://apps.apple.com/us/app/id%d" % b["id"])} for b in BEST],
             "faq": [

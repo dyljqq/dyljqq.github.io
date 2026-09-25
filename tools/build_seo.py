@@ -269,6 +269,15 @@ def org_jsonld():
             "sameAs": list(dict.fromkeys(([DEV_URL] if DEV_URL else []) +
                                          [u for u in (store_url(a) for a in APPS) if u]))}
 
+def meta_desc(s, limit=160):
+    """meta description 按句子截到 160 字内；JSON-LD 里仍用全文。CJK 短句不动。"""
+    if len(s) <= limit: return s
+    out = ""
+    for part in re.split(r"(?<=[.!?。！？])\s+", s):
+        if len(out) + len(part) + 1 > limit: break
+        out = (out + " " + part).strip()
+    return out or s[:limit].rsplit(" ", 1)[0]
+
 def head_block(url, app, kind):
     is_product = kind == "product"
     canonical = f"{ORIGIN}{url}"
@@ -282,6 +291,7 @@ def head_block(url, app, kind):
         desc = f"{label} for {app['name']}. {app['oneLiner']}"
         img = asset(app["icon"]) if app.get("icon") else None
 
+    desc = meta_desc(desc)
     lines = [START,
              '<meta name="description" content="%s">' % esc(desc),
              f'<link rel="canonical" href="{canonical}">']
@@ -423,7 +433,7 @@ def home_legal_html():
 
 def tool_head(tp):
     url, lang = tp["path"], tp["lang"]; canonical = f"{ORIGIN}{url}"
-    title, desc = tp["title"], tp["description"]; img = asset(HOME["ogImage"])
+    title, desc = tp["title"], meta_desc(tp["description"]); img = asset(HOME["ogImage"])
     lines = [START, '<meta name="description" content="%s">' % esc(desc), f'<link rel="canonical" href="{canonical}">',
              '<meta property="og:type" content="%s">' % ("article" if tp["kind"] == "Article" else "website"),
              '<meta property="og:site_name" content="%s">' % esc(BRAND), '<meta property="og:title" content="%s">' % esc(title),
@@ -434,7 +444,7 @@ def tool_head(tp):
     hub = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
     page = {"@context": "https://schema.org", "@type": tp["kind"], "@id": f"{canonical}#page", "url": canonical, "name": title,
             "headline": title, "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{ORIGIN}/#website"},
-            "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True}
+            "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True, "image": img}
     if tp.get("published"):
         page["datePublished"] = tp["published"]; page["dateModified"] = git_lastmod(ROOT / url.strip("/") / "index.html")
     if tp["kind"] == "WebApplication":
