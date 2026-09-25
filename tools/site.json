@@ -7,7 +7,11 @@
     "同一个实体，写成简称（比如 'Invoice QR Studio'）等于两个页面互相不认识。",
     "",
     "live=false 的 app 还没上架：不进 sitemap、页面加 noindex、不生成 App Store 链接",
-    "（链到未发布的 id 会 404）。上架当天把 live 改成 true 重跑脚本即可。"
+    "（链到未发布的 id 会 404）。上架当天把 live 改成 true 重跑脚本即可。",
+    "",
+    "首页卡片文案（apps[].home）不另写：tagline = 该 app 美区 App Store 副标题，blurb = 美区描述的开头段落，",
+    "都是逐字照抄（2026-09-25 现查：asc localizations list --type app-info / itunes lookup）。",
+    "商店文案改了就回来同步这里，别在这里改出第二套说法。label 是站内短名，storeNameEn 只给中文产品页的 app 用。"
   ],
   "site": {
     "origin": "https://dyljqq.github.io",
@@ -78,8 +82,8 @@
       "home": {
         "order": 2,
         "label": "BeforeGo",
-        "tagline": "From a travel post to a day-by-day plan.",
-        "blurb": "An AI itinerary planner and packing list app. Screenshot a travel post, paste a link or type your plans, and BeforeGo turns it into a day-by-day trip plan — while a packing list writes itself from your destination and dates."
+        "tagline": "Trip plans from screenshots",
+        "blurb": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates."
       }
     },
     {
@@ -138,8 +142,8 @@
       "home": {
         "order": 1,
         "label": "Countdown",
-        "tagline": "Every day that matters, on your Home Screen.",
-        "blurb": "A countdown widget app for iPhone. Unlimited events, recurring birthdays and anniversaries, reminders, and every widget size on the Home Screen and Lock Screen — all free. Syncs with iCloud, no account."
+        "tagline": "Days to Go & Memories to Keep",
+        "blurb": "A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number."
       }
     },
     {
@@ -659,8 +663,8 @@
       "home": {
         "order": 3,
         "label": "Invoice Maker",
-        "tagline": "Send the invoice. Get paid by QR.",
-        "blurb": "An invoice maker for freelancers and small businesses. Pick from 100+ templates, send PDF invoices, estimates and quotes, and add a payment QR code so clients can pay faster. See what is paid, unpaid and overdue."
+        "tagline": "Quote, receipt & PDF generator",
+        "blurb": "The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes."
       }
     },
     {
@@ -692,8 +696,8 @@
       "home": {
         "order": 4,
         "label": "DailyCalorie",
-        "tagline": "See what is left, not what is gone.",
-        "blurb": "A calorie counter and food diary you fill in with your camera. Snap your plate and get the dish, the portion, the calories and the macros — protein, carbs and fat — in seconds. The day shows how many calories you have left."
+        "tagline": "Calorie Budget & AI Food Scan",
+        "blurb": "DailyCalorie is a calorie counter and food diary you fill in with your camera. Most calorie apps show you what you have eaten. DailyCalorie shows you what is left."
       }
     },
     {
@@ -754,8 +758,8 @@
       "home": {
         "order": 5,
         "label": "QR Studio",
-        "tagline": "A QR code people want to scan.",
-        "blurb": "A custom QR code generator and scanner. Pick colours, dot shapes and gradients, put your logo in the middle or set the code into one of 18 illustrated scenes — and it checks every time that the code still scans."
+        "tagline": "QR scanner, generator & design",
+        "blurb": "Design a QR code people actually want to scan — and one that always scans. Most QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads."
       }
     },
     {
@@ -801,8 +805,8 @@
       "home": {
         "order": 6,
         "label": "Word Beast",
-        "tagline": "Point. Snap. Learn the word.",
-        "blurb": "An English vocabulary app for kids. Point the camera at anything and the AI tells you the English word, with phonetics, meaning and an example sentence to listen to. 1,671 words and sentences across 271 levels; core lessons work offline.",
+        "tagline": "Snap it. Learn it. Say it.",
+        "blurb": "Point the camera at anything — an apple, a backpack, the dog — and Word Beast's AI tells you what it's called in English, with phonetics, meaning and an example sentence you can listen to and read aloud. Snap a page of English homework to see which answers deserve a second look.",
         "storeNameEn": "Word Beast: AI Photo Words",
         "hreflang": "zh-CN"
       }
@@ -833,8 +837,8 @@
       "home": {
         "order": 7,
         "label": "Repdex",
-        "tagline": "Log the set. Close the app.",
-        "blurb": "A gym workout tracker and strength training log. 1,324 exercises with animations and step-by-step instructions, all offline. Edit weight and reps right on the workout screen; tick a set and the rest timer starts."
+        "tagline": "Lifting Log & Exercise Library",
+        "blurb": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time."
       }
     },
     {
