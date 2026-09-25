@@ -1,4 +1,10 @@
-tools
+/tools/*.py
+/tools/*.json
+/tools/store/
+/tools/i18n/
+/tools/home/
+/tools/__pycache__/
+/tools/_style.html
 .git
 *.md
 .claude
