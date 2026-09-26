@@ -51,30 +51,34 @@ def campaign_url(app_id, ct, cc=None):
 def store_url(app):
     return f"https://apps.apple.com/app/id{app['appId']}" if app.get("live") and app.get("appId") else None
 
+def _lastmod_norm(t: str) -> str:
+    """只比 <title> 和 <body>，去掉 <style> 和日期串：head 里的 SEO 块是本脚本后补的，
+    只改样式或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）"""
+    parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
+    return re.sub(r"\d{4}-\d{2}-\d{2}", "", re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S))
+
 def git_lastmod(path: Path, text: str | None = None) -> str:
-    """用 git 里这个文件最后一次真实提交的日期做 lastmod，不用构建时间——
-    每次构建都刷新 lastmod 等于告诉爬虫全站都变了，几轮之后它就不信了。
-    text＝这次构建写出的最终内容（--check 时文件没落盘，要靠它）。"""
+    """lastmod＝这个页面正文最后一次真正变化的那次提交的日期，不用构建时间，也不用「最后一次提交」——
+    每次构建都刷新、或者一次纯 CSS 提交就刷新全站，等于告诉爬虫全站都变了，几轮之后它就不信了。
+    text＝这次构建写出的最终内容（--check 时文件没落盘，要靠它）。日期一律按本地时区，和 date.today() 同口径。"""
+    today = date.today().isoformat()
     try:
         rel = str(path.relative_to(ROOT))
-        cur = text if text is not None else path.read_text(encoding="utf-8")
-        head = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, text=True, timeout=10)
-        if head.returncode != 0:
-            return date.today().isoformat()          # 新页面
-        # 只改了样式表或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）
-        # 只比 <title> 和 <body>：head 里的 SEO 块是本脚本后补的，补之前的半成品不能拿来比
-        def norm(t):
-            parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
-            return re.sub(r"\d{4}-\d{2}-\d{2}", "", re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S))
-        if norm(cur) != norm(head.stdout):
-            return date.today().isoformat()          # 这次发布会更新它：用今天，免得修改日期早于发布日期
-        out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel],
-                             cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
-        if out:
-            return datetime.fromisoformat(out).astimezone(timezone.utc).date().isoformat()
+        cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"))
+        revs = [l.split(" ", 1) for l in subprocess.run(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
+                capture_output=True, text=True, timeout=10).stdout.split("\n") if l.strip()]
+        newer = cur
+        for i, (h, when) in enumerate(revs):
+            v = subprocess.run(["git", "show", f"{h}:{rel}"], cwd=ROOT, capture_output=True, text=True, timeout=10)
+            v = _lastmod_norm(v.stdout) if v.returncode == 0 else None
+            if v != newer:                       # 比它新的那一版（或这次构建）正文变了
+                return today if i == 0 else datetime.fromisoformat(revs[i - 1][1]).astimezone().date().isoformat()
+            newer = v
+        if revs:
+            return datetime.fromisoformat(revs[-1][1]).astimezone().date().isoformat()
     except Exception:
         pass
-    return date.today().isoformat()
+    return today
 
 def variants_of(app):
     """同一个 app 的其它语言页：site.json 里 variantOf 指向主条目 key 的条目。
