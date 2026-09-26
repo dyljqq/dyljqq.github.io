@@ -29,7 +29,10 @@
   {
    "shot": "10",
    "title": "Your days, kept",
-   "text": "Every day the app takes a snapshot of all your events on this device, and always before anything risky: thirty days of history, one tap to restore, and nothing leaves your phone."
+   "text": "Every day the app takes a snapshot of all your events on this device, and always before anything risky: thirty days of history, one tap to restore, and nothing leaves your phone.",
+   "skip": [
+    "th"
+   ]
   },
   {
    "shot": "06",

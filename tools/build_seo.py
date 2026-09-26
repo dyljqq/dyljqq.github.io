@@ -416,19 +416,22 @@ def home_card(a, lang):
 
 GLOBE = ('<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" '
          'stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg>')
-SWITCH_CSS = ('<style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;'
-  'font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}'
+SWITCH_CSS = ('<style>'   # 参照 GoFasting 官网：页头右上角「EN ⌄」小按钮 + 白色圆角下拉（09-26 用户要求，底部语言列表已去掉）
+  '.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;'
+  'font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}'
   '.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}'
-  '.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;'
-  'list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}'
-  '.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}'
+  '.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}'
+  '.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;'
+  'border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}'
+  '.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}'
   '.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}'
-  '.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}'
-  '.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}'
-  '.lang-switch summary{padding:9px 10px}}</style>')
+  '.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}'
+  '@media (max-width:760px){.lang-switch summary{padding:8px 10px 8px 12px}}</style>')
+CHEVRON = ('<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" '
+           'stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg>')
 SWITCH_JS = ('<script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach('
              'function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>')
-SHORT = {"zh-Hans": "简", "zh-Hant": "繁", "es-MX": "MX", "pt-BR": "PT"}
+SHORT = {"zh-Hans": "简中", "zh-Hant": "繁中", "es-MX": "ES-MX", "pt-BR": "PT-BR"}
 
 def lang_switch(current, options, extra=None):
     """页头语言切换：<details> 下拉，全是真实 <a href>，爬虫顺着能走到每个语言版本。options = [(lang, path)]，
@@ -444,8 +447,8 @@ def lang_switch(current, options, extra=None):
                          for l, p, lb in extra["links"])
     code = SHORT.get(current, current.split("-")[0].upper())
     return ("<!-- lang:start -->\n  " + SWITCH_CSS +
-            f'<details class="lang-switch"><summary>{GLOBE}<span class="ln-full">{esc_text(bp.NATIVE.get(current, current))}</span>'
-            f'<span class="ln-code">{esc_text(code)}</span></summary><ul>{items}</ul></details>' + SWITCH_JS + "\n  <!-- lang:end -->")
+            f'<details class="lang-switch"><summary title="{esc(bp.NATIVE.get(current, current))}"><span>{esc_text(code)}</span>{CHEVRON}</summary>'
+            f'<ul>{items}</ul></details>' + SWITCH_JS + "\n  <!-- lang:end -->")
 
 def fill_lang(html, current, options, extra=None):
     return re.sub(r"<!-- lang:start -->.*?<!-- lang:end -->", lambda m: lang_switch(current, options, extra), html, count=1, flags=re.S)

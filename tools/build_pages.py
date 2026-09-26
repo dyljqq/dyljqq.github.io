@@ -108,6 +108,8 @@ def feature_shot(f, s, lang):
     """功能块配哪张截图：有 key 就按文件名关键词找（各语言商店截图的编号不一定一样——BeforeGo 日文/简中的 07/09 互换、10 是品牌图），
     没有 key 才按编号；该语言没有这张图就返回 None（这一块在该语言不出现）。"""
     names = [(u, u.rstrip("/").split("/")[-2]) for u in s["screenshots"]]
+    if lang in f.get("skip", []):          # 该语言商店这张素材不对（如泰语 10 号拍的不是备份界面），这一块在该语言不出
+        return None
     if f.get("key"):
         return next((u for u, n in names if f["key"] in n), None)
     num = f.get("override", {}).get(lang, f["shot"])
@@ -132,7 +134,7 @@ def highlights(a, s, lang):
         if not u:
             continue
         rows.append(f'    <div class="hl"><figure><img loading="lazy" decoding="async" src="{cdn(u, 460)}" '
-                    f'srcset="{cdn(u, 460)} 460w, {cdn(u, 920)} 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" '
+                    f'srcset="{cdn(u, 460)} 460w, {cdn(u, 920)} 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="999" '
                     f'alt="{esc(t["title"])}"></figure><div><h3>{esc(t["title"])}</h3><p>{esc(t["text"])}</p></div></div>')
     if not rows:
         return ""
@@ -343,8 +345,8 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
-.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
-.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
 .news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
 .guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
@@ -354,7 +356,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 """
 
@@ -484,13 +486,7 @@ def render(a):
   <!-- faq:end -->
 </section>
 
-{guides(p, lang)}<section class="sec" id="languages" aria-labelledby="h-langs">
-  <p class="label" id="h-langs">{esc(T("h_languages"))}</p>
-  <ul class="langs">
-{langs}
-  </ul>
-</section>
-
+{guides(p, lang)}
 <section class="sec" id="more" aria-labelledby="h-more">
   <h2 id="h-more">{esc(T("h_other"))}</h2>
   <div class="others">

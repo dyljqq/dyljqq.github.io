@@ -199,7 +199,7 @@ def shell(pg, body):
 {faq_html(pg["faq"], lang) if pg.get("faq") else ""}
 {app_card(pg["app"], lang) if pg.get("app") else ""}
 {ask_ai(ORIGIN + pg["path"], lang)}
-<p style="margin:28px 0 56px;font-size:14px"><a href="{ts(lang, 'other_lang_href')}" hreflang="{'pt-BR' if lang == 'en' else 'en'}">{esc(ts(lang, 'other_lang'))} →</a></p>
+<div style="height:48px"></div>
 </main>
 <footer><div class="wrap"><p>go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{home}">{esc(T("nav_all_apps"))}</a></p>{bp.social_html(lang)}</div></footer>
 {scripts}
