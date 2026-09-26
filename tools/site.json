@@ -1170,6 +1170,7 @@
       "key": "invoiceqr",
       "path": "/invoiceqr/",
       "live": true,
+      "heroPos": "50% 75%",
       "appId": "6790383156",
       "name": "Smart Invoice & Estimate Maker",
       "shortName": "Invoice Maker",

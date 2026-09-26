@@ -322,8 +322,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -356,7 +356,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 """
 
@@ -394,8 +394,10 @@ def render(a):
                  f'aria-label="{esc(T("video_label", name=name))}"><source src="{video}" type="video/mp4"></video>'
                  f'<button type="button" class="play" aria-label="{esc(T("video_label", name=name))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>')
     elif shots:
+        # 截图上沿留白各 app 不一样：InvoiceQR 按 70% 会切到状态栏（09-27 评审），site.json 的 heroPos 单独调
+        pos = f' style="object-position:{parent_of(a)["heroPos"]}"' if parent_of(a).get("heroPos") else ""
         media = (f'<div class="hero-media"><img src="{cdn(hero_shot, 460)}" srcset="{cdn(hero_shot, 460)} 460w, {cdn(hero_shot, 920)} 920w" '
-                 f'sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="{esc(T("screenshot_alt", name=name, n=1))}" fetchpriority="high"></div>')
+                 f'sizes="(max-width:760px) 86vw, 420px" width="460" height="999" alt="{esc(T("screenshot_alt", name=name, n=shots.index(hero_shot) + 1))}" fetchpriority="high"{pos}></div>')
 
     shot_items = "\n".join(
         f'      <li><img loading="lazy" decoding="async" src="{cdn(u, 460)}" srcset="{cdn(u, 460)} 460w, {cdn(u, 920)} 920w" '
@@ -438,7 +440,7 @@ def render(a):
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-{f'<link rel="preload" as="image" href="{poster}">' if video else (f'<link rel="preload" as="image" href="{cdn(hero_shot, 460)}" imagesrcset="{cdn(hero_shot, 460)} 460w, {cdn(hero_shot, 920)} 920w" imagesizes="(max-width:760px) 72vw, 360px">' if shots else '')}
+{f'<link rel="preload" as="image" href="{poster}">' if video else (f'<link rel="preload" as="image" href="{cdn(hero_shot, 460)}" imagesrcset="{cdn(hero_shot, 460)} 460w, {cdn(hero_shot, 920)} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if shots else '')}
 <style>{CSS}</style>
 </head>
 <body>

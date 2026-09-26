@@ -162,7 +162,7 @@ def shell(pg, body):
     crumb_html = "".join(f'<li>{f"<a href={chr(34)}{h}{chr(34)}>{esc(l)}</a>" if h else esc(l)}</li>' for l, h in crumbs)
     meta = ""
     if pg.get("published"):
-        meta = f'<p class="meta">{esc(ts(lang, "published"))} {pg["published"]} · {esc(ts(lang, "updated"))} {TODAY.isoformat()} · go ka</p>'
+        meta = f'<p class="meta">{esc(ts(lang, "published"))} {pg["published"]} · {esc(ts(lang, "updated"))} {pg.get("updated", pg["published"])} · go ka</p>'
     scripts = "".join(f"<script>{js}</script>" for js in pg.get("js", []))
     return f"""<!DOCTYPE html>
 <html lang="{lang}">

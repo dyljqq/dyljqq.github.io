@@ -40,8 +40,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -74,7 +74,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 
 .crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
@@ -150,7 +150,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-26",
-  "dateModified": "2026-09-26",
+  "dateModified": "2026-09-27",
   "about": {
     "@id": "https://beforego.art/countdown/#app"
   }
@@ -210,7 +210,7 @@ html[lang^=th] *{letter-spacing:0!important}
       "name": "Quantos dias faltam para o Ano-Novo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Em 26/09/2026 faltavam 97 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
+        "text": "Em 27/09/2026 faltavam 96 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
       }
     },
     {
@@ -247,9 +247,9 @@ html[lang^=th] *{letter-spacing:0!important}
 <h1>Quantos dias faltam para o Réveillon 2027?</h1>
 <p class="lede">A virada do ano é na <strong>quinta-feira, 31 de dezembro de 2026</strong>, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta. O Carnaval 2027 vai de <strong>sábado, 6</strong> a <strong>terça-feira, 9 de fevereiro</strong>. Contadores ao vivo abaixo.</p>
 <h2>Réveillon — 31 de dezembro de 2026</h2>
-<div class="count" data-date="2026-12-31"><span data-n>96</span><small data-unit>dias</small></div><p class="count-sub">Réveillon · quinta-feira, 31 de dezembro de 2026 · <span data-weeks>13 semanas + 5 dias</span></p>
+<div class="count" data-date="2026-12-31"><span data-n>95</span><small data-unit>dias</small></div><p class="count-sub">Réveillon · quinta-feira, 31 de dezembro de 2026 · <span data-weeks>13 semanas + 4 dias</span></p>
 <h2>Carnaval 2027 — terça-feira, 9 de fevereiro</h2>
-<div class="count" data-date="2027-02-09"><span data-n>136</span><small data-unit>dias</small></div><p class="count-sub">Terça de Carnaval · terça-feira, 9 de fevereiro de 2027 · <span data-weeks>19 semanas + 3 dias</span></p>
+<div class="count" data-date="2027-02-09"><span data-n>135</span><small data-unit>dias</small></div><p class="count-sub">Terça de Carnaval · terça-feira, 9 de fevereiro de 2027 · <span data-weeks>19 semanas + 2 dias</span></p>
 <h2>Datas de uma vez</h2>
 <div class="tbl"><table><tbody>
 <tr><th>Réveillon</th><td>quinta-feira, 31 de dezembro de 2026</td></tr>
@@ -258,19 +258,19 @@ html[lang^=th] *{letter-spacing:0!important}
 <tr><th>Terça-feira de Carnaval</th><td>9 de fevereiro de 2027</td></tr>
 <tr><th>Quarta-feira de Cinzas</th><td>10 de fevereiro de 2027</td></tr>
 <tr><th>Páscoa 2027</th><td>domingo, 28 de março de 2027</td></tr>
-<tr><th>Dias que restam em 2026</th><td>97 (em 26/09/2026, contando hoje)</td></tr>
+<tr><th>Dias que restam em 2026</th><td>96 (em 27/09/2026, contando hoje)</td></tr>
 </tbody></table></div>
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome «Réveillon».</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>
-<p class="meta">Publicado em 2026-09-26 · Atualizado em 2026-09-26 · go ka</p>
+<p class="meta">Publicado em 2026-09-26 · Atualizado em 2026-09-27 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Perguntas frequentes</h2><div class="grid">
     <div class="card"><h3>Em que dia da semana cai o Réveillon 2026/2027?</h3><p>A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana.</p></div>
     <div class="card"><h3>Quando é o Carnaval 2027?</h3><p>A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes.</p></div>
-    <div class="card"><h3>Quantos dias faltam para o Ano-Novo?</h3><p>Em 26/09/2026 faltavam 97 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre.</p></div>
+    <div class="card"><h3>Quantos dias faltam para o Ano-Novo?</h3><p>Em 27/09/2026 faltavam 96 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre.</p></div>
     <div class="card"><h3>Como coloco a contagem do Réveillon na Tela Bloqueada?</h3><p>Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos.</p></div>
 </div></section>
 <aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">Leve para o seu iPhone</p><b>Countdown: Contagem regressiva</b><p>Uma contagem regressiva que nunca perde os seus dias — e nunca deixa um widget de fora.</p><a class="btn" href="https://apps.apple.com/br/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Baixar na App Store</a> &nbsp; <a href="/countdown/pt-br/" style="font-size:14px">Countdown →</a></div></aside>

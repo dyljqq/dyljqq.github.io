@@ -51,14 +51,23 @@ def campaign_url(app_id, ct, cc=None):
 def store_url(app):
     return f"https://apps.apple.com/app/id{app['appId']}" if app.get("live") and app.get("appId") else None
 
-def git_lastmod(path: Path) -> str:
+def git_lastmod(path: Path, text: str | None = None) -> str:
     """用 git 里这个文件最后一次真实提交的日期做 lastmod，不用构建时间——
-    每次构建都刷新 lastmod 等于告诉爬虫全站都变了，几轮之后它就不信了。"""
+    每次构建都刷新 lastmod 等于告诉爬虫全站都变了，几轮之后它就不信了。
+    text＝这次构建写出的最终内容（--check 时文件没落盘，要靠它）。"""
     try:
         rel = str(path.relative_to(ROOT))
-        # 有未提交改动的文件＝这次发布会更新它：用今天，免得修改日期早于发布日期（09-26 评审）
-        if subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip():
-            return date.today().isoformat()
+        cur = text if text is not None else path.read_text(encoding="utf-8")
+        head = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=ROOT, capture_output=True, text=True, timeout=10)
+        if head.returncode != 0:
+            return date.today().isoformat()          # 新页面
+        # 只改了样式表或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）
+        # 只比 <title> 和 <body>：head 里的 SEO 块是本脚本后补的，补之前的半成品不能拿来比
+        def norm(t):
+            parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
+            return re.sub(r"\d{4}-\d{2}-\d{2}", "", re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S))
+        if norm(cur) != norm(head.stdout):
+            return date.today().isoformat()          # 这次发布会更新它：用今天，免得修改日期早于发布日期
         out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel],
                              cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
         if out:
@@ -148,12 +157,13 @@ Sitemap: {ORIGIN}/sitemap.xml
 """
 
 # ---------------------------------------------------------------- sitemap.xml
-def build_sitemap():
+def build_sitemap(final=None):
+    final = final or {}
     rows = []
     for url, path, app, kind in pages():
         if kind in ("product", "legal") and not app.get("live"):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
-        rows.append((url, git_lastmod(path), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
+        rows.append((url, git_lastmod(path, final.get(path)), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
     rows.sort(key=lambda r: (r[0] != "/", r[0]))
     body = "\n".join(
         f"  <url>\n    <loc>{ORIGIN}{u}</loc>\n    <lastmod>{m}</lastmod>\n"
@@ -665,7 +675,14 @@ def patch_tool(path: Path, tp):
     for pat in OWNED:
         head = re.sub(pat, "", head, flags=re.S | re.I)
     opts, extra = tool_options(tp)
-    return fill_lang(head.rstrip() + "\n" + tool_head(tp) + rest, tp["lang"], opts, extra)
+    out = fill_lang(head.rstrip() + "\n" + tool_head(tp) + rest, tp["lang"], opts, extra)
+    if tp.get("published"):
+        # 修改日期要拿最终页面去比（tool_head 时语言菜单还没填，半成品必然和提交版不同），
+        # 再把 JSON-LD 和页面上的「Updated」统一成同一个日期，和 sitemap 同口径（09-27 评审）
+        d = git_lastmod(path, out)
+        out = re.sub(r'("dateModified": ")\d{4}-\d{2}-\d{2}"', rf'\g<1>{d}"', out)
+        out = re.sub(r'(<p class="meta">[^<]*?\d{4}-\d{2}-\d{2} · [^<]*?)\d{4}-\d{2}-\d{2}( · go ka</p>)', rf'\g<1>{d}\g<2>', out)
+    return out
 
 def patch_home(path: Path, lang="en"):
     html = path.read_text(encoding="utf-8")
@@ -759,10 +776,9 @@ def main():
             if not CHECK:
                 p.write_text(text, encoding="utf-8")
 
-    sitemap, n = build_sitemap()
     write("robots.txt", ROBOTS)
-    write("sitemap.xml", sitemap)
     write("llms.txt", build_llms())
+    final = {}
     for url, path, app, kind in pages():
         out = patch_home(path, app["lang"]) if kind == "home" else patch_tool(path, app) if kind == "tool" else patch(path, url, app, kind)
         if out is None:
@@ -770,7 +786,11 @@ def main():
             continue
         if '<html lang="fr"' in out[:300]:
             out = french_spacing(out)
+        final[path] = out
         write(str(path.relative_to(ROOT)), out)
+    # 页面写完再出 sitemap：lastmod 要拿最终内容去和上次提交比
+    sitemap, n = build_sitemap(final)
+    write("sitemap.xml", sitemap)
 
     print(f"sitemap: {n} 条 URL")
     print(("需要更新" if CHECK else "已写入") + f" {len(changed)} 个文件")

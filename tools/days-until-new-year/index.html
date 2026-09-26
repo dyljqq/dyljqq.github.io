@@ -40,8 +40,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -74,7 +74,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 
 .crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
@@ -150,7 +150,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-26",
-  "dateModified": "2026-09-26",
+  "dateModified": "2026-09-27",
   "about": {
     "@id": "https://beforego.art/countdown/#app"
   }
@@ -202,7 +202,7 @@ html[lang^=th] *{letter-spacing:0!important}
       "name": "How many days are left in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As of 26 September 2026 there were 97 days left in 2026, counting today. The counter on this page recalculates when you open it."
+        "text": "As of 27 September 2026 there were 96 days left in 2026, counting today. The counter on this page recalculates when you open it."
       }
     },
     {
@@ -246,9 +246,9 @@ html[lang^=th] *{letter-spacing:0!important}
 <article class="article">
 <h1>How many days until New Year 2027?</h1>
 <p class="lede">New Year's Day 2027 falls on <strong>Friday, 1 January 2027</strong>, so New Year's Eve is Thursday, 31 December 2026. The counter below updates every day.</p>
-<div class="count" data-date="2027-01-01"><span data-n>97</span><small data-unit>days</small></div><p class="count-sub">New Year 2027 · Friday, 1 January 2027 · <span data-weeks>13 weeks + 6 days</span></p>
+<div class="count" data-date="2027-01-01"><span data-n>96</span><small data-unit>days</small></div><p class="count-sub">New Year 2027 · Friday, 1 January 2027 · <span data-weeks>13 weeks + 5 days</span></p>
 <h2>New Year 2027 at a glance</h2>
-<div class="tbl"><table><tbody><tr><th>New Year&#x27;s Eve</th><td>Thursday, 31 December 2026</td></tr><tr><th>New Year&#x27;s Day</th><td>Friday, 1 January 2027</td></tr><tr><th>Lunar New Year 2027</th><td>Saturday, 6 February 2027 (Year of the Goat)</td></tr><tr><th>Days left in 2026</th><td>97 (as of 2026-09-26)</td></tr></tbody></table></div>
+<div class="tbl"><table><tbody><tr><th>New Year&#x27;s Eve</th><td>Thursday, 31 December 2026</td></tr><tr><th>New Year&#x27;s Day</th><td>Friday, 1 January 2027</td></tr><tr><th>Lunar New Year 2027</th><td>Saturday, 6 February 2027 (Year of the Goat)</td></tr><tr><th>Days left in 2026</th><td>96 (as of 2026-09-27)</td></tr></tbody></table></div>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
 <ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to Friday, 1 January 2027. Turn on <strong>Repeat yearly</strong> if you want it back next year.</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
@@ -256,11 +256,11 @@ html[lang^=th] *{letter-spacing:0!important}
 <ul><li>A countdown to midnight with the party address in the notes on the back of the event.</li><li>A count-up from 1 January for a new habit — the widget shows the streak in days.</li><li>One countdown for the first working day, so the holiday has a shape.</li></ul>
 <h2>New Year in the next few years</h2>
 <div class="tbl"><table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody><tr><td>2027</td><td>Friday, 1 January 2027</td><td>Friday</td></tr><tr><td>2028</td><td>Saturday, 1 January 2028</td><td>Saturday</td></tr><tr><td>2029</td><td>Monday, 1 January 2029</td><td>Monday</td></tr><tr><td>2030</td><td>Tuesday, 1 January 2030</td><td>Tuesday</td></tr></tbody></table></div>
-<p class="meta">Published 2026-09-26 · Updated 2026-09-26 · go ka</p>
+<p class="meta">Published 2026-09-26 · Updated 2026-09-27 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Questions people ask</h2><div class="grid">
     <div class="card"><h3>What day of the week is New Year&#x27;s Day 2027?</h3><p>Friday. New Year&#x27;s Eve 2026 is a Thursday and 1 January 2027 is a Friday, which makes a three-day weekend for many people.</p></div>
-    <div class="card"><h3>How many days are left in 2026?</h3><p>As of 26 September 2026 there were 97 days left in 2026, counting today. The counter on this page recalculates when you open it.</p></div>
+    <div class="card"><h3>How many days are left in 2026?</h3><p>As of 27 September 2026 there were 96 days left in 2026, counting today. The counter on this page recalculates when you open it.</p></div>
     <div class="card"><h3>When is Lunar New Year 2027?</h3><p>Saturday, 6 February 2027. It begins the Year of the Goat.</p></div>
     <div class="card"><h3>How do I keep a New Year countdown on my Lock Screen?</h3><p>Add 1 January 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.</p></div>
 </div></section>
