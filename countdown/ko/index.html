@@ -26,9 +26,13 @@ a{color:inherit}img,video,svg{display:block;max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
 .brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
-.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
 html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
 html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
 .nav a:hover{background:var(--cream)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
 .hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
@@ -38,8 +42,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -48,7 +52,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
-.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
 .feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
 .feat p{margin:0 0 10px;color:var(--muted)}
@@ -61,6 +65,10 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
@@ -68,54 +76,54 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
-<meta name="description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
-<link rel="canonical" href="https://goka-xi.vercel.app/countdown/ko/">
-<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/countdown/">
-<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/countdown/pt-br/">
-<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/countdown/de/">
-<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/countdown/fr/">
-<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/countdown/it/">
-<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/countdown/ja/">
-<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/countdown/ko/">
-<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/countdown/th/">
-<link rel="alternate" hreflang="zh-Hans" href="https://goka-xi.vercel.app/countdown/zh-hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/countdown/zh-hant/">
-<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/countdown/">
+<meta name="description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.">
+<link rel="canonical" href="https://beforego.art/countdown/ko/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/countdown/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/countdown/pt-br/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/countdown/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/countdown/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/countdown/it/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/countdown/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/countdown/ko/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/countdown/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/countdown/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/countdown/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/countdown/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="디데이 카운트다운 위젯 — 무료, 이벤트 무제한">
-<meta property="og:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
-<meta property="og:url" content="https://goka-xi.vercel.app/countdown/ko/">
-<meta property="og:image" content="https://goka-xi.vercel.app/assets/countdown/home.jpg">
+<meta property="og:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.">
+<meta property="og:url" content="https://beforego.art/countdown/ko/">
+<meta property="og:image" content="https://beforego.art/assets/countdown/home.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/countdown/home.jpg">
+<meta name="twitter:image" content="https://beforego.art/assets/countdown/home.jpg">
 <meta name="twitter:title" content="디데이 카운트다운 위젯 — 무료, 이벤트 무제한">
-<meta name="twitter:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.">
+<meta name="twitter:description" content="iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.">
 <meta name="apple-itunes-app" content="app-id=6799846628, affiliate-data=ct=web-countdown-app&amp;pt=128309253">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://goka-xi.vercel.app/countdown/ko/#app",
+  "@id": "https://beforego.art/countdown/ko/#app",
   "name": "카운트다운 위젯: 디데이",
   "alternateName": "카운트다운 위젯",
   "applicationCategory": "ProductivityApplication",
   "operatingSystem": "iOS 17.0 or later",
-  "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.",
-  "url": "https://goka-xi.vercel.app/countdown/ko/",
+  "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.",
+  "url": "https://beforego.art/countdown/ko/",
   "inLanguage": "ko",
   "author": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "publisher": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "offers": {
@@ -128,7 +136,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   "sameAs": [
     "https://apps.apple.com/app/id6799846628"
   ],
-  "image": "https://goka-xi.vercel.app/assets/countdown/icon.png",
+  "image": "https://beforego.art/assets/countdown/icon.png",
   "screenshot": [
     "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/7b/91/777b91f5-367d-13b2-3f62-bcf380ffce43/01-watch-it-closer.png/920x0w.webp",
     "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/63/98/f76398b0-3ef8-3592-243e-5b4228d01e63/02-turn-it-over.png/920x0w.webp",
@@ -141,8 +149,8 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     "@type": "VideoObject",
     "name": "카운트다운 위젯: 디데이 — app preview",
     "description": "소중한 날을 잃어버리지 않고, 위젯을 잠가 두지도 않는 디데이·카운트다운 앱입니다.",
-    "thumbnailUrl": "https://goka-xi.vercel.app/assets/countdown/preview/ko.jpg",
-    "contentUrl": "https://goka-xi.vercel.app/assets/countdown/preview/ko.mp4",
+    "thumbnailUrl": "https://beforego.art/assets/countdown/preview/ko.jpg",
+    "contentUrl": "https://beforego.art/assets/countdown/preview/ko.mp4",
     "uploadDate": "2026-09-25",
     "inLanguage": "ko"
   }
@@ -152,7 +160,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/countdown/ko/#faq",
+  "@id": "https://beforego.art/countdown/ko/#faq",
   "inLanguage": "ko",
   "mainEntity": [
     {
@@ -160,7 +168,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다."
+        "text": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경과 라이브 활동을 더합니다."
       }
     },
     {
@@ -168,7 +176,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "무료 버전에서 디데이를 몇 개까지 만들 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다."
+        "text": "제한이 없습니다. 어떤 플랜에서도 이벤트를 원하는 만큼 만들 수 있습니다."
       }
     },
     {
@@ -176,7 +184,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다."
+        "text": "쓸 수 있습니다. 이벤트를 만들고 매년 반복할지 정하면, 당일과 원하는 만큼 미리 알림을 받습니다. 생일부터 첫 출근까지 36가지 템플릿이 있고, 반복과 알림이 이미 맞춰져 있습니다."
       }
     },
     {
@@ -197,18 +205,18 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     },
     {
       "@type": "Question",
-      "name": "한국에서 Pro 가격은 얼마이고 무엇이 열리나요?",
+      "name": "Pro는 무엇이 열리고, 어떻게 구매하나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+        "text": "Pro는 전체 화면 배경 140가지 중 Pro 배경 88가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 연 배경은 계속 내 것으로 남습니다. 1.4.7 버전부터는 잠금 화면과 Dynamic Island에 고정하는 라이브 활동도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
       }
     },
     {
       "@type": "Question",
-      "name": "계정이나 인터넷 연결이 필요한가요?",
+      "name": "계정이 필요한가요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다."
+        "text": "계정도 가입도 필요 없습니다. iCloud 동기화를 켜면 본인의 Apple 계정이 쓰이고, 매일 백업은 iPhone 안에 저장됩니다."
       }
     }
   ]
@@ -220,12 +228,16 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </head>
 <body>
 <header class="wrap top">
-  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <a class="brand" href="/ko/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
-    <a href="/">모든 앱</a>
-    <a href="/countdown/privacy-policy/">개인정보</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Countdown Widget">지원</a>
+    <a href="/ko/">모든 앱</a>
+    <a href="/tools/">도구</a>
+    <a href="/blog/">블로그</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Countdown%20Widget">지원</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">한국어</span><span class="ln-code">KO</span></summary><ul><li><a href="/countdown/" hreflang="en" lang="en">English</a></li><li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/countdown/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/countdown/ko/" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main class="wrap">
@@ -237,9 +249,21 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store에서 다운로드</a>
     <ul class="chips"><li>무료로 다운로드</li><li>iPhone 및 iPad</li><li>iOS 17 이상</li><li>계정 불필요</li></ul>
   </div>
-  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/countdown/preview/ko.jpg" aria-label="카운트다운 위젯: 디데이 — 앱 미리보기"><source src="/assets/countdown/preview/ko.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+  <div class="hero-media"><video playsinline preload="none" poster="/assets/countdown/preview/ko.jpg" aria-label="카운트다운 위젯: 디데이 — 앱 미리보기"><source src="/assets/countdown/preview/ko.mp4" type="video/mp4"></video><button type="button" class="play" aria-label="카운트다운 위젯: 디데이 — 앱 미리보기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
 </section>
 
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">주요 기능</h2>
+  <div class="hls">
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/7b/91/777b91f5-367d-13b2-3f62-bcf380ffce43/01-watch-it-closer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/7b/91/777b91f5-367d-13b2-3f62-bcf380ffce43/01-watch-it-closer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/7b/91/777b91f5-367d-13b2-3f62-bcf380ffce43/01-watch-it-closer.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="그날이 다가오는 것을 보세요"></figure><div><h3>그날이 다가오는 것을 보세요</h3><p>중요한 날을 추가하고 홈 화면에 놓아, 그날이 가까워지는 것을 지켜보세요. 어떤 날까지 카운트다운하거나 어떤 날부터 카운트업할 수 있고, 매년·매월·매주·며칠마다 반복도 가능합니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4e/6a/f9/4e6af907-4928-d034-e085-7476ea2039e0/07-pick-your-widget.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4e/6a/f9/4e6af907-4928-d034-e085-7476ea2039e0/07-pick-your-widget.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4e/6a/f9/4e6af907-4928-d034-e085-7476ea2039e0/07-pick-your-widget.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="모든 위젯, 무료"></figure><div><h3>모든 위젯, 무료</h3><p>카운트다운 하나, 다음 목록, 스포트라이트, 이벤트별 타일, 모든 크기로 홈 화면과 잠금 화면에서 사용할 수 있습니다. 무제한 이벤트, 미리 알림, iCloud 동기화도 모두 무료입니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/2b/60/e12b605f-6786-f721-826d-9b24b266c81b/09-start-from-a-template.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/2b/60/e12b605f-6786-f721-826d-9b24b266c81b/09-start-from-a-template.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e1/2b/60/e12b605f-6786-f721-826d-9b24b266c81b/09-start-from-a-template.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="템플릿부터 시작"></figure><div><h3>템플릿부터 시작</h3><p>생일부터 첫 출근날까지 36가지 템플릿이 있고, 각각 알맞은 반복과 미리 알림이 이미 설정되어 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/63/98/f76398b0-3ef8-3592-243e-5b4228d01e63/02-turn-it-over.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/63/98/f76398b0-3ef8-3592-243e-5b4228d01e63/02-turn-it-over.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/63/98/f76398b0-3ef8-3592-243e-5b4228d01e63/02-turn-it-over.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="모든 이벤트의 뒷면"></figure><div><h3>모든 이벤트의 뒷면</h3><p>이벤트를 탭하면 그 이벤트만의 페이지로 뒤집힙니다. 몇 줄을 쓰고, 사진을 더하고, 목소리를 녹음해 그날의 이야기를 그날과 함께 남기고, 한 장의 이미지로 공유할 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/93/bc/1493bc3c-05dd-565d-4c47-ce3fb5253e74/04-dress-it-up.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/93/bc/1493bc3c-05dd-565d-4c47-ce3fb5253e74/04-dress-it-up.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/93/bc/1493bc3c-05dd-565d-4c47-ce3fb5253e74/04-dress-it-up.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="당신다운 모습으로"></figure><div><h3>당신다운 모습으로</h3><p>직접 그린 아이콘 200개, 이모지 키보드 전체, 전체 화면 배경 140가지 — 그중 22가지는 사진이고 88가지가 Pro입니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/af/98/a6af9850-59a1-0655-2e19-7a4814c0e549/10-keep-every-day-safe.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/af/98/a6af9850-59a1-0655-2e19-7a4814c0e549/10-keep-every-day-safe.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a6/af/98/a6af9850-59a1-0655-2e19-7a4814c0e549/10-keep-every-day-safe.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="당신의 날들을 그대로"></figure><div><h3>당신의 날들을 그대로</h3><p>매일 앱이 이 기기의 모든 이벤트를 스냅샷으로 저장하고, 위험한 작업 전에도 반드시 저장합니다. 30일치 기록, 한 번의 탭으로 복원, 그리고 아무것도 기기를 떠나지 않습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/6e/6a/a26e6ab2-a4eb-d4e9-9d18-d4323515ae25/06-keep-the-memories.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/6e/6a/a26e6ab2-a4eb-d4e9-9d18-d4323515ae25/06-keep-the-memories.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/6e/6a/a26e6ab2-a4eb-d4e9-9d18-d4323515ae25/06-keep-the-memories.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="지나간 날도 당신과 함께"></figure><div><h3>지나간 날도 당신과 함께</h3><p>지나간 날도 지우지 않습니다. 되돌아볼 수 있는 타임라인으로 쌓이고, 해마다 가장 오래 기다린 일이 그 옆에 적힙니다.</p></div></div>
+  </div>
+</section>
 <section class="sec" id="screenshots" aria-labelledby="h-screens">
   <h2 id="h-screens">스크린샷</h2>
   <ul class="shots">
@@ -257,7 +281,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">포함 내용</h2>
+  <h2 id="h-features">세부 사항 – App Store에 쓰인 대로</h2>
   <div class="feats">
     <div class="feat"><h3>모든 위젯, 무료</h3><ul><li>위젯 네 가지: 카운트다운 하나, 다가오는 일정 목록, 스포트라이트, 이벤트별 타일</li><li>홈 화면과 잠금 화면의 모든 크기 위젯</li><li>이벤트 개수 무제한 — 지금도, 앞으로도</li><li>어떤 날까지 세어 내려가거나, 어떤 날부터 세어 올라가거나</li><li>반복: 매년, 매월, 매주, 며칠마다</li><li>당일 알림, 그리고 원하는 만큼 앞당긴 알림</li><li>계정이 필요 없는 iCloud 동기화</li><li>캘린더, 스프레드시트, 다른 카운트다운 앱에서 가져오기 — 내보내기도 언제든지</li><li>광고 없음</li></ul></div>
     <div class="feat"><h3>당신의 날들을 그대로</h3><p>이 분야에서 가장 흔한 불만은 &quot;업데이트했더니 다 사라졌다&quot;입니다. 이 앱은 매일 이 기기에 모든 이벤트의 스냅샷을 저장하고, 위험한 작업 전에도 반드시 저장합니다. 30일치 기록, 한 번의 탭으로 복원, 그리고 아무것도 기기를 떠나지 않습니다. 지나간 날도 지우지 않습니다. 되돌아볼 수 있는 타임라인으로 쌓이고, 해마다 가장 오래 기다린 일이 그 옆에 적힙니다.</p></div>
@@ -269,21 +293,25 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <details class="fine"><summary>가격 및 구독 약관</summary><p>Countdown Pro는 자동 갱신 구독입니다. 7일 무료 체험이 포함된 연간 플랜과 월간 플랜의 가격은 구매 전에 앱에서 표시됩니다. 구매 확정 시 Apple 계정으로 결제됩니다. 현재 기간 종료 24시간 전까지 해지하지 않으면 자동으로 갱신되며, Apple 계정 설정에서 언제든지 관리하거나 해지할 수 있습니다. 또한 일회성 평생 이용 옵션도 있으며 자동으로 갱신되지 않습니다.</p></details>
 </section>
 
+<section class="sec" id="whats-new" aria-labelledby="h-new">
+  <h2 id="h-new">버전 1.4.8의 새로운 기능</h2>
+  <div class="news"><p>잠금 화면의 카드를 종이 위에 다시 그렸습니다.</p><h3>라이브 활동, 다시 그리다</h3><p>이벤트 페이지의 핀은 선 그림으로, 그 아래 열리는 메모는 종이 한 장으로, 잠금 화면 카드도 앱의 다른 부분과 같은 종이에서 잘라냈습니다. Countdown Pro 기능입니다.</p><h3>더 매끄러운 첫날</h3><p>템플릿을 고르면 저장하기 전에 날짜를 먼저 묻습니다. 첫 카운트다운을 만들면 바로 홈 화면 위젯을 놓는 길로 안내하고, 캘린더 칸에는 이번 달을 보여주는지, 다음에 올 일정인지 적어 두었습니다.</p><h3>그 밖에</h3><ul><li>탭한 이벤트가 열립니다. 더 이상 첫 번째 이벤트로 가지 않습니다</li><li>하루가 지나도 위젯이 놓이지 않았다면, 알림으로 위치를 알려드립니다</li></ul></div>
+</section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
   <h2 id="faq">자주 묻는 질문</h2>
   <div class="grid">
     <div class="card">
       <h3>iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?</h3>
-      <p>있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다.</p>
+      <p>있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경과 라이브 활동을 더합니다.</p>
     </div>
     <div class="card">
       <h3>무료 버전에서 디데이를 몇 개까지 만들 수 있나요?</h3>
-      <p>제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다.</p>
+      <p>제한이 없습니다. 어떤 플랜에서도 이벤트를 원하는 만큼 만들 수 있습니다.</p>
     </div>
     <div class="card">
       <h3>수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?</h3>
-      <p>쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다.</p>
+      <p>쓸 수 있습니다. 이벤트를 만들고 매년 반복할지 정하면, 당일과 원하는 만큼 미리 알림을 받습니다. 생일부터 첫 출근까지 36가지 템플릿이 있고, 반복과 알림이 이미 맞춰져 있습니다.</p>
     </div>
     <div class="card">
       <h3>지난 날로부터 며칠 지났는지도 셀 수 있나요?</h3>
@@ -294,42 +322,42 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       <p>앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다.</p>
     </div>
     <div class="card">
-      <h3>한국에서 Pro 가격은 얼마이고 무엇이 열리나요?</h3>
-      <p>Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다.</p>
+      <h3>Pro는 무엇이 열리고, 어떻게 구매하나요?</h3>
+      <p>Pro는 전체 화면 배경 140가지 중 Pro 배경 88가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 연 배경은 계속 내 것으로 남습니다. 1.4.7 버전부터는 잠금 화면과 Dynamic Island에 고정하는 라이브 활동도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다.</p>
     </div>
     <div class="card">
-      <h3>계정이나 인터넷 연결이 필요한가요?</h3>
-      <p>계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다.</p>
+      <h3>계정이 필요한가요?</h3>
+      <p>계정도 가입도 필요 없습니다. iCloud 동기화를 켜면 본인의 Apple 계정이 쓰이고, 매일 백업은 iPhone 안에 저장됩니다.</p>
     </div>
   </div>
   <!-- faq:end -->
 </section>
 
 <section class="sec" id="languages" aria-labelledby="h-langs">
-  <p class="label" id="h-langs">다른 언어로 된 이 페이지</p>
+  <p class="label" id="h-langs">다른 언어로 보기</p>
   <ul class="langs">
       <li><a href="/countdown/" hreflang="en" lang="en">English</a></li>
       <li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li>
       <li><a href="/countdown/fr/" hreflang="fr" lang="fr">Français</a></li>
       <li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li>
       <li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
-      <li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li>
       <li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/countdown/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a></li>
       <li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
       <li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
-      <li><a href="/countdown/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a></li>
+      <li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li>
   </ul>
 </section>
 
 <section class="sec" id="more" aria-labelledby="h-more">
-  <h2 id="h-more">go ka에서 더 보기</h2>
+  <h2 id="h-more">go ka의 다른 앱</h2>
   <div class="others">
-      <a href="/beforego/ko/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
-      <a href="/invoiceqr/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
-      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
-      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
-      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
-      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+      <a href="/beforego/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8a/1f/98/8a1f9850-7a0b-0cc7-376b-e0293f0eb840/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>캡처 한 장으로 여행 일정 완성</small></span></a>
+      <a href="/invoiceqr/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>인보이스 템플릿, 결제와 수금 관리</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>AI 사진 칼로리 계산·식단 기록</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>디자인 QR 생성기 · 스캔 · 명함</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>초1~중3 단어 게임</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>1,324개 운동 · 오프라인 기록</small></span></a>
   </div>
 </section>
 
@@ -340,10 +368,11 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 
 <footer>
   <div class="wrap">
-    <p>카운트다운 위젯: 디데이은(는) go ka에서 제작합니다. 질문 또는 피드백: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
-    <p><a href="/countdown/privacy-policy/">개인정보 보호정책</a> · <a href="/countdown/terms-of-service/">이용약관</a> · <a href="/">go ka</a></p>
+    <p>카운트다운 위젯: 디데이 — go ka 제작. 질문 또는 피드백: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p class="social">go ka 팔로우: <a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></p>
+    <p><a href="/countdown/privacy-policy/">개인정보 보호정책</a> · <a href="/countdown/terms-of-service/">이용약관</a> · <a href="/ko/">go ka</a></p>
   </div>
 </footer>
-<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
 </body>
 </html>

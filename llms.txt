@@ -1,12 +1,28 @@
 # go ka
 
-> Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.
+> Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.
 > Every app has its own page here; the features, free parts and prices written on it
 > are what the app actually does.
 
-- Home: https://goka-xi.vercel.app/
+- Home: https://beforego.art/
+- Home (de): https://beforego.art/de/
+- Home (fr): https://beforego.art/fr/
+- Home (it): https://beforego.art/it/
+- Home (es): https://beforego.art/es/
+- Home (es-MX): https://beforego.art/es-mx/
+- Home (pt-BR): https://beforego.art/pt-br/
+- Home (ja): https://beforego.art/ja/
+- Home (ko): https://beforego.art/ko/
+- Home (zh-Hans): https://beforego.art/zh-hans/
+- Home (zh-Hant): https://beforego.art/zh-hant/
+- Home (th): https://beforego.art/th/
 - All apps on the App Store: https://apps.apple.com/developer/id1854274317
 - Contact: qinqiangji@gmail.com
+- TikTok: https://www.tiktok.com/@getbeforego
+- Instagram: https://www.instagram.com/dyljqq/
+- X: https://x.com/dyljqq21
+- Reddit: https://www.reddit.com/user/lybjqq/
+- RedNote (小红书): https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd
 
 ## Apps
 
@@ -14,18 +30,18 @@
 
 An AI itinerary planner for iPhone that turns a travel post, link or note into a day-by-day trip plan, and writes the packing list from your destination and dates.
 
-- Page: https://goka-xi.vercel.app/beforego/
-- Page (de): https://goka-xi.vercel.app/beforego/de/
-- Page (fr): https://goka-xi.vercel.app/beforego/fr/
-- Page (it): https://goka-xi.vercel.app/beforego/it/
-- Page (es): https://goka-xi.vercel.app/beforego/es/
-- Page (es-MX): https://goka-xi.vercel.app/beforego/es-mx/
-- Page (pt-BR): https://goka-xi.vercel.app/beforego/pt-br/
-- Page (ja): https://goka-xi.vercel.app/beforego/ja/
-- Page (ko): https://goka-xi.vercel.app/beforego/ko/
-- Page (zh-Hans): https://goka-xi.vercel.app/beforego/zh-hans/
-- Page (zh-Hant): https://goka-xi.vercel.app/beforego/zh-hant/
-- Page (th): https://goka-xi.vercel.app/beforego/th/
+- Page: https://beforego.art/beforego/
+- Page (de): https://beforego.art/beforego/de/
+- Page (fr): https://beforego.art/beforego/fr/
+- Page (it): https://beforego.art/beforego/it/
+- Page (es): https://beforego.art/beforego/es/
+- Page (es-MX): https://beforego.art/beforego/es-mx/
+- Page (pt-BR): https://beforego.art/beforego/pt-br/
+- Page (ja): https://beforego.art/beforego/ja/
+- Page (ko): https://beforego.art/beforego/ko/
+- Page (zh-Hans): https://beforego.art/beforego/zh-hans/
+- Page (zh-Hant): https://beforego.art/beforego/zh-hant/
+- Page (th): https://beforego.art/beforego/th/
 - App Store: https://apps.apple.com/app/id6786561175
 - Platform: iOS (iPhone, iPad)
 - Category: Travel
@@ -36,101 +52,114 @@ An AI itinerary planner for iPhone that turns a travel post, link or note into a
 
 A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.
 
-- Page: https://goka-xi.vercel.app/countdown/
-- Page (pt-BR): https://goka-xi.vercel.app/countdown/pt-br/
-- Page (de): https://goka-xi.vercel.app/countdown/de/
-- Page (fr): https://goka-xi.vercel.app/countdown/fr/
-- Page (it): https://goka-xi.vercel.app/countdown/it/
-- Page (ja): https://goka-xi.vercel.app/countdown/ja/
-- Page (ko): https://goka-xi.vercel.app/countdown/ko/
-- Page (th): https://goka-xi.vercel.app/countdown/th/
-- Page (zh-Hans): https://goka-xi.vercel.app/countdown/zh-hans/
-- Page (zh-Hant): https://goka-xi.vercel.app/countdown/zh-hant/
+- Page: https://beforego.art/countdown/
+- Page (pt-BR): https://beforego.art/countdown/pt-br/
+- Page (de): https://beforego.art/countdown/de/
+- Page (fr): https://beforego.art/countdown/fr/
+- Page (it): https://beforego.art/countdown/it/
+- Page (ja): https://beforego.art/countdown/ja/
+- Page (ko): https://beforego.art/countdown/ko/
+- Page (th): https://beforego.art/countdown/th/
+- Page (zh-Hans): https://beforego.art/countdown/zh-hans/
+- Page (zh-Hant): https://beforego.art/countdown/zh-hant/
 - App Store: https://apps.apple.com/app/id6799846628
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity
 - For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
 - Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
-- Paid: Pro unlocks 90 of the 122 backdrops. US$9.99/year with a 7-day free trial, US$1.49/month, or US$14.99 once for Lifetime.
+- Paid: Pro unlocks 88 of the 140 backdrops and the Live Activity on the Lock Screen and Dynamic Island. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
 
 ### Smart Invoice & Estimate Maker
 
 An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.
 
-- Page: https://goka-xi.vercel.app/invoiceqr/
-- Page (de): https://goka-xi.vercel.app/invoiceqr/de/
-- Page (fr): https://goka-xi.vercel.app/invoiceqr/fr/
-- Page (it): https://goka-xi.vercel.app/invoiceqr/it/
-- Page (es): https://goka-xi.vercel.app/invoiceqr/es/
-- Page (es-MX): https://goka-xi.vercel.app/invoiceqr/es-mx/
-- Page (pt-BR): https://goka-xi.vercel.app/invoiceqr/pt-br/
-- Page (ja): https://goka-xi.vercel.app/invoiceqr/ja/
-- Page (ko): https://goka-xi.vercel.app/invoiceqr/ko/
-- Page (zh-Hant): https://goka-xi.vercel.app/invoiceqr/zh-hant/
-- Page (th): https://goka-xi.vercel.app/invoiceqr/th/
+- Page: https://beforego.art/invoiceqr/
+- Page (de): https://beforego.art/invoiceqr/de/
+- Page (fr): https://beforego.art/invoiceqr/fr/
+- Page (it): https://beforego.art/invoiceqr/it/
+- Page (es): https://beforego.art/invoiceqr/es/
+- Page (es-MX): https://beforego.art/invoiceqr/es-mx/
+- Page (pt-BR): https://beforego.art/invoiceqr/pt-br/
+- Page (ja): https://beforego.art/invoiceqr/ja/
+- Page (ko): https://beforego.art/invoiceqr/ko/
+- Page (zh-Hant): https://beforego.art/invoiceqr/zh-hant/
+- Page (th): https://beforego.art/invoiceqr/th/
 - App Store: https://apps.apple.com/app/id6790383156
 - Platform: iOS (iPhone, iPad)
 - Category: Business
 - For: Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.
-- Free: Three documents a month (invoices, estimates and quotes share the allowance), and four of the ready-made QR designs.
+- Free: Three documents in total, not three a month — invoices, estimates and quotes share the allowance, and editing or re-sending one is free — plus four of the ready-made QR designs.
+- Paid: Pro: unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, a full brand kit, custom QR colours, dots and frames, and no app line at the foot of exports.
 
 ### DailyCalorie: Calories Left
 
 An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.
 
-- Page: https://goka-xi.vercel.app/dailycalorie/
+- Page: https://beforego.art/dailycalorie/
 - App Store: https://apps.apple.com/app/id6798095407
 - Platform: iOS (iPhone, iPad)
 - Category: Health & Fitness
 - For: People who quit other calorie apps because logging every item by hand was too slow.
-- Free: Manual logging, the daily window, and a limited number of photo scans.
+- Free: 3 photo recognitions, full history and trends, the month calendar, the eating window, meals, exercise and the weight log.
+- Paid: Pro, monthly or yearly (the yearly plan begins with a 7-day free trial): unlimited photo recognition, protein/carb/fat targets for every meal, a custom goal weight and pace, and CSV export.
 
 ### Custom QR Code Maker & Scan
 
 An iPhone QR code generator and scanner that lets you style a code with colours, shapes and a logo without breaking it.
 
-- Page: https://goka-xi.vercel.app/qrcodestudio/
+- Page: https://beforego.art/qrcodestudio/
 - App Store: https://apps.apple.com/app/id6799589471
 - Platform: iOS (iPhone, iPad)
 - Category: Utilities
 - For: Anyone putting a QR code on a menu, poster, business card or shop window and wanting it to look like it belongs there.
-- Free: Generating and scanning codes, and the standard styles.
+- Free: Making and scanning all twelve kinds of code, with the standard styles.
+- Paid: QR Studio Pro, monthly or yearly (7-day free trial for new yearly subscribers): every illustrated scene, every frame and shape, gradients, custom colours and your own logo in the middle.
 
 ### 单词兽-拍照学单词·小学初中英语闯关
 
-把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。
+拍照学单词、闯关背单词的 iPhone app：1,671 个单词和句子排成 271 关，覆盖小学到初中常用词汇。
 
-- Page: https://goka-xi.vercel.app/citu/
+- Page: https://beforego.art/citu/
 - App Store: https://apps.apple.com/app/id6796596826
 - Platform: iOS (iPhone, iPad)
 - Category: Education
-- For: 需要背课本单词表的中小学生和家长。
-- Free: 核心课程、闯关和收集，无需注册。
+- For: 学英语单词的小学、初中学生和家长。
+- Free: 前 8 关、最近 7 天的错题复习、「拍拍」共 3 次、2 套基础换装与奖励。
+- Paid: VIP（按月或按年自动续订，权益相同，支持家人共享）：全部 271 关、「拍拍」每天 50 次、完整错题本、熟练度分布、家长周报、iCloud 多设备同步。价格在确认购买前显示。
 
 ### Repdex: Gym Workout Tracker
 
 A gym workout log for iPhone.
 
-- Page: https://goka-xi.vercel.app/repdex/
+- Page: https://beforego.art/repdex/
 - App Store: https://apps.apple.com/app/id6803828068
 - Platform: iOS (iPhone, iPad)
 - Category: Health & Fitness
 - For: People logging strength training sessions.
+- Free: All 1,324 exercises, all 10 instruction languages and unlimited workout logging; your history is never locked.
+- Paid: Repdex Pro, monthly, yearly (7-day free trial for new subscribers) or a one-time Lifetime purchase: unlimited routines, advanced stats, CSV export and home-screen widgets.
 
 ## Free tools & guides
 
-- [Days until calculator](https://goka-xi.vercel.app/tools/days-until/) — Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.
-- [How many days until Christmas 2026?](https://goka-xi.vercel.app/tools/days-until-christmas/) — Christmas Day 2026 is on Friday, 25 December 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
-- [How many days until Halloween 2026?](https://goka-xi.vercel.app/tools/days-until-halloween/) — Halloween 2026 is on Saturday, 31 October 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
-- [How many days until New Year 2027?](https://goka-xi.vercel.app/tools/days-until-new-year/) — New Year's Day 2027 is on Friday, 1 January 2027; New Year's Eve is Thursday, 31 December 2026. Live countdown plus a free iPhone widget.
-- [Quantos dias faltam para o ENEM 2026?](https://goka-xi.vercel.app/tools/pt-br/dias-para-o-enem-2026/) — As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de início do iPhone.
-- [Quantos dias faltam para o Réveillon 2027?](https://goka-xi.vercel.app/tools/pt-br/contagem-regressiva-reveillon-2027/) — Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.
-- [Free invoice template](https://goka-xi.vercel.app/tools/invoice-template/) — A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.
-- [How to write an invoice](https://goka-xi.vercel.app/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
-- [Packing list generator](https://goka-xi.vercel.app/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
-- [Best countdown widget apps for iPhone (2026)](https://goka-xi.vercel.app/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
-- [Free tools & guides — go ka](https://goka-xi.vercel.app/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
-- [Ferramentas e guias grátis — go ka](https://goka-xi.vercel.app/tools/pt-br/) — Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.
+- [Days until calculator](https://beforego.art/tools/days-until/) — Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.
+- [How many days until Christmas 2026?](https://beforego.art/tools/days-until-christmas/) — Christmas Day 2026 is on Friday, 25 December 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
+- [How many days until Halloween 2026?](https://beforego.art/tools/days-until-halloween/) — Halloween 2026 is on Saturday, 31 October 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
+- [How many days until New Year 2027?](https://beforego.art/tools/days-until-new-year/) — New Year's Day 2027 is on Friday, 1 January 2027; New Year's Eve is Thursday, 31 December 2026. Live countdown plus a free iPhone widget.
+- [Quantos dias faltam para o ENEM 2026?](https://beforego.art/tools/pt-br/dias-para-o-enem-2026/) — As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.
+- [Quantos dias faltam para o Réveillon 2027?](https://beforego.art/tools/pt-br/contagem-regressiva-reveillon-2027/) — Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.
+- [Free invoice template](https://beforego.art/tools/invoice-template/) — A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.
+- [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
+- [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
+- [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
+- [Add a Countdown to Your iPhone Home Screen and Lock Screen](https://beforego.art/blog/countdown-widget-iphone-home-lock-screen/) — Here is how to add a countdown widget to your iPhone Home Screen and Lock Screen, plus what Live Activity adds on top of it.
+- [Count Down to a Birthday, Exam or Trip on iPhone](https://beforego.art/blog/count-down-birthday-exam-trip-iphone/) — How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.
+- [Add a Payment QR Code to an Invoice and Get Paid Faster](https://beforego.art/blog/payment-qr-code-on-invoice/) — What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.
+- [Invoice vs Estimate vs Quote: What's the Difference?](https://beforego.art/blog/invoice-vs-estimate-vs-quote/) — The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.
+- [Turn a Travel Post Screenshot into a Day-by-Day Itinerary](https://beforego.art/blog/travel-post-screenshot-to-itinerary/) — How to turn a screenshot, a link or a typed plan into a day-by-day itinerary, plus scanning tickets and bookings straight into it.
+- [A Packing List That Fits the Destination: Plugs, Currency, Rules](https://beforego.art/blog/packing-list-by-destination/) — What to check per destination before you pack, and how a generated packing list covers plugs, currency, entry rules and reminders.
+- [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
+- [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.
+- [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ
 

@@ -6,16 +6,16 @@
   "releaseNotes": "Scanning your tickets now builds the whole route, and Edit Trip can change who's travelling.\n\n• Scan several tickets at once and every flight, train and bus lands on the route in order, each stop with its own days\n• Airports are placed by the code printed on the ticket instead of being guessed\n• A red-eye flight home ends the trip on the day it takes off\n• Edit Trip now changes the trip type and who's travelling, and the checklist follows: rows the new answers need are added, and untouched ones they no longer need are removed\n• The editor opens straight on its fields, with the ticket scanner beside the trip's name\n• In mainland China, guides and bookings read from screenshots come back more reliably",
   "description": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.\n\nPACKING LIST, GENERATED\n• A destination-based packing list — plugs, currency, entry rules and transit apps for where you are going\n• Travel checklist grouped by category or by timeline\n• Packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure\n• Countdown and checklist widgets for your home screen\n• Photos and notes on any checklist item\n\nFROM A GUIDE\n• Hand it a travel guide — screenshots, pasted text or a link — and it files what it finds\n• To-dos join the packing list, places join the trip checklist, and each day joins the plan\n• Every import is listed under its trip, and any line it added can be removed\n\nTRIP CHECKLIST, ON THE ROAD\n• The places you saved become a trip checklist — spots, food and experiences to check off as you go\n• A day of stops sorts itself into the shortest walking route\n• Voice notes that transcribe themselves while you walk\n\nAFTER THE TRIP\n• Photos, notes and voice memos, kept by trip\n• A printable memories album, plus luggage tags, tickets and trip receipts\n• Forgotten items carry over, so the next packing list starts smarter\n\nPRICING\nFree to start — no ads, no account required. Premium unlocks everything; if you would rather not subscribe, a one-time lifetime purchase is available.\n\nBeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline, or government guidance; always verify important requirements with official sources before you travel.\n\n——————\nBeforeGo Premium (auto-renewing subscription)\nA subscription unlocks all premium features:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm; a one-time lifetime unlock is also available.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/29/09/1d2909fd-77b9-97eb-6d16-64b1d53cce5d/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/04/30/59/04305930-ecc4-d3fe-14ef-9108d55b95d7/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/bf/29/efbf2992-169c-4712-1567-b677613a6bd2/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/d7/fe/d9d7fe1b-75e6-bcad-adeb-56d85fae623a/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/c9/07/8ac9079f-ad2f-44ac-955c-5ff28d24253e/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/84/06/e2/8406e224-25de-fb20-77c6-b448c5da58fb/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/f9/8d/42f98db7-e462-0036-84b1-6361224b2e21/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/56/a3/78/56a378f9-44d4-926e-158b-0764f7fe5a6f/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/ad/40/a7ad4009-8779-89f8-139f-99210750cbe6/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/20/30/f820304e-b4b7-b417-3c8f-bf281d0fa44f/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/da/c0/39dac056-926e-c1a0-de27-e29b877f822e/01-guide-2026-09-24.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/5d/67/f65d67a1-e269-617c-3121-2c2c9e24c66a/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ca/62/3e/ca623e1d-6223-cda4-b00e-19d47871940e/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/26/1c/52261c83-df1d-83e5-b9e5-d576e6587b85/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ca/fb/cd/cafbcd35-d1c2-597b-9563-2e77ccf4b4a3/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/b6/ff/a9b6ff31-66e5-7f3a-5b55-4068cd5a2cab/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e8/00/36/e80036a7-14eb-9112-0f06-bf01aeba33d4/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/d7/3c/a9d73c65-41df-c277-5bb7-cbf154ec5dc3/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/54/e3/4854e3b9-3912-da32-3677-caa03e580a0b/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/b2/b2/aab2b286-6d8f-d4a6-c65a-f82409f1b367/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/63/94/db639465-120f-6b5e-a156-2de5e3e25544/01-guide.png/360x480bb.jpg",
@@ -45,7 +45,8 @@
   ],
   "rating": 5,
   "ratingCount": 2,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "en-GB": {
   "storefront": "gb",
@@ -54,16 +55,16 @@
   "releaseNotes": "Scanning your tickets now builds the whole route, and Edit Trip can change who's travelling.\n\n• Scan several tickets at once and every flight, train and bus lands on the route in order, each stop with its own days\n• Airports are placed by the code printed on the ticket instead of being guessed\n• A red-eye flight home ends the trip on the day it takes off\n• Edit Trip now changes the trip type and who's travelling, and the checklist follows: rows the new answers need are added, and untouched ones they no longer need are removed\n• The editor opens straight on its fields, with the ticket scanner beside the trip's name\n• In mainland China, guides and bookings read from screenshots come back more reliably",
   "description": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.\n\nPACKING LIST, GENERATED\n• A destination-based packing list — plugs, currency, entry rules and transit apps for where you are going\n• Travel checklist grouped by category or by timeline\n• Packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure\n• Countdown and checklist widgets for your home screen\n• Photos and notes on any checklist item\n\nFROM A GUIDE\n• Hand it a travel guide — screenshots, pasted text or a link — and it files what it finds\n• To-dos join the packing list, places join the trip checklist, and each day joins the plan\n• Every import is listed under its trip, and any line it added can be removed\n\nTRIP CHECKLIST, ON THE ROAD\n• The places you saved become a trip checklist — spots, food and experiences to check off as you go\n• A day of stops sorts itself into the shortest walking route\n• Voice notes that transcribe themselves while you walk\n\nAFTER THE TRIP\n• Photos, notes and voice memos, kept by trip\n• A printable memories album, plus luggage tags, tickets and trip receipts\n• Forgotten items carry over, so the next packing list starts smarter\n\nPRICING\nFree to start — no ads, no account required. Premium unlocks everything; if you would rather not subscribe, a one-time lifetime purchase is available.\n\nBeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline, or government guidance; always verify important requirements with official sources before you travel.\n\n——————\nBeforeGo Premium (auto-renewing subscription)\nA subscription unlocks all premium features:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm; a one-time lifetime unlock is also available.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/b1/22/27b122a6-3a6f-17a9-95ea-8b56cce89469/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/aa/11/99aa117e-d3cd-623a-2f18-801bf3afe5c7/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/bd/13/23bd13cd-23da-b372-99fb-adb4f4f01051/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f9/1b/7a/f91b7a90-d28e-694f-f7ea-e9be965611a9/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cb/26/dd/cb26dd8c-8d8a-29ba-e20f-7ccb6fb9f058/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f0/a0/6a/f0a06a7b-7a92-927d-c79e-882d7e8af91f/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2b/81/86/2b818656-1cf8-3f3d-8a26-4a73f594f093/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/19/51/f31951a5-1bb8-cec1-8f68-904bbffc6746/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/4a/f8/264af81a-7051-0037-6e68-c55058d1ec95/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5d/79/bb/5d79bbaf-045c-ac63-6444-ab332b1c4ea7/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/81/3b/7a/813b7a7c-bfd8-ac76-82b4-ce443a317c5c/01-guide-2026-09-24.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/73/1b/87/731b8706-563e-8bf1-b5ad-4667d4c7f29c/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/c8/ea/14c8ea40-787d-a58f-9da7-4f6b1e176eec/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/49/ce/80/49ce800f-5aa2-57bf-6ea3-364abe347fd5/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d9/de/17/d9de1746-e671-c10d-7bc9-de6ce23a69d4/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/78/17/04/781704dd-1a28-4521-26b8-9a1f20519be0/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2e/0c/d9/2e0cd90b-d11b-9d66-52b6-5f49d0e9be24/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/99/38/809938a0-e078-64a1-8d12-f56ad075bdfc/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/aa/b8/aaaab8c9-4345-668a-25e8-21a1e0ec913b/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/8f/a8/ff8fa881-c928-b736-c06a-5981f4817f12/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/58/21/97582196-fa4d-8705-5395-6dc7a15215e2/01-guide.png/360x480bb.jpg",
@@ -93,7 +94,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "de-DE": {
   "storefront": "de",
@@ -102,16 +104,16 @@
   "releaseNotes": "Gescannte Tickets ergeben jetzt die ganze Route, und in „Reise bearbeiten“ lassen sich die Reisenden ändern.\n\n• Mehrere Tickets auf einmal scannen: Jeder Flug, Zug und Bus landet in der richtigen Reihenfolge auf der Route, jede Station mit eigenen Daten\n• Flughäfen werden über den aufgedruckten Code erkannt, statt geraten zu werden\n• Ein Nachtflug nach Hause beendet die Reise am Abflugtag\n• In „Reise bearbeiten“ lassen sich Reisetyp und Reisende ändern, und die Checkliste zieht mit: Was die neuen Angaben brauchen, kommt dazu; was nicht mehr passt und unberührt ist, fällt weg\n• Der Editor öffnet direkt mit den Feldern, der Ticket-Scanner sitzt neben dem Reisenamen\n• In Festlandchina werden Reiseführer und Buchungen aus Screenshots zuverlässiger gelesen",
   "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tipp deine Pläne einfach ab – BeforeGo macht daraus einen Reiseplan, Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht. Scanne ein Ticket oder eine Buchungsbestätigung, und auch sie landet im Plan. Die Packliste schreibt sich derweil von selbst, passend zu Reiseziel und Reisedaten.\n\nPACKLISTE, AUTOMATISCH ERSTELLT\n• Packliste passend zum Reiseziel — Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps\n• Reise-Checkliste nach Kategorie oder Zeitplan\n• Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise\n• Countdown- und Checklisten-Widgets für den Homescreen\n• Fotos und Notizen an jedem Listenpunkt\n\nUNTERWEGS\n• Gespeicherte Orte werden zur Checkliste — Sehenswürdigkeiten, Essen, Erlebnisse zum Abhaken\n• Ein Tagesplan sortiert sich zur kürzesten Route\n• Sprachnotizen mit automatischer Transkription\n\nNACH DER REISE\n• Fotos, Notizen und Sprachmemos, nach Reisen geordnet\n• Druckbares Erinnerungsalbum, Kofferanhänger, Tickets und Reisebelege\n• Vergessenes wird übernommen — die nächste Packliste startet schlauer\n\nPREIS\nKostenlos starten — ohne Werbung, ohne Konto. Premium schaltet alles frei; wer kein Abo möchte, kann einmalig dauerhaft freischalten.\n\nBeforeGo dient der persönlichen Reiseorganisation und ersetzt keine offiziellen Visa-, Sicherheits-, Gesundheits- oder Airline-Informationen. Bitte prüfe wichtige Anforderungen immer bei offiziellen Stellen.\n\n——————\nBeforeGo Premium (automatisch verlängerndes Abo)\nDas Abo schaltet alle Premium-Funktionen frei:\n• Monatsabo — Abrechnung alle 1 Monat\n• Jahresabo — Abrechnung alle 1 Jahr\nDas Jahresabo enthält eine 7-tägige kostenlose Testphase für neue Abonnenten. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt; ein einmaliger lebenslanger Kauf ist ebenfalls verfügbar.\n\nDie Zahlung wird bei Kaufbestätigung über dein Apple-Konto abgebucht. Das Abo verlängert sich automatisch, sofern die automatische Verlängerung nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums deaktiviert wird. Die Verlängerung wird innerhalb von 24 Stunden vor Ablauf des Zeitraums berechnet. Du kannst dein Abo jederzeit in den App-Store-Kontoeinstellungen verwalten oder kündigen.\n\nNutzungsbedingungen (EULA): https://dyljqq.github.io/terms-of-use/\nDatenschutzrichtlinie: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ba/e9/7c/bae97c0b-ee86-f23e-7b7b-5c6ad1c0769d/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/e6/e0/b8e6e019-a40c-90db-97b9-dfc0af25130a/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1d/cc/fb/1dccfb91-a65f-c666-bd82-34d623a30fe2/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/ae/55/4bae5560-af3f-81d5-fd1f-212f5a682b5f/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/95/aa/39/95aa395d-822f-7a42-9344-2d6ac1c1c6dc/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c6/67/e3/c667e3f5-51a3-7174-564b-69ac5452c4e0/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/f7/10/fef710cf-87a3-9c7a-5723-a8ee694302d9/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/88/f1/2f88f143-0ac1-fe18-c573-0b3e9352239d/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/76/27/527627d9-bf6c-4818-4f3e-7e63ed25a0bc/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/8d/f0/988df0a1-55cc-e60c-2487-614ba8d7f18c/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/b4/f3/d2b4f32d-fad5-7708-e258-de9871a86705/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/1b/23/761b2348-6b68-e291-f963-90c854c8cc62/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/93/7e/b0/937eb0a4-4653-3f1f-b171-4c45c0295a17/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/73/e3/3373e38d-b855-2c7a-cc8e-4dd01e2b5f2b/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/11/41/16114124-66e0-4cb1-c72c-019f95a8e282/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/a5/00/2da50095-e7cc-5b17-fbec-15b757d7a79c/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/12/dd/ce12dd3b-8f3a-934c-f9bc-67e4e62d172a/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/41/7a/fd417a70-fd49-95ba-1f23-f17acc569fa3/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f7/f3/a9/f7f3a9e6-c65e-35d4-b861-a651cebc7caf/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/d8/df/31d8df7b-9cd6-670f-7a03-8b413acf3123/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/68/e3/ed68e358-2656-2d6c-7984-0cdc18674c63/01-guide.png/360x480bb.jpg",
@@ -141,7 +143,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "fr-FR": {
   "storefront": "fr",
@@ -150,16 +153,16 @@
   "releaseNotes": "Scanner vos billets construit désormais tout l'itinéraire, et « Modifier le voyage » permet de changer qui part.\n\n• Scannez plusieurs billets d'un coup : chaque vol, train et bus prend sa place sur l'itinéraire, dans l'ordre, et chaque étape reçoit ses propres dates\n• Les aéroports sont situés d'après le code imprimé sur le billet, sans deviner\n• Un vol de nuit au retour clôt le voyage le jour du départ\n• « Modifier le voyage » permet de changer le type de voyage et les voyageurs, et la checklist suit : les éléments requis par les nouvelles réponses s'ajoutent, ceux qui ne servent plus et que vous n'avez pas touchés disparaissent\n• L'éditeur s'ouvre directement sur ses champs, avec le scanner de billets à côté du nom du voyage\n• En Chine continentale, la lecture des guides et des réservations à partir de captures d'écran est plus fiable",
   "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour, avec les lieux à voir, ce qu'il faut régler avant le départ et chaque journée prévue dans le post. Scannez un billet ou une confirmation de réservation, et elle rejoint le plan. Pendant ce temps, la liste de bagages se fait toute seule selon la destination et les dates.\n\nLISTE DE BAGAGES, GÉNÉRÉE\n• Liste adaptée à la destination — prises, monnaie, formalités d'entrée et applis de transport\n• Checklist voyage par catégorie ou par chronologie\n• Rappels à 7 jours, 3 jours, 24 h et 3 h du départ\n• Widgets compte à rebours et checklist sur l'écran d'accueil\n• Photos et notes sur chaque élément\n\nEN VOYAGE\n• Les lieux enregistrés deviennent une checklist — adresses, restaurants, expériences à cocher\n• Une journée d'étapes s'ordonne en itinéraire le plus court\n• Notes vocales transcrites automatiquement\n\nAPRÈS LE VOYAGE\n• Photos, notes et mémos vocaux, classés par voyage\n• Album souvenir imprimable, étiquettes bagage, billets et reçus de voyage\n• Les oublis sont repris — la prochaine liste démarre plus futée\n\nPRIX\nGratuit pour commencer — sans pub, sans compte. Premium débloque tout ; sans abonnement, un achat unique à vie est disponible.\n\nBeforeGo est un outil d'organisation personnelle ; il ne remplace pas les informations officielles (visa, santé, sécurité, compagnies aériennes). Vérifiez toujours les exigences importantes auprès des sources officielles.\n\n——————\nBeforeGo Premium (abonnement à renouvellement automatique)\nL'abonnement débloque toutes les fonctionnalités premium :\n• Formule mensuelle — facturée tous les 1 mois\n• Formule annuelle — facturée tous les 1 an\nL'abonnement annuel inclut un essai gratuit de 7 jours pour les nouveaux abonnés. Le prix exact est indiqué sur l'écran d'achat avant confirmation ; un achat unique à vie est également proposé.\n\nLe paiement est débité de votre compte Apple à la confirmation de l'achat. L'abonnement se renouvelle automatiquement sauf s'il est désactivé au moins 24 heures avant la fin de la période en cours. Le renouvellement est facturé dans les 24 heures précédant la fin de la période. Vous pouvez gérer ou résilier votre abonnement à tout moment dans les réglages de votre compte App Store.\n\nConditions d'utilisation (CLUF) : https://dyljqq.github.io/terms-of-use/\nPolitique de confidentialité : https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/31/3a/3c/313a3c53-1297-2653-0d94-d66792edc3f0/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/09/b4/0909b4a8-cec2-b821-cd5b-5c9c78d9516b/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/25/6b/20256b24-2265-e315-a889-9d876cf8e5f9/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/b4/5c/bab45c93-9ae5-3bc1-1c78-dd68d172bb58/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bd/b2/14/bdb214dc-acb4-169d-1222-f07f4fdf33ac/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/4f/d1/fa4fd1c7-42aa-7fa0-e984-80fae628d44c/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/c0/3d/81c03d11-23d7-8bf0-fda7-bc2c0fb57819/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/52/8a/c4/528ac443-f7ec-9499-1644-2e71d76d491a/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/cb/a7/14cba73b-dca3-95e7-4772-463b3c2dc081/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/ab/63/53ab6346-3e89-f929-602c-0a6211261ac8/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fd/ae/cd/fdaecd73-ce67-f77b-b36f-d566efad157c/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d4/c9/bb/d4c9bb35-6192-2bf5-50be-330e55a3b326/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/25/09/e0250969-8476-fcda-d555-48704ebe59d1/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/34/16/083416a4-be0a-0025-07bc-f6c37c950989/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a8/af/87/a8af8717-16ae-feb7-bdc2-9a0c22fcf0e6/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/f6/6f/7df66f96-8e66-d191-8c29-fa155df4592e/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e4/75/dc/e475dced-c218-db20-06c4-98759c2729a3/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/68/ec/b568ecbe-4bd8-fc9b-773d-003879424dcd/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/70/6f/11706f88-d24f-8d94-d646-73daf6e85e44/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7c/2d/67/7c2d67ce-6d7b-f504-ad0a-77715cca41b4/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/72/64/457264bd-c4ba-0be1-7478-d36afed57e6c/01-guide.png/360x480bb.jpg",
@@ -189,7 +192,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "it": {
   "storefront": "it",
@@ -198,16 +202,16 @@
   "releaseNotes": "Scansionare i biglietti ora costruisce tutto il percorso, e in «Modifica viaggio» puoi cambiare chi parte.\n\n• Scansiona più biglietti insieme: ogni volo, treno e autobus entra nel percorso nell'ordine giusto, e ogni tappa ha le sue date\n• Gli aeroporti vengono individuati dal codice stampato sul biglietto, senza tirare a indovinare\n• Un volo notturno di rientro chiude il viaggio il giorno in cui parte\n• «Modifica viaggio» ora cambia il tipo di viaggio e i viaggiatori, e la checklist si adegua: si aggiungono le voci richieste dalle nuove risposte e spariscono quelle non più necessarie che non hai toccato\n• L'editor si apre direttamente sui campi, con lo scanner dei biglietti accanto al nome del viaggio\n• Nella Cina continentale, la lettura di guide e prenotazioni dagli screenshot è più affidabile",
   "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno, con i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Scansiona un biglietto o una conferma di prenotazione e finisce anche lei nel piano. Intanto la lista bagagli si fa da sola, in base a destinazione e date.\n\nLISTA BAGAGLI, GENERATA\n• Lista su misura per la destinazione — prese, valuta, requisiti d'ingresso e app di trasporto\n• Checklist viaggio per categoria o per cronologia\n• Promemoria a 7 giorni, 3 giorni, 24 ore e 3 ore dalla partenza\n• Widget con conto alla rovescia e checklist\n• Foto e note su ogni voce\n\nIN VIAGGIO\n• I luoghi salvati diventano una checklist — posti, cibo, esperienze da spuntare\n• Una giornata di tappe si ordina nel percorso più breve\n• Note vocali trascritte automaticamente\n\nDOPO IL VIAGGIO\n• Foto, note e memo vocali, ordinati per viaggio\n• Album dei ricordi stampabile, etichette bagaglio, biglietti e ricevute\n• Gli oggetti dimenticati si trasferiscono — la prossima lista parte più preparata\n\nPREZZO\nGratis per iniziare — senza pubblicità, senza account. Premium sblocca tutto; chi non vuole abbonarsi può acquistare una sola volta lo sblocco a vita.\n\nBeforeGo è uno strumento di organizzazione personale; non sostituisce le informazioni ufficiali su visti, salute, sicurezza o compagnie aeree. Verifica sempre i requisiti importanti presso fonti ufficiali.\n\n——————\nBeforeGo Premium (abbonamento a rinnovo automatico)\nL'abbonamento sblocca tutte le funzioni premium:\n• Piano mensile — addebito ogni 1 mese\n• Piano annuale — addebito ogni 1 anno\nIl piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma; è disponibile anche un acquisto singolo a vita.\n\nIl pagamento viene addebitato sul tuo account Apple alla conferma dell'acquisto. L'abbonamento si rinnova automaticamente se il rinnovo automatico non viene disattivato almeno 24 ore prima della fine del periodo in corso. L'addebito del rinnovo avviene entro 24 ore prima della fine del periodo. Puoi gestire o annullare l'abbonamento in qualsiasi momento nelle impostazioni del tuo account App Store.\n\nTermini d'uso (EULA): https://dyljqq.github.io/terms-of-use/\nInformativa sulla privacy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/a9/00/8aa90020-90eb-8acd-ca47-b5d3b47b80dd/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/54/39/4e/54394e4a-bdde-f4a6-23f9-892595e58024/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/17/45/b61745ef-5f36-9a29-f253-ad745b5d84ec/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5a/73/60/5a736027-61d3-dcdc-149f-92f5139abc6a/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/41/4d/2d/414d2d15-5feb-44f6-68c0-3e56fa2aa586/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/3a/fc/903afc83-19ef-2770-febb-9984f65949c9/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/28/12/6e281295-7891-643c-6918-6629a6b19a20/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/2e/57/fb2e5737-ae97-98a7-3852-c83f2dea1be7/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b9/e2/4c/b9e24c13-aa07-fc6c-c9d3-e41c4b99e46d/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/45/ff/f445ffff-f02d-4b75-0542-1901c2e03683/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9b/ff/99/9bff9942-a00b-1ba0-ddce-e439d974832e/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/a9/9f/baa99f30-a454-a6c2-62a7-9ae98792cdd8/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/b9/04/c8b9046d-4e4e-1c35-2d89-f8ddb95ebf75/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/9e/59/ea9e59e0-997f-bd5c-a771-d88f22cd14c2/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/a7/e4/2ca7e466-1642-1a01-8235-0b1e6540fd42/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/7e/09/5d7e0937-c47f-709e-aaf1-902cf118baad/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/60/d8/78/60d8786a-8956-b478-9b11-3976d1179178/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fe/f8/6b/fef86bbf-62d2-931c-ce8e-b9870fbcbbf5/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/01/1a/a7/011aa7bd-1f4d-243c-5a57-706df228c864/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/c2/32/f3c2326e-0a11-2aa4-59ae-9718b2f3abb2/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/98/e0/2f98e0e6-147f-5701-99c7-d2f456316f99/01-guide.png/360x480bb.jpg",
@@ -237,7 +241,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "es-ES": {
   "storefront": "es",
@@ -246,16 +251,16 @@
   "releaseNotes": "Al escanear tus billetes se arma toda la ruta, y en «Editar viaje» ya puedes cambiar quién viaja.\n\n• Escanea varios billetes a la vez: cada vuelo, tren y autobús entra en la ruta en orden, y cada parada tiene sus propias fechas\n• Los aeropuertos se ubican por el código impreso en el billete, sin adivinar\n• Un vuelo nocturno de regreso cierra el viaje el día que sale\n• «Editar viaje» permite cambiar el tipo de viaje y los viajeros, y la lista se ajusta: se añaden los elementos que piden las nuevas respuestas y se quitan los que ya no hacen falta y no has tocado\n• El editor se abre directamente en sus campos, con el escáner de billetes junto al nombre del viaje\n• En China continental, la lectura de guías y reservas desde capturas de pantalla es más fiable",
   "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día: los lugares que merecen la pena, lo que tienes que hacer antes de salir y cada día que propone el post. Escanea un billete o una confirmación de reserva y también se añade al plan. Mientras tanto, la lista de equipaje se escribe sola según tu destino y tus fechas.\n\nQUÉ LLEVAR, GENERADO\n• Lista adaptada al destino — enchufes, moneda, requisitos de entrada y apps de transporte\n• Checklist de viaje por categoría o por cronología\n• Recordatorios 7 días, 3 días, 24 h y 3 h antes de salir\n• Widgets de cuenta regresiva y checklist\n• Fotos y notas en cada elemento\n\nDURANTE EL VIAJE\n• Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar\n• Un día de paradas se ordena en la ruta más corta\n• Notas de voz transcritas automáticamente\n\nDESPUÉS DEL VIAJE\n• Fotos, notas y notas de voz, ordenadas por viaje\n• Álbum de recuerdos imprimible, etiquetas de maleta, boletos y recibos\n• Lo olvidado pasa a la próxima lista\n\nPRECIO\nEmpieza gratis — sin anuncios, sin cuenta. Premium desbloquea todo; si prefieres no suscribirte, hay una compra única de por vida.\n\nBeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad o aerolíneas. Verifica siempre los requisitos importantes en fuentes oficiales.\n\n——————\nBeforeGo Premium (suscripción con renovación automática)\nLa suscripción desbloquea todas las funciones premium:\n• Plan mensual — se factura cada 1 mes\n• Plan anual — se factura cada 1 año\nEl plan anual incluye 7 días de prueba gratis para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar; también hay un desbloqueo vitalicio de pago único.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que desactives la renovación automática al menos 24 horas antes del final del período actual. El cargo por renovación se realiza dentro de las 24 horas previas al final del período. Puedes gestionar o cancelar tu suscripción en los ajustes de tu cuenta del App Store.\n\nCondiciones de uso (EULA): https://dyljqq.github.io/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2e/00/b5/2e00b5d7-89cd-6f46-fc22-0dc4e87f02a0/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/98/99/6d/98996dc8-555f-b66f-8808-79fb27436d0b/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/05/3f/ec/053fecf3-b884-3f36-afae-5c7d4ce7c736/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/9a/d5/bf9ad5a3-38bb-dd7e-3c57-6b4e4c6bc0cf/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3c/9c/88/3c9c88ce-46d3-ae60-e0fa-dd0c27a928d9/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/62/04/d8620484-e0fd-89ef-2175-c1307d4541a9/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fb/aa/ef/fbaaef5b-afa6-a46a-f6fe-ff44ead9896d/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/99/7b/d8/997bd859-6648-493c-ccbf-95f1852c9b25/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/66/95/1866952e-3157-5b9f-124e-1809f1f20710/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0a/9d/8c/0a9d8cad-51ef-ee9e-d40b-1ca7c863cb9c/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/18/a7/3318a706-0469-ade5-48c1-01bb4a176fc6/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/99/79/2f997925-3ea8-5289-f44d-b779494f3843/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/3e/0a/7c3e0ad9-8301-695f-5ba0-5370a4296a32/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/56/43/52/564352e5-c4cd-6f6d-ee6b-11ca5bf1ff3a/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e7/bc/0c/e7bc0c93-313c-66cd-5a50-02c64cfb077c/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/d6/d4/a2d6d4b0-b3cb-6703-8009-b9087248c545/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3d/80/37/3d803712-4426-cfa0-3953-1b1a1efa3f9c/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/af/54/8b/af548ba0-68b5-a2ea-50cd-03e775f41822/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/61/7f/ab/617fab6a-5050-4bb6-7c23-ae1953bdd971/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/93/ea/35/93ea359c-0cb7-4ad2-158d-99ef4face06e/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/2b/24/db2b24fb-91e0-2da7-12f4-f8664778b0e7/01-guide.png/360x480bb.jpg",
@@ -285,7 +290,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "es-MX": {
   "storefront": "mx",
@@ -294,16 +300,16 @@
   "releaseNotes": "Al escanear tus boletos se arma toda la ruta, y en «Editar viaje» ya puedes cambiar quién viaja.\n\n• Escanea varios boletos a la vez: cada vuelo, tren y autobús entra en la ruta en orden, y cada parada tiene sus propias fechas\n• Los aeropuertos se ubican por el código impreso en el boleto, sin adivinar\n• Un vuelo nocturno de regreso cierra el viaje el día que sale\n• «Editar viaje» permite cambiar el tipo de viaje y los viajeros, y la lista se ajusta: se agregan los elementos que piden las nuevas respuestas y se quitan los que ya no hacen falta y no has tocado\n• El editor se abre directamente en sus campos, con el escáner de boletos junto al nombre del viaje\n• En China continental, la lectura de guías y reservaciones desde capturas de pantalla es más confiable",
   "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post. Escanea un boleto o una confirmación de reservación y también se agrega al plan. Mientras tanto, la lista de equipaje se arma sola según tu destino y tus fechas.\n\nQUÉ LLEVAR, GENERADO\n• Lista adaptada al destino — enchufes, moneda, requisitos de entrada y apps de transporte\n• Checklist de viaje por categoría o por cronología\n• Recordatorios 7 días, 3 días, 24 h y 3 h antes de salir\n• Widgets de cuenta regresiva y checklist\n• Fotos y notas en cada elemento\n\nDURANTE EL VIAJE\n• Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar\n• Un día de paradas se ordena en la ruta más corta\n• Notas de voz transcritas automáticamente\n\nDESPUÉS DEL VIAJE\n• Fotos, notas y notas de voz, ordenadas por viaje\n• Álbum de recuerdos imprimible, etiquetas de maleta, boletos y recibos\n• Lo olvidado pasa a la próxima lista\n\nPRECIO\nEmpieza gratis — sin anuncios, sin cuenta. Premium desbloquea todo; si prefieres no suscribirte, hay una compra única de por vida.\n\nBeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad o aerolíneas. Verifica siempre los requisitos importantes en fuentes oficiales.\n\n——————\nBeforeGo Premium (suscripción con renovación automática)\nLa suscripción desbloquea todas las funciones premium:\n• Plan mensual — se factura cada 1 mes\n• Plan anual — se factura cada 1 año\nEl plan anual incluye 7 días de prueba gratis para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar; también hay un desbloqueo vitalicio de pago único.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que desactives la renovación automática al menos 24 horas antes del final del período actual. El cargo por renovación se realiza dentro de las 24 horas previas al final del período. Puedes gestionar o cancelar tu suscripción en los ajustes de tu cuenta del App Store.\n\nCondiciones de uso (EULA): https://dyljqq.github.io/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/a1/92/50a19281-379a-9f36-d74c-925c09fe3e1a/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/e0/f8/51e0f824-8646-9182-2480-83653968a61f/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/69/47/e06947b4-bb59-0df8-7d8b-d35c95084770/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/d1/8b/58d18be7-9cbf-b396-4730-5fc3d62e405f/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/4c/56/694c569c-2476-270d-16fc-5a2beb0585c3/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/71/72/6171727e-0390-ff30-f47c-4de8546f307a/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/f3/ba/fff3ba40-cd62-d681-64de-47c53d24366a/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/63/d9/94/63d994ae-0cd6-5148-fcbb-5f20525ebd0f/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e7/be/10/e7be1047-6a56-3328-fc4a-c2ebbf741a48/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1d/28/c11d28f5-f6fc-647d-6d3e-b09aa51018c4/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/a3/5f/eaa35f02-2890-40a8-ddc7-6aff8fe47eda/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/57/35/3c/57353c2f-10a5-992a-885a-d1a17922488c/01-guide.png/360x480bb.jpg",
@@ -333,7 +339,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "pt-BR": {
   "storefront": "br",
@@ -342,16 +349,16 @@
   "releaseNotes": "Escanear os bilhetes agora monta o roteiro inteiro, e em “Editar viagem” já dá para mudar quem vai.\n\n• Escaneie vários bilhetes de uma vez: cada voo, trem e ônibus entra no roteiro na ordem certa, e cada parada ganha as próprias datas\n• Os aeroportos são identificados pelo código impresso no bilhete, sem adivinhar\n• Um voo noturno de volta encerra a viagem no dia da partida\n• “Editar viagem” agora muda o tipo de viagem e os viajantes, e a checklist acompanha: entram os itens que as novas respostas pedem, e saem os que não servem mais e você não tocou\n• O editor abre direto nos campos, com o scanner de bilhetes ao lado do nome da viagem\n• Na China continental, a leitura de guias e reservas a partir de capturas de tela ficou mais confiável",
   "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere. Escaneie uma passagem ou uma confirmação de reserva e ela entra no roteiro também. Enquanto isso, a lista de bagagem se monta sozinha a partir do destino e das datas.\n\nLISTA DE VIAGEM, GERADA\n• Lista sob medida para o destino — tomadas, moeda, requisitos de entrada e apps de transporte\n• Checklist de viagem por categoria ou por linha do tempo\n• Lembretes 7 dias, 3 dias, 24 h e 3 h antes da partida\n• Widgets de contagem regressiva e checklist na tela inicial\n• Fotos e notas em cada item\n\nDURANTE A VIAGEM\n• Os lugares salvos viram checklist — pontos, comidas e experiências para marcar\n• Um dia de paradas se organiza na rota mais curta\n• Notas de voz transcritas automaticamente\n\nDEPOIS DA VIAGEM\n• Fotos, notas e áudios, organizados por viagem\n• Álbum de lembranças para imprimir, etiquetas de mala, tickets e recibos\n• O que você esqueceu passa para a próxima lista\n\nPREÇO\nComece grátis — sem anúncios, sem conta. O Premium desbloqueia tudo; se preferir não assinar, existe uma compra única vitalícia.\n\nO BeforeGo é para organização pessoal de viagens; não substitui informações oficiais de visto, saúde, segurança ou companhias aéreas. Sempre confirme requisitos importantes em fontes oficiais.\n\n——————\nBeforeGo Premium (assinatura com renovação automática)\nA assinatura desbloqueia todos os recursos premium:\n• Plano mensal — cobrado a cada 1 mês\n• Plano anual — cobrado a cada 1 ano\nO plano anual inclui 7 dias de teste grátis para novos assinantes. O preço exato aparece na tela de compra antes de confirmar; também há um desbloqueio vitalício de pagamento único.\n\nO pagamento é cobrado na sua conta Apple na confirmação da compra. A assinatura é renovada automaticamente, a menos que a renovação automática seja desativada pelo menos 24 horas antes do fim do período atual. A cobrança da renovação ocorre nas 24 horas anteriores ao fim do período. Você pode gerenciar ou cancelar a assinatura a qualquer momento nos ajustes da sua conta na App Store.\n\nTermos de Uso (EULA): https://dyljqq.github.io/terms-of-use/\nPolítica de Privacidade: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/93/75/f4/9375f4b9-4437-b475-e473-bbb619807388/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/fa/9c/8ffa9cc7-47b1-d42e-375c-0ed806e3c235/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/35/56/6e355651-ef7b-6a88-65b3-7b4ce52afec6/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/6e/21/1d6e2108-4658-a441-5069-64e58c009cb6/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5c/9e/a8/5c9ea83e-e15e-2bf9-755b-e09475c66f24/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c4/95/8b/c4958b2c-e302-eba1-8409-3e6bf34d2c97/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/c9/78/b1c9789b-e897-a7b0-8f35-6e1efbd41622/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2b/fe/c8/2bfec8f0-197a-ab36-5239-c895c61ffffe/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a4/3d/56/a43d56a3-b902-1b9d-2b02-2a43812ca45d/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/8c/17/c88c1760-6a67-6f2a-aa6b-4c3a96b66e01/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e6/25/15/e6251517-d25f-0834-1e4a-08418607650a/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a8/8d/73/a88d736d-e5b4-35fd-bec8-3c1ef6ac2743/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/6d/7a/916d7a43-6e2e-2b28-faef-933ad4c022b4/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/5b/0b/3a5b0b01-e2c7-cf2b-5fd3-504b10757f1c/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/7b/f0/677bf0e0-7774-d0d6-0435-5ef398acdbde/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/78/01/107801a5-0809-86e7-8ff7-0d2aa6543194/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/1f/f9/241ff982-2681-2cb7-ebcf-c04d14f42e29/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0c/03/e0/0c03e083-96e4-edd5-46a9-e88e46410e7f/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f0/ed/34/f0ed34f5-b2be-ee59-5a3f-c4265a58f2f8/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/87/a2/2887a213-8baa-7497-a243-9381b3a385f0/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6a/d7/b4/6ad7b421-f926-4698-80e4-754599a97350/01-guide.png/360x480bb.jpg",
@@ -381,7 +388,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "ja": {
   "storefront": "jp",
@@ -390,16 +398,16 @@
   "releaseNotes": "チケットを読み込むだけでルート全体ができあがり、「旅行を編集」で旅行者も変えられるようになりました。\n\n• 複数の航空券や乗車券をまとめて読み込むと、便・列車・バスが順番どおりルートに並び、各都市に到着日と出発日が入ります\n• 空港は推測ではなく、券面に印字されたコードで特定します\n• 深夜便で帰る旅は、出発した日に終わる扱いになります\n• 「旅行を編集」で旅行タイプと旅行者を変えられ、チェックリストもそれに合わせて変わります。新しい選択に必要な項目は追加され、不要になった未操作の項目は外れます\n• 編集画面は開くとすぐ入力欄で、チケットのスキャンボタンは旅行名の横にあります\n• 中国本土では、ガイドや予約のスクリーンショットの読み取りがより安定しました",
   "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。航空券や予約確認をスキャンすればプランに加わり、持ち物リストは行き先と日程から自動で作られます。\n\n持ち物リスト、自動作成\n• 目的地に合わせたリスト——プラグ、通貨、入国準備、交通アプリ\n• カテゴリー別・タイムライン別のチェックリスト\n• 出発 7日前・3日前・24時間前・3時間前のリマインド\n• カウントダウンとチェックリストのウィジェット\n• 項目ごとに写真とメモ\n\n旅行中\n• 保存したスポットがチェックリストに——名所、グルメ、体験をひとつずつ\n• 1日の予定が最短ルートに並び替え\n• 音声メモは自動で文字起こし\n\n旅のあと\n• 写真・メモ・音声を旅ごとに整理\n• 印刷できる旅日記アルバム、ラゲッジタグ、チケット、旅の記録\n• 忘れ物は次の持ち物リストへ自動引き継ぎ\n\n価格\n無料で開始——広告なし、アカウント不要。プレミアムで全機能を解放。サブスクが苦手な方には買い切りもあります。\n\nBeforeGo は個人の旅行整理のためのアプリです。ビザ・安全・健康・航空会社・政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。\n\n——————\nBeforeGo Premium（自動更新サブスクリプション）\nサブスクリプションですべてのプレミアム機能を利用できます：\n• 月額プラン——1か月ごとに課金\n• 年額プラン——1年ごとに課金\n年間プランには新規のお客様向けの7日間無料トライアルが付いています。正確な価格は購入確認画面に表示されます。買い切りの永久アンロックもご用意しています。\n\nお支払いは購入確定時にApple アカウントへ請求されます。現在の期間終了の24時間前までに自動更新をオフにしない限り、サブスクリプションは自動的に更新されます。更新料は期間終了前の24時間以内に請求されます。購入後はApp Storeのアカウント設定でいつでも管理・解約できます。\n\n利用規約（EULA）：https://dyljqq.github.io/terms-of-use/\nプライバシーポリシー：https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/21/5e/43/215e43a3-76b8-bf98-c5a5-9d8cd029305c/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/27/7f/c7/277fc727-fd9a-7ff4-6188-b92016742ad8/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/62/bf/9162bf37-e72e-3785-7ae2-b56727bcd2a9/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/30/8d/72308d0d-d206-ac8c-5590-dc1e99918f09/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/30/ac/df30ac1b-8711-5965-ba97-43db746c2d9b/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/52/ae/ce52ae84-2074-4115-c9d6-976f847836e7/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/3f/f1/203ff1b2-5a93-a3fe-3900-3c6ee910a0f0/07-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/c6/ac/15c6ac7b-c9c2-0257-0b7a-04b5e0b0e268/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/55/23/17/552317c3-5d7f-dfe3-338e-d89868baf1d7/09-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/c3/39/7ec33908-e1cd-72a6-6ae1-97fd459aca73/10-brand.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/97/23/e7/9723e759-67d8-944d-e087-65b988888e82/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e2/bc/1b/e2bc1b0b-283d-a969-e6aa-49054b50b08f/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/82/e4/c282e44c-7b9e-d965-9bce-4715fb5c8ce6/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/18/f6/73/18f673dd-93ac-7010-ffca-0ce05cbf03f7/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f2/82/7b/f2827b93-d520-7b87-61bd-61e50fdef960/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a7/18/16/a71816af-873a-3864-986a-738bb4c5c27f/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3a/22/77/3a227784-c4cf-acc5-dadb-8fded636af23/07-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/8d/ea/ff8dea2b-042a-1f0f-d201-f52d3ad25836/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/a3/b2/1da3b20b-d800-eb03-12df-6ba54f99bb53/09-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/8f/57/b88f5766-d767-3ae1-50aa-21958a16127e/10-brand.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/a7/04/4ca70426-5747-96db-ec40-d5437ed883c7/01-checklist.png/360x480bb.jpg",
@@ -428,7 +436,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "ko": {
   "storefront": "kr",
@@ -437,16 +446,16 @@
   "releaseNotes": "티켓을 스캔하면 전체 경로가 만들어지고, 「여행 편집」에서 여행자도 바꿀 수 있습니다.\n\n• 여러 장의 항공권·승차권을 한 번에 스캔하면 항공편, 기차, 버스가 순서대로 경로에 들어가고 도시마다 도착일과 출발일이 채워집니다\n• 공항은 추측하지 않고 표에 인쇄된 코드로 찾습니다\n• 심야편으로 돌아오는 여행은 출발한 날에 끝납니다\n• 「여행 편집」에서 여행 유형과 여행자를 바꿀 수 있고, 체크리스트도 함께 바뀝니다. 새 선택에 필요한 항목은 추가되고, 더 이상 필요 없고 손대지 않은 항목은 빠집니다\n• 편집 화면은 바로 입력란부터 시작하고, 티켓 스캔 버튼은 여행 이름 옆에 있습니다\n• 중국 본토에서 가이드와 예약 스크린샷을 더 안정적으로 읽습니다",
   "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 가 볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어가고, 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.\n\n패킹리스트 자동 생성\n• 목적지 맞춤 준비물 리스트 — 플러그, 환전, 입국 준비, 교통 앱\n• 카테고리별·타임라인별 체크리스트\n• 출발 7일·3일·24시간·3시간 전 알림\n• 홈 화면 카운트다운·체크리스트 위젯\n• 항목마다 사진과 메모 추가\n\n여행 중\n• 저장한 장소가 체크리스트로 — 명소, 맛집, 체험을 하나씩 완료\n• 하루 일정이 최단 도보 동선으로 정렬\n• 음성 메모 자동 텍스트 변환\n\n여행 후\n• 사진·메모·음성, 여행별로 정리\n• 인쇄 가능한 추억 앨범, 러기지 태그, 티켓, 여행 영수증\n• 잊었던 물건은 다음 여행 리스트로 자동 이월\n\n가격\n무료로 시작 — 광고 없음, 계정 불필요. 프리미엄으로 모든 기능을 열 수 있고, 구독을 원하지 않으면 평생 이용권을 한 번만 구매할 수 있습니다.\n\nBeforeGo는 개인 여행 준비용 도구이며 비자·안전·건강·항공사 등 공식 안내를 대체하지 않습니다. 중요한 요건은 반드시 공식 출처에서 확인하세요.\n\n——————\nBeforeGo Premium(자동 갱신 구독)\n구독하면 모든 프리미엄 기능을 사용할 수 있습니다:\n• 월간 플랜 — 1개월마다 결제\n• 연간 플랜 — 1년마다 결제\n연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. 정확한 가격은 구매 확인 화면에 표시되며, 일회성 평생 이용권도 제공됩니다.\n\n결제는 구매 확정 시 Apple 계정으로 청구됩니다. 현재 기간 종료 최소 24시간 전에 자동 갱신을 끄지 않으면 구독이 자동으로 갱신됩니다. 갱신 요금은 현재 기간 종료 전 24시간 이내에 청구됩니다. 구매 후 App Store 계정 설정에서 언제든지 관리하거나 해지할 수 있습니다.\n\n이용약관(EULA): https://dyljqq.github.io/terms-of-use/\n개인정보 처리방침: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f1/02/19/f1021912-a77a-976b-28d6-142c354d6b58/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a6/a5/96/a6a5969a-c3dc-bc25-c530-b92a53bb3cb3/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/65/e6/0665e68f-5a55-9b76-44e6-9ea947f834a3/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/e7/18/9fe718e2-9e35-5209-1a72-3f8034d905af/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/55/c4/07/55c4076b-3772-e197-73a2-f05b7cb7f2a4/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/03/d2/1d03d2d4-9e5a-a9d6-443f-f5b5fd7b5cf4/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ec/90/4d/ec904dfd-0ffc-5749-ab36-5be4b8609fe9/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/6b/f4/3e6bf4ae-35ab-a089-7b36-e8841322acad/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/97/02/a29702b0-78b4-ca9e-45a6-a4e6c8da3df3/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1d/93/ac/1d93ace0-69a7-0159-3390-d29e7e12ac62/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/99/7c/87997cfb-8db4-a05c-9e5f-b1a0a10b00b0/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/d6/75/7ed675ce-fe00-7032-3cf5-de5292cfee5d/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/12/1b/db121ba6-3fb4-efee-3010-7f97ee01b47f/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fa/d1/79/fad17950-ec82-3f80-933a-8d8b94321a6b/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/ae/f6/b9aef684-c0b1-56a8-fdf8-be614b75698b/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/08/f7/19/08f719b7-d568-f041-6923-7b009db13ad0/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/88/c4/0a88c46c-57d5-8d0b-820b-0a7216dae7d8/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/57/98/85/57988591-6dde-2b2c-bc32-810d7a4a6b1d/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dc/7b/21/dc7b2120-9a20-765f-cd07-1706b05cd889/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/fa/7d/44fa7da1-8cc0-aaae-10fe-4240b976fd90/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/14/4a/65144a26-1047-0065-4211-679d8f3cf993/01-guide.png/360x480bb.jpg",
@@ -476,7 +485,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "zh-Hans": {
   "storefront": "cn",
@@ -485,16 +495,16 @@
   "releaseNotes": "扫几张机票车票就能排出整条路线，「编辑旅行」也能改同行人了。\n\n• 一次扫多张机票车票，每段航班、火车、大巴按顺序排进路线，每一站都有自己的到达和离开日期\n• 机场按票上印的三字码定位，不再靠猜是哪座城市\n• 回程是红眼航班时，行程算在起飞那天结束\n• 「编辑旅行」可以改旅行类型和同行人，清单跟着变：新选择需要的条目自动补上，不再需要、你也没动过的条目会移除\n• 编辑页打开就是字段，扫描车票的按钮在行程名旁边\n• 在中国大陆，读攻略截图和订单截图更稳定了",
   "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程：值得去的地方、出发前要办的事，还有攻略里每一天的安排。机票或订单确认一扫就进行程，行李清单按目的地和日期自动生成。\n\n行前\n• 按目的地生成打包清单——插座、货币、入境准备、当地 App\n• 分类与时间线两种视图,出发前 7 天/3 天/24 小时/3 小时提醒\n• 倒计时与清单小组件,每个条目可加照片和备注\n\n旅途中\n• 存下的地点变成打卡清单——景点、美食、体验逐个完成\n• 一天的行程自动排成最短步行路线\n• 语音随手记,自动转文字\n\n行后\n• 照片、笔记、语音按旅程归档\n• 可打印的回忆相册、行李吊牌、票根与旅行小票\n• 忘带的东西自动带入下一次清单\n\n价格\n免费开始——无广告、无需账号。高级版解锁全部功能;不想订阅,可一次性买断。\n\nBeforeGo 用于个人旅行整理,不能替代签证、安全、健康、航司或政府的官方信息;重要要求请以官方渠道为准。\n\n——————\nBeforeGo Premium 高级订阅（自动续订）\n订阅可解锁全部高级功能：\n• 月度订阅——每 1 个月计费一次\n• 年度订阅——每 1 年计费一次\n年度订阅为新用户提供 7 天免费试用。具体价格会在购买页确认前显示；另提供一次性永久解锁。\n\n购买确认时将通过你的 Apple 账户付款。订阅会自动续订，除非在当前周期结束前至少 24 小时关闭自动续订。系统会在当前周期结束前 24 小时内扣款续订。你可随时在 App Store 账户设置中管理或取消订阅。\n\n服务条款（EULA）：https://dyljqq.github.io/terms-of-use/\n隐私政策：https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/30/98/db309876-63f1-63f0-90e2-9bfdbd3cc251/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/14/d1/ae14d154-3869-1b0b-d354-9c334ab436a6/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/5c/9a/085c9a0a-0406-7cb0-ceea-7227e1e016bc/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/35/6e/18356e52-6485-64e1-70b4-c0c752135902/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/57/61/33576137-31f6-d13a-63ba-6e7c9098c157/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/4f/a5/1f4fa53a-1de9-7845-28f6-1f71f5f53b88/07-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/87/a3/7f87a31d-7702-da9a-d6c9-fed2208a4dbb/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/4a/c9/d14ac947-5bd3-57c2-35cf-c740d185f10d/09-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/ba/7a/d8ba7a8f-0458-f062-a3ab-0991d631ac56/10-brand.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/91/22/159122d5-2379-ca38-41a0-fcbccffa1d2d/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/5e/fd/5b5efdfe-e636-7829-f31f-51a79b3374dd/09-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/ff/ee/acffeede-9be8-f04c-c353-7823aa9a29d8/10-brand.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/96/7b/b2/967bb21a-5345-fff2-96bc-3eb0bf889e42/01-checklist.png/360x480bb.jpg",
@@ -523,7 +533,8 @@
   ],
   "rating": 4,
   "ratingCount": 4,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "zh-Hant": {
   "storefront": "tw",
@@ -532,16 +543,16 @@
   "releaseNotes": "掃幾張機票車票就能排出整條路線，「編輯旅行」也能改同行人了。\n\n• 一次掃多張機票車票，每段航班、火車、巴士依序排進路線，每一站都有自己的抵達與離開日期\n• 機場依票上印的三字碼定位，不再靠猜是哪座城市\n• 回程是紅眼航班時，行程算在起飛那天結束\n• 「編輯旅行」可以改旅行類型和同行人，清單跟著變：新選擇需要的項目自動補上，不再需要、你也沒動過的項目會移除\n• 編輯頁打開就是欄位，掃描車票的按鈕在行程名稱旁邊\n• 在中國大陸，讀攻略截圖和訂單截圖更穩定了",
   "description": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程：值得去的地方、出發前要辦的事，還有攻略裡每一天的安排。機票或訂單確認一掃就進行程，行李清單依目的地與日期自動生成。\n\n行李清單,自動生成\n• 依目的地量身打造——插座、貨幣、入境準備與交通 App\n• 依分類或時間線檢視的行前清單\n• 出發前 7 天、3 天、24 小時、3 小時提醒\n• 倒數與清單小工具\n• 每個項目都能加照片與備註\n\n旅途中\n• 存下的地點變成打卡清單——景點、美食、體驗逐一完成\n• 一天的行程自動排成最短步行路線\n• 語音記錄自動轉成文字\n\n旅程之後\n• 照片、筆記、語音,按旅程整理\n• 可列印的回憶相冊、行李吊牌、票根與旅行收據\n• 忘記帶的東西自動帶入下一次清單\n\n價格\n免費開始——無廣告、無需帳號。Premium 解鎖全部功能;不想訂閱,也可以一次性買斷。\n\nBeforeGo 用於個人旅行整理,不能取代簽證、安全、健康、航空公司或政府的官方資訊;重要事項請務必以官方來源為準。\n\n——————\nBeforeGo Premium 進階訂閱（自動續訂）\n訂閱即可解鎖所有進階功能：\n• 月訂閱——每 1 個月計費一次\n• 年訂閱——每 1 年計費一次\n年度訂閱為新用戶提供 7 天免費試用。實際價格會在購買頁確認前顯示；另提供一次性永久解鎖。\n\n購買確認時將透過你的 Apple 帳戶付款。訂閱會自動續訂，除非在當期結束前至少 24 小時關閉自動續訂。系統會在當期結束前 24 小時內扣款續訂。你可隨時在 App Store 帳戶設定中管理或取消訂閱。\n\n使用條款（EULA）：https://dyljqq.github.io/terms-of-use/\n隱私政策：https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3e/26/d6/3e26d681-f59a-e479-715c-3f6d240d130a/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b4/20/65/b4206502-3ae9-5550-c93f-9ef7f290964c/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f3/a0/24/f3a024f2-8b67-487f-6080-fbf62ee44f2f/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/9e/de/249edeae-d7c2-9a0c-d580-07d1ca7e4c21/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/96/6b/a6/966ba680-513d-d019-476e-84dcfd8b7094/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d1/f6/c3/d1f6c30d-3cfd-6911-c0ed-0a68dd890b5d/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f9/81/c8/f981c8d3-5a8b-405e-081c-e5a743be7527/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/e8/22/bfe82297-221c-8f00-95b5-b58ebd335eb4/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/70/08/f9/7008f927-6779-56c1-24ee-81a7e2fdf836/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/5c/15/2c5c15e6-6c72-f530-95df-497b10305947/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7c/da/6e/7cda6e90-d432-ffbd-4aa7-1ef11ab07ad3/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c7/df/39/c7df3976-3cde-db46-76d2-f398e3d48ebe/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3d/ff/7f/3dff7f02-71c3-d723-b11d-bd8a899d91b8/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/ae/e8/d7aee8b2-76e2-2026-42b0-eb8fa560587b/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/97/c5/5d/97c55d1b-8d5a-24fd-fb07-77bfca6aedfb/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/88/3d/cc/883dcc8b-1d00-7f18-2550-2dda79cc0a58/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/70/5b/26705b26-7cfb-e1d8-b3fd-bf519e7e9874/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/c0/02/fcc00203-e30f-8638-0f69-0b288a183421/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d1/49/de/d149de6f-c694-37d7-4357-bb64d52f3ce6/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b5/7f/6f/b57f6fa8-8bbd-f7eb-5b97-b91e69c73cc8/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2c/07/05/2c070515-be32-a875-5a47-a6ec4b458ef5/01-guide.png/360x480bb.jpg",
@@ -571,7 +582,8 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "th": {
   "storefront": "th",
@@ -580,16 +592,16 @@
   "releaseNotes": "สแกนตั๋วแล้วได้เส้นทางทั้งทริป และหน้าแก้ไขทริปเปลี่ยนผู้เดินทางได้แล้ว\n\n• สแกนตั๋วหลายใบพร้อมกัน เที่ยวบิน รถไฟ และรถบัสจะเรียงเข้าเส้นทางตามลำดับ ทุกเมืองมีวันถึงและวันออกของตัวเอง\n• สนามบินระบุจากรหัสที่พิมพ์บนตั๋ว ไม่ต้องเดา\n• ทริปที่บินกลับตอนดึกจะจบในวันที่เครื่องออก\n• หน้าแก้ไขทริปเปลี่ยนประเภททริปและผู้เดินทางได้ และเช็กลิสต์จะปรับตาม รายการที่ตัวเลือกใหม่ต้องใช้จะถูกเพิ่ม ส่วนรายการที่ไม่จำเป็นแล้วและคุณยังไม่ได้แตะจะถูกเอาออก\n• หน้าแก้ไขเปิดมาเจอช่องกรอกทันที และปุ่มสแกนตั๋วอยู่ข้างชื่อทริป\n• ในจีนแผ่นดินใหญ่ การอ่านภาพหน้าจอคู่มือเที่ยวและการจองเสถียรขึ้น",
   "description": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้ สแกนตั๋วหรือใบยืนยันการจองก็เพิ่มลงในแผนได้เลย ส่วนลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง\n\nเตรียมของก่อนเดินทาง\n• ลิสต์ตามจุดหมาย — ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง แอปเดินทาง\n• เช็กลิสต์แบบหมวดหมู่หรือไทม์ไลน์\n• แจ้งเตือนล่วงหน้า 7 วัน 3 วัน 24 ชม. และ 3 ชม.\n• วิดเจ็ตนับถอยหลังและเช็กลิสต์\n• เพิ่มรูปและโน้ตในแต่ละรายการ\n\nระหว่างทริป\n• ที่ที่บันทึกไว้กลายเป็นเช็กลิสต์ — ที่เที่ยว ของกิน ประสบการณ์\n• แผนหนึ่งวันจัดเรียงเป็นเส้นทางเดินที่สั้นที่สุด\n• โน้ตเสียงถอดเป็นข้อความอัตโนมัติ\n\nหลังทริป\n• รูป โน้ต และเสียง จัดเก็บตามทริป\n• อัลบั้มความทรงจำพิมพ์ได้ ป้ายกระเป๋า ตั๋ว และใบเสร็จทริป\n• ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้า\n\nราคา\nเริ่มใช้ฟรี — ไม่มีโฆษณา ไม่ต้องสมัครบัญชี พรีเมียมปลดล็อกทุกฟีเจอร์ หรือซื้อครั้งเดียวใช้ตลอดหากไม่ต้องการสมัครสมาชิก\n\nBeforeGo ใช้สำหรับจัดระเบียบการเดินทางส่วนตัว ไม่แทนข้อมูลทางการเรื่องวีซ่า สุขภาพ ความปลอดภัย หรือสายการบิน โปรดตรวจสอบข้อกำหนดสำคัญจากแหล่งทางการเสมอ\n\n——————\nBeforeGo Premium (การสมัครสมาชิกแบบต่ออายุอัตโนมัติ)\nการสมัครสมาชิกจะปลดล็อกฟีเจอร์พรีเมียมทั้งหมด:\n• แผนรายเดือน — เรียกเก็บเงินทุก 1 เดือน\n• แผนรายปี — เรียกเก็บเงินทุก 1 ปี\nแผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ ราคาจะแสดงในหน้าชำระเงินก่อนยืนยัน และมีตัวเลือกซื้อขาดแบบใช้ได้ตลอดชีพด้วย\n\nระบบจะเรียกเก็บเงินผ่านบัญชี Apple ของคุณเมื่อยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่จะปิดการต่ออายุอัตโนมัติอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน ระบบจะเรียกเก็บค่าต่ออายุภายใน 24 ชั่วโมงก่อนสิ้นสุดรอบ คุณสามารถจัดการหรือยกเลิกการสมัครได้ทุกเมื่อในการตั้งค่าบัญชี App Store\n\nข้อกำหนดการใช้งาน (EULA): https://dyljqq.github.io/terms-of-use/\nนโยบายความเป็นส่วนตัว: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/2d/cb/cb2dcb27-9648-07cd-4381-37783185c33b/01-guide.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/25/0a/b1/250ab1ac-631d-5174-072e-770ff680ffd8/02-thingstodo.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4b/3d/af/4b3daf13-c008-d3fe-31bb-102a78731cbc/03-bookings.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bb/c3/30/bbc33034-934c-9e01-f2ff-e922ea5fed82/04-checklist.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fd/e4/62/fde462a0-887b-15c1-3078-0d0ca2ba04cc/05-countdown.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/79/e6/01/79e601c1-6168-e598-288d-3fca51f2536d/06-lens.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/41/23/12/41231242-acf0-b7a4-9329-23e4a5b29137/07-receipt.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/30/ec/47/30ec4736-e651-4c36-5475-1aebf60d3a1e/08-voice.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/08/62/730862b4-8e58-f547-f97a-d41552869442/09-album.png/320x480bb.jpg",
-   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/e5/3a/87e53ad3-4bf7-1e89-bec7-1990f7ed5fbb/10-widgets.png/320x480bb.jpg"
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/07/1c/ae/071cae4f-ecf4-f76f-5501-9ec4c6ab7f20/01-guide.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e2/50/18/e250185f-9e1c-1551-7764-2b31a5969657/02-thingstodo.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/05/42/db/0542dbb3-0772-f8c3-f02b-5535076a3865/03-bookings.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/6b/19/f46b1924-fe37-72d8-426d-dadcf27697e0/04-checklist.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/d9/ce/f0d9ceab-3847-527a-8261-b6efc566e14f/05-countdown.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3f/24/f4/3f24f41e-791d-a412-b4e1-6500e0d8ec89/06-lens.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2a/44/b5/2a44b5a0-8c70-40ac-0d62-16a240b4b9cb/07-receipt.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/65/73/d1657389-f082-0294-d66a-4919e7503b82/08-expenses.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/b8/3b/edb83b63-5440-caa1-4989-777877bf402e/09-album.png/392x696bb.png",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c8/cb/01/c8cb0110-ee10-1b2c-6309-ce5f2a574ac4/10-widgets.png/392x696bb.png"
   ],
   "ipad": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/71/54/cc7154df-bcf7-f28b-2170-d97ecec9c713/01-guide.png/360x480bb.jpg",
@@ -619,6 +631,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-26"
+  "fetched": "2026-09-26",
+  "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  }
 }

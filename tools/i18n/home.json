@@ -1,0 +1,706 @@
+{
+ "de": {
+  "title": "go ka — kleine iPhone-Apps für jeden Tag",
+  "description": "Sieben kleine iPhone-Apps von go ka: Countdown-Widget, KI-Reiseplaner, Rechnungen, Kalorienzähler, QR-Code-Generator, Vokabeltrainer und Trainings-Tracker.",
+  "skip": "Zu den Apps springen",
+  "brand_small": "iPhone Apps",
+  "nav_apps": "Apps",
+  "nav_tools": "Tools",
+  "nav_about": "Über",
+  "nav_contact": "Kontakt",
+  "language": "Sprache",
+  "h1_line1": "Kleine Apps",
+  "h1_line2": "für jeden Tag",
+  "hero_p1": "Sieben kleine iPhone-Apps, jede für genau eine Aufgabe.",
+  "hero_p2": "Countdown, Reisen, Rechnungen, Kalorien, QR-Codes, Vokabeln, Training.",
+  "scene_label": "Eine Strichzeichnung von Hügeln, einer aufgehenden Sonne und einem kleinen Vogel. Tipp, um zu grüßen.",
+  "scene_hint": "Tippe auf die Hügel, um zu grüßen",
+  "redraw": "Nochmal zeichnen",
+  "pause_label": "Animation pausieren",
+  "play_label": "Animation abspielen",
+  "scroll_label": "Nach unten scrollen zu den Apps",
+  "apps_sub": "Sieben Apps. Eine Aufgabe pro App.",
+  "get_on_store": "{label} im App Store",
+  "see_all": "Alle sieben Apps im App Store ansehen",
+  "about_label": "Über go ka",
+  "quote": "„Was ist, wenn eine App nur eine Sache tut – und das richtig gut?“",
+  "about_p1": "Die meisten Apps versuchen, alles zu können. Diese beginnen bei einem Moment aus dem echten Leben – ein Tag, auf den man wartet, ein Ladekabel, das man immer vergisst, eine Rechnung, die noch heute raus muss – und versuchen, genau diesen Moment richtig hinzubekommen.",
+  "about_p2": "go ka ist ein unabhängiger Entwickler. Alle Apps sind kostenlos zum Herunterladen, keine fragt dich, ein Konto zu erstellen, und der Preis für Extras wird vor dem Kauf angezeigt.",
+  "about_sign": "Kleine Apps für jeden Tag.",
+  "faq_title": "Häufig gefragt",
+  "faq_sub": "Kurze Antworten auf häufige Fragen.",
+  "contact_label": "Kontakt",
+  "contact_h": "Schreib uns.",
+  "contact_p": "Feedback, ein Fehler oder eine Idee für die nächste App: Wir lesen jede Nachricht.",
+  "legal_h": "Datenschutz & Bedingungen",
+  "tools_link": "Kostenlose Tools & Leitfäden",
+  "faq": [
+   {
+    "q": "Was ist go ka?",
+    "a": "go ka ist ein unabhängiger Entwickler, der kleine iPhone-Apps für alltägliche Aufgaben entwickelt: ein Countdown-Widget, einen KI-Reiseplaner, ein Rechnungstool, einen Kalorien-Zähler, einen QR-Code-Generator, eine Englisch-Vokabel-App für Kinder und einen Gym-Trainings-Tracker. Alle sieben Apps sind im App Store unter einem Entwickler-Konto veröffentlicht."
+   },
+   {
+    "q": "Sind die Apps kostenlos?",
+    "a": "Alle sieben Apps kannst du kostenlos laden und ohne Bezahlung nutzen. Zusatzfunktionen gibt es mit einem optionalen Abo, bei manchen Apps auch als Einmalkauf. Der Preis steht immer in der App, bevor du bestätigst."
+   },
+   {
+    "q": "Muss ich ein Konto erstellen?",
+    "a": "Nein. Keine der Apps verlangt Registrierung oder Kontoerstellung. Wenn eine App zwischen Geräten synchronisiert, nutzt sie deine eigene iCloud."
+   },
+   {
+    "q": "Auf welchen Geräten laufen die Apps?",
+    "a": "iPhone und iPad. Sechs Apps brauchen iOS 17 oder neuer; DailyCalorie braucht iOS 18 oder neuer."
+   },
+   {
+    "q": "In welchen Sprachen sind die Apps verfügbar?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie und Word Beast gibt es in 10 oder mehr Sprachen, darunter Englisch, Chinesisch, Japanisch, Koreanisch, Französisch, Deutsch, Italienisch, Portugiesisch und Thai. QR Studio und Repdex gibt es nur auf Englisch."
+   },
+   {
+    "q": "Wie bekomme ich Hilfe zu einer App?",
+    "a": "Schreib an qinqiangji@gmail.com und nenn die App, um die es geht. Wir lesen jede Nachricht. Jede App hat außerdem eine eigene Seite auf dieser Website, mit Datenschutzerklärung und Nutzungsbedingungen."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "go ka folgen"
+ },
+ "fr": {
+  "title": "go ka — petites applis iPhone pour chaque jour",
+  "description": "Sept petites apps iPhone de go ka : compte à rebours, planificateur de voyage IA, factures, compteur de calories, codes QR, vocabulaire et suivi sportif.",
+  "skip": "Aller aux applis",
+  "brand_small": "Apps iPhone",
+  "nav_apps": "Apps",
+  "nav_tools": "Outils",
+  "nav_about": "À propos",
+  "nav_contact": "Contact",
+  "language": "Langue",
+  "h1_line1": "Petites apps",
+  "h1_line2": "pour chaque jour",
+  "hero_p1": "Sept petites apps iPhone, chacune pensée pour une chose du quotidien.",
+  "hero_p2": "Décompte, voyages, factures, calories, codes QR, vocabulaire, sport.",
+  "scene_label": "Un dessin au trait de collines, d'un soleil levant et d'un petit oiseau. Touchez pour dire bonjour.",
+  "scene_hint": "Touchez les collines pour dire bonjour",
+  "redraw": "Redessiner",
+  "pause_label": "Pause",
+  "play_label": "Lire",
+  "scroll_label": "Faire défiler vers les apps",
+  "apps_sub": "Sept apps. Chacune pour une chose du quotidien.",
+  "get_on_store": "{label} sur l'App Store",
+  "see_all": "Voir les sept apps sur l'App Store",
+  "about_label": "À propos de go ka",
+  "quote": "« Et si une appli ne faisait qu’une chose, et la faisait bien ? »",
+  "about_p1": "La plupart des applis veulent tout faire. Les nôtres partent d’un moment de la vraie vie – le jour qu’on attend, le chargeur qu’on oublie toujours, la facture qui doit partir ce soir – et font tout pour que ce moment-là se passe bien.",
+  "about_p2": "go ka est un développeur indépendant. Chaque app est gratuite à télécharger, aucune ne demande de compte, et le prix de tout supplément est indiqué avant de payer.",
+  "about_sign": "De petites apps pour chaque jour.",
+  "faq_title": "Questions",
+  "faq_sub": "Des réponses courtes aux questions qu’on nous pose.",
+  "contact_label": "Contact",
+  "contact_h": "Écrivez-nous.",
+  "contact_p": "Un retour, un bug ou une idée pour la prochaine app : nous lisons chaque message.",
+  "legal_h": "Vie privée & conditions",
+  "tools_link": "Outils et guides gratuits",
+  "faq": [
+   {
+    "q": "Qu'est-ce que go ka ?",
+    "a": "go ka est un développeur indépendant qui crée de petites apps iPhone pour le quotidien : un widget compte à rebours, un planificateur de voyage IA, un outil de facturation, un compteur de calories, un générateur de codes QR, une app de vocabulaire anglais pour enfants et un suivi d'entraînement. Les sept apps sont publiées sur l'App Store sous un même compte développeur."
+   },
+   {
+    "q": "Les apps sont-elles gratuites ?",
+    "a": "Les sept apps se téléchargent gratuitement et s'utilisent sans payer. Les fonctionnalités en plus sont proposées avec un abonnement facultatif ; certaines apps proposent aussi un achat unique. Le prix est toujours affiché dans l'app avant de confirmer."
+   },
+   {
+    "q": "Faut-il créer un compte ?",
+    "a": "Non. Aucune app ne demande d'inscription ou de compte. Quand une app se synchronise entre appareils, elle utilise votre propre iCloud."
+   },
+   {
+    "q": "Sur quels appareils les apps fonctionnent-elles ?",
+    "a": "iPhone et iPad. Six apps nécessitent iOS 17 ou plus ; DailyCalorie nécessite iOS 18 ou plus."
+   },
+   {
+    "q": "En combien de langues les apps sont-elles disponibles ?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie et Word Beast sont disponibles en 10 langues ou plus, dont l'anglais, le chinois, le japonais, le coréen, le français, l'allemand, l'italien, le portugais et le thaï. QR Studio et Repdex existent uniquement en anglais."
+   },
+   {
+    "q": "Comment obtenir de l'aide sur une app ?",
+    "a": "Écrivez à qinqiangji@gmail.com en précisant l'app. Nous lisons chaque message. Chaque app a aussi sa page sur ce site, avec sa politique de confidentialité et ses conditions d'utilisation."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "Suivre go ka"
+ },
+ "it": {
+  "title": "go ka — piccole app iPhone per ogni giorno",
+  "description": "Sette piccole app iPhone di go ka: widget countdown, pianificatore di viaggio IA, fatture, contacalorie, codici QR, vocabolario e allenamenti in palestra.",
+  "skip": "Vai alle app",
+  "brand_small": "App iPhone",
+  "nav_apps": "App",
+  "nav_tools": "Strumenti",
+  "nav_about": "Chi siamo",
+  "nav_contact": "Contatti",
+  "language": "Lingua",
+  "h1_line1": "Piccole app",
+  "h1_line2": "per ogni giorno",
+  "hero_p1": "Sette piccole app iPhone, ognuna pensata per una cosa di tutti i giorni.",
+  "hero_p2": "Countdown, viaggi, fatture, calorie, codici QR, vocabolario, palestra.",
+  "scene_label": "Un disegno a tratto di colline, sole nascente e un piccolo uccello. Tocca per dire ciao.",
+  "scene_hint": "Tocca le colline per dire ciao",
+  "redraw": "Ridisegna",
+  "pause_label": "Pausa",
+  "play_label": "Riproduci",
+  "scroll_label": "Scorri verso le app",
+  "apps_sub": "Sette app. Ognuna per una cosa di tutti i giorni.",
+  "get_on_store": "{label} su App Store",
+  "see_all": "Vedi tutte e sette le app su App Store",
+  "about_label": "Su go ka",
+  "quote": "«E se un’app facesse una cosa sola, e la facesse bene?»",
+  "about_p1": "La maggior parte delle app cerca di fare tutto. Le nostre partono da un momento vero della vita – il giorno che stai aspettando, il caricabatterie che dimentichi sempre, la fattura che deve partire stasera – e cercano di gestire bene proprio quel momento.",
+  "about_p2": "go ka è uno sviluppatore indipendente. Tutte le app sono gratis da scaricare, nessuna chiede di creare un account, e il prezzo di qualsiasi funzione extra è mostrato prima di pagare.",
+  "about_sign": "Piccole app per ogni giorno.",
+  "faq_title": "Domande frequenti",
+  "faq_sub": "Risposte brevi alle domande più comuni.",
+  "contact_label": "Contatti",
+  "contact_h": "Scrivici.",
+  "contact_p": "Feedback, una segnalazione di bug o un'idea per la prossima app. Leggiamo ogni messaggio.",
+  "legal_h": "Privacy & condizioni",
+  "tools_link": "Strumenti e guide gratuiti",
+  "faq": [
+   {
+    "q": "Cos'è go ka?",
+    "a": "go ka è uno sviluppatore indipendente che crea piccole app iPhone per il quotidiano: un widget countdown, un pianificatore di viaggio IA, un'app di fatturazione, un contacalorie, un generatore di codici QR, un'app di vocabolario inglese per bambini e un tracker di palestra. Tutte e sette le app sono pubblicate su App Store sotto un unico account sviluppatore."
+   },
+   {
+    "q": "Le app sono gratuite?",
+    "a": "Tutte e sette le app si scaricano gratis e si possono usare senza pagare. Le funzioni extra sono incluse in un abbonamento facoltativo; alcune app offrono anche un acquisto una tantum. Il prezzo è sempre mostrato nell'app prima di confermare."
+   },
+   {
+    "q": "Devo creare un account?",
+    "a": "No. Nessuna app chiede di iscriversi o creare un account. Quando un'app si sincronizza tra dispositivi, usa il tuo iCloud personale."
+   },
+   {
+    "q": "Su quali dispositivi funzionano le app?",
+    "a": "iPhone e iPad. Sei app richiedono iOS 17 o successivo; DailyCalorie richiede iOS 18 o successivo."
+   },
+   {
+    "q": "In quante lingue sono disponibili le app?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie e Word Beast sono disponibili in 10 o più lingue, tra cui inglese, cinese, giapponese, coreano, francese, tedesco, italiano, portoghese e tailandese. QR Studio e Repdex sono solo in inglese."
+   },
+   {
+    "q": "Come ottengo aiuto per un'app?",
+    "a": "Scrivi a qinqiangji@gmail.com e specifica di quale app si tratta. Leggiamo ogni messaggio. Ogni app ha anche la sua pagina su questo sito con la privacy policy e le condizioni."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "Segui go ka"
+ },
+ "es": {
+  "title": "go ka — pequeñas apps para iPhone, para el día a día",
+  "description": "Siete pequeñas apps para iPhone de go ka: cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y entrenamiento.",
+  "skip": "Ir a las apps",
+  "brand_small": "Apps iPhone",
+  "nav_apps": "Apps",
+  "nav_tools": "Herramientas",
+  "nav_about": "Nosotros",
+  "nav_contact": "Contacto",
+  "language": "Idioma",
+  "h1_line1": "Apps pequeñas",
+  "h1_line2": "para cada día",
+  "hero_p1": "Siete pequeñas apps para iPhone, cada una hecha para una cosa del día a día.",
+  "hero_p2": "Cuenta atrás, viajes, facturas, calorías, códigos QR, vocabulario, gimnasio.",
+  "scene_label": "Un dibujo de colinas, un sol naciente y un pequeño pájaro. Toca para saludar.",
+  "scene_hint": "Toca las colinas para saludar",
+  "redraw": "Dibujar de nuevo",
+  "pause_label": "Pausar",
+  "play_label": "Reproducir",
+  "scroll_label": "Desplázate hacia las apps",
+  "apps_sub": "Siete apps. Cada una para una cosa del día a día.",
+  "get_on_store": "{label} en la App Store",
+  "see_all": "Ver las siete apps en la App Store",
+  "about_label": "Acerca de go ka",
+  "quote": "«¿Y si una app hiciera una sola cosa, y la hiciera bien?»",
+  "about_p1": "La mayoría de las apps intentan hacerlo todo. Las nuestras parten de un momento real —el día que esperas, el cargador que siempre olvidas, la factura que tiene que salir hoy— e intentan resolver bien ese momento.",
+  "about_p2": "go ka es un desarrollador independiente. Todas las apps son gratis de descargar, ninguna pide crear una cuenta, y el precio de cualquier función extra se muestra antes de pagar.",
+  "about_sign": "Apps pequeñas para cada día.",
+  "faq_title": "Preguntas",
+  "faq_sub": "Respuestas breves a las preguntas más frecuentes.",
+  "contact_label": "Contacto",
+  "contact_h": "Escríbenos.",
+  "contact_p": "Comentarios, un fallo o una idea para la próxima app. Leemos todos los mensajes.",
+  "legal_h": "Privacidad & condiciones",
+  "tools_link": "Herramientas y guías gratuitas",
+  "faq": [
+   {
+    "q": "¿Qué es go ka?",
+    "a": "go ka es un desarrollador independiente que crea pequeñas apps para iPhone para el día a día: un widget de cuenta atrás, un planificador de viajes con IA, un gestor de facturas, un contador de calorías, un generador de códigos QR, una app de vocabulario inglés para niños y un registro de entrenamientos. Las siete apps se publican en la App Store bajo una misma cuenta de desarrollador."
+   },
+   {
+    "q": "¿Las apps son gratis?",
+    "a": "Las siete apps se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen una compra única. El precio siempre se muestra en la app antes de confirmar."
+   },
+   {
+    "q": "¿Tengo que crear una cuenta?",
+    "a": "No. Ninguna app pide registrarse o crear una cuenta. Cuando una app se sincroniza entre dispositivos, utiliza tu propio iCloud."
+   },
+   {
+    "q": "¿En qué dispositivos funcionan las apps?",
+    "a": "iPhone e iPad. Seis apps necesitan iOS 17 o posterior; DailyCalorie necesita iOS 18 o posterior."
+   },
+   {
+    "q": "¿En cuántos idiomas están disponibles las apps?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie y Word Beast están disponibles en 10 o más idiomas, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. QR Studio y Repdex están solo en inglés."
+   },
+   {
+    "q": "¿Cómo obtengo ayuda con una app?",
+    "a": "Escribe a qinqiangji@gmail.com y di cuál es la app. Leemos todos los mensajes. Cada app también tiene su página en este sitio con su política de privacidad y condiciones."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "Sigue a go ka"
+ },
+ "es-MX": {
+  "title": "go ka — apps pequeñas para iPhone, para el día a día",
+  "description": "Siete apps para iPhone de go ka: widget de cuenta regresiva, planificador de viajes con IA, notas de venta y cotizaciones, calorías, códigos QR y más.",
+  "skip": "Ir a las apps",
+  "brand_small": "APPS PARA IPHONE",
+  "nav_apps": "Apps",
+  "nav_tools": "Herramientas",
+  "nav_about": "Nosotros",
+  "nav_contact": "Contacto",
+  "language": "Idioma",
+  "h1_line1": "Apps pequeñas",
+  "h1_line2": "para el día a día.",
+  "hero_p1": "Siete apps pequeñas para iPhone, cada una hecha para una tarea del día a día.",
+  "hero_p2": "Cuentas regresivas, viajes, notas de venta, calorías, códigos QR, vocabulario y gym.",
+  "scene_label": "Dibujo de unas colinas, un sol que sale y un pajarito. Tócalo para saludar.",
+  "scene_hint": "Toca las colinas para saludar",
+  "redraw": "Volver a dibujar",
+  "pause_label": "Pausar la animación",
+  "play_label": "Reanudar la animación",
+  "scroll_label": "Ir a las apps",
+  "apps_sub": "Siete apps. Una tarea del día a día cada una.",
+  "get_on_store": "{label} en el App Store",
+  "see_all": "Ver las siete apps en el App Store",
+  "about_label": "Sobre go ka",
+  "quote": "“¿Y si una app hiciera una sola cosa, y la hiciera bien?”",
+  "about_p1": "La mayoría de las apps quieren hacerlo todo. Las nuestras parten de un momento pequeño del día a día —el día que estás esperando, el cargador que siempre se te olvida empacar, la cotización que tienes que mandar hoy en la noche— y se enfocan en resolver bien ese momento.",
+  "about_p2": "go ka es un desarrollador independiente. Todas las apps se descargan gratis, ninguna te pide crear una cuenta y el precio de cualquier extra se muestra antes de pagar.",
+  "about_sign": "Apps pequeñas. Cosas de todos los días.",
+  "faq_title": "Preguntas frecuentes",
+  "faq_sub": "Respuestas cortas a lo que más nos preguntan.",
+  "contact_label": "Contacto",
+  "contact_h": "Escríbenos.",
+  "contact_p": "Comentarios, un error o una idea para la próxima app. Leemos todos los mensajes.",
+  "legal_h": "Aviso de privacidad y términos",
+  "tools_link": "Herramientas y guías gratis",
+  "faq": [
+   {
+    "q": "¿Qué es go ka?",
+    "a": "go ka es un desarrollador independiente que hace apps pequeñas para iPhone para el día a día: un widget de cuenta regresiva, un planificador de viajes con IA, una app para hacer notas de venta y cotizaciones, un contador de calorías con foto, un generador de códigos QR, una app de vocabulario en inglés para niños y un registro de entrenamientos para el gym. Las siete están publicadas en el App Store con la misma cuenta de desarrollador."
+   },
+   {
+    "q": "¿Las apps son gratis?",
+    "a": "Las siete se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen un pago único. El precio siempre aparece en la app antes de confirmar."
+   },
+   {
+    "q": "¿Tengo que crear una cuenta?",
+    "a": "No. Ninguna app te pide registrarte ni crear una cuenta. Cuando una app sincroniza entre tus dispositivos, usa tu propio iCloud."
+   },
+   {
+    "q": "¿En qué dispositivos funcionan?",
+    "a": "En iPhone y iPad. Seis apps requieren iOS 17 o posterior; DailyCalorie requiere iOS 18 o posterior."
+   },
+   {
+    "q": "¿En qué idiomas están las apps?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie y Word Beast están en 10 idiomas o más, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. Invoice Maker además está en español. QR Studio y Repdex están en inglés."
+   },
+   {
+    "q": "¿Cómo pido ayuda con una app?",
+    "a": "Escribe a qinqiangji@gmail.com y dinos de qué app se trata. Leemos todos los mensajes. Cada app también tiene su página en este sitio con su aviso de privacidad y sus términos."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "Sigue a go ka"
+ },
+ "pt-BR": {
+  "title": "go ka — pequenos apps para iPhone, para o dia a dia",
+  "description": "Sete apps pequenos para iPhone da go ka: contagem regressiva, planejador de viagem com IA, faturas, calorias, códigos QR, vocabulário e treinos.",
+  "skip": "Ir para apps",
+  "brand_small": "Apps iPhone",
+  "nav_apps": "Apps",
+  "nav_tools": "Ferramentas",
+  "nav_about": "Sobre",
+  "nav_contact": "Contato",
+  "language": "Idioma",
+  "h1_line1": "Apps pequenos",
+  "h1_line2": "para o dia a dia",
+  "hero_p1": "Sete apps pequenos para iPhone, cada um feito para uma coisa do dia a dia.",
+  "hero_p2": "Contagem regressiva, viagens, faturas, calorias, códigos QR, vocabulário, academia.",
+  "scene_label": "Um desenho de colinas, um sol nascente e um pequeno pássaro. Toque para dizer oi.",
+  "scene_hint": "Toque nas colinas para dizer oi",
+  "redraw": "Desenhar novamente",
+  "pause_label": "Pausar",
+  "play_label": "Reproduzir",
+  "scroll_label": "Role para os apps",
+  "apps_sub": "Sete apps. Cada um para uma coisa do dia a dia.",
+  "get_on_store": "{label} na App Store",
+  "see_all": "Ver os sete apps na App Store",
+  "about_label": "Sobre go ka",
+  "quote": "“E se um app fizesse só uma coisa, e fizesse bem?”",
+  "about_p1": "A maioria dos apps tenta fazer tudo. Os nossos começam por um momento real: o dia que você está esperando, o carregador que você sempre esquece, a fatura que precisa sair hoje – e tentam acertar naquele momento.",
+  "about_p2": "go ka é um desenvolvedor independente. Todos os apps são grátis para baixar, nenhum pede para criar uma conta, e o preço de qualquer recurso extra é mostrado antes de pagar.",
+  "about_sign": "Apps pequenos para o dia a dia.",
+  "faq_title": "Perguntas frequentes",
+  "faq_sub": "Respostas breves para as perguntas mais comuns.",
+  "contact_label": "Contato",
+  "contact_h": "Fale com a gente.",
+  "contact_p": "Comentários, um bug ou uma ideia para o próximo app. Lemos todas as mensagens.",
+  "legal_h": "Privacidade & termos",
+  "tools_link": "Ferramentas e guias gratuitos",
+  "faq": [
+   {
+    "q": "O que é go ka?",
+    "a": "go ka é um desenvolvedor independente que cria pequenos apps para iPhone para o dia a dia: um widget de contagem regressiva, um planejador de viagem com IA, um gestor de faturas, um contador de calorias, um gerador de códigos QR, um app de vocabulário em inglês para crianças e um registro de treinos de academia. Os sete apps são publicados na App Store sob uma única conta de desenvolvedor."
+   },
+   {
+    "q": "Os apps são grátis?",
+    "a": "Os sete apps são grátis para baixar e podem ser usados sem pagar. Recursos extras vêm com uma assinatura opcional, e alguns apps também oferecem uma compra única. O preço é sempre mostrado no app antes de confirmar."
+   },
+   {
+    "q": "Preciso criar uma conta?",
+    "a": "Não. Nenhum dos apps pede para se registrar ou criar uma conta. Quando um app sincroniza entre dispositivos, ele usa seu próprio iCloud."
+   },
+   {
+    "q": "Em quais dispositivos os apps funcionam?",
+    "a": "iPhone e iPad. Seis apps precisam do iOS 17 ou posterior; DailyCalorie precisa do iOS 18 ou posterior."
+   },
+   {
+    "q": "Em quantos idiomas os apps estão disponíveis?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie e Word Beast estão disponíveis em 10 ou mais idiomas, incluindo inglês, chinês, japonês, coreano, francês, alemão, italiano, português e tailandês. QR Studio e Repdex estão apenas em inglês."
+   },
+   {
+    "q": "Como obtenho ajuda com um app?",
+    "a": "Envie um e-mail para qinqiangji@gmail.com e diga qual é o app. Lemos todas as mensagens. Cada app também tem sua própria página neste site, com política de privacidade e termos."
+   }
+  ],
+  "nav_blog": "Blog",
+  "follow": "Siga a go ka"
+ },
+ "ja": {
+  "title": "go ka — 毎日を彩るiPhoneアプリ",
+  "description": "go kaの7つのiPhoneアプリ：カウントダウンウィジェット、AI旅行プランナー、請求書・見積書作成、カロリー記録、QRコード作成、子ども向け英単語、筋トレ記録。",
+  "skip": "アプリに移動",
+  "brand_small": "iPhone アプリ",
+  "nav_apps": "アプリ",
+  "nav_tools": "ツール",
+  "nav_about": "go kaについて",
+  "nav_contact": "お問い合わせ",
+  "language": "言語",
+  "h1_line1": "シンプルなアプリで",
+  "h1_line2": "毎日をより良く",
+  "hero_p1": "7つのiPhoneアプリ。それぞれが、日常のひとつのことのために。",
+  "hero_p2": "カウントダウン、旅行、請求書、カロリー、QR、英単語、筋トレ。",
+  "scene_label": "丘、昇る太陽、小さな鳥が描かれたラインドローイング。タップしてあいさつ。",
+  "scene_hint": "丘をタップしてあいさつ",
+  "redraw": "もう一度描く",
+  "pause_label": "一時停止",
+  "play_label": "再生",
+  "scroll_label": "アプリまでスクロール",
+  "apps_sub": "7つのアプリ。アプリ1つにつき1つのこと。",
+  "get_on_store": "{label}をApp Storeで入手",
+  "see_all": "7つすべてのアプリをApp Storeで見る",
+  "about_label": "go kaについて",
+  "quote": "「アプリがひとつのことだけを、きちんとやれたら？」",
+  "about_p1": "たいていのアプリは何でもやろうとします。go kaのアプリは、待ち遠しい日、いつも忘れる充電器、今日中に送りたい請求書といった日常の一場面から出発し、その場面をきちんと支えることを目指しています。",
+  "about_p2": "go kaは個人開発者です。アプリはすべて無料でダウンロードでき、アカウント作成は不要です。追加機能の価格は購入前に表示されます。",
+  "about_sign": "小さなアプリで、毎日のことを。",
+  "faq_title": "よくある質問",
+  "faq_sub": "よくある質問への簡潔な答え。",
+  "contact_label": "お問い合わせ",
+  "contact_h": "ご連絡ください。",
+  "contact_p": "ご意見、不具合の報告、次のアプリのアイデアなど。メッセージにはすべて目を通しています。",
+  "legal_h": "プライバシー & 利用規約",
+  "tools_link": "無料ツール & ガイド",
+  "faq": [
+   {
+    "q": "go kaとは？",
+    "a": "go kaは、日常のちょっとしたことのための小さなiPhoneアプリを作る個人開発者です：カウントダウンウィジェット、AI旅行プランナー、請求書・見積書作成、写真でカロリー記録、QRコード作成、子ども向け英単語、筋トレ記録。7つのアプリはすべて同じ開発者アカウントでApp Storeに公開しています。"
+   },
+   {
+    "q": "アプリは無料ですか？",
+    "a": "7つのアプリはすべて無料でダウンロードでき、支払いなしで使えます。追加機能は任意のサブスクリプションで利用でき、アプリによっては買い切りも選べます。価格は購入を確定する前に必ずアプリ内に表示されます。"
+   },
+   {
+    "q": "アカウントを作る必要がありますか？",
+    "a": "いいえ。どのアプリもサインアップやアカウント作成を求めません。アプリがデバイス間で同期する場合、あなた自身のiCloudを使用します。"
+   },
+   {
+    "q": "どのデバイスで使えますか？",
+    "a": "iPhoneとiPad。6つのアプリはiOS 17以降が必要です。DailyCalorieはiOS 18以降が必要です。"
+   },
+   {
+    "q": "アプリは何ヶ国語で使えますか？",
+    "a": "Countdown、BeforeGo、Invoice Maker、DailyCalorie、Word Beastは10ヶ国語以上で利用可能で、英語、中国語、日本語、韓国語、フランス語、ドイツ語、イタリア語、ポルトガル語、タイ語を含みます。QR StudioとRepdexは英語のみです。"
+   },
+   {
+    "q": "アプリのヘルプはどう受けられますか？",
+    "a": "qinqiangji@gmail.comまで、どのアプリについてかを添えてメールしてください。メッセージにはすべて目を通しています。各アプリにはこのサイト内に専用ページがあり、プライバシーポリシーと利用規約も載っています。"
+   }
+  ],
+  "nav_blog": "ブログ",
+  "follow": "go ka をフォロー"
+ },
+ "ko": {
+  "title": "go ka — 일상을 돕는 작은 iPhone 앱들",
+  "description": "go ka의 iPhone 앱 7개: 카운트다운 위젯, AI 여행 플래너, 청구서·견적서 작성, 칼로리 기록, QR 코드 생성, 어린이 영어 단어, 운동 기록.",
+  "skip": "앱으로 이동",
+  "brand_small": "iPhone 앱",
+  "nav_apps": "앱",
+  "nav_tools": "도구",
+  "nav_about": "소개",
+  "nav_contact": "연락처",
+  "language": "언어",
+  "h1_line1": "작은 앱들이",
+  "h1_line2": "일상을 돕습니다",
+  "hero_p1": "7개의 iPhone 앱, 각각 한 가지 일에만 집중합니다.",
+  "hero_p2": "카운트다운, 여행, 청구서, 칼로리, QR 코드, 영어, 운동.",
+  "scene_label": "언덕, 떠오르는 해, 작은 새가 그려진 선드로잉. 탭하여 인사하세요.",
+  "scene_hint": "언덕을 탭하여 인사하세요",
+  "redraw": "다시 그리기",
+  "pause_label": "일시 정지",
+  "play_label": "재생",
+  "scroll_label": "앱을 보려면 스크롤하세요",
+  "apps_sub": "7개의 앱. 앱당 한 가지 일.",
+  "get_on_store": "App Store에서 {label}",
+  "see_all": "App Store에서 7개 앱 모두 보기",
+  "about_label": "go ka 소개",
+  "quote": "“앱이 한 가지 일만 하고, 그 일을 제대로 해낸다면?”",
+  "about_p1": "대부분의 앱은 모든 것을 하려고 합니다. 우리 앱은 기다리는 날, 항상 깜빡하는 충전기, 오늘 중에 보내야 할 청구서… 그런 현실의 순간에서 출발해 그 순간을 정말 잘 해내려고 노력합니다.",
+  "about_p2": "go ka는 독립 개발자입니다. 모든 앱은 무료로 다운로드할 수 있고, 어떤 앱도 계정 생성을 요구하지 않으며, 추가 기능의 가격은 결제 전에 표시됩니다.",
+  "about_sign": "작은 앱들. 매일의 동반자.",
+  "faq_title": "자주 묻는 질문",
+  "faq_sub": "자주 묻는 질문에 대한 간단한 답변입니다.",
+  "contact_label": "연락처",
+  "contact_h": "편하게 연락 주세요.",
+  "contact_p": "피드백, 버그 제보, 다음 앱에 대한 아이디어까지. 보내 주신 메시지는 모두 읽습니다.",
+  "legal_h": "개인정보 보호 & 이용약관",
+  "tools_link": "무료 도구 & 가이드",
+  "faq": [
+   {
+    "q": "go ka란?",
+    "a": "go ka는 일상의 작은 일을 위한 iPhone 앱을 만드는 독립 개발자입니다: 카운트다운 위젯, AI 여행 플래너, 청구서·견적서 작성 도구, 사진 칼로리 기록, QR 코드 생성, 어린이 영어 단어 앱, 헬스 운동 기록. 7개 앱 모두 같은 개발자 계정으로 App Store에 출시되어 있습니다."
+   },
+   {
+    "q": "앱들이 무료인가요?",
+    "a": "7개의 앱 모두 무료로 다운로드할 수 있고, 비용을 내지 않고 사용할 수 있습니다. 추가 기능은 선택적 구독으로 제공되며, 일부 앱은 일회성 구매도 제공합니다. 가격은 항상 앱 내에서 결제 전에 표시됩니다."
+   },
+   {
+    "q": "계정을 만들어야 하나요?",
+    "a": "아니요. 어떤 앱도 가입이나 계정 생성을 요구하지 않습니다. 기기 간에 동기화할 때는 본인의 iCloud를 사용합니다."
+   },
+   {
+    "q": "어떤 기기에서 사용할 수 있나요?",
+    "a": "iPhone과 iPad. 6개의 앱은 iOS 17 이상이 필요합니다. DailyCalorie는 iOS 18 이상이 필요합니다."
+   },
+   {
+    "q": "앱이 몇 가지 언어로 지원되나요?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast는 10개 이상의 언어로 제공되며, 영어, 중국어, 일본어, 한국어, 프랑스어, 독일어, 이탈리아어, 포르투갈어, 태국어를 포함합니다. QR Studio와 Repdex는 영어만 제공됩니다."
+   },
+   {
+    "q": "앱 도움말은 어떻게 받나요?",
+    "a": "qinqiangji@gmail.com으로 어떤 앱인지 적어 메일을 보내 주세요. 보내 주신 메시지는 모두 읽습니다. 각 앱은 이 사이트에 개인정보 처리방침과 이용약관이 포함된 전용 페이지도 있습니다."
+   }
+  ],
+  "nav_blog": "블로그",
+  "follow": "go ka 팔로우"
+ },
+ "zh-Hans": {
+  "title": "go ka — 日常小应用",
+  "description": "go ka 的 7 个 iPhone 小应用：倒计时小组件、AI 行程规划、开单与报价单、卡路里记录、二维码生成、儿童英语单词、健身记录。",
+  "skip": "跳到应用列表",
+  "brand_small": "iPhone 应用",
+  "nav_apps": "应用",
+  "nav_tools": "工具",
+  "nav_about": "关于",
+  "nav_contact": "联系",
+  "language": "语言",
+  "h1_line1": "日常小事，",
+  "h1_line2": "交给小应用。",
+  "hero_p1": "7 个 iPhone 小应用，每个只为一件日常小事而做。",
+  "hero_p2": "倒计时、旅行、开单、卡路里、二维码、单词、健身。",
+  "scene_label": "一幅线条画：起伏的山丘、初升的太阳和一只小鸟。点一下打个招呼。",
+  "scene_hint": "点一下山丘，打个招呼",
+  "redraw": "重新画一遍",
+  "pause_label": "暂停",
+  "play_label": "播放",
+  "scroll_label": "向下滚动查看应用",
+  "apps_sub": "7 个应用，每个只做好一件日常小事。",
+  "get_on_store": "在 App Store 获取 {label}",
+  "see_all": "在 App Store 查看全部 7 个应用",
+  "about_label": "关于 go ka",
+  "quote": "“如果一个应用只做一件事，并把它做好呢？”",
+  "about_p1": "大多数应用什么都想做。我们的应用从生活里的一个具体时刻出发——你在等的那一天、总是忘带的充电器、今天必须发出去的账单——只想把这一刻做好。",
+  "about_p2": "go ka 是一位独立开发者。所有应用都可以免费下载，都不需要注册账号，付费功能在付款前都会标明价格。",
+  "about_sign": "小应用，做好日常小事。",
+  "faq_title": "常见问题",
+  "faq_sub": "大家常问的问题，这里有简短回答。",
+  "contact_label": "联系",
+  "contact_h": "联系我们",
+  "contact_p": "意见反馈、bug 报告，或者对下一个应用的想法，每条消息都会认真看。",
+  "legal_h": "隐私政策与使用条款",
+  "tools_link": "免费工具与指南",
+  "faq": [
+   {
+    "q": "go ka 是什么？",
+    "a": "go ka 是一位独立开发者，做专为日常小事设计的 iPhone 小应用：倒计时小组件、AI 行程规划、开单与报价单工具、拍照记卡路里、二维码生成、儿童英语单词、健身训练记录。7 个应用都以同一个开发者账号在 App Store 上架。"
+   },
+   {
+    "q": "应用是免费的吗？",
+    "a": "7 个应用都可以免费下载，不付费也能使用。额外功能通过可选订阅提供，部分应用也提供一次性买断。确认购买前，应用里一定会显示价格。"
+   },
+   {
+    "q": "需要注册账号吗？",
+    "a": "不需要。所有应用都不要求注册或创建账号。需要在多台设备间同步时，用的是你自己的 iCloud。"
+   },
+   {
+    "q": "应用能在哪些设备上用？",
+    "a": "iPhone 和 iPad。其中 6 个应用需要 iOS 17 或更高版本；DailyCalorie 需要 iOS 18 或更高版本。"
+   },
+   {
+    "q": "应用支持哪些语言？",
+    "a": "Countdown、BeforeGo、Invoice Maker、DailyCalorie 和 Word Beast 支持 10 种或更多语言，包括英文、中文、日文、韩文、法文、德文、意大利文、葡萄牙文和泰文。QR Studio 和 Repdex 只有英文版。"
+   },
+   {
+    "q": "应用遇到问题怎么求助？",
+    "a": "发邮件到 qinqiangji@gmail.com，写明是哪个应用。每封邮件都会认真看。每个应用在本网站也有自己的页面，附隐私政策和使用条款。"
+   }
+  ],
+  "nav_blog": "博客",
+  "follow": "关注 go ka"
+ },
+ "zh-Hant": {
+  "title": "go ka — 日常小 App",
+  "description": "go ka 的 7 款 iPhone App：倒數計時小工具、AI 行程規劃、開單與報價單、卡路里記錄、QR Code 產生器、兒童英文單字、健身紀錄。",
+  "skip": "跳到 App 列表",
+  "brand_small": "iPhone App",
+  "nav_apps": "App",
+  "nav_tools": "工具",
+  "nav_about": "關於",
+  "nav_contact": "聯絡",
+  "language": "語言",
+  "h1_line1": "日常小事，",
+  "h1_line2": "交給小 App。",
+  "hero_p1": "7 款 iPhone 小 App，每一款只為一件日常小事而做。",
+  "hero_p2": "倒數、旅行、開單、卡路里、QR Code、單字、健身。",
+  "scene_label": "一幅線條畫：起伏的山丘、初升的太陽和一隻小鳥。點一下打聲招呼。",
+  "scene_hint": "點一下山丘，打聲招呼",
+  "redraw": "重新畫一次",
+  "pause_label": "暫停",
+  "play_label": "播放",
+  "scroll_label": "向下捲動查看應用",
+  "apps_sub": "7 款 App，每款只做好一件日常小事。",
+  "get_on_store": "在 App Store 取得 {label}",
+  "see_all": "在 App Store 查看全部 7 款 App",
+  "about_label": "關於 go ka",
+  "quote": "「如果一款 App 只做一件事，並把它做好呢？」",
+  "about_p1": "大多數 App 什麼都想做。我們的 App 從生活中的一個具體時刻出發——你在等的那一天、老是忘記帶的充電器、今天就得送出的帳單——只想把這一刻做好。",
+  "about_p2": "go ka 是一位獨立開發者。所有 App 都能免費下載，都不需要註冊帳號，付費功能在付款前都會標示價格。",
+  "about_sign": "小 App，做好日常小事。",
+  "faq_title": "常見問題",
+  "faq_sub": "大家常問的問題，這裡有簡短回答。",
+  "contact_label": "聯絡",
+  "contact_h": "聯絡我們",
+  "contact_p": "意見回饋、錯誤回報，或對下一款 App 的想法，每則訊息都會認真看。",
+  "legal_h": "隱私權政策與使用條款",
+  "tools_link": "免費工具與指南",
+  "faq": [
+   {
+    "q": "go ka 是什麼？",
+    "a": "go ka 是一位獨立開發者，專做日常小事用的 iPhone 小 App：倒數計時小工具、AI 行程規劃、開單與報價單工具、拍照記卡路里、QR Code 產生器、兒童英文單字、健身訓練紀錄。7 款 App 都以同一個開發者帳號在 App Store 上架。"
+   },
+   {
+    "q": "App 是免費的嗎？",
+    "a": "7 款 App 都能免費下載，不付費也能使用。額外功能透過可選訂閱提供，部分 App 也提供一次性買斷。確認購買前，App 內一定會顯示價格。"
+   },
+   {
+    "q": "需要註冊帳號嗎？",
+    "a": "不需要。所有 App 都不要求註冊或建立帳號。需要在多台裝置間同步時，使用的是你自己的 iCloud。"
+   },
+   {
+    "q": "App 能在哪些裝置上使用？",
+    "a": "iPhone 和 iPad。其中 6 款 App 需要 iOS 17 或以上版本；DailyCalorie 需要 iOS 18 或以上版本。"
+   },
+   {
+    "q": "App 支援哪些語言？",
+    "a": "Countdown、BeforeGo、Invoice Maker、DailyCalorie 和 Word Beast 支援 10 種以上語言，包括英文、中文、日文、韓文、法文、德文、義大利文、葡萄牙文和泰文。QR Studio 和 Repdex 只有英文版。"
+   },
+   {
+    "q": "App 遇到問題要怎麼求助？",
+    "a": "寄信到 qinqiangji@gmail.com，註明是哪一款 App。每封信都會認真看。每款 App 在本網站也有自己的頁面，附隱私權政策和使用條款。"
+   }
+  ],
+  "nav_blog": "部落格",
+  "follow": "追蹤 go ka"
+ },
+ "th": {
+  "title": "go ka — แอปเล็ก ๆ สำหรับชีวิตประจำวัน",
+  "description": "แอป iPhone 7 ตัวจาก go ka: นับถอยหลัง วางแผนเที่ยวด้วย AI ใบแจ้งหนี้และใบเสนอราคา นับแคลอรี่ คิวอาร์โค้ด ศัพท์อังกฤษสำหรับเด็ก และบันทึกการออกกำลังกาย",
+  "skip": "ไปที่แอป",
+  "brand_small": "แอป iPhone",
+  "nav_apps": "แอป",
+  "nav_tools": "เครื่องมือ",
+  "nav_about": "เกี่ยวกับ",
+  "nav_contact": "ติดต่อ",
+  "language": "ภาษา",
+  "h1_line1": "แอปเล็ก ๆ",
+  "h1_line2": "สำหรับทุกวัน",
+  "hero_p1": "แอป iPhone เล็ก ๆ 7 ตัว แต่ละตัวทำเรื่องเดียวในชีวิตประจำวัน",
+  "hero_p2": "นับถอยหลัง ท่องเที่ยว ใบแจ้งหนี้ แคลอรี่ คิวอาร์โค้ด คำศัพท์ ออกกำลังกาย",
+  "scene_label": "ภาพวาดเส้นของเนินเขา, ดวงอาทิตย์ขึ้น และนกตัวเล็ก ๆ แตะเพื่อทักทาย",
+  "scene_hint": "แตะเนินเขาเพื่อทักทาย",
+  "redraw": "วาดใหม่",
+  "pause_label": "หยุด",
+  "play_label": "เล่น",
+  "scroll_label": "เลื่อนไปยังแอป",
+  "apps_sub": "7 แอป แต่ละแอปทำเรื่องเดียวให้ดี",
+  "get_on_store": "{label} บน App Store",
+  "see_all": "ดูแอปทั้ง 7 ตัวบน App Store",
+  "about_label": "เกี่ยวกับ go ka",
+  "quote": "“ถ้าแอปหนึ่งทำเพียงเรื่องเดียว และทำได้ดีล่ะ?”",
+  "about_p1": "แอปส่วนใหญ่พยายามทำทุกอย่าง แอปของเราเริ่มจากช่วงเวลาจริงในชีวิต เช่น วันที่คุณรอคอย สายชาร์จที่ลืมอยู่เสมอ หรือบิลที่ต้องส่งให้ทันวันนี้ แล้วตั้งใจทำช่วงเวลานั้นให้ดีที่สุด",
+  "about_p2": "go ka เป็นนักพัฒนาอิสระ ทุกแอปดาวน์โหลดได้ฟรี ไม่มีแอปไหนขอให้สร้างบัญชี และราคาของฟีเจอร์เสริมจะแสดงก่อนชำระเงินเสมอ",
+  "about_sign": "แอปเล็ก ๆ สำหรับเรื่องในทุกวัน",
+  "faq_title": "คำถามที่พบบ่อย",
+  "faq_sub": "คำตอบสั้น ๆ สำหรับคำถามที่พบบ่อย",
+  "contact_label": "ติดต่อ",
+  "contact_h": "ติดต่อเรา",
+  "contact_p": "ความเห็น ข้อบกพร่อง หรือไอเดียสำหรับแอปถัดไป เราอ่านทุกข้อความ",
+  "legal_h": "ความเป็นส่วนตัว & เงื่อนไข",
+  "tools_link": "เครื่องมือและคู่มือฟรี",
+  "faq": [
+   {
+    "q": "go ka คืออะไร?",
+    "a": "go ka คือนักพัฒนาอิสระที่สร้างแอป iPhone เล็ก ๆ สำหรับชีวิตประจำวัน: วิดเจ็ตนับถอยหลัง วางแผนเที่ยวด้วย AI แอปออกใบแจ้งหนี้และใบเสนอราคา นับแคลอรี่จากรูปถ่าย สร้างคิวอาร์โค้ด ศัพท์ภาษาอังกฤษสำหรับเด็ก และบันทึกการเล่นเวท แอปทั้ง 7 ตัวเผยแพร่บน App Store ภายใต้บัญชีนักพัฒนาเดียวกัน"
+   },
+   {
+    "q": "แอปใช้ฟรีไหม?",
+    "a": "แอป 7 ตัวทั้งหมดสามารถดาวน์โหลดได้ฟรีและใช้ได้โดยไม่จ่ายเงิน ฟีเจอร์เพิ่มเติมมาพร้อมกับการสมัครสมาชิก (ไม่บังคับ) และแอปบางตัวมีตัวเลือกการซื้อครั้งเดียวด้วย ราคาจะแสดงเสมอในแอปก่อนยืนยัน"
+   },
+   {
+    "q": "ต้องสร้างบัญชีหรือไม่?",
+    "a": "ไม่ต้อง ไม่มีแอปไหนขอให้ลงทะเบียนหรือสร้างบัญชี เมื่อแอปซิงก์ข้อมูลระหว่างอุปกรณ์ จะใช้ iCloud ของคุณเอง"
+   },
+   {
+    "q": "แอปทำงานบนอุปกรณ์ใดบ้าง?",
+    "a": "iPhone และ iPad แอป 6 ตัวต้องใช้ iOS 17 หรือใหม่กว่า DailyCalorie ต้องใช้ iOS 18 หรือใหม่กว่า"
+   },
+   {
+    "q": "แอปรองรับภาษาอะไรบ้าง?",
+    "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie และ Word Beast รองรับ 10 ภาษาขึ้นไป รวมถึงภาษาอังกฤษ จีน ญี่ปุ่น เกาหลี ฝรั่งเศส เยอรมัน อิตาลี โปรตุเกส และไทย ส่วน QR Studio และ Repdex มีเฉพาะภาษาอังกฤษ"
+   },
+   {
+    "q": "ถ้ามีปัญหากับแอป ติดต่อได้อย่างไร?",
+    "a": "ส่งอีเมลมาที่ qinqiangji@gmail.com และบอกว่าเป็นแอปไหน เราอ่านทุกข้อความ แอปแต่ละตัวยังมีหน้าของตัวเองบนเว็บไซต์นี้ พร้อมนโยบายความเป็นส่วนตัวและเงื่อนไขการใช้งาน"
+   }
+  ],
+  "nav_blog": "บล็อก",
+  "follow": "ติดตาม go ka"
+ }
+}

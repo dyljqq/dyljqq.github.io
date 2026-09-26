@@ -1,0 +1,64 @@
+{
+ "title": "go ka — Small iPhone apps for everyday things",
+ "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
+ "skip": "Skip to the apps",
+ "brand_small": "IPHONE APPS",
+ "nav_apps": "Apps",
+ "nav_tools": "Tools",
+ "nav_about": "About",
+ "nav_contact": "Contact",
+ "language": "Language",
+ "h1_line1": "Small apps for",
+ "h1_line2": "everyday things.",
+ "hero_p1": "Seven small iPhone apps, each made for one everyday thing.",
+ "hero_p2": "Counting down, travelling, invoicing, eating, scanning, learning, lifting.",
+ "scene_label": "A line drawing of rolling hills, a rising sun and a small bird. Tap it to say hello.",
+ "scene_hint": "Tap the hills to say hello",
+ "redraw": "Draw again",
+ "pause_label": "Pause the animation",
+ "play_label": "Play the animation",
+ "scroll_label": "Scroll to the apps",
+ "apps_sub": "Seven apps. One everyday thing each.",
+ "get_on_store": "{label} on the App Store",
+ "see_all": "See all seven apps on the App Store",
+ "about_label": "About go ka",
+ "quote": "“What if an app did just one thing, and did it well?”",
+ "about_p1": "Most apps try to do everything. Ours start from one small, everyday moment — the day you are waiting for, the charger you always forget to pack, the invoice that has to go out tonight — and try to get that one moment right.",
+ "about_p2": "go ka is an independent developer. Every app is free to download, none of them asks you to create an account, and the price of anything extra is shown before you pay.",
+ "about_sign": "Small apps. Everyday things.",
+ "faq_title": "FAQ",
+ "faq_sub": "Short answers to what people ask.",
+ "contact_label": "Contact",
+ "contact_h": "Say hello.",
+ "contact_p": "Feedback, a bug, or an idea for the next app. Every message is read.",
+ "legal_h": "Privacy & terms",
+ "tools_link": "Free tools & guides",
+ "faq": [
+  {
+   "q": "What is go ka?",
+   "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account."
+  },
+  {
+   "q": "Are the apps free?",
+   "a": "All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
+  },
+  {
+   "q": "Do I need to create an account?",
+   "a": "No. None of the apps asks you to sign up or create an account. Where an app syncs between your devices, it uses your own iCloud."
+  },
+  {
+   "q": "Which devices do the apps run on?",
+   "a": "iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
+  },
+  {
+   "q": "Which languages are the apps available in?",
+   "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
+  },
+  {
+   "q": "How do I get help with one of the apps?",
+   "a": "Email qinqiangji@gmail.com and say which app it is about. Every message is read. Each app also has its own page on this site with its privacy policy and terms."
+  }
+ ],
+ "nav_blog": "Blog",
+ "follow": "Follow go ka"
+}

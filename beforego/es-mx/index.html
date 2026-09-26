@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Planificador viajes BeforeGo (México)</title>
+<title>Planificador viajes BeforeGo — Arma tu itinerario desde capturas</title>
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
@@ -11,7 +11,7 @@
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-<link rel="preload" as="image" href="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp" imagesrcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/920x0w.webp 920w" imagesizes="(max-width:760px) 72vw, 360px">
+<link rel="preload" as="image" href="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp" imagesrcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/920x0w.webp 920w" imagesizes="(max-width:760px) 72vw, 360px">
 <style>
 @font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
 @font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -26,9 +26,13 @@ a{color:inherit}img,video,svg{display:block;max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
 .brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
-.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
 html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
 html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
 .nav a:hover{background:var(--cream)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
 .hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
@@ -38,8 +42,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -48,7 +52,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
-.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
 .feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
 .feat p{margin:0 0 10px;color:var(--muted)}
@@ -61,6 +65,10 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
@@ -68,56 +76,56 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.">
-<link rel="canonical" href="https://goka-xi.vercel.app/beforego/es-mx/">
-<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/beforego/">
-<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/beforego/de/">
-<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/beforego/fr/">
-<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/beforego/it/">
-<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/beforego/es/">
-<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/beforego/es-mx/">
-<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/beforego/pt-br/">
-<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/beforego/ja/">
-<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/beforego/ko/">
-<link rel="alternate" hreflang="zh-Hans" href="https://goka-xi.vercel.app/beforego/zh-hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/beforego/zh-hant/">
-<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/beforego/th/">
-<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/beforego/">
+<link rel="canonical" href="https://beforego.art/beforego/es-mx/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/beforego/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/beforego/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/beforego/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/beforego/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/beforego/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/beforego/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/beforego/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/beforego/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/beforego/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/beforego/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/beforego/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/beforego/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/beforego/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
-<meta property="og:title" content="Planificador viajes BeforeGo (México)">
+<meta property="og:title" content="Planificador viajes BeforeGo — Arma tu itinerario desde capturas">
 <meta property="og:description" content="Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.">
-<meta property="og:url" content="https://goka-xi.vercel.app/beforego/es-mx/">
-<meta property="og:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
+<meta property="og:url" content="https://beforego.art/beforego/es-mx/">
+<meta property="og:image" content="https://beforego.art/assets/beforego/checklist.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
-<meta name="twitter:title" content="Planificador viajes BeforeGo (México)">
+<meta name="twitter:image" content="https://beforego.art/assets/beforego/checklist.jpg">
+<meta name="twitter:title" content="Planificador viajes BeforeGo — Arma tu itinerario desde capturas">
 <meta name="twitter:description" content="Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.">
 <meta name="apple-itunes-app" content="app-id=6786561175, affiliate-data=ct=web-beforego-app&amp;pt=128309253">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://goka-xi.vercel.app/beforego/es-mx/#app",
+  "@id": "https://beforego.art/beforego/es-mx/#app",
   "name": "Planificador viajes BeforeGo",
   "alternateName": "BeforeGo",
   "applicationCategory": "TravelApplication",
   "operatingSystem": "iOS 17.0 or later",
   "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
-  "url": "https://goka-xi.vercel.app/beforego/es-mx/",
+  "url": "https://beforego.art/beforego/es-mx/",
   "inLanguage": "es-MX",
   "author": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "publisher": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "offers": {
@@ -130,14 +138,14 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   "sameAs": [
     "https://apps.apple.com/app/id6786561175"
   ],
-  "image": "https://goka-xi.vercel.app/assets/beforego/icon.png",
+  "image": "https://beforego.art/assets/beforego/icon.png",
   "screenshot": [
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/a1/92/50a19281-379a-9f36-d74c-925c09fe3e1a/02-thingstodo.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/e0/f8/51e0f824-8646-9182-2480-83653968a61f/03-bookings.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/69/47/e06947b4-bb59-0df8-7d8b-d35c95084770/04-checklist.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/d1/8b/58d18be7-9cbf-b396-4730-5fc3d62e405f/05-countdown.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/4c/56/694c569c-2476-270d-16fc-5a2beb0585c3/06-lens.png/920x0w.webp"
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1d/28/c11d28f5-f6fc-647d-6d3e-b09aa51018c4/06-lens.png/920x0w.webp"
   ]
 }
 </script>
@@ -145,7 +153,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/beforego/es-mx/#faq",
+  "@id": "https://beforego.art/beforego/es-mx/#faq",
   "inLanguage": "es-MX",
   "mainEntity": [
     {
@@ -213,12 +221,16 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </head>
 <body>
 <header class="wrap top">
-  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <a class="brand" href="/es-mx/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
-    <a href="/">Todas las apps</a>
-    <a href="/privacy-policy/">Privacidad</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">Soporte</a>
+    <a href="/es-mx/">Todas las apps</a>
+    <a href="/tools/">Herramientas</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">Ayuda</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">Español (México)</span><span class="ln-code">MX</span></summary><ul><li><a href="/beforego/" hreflang="en" lang="en">English</a></li><li><a href="/beforego/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/beforego/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/beforego/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li><li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX" aria-current="true">Español (México)</a></li><li><a href="/beforego/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/beforego/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/beforego/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/beforego/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main class="wrap">
@@ -228,29 +240,41 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     <h1>Planificador viajes BeforeGo</h1>
     <div class="lede"><p>Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post. Escanea un boleto o una confirmación de reservación y también se agrega al plan. Mientras tanto, la lista de equipaje se arma sola según tu destino y tus fechas.</p></div>
     <a class="cta" href="https://apps.apple.com/mx/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Descargar en el App Store</a>
-    <ul class="chips"><li>Gratis para descargar</li><li>iPhone e iPad</li><li>iOS 17 o posterior</li><li>Sin cuenta necesaria</li></ul>
+    <ul class="chips"><li>Descarga gratis</li><li>iPhone e iPad</li><li>iOS 17 o posterior</li><li>No necesita cuenta</li></ul>
   </div>
-  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="Planificador viajes BeforeGo — captura 1" fetchpriority="high"></div>
+  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="Planificador viajes BeforeGo — captura 1" fetchpriority="high"></div>
 </section>
 
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">Qué hace la app</h2>
+  <div class="hls">
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="De la captura al plan de viaje"></figure><div><h3>De la captura al plan de viaje</h3><p>Toma una captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Reservaciones en el plan"></figure><div><h3>Reservaciones en el plan</h3><p>Escanea un boleto o una confirmación de reservación, y se agrega al plan. Las reservaciones guardan su precio y moneda, e incluyen espectáculos, eventos, traslados y autos de alquiler.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Una lista de equipaje que se arma sola"></figure><div><h3>Una lista de equipaje que se arma sola</h3><p>Enchufes, moneda, requisitos de entrada y apps de transporte para tu destino, generados a partir de tu destino y tus fechas, con recordatorios a 7 días, 3 días, 24 h y 3 h antes de salir.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Lugares para marcar"></figure><div><h3>Lugares para marcar</h3><p>Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar. Un día de paradas se ordena en la ruta más corta.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Divide los gastos del viaje"></figure><div><h3>Divide los gastos del viaje</h3><p>Agrega gastos en las monedas del viaje, elige quién pagó y divide cada cuenta entre los viajeros. Fotografía un recibo para llenar un gasto, y Ajustar cuentas muestra la forma más corta de saldar los balances.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Después del viaje"></figure><div><h3>Después del viaje</h3><p>Fotos, notas y notas de voz guardadas por viaje, un álbum de recuerdos imprimible, y lo que olvidas pasa a la siguiente lista para que empiece mejor preparada.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="En la pantalla de inicio"></figure><div><h3>En la pantalla de inicio</h3><p>Los widgets de cuenta regresiva y checklist mantienen el viaje a la vista sin abrir la app.</p></div></div>
+  </div>
+</section>
 <section class="sec" id="screenshots" aria-labelledby="h-screens">
   <h2 id="h-screens">Capturas de pantalla</h2>
   <ul class="shots">
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/94/ab/b794ab48-b8db-03ea-22da-8ee65e6d19b1/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 1"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/a1/92/50a19281-379a-9f36-d74c-925c09fe3e1a/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/a1/92/50a19281-379a-9f36-d74c-925c09fe3e1a/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/a1/92/50a19281-379a-9f36-d74c-925c09fe3e1a/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 2"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/e0/f8/51e0f824-8646-9182-2480-83653968a61f/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/e0/f8/51e0f824-8646-9182-2480-83653968a61f/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/51/e0/f8/51e0f824-8646-9182-2480-83653968a61f/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 3"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/69/47/e06947b4-bb59-0df8-7d8b-d35c95084770/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/69/47/e06947b4-bb59-0df8-7d8b-d35c95084770/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/69/47/e06947b4-bb59-0df8-7d8b-d35c95084770/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 4"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/d1/8b/58d18be7-9cbf-b396-4730-5fc3d62e405f/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/d1/8b/58d18be7-9cbf-b396-4730-5fc3d62e405f/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/d1/8b/58d18be7-9cbf-b396-4730-5fc3d62e405f/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 5"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/4c/56/694c569c-2476-270d-16fc-5a2beb0585c3/06-lens.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/4c/56/694c569c-2476-270d-16fc-5a2beb0585c3/06-lens.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/69/4c/56/694c569c-2476-270d-16fc-5a2beb0585c3/06-lens.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 6"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/71/72/6171727e-0390-ff30-f47c-4de8546f307a/07-receipt.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/71/72/6171727e-0390-ff30-f47c-4de8546f307a/07-receipt.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/61/71/72/6171727e-0390-ff30-f47c-4de8546f307a/07-receipt.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 7"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/f3/ba/fff3ba40-cd62-d681-64de-47c53d24366a/08-voice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/f3/ba/fff3ba40-cd62-d681-64de-47c53d24366a/08-voice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/f3/ba/fff3ba40-cd62-d681-64de-47c53d24366a/08-voice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 8"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/63/d9/94/63d994ae-0cd6-5148-fcbb-5f20525ebd0f/09-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/63/d9/94/63d994ae-0cd6-5148-fcbb-5f20525ebd0f/09-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/63/d9/94/63d994ae-0cd6-5148-fcbb-5f20525ebd0f/09-album.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 9"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e7/be/10/e7be1047-6a56-3328-fc4a-c2ebbf741a48/10-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e7/be/10/e7be1047-6a56-3328-fc4a-c2ebbf741a48/10-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e7/be/10/e7be1047-6a56-3328-fc4a-c2ebbf741a48/10-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 10"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/92/4b/ae924bfb-004a-0807-1f00-0f1f3bbafedc/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/99/fb/a2/99fba2f3-1415-79e7-e8b6-c8ce92a7452c/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d6/af/65/d6af6553-2f90-6b15-4658-7601c5a19a5e/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ba/ef/09/baef09ab-398a-7c76-8a21-5ff4890ca61c/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/5e/bc/005ebc25-4cd8-f00f-6bdc-6155ef5c233f/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1d/28/c11d28f5-f6fc-647d-6d3e-b09aa51018c4/06-lens.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1d/28/c11d28f5-f6fc-647d-6d3e-b09aa51018c4/06-lens.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/1d/28/c11d28f5-f6fc-647d-6d3e-b09aa51018c4/06-lens.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/a3/5f/eaa35f02-2890-40a8-ddc7-6aff8fe47eda/07-receipt.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/a3/5f/eaa35f02-2890-40a8-ddc7-6aff8fe47eda/07-receipt.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/a3/5f/eaa35f02-2890-40a8-ddc7-6aff8fe47eda/07-receipt.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/fe/4a/8afe4a46-fad7-a4ec-435d-2637e3e40cbc/08-expenses.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/76/ae/c976ae17-2fbc-7cc4-1e51-fae7175286f4/09-album.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/3c/3e/673c3e2e-3b15-cece-c81d-f8f3e5a9b5b4/10-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="Planificador viajes BeforeGo — captura 10"></li>
   </ul>
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">Qué contiene</h2>
+  <h2 id="h-features">Los detalles, tal como aparecen en la App Store</h2>
   <div class="feats">
     <div class="feat"><h3>Qué llevar, generado</h3><ul><li>Lista adaptada al destino — enchufes, moneda, requisitos de entrada y apps de transporte</li><li>Checklist de viaje por categoría o por cronología</li><li>Recordatorios 7 días, 3 días, 24 h y 3 h antes de salir</li><li>Widgets de cuenta regresiva y checklist</li><li>Fotos y notas en cada elemento</li></ul></div>
     <div class="feat"><h3>Durante el viaje</h3><ul><li>Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar</li><li>Un día de paradas se ordena en la ruta más corta</li><li>Notas de voz transcritas automáticamente</li></ul></div>
@@ -260,9 +284,13 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <details class="fine"><summary>Precios y términos de suscripción</summary><p>BeforeGo Premium (suscripción con renovación automática) La suscripción desbloquea todas las funciones premium: • Plan mensual — se factura cada 1 mes • Plan anual — se factura cada 1 año El plan anual incluye 7 días de prueba gratis para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar; también hay un desbloqueo vitalicio de pago único.</p><p>El pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que desactives la renovación automática al menos 24 horas antes del final del período actual. El cargo por renovación se realiza dentro de las 24 horas previas al final del período. Puedes gestionar o cancelar tu suscripción en los ajustes de tu cuenta del App Store.</p></details>
 </section>
 
+<section class="sec" id="whats-new" aria-labelledby="h-new">
+  <h2 id="h-new">Novedades de la versión 1.1.9</h2>
+  <div class="news"><p>Al escanear tus boletos se arma toda la ruta, y en «Editar viaje» ya puedes cambiar quién viaja.</p><ul><li>Escanea varios boletos a la vez: cada vuelo, tren y autobús entra en la ruta en orden, y cada parada tiene sus propias fechas</li><li>Los aeropuertos se ubican por el código impreso en el boleto, sin adivinar</li><li>Un vuelo nocturno de regreso cierra el viaje el día que sale</li><li>«Editar viaje» permite cambiar el tipo de viaje y los viajeros, y la lista se ajusta: se agregan los elementos que piden las nuevas respuestas y se quitan los que ya no hacen falta y no has tocado</li><li>El editor se abre directamente en sus campos, con el escáner de boletos junto al nombre del viaje</li><li>En China continental, la lectura de guías y reservaciones desde capturas de pantalla es más confiable</li></ul></div>
+</section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
-  <h2 id="faq">Questions people ask</h2>
+  <h2 id="faq">Preguntas frecuentes</h2>
   <div class="grid">
     <div class="card">
       <h3>¿Qué hace BeforeGo con una captura de un post de viajes?</h3>
@@ -301,28 +329,28 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <ul class="langs">
       <li><a href="/beforego/" hreflang="en" lang="en">English</a></li>
       <li><a href="/beforego/de/" hreflang="de" lang="de">Deutsch</a></li>
-      <li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li>
-      <li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX" aria-current="page">Español (México)</a></li>
       <li><a href="/beforego/fr/" hreflang="fr" lang="fr">Français</a></li>
       <li><a href="/beforego/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX" aria-current="page">Español (México)</a></li>
       <li><a href="/beforego/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
-      <li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li>
       <li><a href="/beforego/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li>
       <li><a href="/beforego/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
       <li><a href="/beforego/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
-      <li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li>
+      <li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li>
   </ul>
 </section>
 
 <section class="sec" id="more" aria-labelledby="h-more">
-  <h2 id="h-more">Más de go ka</h2>
+  <h2 id="h-more">Más apps de go ka</h2>
   <div class="others">
-      <a href="/countdown/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
-      <a href="/invoiceqr/es-mx/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
-      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
-      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
-      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
-      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+      <a href="/countdown/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Días que faltan, recuerdos que quedan</small></span></a>
+      <a href="/invoiceqr/es-mx/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Comprobante de pago y remisión</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Diario de comida: foto con IA</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>Generar, escanear y diseñar QR</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Tómale foto, apréndelo, dilo</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Biblioteca de ejercicios</small></span></a>
   </div>
 </section>
 
@@ -333,10 +361,11 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 
 <footer>
   <div class="wrap">
-    <p>Planificador viajes BeforeGo lo hace go ka. ¿Preguntas o comentarios?: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
-    <p><a href="/privacy-policy/">Política de privacidad</a> · <a href="/terms-of-use/">Términos de uso</a> · <a href="/">go ka</a></p>
+    <p>Planificador viajes BeforeGo es una app de go ka. ¿Dudas o comentarios? Escríbenos a <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p class="social">Sigue a go ka: <a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></p>
+    <p><a href="/privacy-policy/">Aviso de privacidad</a> · <a href="/terms-of-use/">Términos de uso</a> · <a href="/es-mx/">go ka</a></p>
   </div>
 </footer>
-<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
 </body>
 </html>

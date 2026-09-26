@@ -69,9 +69,21 @@ for path in pages:
     if ogurl and ogurl[0].get("content") != (canon[0] if canon else None): bad("og:url != canonical")
     if p.h1 != 1: bad(f"H1 数量 {p.h1}")
     if not p.lang: bad("html 缺 lang")
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if isinstance(v, str) and k in ("url", "@id", "sameAs", "downloadUrl", "installUrl", "contentUrl", "image", "logo"):
+                    yield v
+                else: yield from walk(v)
+        elif isinstance(o, list):
+            for v in o: yield from (walk(v) if not isinstance(v, str) else [v])
     for raw in p.ld:
-        try: json.loads(raw)
-        except Exception as e: bad(f"JSON-LD 解析失败 {e}")
+        try: ld = json.loads(raw)
+        except Exception as e: bad(f"JSON-LD 解析失败 {e}"); continue
+        # 09-26 第 3 轮评审：卡片改成商店链接后，JSON-LD 被拼成 https://beforego.arthttps://apps.apple.com/…?pt=…
+        for u in walk(ld):
+            if u.startswith("http") and (u.count("://") > 1 or re.search(r"[?&](pt|ct)=", u)):
+                bad(f"JSON-LD 链接非法或带活动参数：{u[:90]}")
     text = re.sub(r"\s+", " ", " ".join(p.text))
     # FAQ / ItemList 可见性（7.2 / 7.7）
     for raw in p.ld:

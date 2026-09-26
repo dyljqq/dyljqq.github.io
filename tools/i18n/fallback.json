@@ -1,0 +1,59 @@
+{
+ "repdex": {
+  "de": {
+   "tagline": "Trainingstagebuch & Übungsbibliothek",
+   "blurb": "Repdex ist ein Gym-Notizbuch, das so funktioniert, wie Training wirklich abläuft: nachschlagen, aufschreiben, was du gehoben hast, App zu. Zwanzigmal pro Training, jeweils zehn Sekunden."
+  },
+  "pt-BR": {
+   "tagline": "Diário de Treino & Biblioteca de Exercícios",
+   "blurb": "Repdex é um caderno de academia que funciona como o treino de verdade funciona: procure algo, anote o que você levantou, feche o app. Vinte vezes por sessão, dez segundos por vez."
+  },
+  "ja": {
+   "tagline": "筋トレ記録と種目ライブラリ",
+   "blurb": "Repdexは、実際のトレーニングの流れに合わせたジムノートです。調べて、挙げた重量を書いて、アプリを閉じる。1回のトレーニングで20回、1回10秒。"
+  },
+  "zh-Hant": {
+   "tagline": "訓練紀錄與運動庫",
+   "blurb": "Repdex 是一本照著真實訓練節奏設計的健身筆記：查動作、記下舉了多重、關掉 App。一次訓練二十回，每回十秒。"
+  },
+  "th": {
+   "tagline": "บันทึกการฝึกและคลังท่าออกกำลังกาย",
+   "blurb": "Repdex คือสมุดบันทึกยิมที่ทำงานตามจังหวะการฝึกจริง ค้นท่า จดน้ำหนักที่ยก แล้วปิดแอป เซสชันละยี่สิบครั้ง ครั้งละสิบวินาที"
+  }
+ },
+ "countdown": {
+  "es": {
+   "tagline": "Días que faltan, recuerdos que quedan",
+   "blurb": "Una cuenta atrás que nunca pierde tus días y que no te guarda ningún widget bajo llave. Añade el día que importa, ponlo en la pantalla de inicio y míralo acercarse. Sin límite de cuántos guardas, y nada entre tú y el número."
+  },
+  "es-MX": {
+   "tagline": "Días que faltan, recuerdos que quedan",
+   "blurb": "Una cuenta regresiva que nunca pierde tus días y que no te esconde ningún widget. Agrega el día que importa, ponlo en tu pantalla de inicio y mira cómo se acerca. Sin límite de cuántos guardas, y nada entre tú y el número."
+  }
+ },
+ "dailycalorie": {
+  "es": {
+   "tagline": "Calorías restantes y escaneo de comida con IA",
+   "blurb": "DailyCalorie es un contador de calorías y diario de comidas que rellenas con la cámara. La mayoría de las apps de calorías te muestran lo que has comido. DailyCalorie te muestra lo que te queda."
+  },
+  "pt-BR": {
+   "tagline": "Saldo de calorias e escaneamento de comida com IA",
+   "blurb": "DailyCalorie é um contador de calorias e diário alimentar que você preenche com a câmera. A maioria dos apps de calorias mostra o que você comeu. O DailyCalorie mostra o que ainda resta."
+  }
+ },
+ "citu": {
+  "es": {
+   "tagline": "Haz la foto, apréndelo, dilo",
+   "blurb": "Apunta la cámara a cualquier cosa — una manzana, una mochila, el perro — y la IA de Word Beast te dice cómo se llama en inglés, con fonética, significado y una frase de ejemplo que puedes escuchar y decir en voz alta. Fotografía una página de deberes de inglés para ver qué respuestas merecen una segunda mirada."
+  },
+  "es-MX": {
+   "tagline": "Tómale foto, apréndelo, dilo",
+   "blurb": "Apunta tu celular a lo que sea — una manzana, una mochila, el perro — y la IA de Word Beast te dice cómo se llama en inglés, con fonética, significado y una frase de ejemplo que puedes escuchar y decir en voz alta. Fotografía una página de tarea de inglés para ver qué respuestas se merecen una segunda mirada."
+  },
+  "pt-BR": {
+   "tagline": "Fotografe, aprenda, fale",
+   "blurb": "Aponte a câmera para qualquer coisa — uma maçã, uma mochila, o cachorro — e a IA do Word Beast te diz como se chama em inglês, com fonética, significado e uma frase de exemplo que você pode ouvir e ler em voz alta. Fotografe uma página da lição de casa de inglês para ver quais respostas merecem uma segunda olhada."
+  }
+ },
+ "_note": "商店在该语言没有本地化时，首页卡片 / 「go ka 的其他 app」用这里的译文（Haiku 译自英文商店文案，Claude 校对）。名字仍用商店名。"
+}

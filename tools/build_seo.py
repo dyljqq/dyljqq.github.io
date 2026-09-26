@@ -55,7 +55,11 @@ def git_lastmod(path: Path) -> str:
     """用 git 里这个文件最后一次真实提交的日期做 lastmod，不用构建时间——
     每次构建都刷新 lastmod 等于告诉爬虫全站都变了，几轮之后它就不信了。"""
     try:
-        out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
+        rel = str(path.relative_to(ROOT))
+        # 有未提交改动的文件＝这次发布会更新它：用今天，免得修改日期早于发布日期（09-26 评审）
+        if subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip():
+            return date.today().isoformat()
+        out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel],
                              cwd=ROOT, capture_output=True, text=True, timeout=10).stdout.strip()
         if out:
             return datetime.fromisoformat(out).astimezone(timezone.utc).date().isoformat()
@@ -81,8 +85,11 @@ def hreflang_links(app):
 
 def pages():
     """产出 (url_path, html_path, app, kind)。kind: home / product / legal；home 的 app 是 None。"""
-    if HOME and (ROOT / "index.html").exists():
-        yield "/", ROOT / "index.html", None, "home"
+    if HOME:
+        for lang in HOME_LANGS:
+            f = ROOT / "index.html" if lang == "en" else ROOT / home_path(lang).strip("/") / "index.html"
+            if f.exists():
+                yield home_path(lang), f, {"lang": lang}, "home"
     for tp in TOOLS:
         f = ROOT / tp["path"].strip("/") / "index.html"
         if f.exists():
@@ -144,7 +151,7 @@ Sitemap: {ORIGIN}/sitemap.xml
 def build_sitemap():
     rows = []
     for url, path, app, kind in pages():
-        if app is not None and kind != "tool" and not app.get("live"):
+        if kind in ("product", "legal") and not app.get("live"):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
         rows.append((url, git_lastmod(path), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
     rows.sort(key=lambda r: (r[0] != "/", r[0]))
@@ -164,8 +171,11 @@ def build_llms():
            "> are what the app actually does.",
            "",
            f"- Home: {ORIGIN}/",
+           *[f"- Home ({l}): {ORIGIN}{home_path(l)}" for l in HOME_LANGS if l != "en"],
            *([f"- All apps on the App Store: {DEV_URL}"] if DEV_URL else []),
-           f"- Contact: {EMAIL}", "", "## Apps", ""]
+           f"- Contact: {EMAIL}",
+           *[f"- {x.get('nameIntl', x['name'])}: {x['url']}" for x in CFG["site"].get("social", [])],
+           "", "## Apps", ""]
     for a in live:
         su = store_url(a)
         out.append(f"### {a['name']}")
@@ -257,7 +267,7 @@ FAQ_START, FAQ_END = "<!-- faq:start -->", "<!-- faq:end -->"
 # 可见 FAQ 的标题，按 site.json 的 lang 选；先按完整 tag（zh-Hant）找，再退回语言前缀（de-DE → de）
 FAQ_HEADING = {
     "en": "Questions people ask", "pt": "Perguntas frequentes", "de": "Häufige Fragen",
-    "fr": "Questions fréquentes", "it": "Domande frequenti", "ja": "よくある質問",
+    "fr": "Questions fréquentes", "it": "Domande frequenti", "es": "Preguntas frecuentes", "ja": "よくある質問",
     "ko": "자주 묻는 질문", "th": "คำถามที่พบบ่อย", "zh-Hans": "常见问题", "zh-Hant": "常見問題", "zh": "常见问题",
 }
 
@@ -281,7 +291,7 @@ def org_jsonld():
             "email": EMAIL,
             "description": f"Independent iOS developer. {len([a for a in APPS if a.get('live') and not a.get('variantOf')])} apps on the App Store.",
             **({"logo": asset(HOME["logo"])} if HOME and HOME.get("logo") else {}),
-            "sameAs": list(dict.fromkeys(([DEV_URL] if DEV_URL else []) +
+            "sameAs": list(dict.fromkeys(([DEV_URL] if DEV_URL else []) + [x["url"] for x in CFG["site"].get("social", [])] +
                                          [u for u in (store_url(a) for a in APPS) if u]))}
 
 def meta_desc(s, limit=160):
@@ -291,7 +301,9 @@ def meta_desc(s, limit=160):
     for part in re.split(r"(?<=[.!?。！？])\s+", s):
         if len(out) + len(part) + 1 > limit: break
         out = (out + " " + part).strip()
-    return out or s[:limit].rsplit(" ", 1)[0]
+    if not out:
+        raise SystemExit(f"description 第一句就超过 {limit} 字，会被截成半句，去改源文案：{s[:80]}…")
+    return out
 
 def head_block(url, app, kind):
     is_product = kind == "product"
@@ -341,19 +353,133 @@ def head_block(url, app, kind):
     lines.append(END)
     return "\n".join(lines) + "\n"
 
-# ---------------------------------------------------------------- 首页
+# ---------------------------------------------------------------- 首页（多语言）+ 页头语言切换
+sys.path.insert(0, str(ROOT / "tools"))
+import build_pages as bp          # NATIVE / LANG2STORE / parse_desc / sibling_path / family（只读用）
+
+HOME_EN_STR = json.loads((ROOT / "tools/i18n/home.en.json").read_text(encoding="utf-8")) if (ROOT / "tools/i18n/home.en.json").exists() else {}
+HOME_I18N = json.loads((ROOT / "tools/i18n/home.json").read_text(encoding="utf-8")) if (ROOT / "tools/i18n/home.json").exists() else {}
+HOME_LANGS = ["en"] + [l for l in ("de", "fr", "it", "es", "es-MX", "pt-BR", "ja", "ko", "zh-Hans", "zh-Hant", "th") if l in HOME_I18N]
+SUBS = json.loads((ROOT / "tools/store/subtitles.json").read_text(encoding="utf-8")) if (ROOT / "tools/store/subtitles.json").exists() else {}
+ASC_LOC = {"en": "en-US", "de": "de-DE", "fr": "fr-FR", "it": "it", "es": "es-ES", "es-MX": "es-MX", "pt-BR": "pt-BR",
+           "ja": "ja", "ko": "ko", "zh-Hans": "zh-Hans", "zh-Hant": "zh-Hant", "th": "th"}
+
+def home_path(lang):
+    return "/" if lang == "en" else f"/{lang.lower()}/"
+
+def H(lang, key):
+    """首页文案：非英语取 tools/i18n/home.json；英语的 title/description/faq 取 site.json 的 home，其余取 home.en.json。"""
+    if lang != "en" and key in HOME_I18N.get(lang, {}):
+        return HOME_I18N[lang][key]
+    return HOME[key] if key in ("title", "description", "faq") else HOME_EN_STR[key]
+
 def home_name(a):
-    """首页是英文页：卡片和 ItemList 用美区商店名；中文产品页的 app（单词兽）另存了英文名。"""
+    """英文首页：卡片和 ItemList 用美区商店名；中文产品页的 app（单词兽）另存了英文名。"""
     return a["home"].get("storeNameEn", a["name"])
 
-def home_head():
-    canonical = f"{ORIGIN}/"
-    title, desc = HOME["title"], HOME["description"]
+def cut_sentences(s, n=320):
+    if len(s) <= n:
+        return s
+    out = ""
+    for part in re.split(r"(?<=[.!?。！？])\s*", s):
+        if not part: continue
+        if len(out) + len(part) + 1 > n: break
+        out = (out + (" " if out and not re.search(r"[。！？]$", out) else "") + part).strip()
+    if out:
+        return out
+    # 泰文没有句号，整段是「一句」：退到最后一个空格（泰文的短语边界），不在词中间截断；数字不单独留在末尾
+    cut = s[:n].rsplit(" ", 1)[0] if " " in s[:n] else s[:n]
+    cut = re.sub(r"\s+\d+$", "", cut)
+    if s[len(cut):].lstrip()[:1].isdigit() and " " in cut:   # 「ใช้ฟรี | 3 ครั้ง」：数量被截掉时，前面那半句也不要
+        cut = cut.rsplit(" ", 1)[0]
+    return cut
+
+def home_card(a, lang):
+    """一张首页卡片的文案。英语用 site.json（逐字的美区副标题 + 描述首段）；其它语言取该语言商店：
+    名字 = 商店名，一句话 = 商店副标题（ASC app-info），介绍 = 商店描述首段。该语言没本地化的 app 自然回落成英文。"""
+    h = a["home"]
+    if lang == "en":
+        return {"name": home_name(a), "tagline": h["tagline"], "blurb": h["blurb"], "page": bp.page_for(a, "en", "home"), "cc": None}
+    cache = json.loads((ROOT / f"tools/store/{a['key']}.json").read_text(encoding="utf-8"))
+    st = cache.get(bp.LANG2STORE[lang]) or cache["en-US"]
+    sub = (SUBS.get(a["key"], {}).get(ASC_LOC[lang]) or {}).get("subtitle")
+    lede, sections, _ = bp.parse_desc(st["description"])
+    text = ("" if lang.startswith(("zh", "ja")) else " ").join(lede) or (" ".join(sections[0]["paras"]) if sections and sections[0]["paras"] else
+                              " ".join(sections[0]["items"][:3]) if sections else "")
+    text = re.sub(r"(?<=[。！？」』）])\s+", "", text)
+    blurb = cut_sentences(text)
+    if not bp.localized(a, lang):          # 商店没这个语言：卡片文案用 tools/i18n/fallback.json 的译文（名字仍是商店名）
+        sub = bp.fallback(a, lang, "tagline") or sub
+        blurb = bp.fallback(a, lang, "blurb") or blurb
+    return {"name": st["name"], "tagline": sub, "blurb": blurb, "page": bp.page_for(a, lang, "home"),
+            "cc": st.get("storefront")}
+
+GLOBE = ('<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" '
+         'stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg>')
+SWITCH_CSS = ('<style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;'
+  'font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}'
+  '.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}'
+  '.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;'
+  'list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}'
+  '.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}'
+  '.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}'
+  '.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}'
+  '.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}'
+  '.lang-switch summary{padding:9px 10px}}</style>')
+SWITCH_JS = ('<script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach('
+             'function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>')
+SHORT = {"zh-Hans": "简", "zh-Hant": "繁", "es-MX": "MX", "pt-BR": "PT"}
+
+def lang_switch(current, options, extra=None):
+    """页头语言切换：<details> 下拉，全是真实 <a href>，爬虫顺着能走到每个语言版本。options = [(lang, path)]，
+    只放「同一内容」的语言版本；extra = {"note", "links": [(lang, path, label)]} 放在分隔线下（单语言工具页指向另一种语言的工具目录）。"""
+    if len({l for l, _ in options}) < 2 and not extra:
+        return "<!-- lang:start -->\n  <!-- lang:end -->"
+    items = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>'
+                    % (p, l, l, ' aria-current="true"' if l == current else "", esc_text(bp.NATIVE.get(l, l))) for l, p in options)
+    if extra:
+        if extra.get("note"):
+            items += '<li class="ln-note">%s</li>' % esc_text(extra["note"])
+        items += "".join('<li class="ln-other"><a href="%s" hreflang="%s" lang="%s">%s</a></li>' % (p, l, l, esc_text(lb))
+                         for l, p, lb in extra["links"])
+    code = SHORT.get(current, current.split("-")[0].upper())
+    return ("<!-- lang:start -->\n  " + SWITCH_CSS +
+            f'<details class="lang-switch"><summary>{GLOBE}<span class="ln-full">{esc_text(bp.NATIVE.get(current, current))}</span>'
+            f'<span class="ln-code">{esc_text(code)}</span></summary><ul>{items}</ul></details>' + SWITCH_JS + "\n  <!-- lang:end -->")
+
+def fill_lang(html, current, options, extra=None):
+    return re.sub(r"<!-- lang:start -->.*?<!-- lang:end -->", lambda m: lang_switch(current, options, extra), html, count=1, flags=re.S)
+
+def home_options():
+    return [(l, home_path(l)) for l in HOME_LANGS if (ROOT / home_path(l).strip("/") / "index.html").exists() or l == "en"]
+
+def product_options(app):
+    parent = next((a for a in APPS if a["key"] == app.get("variantOf")), None) or app
+    fam = [parent] + variants_of(parent)
+    return [(a.get("lang", "en"), a["path"]) for a in sorted(fam, key=lambda a: bp.order_key(a.get("lang", "en")))]
+
+TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/"}
+ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português"}
+HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português"}
+
+def tool_options(tp):
+    """返回 (options, extra)。目录页互为语言版本；单语言工具页只列自己，另一种语言的目录放 extra。"""
+    if tp["path"] in TOOL_HUBS.values():
+        return list(TOOL_HUBS.items()), None
+    extra = [(l, p, HUB_LABEL[l]) for l, p in TOOL_HUBS.items() if l != tp["lang"]]
+    return [(tp["lang"], tp["path"])], {"note": ONLY_IN.get(tp["lang"], ""), "links": extra}
+
+def home_head(lang="en"):
+    path = home_path(lang); canonical = f"{ORIGIN}{path}"
+    title, desc = H(lang, "title"), meta_desc(H(lang, "description"))
     img = asset(HOME["ogImage"])
     lines = [START,
              '<meta name="description" content="%s">' % esc(desc),
-             f'<link rel="canonical" href="{canonical}">',
-             '<meta property="og:type" content="website">',
+             f'<link rel="canonical" href="{canonical}">']
+    for l, p in home_options():
+        lines.append(f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">')
+    lines.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}/">')
+    lines += ['<meta property="og:type" content="website">',
              '<meta property="og:site_name" content="%s">' % esc(BRAND),
              '<meta property="og:title" content="%s">' % esc(title),
              '<meta property="og:description" content="%s">' % esc(desc),
@@ -368,10 +494,15 @@ def home_head():
              f'<meta name="twitter:image" content="{img}">']
     items = []
     for i, a in enumerate(HOME_APPS, 1):
-        su = store_url(a)
-        item = {"@type": "SoftwareApplication", "@id": f"{ORIGIN}{a['path']}#app",
-                "name": home_name(a), "alternateName": a["home"]["label"],
-                "url": f"{ORIGIN}{a['path']}", "description": a["home"]["blurb"],
+        c = home_card(a, lang); su = store_url(a)
+        # 结构化数据里永远用站内页面地址（卡片链接可能是带活动参数的商店链接，不能进 JSON-LD）；
+        # 只有卡片上的名字和那一页实体的名字一致时才挂 @id，免得同一个 @id 在不同页面叫不同名字
+        target = bp.sibling_path(a, lang)
+        ent = next((x for x in APPS if x["path"] == target), a)
+        item = {"@type": "SoftwareApplication",
+                **({"@id": f"{ORIGIN}{target}#app"} if c["name"] == ent["name"] else {}),
+                "name": c["name"], "alternateName": a["home"]["label"],
+                "url": f"{ORIGIN}{target}", "description": c["blurb"],
                 "applicationCategory": a["category"],
                 "operatingSystem": f"iOS {a.get('minOS', '17.0')} or later",
                 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -385,18 +516,18 @@ def home_head():
     blobs = [
         org_jsonld(),
         {"@context": "https://schema.org", "@type": "WebSite", "@id": f"{ORIGIN}/#website",
-         "url": canonical, "name": BRAND, "description": desc, "inLanguage": "en",
+         "url": f"{ORIGIN}/", "name": BRAND, "description": HOME["description"], "inLanguage": HOME_LANGS,
          "publisher": {"@id": f"{ORIGIN}/#org"}},
-        {"@context": "https://schema.org", "@type": "CollectionPage", "@id": f"{ORIGIN}/#webpage",
-         "url": canonical, "name": title, "description": desc, "inLanguage": "en",
+        {"@context": "https://schema.org", "@type": "CollectionPage", "@id": f"{canonical}#webpage",
+         "url": canonical, "name": title, "description": desc, "inLanguage": lang,
          "isPartOf": {"@id": f"{ORIGIN}/#website"}, "about": {"@id": f"{ORIGIN}/#org"},
          "primaryImageOfPage": img,
-         "mainEntity": {"@type": "ItemList", "@id": f"{ORIGIN}/#apps", "name": f"Apps by {BRAND}",
+         "mainEntity": {"@type": "ItemList", "@id": f"{canonical}#apps", "name": f"Apps by {BRAND}",
                         "numberOfItems": len(items), "itemListElement": items}},
-        {"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{ORIGIN}/#faq",
-         "inLanguage": "en",
+        {"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{canonical}#faq",
+         "inLanguage": lang,
          "mainEntity": [{"@type": "Question", "name": f["q"],
-                         "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in HOME["faq"]]},
+                         "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in H(lang, "faq")]},
     ]
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
@@ -405,16 +536,43 @@ def home_head():
     lines.append(END)
     return "\n".join(lines) + "\n"
 
-def home_apps_html():
+# 插画里的英文小字按语言换掉（09-26 第 3 轮评审）；译文比原文长就用 textLength 压回原来的宽度，免得撑出图形
+ILLUS_W = {"DAYS TO GO": 72, "PAID": 46, "SCAN ME": 52}
+ILLUS = {
+    "de": ("TAGE ÜBRIG", "BEZAHLT", "SCANNEN"), "fr": ("JOURS RESTANTS", "PAYÉ", "SCANNEZ"),
+    "it": ("GIORNI RIMASTI", "PAGATO", "SCANSIONA"), "es": ("DÍAS QUE FALTAN", "PAGADO", "ESCANÉAME"),
+    "es-MX": ("DÍAS QUE FALTAN", "PAGADO", "ESCANÉAME"), "pt-BR": ("DIAS RESTANTES", "PAGO", "ESCANEIE"),
+    "ja": ("日後", "支払済", "スキャン"), "ko": ("일 남음", "결제 완료", "스캔하세요"),
+    "zh-Hans": ("天后", "已付款", "扫一扫"), "zh-Hant": ("天後", "已付款", "掃一掃"),
+    "th": ("วันข้างหน้า", "ชำระแล้ว", "สแกนเลย"),
+}
+
+def localize_illus(svg, lang):
+    if lang not in ILLUS:
+        return svg
+    for en, loc in zip(("DAYS TO GO", "PAID", "SCAN ME"), ILLUS[lang]):
+        def sub(m):
+            attrs = m.group(1)
+            if len(loc) > len(en):
+                attrs += f' textLength="{ILLUS_W[en]}" lengthAdjust="spacingAndGlyphs"'
+            return f"<text{attrs}>{esc_text(loc)}</text>"
+        svg = re.sub(r"<text([^>]*)>" + re.escape(en) + "</text>", sub, svg)
+    return svg
+
+def home_apps_html(lang="en"):
     cards = []
     for a in HOME_APPS:
-        h, key, page = a["home"], a["key"], a["path"]
+        h, key = a["home"], a["key"]; c = home_card(a, lang); page = c["page"]
         svg = (ROOT / "tools" / "home" / "illus" / f"{key}.svg").read_text(encoding="utf-8").strip()
+        svg = localize_illus(svg, lang)
         svg = "\n".join("        " + l for l in svg.splitlines())
-        hl = f' hreflang="{h["hreflang"]}"' if h.get("hreflang") else ""
+        hl = f' hreflang="{h["hreflang"]}"' if h.get("hreflang") and page == a["path"] else ""
+        page = esc(page)
         label = esc_text(h["label"])
-        su = campaign_url(a["appId"], f"web-{key}-home") if store_url(a) else None
-        get = f'\n      <a class="get" href="{su}">{label} on the App Store ↗</a>' if su else ""
+        su = esc(campaign_url(a["appId"], f"web-{key}-home", c["cc"] if lang != "en" else None)) if store_url(a) else None
+        btn = esc_text(H(lang, "get_on_store").replace("{label}", h["label"]))
+        get = f'\n      <a class="get" href="{su}">{btn} ↗</a>' if su else ""
+        tag = f'\n      <p class="tagline">{esc_text(c["tagline"])}</p>' if c["tagline"] else ""
         cards.append(f"""    <article class="app" id="app-{key}">
       <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
         <svg class="illus" viewBox="0 0 240 180" focusable="false">
@@ -425,25 +583,29 @@ def home_apps_html():
         <h3><a href="{page}"{hl}>{label}.</a></h3>
         <span class="arrow" aria-hidden="true">↗</span>
       </div>
-      <p class="store-name">{esc_text(home_name(a))}</p>
-      <p class="tagline">{esc_text(h["tagline"])}</p>
-      <p class="blurb">{esc_text(h["blurb"])}</p>{get}
+      <p class="store-name">{esc_text(c["name"])}</p>{tag}
+      <p class="blurb">{esc_text(c["blurb"])}</p>{get}
     </article>""")
     return ('<!-- apps:start -->\n  <div class="apps">\n' + "\n".join(cards)
             + "\n  </div>\n  <!-- apps:end -->")
 
-def home_faq_html():
+def home_faq_html(lang="en"):
     rows = "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
-                     % (esc_text(f["q"]), esc_text(f["a"])) for f in HOME["faq"])
+                     % (esc_text(f["q"]), esc_text(f["a"])) for f in H(lang, "faq"))
     return ('<!-- homefaq:start -->\n  <div class="faq-list">\n' + rows
             + "\n  </div>\n  <!-- homefaq:end -->")
 
-def home_legal_html():
+def home_legal_html(lang="en"):
     rows = []
     for a in HOME_APPS:
-        hl = a["home"].get("hreflang")
-        attr = f' hreflang="{hl}" lang="{hl}"' if hl else ""
-        links = " · ".join('<a href="%s"%s>%s</a>' % (href, attr, esc_text(label))
+        target = a["home"].get("hreflang") or "en"          # 法务页本身的语言
+        if lang == "en":                                    # 英文首页沿用原文标题（单词兽的是中文，标 lang）
+            attr = f' hreflang="{target}" lang="{target}"' if target != "en" else ""
+            label_of = lambda href, label: label
+        else:
+            attr = f' hreflang="{target}"'
+            label_of = lambda href, label: bp.t(lang, "privacy") if "privacy" in href else bp.t(lang, "terms")
+        links = " · ".join('<a href="%s"%s>%s</a>' % (href, attr, esc_text(label_of(href, label)))
                            for href, label in a.get("legal", []))
         rows.append("          <li>%s — %s</li>" % (esc_text(a["home"]["label"]), links))
     return ('<!-- legal:start -->\n        <ul class="legal">\n' + "\n".join(rows)
@@ -452,17 +614,19 @@ def home_legal_html():
 def tool_head(tp):
     url, lang = tp["path"], tp["lang"]; canonical = f"{ORIGIN}{url}"
     title, desc = tp["title"], meta_desc(tp["description"]); img = asset(HOME["ogImage"])
+    hub_alts = [f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">' for l, p in TOOL_HUBS.items()] + \
+               [f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}/tools/">'] if url in TOOL_HUBS.values() else []
     lines = [START, '<meta name="description" content="%s">' % esc(desc), f'<link rel="canonical" href="{canonical}">',
              '<meta property="og:type" content="%s">' % ("article" if tp["kind"] == "Article" else "website"),
              '<meta property="og:site_name" content="%s">' % esc(BRAND), '<meta property="og:title" content="%s">' % esc(title),
              '<meta property="og:description" content="%s">' % esc(desc), f'<meta property="og:url" content="{canonical}">',
              f'<meta property="og:image" content="{img}">', '<meta name="twitter:card" content="summary_large_image">',
              '<meta name="twitter:title" content="%s">' % esc(title), '<meta name="twitter:description" content="%s">' % esc(desc),
-             f'<meta name="twitter:image" content="{img}">']
-    hub = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
+             f'<meta name="twitter:image" content="{img}">'] + hub_alts
+    hub = "/blog/" if url.startswith("/blog/") else ("/tools/pt-br/" if lang == "pt-BR" else "/tools/")
     page = {"@context": "https://schema.org", "@type": tp["kind"], "@id": f"{canonical}#page", "url": canonical, "name": title,
-            "headline": title, "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{ORIGIN}/#website"},
-            "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True, "image": img}
+            "headline": tp.get("headline") or title, "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{ORIGIN}/#website"},
+            "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True, "image": tp.get("image") or img}
     if tp.get("published"):
         page["datePublished"] = tp["published"]; page["dateModified"] = git_lastmod(ROOT / url.strip("/") / "index.html")
     if tp["kind"] == "WebApplication":
@@ -471,8 +635,8 @@ def tool_head(tp):
     if tp.get("app"):
         page["about"] = {"@id": f"{ORIGIN}{next(a['path'] for a in APPS if a['key'] == tp['app'])}#app"}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home" if lang == "en" else "Início", "item": f"{ORIGIN}/"},
-        {"@type": "ListItem", "position": 2, "name": "Tools" if lang == "en" else "Ferramentas", "item": f"{ORIGIN}{hub}"}]}
+        {"@type": "ListItem", "position": 1, "name": "Home" if lang == "en" else "Início", "item": f"{ORIGIN}{home_path(lang)}"},
+        {"@type": "ListItem", "position": 2, "name": "Blog" if hub == "/blog/" else ("Tools" if lang == "en" else "Ferramentas"), "item": f"{ORIGIN}{hub}"}]}
     if url != hub:
         crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
     blobs = [page, crumbs]
@@ -497,9 +661,10 @@ def patch_tool(path: Path, tp):
     head, rest = html[:head_end], html[head_end:]
     for pat in OWNED:
         head = re.sub(pat, "", head, flags=re.S | re.I)
-    return head.rstrip() + "\n" + tool_head(tp) + rest
+    opts, extra = tool_options(tp)
+    return fill_lang(head.rstrip() + "\n" + tool_head(tp) + rest, tp["lang"], opts, extra)
 
-def patch_home(path: Path):
+def patch_home(path: Path, lang="en"):
     html = path.read_text(encoding="utf-8")
     head_end = html.lower().find("</head>")
     if head_end == -1:
@@ -507,10 +672,12 @@ def patch_home(path: Path):
     head, rest = html[:head_end], html[head_end:]
     for pat in OWNED:
         head = re.sub(pat, "", head, flags=re.S | re.I)
-    head = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % esc_text(HOME["title"]),
+    head = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % esc_text(H(lang, "title")),
                   head, count=1, flags=re.S)
-    out = head.rstrip() + "\n" + home_head() + rest
-    for tag, fn in (("apps", home_apps_html), ("homefaq", home_faq_html), ("legal", home_legal_html)):
+    out = head.rstrip() + "\n" + home_head(lang) + rest
+    out = fill_lang(out, lang, home_options())
+    for tag, fn in (("apps", lambda: home_apps_html(lang)), ("homefaq", lambda: home_faq_html(lang)),
+                    ("legal", lambda: home_legal_html(lang))):
         a, b = f"<!-- {tag}:start -->", f"<!-- {tag}:end -->"
         if a not in out or b not in out:
             raise SystemExit(f"index.html 缺少标记 {a} / {b}")
@@ -561,10 +728,23 @@ def patch(path: Path, url, app, kind):
                   r'(?:(?!</script>).)*?</script>\s*', "", head, flags=re.S)
     head = head.rstrip() + "\n" + head_block(url, app, kind)
     out = head + campaignize_body(rest)
+    if kind == "product" and "<!-- lang:start -->" in out:
+        out = fill_lang(out, app.get("lang", "en"), product_options(app))
     if kind == "product" and app.get("faq") and FAQ_START in out:
         out = re.sub(re.escape(FAQ_START) + r".*?" + re.escape(FAQ_END),
                      lambda m: faq_html(app), out, flags=re.S)
     return out
+
+FR_SPLIT = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]+>)", re.S | re.I)
+def french_spacing(html):
+    """法语排版：?!:;» 前、« 后是不换行空格，否则「»」会单独掉到下一行（09-26 评审）。"""
+    parts = FR_SPLIT.split(html)
+    for i in range(0, len(parts), 2):
+        t = parts[i]
+        t = re.sub(r"[ \t]+([?!:;»])", "\u00a0\\1", t)
+        t = re.sub(r"«[ \t]+", "«\u00a0", t)
+        parts[i] = t
+    return "".join(parts)
 
 def main():
     changed = []
@@ -581,10 +761,12 @@ def main():
     write("sitemap.xml", sitemap)
     write("llms.txt", build_llms())
     for url, path, app, kind in pages():
-        out = patch_home(path) if kind == "home" else patch_tool(path, app) if kind == "tool" else patch(path, url, app, kind)
+        out = patch_home(path, app["lang"]) if kind == "home" else patch_tool(path, app) if kind == "tool" else patch(path, url, app, kind)
         if out is None:
             print(f"  !! 没有 </head>，跳过：{path}")
             continue
+        if '<html lang="fr"' in out[:300]:
+            out = french_spacing(out)
         write(str(path.relative_to(ROOT)), out)
 
     print(f"sitemap: {n} 条 URL")

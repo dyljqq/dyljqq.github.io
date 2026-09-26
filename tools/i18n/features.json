@@ -1,0 +1,968 @@
+{
+ "de": {
+  "countdown": [
+   {
+    "title": "Sieh, wie der Tag näher kommt",
+    "text": "Trag den Tag ein, auf den es ankommt, leg ihn auf den Home-Bildschirm und sieh zu, wie er näher kommt. Zähl auf ein Datum hin oder von einem Datum weg, mit Wiederholungen jährlich, monatlich, wöchentlich oder alle paar Tage."
+   },
+   {
+    "title": "Jedes Widget, kostenlos",
+    "text": "Ein Countdown, die nächsten als Liste, ein Spotlight oder eine Kachel pro Ereignis, in jeder Größe, auf dem Home- und dem Sperrbildschirm. Unbegrenzte Ereignisse, Erinnerungen und iCloud-Sync sind auch kostenlos."
+   },
+   {
+    "title": "Starte mit einer Vorlage",
+    "text": "Sechsunddreißig fertige Vorlagen, vom Geburtstag bis zum ersten Arbeitstag, jede schon mit der passenden Wiederholung und den passenden Erinnerungen eingerichtet."
+   },
+   {
+    "title": "Die Rückseite jedes Ereignisses",
+    "text": "Tippe auf ein Ereignis, und es dreht sich auf eine eigene Seite. Schreib ein paar Zeilen, füge Fotos hinzu, nimm eine Stimme auf – die Geschichte des Tages, mit dem Tag aufgehoben und als ein Bild geteilt."
+   },
+   {
+    "title": "Sieht aus wie deins",
+    "text": "Zweihundert gezeichnete Symbole, die ganze Emoji-Tastatur und 140 bildschirmfüllende Hintergründe – 22 davon Fotografien, 88 davon in Pro."
+   },
+   {
+    "title": "Deine Tage, aufgehoben",
+    "text": "Diese App legt jeden Tag eine Sicherung aller deiner Ereignisse auf diesem Gerät an, und immer vor riskanten Schritten: dreißig Tage Verlauf, ein Tipp zum Wiederherstellen, und nichts verlässt je dein Telefon."
+   },
+   {
+    "title": "Vergangene Tage bleiben bei dir",
+    "text": "Vergangene Tage werden nie gelöscht. Sie sammeln sich zu einem Zeitstrahl, den du zurückgehen kannst, mit der längsten Wartezeit jedes Jahres daneben."
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "Rechnungen in Minuten",
+    "text": "Wähle eine von 100+ Vorlagen, ergänze Kunde und Positionen und teile ein sauberes PDF. Starte mit einem Angebot und verwandle es mit einem Tipp in eine Rechnung."
+   },
+   {
+    "title": "Scanne eine Papierrechnung",
+    "text": "Fotografiere eine Papierrechnung oder wähle ein Foto – daraus wird ein bearbeitbarer Entwurf. Die Seite wird auf deinem Gerät gelesen; die optionale KI-Prüfung sendet sie nur auf deine Anfrage an Google."
+   },
+   {
+    "title": "Bezahlt per Scan",
+    "text": "Jede Rechnung kann einen Bezahl-QR-Code tragen, den deine Kunden zum Zahlen scannen. Sieh bezahlt, offen, teilweise und überfällig auf einen Blick, und teile eine bezahlte Rechnung als Beleg."
+   },
+   {
+    "title": "Offene Beträge im Blick",
+    "text": "Umsatzberichte zeigen dir Einnahmen pro Monat, deine wichtigsten Kunden und was noch offen ist."
+   },
+   {
+    "title": "Deine Marke überall",
+    "text": "Lege Logo, Markenfarbe und Schriften einmal fest, und Rechnungen, Vorlagen und QR-Designs übernehmen sie automatisch."
+   },
+   {
+    "title": "Dazu ein QR-Code-Studio",
+    "text": "Zwölf QR-Typen, von Link und WLAN bis Zahlung und Pix, und sechzehn fertige Designs. Kontrast und Ruhezone werden geprüft, damit der Code immer scanbar bleibt."
+   },
+   {
+    "title": "Auf deinem Home-Bildschirm",
+    "text": "Drei Widgets: offene Beträge, Schnellaktionen zum Erstellen und ein Bezahl-QR, groß genug zum Vorzeigen und Scannen."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "Screenshots rein, Reiseplan raus",
+    "text": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tipp einfach deine Pläne ab, und BeforeGo macht daraus einen Reiseplan Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht."
+   },
+   {
+    "title": "Buchungen im Plan",
+    "text": "Scanne ein Ticket oder eine Buchungsbestätigung, und sie landet im Plan. Buchungen merken sich Preis und Währung und umfassen Shows und Events, Transfers und Mietwagen."
+   },
+   {
+    "title": "Eine Packliste, die sich von selbst schreibt",
+    "text": "Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps für dein Ziel, passend zu Reiseziel und Reisedaten erstellt, mit Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor der Abreise."
+   },
+   {
+    "title": "Orte zum Abhaken",
+    "text": "Gespeicherte Orte werden zur Checkliste – Sehenswürdigkeiten, Essen und Erlebnisse zum Abhaken. Ein Tagesplan sortiert sich zur kürzesten Route."
+   },
+   {
+    "title": "Reisekosten teilen",
+    "text": "Erfasse Ausgaben in den Währungen der Reise, wähle, wer bezahlt hat, und verteile jede Rechnung auf die Mitreisenden. Fotografiere einen Beleg, um eine Ausgabe auszufüllen – „Abrechnen“ zeigt den kürzesten Weg zu ausgeglichenen Beträgen."
+   },
+   {
+    "title": "Nach der Reise",
+    "text": "Fotos, Notizen und Sprachmemos, nach Reisen geordnet, ein druckbares Erinnerungsalbum, und Vergessenes wird übernommen, damit die nächste Packliste schlauer startet."
+   },
+   {
+    "title": "Auf deinem Home-Bildschirm",
+    "text": "Countdown- und Checklisten-Widgets halten die Reise im Blick, ohne die App zu öffnen."
+   }
+  ],
+  "ui": {
+   "h_highlights": "Das kann die App",
+   "h_details": "Die Details, wie im App Store beschrieben"
+  }
+ },
+ "fr": {
+  "countdown": [
+   {
+    "title": "Regardez le jour approcher",
+    "text": "Ajoutez le jour qui compte, posez-le sur votre écran d'accueil, et regardez-le approcher. Comptez jusqu'à une date, ou depuis une date, avec des répétitions chaque année, chaque mois, chaque semaine ou tous les quelques jours."
+   },
+   {
+    "title": "Chaque widget, gratuit",
+    "text": "Un compte à rebours, les prochains en liste, un grand format, ou une tuile par événement, dans toutes les tailles, sur l'écran d'accueil et l'écran verrouillé. Événements illimités, rappels et synchronisation iCloud sont gratuits aussi."
+   },
+   {
+    "title": "Partez d'un modèle",
+    "text": "Trente-six modèles prêts à l'emploi, de l'anniversaire au premier jour de travail, chacun déjà réglé avec la bonne répétition et les bons rappels."
+   },
+   {
+    "title": "Le dos de chaque événement",
+    "text": "Touchez un événement : il se retourne sur une page à lui. Écrivez quelques lignes, ajoutez des photos, enregistrez une voix – l'histoire du jour, gardée avec le jour et partagée en une seule image."
+   },
+   {
+    "title": "Fait pour vous ressembler",
+    "text": "Deux cents icônes dessinées, tout le clavier emoji et 140 fonds plein écran – 22 photographies et 88 en Pro."
+   },
+   {
+    "title": "Vos jours, gardés",
+    "text": "Chaque jour, l'app enregistre un instantané de tous vos événements sur cet appareil, et toujours avant une opération risquée : trente jours d'historique, une touche pour restaurer, et rien ne quitte jamais votre téléphone."
+   },
+   {
+    "title": "Les jours passés restent avec vous",
+    "text": "Les jours déjà passés ne sont jamais supprimés. Ils forment une frise que vous pouvez remonter, avec la plus longue attente de chaque année inscrite à côté."
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "Factures en quelques minutes",
+    "text": "Choisissez parmi plus de 100 modèles, ajoutez votre client et vos articles, et partagez un PDF soigné. Commencez par un devis et transformez-le en facture d'un seul geste."
+   },
+   {
+    "title": "Scannez une facture papier",
+    "text": "Photographiez une facture papier, ou choisissez une photo, et elle devient un brouillon modifiable. La page est lue sur votre appareil ; la vérification IA facultative ne l'envoie à Google que si vous le demandez."
+   },
+   {
+    "title": "Soyez payé d'un scan",
+    "text": "Chaque facture peut inclure un code QR de paiement que vos clients scannent pour payer. Suivez le statut d'un coup d'œil — payée, impayée, partielle et en retard — et partagez une facture réglée comme reçu."
+   },
+   {
+    "title": "Sachez ce qui reste dû",
+    "text": "Les rapports de ventes affichent les revenus par mois, vos meilleurs clients et ce qui reste impayé."
+   },
+   {
+    "title": "Votre marque partout",
+    "text": "Définissez votre logo, votre couleur et vos polices une seule fois, et factures, modèles et designs QR adoptent automatiquement votre marque."
+   },
+   {
+    "title": "Et un studio de codes QR",
+    "text": "Douze types de QR, du lien et du Wi-Fi jusqu'au paiement et au Pix, et seize designs prêts à l'emploi. Contraste et zone de silence sont vérifiés, pour que le code reste toujours scannable."
+   },
+   {
+    "title": "Sur votre écran d'accueil",
+    "text": "Trois widgets : vos impayés, des raccourcis de création rapide et un QR de paiement assez grand pour être scanné d'un coup d'œil."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "Captures d'écran, plans de voyage",
+    "text": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme, et BeforeGo en fait un plan de voyage jour par jour : les lieux à voir, ce qu'il faut régler avant le départ et chaque journée prévue dans le post."
+   },
+   {
+    "title": "Les réservations rejoignent le plan",
+    "text": "Scannez un billet ou une confirmation de réservation, et elle rejoint le plan. Les réservations gardent leur prix et leur devise, et incluent spectacles, événements, transferts et voitures de location."
+   },
+   {
+    "title": "Une liste de bagages qui se fait toute seule",
+    "text": "Prises, monnaie, formalités d'entrée et applis de transport pour votre destination, générées à partir de la destination et des dates, avec des rappels à 7 jours, 3 jours, 24 h et 3 h du départ."
+   },
+   {
+    "title": "Des lieux à cocher",
+    "text": "Les lieux enregistrés deviennent une checklist – adresses, restaurants, expériences à cocher. Une journée d'étapes s'ordonne en itinéraire le plus court."
+   },
+   {
+    "title": "Partagez les frais du voyage",
+    "text": "Ajoutez des dépenses dans les devises du voyage, choisissez qui a payé et répartissez chaque note entre les voyageurs. Photographiez un reçu pour remplir une dépense, et le règlement indique le chemin le plus court pour solder les comptes."
+   },
+   {
+    "title": "Après le voyage",
+    "text": "Photos, notes et mémos vocaux conservés par voyage, un album souvenir imprimable, et les oublis sont repris pour que la prochaine liste démarre plus futée."
+   },
+   {
+    "title": "Sur l'écran d'accueil",
+    "text": "Les widgets compte à rebours et checklist gardent le voyage en vue sans ouvrir l'app."
+   }
+  ],
+  "ui": {
+   "h_highlights": "Ce que fait l'app",
+   "h_details": "Les détails, tels qu'écrits dans l'App Store"
+  }
+ },
+ "it": {
+  "countdown": [
+   {
+    "title": "Guarda il giorno avvicinarsi",
+    "text": "Aggiungi il giorno che conta, mettilo sulla schermata Home e guardalo avvicinarsi. Conta verso una data, oppure a partire da una data, con ripetizioni ogni anno, ogni mese, ogni settimana o ogni pochi giorni."
+   },
+   {
+    "title": "Ogni widget, gratis",
+    "text": "Un conto alla rovescia, i prossimi in elenco, uno in primo piano o una tessera per evento, in ogni misura, sulla schermata Home e sulla schermata di blocco. Anche eventi illimitati, promemoria e sincronizzazione iCloud sono gratis."
+   },
+   {
+    "title": "Parti da un modello",
+    "text": "Trentasei modelli pronti, dal compleanno al primo giorno di lavoro, ciascuno già impostato con la ripetizione giusta e i promemoria giusti."
+   },
+   {
+    "title": "Il retro di ogni evento",
+    "text": "Tocca un evento e si gira su una pagina tutta sua. Scrivi qualche riga, aggiungi foto, registra una voce: la storia del giorno, conservata con il giorno e condivisa come un'unica immagine."
+   },
+   {
+    "title": "Fatto per somigliarti",
+    "text": "Duecento icone disegnate, tutta la tastiera emoji e 140 sfondi a tutto schermo — ventidue fotografie e ottantotto Pro."
+   },
+   {
+    "title": "I tuoi giorni, al sicuro",
+    "text": "Ogni giorno l'app salva un'istantanea di tutti i tuoi eventi su questo dispositivo, e sempre prima di qualcosa di rischioso: trenta giorni di cronologia, un tocco per ripristinare, e niente lascia mai il telefono."
+   },
+   {
+    "title": "I giorni passati restano con te",
+    "text": "Nemmeno i giorni già passati vengono cancellati: si raccolgono in una linea del tempo che puoi risalire, con accanto l'attesa più lunga di ogni anno."
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "Fatture in pochi minuti",
+    "text": "Scegli tra oltre 100 modelli, aggiungi cliente e voci e condividi un PDF impeccabile. Inizia con un preventivo e trasformalo in fattura con un tocco."
+   },
+   {
+    "title": "Scansiona una fattura cartacea",
+    "text": "Fotografa una fattura cartacea, o scegli una foto, e diventa una bozza modificabile. La pagina viene letta sul tuo dispositivo; la revisione AI facoltativa la invia a Google solo se lo chiedi."
+   },
+   {
+    "title": "Fatti pagare con una scansione",
+    "text": "Ogni fattura può includere un codice QR di pagamento che il cliente scansiona per pagare. Vedi pagata, non pagata, parziale e scaduta a colpo d'occhio, e condividi una fattura saldata come ricevuta."
+   },
+   {
+    "title": "Quanto resta da incassare, a colpo d'occhio",
+    "text": "I report di vendita mostrano gli incassi per mese, i clienti migliori e lo scaduto da incassare."
+   },
+   {
+    "title": "Il tuo brand su tutto",
+    "text": "Imposta logo, colore e font una sola volta, e fatture, modelli e design QR adottano automaticamente il tuo brand."
+   },
+   {
+    "title": "E uno studio di codici QR",
+    "text": "Dodici tipi di QR, da link e Wi-Fi a pagamento e Pix, e sedici design pronti. Contrasto e zona di silenzio sono verificati, così il codice resta sempre leggibile."
+   },
+   {
+    "title": "Sulla tua schermata Home",
+    "text": "Tre widget: quanto ti devono, scorciatoie per creare al volo e un QR di pagamento grande abbastanza da tenere in mano e scansionare."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "Dallo screenshot al piano di viaggio",
+    "text": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani, e BeforeGo li trasforma in un piano di viaggio giorno per giorno: i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post."
+   },
+   {
+    "title": "Le prenotazioni nel piano",
+    "text": "Scansiona un biglietto o una conferma di prenotazione, e finisce nel piano. Le prenotazioni tengono prezzo e valuta e includono spettacoli, eventi, transfer e auto a noleggio."
+   },
+   {
+    "title": "Una lista bagagli che si fa da sola",
+    "text": "Prese, valuta, requisiti d'ingresso e app di trasporto per la tua destinazione, generati da destinazione e date, con promemoria a 7 giorni, 3 giorni, 24 ore e 3 ore dalla partenza."
+   },
+   {
+    "title": "Luoghi da spuntare",
+    "text": "I luoghi salvati diventano una checklist – posti, cibo, esperienze da spuntare. Una giornata di tappe si ordina nel percorso più breve."
+   },
+   {
+    "title": "Dividi i costi del viaggio",
+    "text": "Aggiungi le spese nelle valute del viaggio, scegli chi ha pagato e dividi ogni conto tra i viaggiatori. Fotografa uno scontrino per compilare una spesa, e il saldo indica il modo più breve per pareggiare i conti."
+   },
+   {
+    "title": "Dopo il viaggio",
+    "text": "Foto, note e memo vocali conservati per viaggio, un album dei ricordi stampabile, e gli oggetti dimenticati si trasferiscono così la prossima lista parte più preparata."
+   },
+   {
+    "title": "Sulla schermata Home",
+    "text": "I widget conto alla rovescia e checklist tengono il viaggio in vista senza aprire l'app."
+   }
+  ],
+  "ui": {
+   "h_highlights": "Cosa fa l'app",
+   "h_details": "I dettagli, come scritti sull'App Store"
+  }
+ },
+ "es": {
+  "invoiceqr": [
+   {
+    "title": "Facturas en minutos",
+    "text": "Elige una de más de 100 plantillas, añade tu cliente y los conceptos, y comparte un PDF impecable. Empieza con un presupuesto y conviértelo en factura con un toque."
+   },
+   {
+    "title": "Escanea una factura en papel",
+    "text": "Fotografía una factura en papel, o elige una foto, y se convierte en un borrador editable. La página se lee en tu dispositivo; la revisión de IA opcional solo la envía a Google si tú lo pides."
+   },
+   {
+    "title": "Cobra con un escaneo",
+    "text": "Cada factura puede llevar un código QR de pago que tu cliente escanea para pagar. Ve pagada, pendiente, parcial y vencida de un vistazo, y comparte una factura pagada como recibo."
+   },
+   {
+    "title": "Lo pendiente de cobro, a la vista",
+    "text": "Los informes de ventas muestran ingresos por mes, tus mejores clientes y lo pendiente de cobro."
+   },
+   {
+    "title": "Tu marca en todo",
+    "text": "Configura tu logo, color de marca y fuentes una sola vez, y facturas, plantillas y diseños QR adoptan tu marca automáticamente."
+   },
+   {
+    "title": "Y un estudio de códigos QR",
+    "text": "Doce tipos de QR, desde enlace y Wi-Fi hasta pago y Pix, y dieciséis diseños listos. Se comprueban el contraste y la zona de silencio, así el código siempre es escaneable."
+   },
+   {
+    "title": "En tu pantalla de inicio",
+    "text": "Tres widgets: lo que te deben, accesos para crear al instante y un QR de cobro lo bastante grande para enseñarlo y escanearlo."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "De la captura al plan de viaje",
+    "text": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día: los lugares que merecen la pena, lo que tienes que hacer antes de salir y cada día que propone el post."
+   },
+   {
+    "title": "Reservas en el plan",
+    "text": "Escanea un billete o una confirmación de reserva, y se añade al plan. Las reservas guardan su precio y moneda, e incluyen espectáculos, eventos, traslados y coches de alquiler."
+   },
+   {
+    "title": "Una lista de equipaje que se escribe sola",
+    "text": "Enchufes, moneda, requisitos de entrada y apps de transporte para tu destino, generados a partir de tu destino y tus fechas, con recordatorios a 7 días, 3 días, 24 h y 3 h antes de salir."
+   },
+   {
+    "title": "Lugares para marcar",
+    "text": "Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar. Un día de paradas se ordena en la ruta más corta."
+   },
+   {
+    "title": "Divide los gastos del viaje",
+    "text": "Añade gastos en las monedas del viaje, elige quién pagó y reparte cada cuenta entre los viajeros. Fotografía un recibo para rellenar un gasto, y Ajustar cuentas muestra la forma más corta de saldar los balances."
+   },
+   {
+    "title": "Después del viaje",
+    "text": "Fotos, notas y notas de voz guardadas por viaje, un álbum de recuerdos imprimible, y lo que olvidas pasa a la siguiente lista para que empiece mejor preparada."
+   },
+   {
+    "title": "En la pantalla de inicio",
+    "text": "Los widgets de cuenta regresiva y checklist mantienen el viaje a la vista sin abrir la app."
+   }
+  ],
+  "ui": {
+   "h_highlights": "Qué hace la app",
+   "h_details": "Los detalles, tal como aparecen en la App Store"
+  }
+ },
+ "es-MX": {
+  "invoiceqr": [
+   {
+    "title": "Notas de venta en minutos",
+    "text": "Elige una de más de 100 plantillas, agrega tu cliente y tus conceptos, y comparte un PDF impecable. Empieza con una cotización y conviértela en nota de venta con un toque."
+   },
+   {
+    "title": "Escanea un documento en papel",
+    "text": "Fotografía un documento en papel, o elige una foto, y se convierte en un borrador editable. La página se lee en tu dispositivo; la revisión de IA opcional solo la envía a Google si tú lo pides."
+   },
+   {
+    "title": "Cobra con un escaneo",
+    "text": "Cada nota de venta puede llevar un código QR de pago que tus clientes escanean para pagar. Ve pagada, pendiente, parcial y vencida de un vistazo, y comparte una nota pagada como recibo."
+   },
+   {
+    "title": "Lo pendiente de cobro, a la vista",
+    "text": "Los informes de ventas muestran ingresos por mes, tus mejores clientes y lo pendiente de cobro."
+   },
+   {
+    "title": "Tu marca en todo",
+    "text": "Configura tu logo, color de marca y fuentes una sola vez, y notas de venta, plantillas y diseños QR adoptan tu marca automáticamente."
+   },
+   {
+    "title": "Y un estudio de códigos QR",
+    "text": "Doce tipos de QR, desde enlace y Wi-Fi hasta pago y Pix, y dieciséis diseños listos. Se comprueban el contraste y la zona de silencio, así el código siempre es escaneable."
+   },
+   {
+    "title": "En tu pantalla de inicio",
+    "text": "Tres widgets: lo que te deben, accesos para crear al instante y un QR de cobro lo bastante grande para enseñarlo y escanearlo."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "De la captura al plan de viaje",
+    "text": "Toma una captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post."
+   },
+   {
+    "title": "Reservaciones en el plan",
+    "text": "Escanea un boleto o una confirmación de reservación, y se agrega al plan. Las reservaciones guardan su precio y moneda, e incluyen espectáculos, eventos, traslados y autos de alquiler."
+   },
+   {
+    "title": "Una lista de equipaje que se arma sola",
+    "text": "Enchufes, moneda, requisitos de entrada y apps de transporte para tu destino, generados a partir de tu destino y tus fechas, con recordatorios a 7 días, 3 días, 24 h y 3 h antes de salir."
+   },
+   {
+    "title": "Lugares para marcar",
+    "text": "Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar. Un día de paradas se ordena en la ruta más corta."
+   },
+   {
+    "title": "Divide los gastos del viaje",
+    "text": "Agrega gastos en las monedas del viaje, elige quién pagó y divide cada cuenta entre los viajeros. Fotografía un recibo para llenar un gasto, y Ajustar cuentas muestra la forma más corta de saldar los balances."
+   },
+   {
+    "title": "Después del viaje",
+    "text": "Fotos, notas y notas de voz guardadas por viaje, un álbum de recuerdos imprimible, y lo que olvidas pasa a la siguiente lista para que empiece mejor preparada."
+   },
+   {
+    "title": "En la pantalla de inicio",
+    "text": "Los widgets de cuenta regresiva y checklist mantienen el viaje a la vista sin abrir la app."
+   }
+  ],
+  "ui": {
+   "h_highlights": "Qué hace la app",
+   "h_details": "Los detalles, tal como aparecen en la App Store"
+  }
+ },
+ "pt-BR": {
+  "countdown": [
+   {
+    "title": "Veja o dia se aproximar",
+    "text": "Adicione o dia que importa, coloque na Tela de Início e veja ele se aproximar. Conte até uma data, ou a partir de uma data, com repetições todo ano, todo mês, toda semana ou a cada poucos dias."
+   },
+   {
+    "title": "Todos os widgets, grátis",
+    "text": "Uma contagem, os próximos em lista, um destaque ou um bloco por evento, em todos os tamanhos, na Tela de Início e na Tela Bloqueada. Eventos ilimitados, lembretes e sincronização com o iCloud também são grátis."
+   },
+   {
+    "title": "Comece por um modelo",
+    "text": "Trinta e seis modelos prontos, do aniversário ao primeiro dia de trabalho, cada um já com a repetição certa e os lembretes certos."
+   },
+   {
+    "title": "O verso de todo evento",
+    "text": "Toque em um evento e ele vira para uma página só dele. Escreva algumas linhas, adicione fotos, grave uma voz — a história do dia, guardada com o dia e compartilhada como uma única imagem."
+   },
+   {
+    "title": "Com a sua cara",
+    "text": "Duzentos ícones desenhados, todo o teclado de emoji e 140 fundos em tela cheia — vinte e dois deles fotografias e oitenta e oito Pro."
+   },
+   {
+    "title": "Seus dias, guardados",
+    "text": "Todos os dias o app salva um instantâneo de todos os seus eventos neste aparelho, e sempre antes de qualquer operação arriscada: trinta dias de histórico, um toque para restaurar, e nada nunca sai do seu telefone."
+   },
+   {
+    "title": "Dias que já passaram continuam com você",
+    "text": "Dias que já passaram também não são apagados. Eles formam uma linha do tempo para percorrer de volta, com a espera mais longa de cada ano anotada ao lado."
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "Faturas em minutos",
+    "text": "Escolha entre mais de 100 modelos, adicione cliente e itens e compartilhe um PDF caprichado. Comece com um orçamento e converta em fatura com um toque."
+   },
+   {
+    "title": "Fotografe uma fatura em papel",
+    "text": "Fotografe uma fatura em papel, ou escolha uma foto, e ela vira um rascunho editável. A página é lida no seu aparelho; a revisão por IA opcional só a envia ao Google quando você pede."
+   },
+   {
+    "title": "Receba com um escaneamento",
+    "text": "Cada fatura pode levar um QR code de pagamento que seu cliente escaneia para pagar. Veja paga, não paga, parcial e vencida num relance, e compartilhe uma fatura quitada como recibo."
+   },
+   {
+    "title": "Saiba o que ainda está em aberto",
+    "text": "Os relatórios de vendas mostram receita por mês, seus melhores clientes e o que ainda está em aberto."
+   },
+   {
+    "title": "Sua marca em tudo",
+    "text": "Defina seu logo, cor da marca e fontes uma única vez, e faturas, modelos e designs de QR adotam sua marca automaticamente."
+   },
+   {
+    "title": "E um estúdio de códigos QR",
+    "text": "Doze tipos de QR, de link e Wi-Fi a pagamento e Pix, e dezesseis designs prontos. Contraste e zona de silêncio são verificados, então o código sempre escaneia."
+   },
+   {
+    "title": "Na sua Tela de Início",
+    "text": "Três widgets: o que devem a você, atalhos de criação rápida e um QR de pagamento grande o bastante para segurar e escanear."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "Prints entram, roteiro sai",
+    "text": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere."
+   },
+   {
+    "title": "Reservas no roteiro",
+    "text": "Escaneie uma passagem ou uma confirmação de reserva, e ela entra no roteiro. As reservas guardam preço e moeda, e incluem shows, eventos, transfers e carros alugados."
+   },
+   {
+    "title": "Uma lista de bagagem que se monta sozinha",
+    "text": "Tomadas, moeda, requisitos de entrada e apps de transporte para o seu destino, gerados a partir do destino e das datas, com lembretes 7 dias, 3 dias, 24 h e 3 h antes da partida."
+   },
+   {
+    "title": "Lugares para marcar",
+    "text": "Os lugares salvos viram checklist — pontos, comidas e experiências para marcar. Um dia de paradas se organiza na rota mais curta."
+   },
+   {
+    "title": "Divida os custos da viagem",
+    "text": "Adicione despesas nas moedas da viagem, escolha quem pagou e divida cada conta entre os viajantes. Fotografe um recibo para preencher uma despesa, e o acerto mostra o caminho mais curto para zerar os saldos."
+   },
+   {
+    "title": "Depois da viagem",
+    "text": "Fotos, notas e áudios guardados por viagem, um álbum de lembranças para imprimir, e o que você esquece passa para a próxima lista, que começa mais esperta."
+   },
+   {
+    "title": "Na sua Tela de Início",
+    "text": "Os widgets de contagem regressiva e checklist mantêm a viagem à vista sem abrir o app."
+   }
+  ],
+  "ui": {
+   "h_highlights": "O que o app faz",
+   "h_details": "Os detalhes, tal como estão na App Store"
+  }
+ },
+ "ja": {
+  "countdown": [
+   {
+    "title": "その日の到来を見守る",
+    "text": "大事な日を追加してホーム画面に置き、少しずつ近づいてくるのを眺めましょう。ある日までカウントダウンしたり、ある日からカウントアップしたりでき、毎年・毎月・毎週・数日ごとの繰り返しにも対応します。"
+   },
+   {
+    "title": "ウィジェットはすべて無料",
+    "text": "ひとつの日、次の予定リスト、大きな1件、イベントごとのタイルを、全サイズでホーム画面とロック画面に置けます。イベント数無制限、リマインダー、iCloud同期もすべて無料です。"
+   },
+   {
+    "title": "テンプレートから始める",
+    "text": "誕生日から入社初日まで、36種類のテンプレートを用意。どれも正しい繰り返しと通知がすでに設定されています。"
+   },
+   {
+    "title": "イベントの裏面",
+    "text": "イベントをタップすると、そのイベントだけのページに裏返ります。文章を書き、写真を加え、声を録音して、その日の物語をその日と一緒に残し、1枚の画像としてシェアできます。"
+   },
+   {
+    "title": "あなたらしい見た目に",
+    "text": "手描きアイコン200種類と絵文字キーボード全体、全画面背景140種類——うち22種類は写真、88種類がProです。"
+   },
+   {
+    "title": "あなたの日々を、確実に",
+    "text": "毎日アプリがこの端末上のすべてのイベントのスナップショットを保存し、リスクのある操作の前にも必ず保存します。30日分の履歴、ワンタップで復元、そして何ひとつ端末の外には出ません。"
+   },
+   {
+    "title": "過ぎた日もあなたのそばに",
+    "text": "過ぎた日も削除されません。さかのぼって眺められるタイムラインになり、その年いちばん長く待った記録が横に記されます。"
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "数分で請求書を作成",
+    "text": "100以上のテンプレートから選び、取引先と項目を入れてそのままPDFで共有。見積書を送り、先方の合意後にワンタップで請求書に変換できます。"
+   },
+   {
+    "title": "紙の請求書をスキャン",
+    "text": "紙の請求書を撮影するか写真を選ぶと、編集できる下書きになります。読み取りは端末内で行われ、任意のAIレビューを使ったときだけそのページがGoogleに送信されます。"
+   },
+   {
+    "title": "スキャンで入金を受け取る",
+    "text": "決済リンクがある場合は、スキャンで支払えるQRコードも請求書に付けられます。支払済み・未払い・一部入金・期限超過をひと目で把握でき、支払い済みの請求書はそのまま領収書として共有できます。"
+   },
+   {
+    "title": "未回収額をひと目で把握",
+    "text": "売上レポートで月別の入金、主要な取引先、未回収額をひと目で確認できます。"
+   },
+   {
+    "title": "すべてにブランドを",
+    "text": "ロゴ・ブランドカラー・フォントを一度設定するだけで、請求書・テンプレート・QRデザインに自動で反映されます。"
+   },
+   {
+    "title": "QRコードスタジオも",
+    "text": "リンクやWi-Fiから決済・Pixまで12種類のQR、完成デザイン16種類。コントラストとクワイエットゾーンを自動チェックするので、いつでもスキャンできます。"
+   },
+   {
+    "title": "ホーム画面にも",
+    "text": "ウィジェットは3種類：未回収額、クイック作成、そしてすぐ見せてスキャンしてもらえる決済QRです。"
+   }
+  ],
+  "beforego": [
+   {
+    "title": "スクショから旅行プランへ",
+    "text": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGoが日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。"
+   },
+   {
+    "title": "予約もプランに追加",
+    "text": "航空券や予約確認をスキャンすればプランに加わります。予約には金額と通貨が記録され、公演・イベント、送迎、レンタカーにも対応します。"
+   },
+   {
+    "title": "持ち物リストが自動で作られる",
+    "text": "行き先と日程から、プラグ、通貨、入国準備、交通アプリを自動で用意。出発7日前・3日前・24時間前・3時間前にリマインドします。"
+   },
+   {
+    "title": "行きたい場所をチェック",
+    "text": "保存したスポットがチェックリストに。名所、グルメ、体験をひとつずつ。1日の予定は最短ルートに並び替えられます。"
+   },
+   {
+    "title": "旅行費用を分担",
+    "text": "旅行の通貨で支出を記録し、誰が払ったかを選んで同行者と割り勘に。レシートを撮れば支出の入力が済み、「精算」では残高を最短の手順で清算できます。"
+   },
+   {
+    "title": "旅のあと",
+    "text": "写真・メモ・音声を旅ごとに整理し、印刷できる旅日記アルバムに。忘れ物は自動で次の持ち物リストに引き継がれます。"
+   },
+   {
+    "title": "ホーム画面にも",
+    "text": "カウントダウンとチェックリストのウィジェットで、アプリを開かずに旅行を確認できます。"
+   }
+  ],
+  "ui": {
+   "h_highlights": "主な機能",
+   "h_details": "詳細 – App Storeに書かれている通り"
+  }
+ },
+ "ko": {
+  "countdown": [
+   {
+    "title": "그날이 다가오는 것을 보세요",
+    "text": "중요한 날을 추가하고 홈 화면에 놓아, 그날이 가까워지는 것을 지켜보세요. 어떤 날까지 카운트다운하거나 어떤 날부터 카운트업할 수 있고, 매년·매월·매주·며칠마다 반복도 가능합니다."
+   },
+   {
+    "title": "모든 위젯, 무료",
+    "text": "카운트다운 하나, 다음 목록, 스포트라이트, 이벤트별 타일, 모든 크기로 홈 화면과 잠금 화면에서 사용할 수 있습니다. 무제한 이벤트, 미리 알림, iCloud 동기화도 모두 무료입니다."
+   },
+   {
+    "title": "템플릿부터 시작",
+    "text": "생일부터 첫 출근날까지 36가지 템플릿이 있고, 각각 알맞은 반복과 미리 알림이 이미 설정되어 있습니다."
+   },
+   {
+    "title": "모든 이벤트의 뒷면",
+    "text": "이벤트를 탭하면 그 이벤트만의 페이지로 뒤집힙니다. 몇 줄을 쓰고, 사진을 더하고, 목소리를 녹음해 그날의 이야기를 그날과 함께 남기고, 한 장의 이미지로 공유할 수 있습니다."
+   },
+   {
+    "title": "당신다운 모습으로",
+    "text": "직접 그린 아이콘 200개, 이모지 키보드 전체, 전체 화면 배경 140가지 — 그중 22가지는 사진이고 88가지가 Pro입니다."
+   },
+   {
+    "title": "당신의 날들을 그대로",
+    "text": "매일 앱이 이 기기의 모든 이벤트를 스냅샷으로 저장하고, 위험한 작업 전에도 반드시 저장합니다. 30일치 기록, 한 번의 탭으로 복원, 그리고 아무것도 기기를 떠나지 않습니다."
+   },
+   {
+    "title": "지나간 날도 당신과 함께",
+    "text": "지나간 날도 지우지 않습니다. 되돌아볼 수 있는 타임라인으로 쌓이고, 해마다 가장 오래 기다린 일이 그 옆에 적힙니다."
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "몇 분 만에 청구서 작성",
+    "text": "100가지 이상 템플릿 중 하나를 고르고 고객과 항목을 채워 깔끔한 PDF로 공유하세요. 견적서를 먼저 보내고, 확정되면 한 번의 탭으로 청구서로 전환할 수 있습니다."
+   },
+   {
+    "title": "종이 청구서 스캔",
+    "text": "종이 청구서를 촬영하거나 사진을 선택하면 편집 가능한 초안이 됩니다. 인식은 기기에서 이루어지며, 선택 사항인 AI 검토를 요청할 때만 해당 페이지가 Google로 전송됩니다."
+   },
+   {
+    "title": "스캔으로 결제",
+    "text": "모든 청구서에 고객이 스캔해 결제하는 QR코드를 넣을 수 있습니다. 결제 완료·미결제·부분 결제·연체 상태를 한눈에 확인하고, 결제된 청구서는 그대로 영수증으로 공유할 수 있습니다."
+   },
+   {
+    "title": "아직 받지 못한 금액을 한눈에",
+    "text": "매출 리포트로 월별 수입, 주요 고객, 아직 받지 못한 금액을 한눈에 확인할 수 있습니다."
+   },
+   {
+    "title": "모든 곳에 나의 브랜드",
+    "text": "로고, 브랜드 색상, 글꼴을 한 번만 설정하면 청구서·템플릿·QR 디자인에 자동으로 반영됩니다."
+   },
+   {
+    "title": "QR코드 스튜디오까지",
+    "text": "링크와 Wi-Fi부터 결제와 Pix까지 QR 12가지, 완성 디자인 16종. 명암비와 여백을 자동으로 검사해 언제나 스캔할 수 있습니다."
+   },
+   {
+    "title": "홈 화면에서 바로",
+    "text": "위젯 3종: 미수금 현황, 빠른 만들기, 그리고 꺼내 보여주면 바로 스캔할 수 있는 결제 QR입니다."
+   }
+  ],
+  "beforego": [
+   {
+    "title": "캡처 한 장이 여행 일정으로",
+    "text": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 입력하기만 하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 가 볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요."
+   },
+   {
+    "title": "예약도 일정에",
+    "text": "항공권이나 예약 확인서를 스캔하면 일정에 들어갑니다. 예약은 금액과 통화를 기록하고, 공연·이벤트, 픽업, 렌터카도 포함합니다."
+   },
+   {
+    "title": "저절로 만들어지는 패킹리스트",
+    "text": "목적지와 날짜에 맞춰 플러그, 환전, 입국 준비, 교통 앱을 자동으로 정리하고, 출발 7일·3일·24시간·3시간 전에 미리 알려줍니다."
+   },
+   {
+    "title": "갈 곳을 하나씩 체크",
+    "text": "저장한 장소가 체크리스트가 됩니다. 명소, 맛집, 체험을 하나씩 완료하고, 하루 일정은 최단 도보 동선으로 정렬됩니다."
+   },
+   {
+    "title": "여행 경비 나누기",
+    "text": "여행 통화로 지출을 기록하고, 누가 냈는지 고른 뒤 함께 간 사람들과 나눕니다. 영수증을 찍으면 지출이 채워지고, 정산 화면은 잔액을 가장 짧은 방법으로 정리해 줍니다."
+   },
+   {
+    "title": "여행 후",
+    "text": "사진·메모·음성을 여행별로 정리하고, 인쇄 가능한 추억 앨범으로 남기세요. 잊었던 물건은 다음 패킹리스트로 자동 이월됩니다."
+   },
+   {
+    "title": "홈 화면에서",
+    "text": "카운트다운과 체크리스트 위젯으로 앱을 열지 않고도 여행을 한눈에 확인할 수 있습니다."
+   }
+  ],
+  "ui": {
+   "h_highlights": "주요 기능",
+   "h_details": "세부 사항 – App Store에 쓰인 대로"
+  }
+ },
+ "zh-Hans": {
+  "countdown": [
+   {
+    "title": "看那一天越来越近",
+    "text": "把重要的那天加进来，放到主屏幕上，看着它一天天靠近。可以倒数到某一天，也可以从某一天开始正数，支持每年、每月、每周或每隔几天重复一次。"
+   },
+   {
+    "title": "全部小组件，免费",
+    "text": "单个倒数、接下来的清单、聚焦一件，或每个事件一格，各种尺寸都有，主屏幕和锁定屏幕都能放。无限事件、提醒和 iCloud 同步同样免费。"
+   },
+   {
+    "title": "从模板开始",
+    "text": "三十六个现成模板，从生日到入职第一天，每个都已经配好合适的重复规则和提醒。"
+   },
+   {
+    "title": "每个事件的背面",
+    "text": "点一下事件，就翻到专属的一页：写几句话、加几张照片、录一段声音，这一天的故事留在这一天里，还能做成一张图片分享。"
+   },
+   {
+    "title": "看起来就是你的",
+    "text": "两百个手绘图标，加上整个表情键盘，还有一百四十张整屏背景——其中二十二张是照片，八十八张属于 Pro。"
+   },
+   {
+    "title": "你的日子，替你留着",
+    "text": "这个应用每天都会在本机给所有事件拍一份快照，任何有风险的操作之前也会先拍一份：三十天的历史，一键恢复，没有任何内容离开你的手机。"
+   },
+   {
+    "title": "过去的日子始终陪着你",
+    "text": "过去的日子从不会被删除。它们汇成一条可以往回翻的时间线，每一年旁边，写着那年等得最久的一件事。"
+   }
+  ],
+  "beforego": [
+   {
+    "title": "截屏进，行程出",
+    "text": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程：值得去的地方、出发前要办的事，还有攻略里每一天的安排。"
+   },
+   {
+    "title": "预订加入行程",
+    "text": "扫描机票或预订确认，就能加入行程。预订会记下价格和币种，还包括演出、活动、接送和租车。"
+   },
+   {
+    "title": "行李清单自动生成",
+    "text": "插头、货币、入境须知和当地交通 App，根据目的地和日期自动生成，并在出发前 7 天、3 天、24 小时和 3 小时提醒你。"
+   },
+   {
+    "title": "打卡清单，边走边勾",
+    "text": "存下的地点变成打卡清单——景点、美食、体验逐个完成；一天的行程自动排成最短步行路线。"
+   },
+   {
+    "title": "分摊旅行费用",
+    "text": "用行程可选币种记账，选择谁付款，把每笔账按同行人拆分。拍下小票自动填写支出，「结清」会算出还清余额的最短方式。"
+   },
+   {
+    "title": "旅行结束后",
+    "text": "照片、笔记和语音备忘录按行程归档，还有可打印的回忆相册；忘带的东西会自动带入下一次清单，让打包更省心。"
+   },
+   {
+    "title": "在主屏幕上",
+    "text": "倒计时和清单小组件让旅行始终在眼前，无需打开应用。"
+   }
+  ],
+  "ui": {
+   "h_highlights": "功能特色",
+   "h_details": "详情——App Store 原文"
+  }
+ },
+ "zh-Hant": {
+  "countdown": [
+   {
+    "title": "看那一天越來越近",
+    "text": "把重要的那天加進來，放到主畫面上，看著它一天天靠近。可以倒數到某一天，也可以從某一天開始正數，支援每年、每月、每週或每隔幾天重複一次。"
+   },
+   {
+    "title": "全部小工具，免費",
+    "text": "單一倒數、接下來的清單、聚焦一件，或每個事件一格，各種尺寸都有，主畫面和鎖定畫面都能放。無限事件、提醒和 iCloud 同步同樣免費。"
+   },
+   {
+    "title": "從範本開始",
+    "text": "三十六個現成範本，從生日到到職第一天，每個都已經配好合適的重複規則和提醒。"
+   },
+   {
+    "title": "每個事件的背面",
+    "text": "點一下事件，就翻到專屬的一頁：寫幾句話、加幾張照片、錄一段聲音，這一天的故事留在這一天裡，還能做成一張圖片分享。"
+   },
+   {
+    "title": "看起來就是你的",
+    "text": "兩百個手繪圖示，加上整個表情鍵盤，還有一百四十張全螢幕背景——其中二十二張是照片，八十八張屬於 Pro。"
+   },
+   {
+    "title": "你的日子，替你留著",
+    "text": "這款 App 每天都會在本機為所有事件拍一份快照，任何有風險的操作之前也會先拍一份：三十天的歷史記錄，一鍵還原，沒有任何內容會離開你的手機。"
+   },
+   {
+    "title": "過去的日子始終陪著你",
+    "text": "過去的日子從不會被刪除。它們匯成一條可以往回翻的時間軸，每一年旁邊，寫著那年等得最久的一件事。"
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "幾分鐘完成開單",
+    "text": "從 100+ 款範本中選一款，填好客戶與項目，直接分享精緻的 PDF。先寄出估價單或報價單，客戶確認後一鍵轉成帳單。"
+   },
+   {
+    "title": "掃描紙本單據",
+    "text": "拍下紙本單據，或選一張現有的照片，就會變成可編輯的草稿——辨識在裝置本機完成，只有你主動使用選用的 AI 核對時，這一頁才會傳送給 Google。"
+   },
+   {
+    "title": "掃碼即付",
+    "text": "每份帳單都可以附上收款 QR Code，客戶掃碼直接付款。已付、未付、部分付款、逾期狀態一目了然，收款結清後，同一份帳單還能直接當作收據分享。"
+   },
+   {
+    "title": "還有多少沒收回來，一眼看清",
+    "text": "銷售報表按月看收入、看大客戶，也看還有多少沒收回來。"
+   },
+   {
+    "title": "品牌貫穿始終",
+    "text": "一次設定 Logo、品牌色與字型，帳單、範本與 QR Code 設計就會自動套用你的品牌。"
+   },
+   {
+    "title": "還有 QR Code 工作室",
+    "text": "12 種 QR Code，從連結、WiFi 到收款與 Pix，還有 16 款現成設計。對比度與靜默區都會檢查，確保 QR Code 一定掃得出來。"
+   },
+   {
+    "title": "放在主畫面上",
+    "text": "三款小工具：應收與逾期、快速新增，還有一個夠大、隨時可掃的收款碼。"
+   }
+  ],
+  "beforego": [
+   {
+    "title": "截圖進，行程出",
+    "text": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程：值得去的地方、出發前要辦的事，還有攻略裡每一天的安排。"
+   },
+   {
+    "title": "訂位加入行程",
+    "text": "機票或訂位確認一掃就能加入行程。訂位會記下價格和幣別，還包括演出、活動、接送和租車。"
+   },
+   {
+    "title": "行李清單自動生成",
+    "text": "插頭、貨幣、入境須知和當地交通 App，依目的地與日期自動生成，並在出發前 7 天、3 天、24 小時和 3 小時提醒你。"
+   },
+   {
+    "title": "打卡清單，邊走邊勾",
+    "text": "存下的地點變成打卡清單——景點、美食、體驗逐一完成；一天的行程自動排成最短步行路線。"
+   },
+   {
+    "title": "分攤旅行費用",
+    "text": "用旅程可選幣別記帳，選擇誰付款，把每筆帳按同行人拆分。拍下收據自動填寫支出，「結清」會算出還清餘額的最短方式。"
+   },
+   {
+    "title": "旅程結束後",
+    "text": "照片、筆記和語音備忘錄按旅程歸檔，還有可列印的回憶相冊；忘記帶的東西會自動帶入下一次清單，讓打包更省心。"
+   },
+   {
+    "title": "放在主畫面上",
+    "text": "倒數和清單小工具讓旅行始終在眼前，不用打開 App。"
+   }
+  ],
+  "ui": {
+   "h_highlights": "功能特色",
+   "h_details": "詳情——App Store 原文"
+  }
+ },
+ "th": {
+  "countdown": [
+   {
+    "title": "ดูวันนั้นเข้ามาใกล้",
+    "text": "เพิ่มวันที่สำคัญ วางไว้บนหน้าจอโฮม แล้วดูวันนั้นค่อยๆ เข้ามาใกล้ นับถอยหลังไปยังวันหนึ่ง หรือนับเดินหน้าจากวันหนึ่งก็ได้ พร้อมตั้งให้ทำซ้ำทุกปี ทุกเดือน ทุกสัปดาห์ หรือทุกกี่วันก็ได้"
+   },
+   {
+    "title": "ทุกวิดเจ็ต ฟรี",
+    "text": "นับถอยหลังรายการเดียว รายการถัดไป แบบเด่นหนึ่งรายการ หรือไทล์ของแต่ละอีเวนต์ มีครบทุกขนาด ทั้งหน้าจอโฮมและหน้าจอล็อก ส่วนอีเวนต์ไม่จำกัด การเตือน และการซิงก์ iCloud ก็ใช้ได้ฟรีเช่นกัน"
+   },
+   {
+    "title": "เริ่มจากเทมเพลต",
+    "text": "เทมเพลตพร้อมใช้ 36 แบบ ตั้งแต่วันเกิดไปจนถึงวันแรกของงานใหม่ แต่ละแบบตั้งค่าการทำซ้ำและการเตือนที่เหมาะสมไว้ให้แล้ว"
+   },
+   {
+    "title": "ด้านหลังของทุกอีเวนต์",
+    "text": "แตะอีเวนต์แล้วการ์ดจะพลิกไปเป็นหน้าของตัวเอง เขียนข้อความ เพิ่มรูปภาพ อัดเสียง เก็บเรื่องราวของวันนั้นไว้กับวันนั้น แล้วแชร์เป็นรูปเดียวได้"
+   },
+   {
+    "title": "ให้ดูเป็นของคุณ",
+    "text": "ไอคอนวาดมือ 200 แบบ คีย์บอร์ดอีโมจิทั้งชุด และพื้นหลังเต็มจอ 140 แบบ – 22 แบบเป็นภาพถ่าย อีก 88 แบบอยู่ใน Pro"
+   },
+   {
+    "title": "เก็บวันของคุณไว้ให้",
+    "text": "แอปบันทึกสแนปช็อตของทุกอีเวนต์ไว้ในเครื่องนี้ทุกวัน และก่อนทำสิ่งที่เสี่ยงเสมอ: ประวัติ 30 วัน กู้คืนด้วยการแตะครั้งเดียว และไม่มีอะไรออกจากเครื่องของคุณ"
+   },
+   {
+    "title": "วันที่ผ่านไปยังอยู่กับคุณ",
+    "text": "วันที่ผ่านไปจะไม่ถูกลบ แต่จะรวมเป็นไทม์ไลน์ที่ย้อนกลับไปดูได้ พร้อมบอกไว้ข้างๆ ว่าปีนั้นรอนานที่สุดกี่วัน"
+   }
+  ],
+  "invoiceqr": [
+   {
+    "title": "สร้างใบแจ้งหนี้ในไม่กี่นาที",
+    "text": "เลือกจาก 100+ เทมเพลต ใส่ลูกค้าและรายการ แล้วแชร์เป็น PDF ที่ดูดี เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว"
+   },
+   {
+    "title": "สแกนใบแจ้งหนี้กระดาษ",
+    "text": "ถ่ายรูปใบแจ้งหนี้กระดาษ หรือเลือกรูปภาพ แล้วมันจะกลายเป็นฉบับร่างที่แก้ไขได้ หน้าเอกสารอ่านบนอุปกรณ์ของคุณ ส่วนการตรวจสอบด้วย AI ที่เป็นตัวเลือกเสริม จะส่งหน้านั้นไปยัง Google ก็ต่อเมื่อคุณขอเท่านั้น"
+   },
+   {
+    "title": "รับเงินด้วยการสแกน",
+    "text": "ใบแจ้งหนี้ทุกใบใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่ายได้ เห็นสถานะได้ทันที ทั้งชำระแล้ว ยังไม่ชำระ ชำระบางส่วน และเกินกำหนด แล้วแชร์ใบแจ้งหนี้ที่ชำระครบแล้วเป็นใบเสร็จได้เลย"
+   },
+   {
+    "title": "รู้ว่ายังค้างชำระอยู่เท่าไร",
+    "text": "รายงานยอดขายแสดงรายได้รายเดือน ลูกค้ารายใหญ่ของคุณ และยอดที่ยังค้างชำระ"
+   },
+   {
+    "title": "แบรนด์ของคุณบนทุกอย่าง",
+    "text": "ตั้งค่าโลโก้ สีแบรนด์ และฟอนต์เพียงครั้งเดียว แล้วใบแจ้งหนี้ เทมเพลต และดีไซน์ QR จะใช้แบรนด์ของคุณโดยอัตโนมัติ"
+   },
+   {
+    "title": "พร้อมสตูดิโอคิวอาร์โค้ด",
+    "text": "คิวอาร์ 12 แบบ ตั้งแต่ลิงก์และ Wi-Fi ไปจนถึงการชำระเงินและ Pix พร้อมดีไซน์สำเร็จรูป 16 แบบ ตรวจคอนทราสต์และขอบขาวให้อัตโนมัติ จึงสแกนติดเสมอ"
+   },
+   {
+    "title": "บนหน้าจอโฮมของคุณ",
+    "text": "วิดเจ็ต 3 แบบ ยอดค้างชำระ ทางลัดสร้างงานด่วน และ QR รับเงินที่วาดใหญ่พอจะถือขึ้นมาสแกนได้เลย"
+   }
+  ],
+  "beforego": [
+   {
+    "title": "จากภาพหน้าจอสู่แผนเที่ยว",
+    "text": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้"
+   },
+   {
+    "title": "การจองเข้าแผน",
+    "text": "สแกนตั๋วหรือใบยืนยันการจอง ก็เพิ่มลงในแผนได้เลย การจองเก็บราคาและสกุลเงินไว้ให้ และรองรับงานแสดง กิจกรรม รถรับส่ง และรถเช่า"
+   },
+   {
+    "title": "ลิสต์จัดกระเป๋าที่สร้างให้เอง",
+    "text": "ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง และแอปเดินทางสำหรับจุดหมายของคุณ สร้างขึ้นจากจุดหมายและวันเดินทาง พร้อมแจ้งเตือนล่วงหน้า 7 วัน 3 วัน 24 ชั่วโมง และ 3 ชั่วโมง"
+   },
+   {
+    "title": "ที่เที่ยวที่ต้องเช็ก",
+    "text": "ที่ที่บันทึกไว้กลายเป็นเช็กลิสต์ ทั้งที่เที่ยว ของกิน และประสบการณ์ ส่วนแผนหนึ่งวันจะจัดเรียงเป็นเส้นทางเดินที่สั้นที่สุด"
+   },
+   {
+    "title": "แบ่งค่าใช้จ่ายทริป",
+    "text": "เพิ่มค่าใช้จ่ายในสกุลเงินที่ใช้ได้สำหรับทริป เลือกคนจ่าย และแบ่งแต่ละบิลระหว่างผู้เดินทาง ถ่ายรูปใบเสร็จเพื่อกรอกค่าใช้จ่าย แล้วให้สรุปหนี้แสดงวิธีชำระที่สั้นที่สุด"
+   },
+   {
+    "title": "หลังทริป",
+    "text": "รูป โน้ต และเสียง จัดเก็บตามทริป พร้อมอัลบั้มความทรงจำที่พิมพ์ได้ ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้าให้เองอัตโนมัติ"
+   },
+   {
+    "title": "บนหน้าจอโฮม",
+    "text": "วิดเจ็ตนับถอยหลังและเช็กลิสต์ ให้เห็นทริปตลอดโดยไม่ต้องเปิดแอป"
+   }
+  ],
+  "ui": {
+   "h_highlights": "ฟีเจอร์เด่น",
+   "h_details": "รายละเอียด ตามที่เขียนไว้ใน App Store"
+  }
+ }
+}

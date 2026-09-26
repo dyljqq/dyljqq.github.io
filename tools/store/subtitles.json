@@ -1,0 +1,508 @@
+{
+ "countdown": {
+  "en-GB": {
+   "name": "Countdown Widget & Days Until",
+   "subtitle": "Holidays, Trips & Big Events"
+  },
+  "it": {
+   "name": "Countdown Widget: Eventi",
+   "subtitle": "Viaggio, nozze, esame, ricordi"
+  },
+  "ja": {
+   "name": "カウントダウン ウィジェット: 記念日",
+   "subtitle": "旅行・誕生日・受験まであと何日。思い出も"
+  },
+  "en-CA": {
+   "name": "Countdown Widget & Days Until",
+   "subtitle": "Vacations, Birthdays & More"
+  },
+  "ko": {
+   "name": "카운트다운 위젯: 디데이",
+   "subtitle": "여행·수능·생일까지 남은 날과 추억"
+  },
+  "pt-BR": {
+   "name": "Countdown: Contagem regressiva",
+   "subtitle": "Widget de dias: namoro, viagem"
+  },
+  "th": {
+   "name": "นับถอยหลัง Widget: วันสำคัญ",
+   "subtitle": "อีกกี่วันถึงทริป และความทรงจำ"
+  },
+  "zh-Hans": {
+   "name": "倒计时 Widget：纪念日提醒",
+   "subtitle": "距离生日、旅行、考试、婚礼还有几天，留住回忆"
+  },
+  "de-DE": {
+   "name": "Countdown Widget: Tage bis",
+   "subtitle": "Hochzeit, Urlaub, Erinnerungen"
+  },
+  "zh-Hant": {
+   "name": "倒數計時 Widget：紀念日提醒",
+   "subtitle": "距離生日、旅行、考試、婚禮還有幾天，留住回憶"
+  },
+  "en-AU": {
+   "name": "Countdown Widget & Days Until",
+   "subtitle": "Holidays, Trips & Weekends"
+  },
+  "fr-FR": {
+   "name": "Countdown Widget: Décompte",
+   "subtitle": "Jours avant voyage & souvenirs"
+  },
+  "en-US": {
+   "name": "Countdown Widget: Any Event",
+   "subtitle": "Days to Go & Memories to Keep"
+  }
+ },
+ "invoiceqr": {
+  "it": {
+   "name": "Fattura, Preventivo e Ricevuta",
+   "subtitle": "Fatturazione semplice, modello"
+  },
+  "he": {
+   "name": "Invoice QR Studio",
+   "subtitle": "חשבוניות וקודי QR"
+  },
+  "hu": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Számlák és QR-kódok"
+  },
+  "ru": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Счета и QR-коды"
+  },
+  "vi": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Hóa đơn & mã QR"
+  },
+  "no": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Fakturaer og QR-koder"
+  },
+  "en-US": {
+   "name": "Smart Invoice & Estimate Maker",
+   "subtitle": "Quote, receipt & PDF generator"
+  },
+  "ko": {
+   "name": "프리랜서 청구서·견적서·영수증",
+   "subtitle": "인보이스 템플릿, 결제와 수금 관리"
+  },
+  "th": {
+   "name": "ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษี",
+   "subtitle": "ใบเสนอราคา สร้างบิล สแกนจ่าย"
+  },
+  "ms": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Invois & Kod QR"
+  },
+  "pl": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Faktury i kody QR"
+  },
+  "es-ES": {
+   "name": "Smart Factura y Presupuesto",
+   "subtitle": "Facturación simple y plantilla"
+  },
+  "hi": {
+   "name": "Invoice QR Studio",
+   "subtitle": "इनवॉइस और QR कोड मेकर"
+  },
+  "sk": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Faktúry a QR kódy"
+  },
+  "en-CA": {
+   "name": "Smart Invoice & Estimate Maker",
+   "subtitle": "Quote, receipt & PDF generator"
+  },
+  "es-MX": {
+   "name": "Nota de Venta, Cotización",
+   "subtitle": "Comprobante de pago y remisión"
+  },
+  "da": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Fakturaer og QR-koder"
+  },
+  "fr-CA": {
+   "name": "Facture, Devis et Reçu",
+   "subtitle": "Facturation simple, modèle PDF"
+  },
+  "ro": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Facturi și coduri QR"
+  },
+  "ar-SA": {
+   "name": "Invoice QR Studio",
+   "subtitle": "فواتير ورموز QR"
+  },
+  "tr": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Fatura ve QR kod oluşturucu"
+  },
+  "ja": {
+   "name": "請求書・見積書・領収書作成 インボイス対応",
+   "subtitle": "適格請求書・納品書に対応、個人事業主やフリーランスに"
+  },
+  "sv": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Fakturor och QR-koder"
+  },
+  "en-AU": {
+   "name": "Smart Invoice & Estimate Maker",
+   "subtitle": "Quote, receipt & PDF generator"
+  },
+  "el": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Τιμολόγια και κωδικοί QR"
+  },
+  "cs": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Faktury a QR kódy"
+  },
+  "zh-Hant": {
+   "name": "開單、報價單、收據、送貨單產生器",
+   "subtitle": "估價單、請款單，範本與PDF匯出"
+  },
+  "id": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Faktur & Kode QR"
+  },
+  "uk": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Рахунки та QR-коди"
+  },
+  "nl-NL": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Facturen en QR-codes"
+  },
+  "en-GB": {
+   "name": "Smart Invoice & Estimate Maker",
+   "subtitle": "Quote, receipt & PDF generator"
+  },
+  "pt-BR": {
+   "name": "Fatura, Orçamento e Recibo",
+   "subtitle": "Faturamento simples, PDF e Pix"
+  },
+  "ca": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Factures i codis QR"
+  },
+  "de-DE": {
+   "name": "Smart Rechnung & Angebot",
+   "subtitle": "Rechnungsprogramm, Beleg & PDF"
+  },
+  "fr-FR": {
+   "name": "Facture, Devis et Reçu",
+   "subtitle": "Facturation simple, modèle PDF"
+  },
+  "hr": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Računi i QR kodovi"
+  },
+  "fi": {
+   "name": "Invoice QR Studio",
+   "subtitle": "Laskut ja QR-koodit"
+  },
+  "zh-Hans": {
+   "name": "开单、报价单、收据、送货单生成器",
+   "subtitle": "智能账单与回款管理，模板与PDF导出"
+  },
+  "pt-PT": {
+   "name": "Smart Fatura e Orçamento",
+   "subtitle": "Faturação simples, modelo PDF"
+  }
+ },
+ "beforego": {
+  "pt-PT": {
+   "name": "BeforeGo: Roteiro IA e Bagagem",
+   "subtitle": "Roteiros de capturas de ecrã"
+  },
+  "es-ES": {
+   "name": "Planificador viajes BeforeGo",
+   "subtitle": "Itinerarios desde capturas"
+  },
+  "ja": {
+   "name": "BeforeGo：AI旅行計画・旅行チェックリスト",
+   "subtitle": "スクショから旅程を自動作成"
+  },
+  "en-GB": {
+   "name": "BeforeGo: AI Itinerary Planner",
+   "subtitle": "Trip plans from screenshots"
+  },
+  "en-US": {
+   "name": "BeforeGo: AI Itinerary Planner",
+   "subtitle": "Trip plans from screenshots"
+  },
+  "pt-BR": {
+   "name": "BeforeGo: Roteiro de Viagem IA",
+   "subtitle": "Roteiros a partir de prints"
+  },
+  "it": {
+   "name": "BeforeGo: Itinerari e Bagagli",
+   "subtitle": "Itinerari dagli screenshot"
+  },
+  "en-AU": {
+   "name": "BeforeGo: AI Itinerary Planner",
+   "subtitle": "Trip plans from screenshots"
+  },
+  "th": {
+   "name": "BeforeGo: วางแผนเที่ยวด้วย AI",
+   "subtitle": "บันทึกการเดินทาง แผนจากภาพแคป"
+  },
+  "de-DE": {
+   "name": "BeforeGo: KI-Reiseplaner",
+   "subtitle": "Reisepläne aus Screenshots"
+  },
+  "en-CA": {
+   "name": "BeforeGo: AI Itinerary Planner",
+   "subtitle": "Trip plans from screenshots"
+  },
+  "fr-FR": {
+   "name": "Planificateur voyage BeforeGo",
+   "subtitle": "Itinéraires depuis captures"
+  },
+  "zh-Hant": {
+   "name": "BeforeGo：AI行程規劃·行前清單",
+   "subtitle": "截圖攻略一鍵變行程，行李清單自動生成"
+  },
+  "zh-Hans": {
+   "name": "BeforeGo：AI行程规划·出国清单",
+   "subtitle": "截图攻略一键变行程，打包清单自动生成"
+  },
+  "fr-CA": {
+   "name": "Planificateur voyage BeforeGo",
+   "subtitle": "Itinéraires depuis captures"
+  },
+  "ko": {
+   "name": "BeforeGo: AI 여행 플래너·패킹리스트",
+   "subtitle": "캡처 한 장으로 여행 일정 완성"
+  },
+  "es-MX": {
+   "name": "Planificador viajes BeforeGo",
+   "subtitle": "Itinerarios desde capturas"
+  }
+ },
+ "dailycalorie": {
+  "en-AU": {
+   "name": "DailyCalorie: Calories Left",
+   "subtitle": "Calorie Budget & AI Food Scan"
+  },
+  "zh-Hant": {
+   "name": "DailyCalorie-AI拍照辨識熱量·卡路里計算",
+   "subtitle": "減肥減脂·飲食紀錄·輕斷食"
+  },
+  "vi": {
+   "name": "DailyCalorie: Đếm Calo AI",
+   "subtitle": "Chụp ảnh tính calo, giảm cân"
+  },
+  "pt-PT": {
+   "name": "DailyCalorie: Calorias",
+   "subtitle": "Scanner de comida: foto e IA"
+  },
+  "th": {
+   "name": "DailyCalorie นับแคลอรี",
+   "subtitle": "AI ถ่ายรูปนับแคลอรี่อาหาร"
+  },
+  "fr-FR": {
+   "name": "DailyCalorie : Calories",
+   "subtitle": "Scanner de repas par photo IA"
+  },
+  "en-US": {
+   "name": "DailyCalorie: Calories Left",
+   "subtitle": "Calorie Budget & AI Food Scan"
+  },
+  "fr-CA": {
+   "name": "DailyCalorie : Calories",
+   "subtitle": "Scanner de repas par photo IA"
+  },
+  "en-GB": {
+   "name": "DailyCalorie: Calories Left",
+   "subtitle": "Calorie Budget & AI Food Scan"
+  },
+  "ko": {
+   "name": "DailyCalorie 칼로리 기록",
+   "subtitle": "AI 사진 칼로리 계산·식단 기록"
+  },
+  "zh-Hans": {
+   "name": "DailyCalorie-AI拍照识别热量·卡路里计算",
+   "subtitle": "减肥减脂·饮食记录·轻断食"
+  },
+  "de-DE": {
+   "name": "DailyCalorie: Kalorienzähler",
+   "subtitle": "KI Kalorien Tracker mit Foto"
+  },
+  "en-CA": {
+   "name": "DailyCalorie: Calories Left",
+   "subtitle": "Calorie Budget & AI Food Scan"
+  },
+  "it": {
+   "name": "DailyCalorie: Contacalorie",
+   "subtitle": "Conta calorie con foto e IA"
+  },
+  "ja": {
+   "name": "DailyCalorie カロリー記録",
+   "subtitle": "写真でカロリー計算・AI食事記録"
+  },
+  "es-MX": {
+   "name": "DailyCalorie: Calorías",
+   "subtitle": "Diario de comida: foto con IA"
+  }
+ },
+ "qrcodestudio": {
+  "es-ES": {
+   "name": "Creador de códigos QR y lector",
+   "subtitle": "Generar, escanear y diseñar QR"
+  },
+  "ko": {
+   "name": "QR코드 만들기 & 스캐너",
+   "subtitle": "디자인 QR 생성기 · 스캔 · 명함"
+  },
+  "it": {
+   "name": "Creatore codici QR e scanner",
+   "subtitle": "Genera, scansiona e crea QR"
+  },
+  "en-CA": {
+   "name": "Custom QR Code Maker & Scan",
+   "subtitle": "QR scanner, generator & design"
+  },
+  "fr-FR": {
+   "name": "Créateur de code QR & scan",
+   "subtitle": "Générateur, scanner et design"
+  },
+  "ja": {
+   "name": "QRコード作成 & スキャナー",
+   "subtitle": "デザインQR・読み取り・名刺"
+  },
+  "fr-CA": {
+   "name": "Créateur de code QR & scan",
+   "subtitle": "Générateur, scanner et design"
+  },
+  "en-GB": {
+   "name": "Custom QR Code Maker & Scan",
+   "subtitle": "QR scanner, generator & design"
+  },
+  "de-DE": {
+   "name": "QR-Code Ersteller & Scanner",
+   "subtitle": "QR-Code gestalten und scannen"
+  },
+  "zh-Hans": {
+   "name": "个性二维码制作 - 美化生成扫码",
+   "subtitle": "二维码生成器、扫码与美化"
+  },
+  "en-US": {
+   "name": "Custom QR Code Maker & Scan",
+   "subtitle": "QR scanner, generator & design"
+  },
+  "pt-BR": {
+   "name": "Criador de QR Code e leitor",
+   "subtitle": "Gerar, ler e personalizar QR"
+  },
+  "en-AU": {
+   "name": "Custom QR Code Maker & Scan",
+   "subtitle": "QR scanner, generator & design"
+  },
+  "zh-Hant": {
+   "name": "個性 QR Code 製作 - 美化掃描",
+   "subtitle": "QR 產生器、掃描與美化設計"
+  },
+  "th": {
+   "name": "สร้างคิวอาร์โค้ด & สแกน",
+   "subtitle": "สร้าง QR โค้ด สแกน และออกแบบ"
+  },
+  "es-MX": {
+   "name": "Creador de códigos QR y lector",
+   "subtitle": "Generar, escanear y diseñar QR"
+  }
+ },
+ "citu": {
+  "en-GB": {
+   "name": "Word Beast: English Vocabulary",
+   "subtitle": "Snap it. Learn it. Say it."
+  },
+  "en-US": {
+   "name": "Word Beast: AI Photo Words",
+   "subtitle": "Snap it. Learn it. Say it."
+  },
+  "zh-Hant": {
+   "name": "Word Beast：英語單字",
+   "subtitle": "國小1–國中3單字遊戲"
+  },
+  "de-DE": {
+   "name": "Word Beast: Englisch-Vokabeln",
+   "subtitle": "Vokabelspiel für Klasse 1–9"
+  },
+  "it": {
+   "name": "Word Beast: vocaboli inglesi",
+   "subtitle": "Gioco di vocaboli, classi 1–9"
+  },
+  "ja": {
+   "name": "Word Beast: 英単語",
+   "subtitle": "小学1〜中学3年の単語ゲーム"
+  },
+  "ko": {
+   "name": "Word Beast: 영어 단어",
+   "subtitle": "초1~중3 단어 게임"
+  },
+  "fr-FR": {
+   "name": "Word Beast : vocabulaire",
+   "subtitle": "Jeu de vocabulaire CP à 3e"
+  },
+  "th": {
+   "name": "Word Beast: คำศัพท์อังกฤษ",
+   "subtitle": "เกมคำศัพท์ ป.1–ม.3"
+  },
+  "pt-PT": {
+   "name": "Word Beast: vocabulário inglês",
+   "subtitle": "Jogo vocabulário 1.º–9.º ano"
+  },
+  "zh-Hans": {
+   "name": "单词兽-拍照学单词·小学初中英语闯关",
+   "subtitle": "拍照识词·查英语作业·跟读打分·课内闯关"
+  }
+ },
+ "repdex": {
+  "zh-Hans": {
+   "name": "Repdex 健身训练记录本",
+   "subtitle": "1324 个动作 · 离线训练记录"
+  },
+  "en-US": {
+   "name": "Repdex: Gym Workout Tracker",
+   "subtitle": "Lifting Log & Exercise Library"
+  },
+  "pl": {
+   "name": "Repdex: Dziennik Treningu",
+   "subtitle": "Baza ćwiczeń i dziennik"
+  },
+  "fr-FR": {
+   "name": "Repdex : Carnet de Muscu",
+   "subtitle": "Bibliothèque d'exercices"
+  },
+  "ko": {
+   "name": "Repdex: 헬스 운동 기록",
+   "subtitle": "1,324개 운동 · 오프라인 기록"
+  },
+  "tr": {
+   "name": "Repdex: Antrenman Günlüğü",
+   "subtitle": "Egzersiz kütüphanesi"
+  },
+  "ru": {
+   "name": "Repdex: Дневник тренировок",
+   "subtitle": "База упражнений офлайн"
+  },
+  "hi": {
+   "name": "Repdex: जिम वर्कआउट लॉग",
+   "subtitle": "1,324 एक्सरसाइज़ ऑफ़लाइन"
+  },
+  "es-MX": {
+   "name": "Repdex: Diario de Gimnasio",
+   "subtitle": "Biblioteca de ejercicios"
+  },
+  "es-ES": {
+   "name": "Repdex: Diario de Gimnasio",
+   "subtitle": "Biblioteca de ejercicios"
+  },
+  "it": {
+   "name": "Repdex: Diario Palestra",
+   "subtitle": "Libreria esercizi offline"
+  }
+ }
+}

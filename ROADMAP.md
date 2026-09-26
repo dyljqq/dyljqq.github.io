@@ -1,6 +1,6 @@
 # go ka 官网路线图
 
-线上：https://goka-xi.vercel.app （Vercel 项目 `goka`；`dyljqq.github.io` 同步 main 作为旧链接兜底）
+线上：https://beforego.art （09-26 起；Vercel 项目 `goka`，旧别名 goka-xi.vercel.app 与 www 均 301 过来；`dyljqq.github.io` 同步 main 作为旧链接兜底）
 源码：本仓库 `main`。发布 = `build_pages.py` → `build_tools.py` → `build_seo.py` → 审计 → `vercel --prod` → IndexNow。
 
 ---
@@ -77,7 +77,7 @@
 |---|---|---|
 | 发布前检查进仓库 | `tools/check.py`：结构审计 + 手机宽度溢出（真实 375 视口量 scrollWidth）+ 关键模板截图巡检；发布脚本不过检不发 | v1.1 一起做（09-26 那个按钮事故就是缺这一步） |
 | 商店文案自动同步 | 每周重抓商店缓存，有变化就重建 + 发布，网站永远和商店一致 | v1.2 |
-| 自有域名 | `apps.jiqinqiang.com` → Vercel（CNAME `cname.vercel-dns.com`），主域有备案永远不动 | 能进 DNSPod 时 |
+| 自有域名 | ✅ 09-26 已切到 beforego.art；jiqinqiang.com 主域有备案永远不动 | 已完成 |
 | ASC 链接 | 各 app 下个版本把营销 / 支持链接改成新站；隐私链接可随时改 | 随版本 |
 | 外链 | 免费目录 / 榜单收录申请（不买付费位） | v1.2 起每版 2–3 个 |
 

@@ -33,19 +33,25 @@ img,svg{display:block}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
 
 /* header */
-.top{display:flex;align-items:center;justify-content:space-between;height:88px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px;height:88px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .brand svg{width:34px;height:34px}
 .brand b{display:block;font:600 22px/1 var(--display);letter-spacing:-.5px}
 .brand small{display:block;margin-top:4px;font:600 9px/1 var(--text);letter-spacing:2.6px;color:var(--muted)}
-.nav{display:flex;gap:6px}
+.nav{display:flex;gap:6px;margin-left:auto}
 .nav a{font:700 12px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;text-decoration:none;padding:12px 12px;border-radius:999px}
 .nav a:hover{background:var(--cream)}
 
 /* hero */
 .hero{text-align:center;padding-top:clamp(28px,6vw,64px)}
 h1{margin:0;font:500 clamp(46px,9.2vw,92px)/1.02 var(--display);letter-spacing:-.045em}
-.hero p{margin:28px auto 0;max-width:34em;color:var(--muted);font-size:15px;line-height:1.75}
+.hero p{margin:28px auto 0;max-width:34em;color:var(--muted);font-size:15px;line-height:1.75;text-wrap:balance}
+h1,h2,h3,.tagline{text-wrap:balance}
+.hero p .hl{display:block;text-wrap:balance}
+html[lang^=zh] .hero p .hl{word-break:keep-all}
+html:is([lang^=ja],[lang^=zh]) :is(h1,h2,.hero p,.tagline,.quote){word-break:auto-phrase}
+html:is([lang^=ja],[lang^=zh],[lang^=ko],[lang^=th]) :is(.nav a,.get,.label,.brand small,.all a){letter-spacing:.04em;text-transform:none}
+html[lang^=th] *{letter-spacing:0!important}
 .scene{position:relative;margin-top:clamp(20px,4vw,40px);cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
 .scene svg{width:100%;height:auto;overflow:visible}
 .scene .ln{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -143,8 +149,12 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
 
 @media (max-width:760px){
   :root{--gutter:16px}
-  .top{height:72px}
-  .nav a{padding:12px 8px;letter-spacing:1px}
+  .top{height:auto;flex-wrap:wrap;row-gap:4px;padding-top:12px;padding-bottom:4px}
+  .top .lang-switch{margin-left:auto}
+  .nav{order:3;width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+  .nav{margin-left:-8px;width:calc(100% + 8px)}
+  .nav a{padding:10px 8px;letter-spacing:.6px;flex:none}
   .brand small{display:none}
   .apps,.faq-list{grid-template-columns:1fr}
   .app:nth-child(even){margin-top:0}
@@ -155,33 +165,51 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
 }
 </style>
 <!-- seo:start -->
-<meta name="description" content="Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.">
-<link rel="canonical" href="https://goka-xi.vercel.app/">
+<meta name="description" content="Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.">
+<link rel="canonical" href="https://beforego.art/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="go ka — Small iPhone apps for everyday things">
-<meta property="og:description" content="Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.">
-<meta property="og:url" content="https://goka-xi.vercel.app/">
-<meta property="og:image" content="https://goka-xi.vercel.app/assets/brand/og-home.png">
+<meta property="og:description" content="Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.">
+<meta property="og:url" content="https://beforego.art/">
+<meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="go ka — Small iPhone apps for everyday things">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="go ka — Small iPhone apps for everyday things">
-<meta name="twitter:description" content="Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.">
-<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/brand/og-home.png">
+<meta name="twitter:description" content="Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.">
+<meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://goka-xi.vercel.app/#org",
+  "@id": "https://beforego.art/#org",
   "name": "go ka",
-  "url": "https://goka-xi.vercel.app/",
+  "url": "https://beforego.art/",
   "email": "qinqiangji@gmail.com",
   "description": "Independent iOS developer. 7 apps on the App Store.",
-  "logo": "https://goka-xi.vercel.app/assets/brand/logo-512.png",
+  "logo": "https://beforego.art/assets/brand/logo-512.png",
   "sameAs": [
     "https://apps.apple.com/developer/id1854274317",
+    "https://www.tiktok.com/@getbeforego",
+    "https://www.instagram.com/dyljqq/",
+    "https://x.com/dyljqq21",
+    "https://www.reddit.com/user/lybjqq/",
+    "https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd",
     "https://apps.apple.com/app/id6786561175",
     "https://apps.apple.com/app/id6799846628",
     "https://apps.apple.com/app/id6790383156",
@@ -196,13 +224,26 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://goka-xi.vercel.app/#website",
-  "url": "https://goka-xi.vercel.app/",
+  "@id": "https://beforego.art/#website",
+  "url": "https://beforego.art/",
   "name": "go ka",
-  "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
-  "inLanguage": "en",
+  "description": "Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.",
+  "inLanguage": [
+    "en",
+    "de",
+    "fr",
+    "it",
+    "es",
+    "es-MX",
+    "pt-BR",
+    "ja",
+    "ko",
+    "zh-Hans",
+    "zh-Hant",
+    "th"
+  ],
   "publisher": {
-    "@id": "https://goka-xi.vercel.app/#org"
+    "@id": "https://beforego.art/#org"
   }
 }
 </script>
@@ -210,21 +251,21 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://goka-xi.vercel.app/#webpage",
-  "url": "https://goka-xi.vercel.app/",
+  "@id": "https://beforego.art/#webpage",
+  "url": "https://beforego.art/",
   "name": "go ka — Small iPhone apps for everyday things",
-  "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
+  "description": "Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.",
   "inLanguage": "en",
   "isPartOf": {
-    "@id": "https://goka-xi.vercel.app/#website"
+    "@id": "https://beforego.art/#website"
   },
   "about": {
-    "@id": "https://goka-xi.vercel.app/#org"
+    "@id": "https://beforego.art/#org"
   },
-  "primaryImageOfPage": "https://goka-xi.vercel.app/assets/brand/og-home.png",
+  "primaryImageOfPage": "https://beforego.art/assets/brand/og-home.png",
   "mainEntity": {
     "@type": "ItemList",
-    "@id": "https://goka-xi.vercel.app/#apps",
+    "@id": "https://beforego.art/#apps",
     "name": "Apps by go ka",
     "numberOfItems": 7,
     "itemListElement": [
@@ -233,10 +274,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 1,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/countdown/#app",
+          "@id": "https://beforego.art/countdown/#app",
           "name": "Countdown Widget: Any Event",
           "alternateName": "Countdown",
-          "url": "https://goka-xi.vercel.app/countdown/",
+          "url": "https://beforego.art/countdown/",
           "description": "A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number.",
           "applicationCategory": "ProductivityApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -246,9 +287,9 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
-          "image": "https://goka-xi.vercel.app/assets/countdown/icon.png",
+          "image": "https://beforego.art/assets/countdown/icon.png",
           "downloadUrl": "https://apps.apple.com/app/id6799846628",
           "sameAs": [
             "https://apps.apple.com/app/id6799846628"
@@ -260,10 +301,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 2,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/beforego/#app",
+          "@id": "https://beforego.art/beforego/#app",
           "name": "BeforeGo: AI Itinerary Planner",
           "alternateName": "BeforeGo",
-          "url": "https://goka-xi.vercel.app/beforego/",
+          "url": "https://beforego.art/beforego/",
           "description": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.",
           "applicationCategory": "TravelApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -273,9 +314,9 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
-          "image": "https://goka-xi.vercel.app/assets/beforego/icon.png",
+          "image": "https://beforego.art/assets/beforego/icon.png",
           "downloadUrl": "https://apps.apple.com/app/id6786561175",
           "sameAs": [
             "https://apps.apple.com/app/id6786561175"
@@ -287,10 +328,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 3,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/invoiceqr/#app",
+          "@id": "https://beforego.art/invoiceqr/#app",
           "name": "Smart Invoice & Estimate Maker",
           "alternateName": "Invoice Maker",
-          "url": "https://goka-xi.vercel.app/invoiceqr/",
+          "url": "https://beforego.art/invoiceqr/",
           "description": "The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes.",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -300,7 +341,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
           "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
           "downloadUrl": "https://apps.apple.com/app/id6790383156",
@@ -314,10 +355,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 4,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/dailycalorie/#app",
+          "@id": "https://beforego.art/dailycalorie/#app",
           "name": "DailyCalorie: Calories Left",
           "alternateName": "DailyCalorie",
-          "url": "https://goka-xi.vercel.app/dailycalorie/",
+          "url": "https://beforego.art/dailycalorie/",
           "description": "DailyCalorie is a calorie counter and food diary you fill in with your camera. Most calorie apps show you what you have eaten. DailyCalorie shows you what is left.",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "iOS 18.0 or later",
@@ -327,7 +368,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
           "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
           "downloadUrl": "https://apps.apple.com/app/id6798095407",
@@ -341,10 +382,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 5,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/qrcodestudio/#app",
+          "@id": "https://beforego.art/qrcodestudio/#app",
           "name": "Custom QR Code Maker & Scan",
           "alternateName": "QR Studio",
-          "url": "https://goka-xi.vercel.app/qrcodestudio/",
+          "url": "https://beforego.art/qrcodestudio/",
           "description": "Design a QR code people actually want to scan — and one that always scans. Most QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads.",
           "applicationCategory": "UtilitiesApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -354,7 +395,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
           "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
           "downloadUrl": "https://apps.apple.com/app/id6799589471",
@@ -368,10 +409,9 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 6,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/citu/#app",
           "name": "Word Beast: AI Photo Words",
           "alternateName": "Word Beast",
-          "url": "https://goka-xi.vercel.app/citu/",
+          "url": "https://beforego.art/citu/",
           "description": "Point the camera at anything — an apple, a backpack, the dog — and Word Beast's AI tells you what it's called in English, with phonetics, meaning and an example sentence you can listen to and read aloud. Snap a page of English homework to see which answers deserve a second look.",
           "applicationCategory": "EducationalApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -381,7 +421,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
           "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
           "downloadUrl": "https://apps.apple.com/app/id6796596826",
@@ -395,10 +435,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         "position": 7,
         "item": {
           "@type": "SoftwareApplication",
-          "@id": "https://goka-xi.vercel.app/repdex/#app",
+          "@id": "https://beforego.art/repdex/#app",
           "name": "Repdex: Gym Workout Tracker",
           "alternateName": "Repdex",
-          "url": "https://goka-xi.vercel.app/repdex/",
+          "url": "https://beforego.art/repdex/",
           "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.",
           "applicationCategory": "HealthApplication",
           "operatingSystem": "iOS 17.0 or later",
@@ -408,7 +448,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
             "priceCurrency": "USD"
           },
           "publisher": {
-            "@id": "https://goka-xi.vercel.app/#org"
+            "@id": "https://beforego.art/#org"
           },
           "downloadUrl": "https://apps.apple.com/app/id6803828068",
           "sameAs": [
@@ -424,7 +464,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/#faq",
+  "@id": "https://beforego.art/#faq",
   "inLanguage": "en",
   "mainEntity": [
     {
@@ -504,16 +544,19 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
   <nav class="nav" aria-label="Main">
     <a href="#apps">Apps</a>
     <a href="/tools/">Tools</a>
-    <a href="#about">About</a>
+    <a href="/blog/">Blog</a>
     <a href="#contact">Contact</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">English</span><span class="ln-code">EN</span></summary><ul><li><a href="/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/es/" hreflang="es" lang="es">Español</a></li><li><a href="/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main>
 <section class="wrap hero" aria-labelledby="hero-title">
   <h1 id="hero-title">Small apps for<br>everyday things.</h1>
-  <p>Seven small iPhone apps, each made for one everyday thing.<br>
-     Counting down, travelling, invoicing, eating, scanning, learning, lifting.</p>
+  <p><span class="hl">Seven small iPhone apps, each made for one everyday thing.</span>
+     <span class="hl">Counting down, travelling, invoicing, eating, scanning, learning, lifting.</span></p>
 
   <div class="scene draw" id="scene" role="img" aria-label="A line drawing of rolling hills, a rising sun and a small bird. Tap it to say hello.">
     <svg viewBox="0 0 1200 250" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
@@ -579,7 +622,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">Countdown Widget: Any Event</p>
       <p class="tagline">Days to Go &amp; Memories to Keep</p>
       <p class="blurb">A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6799846628?pt=128309253&ct=web-countdown-home&mt=8">Countdown on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-home&amp;mt=8">Countdown on the App Store ↗</a>
     </article>
     <article class="app" id="app-beforego">
       <a class="art" href="/beforego/" tabindex="-1" aria-hidden="true">
@@ -612,7 +655,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">BeforeGo: AI Itinerary Planner</p>
       <p class="tagline">Trip plans from screenshots</p>
       <p class="blurb">Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6786561175?pt=128309253&ct=web-beforego-home&mt=8">BeforeGo on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-home&amp;mt=8">BeforeGo on the App Store ↗</a>
     </article>
     <article class="app" id="app-invoiceqr">
       <a class="art" href="/invoiceqr/" tabindex="-1" aria-hidden="true">
@@ -644,7 +687,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">Smart Invoice &amp; Estimate Maker</p>
       <p class="tagline">Quote, receipt &amp; PDF generator</p>
       <p class="blurb">The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6790383156?pt=128309253&ct=web-invoiceqr-home&mt=8">Invoice Maker on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-home&amp;mt=8">Invoice Maker on the App Store ↗</a>
     </article>
     <article class="app" id="app-dailycalorie">
       <a class="art" href="/dailycalorie/" tabindex="-1" aria-hidden="true">
@@ -670,7 +713,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">DailyCalorie: Calories Left</p>
       <p class="tagline">Calorie Budget &amp; AI Food Scan</p>
       <p class="blurb">DailyCalorie is a calorie counter and food diary you fill in with your camera. Most calorie apps show you what you have eaten. DailyCalorie shows you what is left.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6798095407?pt=128309253&ct=web-dailycalorie-home&mt=8">DailyCalorie on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6798095407?pt=128309253&amp;ct=web-dailycalorie-home&amp;mt=8">DailyCalorie on the App Store ↗</a>
     </article>
     <article class="app" id="app-qrcodestudio">
       <a class="art" href="/qrcodestudio/" tabindex="-1" aria-hidden="true">
@@ -725,10 +768,10 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">Custom QR Code Maker &amp; Scan</p>
       <p class="tagline">QR scanner, generator &amp; design</p>
       <p class="blurb">Design a QR code people actually want to scan — and one that always scans. Most QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6799589471?pt=128309253&ct=web-qrcodestudio-home&mt=8">QR Studio on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6799589471?pt=128309253&amp;ct=web-qrcodestudio-home&amp;mt=8">QR Studio on the App Store ↗</a>
     </article>
     <article class="app" id="app-citu">
-      <a class="art" href="/citu/" hreflang="zh-CN" tabindex="-1" aria-hidden="true">
+      <a class="art" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-home&amp;mt=8" tabindex="-1" aria-hidden="true">
         <svg class="illus" viewBox="0 0 240 180" focusable="false">
         <path d="M24 158H216"/>
         <path class="w" d="M102 74l-8-18 16 9M146 74l8-18-16 9"/>
@@ -751,13 +794,13 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         </svg>
       </a>
       <div class="app-head">
-        <h3><a href="/citu/" hreflang="zh-CN">Word Beast.</a></h3>
+        <h3><a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-home&amp;mt=8">Word Beast.</a></h3>
         <span class="arrow" aria-hidden="true">↗</span>
       </div>
       <p class="store-name">Word Beast: AI Photo Words</p>
       <p class="tagline">Snap it. Learn it. Say it.</p>
       <p class="blurb">Point the camera at anything — an apple, a backpack, the dog — and Word Beast's AI tells you what it's called in English, with phonetics, meaning and an example sentence you can listen to and read aloud. Snap a page of English homework to see which answers deserve a second look.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-home&mt=8">Word Beast on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-home&amp;mt=8">Word Beast on the App Store ↗</a>
     </article>
     <article class="app" id="app-repdex">
       <a class="art" href="/repdex/" tabindex="-1" aria-hidden="true">
@@ -787,11 +830,11 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
       <p class="store-name">Repdex: Gym Workout Tracker</p>
       <p class="tagline">Lifting Log &amp; Exercise Library</p>
       <p class="blurb">Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.</p>
-      <a class="get" href="https://apps.apple.com/app/apple-store/id6803828068?pt=128309253&ct=web-repdex-home&mt=8">Repdex on the App Store ↗</a>
+      <a class="get" href="https://apps.apple.com/app/apple-store/id6803828068?pt=128309253&amp;ct=web-repdex-home&amp;mt=8">Repdex on the App Store ↗</a>
     </article>
   </div>
   <!-- apps:end -->
-  <p class="all"><a href="https://apps.apple.com/developer/id1854274317">See all seven apps on the App Store ↗</a></p>
+  <p class="all"><a href="https://apps.apple.com/developer/id1854274317?pt=128309253&amp;ct=web-home-all&amp;mt=8">See all seven apps on the App Store ↗</a></p>
 </section>
 
 <section class="wrap about" id="about" aria-labelledby="about-title">
@@ -873,6 +916,7 @@ footer{border-top:1px solid var(--rule);padding:40px 0 56px;font-size:13px;color
         <!-- legal:end -->
       </div>
     </div>
+    <p class="copy social">Follow go ka: <a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></p>
     <p class="copy">© 2026 go ka · <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a> · <a href="/tools/">Free tools &amp; guides</a> · <a href="/llms.txt">llms.txt</a></p>
   </div>
 </footer>

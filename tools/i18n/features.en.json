@@ -1,0 +1,128 @@
+{
+ "_note": "产品页「功能图文」块的英文源稿。shot = 该语言商店截图文件名的编号前缀（01、02…）。每句都要能在商店描述里找到依据；BeforeGo 用 1.2.0（用户 09-26 指定用 1.2.0 截图）的描述与更新说明。",
+ "countdown": [
+  {
+   "shot": "01",
+   "title": "Watch the day come closer",
+   "text": "Add the day that matters, put it on your Home Screen and watch it come closer. Count down to a date or count up from one, with repeats every year, month, week or few days."
+  },
+  {
+   "shot": "07",
+   "title": "Every widget, free",
+   "text": "One countdown, the next few in a list, a spotlight, or a tile for each — in every size, on the Home Screen and the Lock Screen. Unlimited events, reminders and iCloud sync are free too."
+  },
+  {
+   "shot": "09",
+   "title": "Start from a template",
+   "text": "Thirty-six ready-made events, from a birthday to a first day at work, each already set up with the right repeat and the right reminders."
+  },
+  {
+   "shot": "02",
+   "title": "The back of every event",
+   "text": "Tap an event and it turns over to a page of its own. Write a few lines, add photos, record a voice — the story of the day, kept with the day and shared as one picture."
+  },
+  {
+   "shot": "04",
+   "title": "Make it look like yours",
+   "text": "Two hundred drawn icons, the whole emoji keyboard and 140 full-screen backdrops — 22 of them photographs, 88 of them in Pro."
+  },
+  {
+   "shot": "10",
+   "title": "Your days, kept",
+   "text": "Every day the app takes a snapshot of all your events on this device, and always before anything risky: thirty days of history, one tap to restore, and nothing leaves your phone."
+  },
+  {
+   "shot": "06",
+   "title": "Days that passed stay with you",
+   "text": "Past days are never deleted. They collect into a timeline you can look back through, with the longest wait of each year written next to it."
+  }
+ ],
+ "invoiceqr": [
+  {
+   "shot": "02",
+   "title": "Invoices in minutes",
+   "text": "Pick one of 100+ templates, add your client and items, and share a polished PDF. Start with an estimate or quote and turn it into an invoice with one tap.",
+   "override": {
+    "es-MX": "05"
+   }
+  },
+  {
+   "shot": "12",
+   "title": "Scan a paper invoice",
+   "text": "Photograph a paper invoice, or pick a photo, and it becomes an editable draft. The page is read on your device; the optional AI review sends it to Google only when you ask."
+  },
+  {
+   "shot": "08",
+   "title": "Get paid with a scan",
+   "text": "Every invoice can carry a payment QR code your clients scan to pay. See paid, unpaid, partial and overdue at a glance, and share a paid invoice as a receipt."
+  },
+  {
+   "shot": "09",
+   "title": "Know what is still owed",
+   "text": "Sales reports show income by month, your top clients and what is still outstanding."
+  },
+  {
+   "shot": "07",
+   "title": "Your brand on everything",
+   "text": "Set your logo, brand color and fonts once, and invoices, templates and QR designs pick them up automatically."
+  },
+  {
+   "shot": "03",
+   "title": "A QR code studio too",
+   "text": "Twelve QR types, from links and Wi-Fi to payment and Pix, and sixteen ready-made designs. Contrast and quiet zone are checked, so the code always scans."
+  },
+  {
+   "shot": "11",
+   "title": "On your Home Screen",
+   "text": "Three widgets: what you're owed, quick create shortcuts, and a payment QR drawn large enough to hold up and scan."
+  }
+ ],
+ "beforego": [
+  {
+   "shot": "01",
+   "title": "Drop it in, get a trip plan",
+   "text": "Screenshot a travel post, paste a link or just type your plans, and BeforeGo files it into a day-by-day plan: the places worth seeing, the to-dos before you go, and each day the post lays out.",
+   "key": "guide"
+  },
+  {
+   "shot": "03",
+   "title": "Bookings on the plan",
+   "text": "Scan a ticket or booking confirmation and it lands on the plan. Bookings keep a price and currency, and include shows and events, transfers and rental cars.",
+   "key": "bookings"
+  },
+  {
+   "shot": "04",
+   "title": "A packing list that writes itself",
+   "text": "Plugs, currency, entry rules and transit apps for where you are going, generated from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave.",
+   "key": "checklist"
+  },
+  {
+   "shot": "02",
+   "title": "Places to go, things to tick off",
+   "text": "The places you save become a trip checklist — spots, food and experiences to check off as you go — and a day of stops sorts itself into the shortest walking route.",
+   "key": "thingstodo"
+  },
+  {
+   "shot": "08",
+   "title": "Split the trip's costs",
+   "text": "Add expenses in the trip's currencies, choose who paid and split each bill across the people traveling. Photograph a receipt to fill an expense, and Settle up shows the shortest way to clear the balances.",
+   "key": "expenses"
+  },
+  {
+   "shot": "09",
+   "title": "After the trip",
+   "text": "Photos, notes and voice memos kept by trip, a printable memories album, and forgotten items that carry over so the next packing list starts smarter.",
+   "key": "album"
+  },
+  {
+   "shot": "10",
+   "title": "On your Home Screen",
+   "text": "Countdown and checklist widgets keep the trip in view without opening the app.",
+   "key": "widgets"
+  }
+ ],
+ "ui": {
+  "h_highlights": "What it does",
+  "h_details": "The details, as written in the App Store"
+ }
+}

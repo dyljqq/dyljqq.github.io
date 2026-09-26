@@ -30,7 +30,9 @@
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "Days until calculator",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/days-until-christmas/",
@@ -57,13 +59,15 @@
    },
    {
     "q": "How do I put a Christmas countdown on my iPhone Home Screen?",
-    "a": "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget, and choose Countdown. The widgets are free in every size, and the event can repeat every year."
+    "a": "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +), and choose Countdown. The widgets are free in every size, and the event can repeat every year."
    }
   ],
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "How many days until Christmas 2026?",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/days-until-halloween/",
@@ -86,13 +90,15 @@
    },
    {
     "q": "How do I get a Halloween countdown widget on iPhone?",
-    "a": "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget menu. Every widget size is free."
+    "a": "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free."
    }
   ],
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "How many days until Halloween 2026?",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/days-until-new-year/",
@@ -121,14 +127,16 @@
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "How many days until New Year 2027?",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para o ENEM 2026? Contagem regressiva",
-  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de início do iPhone.",
+  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
   "faq": [
    {
     "q": "Quando é o ENEM 2026?",
@@ -147,14 +155,16 @@
     "a": "Segundo o edital, até o 10º dia útil após o segundo dia de prova."
    },
    {
-    "q": "Como coloco a contagem regressiva do ENEM na tela de início?",
-    "a": "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a tela de início → Editar → Adicionar widget → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."
+    "q": "Como coloco a contagem regressiva do ENEM na Tela de Início?",
+    "a": "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."
    }
   ],
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "Quantos dias faltam para o ENEM 2026?",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/pt-br/contagem-regressiva-reveillon-2027/",
@@ -176,14 +186,16 @@
     "a": "Em 26/09/2026 faltavam 97 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
    },
    {
-    "q": "Como coloco a contagem do Réveillon na tela de bloqueio?",
-    "a": "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na tela de bloqueio segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
+    "q": "Como coloco a contagem do Réveillon na Tela Bloqueada?",
+    "a": "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-09-26",
   "app": "countdown",
   "hubTitle": "Quantos dias faltam para o Réveillon 2027?",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/invoice-template/",
@@ -216,7 +228,9 @@
   "published": "2026-09-26",
   "app": "invoiceqr",
   "hubTitle": "Free invoice template",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/how-to-write-an-invoice/",
@@ -231,7 +245,7 @@
    },
    {
     "q": "How do I number invoices?",
-    "a": "Sequentially and never reused: INV-0001, INV-0002… Many freelancers prefix the year (2026-001) so the sequence resets each January. Gaps are fine; duplicates are not."
+    "a": "Sequentially and never reused: INV-0001, INV-0002… Many freelancers prefix the year (2026-001) so the sequence resets each January. Never reuse a number, and check local rules: some countries, such as France and Germany, expect an unbroken sequence."
    },
    {
     "q": "What payment terms should a freelancer use?",
@@ -249,7 +263,9 @@
   "published": "2026-09-26",
   "app": "invoiceqr",
   "hubTitle": "How to write an invoice",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/packing-list/",
@@ -282,7 +298,9 @@
   "published": "2026-09-26",
   "app": "beforego",
   "hubTitle": "Packing list generator",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/best-countdown-widget-apps-iphone/",
@@ -344,7 +362,195 @@
     "name": "Days • Countdown & Widgets",
     "url": "https://apps.apple.com/us/app/id939368917"
    }
-  ]
+  ],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/blog/countdown-widget-iphone-home-lock-screen/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Add a Countdown to Your iPhone Home Screen and Lock Screen",
+  "description": "Here is how to add a countdown widget to your iPhone Home Screen and Lock Screen, plus what Live Activity adds on top of it.",
+  "faq": [
+   {
+    "q": "Can I add more than one countdown widget?",
+    "a": "Yes. There is no limit on how many events Countdown can track, and you can place as many widgets as iOS allows on your Home Screen and Lock Screen."
+   },
+   {
+    "q": "Is the Lock Screen widget the same as Live Activity?",
+    "a": "No. The Lock Screen widget refreshes like any other widget, while Live Activity is a separate, real-time display on the Lock Screen and Dynamic Island, and it is part of Countdown Pro."
+   },
+   {
+    "q": "Do I need an account to sync my countdowns between devices?",
+    "a": "No. Countdown syncs privately through iCloud with no account or sign-up required."
+   },
+   {
+    "q": "What happens to my events if I get a new iPhone?",
+    "a": "iCloud sync is available with no account to make, and you can also import events from a calendar, a spreadsheet, or another countdown app."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Add a Countdown to Your iPhone Home Screen and Lock Screen",
+  "items": [],
+  "headline": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/920x0w.webp"
+ },
+ {
+  "path": "/blog/count-down-birthday-exam-trip-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Count Down to a Birthday, Exam or Trip on iPhone",
+  "description": "How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.",
+  "faq": [
+   {
+    "q": "Can I make a birthday countdown repeat every year automatically?",
+    "a": "Yes. Set the event to repeat yearly and it resets on its own once the date passes, with no need to recreate it."
+   },
+   {
+    "q": "Can I count up instead of down, like days since a trip?",
+    "a": "Yes. Countdown supports counting up from a date as well as counting down to one."
+   },
+   {
+    "q": "What happens to a countdown after the date has passed?",
+    "a": "It is not deleted. Past events collect into a timeline you can look back through at any time."
+   },
+   {
+    "q": "Will I lose my countdowns if I switch phones?",
+    "a": "Not if iCloud sync is on: your events come back on the new iPhone through your own iCloud, with no account to make. The daily snapshot the app takes stays on the old device, so it protects against an update or reinstall rather than a phone change."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "countdown",
+  "hubTitle": "Count Down to a Birthday, Exam or Trip on iPhone",
+  "items": [],
+  "headline": "How to Count Down to a Birthday, an Exam or a Trip on iPhone",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/64/d5/fb64d531-d362-2433-72e2-0891b45cb03a/09-start-from-a-template.png/920x0w.webp"
+ },
+ {
+  "path": "/blog/payment-qr-code-on-invoice/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Add a Payment QR Code to an Invoice and Get Paid Faster",
+  "description": "What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.",
+  "faq": [
+   {
+    "q": "What is a payment QR code on an invoice?",
+    "a": "It's a QR code generated for your invoice that a client scans with their phone to open a payment app with the details ready, instead of typing them in by hand."
+   },
+   {
+    "q": "Does Invoice Maker support Pix?",
+    "a": "Yes. Pix is one of the 12 QR types in Invoice Maker's QR Studio, alongside a general payment QR code and ten other types."
+   },
+   {
+    "q": "Can I see which invoices are still unpaid?",
+    "a": "Yes. Invoices show a status of paid, unpaid, partial or overdue, and recording a payment updates the outstanding balance automatically."
+   },
+   {
+    "q": "Can a paid invoice work as a receipt?",
+    "a": "Yes. Once an invoice is fully paid you can share it as a receipt — the same document, marked paid, with the settlement date."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "invoiceqr",
+  "hubTitle": "Add a Payment QR Code to an Invoice and Get Paid Faster",
+  "items": [],
+  "headline": "How to Add a Payment QR Code to an Invoice (and Get Paid Faster)",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/55/1b/44551bc3-4e2a-2586-9215-2e95980ebb75/02-invoice.png/920x0w.webp"
+ },
+ {
+  "path": "/blog/invoice-vs-estimate-vs-quote/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Invoice vs Estimate vs Quote: What's the Difference?",
+  "description": "The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.",
+  "faq": [
+   {
+    "q": "Is an estimate the same thing as a quote?",
+    "a": "In everyday use, yes. Both describe a proposed price sent before the work starts, and neither is a request for payment."
+   },
+   {
+    "q": "Is an invoice automatically a legal tax document?",
+    "a": "Not necessarily. Some countries require a specific tax invoice format, such as Mexico's CFDI, and Invoice Maker creates commercial documents rather than government tax invoices, so check local rules if you need one."
+   },
+   {
+    "q": "How do I turn an estimate into an invoice?",
+    "a": "In Invoice Maker, open the estimate or quote and turn it into an invoice with one tap, without re-entering the client or line items."
+   },
+   {
+    "q": "How many documents can I create for free?",
+    "a": "Three in total. Invoices, estimates and quotes all draw on the same free allowance, and it doesn't reset monthly."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "invoiceqr",
+  "hubTitle": "Invoice vs Estimate vs Quote: What's the Difference?",
+  "items": [],
+  "headline": "Invoice vs Estimate vs Quote: What's the Difference?",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a5/74/96/a5749683-7ee4-731e-a7a7-f37a39a12cf9/05-templates.png/920x0w.webp"
+ },
+ {
+  "path": "/blog/travel-post-screenshot-to-itinerary/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+  "description": "How to turn a screenshot, a link or a typed plan into a day-by-day itinerary, plus scanning tickets and bookings straight into it.",
+  "faq": [
+   {
+    "q": "How do I add a travel post I saw on social media to my trip?",
+    "a": "Screenshot the post, paste a link, or just type out the plans, and BeforeGo files it into a day-by-day plan."
+   },
+   {
+    "q": "Can I import an already-booked flight or hotel?",
+    "a": "Yes. Scan the ticket or booking confirmation and BeforeGo places it on your route in order, including its days."
+   },
+   {
+    "q": "Can I remove something BeforeGo imported that I don't want?",
+    "a": "Yes. Every import is listed under its trip, and any line it added can be removed."
+   },
+   {
+    "q": "Does BeforeGo replace checking official travel requirements?",
+    "a": "No. BeforeGo is for personal travel organization, not official visa, safety, health, airline, or government guidance, so always confirm important requirements with official sources."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "beforego",
+  "hubTitle": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+  "items": [],
+  "headline": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/da/c0/39dac056-926e-c1a0-de27-e29b877f822e/01-guide-2026-09-24.png/920x0w.webp"
+ },
+ {
+  "path": "/blog/packing-list-by-destination/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "A Packing List That Fits the Destination: Plugs, Currency, Rules",
+  "description": "What to check per destination before you pack, and how a generated packing list covers plugs, currency, entry rules and reminders.",
+  "faq": [
+   {
+    "q": "What should a packing list account for beyond clothes?",
+    "a": "It generally helps to check the plug type and voltage, the local currency, entry requirements like visas, and which transit apps are used locally."
+   },
+   {
+    "q": "Does BeforeGo build the packing list automatically?",
+    "a": "Yes. BeforeGo generates a destination-based packing list, including plugs, currency, entry rules and transit apps, from your trip's destination and dates."
+   },
+   {
+    "q": "When do packing reminders arrive?",
+    "a": "BeforeGo sends packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure."
+   },
+   {
+    "q": "What happens to items I forgot to pack last time?",
+    "a": "Forgotten items carry over, so your next packing list starts smarter."
+   }
+  ],
+  "published": "2026-09-26",
+  "app": "beforego",
+  "hubTitle": "A Packing List That Fits the Destination: Plugs, Currency, Rules",
+  "items": [],
+  "headline": "A Packing List That Fits the Destination: Plugs, Currency, Entry Rules",
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/26/1c/52261c83-df1d-83e5-b9e5-d576e6587b85/04-checklist.png/920x0w.webp"
  },
  {
   "path": "/tools/",
@@ -356,7 +562,9 @@
   "published": null,
   "app": null,
   "hubTitle": "Free tools & guides — go ka",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
  },
  {
   "path": "/tools/pt-br/",
@@ -368,6 +576,22 @@
   "published": null,
   "app": null,
   "hubTitle": "Ferramentas e guias grátis — go ka",
-  "items": []
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/blog/",
+  "lang": "en",
+  "kind": "CollectionPage",
+  "title": "Blog — guides for countdowns, invoices and trips | go ka",
+  "description": "How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.",
+  "faq": [],
+  "published": null,
+  "app": null,
+  "hubTitle": "Blog — guides for countdowns, invoices and trips | go ka",
+  "items": [],
+  "headline": null,
+  "image": null
  }
 ]

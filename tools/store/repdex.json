@@ -1,0 +1,273 @@
+{
+ "en-US": {
+  "storefront": "us",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "en-GB": {
+  "storefront": "gb",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "de-DE": {
+  "storefront": "de",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "fr-FR": {
+  "storefront": "fr",
+  "name": "Repdex : Carnet de Muscu",
+  "version": "1.0.1",
+  "description": "Repdex est un carnet d'entraînement hors ligne avec une bibliothèque d'exercices complète intégrée. Cherchez un mouvement, voyez comment il s'exécute, puis notez vos séries sans quitter la machine.\n\nAvec Repdex, vous pouvez :\n• Parcourir 1 324 exercices avec animations et instructions détaillées\n• Lire ces instructions en 10 langues, toutes stockées sur l'appareil\n• Noter séries, répétitions et charge en quelques secondes entre deux séries\n• Créer des programmes et les suivre séance après séance\n• Suivre la courbe de PR de chaque exercice et voir quels muscles vous travaillez vraiment\n\nTout fonctionne hors ligne. Pas de compte, pas de publicité, et votre historique n'est jamais verrouillé derrière un achat : ce que vous avez déjà noté reste lisible pour toujours.\n\n——————\nRepdex Pro (abonnement à renouvellement automatique)\nL'abonnement débloque les programmes illimités, les statistiques avancées, l'export des données (CSV) et les widgets d'écran d'accueil :\n• Formule mensuelle — facturée tous les 1 mois\n• Formule annuelle — facturée tous les 1 an\n• Formule à vie — un paiement unique, pas un abonnement\nLa formule annuelle inclut 7 jours d'essai gratuit pour les nouveaux abonnés. Le prix exact est affiché sur l'écran d'achat avant confirmation.\n\nLe paiement est débité de votre compte Apple à la confirmation de l'achat. L'abonnement est renouvelé automatiquement sauf si le renouvellement automatique est désactivé au moins 24 heures avant la fin de la période en cours. Le renouvellement est facturé dans les 24 heures précédant la fin de la période en cours. Vous pouvez gérer ou résilier votre abonnement à tout moment dans les réglages de votre compte App Store.\n\nConditions d'utilisation (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPolitique de confidentialité: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "it": {
+  "storefront": "it",
+  "name": "Repdex: Diario Palestra",
+  "version": "1.0.1",
+  "description": "Repdex è un diario di allenamento offline con una libreria di esercizi completa integrata. Cerca un movimento, guarda come si esegue e registra le serie senza allontanarti dalla macchina.\n\nCon Repdex puoi:\n• Consultare 1.324 esercizi con animazioni e istruzioni passo passo\n• Leggere le istruzioni in 10 lingue, tutte salvate sul dispositivo\n• Registrare serie, ripetizioni e carico in pochi secondi tra un set e l'altro\n• Creare schede e seguirle allenamento dopo allenamento\n• Seguire la curva dei PR di ogni esercizio e vedere quali muscoli alleni davvero\n\nTutto funziona offline. Nessun account, nessuna pubblicità e lo storico non finisce mai dietro un acquisto: quello che hai già registrato resta leggibile per sempre.\n\n——————\nRepdex Pro (abbonamento con rinnovo automatico)\nL'abbonamento sblocca schede illimitate, statistiche avanzate, esportazione dei dati (CSV) e widget della schermata Home:\n• Piano mensile — addebito ogni 1 mese\n• Piano annuale — addebito ogni 1 anno\n• A vita — un pagamento unico, non è un abbonamento\nIl piano annuale include 7 giorni di prova gratuita per i nuovi abbonati. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma.\n\nIl pagamento viene addebitato sull'account Apple alla conferma dell'acquisto. L'abbonamento si rinnova automaticamente se il rinnovo automatico non viene disattivato almeno 24 ore prima della fine del periodo in corso. L'addebito per il rinnovo avviene nelle 24 ore precedenti la fine del periodo. Puoi gestire o annullare l'abbonamento in qualsiasi momento nelle impostazioni del tuo account App Store.\n\nTermini d'uso (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nInformativa sulla privacy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "es-ES": {
+  "storefront": "es",
+  "name": "Repdex: Diario de Gimnasio",
+  "version": "1.0.1",
+  "description": "Repdex es un diario de entrenamiento sin conexión con una biblioteca de ejercicios completa incorporada. Consulta cualquier movimiento, mira cómo se ejecuta y registra tus series sin moverte de la máquina.\n\nCon Repdex puedes:\n• Consultar 1.324 ejercicios con animaciones e instrucciones paso a paso\n• Leer esas instrucciones en 10 idiomas, todas guardadas en el dispositivo\n• Registrar series, repeticiones y peso en segundos entre rondas\n• Crear rutinas y seguirlas sesión tras sesión\n• Ver la curva de PR de cada ejercicio y qué músculos trabajas de verdad\n\nTodo funciona sin conexión. Sin cuenta, sin anuncios, y tu historial nunca queda bloqueado tras una compra: lo que ya has registrado se puede leer siempre.\n\n——————\nRepdex Pro (suscripción de renovación automática)\nLa suscripción desbloquea rutinas ilimitadas, estadísticas avanzadas, exportación de datos (CSV) y widgets de pantalla de inicio:\n• Plan mensual: se cobra cada 1 mes\n• Plan anual: se cobra cada 1 año\n• Vitalicio: un pago único, no es una suscripción\nEl plan anual incluye 7 días de prueba gratuita para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar.\n\nEl pago se cargará a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que se desactive la renovación al menos 24 horas antes del final del periodo en curso. El cargo por renovación se realiza en las 24 horas previas al final del periodo. Puedes gestionar o cancelar la suscripción en cualquier momento en los ajustes de tu cuenta de App Store.\n\nTérminos de uso (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "es-MX": {
+  "storefront": "mx",
+  "name": "Repdex: Diario de Gimnasio",
+  "version": "1.0.1",
+  "description": "Repdex es un diario de entrenamiento sin conexión con una biblioteca de ejercicios completa incorporada. Consulta cualquier movimiento, mira cómo se ejecuta y registra tus series sin moverte de la máquina.\n\nCon Repdex puedes:\n• Consultar 1.324 ejercicios con animaciones e instrucciones paso a paso\n• Leer esas instrucciones en 10 idiomas, todas guardadas en el dispositivo\n• Registrar series, repeticiones y peso en segundos entre rondas\n• Crear rutinas y seguirlas sesión tras sesión\n• Ver la curva de PR de cada ejercicio y qué músculos trabajas de verdad\n\nTodo funciona sin conexión. Sin cuenta, sin anuncios, y tu historial nunca queda bloqueado tras una compra: lo que ya has registrado se puede leer siempre.\n\n——————\nRepdex Pro (suscripción de renovación automática)\nLa suscripción desbloquea rutinas ilimitadas, estadísticas avanzadas, exportación de datos (CSV) y widgets de pantalla de inicio:\n• Plan mensual: se cobra cada 1 mes\n• Plan anual: se cobra cada 1 año\n• Vitalicio: un pago único, no es una suscripción\nEl plan anual incluye 7 días de prueba gratuita para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar.\n\nEl pago se cargará a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que se desactive la renovación al menos 24 horas antes del final del periodo en curso. El cargo por renovación se realiza en las 24 horas previas al final del periodo. Puedes gestionar o cancelar la suscripción en cualquier momento en los ajustes de tu cuenta de App Store.\n\nTérminos de uso (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "pt-BR": {
+  "storefront": "br",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "ja": {
+  "storefront": "jp",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "ko": {
+  "storefront": "kr",
+  "name": "Repdex: 헬스 운동 기록",
+  "version": "1.0.1",
+  "description": "Repdex는 완전한 운동 라이브러리를 내장한 오프라인 운동 기록 앱입니다. 어떤 동작이든 찾아보고 수행 방법을 확인한 다음, 기구 앞에 선 채로 세트를 기록하세요.\n\nRepdex로 할 수 있는 것:\n• 애니메이션과 단계별 설명이 있는 1,324개 운동 살펴보기\n• 그 설명을 10개 언어로 읽기 — 모두 기기에 저장되어 있습니다\n• 세트 사이 몇 초 만에 중량, 세트, 횟수 기록하기\n• 루틴을 만들고 세션마다 그대로 따라가기\n• 운동별 PR 곡선을 확인하고 실제로 어떤 근육을 쓰는지 파악하기\n\n모든 기능이 오프라인에서 동작합니다. 계정도 광고도 없고, 기록이 결제 뒤에 잠기는 일도 없습니다. 이미 기록한 내용은 언제까지나 그대로 읽을 수 있습니다.\n\n——————\nRepdex Pro (자동 갱신 구독)\n구독하면 무제한 루틴, 상세 통계, 데이터 내보내기(CSV), 홈 화면 위젯이 열립니다:\n• 월간 플랜 — 1개월마다 청구\n• 연간 플랜 — 1년마다 청구\n• 평생 이용권 — 1회 결제, 구독이 아닙니다\n연간 플랜은 신규 구독자에게 7일 무료 체험을 제공합니다. 정확한 가격은 구매 확인 전 구매 화면에 표시됩니다.\n\n구매 확인 시 Apple 계정으로 결제됩니다. 현재 기간 종료 최소 24시간 전에 자동 갱신을 끄지 않으면 구독은 자동으로 갱신됩니다. 갱신 요금은 현재 기간 종료 전 24시간 이내에 청구됩니다. App Store 계정 설정에서 언제든지 구독을 관리하거나 취소할 수 있습니다.\n\n이용 약관(EULA): https://dyljqq.github.io/repdex/terms-of-use/\n개인정보 처리방침: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "zh-Hans": {
+  "storefront": "cn",
+  "name": "Repdex 健身训练记录本",
+  "version": "1.0.1",
+  "description": "Repdex 是一个离线的健身训练记录本，内置完整的动作库。想练什么先查动作怎么做，然后站在器械前就把这一组记下来。\n\n你可以用 Repdex：\n• 查阅 1324 个动作，每个都有动画和分步说明\n• 用 10 种语言阅读动作说明，全部存在本机\n• 组间几秒钟记完重量、组数和次数\n• 建立训练计划，按计划一次次练下去\n• 查看每个动作的 PR 曲线，看清自己到底练了哪些肌群\n\n全部功能离线可用。不用注册、没有广告，历史记录永远不会因为不付费而被锁住——已经记下来的东西，任何时候都读得到。\n\n——————\nRepdex Pro（自动续订订阅）\n订阅可解锁无限训练计划、高级统计、数据导出（CSV）和桌面小组件：\n• 月度订阅——每 1 个月计费一次\n• 年度订阅——每 1 年计费一次\n• 买断——一次性付费，非订阅\n年度订阅为新用户提供 7 天免费试用。 具体价格会在购买页确认前显示。\n\n购买确认时将通过您的 Apple 账户扣款。订阅会自动续订，除非在当前订阅期结束前至少 24 小时关闭自动续订。系统会在当前订阅期结束前 24 小时内扣取续订费用。您可以随时在 App Store 账户设置中管理或取消订阅。\n\n使用条款（EULA）: https://dyljqq.github.io/repdex/terms-of-use/\n隐私政策: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/9b/38/2f9b38b4-ea6a-9d99-983f-1a1bc799d415/01-active.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4c/c0/3b/4cc03bf7-a9bd-437e-e608-2b735467f323/02-library.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b1/57/6a/b1576a7b-2e33-f3b8-8b03-685988214150/03-detail.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/a0/6e/d9a06e51-433b-fc13-c9e9-b72db82500f3/04-history.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "zh-Hant": {
+  "storefront": "tw",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "th": {
+  "storefront": "th",
+  "name": "Repdex: Gym Workout Tracker",
+  "version": "1.0.1",
+  "description": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time.\n\nEverything you log lives on the device. No account, no sign-up - the whole catalogue ships inside the app, so it works in a basement gym with no signal.\n\n1324 EXERCISES, ALL OFFLINE\nEvery exercise comes with an animation, a thumbnail, and step-by-step instructions in 10 languages. Filter by body part, equipment, or target muscle, or search all 1324 at once.\n\nBUILT TO BE USED MID-SET\nWeight and reps are editable right on the workout screen, with no second page to drill into. Tick a set and the rest timer rises on its own. Every figure is tabular, so the timer never shifts as it counts down.\n\nA DARK MODE MADE FOR THE GYM FLOOR\nNot a recolour. In the dark the readouts get larger and heavier, because dark mode is what you use when the phone is sitting on the rack an arm's length away.\n\nROUTINES ALREADY WAITING\nAnswer four questions on first launch and your split is there: push, pull, legs, upper, with sets and starting weights matched to how long you have been training.\n\nWHAT YOU TRACK\nVolume, duration, completed sets. An eight-week chart. Personal records per exercise. Consecutive weeks rather than consecutive days, because training is supposed to have rest days in it.\n\nFREE, ALWAYS\nAll 1324 exercises. All 10 instruction languages. Unlimited workout logging. Your history is never locked, subscription or not.\n\nNo weight tracking. No body fat. No calories. No meal plans. It is a training log.\n\n——————\nRepdex Pro (auto-renewing subscription)\nA subscription unlocks unlimited routines, advanced stats, CSV data export and home-screen widgets:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\n• Lifetime — a one-time purchase, not a subscription\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/repdex/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/repdex/privacy-policy/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/aa/53/fa/aa53fa20-d522-0977-b605-db335778d36a/01.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/56/fd/3556fdb7-d42b-1942-d277-8b9279735189/02.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4c/18/c7/4c18c7e7-7428-44ab-2b81-9d92cfcbeadb/03.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/90/11/1c/90111cd7-5450-c8a9-58db-8c90a7386b49/04.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/53/c9/5b/53c95b19-7245-921f-fc01-d615538defde/05.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/53/73/56/537356cb-13e4-a8d2-5b08-e34a05f1710c/06.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ }
+}

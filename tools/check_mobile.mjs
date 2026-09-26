@@ -5,6 +5,7 @@
 //   1. 页面横向溢出：document.documentElement.scrollWidth 必须 == 375
 //   2. 按钮 / 链接按钮高度异常（>80px）——09-26 苹果图标没限尺寸把按钮撑成 240px 高
 //   3. 按钮里的 svg 超过 40px
+//   4. 页头：每个链接 / 语言切换必须完整落在视口内（09-26 评审：德语导航挤成 3 行、第一行被顶到 top=-16；西语导航右侧被裁成「CONTAC」）
 // 有问题退出码 1。只依赖 Node 22 自带的 WebSocket 和本机 Chrome。
 import { spawn } from "node:child_process";
 import { mkdtempSync, rmSync } from "node:fs";
@@ -22,7 +23,7 @@ const chrome = spawn(CHROME, ["--headless=new", "--disable-gpu", "--no-first-run
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function wsUrl() {
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 150; i++) {   // Chrome 冷启动可能要 5 秒以上，最多等 30 秒
     try {
       const list = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
       const page = list.find((t) => t.type === "page");
@@ -49,11 +50,17 @@ await send("Emulation.setDeviceMetricsOverride", { width: 375, height: 812, devi
 await send("Emulation.setTouchEmulationEnabled", { enabled: true });
 
 const PROBE = `(() => {
-  const vw = 375, out = { scrollWidth: document.documentElement.scrollWidth, vw, tall: [], bigsvg: [] };  // 固定比 375：手机模拟下内容过宽时浏览器会自动缩放、innerWidth 跟着变大，拿它比会漏报
+  const vw = 375, out = { scrollWidth: document.documentElement.scrollWidth, vw, tall: [], bigsvg: [], header: [] };  // 固定比 375：手机模拟下内容过宽时浏览器会自动缩放、innerWidth 跟着变大，拿它比会漏报
   for (const el of document.querySelectorAll('a.btn, a.cta, a.get, button, .btn, .cta')) {
     const r = el.getBoundingClientRect();
     if (r.height > 80) out.tall.push((el.className || el.tagName) + ' ' + Math.round(r.height) + 'px: ' + el.textContent.trim().slice(0, 40));
     for (const s of el.querySelectorAll('svg')) { const b = s.getBoundingClientRect(); if (b.width > 40 || b.height > 40) out.bigsvg.push(Math.round(b.width) + 'x' + Math.round(b.height) + ' in ' + el.textContent.trim().slice(0, 30)); }
+  }
+  const hd = document.querySelector('header');
+  if (hd) for (const el of hd.querySelectorAll('a, summary')) {
+    const r = el.getBoundingClientRect();
+    if (!r.width || !r.height) continue;
+    if (r.top < 0 || r.left < 0 || r.right > vw + 0.5) out.header.push(el.textContent.trim().slice(0, 24) + ' @' + Math.round(r.left) + ',' + Math.round(r.top) + '→' + Math.round(r.right));
   }
   return JSON.stringify(out);
 })()`;
@@ -69,6 +76,7 @@ for (const p of paths) {
   if (o.scrollWidth > o.vw) bad.push(`横向溢出 scrollWidth=${o.scrollWidth} > ${o.vw}`);
   if (o.tall.length) bad.push(`按钮过高: ${o.tall.slice(0, 3).join(" | ")}`);
   if (o.bigsvg.length) bad.push(`按钮里图标过大: ${o.bigsvg.slice(0, 3).join(" | ")}`);
+  if (o.header.length) bad.push(`页头元素出了视口: ${o.header.slice(0, 4).join(" | ")}`);
   if (bad.length) { failed++; console.log(`✗ ${p}\n    ${bad.join("\n    ")}`); }
 }
 console.log(`手机端检查 ${paths.length} 页，${failed ? `${failed} 页有问题` : "全部通过"}`);

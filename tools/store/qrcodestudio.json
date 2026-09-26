@@ -1,0 +1,275 @@
+{
+ "en-US": {
+  "storefront": "us",
+  "name": "Custom QR Code Maker & Scan",
+  "version": "1.0.1",
+  "description": "Design a QR code people actually want to scan — and one that always scans.\n\nMost QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads.\n\nDESIGN IT PROPERLY\n• 18 illustrated scenes: sticky note, price tag, ticket, neon, business card, event poster and more\n• 13 dot shapes and 5 finder shapes, gradients, and a separate colour for the corners\n• Colour the dots from one of your own photos — the picture is darkened just enough that the code still reads\n• Or pick a GIF or a video and the whole code moves — every frame is darkened the same way a still photo is, so every one of them still scans, and it shares as a looping GIF\n• Your own logo in the middle — error correction is raised automatically to make room\n• 14 frames and 5 caption fonts, or write your own line of text\n\nALWAYS SCANNABLE\n• Live contrast check as you design, with a plain verdict: good, risky, or won't scan\n• A design that would fail cannot be saved — one tap repairs the colours and keeps the rest\n• Decoration is drawn around the code, never over it\n\nTWELVE KINDS OF CODE\nLink · Social profile · Wi-Fi · Contact card · Email · Phone · SMS · WhatsApp · Location · Calendar event · Payment link · Plain text\n\nSCAN, TOO\n• Read any QR code with the camera, or from a photo you already have\n• Nothing opens on its own — you see the exact contents first, every time\n• Scan history stays on your device and is never uploaded\n\nYOURS, AND OFFLINE\n• No account, no sign-up, no server\n• Your codes sync through your own iCloud, or stay on one device\n• Every code is static: it carries its own content, so it keeps working forever — even if this app disappears\n\nQR Studio Pro unlocks every illustrated scene, every frame and shape, gradients, custom colours and your own logo in the middle.\n\nQR STUDIO PRO (auto-renewable subscription)\n• Monthly — billed every 1 month\n• Yearly — billed every 1 year, with a 7-day free trial for new subscribers\nThe exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPrivacy Policy: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/80/bf/31/80bf3126-2c31-d84a-6b35-28ddb48b218f/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/7c/98/287c9806-56df-a20c-3fe3-9b25bd9e324c/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9b/02/9c/9b029cb3-ca13-765f-9bda-6c07a102cd28/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ca/a5/3c/caa53c8d-7eff-058c-dfbb-2b41533c1be4/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dd/52/d4/dd52d411-9a77-fa0c-685f-20d5365293d1/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/c1/0e/2dc10e53-6697-2a8a-8aae-fd3ecf68dc06/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "en-GB": {
+  "storefront": "gb",
+  "name": "Custom QR Code Maker & Scan",
+  "version": "1.0.1",
+  "description": "Design a QR code people actually want to scan — and one that always scans.\n\nMost QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads.\n\nDESIGN IT PROPERLY\n• 18 illustrated scenes: sticky note, price tag, ticket, neon, business card, event poster and more\n• 13 dot shapes and 5 finder shapes, gradients, and a separate colour for the corners\n• Colour the dots from one of your own photos — the picture is darkened just enough that the code still reads\n• Or pick a GIF or a video and the whole code moves — every frame is darkened the same way a still photo is, so every one of them still scans, and it shares as a looping GIF\n• Your own logo in the middle — error correction is raised automatically to make room\n• 14 frames and 5 caption fonts, or write your own line of text\n\nALWAYS SCANNABLE\n• Live contrast check as you design, with a plain verdict: good, risky, or won't scan\n• A design that would fail cannot be saved — one tap repairs the colours and keeps the rest\n• Decoration is drawn around the code, never over it\n\nTWELVE KINDS OF CODE\nLink · Social profile · Wi-Fi · Contact card · Email · Phone · SMS · WhatsApp · Location · Calendar event · Payment link · Plain text\n\nSCAN, TOO\n• Read any QR code with the camera, or from a photo you already have\n• Nothing opens on its own — you see the exact contents first, every time\n• Scan history stays on your device and is never uploaded\n\nYOURS, AND OFFLINE\n• No account, no sign-up, no server\n• Your codes sync through your own iCloud, or stay on one device\n• Every code is static: it carries its own content, so it keeps working forever — even if this app disappears\n\nQR Studio Pro unlocks every illustrated scene, every frame and shape, gradients, custom colours and your own logo in the middle.\n\nQR STUDIO PRO (auto-renewable subscription)\n• Monthly — billed every 1 month\n• Yearly — billed every 1 year, with a 7-day free trial for new subscribers\nThe exact price is shown on the purchase screen before you confirm.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPrivacy Policy: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/c5/62/8dc562aa-ef72-0b49-d412-4c085b432435/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/6b/51/b66b5141-142e-9784-cd17-fc84e71b466c/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/35/8c/ef358c66-704b-6262-e4b2-7d0923604eaa/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/aa/e8/c0/aae8c0cf-43ea-2c97-ee36-cb3352c7ae08/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/7f/56/d27f5666-608c-69bb-20f7-4bb3e8e3e37d/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/db/39/8edb39d7-d5c4-983f-53da-1f62d9ce1d44/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "de-DE": {
+  "storefront": "de",
+  "name": "QR-Code Ersteller & Scanner",
+  "version": "1.0.1",
+  "description": "Ein QR-Code, den man wirklich scannen will — und der immer scannt.\n\nDie meisten QR-Apps geben dir ein schwarzes Quadrat. Mit QR Studio änderst du Form und Farbe, setzt dein Logo in die Mitte und bettest den Code in ein illustriertes Poster ein — und bei jeder Änderung wird geprüft, ob er noch lesbar ist.\n\nRICHTIG GESTALTEN\n• 18 illustrierte Szenen: Haftnotiz, Preisschild, Ticket, Neon, Visitenkarte, Eventplakat und mehr\n• 13 Punktformen und 5 Formen für die Suchmuster, Verläufe und eine eigene Farbe für die Ecken\n• Färbe die Punkte aus einem deiner eigenen Fotos — das Bild wird nur so weit abgedunkelt, dass der Code lesbar bleibt\n• Oder wähle ein GIF oder Video, und der ganze Code bewegt sich — jedes Einzelbild wird genauso abgedunkelt wie ein Foto, also bleibt jedes lesbar, und geteilt wird ein GIF in Endlosschleife\n• Dein eigenes Logo in der Mitte — die Fehlerkorrektur wird automatisch erhöht, um Platz zu schaffen\n• 14 Rahmen und 5 Schriften für die Bildunterschrift, oder dein eigener Text\n\nIMMER SCANNBAR\n• Kontrastprüfung live beim Gestalten, mit klarem Urteil: gut, riskant oder scannt nicht\n• Ein Design, das durchfallen würde, lässt sich nicht speichern — ein Tipp repariert die Farben und lässt den Rest unverändert\n• Dekoration wird um den Code herum gezeichnet, nie darüber\n\nZWÖLF ARTEN VON CODES\nLink · Social-Profil · WLAN · Kontaktkarte · E-Mail · Telefon · SMS · WhatsApp · Standort · Kalendereintrag · Zahlungslink · Reiner Text\n\nAUCH SCANNEN\n• Jeden QR-Code mit der Kamera lesen oder aus einem vorhandenen Foto\n• Nichts öffnet sich von selbst — du siehst jedes Mal zuerst den genauen Inhalt\n• Der Scanverlauf bleibt auf deinem Gerät und wird nie hochgeladen\n\nDEINS, UND OFFLINE\n• Kein Konto, keine Anmeldung, kein Server\n• Deine Codes synchronisieren über deine eigene iCloud oder bleiben auf einem Gerät\n• Jeder Code ist statisch: er trägt seinen Inhalt selbst und funktioniert deshalb für immer — auch wenn es diese App einmal nicht mehr gibt\n\nQR Studio Pro schaltet alle illustrierten Szenen frei, alle Rahmen und Formen, Verläufe, eigene Farben und dein eigenes Logo in der Mitte.\n\nQR STUDIO PRO (automatisch verlängerndes Abo)\n• Monatlich — Abrechnung alle 1 Monat\n• Jährlich — Abrechnung alle 1 Jahr, mit 7 Tagen Gratistest für neue Abonnenten\nDer genaue Preis wird vor der Bestätigung auf der Kaufseite angezeigt.\n\nDie Zahlung wird bei Bestätigung des Kaufs über deinen Apple Account abgebucht. Das Abo verlängert sich automatisch, sofern die automatische Verlängerung nicht mindestens 24 Stunden vor Ende des laufenden Zeitraums deaktiviert wird. Die Verlängerung wird innerhalb von 24 Stunden vor Ende des laufenden Zeitraums abgerechnet. Du kannst dein Abo jederzeit in den Einstellungen deines App-Store-Accounts verwalten oder kündigen.\n\nNutzungsbedingungen (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nDatenschutzrichtlinie: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b0/f2/8c/b0f28c60-7675-3d3b-06e0-4b1ecd2eabf2/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/11/b7/4c/11b74c76-f5ca-cd22-852f-503cd2856480/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/80/e8/6e80e835-adb1-ed48-ba26-5542e632d13c/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/86/d1/d786d195-e021-854a-c6ea-a5c3dc6ac6a4/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/93/88/959388a5-b62c-b9f2-86f2-2341238ee8a0/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/de/1e/00de1e03-32e6-fc99-712a-af1af686aa37/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "fr-FR": {
+  "storefront": "fr",
+  "name": "Créateur de code QR & scan",
+  "version": "1.0.1",
+  "description": "Créez un code QR qu'on a envie de scanner — et qui se scanne à tous les coups.\n\nLa plupart des applis vous donnent un carré noir. QR Studio vous laisse changer sa forme et ses couleurs, glisser votre logo au centre et l'intégrer à une affiche illustrée — puis vérifie, à chaque fois, qu'il reste lisible.\n\nCONCEVOIR POUR DE VRAI\n• 18 scènes illustrées : pense-bête, étiquette de prix, billet, néon, carte de visite, affiche d'événement et plus\n• 13 formes de modules et 5 formes de marqueurs, des dégradés, et une couleur à part pour les coins\n• Colorez les modules à partir d'une de vos photos — l'image est assombrie juste ce qu'il faut pour que le code reste lisible\n• Ou choisissez un GIF ou une vidéo et le code entier s'anime — chaque image est assombrie comme l'est une photo fixe, donc toutes restent lisibles, et le partage produit un GIF en boucle\n• Votre logo au centre — la correction d'erreur est relevée automatiquement pour lui faire de la place\n• 14 cadres et 5 polices de légende, ou votre propre texte\n\nTOUJOURS SCANNABLE\n• Contrôle du contraste en direct pendant la conception, avec un verdict clair : bon, risqué, ou ne scannera pas\n• Un design qui échouerait ne peut pas être enregistré — une touche répare les couleurs et conserve le reste\n• Les décors sont dessinés autour du code, jamais par-dessus\n\nDOUZE TYPES DE CODES\nLien · Profil social · Wi-Fi · Fiche contact · E-mail · Téléphone · SMS · WhatsApp · Position · Événement d'agenda · Lien de paiement · Texte brut\n\nSCANNER AUSSI\n• Lisez n'importe quel code QR avec l'appareil photo, ou depuis une photo déjà enregistrée\n• Rien ne s'ouvre tout seul — vous voyez d'abord le contenu exact, à chaque fois\n• L'historique des scans reste sur votre appareil et n'est jamais envoyé\n\nÀ VOUS, ET HORS LIGNE\n• Pas de compte, pas d'inscription, pas de serveur\n• Vos codes se synchronisent via votre propre iCloud, ou restent sur un seul appareil\n• Chaque code est statique : il porte son contenu, donc il fonctionnera toujours — même si cette appli disparaît\n\nQR Studio Pro débloque toutes les scènes illustrées, tous les cadres et toutes les formes, les dégradés, les couleurs personnalisées et votre logo au centre.\n\nQR STUDIO PRO (abonnement à renouvellement automatique)\n• Mensuel — facturé tous les 1 mois\n• Annuel — facturé tous les 1 an, avec 7 jours d'essai gratuit pour les nouveaux abonnés\nLe prix exact est affiché sur l'écran d'achat avant votre confirmation.\n\nLe paiement est débité de votre compte Apple à la confirmation de l'achat. L'abonnement se renouvelle automatiquement sauf si le renouvellement automatique est désactivé au moins 24 heures avant la fin de la période en cours. Le renouvellement est facturé dans les 24 heures précédant la fin de la période en cours. Vous pouvez gérer ou résilier votre abonnement à tout moment dans les réglages de votre compte App Store.\n\nConditions d'utilisation (CLUF) : https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPolitique de confidentialité : https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dd/90/33/dd90338b-5e2d-3944-a7d6-c50e54301261/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8b/d4/03/8bd40330-d09b-9016-6b34-268406c9417f/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/61/43/6a/61436a58-261b-51ed-d4ad-c19d1ac7d0b5/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/1c/73/cf1c732e-7d4b-5ba5-3a9b-5400452c8abb/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/16/47/61/16476181-3a6c-50b7-9028-a50ace10b7c7/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/40/bd/a1/40bda146-f2a7-9f80-323f-3705833c24f6/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "it": {
+  "storefront": "it",
+  "name": "Creatore codici QR e scanner",
+  "version": "1.0.1",
+  "description": "Progetta un codice QR che la gente ha voglia di scansionare — e che si scansiona sempre.\n\nQuasi tutte le app ti danno un quadrato nero. QR Studio ti fa cambiare forma e colore, mettere il tuo logo al centro e inserire il codice in un poster illustrato — e ogni volta controlla che resti leggibile.\n\nPROGETTARE SUL SERIO\n• 18 scene illustrate: post-it, cartellino del prezzo, biglietto, neon, biglietto da visita, locandina e altro\n• 13 forme dei moduli e 5 forme dei marcatori, sfumature e un colore a parte per gli angoli\n• Colora i moduli con una tua foto — l'immagine viene scurita quel tanto che basta perché il codice si legga\n• Oppure scegli una GIF o un video e tutto il codice si anima — ogni fotogramma viene scurito come una foto, quindi resta leggibile, e la condivisione produce una GIF in loop\n• Il tuo logo al centro — la correzione degli errori si alza da sola per fargli spazio\n• 14 cornici e 5 caratteri per la didascalia, oppure scrivi il tuo testo\n\nSEMPRE SCANSIONABILE\n• Controllo del contrasto dal vivo mentre progetti, con un verdetto chiaro: buono, rischioso o non si scansiona\n• Un design che fallirebbe non si può salvare — un tocco sistema i colori e lascia intatto il resto\n• Le decorazioni si disegnano attorno al codice, mai sopra\n\nDODICI TIPI DI CODICE\nLink · Profilo social · Wi-Fi · Scheda contatto · E-mail · Telefono · SMS · WhatsApp · Posizione · Evento del calendario · Link di pagamento · Testo semplice\n\nANCHE SCANSIONE\n• Leggi qualsiasi codice QR con la fotocamera o da una foto che hai già\n• Non si apre niente da solo — vedi prima il contenuto esatto, ogni volta\n• La cronologia delle scansioni resta sul tuo dispositivo e non viene mai caricata\n\nTUO, E OFFLINE\n• Nessun account, nessuna registrazione, nessun server\n• I tuoi codici si sincronizzano con il tuo iCloud, oppure restano su un solo dispositivo\n• Ogni codice è statico: si porta dentro il proprio contenuto, quindi continuerà a funzionare per sempre — anche se questa app sparisse\n\nQR Studio Pro sblocca tutte le scene illustrate, tutte le cornici e le forme, le sfumature, i colori personalizzati e il tuo logo al centro.\n\nQR STUDIO PRO (abbonamento a rinnovo automatico)\n• Mensile — addebito ogni 1 mese\n• Annuale — addebito ogni 1 anno, con 7 giorni di prova gratuita per i nuovi abbonati\nIl prezzo esatto viene mostrato nella schermata d'acquisto prima della conferma.\n\nIl pagamento viene addebitato sul tuo Account Apple alla conferma dell'acquisto. L'abbonamento si rinnova automaticamente a meno che il rinnovo automatico non venga disattivato almeno 24 ore prima della fine del periodo in corso. L'addebito per il rinnovo avviene entro 24 ore prima della fine del periodo in corso. Puoi gestire o disdire l'abbonamento in qualsiasi momento nelle impostazioni del tuo account App Store.\n\nTermini d'uso (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nInformativa sulla privacy: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/8c/2f/408c2ff0-8a0f-d08a-492e-8df485938bd9/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/57/b7/7657b789-312c-9b65-21cb-a30ef9168ff0/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dc/0f/91/dc0f9168-95eb-c295-c795-36bd8e49ef3f/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/65/d2/4765d2d1-3f7b-06cb-ab79-a0d0f89c8519/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fe/c5/81/fec581dc-0349-57ad-7e43-58b6b354eb5d/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/ba/53/44ba5365-5ed1-ed9b-7823-531ab747e16d/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "es-ES": {
+  "storefront": "es",
+  "name": "Creador de códigos QR y lector",
+  "version": "1.0.1",
+  "description": "Diseña un código QR que la gente quiera escanear — y que se escanee siempre.\n\nCasi todas las apps te dan un cuadrado negro. QR Studio te deja cambiarle la forma y el color, poner tu logo en el centro y meterlo en un cartel ilustrado — y comprueba, cada vez, que se sigue leyendo.\n\nDISEÑAR DE VERDAD\n• 18 escenas ilustradas: nota adhesiva, etiqueta de precio, entrada, neón, tarjeta de contacto, cartel de evento y más\n• 13 formas de punto y 5 de marcadores, degradados y un color aparte para las esquinas\n• Colorea los puntos con una foto tuya — la imagen se oscurece lo justo para que el código siga leyéndose\n• O elige un GIF o un vídeo y todo el código se mueve — cada fotograma se oscurece igual que una foto, así que todos siguen leyendose, y se comparte como un GIF en bucle\n• Tu propio logo en el centro — la corrección de errores sube sola para hacerle sitio\n• 14 marcos y 5 tipografías para el pie, o escribe tu propio texto\n\nSIEMPRE ESCANEABLE\n• Comprobación de contraste en directo mientras diseñas, con un veredicto claro: bien, arriesgado o no se escaneará\n• Un diseño que fallaría no se puede guardar — un toque arregla los colores y deja lo demás igual\n• La decoración se dibuja alrededor del código, nunca encima\n\nDOCE TIPOS DE CÓDIGO\nEnlace · Perfil social · Wi-Fi · Ficha de contacto · Correo · Teléfono · SMS · WhatsApp · Ubicación · Evento de calendario · Enlace de pago · Texto simple\n\nTAMBIÉN ESCANEA\n• Lee cualquier código QR con la cámara, o desde una foto que ya tengas\n• No se abre nada solo — primero ves el contenido exacto, siempre\n• El historial de escaneos se queda en tu dispositivo y nunca se sube\n\nTUYO, Y SIN CONEXIÓN\n• Sin cuenta, sin registro, sin servidor\n• Tus códigos se sincronizan por tu propio iCloud, o se quedan en un solo dispositivo\n• Cada código es estático: lleva su contenido dentro, así que seguirá funcionando siempre — aunque esta app desaparezca\n\nQR Studio Pro desbloquea todas las escenas ilustradas, todos los marcos y formas, los degradados, los colores personalizados y tu propio logo en el centro.\n\nQR STUDIO PRO (suscripción de renovación automática)\n• Mensual — se cobra cada 1 mes\n• Anual — se cobra cada 1 año, con 7 días de prueba gratis para nuevos suscriptores\nEl precio exacto se muestra en la pantalla de compra antes de que confirmes.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente a menos que desactives la renovación automática al menos 24 horas antes de que termine el periodo en curso. El cobro de la renovación se hace dentro de las 24 horas previas al fin del periodo en curso. Puedes gestionar o cancelar tu suscripción cuando quieras en los ajustes de tu cuenta de App Store.\n\nTérminos de uso (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPolítica de privacidad: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/28/82/f9/2882f9d6-d354-ff24-d34e-5c5aefad9a7e/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/33/dd/ee/33ddee8c-aefe-0b7e-36d2-e33410c81cba/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/52/fb/3652fb02-69a0-5284-ed4e-6c3ea5c10484/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/6f/2e/446f2ee7-03a4-55dd-b2a6-a9525e66c6a2/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3c/82/98/3c8298a0-7472-684f-2bf9-726ea4201005/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/76/08/54/76085476-b6ac-c92e-8a76-18ceb33898fc/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "es-MX": {
+  "storefront": "mx",
+  "name": "Creador de códigos QR y lector",
+  "version": "1.0.1",
+  "description": "Diseña un código QR que la gente quiera escanear — y que se escanee siempre.\n\nCasi todas las apps te dan un cuadrado negro. QR Studio te deja cambiarle la forma y el color, poner tu logo en el centro y meterlo en un cartel ilustrado — y comprueba, cada vez, que se sigue leyendo.\n\nDISEÑAR DE VERDAD\n• 18 escenas ilustradas: nota adhesiva, etiqueta de precio, entrada, neón, tarjeta de contacto, cartel de evento y más\n• 13 formas de punto y 5 de marcadores, degradados y un color aparte para las esquinas\n• Colorea los puntos con una foto tuya — la imagen se oscurece lo justo para que el código siga leyéndose\n• O elige un GIF o un vídeo y todo el código se mueve — cada fotograma se oscurece igual que una foto, así que todos siguen leyendose, y se comparte como un GIF en bucle\n• Tu propio logo en el centro — la corrección de errores sube sola para hacerle sitio\n• 14 marcos y 5 tipografías para el pie, o escribe tu propio texto\n\nSIEMPRE ESCANEABLE\n• Comprobación de contraste en directo mientras diseñas, con un veredicto claro: bien, arriesgado o no se escaneará\n• Un diseño que fallaría no se puede guardar — un toque arregla los colores y deja lo demás igual\n• La decoración se dibuja alrededor del código, nunca encima\n\nDOCE TIPOS DE CÓDIGO\nEnlace · Perfil social · Wi-Fi · Ficha de contacto · Correo · Teléfono · SMS · WhatsApp · Ubicación · Evento de calendario · Enlace de pago · Texto simple\n\nTAMBIÉN ESCANEA\n• Lee cualquier código QR con la cámara, o desde una foto que ya tengas\n• No se abre nada solo — primero ves el contenido exacto, siempre\n• El historial de escaneos se queda en tu dispositivo y nunca se sube\n\nTUYO, Y SIN CONEXIÓN\n• Sin cuenta, sin registro, sin servidor\n• Tus códigos se sincronizan por tu propio iCloud, o se quedan en un solo dispositivo\n• Cada código es estático: lleva su contenido dentro, así que seguirá funcionando siempre — aunque esta app desaparezca\n\nQR Studio Pro desbloquea todas las escenas ilustradas, todos los marcos y formas, los degradados, los colores personalizados y tu propio logo en el centro.\n\nQR STUDIO PRO (suscripción de renovación automática)\n• Mensual — se cobra cada 1 mes\n• Anual — se cobra cada 1 año, con 7 días de prueba gratis para nuevos suscriptores\nEl precio exacto se muestra en la pantalla de compra antes de que confirmes.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente a menos que desactives la renovación automática al menos 24 horas antes de que termine el periodo en curso. El cobro de la renovación se hace dentro de las 24 horas previas al fin del periodo en curso. Puedes gestionar o cancelar tu suscripción cuando quieras en los ajustes de tu cuenta de App Store.\n\nTérminos de uso (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPolítica de privacidad: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5c/3d/77/5c3d7759-bdb1-7ad2-9f0f-982e32cef8a4/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/46/50/c746503b-42d8-43a5-e7b3-9500d67e95c5/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/01/63/29/0163295f-5e47-71ad-3b24-593443e88dbd/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/db/4f/f2/db4ff2ac-0756-1013-d58a-f4a91401914b/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ab/ac/89/abac895e-146c-5f33-e91a-e7d34f68b96e/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/9e/35/4e9e3523-c6f8-643b-721e-258df35d83f6/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "pt-BR": {
+  "storefront": "br",
+  "name": "Criador de QR Code e leitor",
+  "version": "1.0.1",
+  "description": "Faça um QR Code que as pessoas querem escanear — e que sempre é lido.\n\nA maioria dos apps só te dá um quadrado preto. O QR Studio deixa você mudar a forma e a cor, pôr sua logo no meio e encaixar o código num pôster ilustrado — e confere, toda vez, se ele continua sendo lido.\n\nDESIGN DE VERDADE\n• 18 cenas ilustradas: bilhete adesivo, etiqueta de preço, ingresso, neon, cartão de visita, cartaz de evento e mais\n• 13 formatos de pontos e 5 de marcadores, gradientes e uma cor só para os cantos\n• Colora os pontos com uma foto sua — a imagem é escurecida só o suficiente para o código continuar sendo lido\n• Ou escolha um GIF ou um vídeo e o código inteiro se move — cada quadro é escurecido como uma foto, então todos continuam legíveis, e o compartilhamento gera um GIF em loop\n• Sua logo no meio — a correção de erros sobe automaticamente para abrir espaço\n• 14 molduras e 5 fontes de legenda, ou escreva seu próprio texto\n\nSEMPRE LEGÍVEL\n• Verificação de contraste ao vivo enquanto você cria, com um veredito direto: bom, arriscado ou não vai ler\n• Um design que falharia não pode ser salvo — um toque conserta as cores e mantém o resto\n• A decoração é desenhada em volta do código, nunca por cima\n\nDOZE TIPOS DE CÓDIGO\nLink · Perfil social · Wi-Fi · Cartão de contato · E-mail · Telefone · SMS · WhatsApp · Local · Evento na agenda · Link de pagamento · Texto simples\n\nLEITOR TAMBÉM\n• Leia qualquer QR Code com a câmera, ou a partir de uma foto que você já tem\n• Nada abre sozinho — você vê o conteúdo exato primeiro, sempre\n• O histórico de leituras fica no seu aparelho e nunca é enviado\n\nSEU, E OFFLINE\n• Sem conta, sem cadastro, sem servidor\n• Seus códigos sincronizam pelo seu próprio iCloud, ou ficam em um aparelho só\n• Todo código é estático: ele carrega o próprio conteúdo, então funciona para sempre — mesmo se este app sumir\n\nO QR Studio Pro libera todas as cenas ilustradas, todas as molduras e formas, gradientes, cores personalizadas e sua logo no meio.\n\nQR STUDIO PRO (assinatura com renovação automática)\n• Mensal — cobrança a cada 1 mês\n• Anual — cobrança a cada 1 ano, com 7 dias grátis para novos assinantes\nO preço exato aparece na tela de compra antes de você confirmar.\n\nO pagamento é cobrado da sua Conta Apple ao confirmar a compra. A assinatura é renovada automaticamente, a menos que a renovação automática seja desativada pelo menos 24 horas antes do fim do período atual. A cobrança da renovação acontece nas 24 horas anteriores ao fim do período atual. Você pode gerenciar ou cancelar sua assinatura quando quiser nos ajustes da sua conta da App Store.\n\nTermos de Uso (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nPolítica de Privacidade: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/58/2e/65/582e65fc-db28-2914-5dd1-4e421d9093e7/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2f/f5/90/2ff59024-990a-9535-4468-c757fd3f2361/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/5f/a0/505fa014-d9ca-db0b-9373-21afc0572af5/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/91/26/05/91260542-d286-ad7d-9040-89b888ba026c/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/b9/db/59b9dbd8-c2aa-1b45-52a2-9fd46c2f44fc/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3b/2b/c7/3b2bc716-74a8-4b6b-cb3a-09351a56983c/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "ja": {
+  "storefront": "jp",
+  "name": "QRコード作成 & スキャナー",
+  "version": "1.0.1",
+  "description": "「読み取りたくなるQRコード」を、確実に読み取れるまま。\n\n多くのアプリは黒い四角を返すだけです。QR Studio なら、形も色も変えられ、中央にロゴを置き、イラストのポスターに収めたうえで、毎回きちんと読み取れるかを確認します。\n\nデザインを本気で\n• 18種類のイラストシーン:付箋、値札、チケット、ネオン、名刺、イベントポスターなど\n• ドット13種・切り出しシンボル5種、グラデーション、角だけ別色も可能\n• 手持ちの写真からドットに色を移せます — 読み取れる明るさまで自動で落とします\n• GIF や動画を選べばコード全体が動きます — どのフレームも静止画と同じように暗く調整され、ループする GIF として共有できます\n• 中央に自分のロゴ — 誤り訂正レベルは自動で引き上げます\n• フレーム14種、書体5種、文言も自由に\n\n必ず読み取れる\n• 編集しながらコントラストを判定。結果は「良好・注意・読み取れない」の3つだけ\n• 読み取れないデザインは保存できません。ワンタップの修復は色だけを直します\n• 装飾はコードの外側にのみ描かれ、コードを覆いません\n\n12種類のコード\nリンク・SNSプロフィール・Wi-Fi・連絡先・メール・電話・SMS・WhatsApp・場所・カレンダー・支払いリンク・テキスト\n\n読み取りも\n• カメラでも、保存済みの写真からでも読み取れます\n• 勝手に開きません。中身をそのまま確認してから\n• スキャン履歴はこの端末だけに残り、送信されません\n\nあなたのもの、オフラインで\n• アカウント登録なし、サーバーなし\n• コードはご自身のiCloudで同期、端末内だけに留めることも可能\n• すべて静的コードなので、内容はコード自身が持ちます。将来このアプリが無くなっても読み取れます\n\nPro ですべてのイラストシーン・フレーム・形状、グラデーション、自由な配色、中央のロゴが使えます。\n\nQR Studio Pro(自動更新サブスクリプション)\n• 月額プラン——1か月ごとに課金\n• 年額プラン——1年ごとに課金。新規のお客様には7日間の無料トライアル付き\n正確な価格は購入確認画面に表示されます。\n\nお支払いは購入確定時にApple アカウントへ請求されます。現在の期間終了の24時間前までに自動更新をオフにしない限り、サブスクリプションは自動的に更新されます。更新料は期間終了前の24時間以内に請求されます。購入後はApp Storeのアカウント設定でいつでも管理・解約できます。\n\n利用規約(EULA):https://dyljqq.github.io/qrcodestudio/terms-of-service/\nプライバシーポリシー:https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/4e/e8/85/4ee8856b-9c9a-0094-2349-99bf772c9762/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ff/62/9f/ff629fc6-1ea4-8602-1af6-c82989488c17/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0f/04/c1/0f04c1c2-5fcb-36ed-dcb9-a02510e0aa1b/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7d/1b/30/7d1b3012-44a1-6fef-4738-dc77d4d071b9/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/df/87/59/df875956-d4e4-9601-074f-71010ae1fe2d/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/df/3d/efdf3d12-abe5-4b50-0a8b-c91303af0d46/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "ko": {
+  "storefront": "kr",
+  "name": "QR코드 만들기 & 스캐너",
+  "version": "1.0.1",
+  "description": "사람들이 스캔하고 싶어지는 QR 코드를 — 언제나 스캔되는 상태로.\n\n대부분의 앱은 검은 사각형 하나를 내놓습니다. QR Studio에서는 모양과 색을 바꾸고, 가운데에 로고를 넣고, 일러스트 포스터 안에 코드를 담을 수 있습니다. 그리고 바꿀 때마다 여전히 읽히는지 확인합니다.\n\n제대로 디자인하기\n• 일러스트 장면 18종: 메모지, 가격표, 티켓, 네온, 명함, 행사 포스터 등\n• 점 모양 13종과 파인더 모양 5종, 그러데이션, 모서리만 다른 색으로\n• 내 사진에서 점 색을 가져옵니다 — 스캔되는 밝기까지만 자동으로 어둡게 맞춥니다\n• GIF나 동영상을 고르면 코드 전체가 움직입니다 — 모든 프레임이 사진처럼 어두워져 어느 프레임이든 스캔되고, 반복 재생되는 GIF로 공유됩니다\n• 가운데에 내 로고 — 자리를 만들기 위해 오류 정정 수준이 자동으로 올라갑니다\n• 프레임 14종과 캡션 서체 5종, 문구도 직접 입력\n\n항상 스캔됩니다\n• 디자인하는 동안 대비를 실시간으로 검사하고, 결과는 셋 중 하나: 좋음, 위험, 스캔 불가\n• 스캔되지 않을 디자인은 저장할 수 없습니다 — 한 번 누르면 색만 고치고 나머지는 그대로\n• 장식은 코드 바깥에만 그려지고, 코드를 덮지 않습니다\n\n열두 가지 코드\n링크 · 소셜 프로필 · Wi-Fi · 연락처 카드 · 이메일 · 전화 · 문자 · WhatsApp · 위치 · 캘린더 일정 · 결제 링크 · 일반 텍스트\n\n스캔도 됩니다\n• 카메라로, 또는 이미 가지고 있는 사진에서 QR 코드를 읽습니다\n• 무엇도 저절로 열리지 않습니다 — 매번 정확한 내용을 먼저 보여줍니다\n• 스캔 기록은 기기에만 남고 업로드되지 않습니다\n\n내 것이고, 오프라인입니다\n• 계정 없음, 가입 없음, 서버 없음\n• 코드는 본인의 iCloud로 동기화되거나, 한 대의 기기에만 남습니다\n• 모든 코드는 정적입니다: 내용을 코드 자체가 담고 있어 영원히 작동합니다 — 이 앱이 사라져도 마찬가지입니다\n\nQR Studio Pro는 모든 일러스트 장면, 모든 프레임과 모양, 그러데이션, 사용자 지정 색상, 가운데 로고를 열어 줍니다.\n\nQR Studio Pro(자동 갱신 구독)\n• 월간 — 1개월마다 결제\n• 연간 — 1년마다 결제, 신규 구독자는 7일 무료 체험\n정확한 가격은 확인 전 구매 화면에 표시됩니다.\n\n구매를 확인하면 Apple 계정으로 결제됩니다. 현재 기간이 끝나기 최소 24시간 전에 자동 갱신을 끄지 않으면 구독은 자동으로 갱신됩니다. 갱신 요금은 현재 기간이 끝나기 24시간 이내에 청구됩니다. 구독은 App Store 계정 설정에서 언제든지 관리하거나 해지할 수 있습니다.\n\n이용약관(EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\n개인정보 처리방침: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/dd/0c/96/dd0c967f-5c6c-6a3d-a7b3-c78703d50e29/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/73/25/e3/7325e32f-b8ab-cfcd-a9aa-4b384bedbbcd/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/48/41/e4/4841e4d5-6a01-3c1f-50b2-6f442c1715b2/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/3a/a4/de3aa4ff-1d23-2c41-5076-f937849d9795/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fe/6a/00/fe6a004c-9eef-4d85-ae4a-abd68f6d5b75/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/68/dc/5d68dc83-8d36-327d-7ec1-96a3eb82081d/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "zh-Hans": {
+  "storefront": "cn",
+  "name": "个性二维码制作 - 美化生成扫码",
+  "version": "1.0.1",
+  "description": "做一个别人愿意扫的二维码——而且它一定扫得出来。\n\n大部分二维码 App 只会给你一个黑方块。QR Studio 让你换形状、换颜色、把 Logo 放进中间、把码嵌进插画海报里——每改一次,都会重新验一遍还能不能扫。\n\n认真做设计\n• 18 款插画场景:便利贴、促销吊牌、门票、霓虹、名片、活动海报等\n• 13 种码点形状、5 种定位点形状、渐变,定位点还能单独配色\n• 用你自己的照片给码点上色——照片会被压暗到刚好还扫得出来的程度\n• 也可以选 GIF 或视频，整个码就动起来——每一帧都和静态照片一样被压暗，所以帧帧都扫得出，分享出去是一张循环 GIF\n• 中间放你自己的 Logo——纠错等级会自动提高来腾出位置\n• 14 种边框、5 种字体,文案也可以自己写\n\n一定扫得出来\n• 边设计边判定对比度,结论只有三种:良好、有风险、扫不出\n• 扫不出的设计不允许保存——一键修复只改颜色,其余设计原样保留\n• 装饰只画在码的外面,永远不盖住码本身\n\n十二种码\n网址 · 社交主页 · Wi-Fi · 联系人名片 · 邮件 · 电话 · 短信 · WhatsApp · 位置 · 日历事件 · 收款链接 · 纯文本\n\n也能扫码\n• 用相机扫,或者直接从相册里的图片识别\n• 不会自动打开任何东西——每次都先把完整内容给你看\n• 扫描记录只留在本机,从不上传\n\n你的东西,离线的\n• 无账号、无注册、无服务器\n• 码通过你自己的 iCloud 同步,也可以只留在一台设备上\n• 每个码都是静态的:内容就在码里,所以它永远有效——就算这个 App 消失了也一样\n\nQR Studio Pro 解锁全部插画场景、全部边框与形状、渐变、自定义配色,以及中间的自定义 Logo。\n\nQR Studio Pro(自动续订订阅)\n• 月度订阅——每 1 个月计费一次\n• 年度订阅——每 1 年计费一次,新用户享 7 天免费试用\n具体价格会在购买页确认前显示。\n\n购买确认时将通过你的 Apple 账户付款。订阅会自动续订,除非在当前周期结束前至少 24 小时关闭自动续订。系统会在当前周期结束前 24 小时内扣款续订。你可随时在 App Store 账户设置中管理或取消订阅。\n\n服务条款(EULA):https://dyljqq.github.io/qrcodestudio/terms-of-service/\n隐私政策:https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/60/ea/1d/60ea1de2-62c9-805d-b5e3-0be925ca28d3/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c1/76/f1/c176f1fb-2e35-36d3-7c63-6e029a7a9e8d/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/37/0f/30/370f30af-47f5-b60d-a549-2b7b4ddbc07b/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/9b/69/ec9b6986-5e24-0064-98f0-0ba150304e97/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/32/e2/72/32e27246-b5d1-7610-d45c-5c578f623d2d/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/53/40/ae534035-b7ef-d6c7-c5b5-8a568084fff3/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "zh-Hant": {
+  "storefront": "tw",
+  "name": "個性 QR Code 製作 - 美化掃描",
+  "version": "1.0.1",
+  "description": "做一個別人願意掃的 QR Code——而且它一定掃得出來。\n\n大部分 QR Code App 只會給你一個黑方塊。QR Studio 讓你換形狀、換顏色、把 Logo 放進中間、把碼嵌進插畫海報裡——每改一次,都會重新驗一遍還能不能掃。\n\n認真做設計\n• 18 款插畫場景:便利貼、促銷吊牌、門票、霓虹、名片、活動海報等\n• 13 種碼點形狀、5 種定位點形狀、漸層,定位點還能單獨配色\n• 用你自己的照片幫碼點上色——照片會被壓暗到剛好還掃得出來的程度\n• 也可以選 GIF 或影片，整個碼就動起來——每一格都和靜態照片一樣被壓暗，所以格格都掃得出，分享出去是一張循環 GIF\n• 中間放你自己的 Logo——容錯等級會自動提高來騰出位置\n• 14 種邊框、5 種字體,文案也可以自己寫\n\n一定掃得出來\n• 邊設計邊判定對比度,結論只有三種:良好、有風險、掃不出\n• 掃不出的設計不允許儲存——一鍵修復只改顏色,其餘設計原樣保留\n• 裝飾只畫在碼的外面,永遠不蓋住碼本身\n\n十二種碼\n網址 · 社群主頁 · Wi-Fi · 聯絡人名片 · 郵件 · 電話 · 簡訊 · WhatsApp · 位置 · 行事曆活動 · 收款連結 · 純文字\n\n也能掃碼\n• 用相機掃,或者直接從相簿裡的圖片辨識\n• 不會自動打開任何東西——每次都先把完整內容給你看\n• 掃描紀錄只留在本機,從不上傳\n\n你的東西,離線的\n• 無帳號、無註冊、無伺服器\n• 碼透過你自己的 iCloud 同步,也可以只留在一台裝置上\n• 每個碼都是靜態的:內容就在碼裡,所以它永遠有效——就算這個 App 消失了也一樣\n\nQR Studio Pro 解鎖全部插畫場景、全部邊框與形狀、漸層、自訂配色,以及中間的自訂 Logo。\n\nQR Studio Pro(自動續訂訂閱)\n• 月訂閱——每 1 個月計費一次\n• 年訂閱——每 1 年計費一次,新用戶享 7 天免費試用\n實際價格會在購買頁確認前顯示。\n\n購買確認時將透過你的 Apple 帳戶付款。訂閱會自動續訂,除非在目前週期結束前至少 24 小時關閉自動續訂。系統會在目前週期結束前 24 小時內扣款續訂。你可隨時在 App Store 帳戶設定中管理或取消訂閱。\n\n服務條款(EULA):https://dyljqq.github.io/qrcodestudio/terms-of-service/\n隱私權政策:https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/55/f0/7b55f0ff-069d-3fb4-86bd-71932ad3cc8d/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6a/61/3a/6a613a2c-befd-582f-80db-c58860ffe680/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e2/81/be/e281bede-af84-43ec-7229-cc1705065700/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/64/32/88/64328828-74b6-ba06-84b5-f7ae3a967ddc/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ec/9e/43/ec9e43a2-bd8b-4fbe-e709-4986eaee78b0/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/6c/9c/756c9ce2-1f99-cb10-125a-9b7e16302b0d/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ },
+ "th": {
+  "storefront": "th",
+  "name": "สร้างคิวอาร์โค้ด & สแกน",
+  "version": "1.0.1",
+  "description": "ออกแบบคิวอาร์โค้ดที่คนอยากสแกน — และสแกนติดทุกครั้ง\n\nแอปคิวอาร์ส่วนใหญ่ให้คุณแค่สี่เหลี่ยมสีดำ แต่ QR Studio ให้คุณเปลี่ยนรูปทรง เปลี่ยนสี ใส่โลโก้ไว้ตรงกลาง และวางโค้ดลงในโปสเตอร์ภาพประกอบ แล้วตรวจให้ทุกครั้งว่ายังอ่านได้อยู่\n\nออกแบบให้เต็มที่\n• 18 ฉากภาพประกอบ: กระดาษโน้ต ป้ายราคา ตั๋ว ไฟนีออน นามบัตร โปสเตอร์งานอีเวนต์ และอื่น ๆ\n• จุด 13 รูปทรง และมุมระบุตำแหน่ง 5 รูปทรง ไล่ระดับสี พร้อมกำหนดสีมุมแยกต่างหาก\n• ไล่สีจุดจากรูปของคุณเอง — ภาพจะถูกหรี่ลงพอดีให้โค้ดยังสแกนได้\n• เลือก GIF หรือวิดีโอ แล้วทั้งโค้ดจะขยับ — ทุกเฟรมถูกหรี่ลงเหมือนรูปนิ่ง จึงสแกนได้ทุกเฟรม และแชร์เป็น GIF แบบวนซ้ำ\n• ใส่โลโก้ของคุณตรงกลาง — ระดับการแก้ไขข้อผิดพลาดจะถูกยกขึ้นอัตโนมัติเพื่อเปิดพื้นที่ให้\n• 14 กรอบ และ 5 แบบอักษรสำหรับคำบรรยาย หรือพิมพ์ข้อความเอง\n\nสแกนได้เสมอ\n• ตรวจความคมชัดแบบสดขณะออกแบบ พร้อมคำตัดสินตรง ๆ: ดี เสี่ยง หรือสแกนไม่ได้\n• งานออกแบบที่จะสแกนไม่ผ่านจะบันทึกไม่ได้ — แตะครั้งเดียวเพื่อซ่อมสี ส่วนที่เหลือคงไว้เหมือนเดิม\n• ลวดลายตกแต่งวาดอยู่รอบโค้ด ไม่ทับตัวโค้ดเลย\n\nสิบสองชนิดของโค้ด\nลิงก์ · โปรไฟล์โซเชียล · Wi-Fi · นามบัตรผู้ติดต่อ · อีเมล · โทรศัพท์ · SMS · WhatsApp · ตำแหน่งที่ตั้ง · กิจกรรมในปฏิทิน · ลิงก์ชำระเงิน · ข้อความธรรมดา\n\nสแกนได้ด้วย\n• อ่านคิวอาร์โค้ดใดก็ได้ด้วยกล้อง หรือจากรูปที่มีอยู่แล้ว\n• ไม่มีอะไรเปิดขึ้นมาเอง — คุณจะเห็นเนื้อหาที่แท้จริงก่อนทุกครั้ง\n• ประวัติการสแกนอยู่ในเครื่องของคุณ และไม่เคยถูกอัปโหลด\n\nของคุณ และออฟไลน์\n• ไม่ต้องมีบัญชี ไม่ต้องสมัคร ไม่มีเซิร์ฟเวอร์\n• โค้ดของคุณซิงก์ผ่าน iCloud ของคุณเอง หรือเก็บไว้ในเครื่องเดียว\n• ทุกโค้ดเป็นแบบสแตติก: ตัวโค้ดพกเนื้อหาไว้ในตัวเอง จึงใช้ได้ตลอดไป — แม้แอปนี้จะหายไป\n\nQR Studio Pro ปลดล็อกทุกฉากภาพประกอบ ทุกกรอบและทุกรูปทรง ไล่ระดับสี สีที่กำหนดเอง และโลโก้ของคุณตรงกลาง\n\nQR STUDIO PRO (การสมัครสมาชิกแบบต่ออายุอัตโนมัติ)\n• รายเดือน — เรียกเก็บเงินทุก 1 เดือน\n• รายปี — เรียกเก็บเงินทุก 1 ปี พร้อมทดลองใช้ฟรี 7 วันสำหรับสมาชิกใหม่\nราคาที่แน่นอนจะแสดงบนหน้าจอการซื้อก่อนที่คุณจะยืนยัน\n\nระบบจะเรียกเก็บเงินจากบัญชี Apple ของคุณเมื่อยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่จะปิดการต่ออายุอัตโนมัติอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน ระบบจะเรียกเก็บค่าต่ออายุภายใน 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน คุณจัดการหรือยกเลิกการสมัครสมาชิกได้ทุกเมื่อในการตั้งค่าบัญชี App Store ของคุณ\n\nข้อกำหนดการใช้งาน (EULA): https://dyljqq.github.io/qrcodestudio/terms-of-service/\nนโยบายความเป็นส่วนตัว: https://dyljqq.github.io/qrcodestudio/privacy-policy/\n\nQR Code is a registered trademark of DENSO WAVE INCORPORATED.",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a0/e5/b0/a0e5b0ee-c27b-0bac-32e7-f459f1b474b0/01-gallery.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/88/e6/5888e657-01c5-fbef-3885-60bbde38937d/02-designer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/5b/9d/525b9d8f-95f7-966e-eb74-f2c1dba5f99a/03-scanability.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/cf/51/e8/cf51e8fc-127e-49b9-9375-f20cd8a4e3c5/04-scenes.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/02/b1/1402b11b-248c-7d1f-0f96-75d12d8e83ed/05-scan_result.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/6d/31/136d319a-05d5-7942-481d-b35be497595d/06-types.png/320x480bb.jpg"
+  ],
+  "ipad": [],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/73/82/16/73821690-7e91-586e-8bc4-585148e6758b/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN"
+  ],
+  "fetched": "2026-09-26"
+ }
+}

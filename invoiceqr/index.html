@@ -26,9 +26,13 @@ a{color:inherit}img,video,svg{display:block;max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
 .brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
-.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
 html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
 html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
 .nav a:hover{background:var(--cream)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
 .hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
@@ -38,8 +42,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -48,7 +52,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
-.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
 .feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
 .feat p{margin:0 0 10px;color:var(--muted)}
@@ -61,6 +65,10 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
@@ -68,29 +76,29 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself.">
-<link rel="canonical" href="https://goka-xi.vercel.app/invoiceqr/">
-<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/invoiceqr/">
-<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/invoiceqr/de/">
-<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/invoiceqr/fr/">
-<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/invoiceqr/it/">
-<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/invoiceqr/es/">
-<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
-<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/invoiceqr/pt-br/">
-<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/invoiceqr/ja/">
-<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/invoiceqr/ko/">
-<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/invoiceqr/zh-hant/">
-<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/invoiceqr/th/">
-<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/invoiceqr/">
+<link rel="canonical" href="https://beforego.art/invoiceqr/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/invoiceqr/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/invoiceqr/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/invoiceqr/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/invoiceqr/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/invoiceqr/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/invoiceqr/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/invoiceqr/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/invoiceqr/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/invoiceqr/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/invoiceqr/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/invoiceqr/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="Invoice Maker — Invoices, Estimates and Payment QR on iPhone">
 <meta property="og:description" content="Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself.">
-<meta property="og:url" content="https://goka-xi.vercel.app/invoiceqr/">
+<meta property="og:url" content="https://beforego.art/invoiceqr/">
 <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
@@ -101,22 +109,22 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://goka-xi.vercel.app/invoiceqr/#app",
+  "@id": "https://beforego.art/invoiceqr/#app",
   "name": "Smart Invoice & Estimate Maker",
   "alternateName": "Invoice Maker",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "iOS 17.0 or later",
   "description": "Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.",
-  "url": "https://goka-xi.vercel.app/invoiceqr/",
+  "url": "https://beforego.art/invoiceqr/",
   "inLanguage": "en",
   "author": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "publisher": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "offers": {
@@ -142,8 +150,8 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     "@type": "VideoObject",
     "name": "Smart Invoice & Estimate Maker — app preview",
     "description": "The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes.",
-    "thumbnailUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.jpg",
-    "contentUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.mp4",
+    "thumbnailUrl": "https://beforego.art/assets/invoiceqr/preview/en.jpg",
+    "contentUrl": "https://beforego.art/assets/invoiceqr/preview/en.mp4",
     "uploadDate": "2026-09-25",
     "inLanguage": "en"
   }
@@ -153,7 +161,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/invoiceqr/#faq",
+  "@id": "https://beforego.art/invoiceqr/#faq",
   "inLanguage": "en",
   "mainEntity": [
     {
@@ -166,10 +174,10 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     },
     {
       "@type": "Question",
-      "name": "How many invoices can I send for free?",
+      "name": "How many invoices can I create for free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free."
+        "text": "Three documents in total, not three a month — invoices, estimates and quotes all draw on the same allowance. A document counts when you create it, and only once: editing it or sending it again later is free. No account, no sign-up."
       }
     },
     {
@@ -193,7 +201,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "Does it make QR codes for anything other than payment?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free."
+        "text": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and Pix — and 16 ready-made designs, four of which are free."
       }
     },
     {
@@ -209,7 +217,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "What does Invoice Maker Pro unlock?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames."
+        "text": "Unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, the full brand kit (color, font and logo), custom QR colors, dots and frames, and no app line at the foot of exports."
       }
     }
   ]
@@ -224,9 +232,13 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
     <a href="/">All apps</a>
-    <a href="/invoiceqr/privacy-policy/">Privacy</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Invoice Maker">Support</a>
+    <a href="/tools/">Tools</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Invoice%20Maker">Support</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">English</span><span class="ln-code">EN</span></summary><ul><li><a href="/invoiceqr/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li><li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main class="wrap">
@@ -238,9 +250,21 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     <a class="cta" href="https://apps.apple.com/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Download on the App Store</a>
     <ul class="chips"><li>Free to download</li><li>iPhone &amp; iPad</li><li>iOS 17 or later</li><li>No account needed</li></ul>
   </div>
-  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="Smart Invoice &amp; Estimate Maker — app preview"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+  <div class="hero-media"><video playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="Smart Invoice &amp; Estimate Maker — app preview"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><button type="button" class="play" aria-label="Smart Invoice &amp; Estimate Maker — app preview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
 </section>
 
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">What it does</h2>
+  <div class="hls">
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/55/1b/44551bc3-4e2a-2586-9215-2e95980ebb75/02-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/55/1b/44551bc3-4e2a-2586-9215-2e95980ebb75/02-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/55/1b/44551bc3-4e2a-2586-9215-2e95980ebb75/02-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Invoices in minutes"></figure><div><h3>Invoices in minutes</h3><p>Pick one of 100+ templates, add your client and items, and share a polished PDF. Start with an estimate or quote and turn it into an invoice with one tap.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/a9/77/1ba97729-1c50-5428-528a-60d144d84766/12-scan-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/a9/77/1ba97729-1c50-5428-528a-60d144d84766/12-scan-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/a9/77/1ba97729-1c50-5428-528a-60d144d84766/12-scan-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Scan a paper invoice"></figure><div><h3>Scan a paper invoice</h3><p>Photograph a paper invoice, or pick a photo, and it becomes an editable draft. The page is read on your device; the optional AI review sends it to Google only when you ask.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/ad/2b/a0ad2b3d-3631-1a07-981e-556b6ec3abdf/08-payment.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/ad/2b/a0ad2b3d-3631-1a07-981e-556b6ec3abdf/08-payment.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/ad/2b/a0ad2b3d-3631-1a07-981e-556b6ec3abdf/08-payment.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Get paid with a scan"></figure><div><h3>Get paid with a scan</h3><p>Every invoice can carry a payment QR code your clients scan to pay. See paid, unpaid, partial and overdue at a glance, and share a paid invoice as a receipt.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/c0/bf/83c0bf2c-515b-ad8a-050f-2d970b87f5f0/09-reports.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/c0/bf/83c0bf2c-515b-ad8a-050f-2d970b87f5f0/09-reports.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/c0/bf/83c0bf2c-515b-ad8a-050f-2d970b87f5f0/09-reports.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Know what is still owed"></figure><div><h3>Know what is still owed</h3><p>Sales reports show income by month, your top clients and what is still outstanding.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/8d/35/eb8d3596-7199-774d-11ef-6fde2cdc3726/07-brand-kit.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/8d/35/eb8d3596-7199-774d-11ef-6fde2cdc3726/07-brand-kit.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/8d/35/eb8d3596-7199-774d-11ef-6fde2cdc3726/07-brand-kit.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="Your brand on everything"></figure><div><h3>Your brand on everything</h3><p>Set your logo, brand color and fonts once, and invoices, templates and QR designs pick them up automatically.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/51/73/8751731f-3ee5-4d4e-46d0-ea182045c20d/03-qr-designer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/51/73/8751731f-3ee5-4d4e-46d0-ea182045c20d/03-qr-designer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/51/73/8751731f-3ee5-4d4e-46d0-ea182045c20d/03-qr-designer.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="A QR code studio too"></figure><div><h3>A QR code studio too</h3><p>Twelve QR types, from links and Wi-Fi to payment and Pix, and sixteen ready-made designs. Contrast and quiet zone are checked, so the code always scans.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/49/a4/58/49a45861-de4a-ebb6-7141-9afc02f1586b/11-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/49/a4/58/49a45861-de4a-ebb6-7141-9afc02f1586b/11-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/49/a4/58/49a45861-de4a-ebb6-7141-9afc02f1586b/11-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="On your Home Screen"></figure><div><h3>On your Home Screen</h3><p>Three widgets: what you&#x27;re owed, quick create shortcuts, and a payment QR drawn large enough to hold up and scan.</p></div></div>
+  </div>
+</section>
 <section class="sec" id="screenshots" aria-labelledby="h-screens">
   <h2 id="h-screens">Screenshots</h2>
   <ul class="shots">
@@ -258,7 +282,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">What&#x27;s inside</h2>
+  <h2 id="h-features">The details, as written in the App Store</h2>
   <div class="feats">
     <div class="feat"><h3>Create invoices in minutes</h3><ul><li>Pick one of 100+ templates, add your client and items, and share a polished PDF</li><li>Scan a paper invoice — or pick a photo — and it becomes an editable draft; the page is read on your device — the optional AI review sends it to Google only when you ask</li><li>Start with an estimate or quote, then turn it into an invoice with one tap</li><li>Save clients, items and tax rates for one-tap reuse</li><li>Discounts, shipping, payment methods and reusable terms</li><li>Sign off with a handwritten signature drawn right on your iPhone</li></ul></div>
     <div class="feat"><h3>Get paid with a scan</h3><ul><li>Every invoice can carry a payment QR code your clients scan to pay</li><li>Track status at a glance: paid, unpaid, partial and overdue</li><li>Record payments and keep an accurate outstanding balance</li><li>Sales reports show income by month, your top clients and what is still outstanding</li><li>Paid in full? Share the invoice as a receipt — the same document, marked paid, with the date it was settled</li></ul></div>
@@ -267,11 +291,15 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     <div class="feat"><h3>On your home screen</h3><ul><li>Three widgets: what you’re owed, quick create shortcuts, and a payment QR ready to scan</li><li>The code is drawn large enough to hold up — no need to open the app</li><li>50 backgrounds, plus your choice of font and text color</li></ul></div>
     <div class="feat"><h3>Safe and in sync</h3><ul><li>Invoices, clients and QR codes sync privately through your own iCloud</li><li>Move to a new iPhone and your work is already there</li><li>Recently Deleted keeps invoices for 30 days, so one wrong tap is never final</li><li>No account and no sign-up — the app works offline</li><li>13 app languages, light and dark appearance</li></ul></div>
     <div class="feat"><h3>Free to start</h3><ul><li>Create 3 documents free — no account, no sign-up</li><li>That&#x27;s 3 in total, not 3 a month, and invoices, estimates and quotes all draw on the same allowance</li><li>A document counts when you create it, and only once — editing it or sending it again later is free</li><li>4 of the ready-made QR designs are free — no Pro needed</li><li>Exports carry a small line at the foot of the page naming the app — Pro switches it off</li></ul></div>
-    <div class="feat"><h3>Pro</h3><ul><li>Unlimited invoices &amp; QR exports</li><li>100+ invoice templates, 12+ QR styles &amp; 16+ ready-made designs</li><li>Full brand kit — color, font &amp; logo</li><li>Custom QR colors, dots &amp; frames</li><li>Remove the app’s line from the foot of exports</li></ul><p>Go Pro to unlock everything:</p><p>Questions or feedback? We read everything — reach us via the support link on this page.</p><p>Privacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/ Terms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/</p></div>
+    <div class="feat"><h3>Pro</h3><p>Go Pro to unlock everything:</p><ul><li>Unlimited invoices &amp; QR exports</li><li>100+ invoice templates, 12+ QR styles &amp; 16+ ready-made designs</li><li>Full brand kit — color, font &amp; logo</li><li>Custom QR colors, dots &amp; frames</li><li>Remove the app’s line from the foot of exports</li></ul><p>Questions or feedback? We read everything — reach us via the support link on this page.</p></div>
   </div>
 
 </section>
 
+<section class="sec" id="whats-new" aria-labelledby="h-new">
+  <h2 id="h-new">What&#x27;s new in version 1.1.17</h2>
+  <div class="news"><ul><li>Your first invoice opens as a finished sample: change the client and the line, and it&#x27;s yours.</li><li>Send to myself: get the PDF on your phone, in Files or in your own email before it goes to a client.</li><li>Your first document can wear any template, Pro ones included.</li><li>Reminders: a nudge when an invoice you made hasn&#x27;t been sent yet, alongside the due-date reminders.</li></ul></div>
+</section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
   <h2 id="faq">Questions people ask</h2>
@@ -281,8 +309,8 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       <p>Yes. Smart Invoice &amp; Estimate Maker has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device.</p>
     </div>
     <div class="card">
-      <h3>How many invoices can I send for free?</h3>
-      <p>Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free.</p>
+      <h3>How many invoices can I create for free?</h3>
+      <p>Three documents in total, not three a month — invoices, estimates and quotes all draw on the same allowance. A document counts when you create it, and only once: editing it or sending it again later is free. No account, no sign-up.</p>
     </div>
     <div class="card">
       <h3>Can a client pay directly from the invoice?</h3>
@@ -294,7 +322,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     </div>
     <div class="card">
       <h3>Does it make QR codes for anything other than payment?</h3>
-      <p>Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free.</p>
+      <p>Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and Pix — and 16 ready-made designs, four of which are free.</p>
     </div>
     <div class="card">
       <h3>Can I recover an invoice I deleted by accident?</h3>
@@ -302,38 +330,42 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     </div>
     <div class="card">
       <h3>What does Invoice Maker Pro unlock?</h3>
-      <p>Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames.</p>
+      <p>Unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, the full brand kit (color, font and logo), custom QR colors, dots and frames, and no app line at the foot of exports.</p>
     </div>
   </div>
   <!-- faq:end -->
 </section>
 
+<section class="sec" id="guides" aria-labelledby="h-guides">
+  <h2 id="h-guides">Guides and free tools</h2>
+  <div class="guides"><a href="/tools/invoice-template/"><b>Free invoice template</b><span>A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.</span></a><a href="/tools/how-to-write-an-invoice/"><b>How to write an invoice</b><span>How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.</span></a><a href="/blog/payment-qr-code-on-invoice/"><b>Add a Payment QR Code to an Invoice and Get Paid Faster</b><span>What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.</span></a><a href="/blog/invoice-vs-estimate-vs-quote/"><b>Invoice vs Estimate vs Quote: What&#x27;s the Difference?</b><span>The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.</span></a></div>
+</section>
 <section class="sec" id="languages" aria-labelledby="h-langs">
   <p class="label" id="h-langs">This page in other languages</p>
   <ul class="langs">
       <li><a href="/invoiceqr/" hreflang="en" lang="en" aria-current="page">English</a></li>
       <li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li>
-      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
-      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li>
       <li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
-      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
       <li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li>
-      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
       <li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko">한국어</a></li>
+      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
   </ul>
 </section>
 
 <section class="sec" id="more" aria-labelledby="h-more">
   <h2 id="h-more">More from go ka</h2>
   <div class="others">
-      <a href="/countdown/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
-      <a href="/beforego/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/countdown/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/beforego/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8a/1f/98/8a1f9850-7a0b-0cc7-376b-e0293f0eb840/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
       <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
       <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
-      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
-      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
   </div>
 </section>
 
@@ -345,9 +377,10 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 <footer>
   <div class="wrap">
     <p>Smart Invoice &amp; Estimate Maker is made by go ka. Questions or feedback: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p class="social">Follow go ka: <a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></p>
     <p><a href="/invoiceqr/privacy-policy/">Privacy Policy</a> · <a href="/invoiceqr/terms-of-service/">Terms of Use</a> · <a href="/">go ka</a></p>
   </div>
 </footer>
-<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
 </body>
 </html>

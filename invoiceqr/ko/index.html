@@ -11,7 +11,7 @@
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-<link rel="preload" as="image" href="/assets/invoiceqr/preview/en.jpg">
+<link rel="preload" as="image" href="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/460x0w.webp" imagesrcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/920x0w.webp 920w" imagesizes="(max-width:760px) 72vw, 360px">
 <style>
 @font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
 @font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -26,9 +26,13 @@ a{color:inherit}img,video,svg{display:block;max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
 .brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
-.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
 html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
 html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
 .nav a:hover{background:var(--cream)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
 .hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
@@ -38,8 +42,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -48,7 +52,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
-.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
 .feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
 .feat p{margin:0 0 10px;color:var(--muted)}
@@ -61,6 +65,10 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
@@ -68,29 +76,29 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.">
-<link rel="canonical" href="https://goka-xi.vercel.app/invoiceqr/ko/">
-<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/invoiceqr/">
-<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/invoiceqr/de/">
-<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/invoiceqr/fr/">
-<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/invoiceqr/it/">
-<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/invoiceqr/es/">
-<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/invoiceqr/es-mx/">
-<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/invoiceqr/pt-br/">
-<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/invoiceqr/ja/">
-<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/invoiceqr/ko/">
-<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/invoiceqr/zh-hant/">
-<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/invoiceqr/th/">
-<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/invoiceqr/">
+<link rel="canonical" href="https://beforego.art/invoiceqr/ko/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/invoiceqr/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/invoiceqr/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/invoiceqr/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/invoiceqr/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/invoiceqr/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/invoiceqr/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/invoiceqr/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/invoiceqr/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/invoiceqr/ko/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/invoiceqr/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/invoiceqr/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/invoiceqr/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="프리랜서 청구서·견적서·영수증 — 청구서, 견적서, 결제 QR을 몇 분 안에">
 <meta property="og:description" content="iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.">
-<meta property="og:url" content="https://goka-xi.vercel.app/invoiceqr/ko/">
+<meta property="og:url" content="https://beforego.art/invoiceqr/ko/">
 <meta property="og:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg">
@@ -101,22 +109,22 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://goka-xi.vercel.app/invoiceqr/ko/#app",
+  "@id": "https://beforego.art/invoiceqr/ko/#app",
   "name": "프리랜서 청구서·견적서·영수증",
   "alternateName": "Invoice Maker",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "iOS 17.0 or later",
   "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
-  "url": "https://goka-xi.vercel.app/invoiceqr/ko/",
+  "url": "https://beforego.art/invoiceqr/ko/",
   "inLanguage": "ko",
   "author": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "publisher": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "offers": {
@@ -142,8 +150,8 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     "@type": "VideoObject",
     "name": "프리랜서 청구서·견적서·영수증 — app preview",
     "description": "프리랜서와 소상공인이 청구서·견적서·거래명세서·영수증을 빠르게 만들고, 내장된 결제 QR코드로 더 빨리 대금을 받도록 돕는 앱입니다.",
-    "thumbnailUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.jpg",
-    "contentUrl": "https://goka-xi.vercel.app/assets/invoiceqr/preview/en.mp4",
+    "thumbnailUrl": "https://beforego.art/assets/invoiceqr/preview/en.jpg",
+    "contentUrl": "https://beforego.art/assets/invoiceqr/preview/en.mp4",
     "uploadDate": "2026-09-25",
     "inLanguage": "ko"
   }
@@ -153,7 +161,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/invoiceqr/ko/#faq",
+  "@id": "https://beforego.art/invoiceqr/ko/#faq",
   "inLanguage": "ko",
   "mainEntity": [
     {
@@ -161,7 +169,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "계정 가입 없이 쓸 수 있는 iPhone 청구서 앱이 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "있습니다. 프리랜서 청구서·견적서·영수증은 계정이 없고 가입도 없으며 오프라인으로 작동합니다. 청구서·고객·QR코드는 필요하면 자신의 iCloud로 동기화되어 여러 기기에서 사용할 수 있습니다."
+        "text": "있습니다. 프리랜서 청구서·견적서·영수증은 계정도 가입도 필요 없고 오프라인에서도 작동합니다. 여러 기기에서 쓰려면 청구서·고객·QR 코드가 본인의 iCloud로 동기화됩니다."
       }
     },
     {
@@ -169,7 +177,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "무료로 청구서를 몇 개까지 만들 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "월 3개 문서. 카운트는 작성 시(발송 시가 아님)에 증가하며, 견적서와 제안서는 청구서와 같은 월별 한도를 공유합니다. 작성한 문서는 1회만 계산되므로 나중에 편집하거나 재발송하는 것은 무료입니다."
+        "text": "3건을 무료로 작성 — 계정 가입 없이. 이 3건은 매달이 아니라 전체 기준입니다. 청구서·견적서·제안서가 같은 한도를 함께 씁니다 (거래명세서는 한도를 쓰지 않습니다). 작성할 때 차감되며 건당 한 번만 — 나중에 편집하거나 다시 보내도 추가로 차감되지 않습니다."
       }
     },
     {
@@ -185,7 +193,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "견적서나 제안서를 청구서로 바꿀 수 있나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네, 한 번의 탭으로. 고객·품목·세율은 한 번만 저장하고 재사용하며, 할인·배송·결제 수단·재사용 가능한 조건을 추가할 수 있습니다."
+        "text": "네, 탭 한 번이면 됩니다. 고객·품목·세율은 한 번 저장해 두고 재사용할 수 있고, 할인·배송비·결제 수단·자주 쓰는 약관도 추가할 수 있습니다."
       }
     },
     {
@@ -193,7 +201,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "결제 외에 다른 QR코드도 만드나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "네. QR 스튜디오에 12가지 유형이 있습니다. 링크·Wi-Fi·연락처·이메일·전화·SMS·채팅·위치·달력·텍스트·결제·Pix이며, 준비된 디자인은 16가지고 이 중 4가지는 무료입니다."
+        "text": "12가지 QR: 링크, Wi-Fi, 명함, 이메일, 전화, 문자, 채팅, 위치, 일정, 텍스트, 결제, Pix. 완성 디자인 16종 — 포스터, 메뉴 카드, 세일 택, 네온, 명함 등에 색상·점·프레임·그러데이션까지 직접 조정."
       }
     },
     {
@@ -209,7 +217,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
       "name": "Pro는 뭘 열어주나요?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "청구서와 QR 내보내기 무제한, 20개 청구서 템플릿, 12가지 QR 스타일과 16가지 디자인, 완전한 브랜드 키트(색상·글꼴·로고), 맞춤형 QR 색상·점·프레임을 제공합니다."
+        "text": "무제한 청구서 및 QR 내보내기. 100+가지 청구서 템플릿, 12+가지 QR 스타일, 완성 디자인 16+종 전체. 완전한 브랜드 키트 — 색상·글꼴·로고. QR 색상·점·프레임 커스텀. 내보낸 파일에서 앱 이름 문구 제거."
       }
     }
   ]
@@ -221,12 +229,16 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </head>
 <body>
 <header class="wrap top">
-  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <a class="brand" href="/ko/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
-    <a href="/">모든 앱</a>
-    <a href="/invoiceqr/privacy-policy/">개인정보</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Invoice Maker">지원</a>
+    <a href="/ko/">모든 앱</a>
+    <a href="/tools/">도구</a>
+    <a href="/blog/">블로그</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Invoice%20Maker">지원</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">한국어</span><span class="ln-code">KO</span></summary><ul><li><a href="/invoiceqr/" hreflang="en" lang="en">English</a></li><li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li><li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main class="wrap">
@@ -238,9 +250,21 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store에서 다운로드</a>
     <ul class="chips"><li>무료로 다운로드</li><li>iPhone 및 iPad</li><li>iOS 17 이상</li><li>계정 불필요</li></ul>
   </div>
-  <div class="hero-media"><video controls playsinline preload="none" poster="/assets/invoiceqr/preview/en.jpg" aria-label="프리랜서 청구서·견적서·영수증 — 앱 미리보기"><source src="/assets/invoiceqr/preview/en.mp4" type="video/mp4"></video><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/ce/c3/80cec31d-00c7-95a8-2fc9-54db5bc56224/05-templates.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="프리랜서 청구서·견적서·영수증 — 스크린샷 1" fetchpriority="high"></div>
 </section>
 
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">주요 기능</h2>
+  <div class="hls">
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/ef/9f/50ef9f0c-3b77-49c4-0a8a-4a20f823b520/02-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/ef/9f/50ef9f0c-3b77-49c4-0a8a-4a20f823b520/02-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/50/ef/9f/50ef9f0c-3b77-49c4-0a8a-4a20f823b520/02-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="몇 분 만에 청구서 작성"></figure><div><h3>몇 분 만에 청구서 작성</h3><p>100가지 이상 템플릿 중 하나를 고르고 고객과 항목을 채워 깔끔한 PDF로 공유하세요. 견적서를 먼저 보내고, 확정되면 한 번의 탭으로 청구서로 전환할 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/35/28/7035289c-f4ef-a3ee-fe89-8c2e97015347/12-scan-invoice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/35/28/7035289c-f4ef-a3ee-fe89-8c2e97015347/12-scan-invoice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/70/35/28/7035289c-f4ef-a3ee-fe89-8c2e97015347/12-scan-invoice.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="종이 청구서 스캔"></figure><div><h3>종이 청구서 스캔</h3><p>종이 청구서를 촬영하거나 사진을 선택하면 편집 가능한 초안이 됩니다. 인식은 기기에서 이루어지며, 선택 사항인 AI 검토를 요청할 때만 해당 페이지가 Google로 전송됩니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/f1/28/86f12823-6fc3-8b8d-fb86-2f776cd641c6/08-payment.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/f1/28/86f12823-6fc3-8b8d-fb86-2f776cd641c6/08-payment.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/f1/28/86f12823-6fc3-8b8d-fb86-2f776cd641c6/08-payment.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="스캔으로 결제"></figure><div><h3>스캔으로 결제</h3><p>모든 청구서에 고객이 스캔해 결제하는 QR코드를 넣을 수 있습니다. 결제 완료·미결제·부분 결제·연체 상태를 한눈에 확인하고, 결제된 청구서는 그대로 영수증으로 공유할 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/cb/36/b6cb36d1-c76e-0507-c0a8-817a0270a8c7/09-reports.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/cb/36/b6cb36d1-c76e-0507-c0a8-817a0270a8c7/09-reports.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/cb/36/b6cb36d1-c76e-0507-c0a8-817a0270a8c7/09-reports.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="아직 받지 못한 금액을 한눈에"></figure><div><h3>아직 받지 못한 금액을 한눈에</h3><p>매출 리포트로 월별 수입, 주요 고객, 아직 받지 못한 금액을 한눈에 확인할 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/53/d9/1753d956-8c46-d734-dda2-74bbaa73b519/07-brand-kit.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/53/d9/1753d956-8c46-d734-dda2-74bbaa73b519/07-brand-kit.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/53/d9/1753d956-8c46-d734-dda2-74bbaa73b519/07-brand-kit.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="모든 곳에 나의 브랜드"></figure><div><h3>모든 곳에 나의 브랜드</h3><p>로고, 브랜드 색상, 글꼴을 한 번만 설정하면 청구서·템플릿·QR 디자인에 자동으로 반영됩니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/13/28/37132808-cca5-f852-2eea-8724cfe0d11e/03-qr-designer.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/13/28/37132808-cca5-f852-2eea-8724cfe0d11e/03-qr-designer.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/13/28/37132808-cca5-f852-2eea-8724cfe0d11e/03-qr-designer.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="QR코드 스튜디오까지"></figure><div><h3>QR코드 스튜디오까지</h3><p>링크와 Wi-Fi부터 결제와 Pix까지 QR 12가지, 완성 디자인 16종. 명암비와 여백을 자동으로 검사해 언제나 스캔할 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/db/0a/5bdb0ace-c5e6-81ef-0114-2328a6c08452/11-widgets.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/db/0a/5bdb0ace-c5e6-81ef-0114-2328a6c08452/11-widgets.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/db/0a/5bdb0ace-c5e6-81ef-0114-2328a6c08452/11-widgets.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="홈 화면에서 바로"></figure><div><h3>홈 화면에서 바로</h3><p>위젯 3종: 미수금 현황, 빠른 만들기, 그리고 꺼내 보여주면 바로 스캔할 수 있는 결제 QR입니다.</p></div></div>
+  </div>
+</section>
 <section class="sec" id="screenshots" aria-labelledby="h-screens">
   <h2 id="h-screens">스크린샷</h2>
   <ul class="shots">
@@ -258,31 +282,35 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">포함 내용</h2>
+  <h2 id="h-features">세부 사항 – App Store에 쓰인 대로</h2>
   <div class="feats">
     <div class="feat"><h3>몇 분 만에 청구서 작성</h3><ul><li>100+가지 템플릿 중 하나를 고르고 고객과 항목을 채워 깔끔한 PDF로 공유</li><li>종이 청구서를 촬영하거나 사진을 선택하면 편집 가능한 초안이 됩니다. 인식은 기기에서 이루어집니다 — 선택 사항인 AI 검토를 요청할 때만 해당 페이지가 Google로 전송됩니다</li><li>견적서를 먼저 보내고, 확정되면 한 번의 탭으로 청구서로 전환</li><li>물품을 건넬 때는 거래명세서 — 품목·수량·단가·합계를 적고, 받는 분의 수령 서명을 화면에서 바로 받습니다. 청구할 때 한 번의 탭으로 청구서로 전환</li><li>고객, 항목, 세율을 저장해 원탭으로 재사용</li><li>할인, 배송비, 결제 수단, 자주 쓰는 약관을 청구서에 바로 적용</li><li>iPhone 화면에 직접 손글씨로 서명</li></ul></div>
     <div class="feat"><h3>스캔으로 결제</h3><ul><li>모든 청구서에 고객이 스캔해 결제하는 QR코드를 넣을 수 있습니다</li><li>결제 완료·미결제·부분 결제·연체 상태를 한눈에 확인</li><li>입금을 기록해 미수 잔액을 정확하게 관리</li><li>매출 리포트로 월별 수입, 주요 고객, 아직 받지 못한 금액을 한눈에 확인</li><li>전액 결제된 청구서는 그대로 영수증으로 공유할 수 있습니다 — 같은 문서에 결제 완료 표시와 결제일이 함께 들어갑니다</li></ul></div>
     <div class="feat"><h3>모든 곳에 나의 브랜드</h3><ul><li>로고, 브랜드 색상, 글꼴을 한 번만 설정</li><li>청구서·템플릿·QR 디자인에 자동 적용</li></ul></div>
-    <div class="feat"><h3>Qr코드 스튜디오까지</h3><ul><li>12가지 QR: 링크, Wi-Fi, 명함, 이메일, 전화, 문자, 채팅, 위치, 일정, 텍스트, 결제, Pix</li><li>완성 디자인 16종 — 포스터, 메뉴 카드, 세일 택, 네온, 명함 등에 색상·점·프레임·그러데이션까지 직접 조정</li><li>명암비와 여백을 자동으로 검사해 언제나 스캔되고, 이미지로 내보내 공유하거나 인쇄해 매장에 비치</li></ul></div>
+    <div class="feat"><h3>QR코드 스튜디오까지</h3><ul><li>12가지 QR: 링크, Wi-Fi, 명함, 이메일, 전화, 문자, 채팅, 위치, 일정, 텍스트, 결제, Pix</li><li>완성 디자인 16종 — 포스터, 메뉴 카드, 세일 택, 네온, 명함 등에 색상·점·프레임·그러데이션까지 직접 조정</li><li>명암비와 여백을 자동으로 검사해 언제나 스캔되고, 이미지로 내보내 공유하거나 인쇄해 매장에 비치</li></ul></div>
     <div class="feat"><h3>홈 화면에서 바로</h3><ul><li>위젯 3종: 미수금 현황, 빠른 만들기, 바로 보여줄 수 있는 결제 QR</li><li>코드가 크게 표시되어 앱을 열지 않아도 스캔할 수 있습니다</li><li>배경 50종, 글꼴과 글자 색상도 선택 가능</li></ul></div>
     <div class="feat"><h3>안전하게, 항상 동기화</h3><ul><li>청구서·고객·QR코드가 내 iCloud를 통해 비공개로 동기화</li><li>새 iPhone으로 바꿔도 열면 그대로 이어서 작업</li><li>최근 삭제 항목은 30일간 보관되어 실수로 지워도 복구 가능</li><li>계정 가입 없이, 오프라인에서도 사용</li><li>11개 표시 언어, 라이트·다크 모드 지원</li></ul></div>
     <div class="feat"><h3>무료로 시작</h3><ul><li>3건을 무료로 작성 — 계정 가입 없이</li><li>이 3건은 매달이 아니라 전체 기준입니다. 청구서·견적서·제안서가 같은 한도를 함께 씁니다 (거래명세서는 한도를 쓰지 않습니다)</li><li>작성할 때 차감되며 건당 한 번만 — 나중에 편집하거나 다시 보내도 추가로 차감되지 않습니다</li><li>완성 디자인 16종 중 4종은 Pro 없이 무료로 쓸 수 있습니다</li><li>내보낸 파일에는 페이지 아래에 앱 이름이 적힌 작은 문구가 들어갑니다 — Pro에서 끌 수 있습니다</li></ul></div>
-    <div class="feat"><h3>Pro</h3><ul><li>무제한 청구서 및 QR 내보내기</li><li>100+가지 청구서 템플릿, 12+가지 QR 스타일, 완성 디자인 16+종 전체</li><li>완전한 브랜드 키트 — 색상·글꼴·로고</li><li>QR 색상·점·프레임 커스텀</li><li>내보낸 파일에서 앱 이름 문구 제거</li></ul><p>문의나 의견이 있으면 이 페이지의 지원 링크로 알려주세요.</p><p>Privacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/ Terms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/</p></div>
+    <div class="feat"><h3>Pro</h3><ul><li>무제한 청구서 및 QR 내보내기</li><li>100+가지 청구서 템플릿, 12+가지 QR 스타일, 완성 디자인 16+종 전체</li><li>완전한 브랜드 키트 — 색상·글꼴·로고</li><li>QR 색상·점·프레임 커스텀</li><li>내보낸 파일에서 앱 이름 문구 제거</li></ul><p>문의나 의견이 있으면 이 페이지의 지원 링크로 알려주세요.</p></div>
   </div>
 
 </section>
 
+<section class="sec" id="whats-new" aria-labelledby="h-new">
+  <h2 id="h-new">버전 1.1.17의 새로운 기능</h2>
+  <div class="news"><ul><li>첫 청구서가 완성된 샘플로 열립니다. 고객과 항목만 바꾸면 내 청구서가 됩니다.</li><li>나에게 보내기: 고객에게 보내기 전에 PDF를 내 휴대폰, 파일 앱, 이메일로 받아 보세요.</li><li>첫 문서에서는 Pro를 포함한 모든 템플릿을 쓸 수 있습니다.</li><li>알림: 만들어 두고 아직 보내지 않은 청구서를 알려 드립니다(기한 알림과 함께).</li></ul></div>
+</section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
   <h2 id="faq">자주 묻는 질문</h2>
   <div class="grid">
     <div class="card">
       <h3>계정 가입 없이 쓸 수 있는 iPhone 청구서 앱이 있나요?</h3>
-      <p>있습니다. 프리랜서 청구서·견적서·영수증은 계정이 없고 가입도 없으며 오프라인으로 작동합니다. 청구서·고객·QR코드는 필요하면 자신의 iCloud로 동기화되어 여러 기기에서 사용할 수 있습니다.</p>
+      <p>있습니다. 프리랜서 청구서·견적서·영수증은 계정도 가입도 필요 없고 오프라인에서도 작동합니다. 여러 기기에서 쓰려면 청구서·고객·QR 코드가 본인의 iCloud로 동기화됩니다.</p>
     </div>
     <div class="card">
       <h3>무료로 청구서를 몇 개까지 만들 수 있나요?</h3>
-      <p>월 3개 문서. 카운트는 작성 시(발송 시가 아님)에 증가하며, 견적서와 제안서는 청구서와 같은 월별 한도를 공유합니다. 작성한 문서는 1회만 계산되므로 나중에 편집하거나 재발송하는 것은 무료입니다.</p>
+      <p>3건을 무료로 작성 — 계정 가입 없이. 이 3건은 매달이 아니라 전체 기준입니다. 청구서·견적서·제안서가 같은 한도를 함께 씁니다 (거래명세서는 한도를 쓰지 않습니다). 작성할 때 차감되며 건당 한 번만 — 나중에 편집하거나 다시 보내도 추가로 차감되지 않습니다.</p>
     </div>
     <div class="card">
       <h3>고객이 청구서에서 바로 결제할 수 있나요?</h3>
@@ -290,11 +318,11 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     </div>
     <div class="card">
       <h3>견적서나 제안서를 청구서로 바꿀 수 있나요?</h3>
-      <p>네, 한 번의 탭으로. 고객·품목·세율은 한 번만 저장하고 재사용하며, 할인·배송·결제 수단·재사용 가능한 조건을 추가할 수 있습니다.</p>
+      <p>네, 탭 한 번이면 됩니다. 고객·품목·세율은 한 번 저장해 두고 재사용할 수 있고, 할인·배송비·결제 수단·자주 쓰는 약관도 추가할 수 있습니다.</p>
     </div>
     <div class="card">
       <h3>결제 외에 다른 QR코드도 만드나요?</h3>
-      <p>네. QR 스튜디오에 12가지 유형이 있습니다. 링크·Wi-Fi·연락처·이메일·전화·SMS·채팅·위치·달력·텍스트·결제·Pix이며, 준비된 디자인은 16가지고 이 중 4가지는 무료입니다.</p>
+      <p>12가지 QR: 링크, Wi-Fi, 명함, 이메일, 전화, 문자, 채팅, 위치, 일정, 텍스트, 결제, Pix. 완성 디자인 16종 — 포스터, 메뉴 카드, 세일 택, 네온, 명함 등에 색상·점·프레임·그러데이션까지 직접 조정.</p>
     </div>
     <div class="card">
       <h3>실수로 삭제한 청구서를 복구할 수 있나요?</h3>
@@ -302,38 +330,38 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
     </div>
     <div class="card">
       <h3>Pro는 뭘 열어주나요?</h3>
-      <p>청구서와 QR 내보내기 무제한, 20개 청구서 템플릿, 12가지 QR 스타일과 16가지 디자인, 완전한 브랜드 키트(색상·글꼴·로고), 맞춤형 QR 색상·점·프레임을 제공합니다.</p>
+      <p>무제한 청구서 및 QR 내보내기. 100+가지 청구서 템플릿, 12+가지 QR 스타일, 완성 디자인 16+종 전체. 완전한 브랜드 키트 — 색상·글꼴·로고. QR 색상·점·프레임 커스텀. 내보낸 파일에서 앱 이름 문구 제거.</p>
     </div>
   </div>
   <!-- faq:end -->
 </section>
 
 <section class="sec" id="languages" aria-labelledby="h-langs">
-  <p class="label" id="h-langs">다른 언어로 된 이 페이지</p>
+  <p class="label" id="h-langs">다른 언어로 보기</p>
   <ul class="langs">
       <li><a href="/invoiceqr/" hreflang="en" lang="en">English</a></li>
       <li><a href="/invoiceqr/de/" hreflang="de" lang="de">Deutsch</a></li>
-      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
-      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/invoiceqr/fr/" hreflang="fr" lang="fr">Français</a></li>
       <li><a href="/invoiceqr/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/invoiceqr/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/invoiceqr/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/invoiceqr/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
-      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
       <li><a href="/invoiceqr/ja/" hreflang="ja" lang="ja">日本語</a></li>
-      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
       <li><a href="/invoiceqr/ko/" hreflang="ko" lang="ko" aria-current="page">한국어</a></li>
+      <li><a href="/invoiceqr/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+      <li><a href="/invoiceqr/th/" hreflang="th" lang="th">ไทย</a></li>
   </ul>
 </section>
 
 <section class="sec" id="more" aria-labelledby="h-more">
-  <h2 id="h-more">go ka에서 더 보기</h2>
+  <h2 id="h-more">go ka의 다른 앱</h2>
   <div class="others">
-      <a href="/countdown/ko/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
-      <a href="/beforego/ko/"><img src="/assets/beforego/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
-      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
-      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
-      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
-      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+      <a href="/countdown/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>여행·수능·생일까지 남은 날과 추억</small></span></a>
+      <a href="/beforego/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8a/1f/98/8a1f9850-7a0b-0cc7-376b-e0293f0eb840/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>캡처 한 장으로 여행 일정 완성</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>AI 사진 칼로리 계산·식단 기록</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>디자인 QR 생성기 · 스캔 · 명함</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>초1~중3 단어 게임</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>1,324개 운동 · 오프라인 기록</small></span></a>
   </div>
 </section>
 
@@ -344,10 +372,11 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 
 <footer>
   <div class="wrap">
-    <p>프리랜서 청구서·견적서·영수증은(는) go ka에서 제작합니다. 질문 또는 피드백: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
-    <p><a href="/invoiceqr/privacy-policy/">개인정보 보호정책</a> · <a href="/invoiceqr/terms-of-service/">이용약관</a> · <a href="/">go ka</a></p>
+    <p>프리랜서 청구서·견적서·영수증 — go ka 제작. 질문 또는 피드백: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p class="social">go ka 팔로우: <a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></p>
+    <p><a href="/invoiceqr/privacy-policy/">개인정보 보호정책</a> · <a href="/invoiceqr/terms-of-service/">이용약관</a> · <a href="/ko/">go ka</a></p>
   </div>
 </footer>
-<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
 </body>
 </html>

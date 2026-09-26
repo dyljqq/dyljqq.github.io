@@ -7,8 +7,9 @@ cd "$(dirname "$0")/.."
 export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh" >/dev/null 2>&1; nvm use 22.23.1 >/dev/null 2>&1
 VERCEL="npx -y --registry=https://registry.npmjs.org vercel@latest"   # 默认 npm 源 npmmirror 上解析不到 vercel@latest
 
-python3 tools/build_pages.py | tail -1
 python3 tools/build_tools.py | tail -1
+python3 tools/build_pages.py | tail -1
+python3 tools/build_home.py | tail -1
 python3 tools/build_seo.py | head -1
 python3 tools/check_structure.py .
 

@@ -489,7 +489,56 @@
   "ratingCount": 0,
   "fetched": "2026-09-26"
  },
- "zh-Hans": null,
+ "zh-Hans": {
+  "storefront": "sg",
+  "name": "开单、报价单、收据、送货单生成器",
+  "version": "1.1.17",
+  "releaseNotes": "• 第一张发票打开时就是一张填好的示例：改掉客户和这一行，它就是你的了。\n• 发给自己：发给客户之前，先把 PDF 传到自己的手机、「文件」或邮箱。\n• 第一份单据可以用任何模板，包括 Pro 模板。\n• 提醒：做好还没发出去的发票会提醒你，到期提醒照旧。",
+  "description": "帮助自由职业者和小微商家几分钟开出专业的账单、估价单与报价单，并用内置的收款二维码更快收到钱。\n\n几分钟完成开单\n• 从 100+ 款模板中挑一款，填好客户与项目，直接导出精致的 PDF\n• 拍下纸质发票，或从相册选一张照片，它就会变成可编辑的草稿——识别在设备本地完成；只有你主动使用可选的 AI 核对时，这一页才会发送给 Google\n• 先发估价单或报价单，客户确认后一键转成账单\n• 客户、项目与税率一次保存，随时复用\n• 折扣、运费、收款方式与常用条款，随开随选\n• 直接在 iPhone 上手写签名，签完即生效\n\n扫码即付\n• 每份账单都可附带收款二维码，客户扫码直接付款\n• 已付、未付、部分付款、逾期状态一目了然\n• 记录每笔回款，余额始终清晰\n• 销售报表按月看收入、看大客户，也看还有多少没收回来\n• 收款结清后，同一份账单可直接当作收据分享——标记为已付，并带上结清日期\n\n品牌贯穿始终\n• 一次设置 Logo、品牌色与字体\n• 账单、模板与二维码设计自动应用你的品牌\n\n还有二维码工作室\n• 12 种二维码：链接、WiFi、名片、邮件、电话、短信、聊天、定位、日历、文本、收款与 Pix\n• 16 款现成设计：海报、菜单卡、促销吊牌、霓虹、名片等，另可自定义颜色、码点、边框与渐变\n• 每个设计都会校验对比度与静默区，保证始终能扫出来；可导出为图片，用于分享、打印或做成台卡\n\n桌面小组件\n• 三款小组件：应收与逾期、快捷新建、随时可扫的收款码\n• 收款码在桌面上就足够大，不用打开 App 也能让对方扫\n• 50 款背景可选，字体与文字颜色也随你定\n\n数据安全，随身同步\n• 账单、客户与二维码通过你自己的 iCloud 私密同步\n• 换新 iPhone，打开就在，不用手动搬家\n• 最近删除保留 30 天，误删也能找回来\n• 无需注册账号，离线也能用\n• 支持 13 种界面语言，浅色与深色外观\n\n免费开始使用\n• 免费新建 3 份，无需注册账号\n• 这 3 份是一共，不是每月都有；账单、估价单与报价单共用这份额度\n• 新建时计次，同一份只计一次——之后编辑或再次发送都不再计\n• 16 款现成设计里有 4 款免费，不开 Pro 也能用\n• 导出的文件页脚有一行小字署名，开通 Pro 可以关掉\n\nPro 会员\n• 无限账单与二维码导出\n• 100+ 款账单模板、12+ 款二维码样式与 16+ 款现成设计\n• 完整品牌套件 — 颜色、字体与 Logo\n• 自定义二维码样式\n• 去掉导出文件页脚的应用署名\n\n\n注：本应用用于创建商业账单/请款单，不用于开具税务发票。\n\nPrivacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/\nTerms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/79/8a/4e/798a4ef2-0db8-eb37-60c5-7b2013251d0b/02-invoice.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/77/21/d477219a-99f1-ef0e-06de-4346a889b101/05-templates.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9a/74/f2/9a74f25a-4652-d1d0-9e7c-3cde44f54329/01-home.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ed/40/6f/ed406f9e-39fe-5fe3-6fd3-d0c100b5f40e/12-scan-invoice.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/82/31/91823186-7fec-67b1-7279-12a487423f66/08-payment.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1c/98/16/1c9816b0-b027-3d09-6bd6-92fc0cdfc7f8/09-reports.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/b8/7d/06b87df0-6038-d328-51eb-19355aaea9c4/06-invoice-design.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/15/71/cd/1571cd2d-ab2a-b8ee-820b-71dfba8df816/07-brand-kit.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/83/c5/e4/83c5e4b5-9eeb-dfc0-d269-e382d96505df/11-widgets.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d9/02/34/d9023482-9e36-a02b-e875-1e53ae11db97/03-qr-designer.png/320x480bb.jpg"
+  ],
+  "ipad": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/df/c5/49/dfc54980-31b0-fae7-5292-231909cc6155/02-invoice.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e0/1e/93/e01e9371-a3b8-2685-7007-31ecf2aa8f57/05-templates.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b0/05/3b/b0053b41-007c-07b7-1874-28b68901ff69/01-home.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d3/86/78/d38678bb-d734-5397-5e1c-92f558c33fcf/12-scan-invoice.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/2f/34/b92f3486-00e2-07f0-551d-e75a36649056/08-payment.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/79/0e/e9790e61-6a2e-9268-6905-5864ccb2231d/09-reports.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/d5/97/2dd5975f-4bac-c32b-ec52-84e54eda2431/06-invoice-design.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/13/0e/ea/130eea5a-26e9-7480-02e0-dbaeeb4fdc7b/07-brand-kit.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/24/3c/0d243c25-9548-6a68-0c2e-bfa2cef11dd5/11-widgets.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/37/a7/ee/37a7ee14-f429-9807-df0c-26a57f807609/03-qr-designer.png/360x480bb.jpg"
+  ],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/a5/0d/59a50d64-478d-ca8f-1d9e-22d7a27354de/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN",
+   "FR",
+   "DE",
+   "IT",
+   "JA",
+   "KO",
+   "PT",
+   "ZH",
+   "ES",
+   "TH",
+   "ZH"
+  ],
+  "rating": 0,
+  "ratingCount": 0,
+  "fetched": "2026-09-26",
+  "note": "国区（cn）查不到这个 app；简中取新加坡区的简中本地化"
+ },
  "zh-Hant": {
   "storefront": "tw",
   "name": "開單、報價單、收據、送貨單產生器",

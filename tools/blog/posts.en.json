@@ -1,0 +1,354 @@
+{
+ "posts": [
+  {
+   "slug": "countdown-widget-iphone-home-lock-screen",
+   "app": "countdown",
+   "title": "Add a Countdown to Your iPhone Home Screen and Lock Screen",
+   "description": "Here is how to add a countdown widget to your iPhone Home Screen and Lock Screen, plus what Live Activity adds on top of it.",
+   "h1": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
+   "intro": "You add a countdown to your iPhone Home Screen by touching and holding an empty area until the icons jiggle, tapping Edit and then Add Widget (the + button on iOS 17), and choosing a countdown widget; the Lock Screen works the same way through Customize. Once it is placed you can move it, add another size next to it, and point it at any event you have set up in a countdown app such as Countdown Widget: Any Event (Countdown).",
+   "sections": [
+    {
+     "h2": "Add a widget to your Home Screen",
+     "html": "<p>The steps are the same for any app with widgets; only the second step differs between iOS versions:</p><ol><li>Touch and hold an empty area of the Home Screen until the apps start to jiggle.</li><li>On iOS 18, tap <strong>Edit</strong> in the top-left corner, then <strong>Add Widget</strong>. On iOS 17, tap the <strong>+</strong> button in the top-left corner.</li><li>Search for Countdown, then swipe to pick a widget and size.</li><li>Tap <strong>Add Widget</strong>, then drag it to where you want it.</li><li>Tap <strong>Done</strong> to lock the layout back in.</li></ol><p>If you change your mind about placement later, touch and hold the widget itself and choose <strong>Edit Home Screen</strong>, or drag it to a different spot while the icons are still jiggling. Removing a widget works the same way any app icon does — touch and hold, then tap <strong>Remove Widget</strong> — and it never deletes the event behind it, only the widget showing it.</p>"
+    },
+    {
+     "h2": "Add a widget to your Lock Screen",
+     "html": "<p>Lock Screen widgets go on the same way, from the Lock Screen itself, and iOS treats them as a separate layout from your Home Screen:</p><ol><li>Touch and hold the Lock Screen until <strong>Customize</strong> appears, then tap it (or tap the pencil icon).</li><li>Tap the widget area under the clock, or below your existing widgets.</li><li>Find Countdown in the list and choose a widget.</li><li>Tap the checkmark or outside the editor to save.</li></ol><p>The same event can sit on both screens at once — they are independent widgets, not one shared placement, so you could keep a small tile on the Lock Screen for a glance and a larger one on the Home Screen for more detail.</p>"
+    },
+    {
+     "h2": "Which Countdown widget to choose",
+     "html": "<p>Countdown offers four widget types: one countdown, a list of the next few events coming up, a spotlight widget, and a tile for each event. Every widget size is available on both the Home Screen and the Lock Screen, and none of them are locked behind a subscription — the app's own listing puts it plainly as \"every widget, free.\" There is also no limit on how many events you can track, so you can keep a birthday, a trip and a work deadline all counting down at the same time, each in its own widget if you'd rather not scroll through a list.</p><p>The list widget is worth a mention on its own: instead of dedicating a widget to every single event, it shows the next few in order, which tends to fit better on a Home Screen that already has other apps competing for space. The spotlight widget goes the other way, giving one event the most visual room, which suits whichever date matters most right now.</p>"
+    },
+    {
+     "h2": "Live Activity: a countdown that runs on its own",
+     "html": "<p>A widget refreshes periodically, but a Live Activity keeps counting in real time on the Lock Screen and, on iPhones that have one, the Dynamic Island. From an event's own page you can pin it there and watch the days count down without opening the app at all. This is part of Countdown Pro, and it arrived in version 1.4.7, alongside a set of Halloween backdrops for the same release.</p><p>Because it lives in the Dynamic Island as well as the Lock Screen, a Live Activity tends to suit an event you're watching closely in its final stretch — the last day or two before a trip or an exam — rather than something you're tracking for months. A widget is the better fit for the long stretch beforehand, and you can switch to a Live Activity once the date is close.</p>"
+    },
+    {
+     "h2": "Set a reminder so the date doesn't sneak up on you",
+     "html": "<p>Widgets are easy to glance at, but a reminder makes sure you don't have to remember to look. Countdown lets you set a reminder for the day of the event itself, and as far ahead of it as you want — useful for a deadline you need to prepare for rather than just notice.</p><p>Events sync through iCloud with no account to create, so a widget you set up on one iPhone shows the same countdown on another, and there are no ads sitting alongside any of it. See the <a href=\"/countdown/\">Countdown app page</a> for the full feature list, or try the <a href=\"/tools/days-until/\">days-until calculator</a> if you just want a quick number without adding a widget yet.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Can I add more than one countdown widget?",
+     "a": "Yes. There is no limit on how many events Countdown can track, and you can place as many widgets as iOS allows on your Home Screen and Lock Screen."
+    },
+    {
+     "q": "Is the Lock Screen widget the same as Live Activity?",
+     "a": "No. The Lock Screen widget refreshes like any other widget, while Live Activity is a separate, real-time display on the Lock Screen and Dynamic Island, and it is part of Countdown Pro."
+    },
+    {
+     "q": "Do I need an account to sync my countdowns between devices?",
+     "a": "No. Countdown syncs privately through iCloud with no account or sign-up required."
+    },
+    {
+     "q": "What happens to my events if I get a new iPhone?",
+     "a": "iCloud sync is available with no account to make, and you can also import events from a calendar, a spreadsheet, or another countdown app."
+    }
+   ],
+   "keywords": [
+    "countdown widget iphone",
+    "add countdown to lock screen",
+    "iphone countdown app",
+    "live activity countdown",
+    "home screen widget ios"
+   ]
+  },
+  {
+   "slug": "count-down-birthday-exam-trip-iphone",
+   "app": "countdown",
+   "title": "Count Down to a Birthday, Exam or Trip on iPhone",
+   "description": "How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.",
+   "h1": "How to Count Down to a Birthday, an Exam or a Trip on iPhone",
+   "intro": "The quickest way to count down to a birthday, an exam or a trip on iPhone is to start from a ready-made template rather than building an event from scratch. Countdown Widget: Any Event (Countdown) ships with 36 of them, each already set to repeat the right way and remind you at the right time, so a birthday counts down every year without you resetting anything.",
+   "sections": [
+    {
+     "h2": "Start from a template",
+     "html": "<p>Countdown includes 36 ready-made events, from a birthday to a first day at work, each already configured with a sensible repeat and reminder. Picking one saves you from deciding how a birthday should repeat or when a reminder should fire — it is set up already, and you can still change any of it afterward. An exam or a trip is less likely to have an exact template match, but starting from the closest one and adjusting the name and date is still faster than building the reminders and repeat rule from nothing.</p>"
+    },
+    {
+     "h2": "Choose how the date repeats",
+     "html": "<p>An exam or a trip is usually a one-off, but plenty of events come back on a schedule. Countdown supports:</p><ul><li><strong>Yearly</strong> repeats, for birthdays and anniversaries.</li><li><strong>Monthly</strong> or <strong>weekly</strong> repeats, for recurring check-ins.</li><li><strong>Every few days</strong>, for anything on its own cycle.</li></ul><p>You can also flip the direction and count <em>up</em> from a date instead of down to one — handy for tracking how long ago a trip happened, how many days into a routine you are, or how long since a milestone, rather than how long until it starts.</p>"
+    },
+    {
+     "h2": "Set reminders before the day, not just on it",
+     "html": "<p>An exam benefits from a warning a week out; a trip benefits from one the night before you pack. Countdown lets you set a reminder for the day itself, and as far ahead of it as you want, so the same app that shows the number can also nudge you while there is still time to act on it, rather than only telling you something the morning it's already too late to prepare. The reminder and the widget can work together: the widget keeps the number visible day to day, and the reminder covers the moment you might otherwise be looking at something else entirely. Try the free <a href=\"/tools/days-until/\">days-until calculator</a> if you just want to check a date before deciding whether it needs a reminder at all.</p>"
+    },
+    {
+     "h2": "Make it look like the event, not a spreadsheet row",
+     "html": "<p>Countdown gives each event 200 drawn icons and the whole emoji keyboard to choose from, plus a hundred and forty full-screen backdrops — twenty-two of them photographs, and eighty-eight of the 140 in Countdown Pro. A birthday can carry its own icon and backdrop, an exam a different one, and a trip another, so the countdown for each one is easy to tell apart at a glance rather than reading the label every time — useful once you have more than one or two events on the same list widget and need to recognize them without stopping to read.</p>"
+    },
+    {
+     "h2": "Get a card worth sharing when the day arrives",
+     "html": "<p>When a countdown reaches a milestone — a hundred days out, a week out, or the morning of — the app opens straight to that number, full screen, with a card worth sharing. For a birthday or a trip that's a ready-made way to mark the moment; for an exam it's a small, blunt reminder that the day has actually arrived.</p>"
+    },
+    {
+     "h2": "Keep the story behind the date",
+     "html": "<p>Tap an event and it turns over to a page of its own, where you can write a few lines, add photos, or record a voice note — the story of the day, kept with the day. It syncs through iCloud, is included in every backup, and can be shared as a single picture, so an exam result or a trip memory stays attached to the countdown that led up to it. And because Countdown takes a snapshot of everything on the device every single day, with 30 days of history and one tap to restore, none of it depends on remembering to back anything up yourself — past events aren't deleted either, they collect into a timeline you can look back through.</p><p>If a birthday is already sitting in your calendar, or a list of exam dates is in a spreadsheet, you don't have to retype them one at a time, either — Countdown can import from a calendar, a spreadsheet, or another countdown app, and you can export your events again at any time, so switching to it doesn't mean losing dates you've already built up. See the full list of what's built in on the <a href=\"/countdown/\">Countdown app page</a>.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Can I make a birthday countdown repeat every year automatically?",
+     "a": "Yes. Set the event to repeat yearly and it resets on its own once the date passes, with no need to recreate it."
+    },
+    {
+     "q": "Can I count up instead of down, like days since a trip?",
+     "a": "Yes. Countdown supports counting up from a date as well as counting down to one."
+    },
+    {
+     "q": "What happens to a countdown after the date has passed?",
+     "a": "It is not deleted. Past events collect into a timeline you can look back through at any time."
+    },
+    {
+     "q": "Will I lose my countdowns if I switch phones?",
+     "a": "Not if iCloud sync is on: your events come back on the new iPhone through your own iCloud, with no account to make. The daily snapshot the app takes stays on the old device, so it protects against an update or reinstall rather than a phone change."
+    }
+   ],
+   "keywords": [
+    "countdown app iphone",
+    "countdown to birthday app",
+    "exam countdown app",
+    "trip countdown iphone",
+    "recurring countdown app"
+   ]
+  },
+  {
+   "slug": "payment-qr-code-on-invoice",
+   "app": "invoiceqr",
+   "title": "Add a Payment QR Code to an Invoice and Get Paid Faster",
+   "description": "What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.",
+   "h1": "How to Add a Payment QR Code to an Invoice (and Get Paid Faster)",
+   "intro": "A payment QR code on an invoice is a scannable code your client points their phone's camera at to open a payment app with the details already filled in, instead of typing an account number by hand. Smart Invoice & Estimate Maker (Invoice Maker) lets you put one on any invoice, so the invoice itself becomes the fastest way for a client to pay it.",
+   "sections": [
+    {
+     "h2": "What a payment QR code on an invoice does",
+     "html": "<p>Every invoice you create in Invoice Maker can carry a payment QR code. It sits on the document alongside the totals, so a client with a printed copy, or the invoice open on another screen, can scan it and pay without typing your account details.</p>"
+    },
+    {
+     "h2": "How a client actually pays with it",
+     "html": "<p>In general, a payment QR code encodes the details a payment app needs — when it is scanned with a phone's camera, the relevant banking or payment app opens with those details ready to confirm. Exactly which app opens depends on the client's own bank or payment provider and the QR type used, since payment QR formats vary by country and by bank, which is also why picking a QR type that matches the client's market matters more than picking one that looks a certain way. Invoice Maker doesn't process the payment itself or connect to a specific bank — it generates the QR code your client's own payment app then reads.</p>"
+    },
+    {
+     "h2": "Pick the QR type that fits the market",
+     "html": "<p>Invoice Maker's QR Studio can generate 12 QR types in total, including a general <strong>payment</strong> QR code and a <strong>Pix</strong> QR code for the format used in some markets, alongside link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar and text QR codes. Sixteen ready-made designs are available for how the code looks — poster, menu card, sale tag, neon, business card and more — and four of them are free to use, with the rest, along with custom colors, dots and frames, available in Pro. Contrast and quiet zone are checked automatically, so the code you export keeps scanning correctly instead of failing silently because a color choice made it unreadable.</p>"
+    },
+    {
+     "h2": "Track paid, unpaid, partial and overdue",
+     "html": "<p>Once an invoice is out, Invoice Maker shows its status at a glance: paid, unpaid, partial or overdue. You can record a payment as it comes in, and the app keeps an accurate outstanding balance so you always know what is still owed, even when a client pays part of an invoice now and the rest later. Sales reports then roll this up into income by month, your top clients, and what is still outstanding overall, which is a faster way to see who to follow up with than scrolling through every invoice one at a time.</p>"
+    },
+    {
+     "h2": "Turn a paid invoice into a receipt",
+     "html": "<p>Once an invoice is paid in full, you don't need a separate receipt template. Share the same document again and it doubles as a receipt — the same invoice, marked paid, with the date it was settled, so the client's record of the payment matches the document they originally received.</p>"
+    },
+    {
+     "h2": "Everything else the invoice can carry",
+     "html": "<p>The payment QR code sits alongside the rest of what an invoice needs: your saved clients, items and tax rates for one-tap reuse, discounts, shipping, payment methods, reusable terms, and a handwritten signature drawn right on your iPhone. Your logo, brand color and fonts carry across every invoice once you set them, so the document with the payment QR code on it still looks like the rest of your paperwork. You don't have to start from a blank invoice either — pick one of 100+ templates, or scan a paper invoice (or a photo of one) and it becomes an editable draft you can add a payment QR code to.</p><p>You can create three documents free, no account or sign-up needed, and four of the ready-made QR designs are free to use as well; free exports carry a small line at the foot of the page naming the app, and Pro switches that off along with unlocking unlimited invoices and QR exports. Either way, invoices, clients and QR codes sync privately through your own iCloud, the app works offline with no account required, and Recently Deleted keeps an invoice for 30 days in case one wrong tap deletes something you needed. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> for the rest of what's included, or read <a href=\"/tools/how-to-write-an-invoice/\">how to write an invoice</a> if you're starting from a blank one.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "What is a payment QR code on an invoice?",
+     "a": "It's a QR code generated for your invoice that a client scans with their phone to open a payment app with the details ready, instead of typing them in by hand."
+    },
+    {
+     "q": "Does Invoice Maker support Pix?",
+     "a": "Yes. Pix is one of the 12 QR types in Invoice Maker's QR Studio, alongside a general payment QR code and ten other types."
+    },
+    {
+     "q": "Can I see which invoices are still unpaid?",
+     "a": "Yes. Invoices show a status of paid, unpaid, partial or overdue, and recording a payment updates the outstanding balance automatically."
+    },
+    {
+     "q": "Can a paid invoice work as a receipt?",
+     "a": "Yes. Once an invoice is fully paid you can share it as a receipt — the same document, marked paid, with the settlement date."
+    }
+   ],
+   "keywords": [
+    "payment qr code invoice",
+    "qr code on invoice",
+    "get paid faster invoice",
+    "pix qr code invoice",
+    "invoice payment tracking app"
+   ]
+  },
+  {
+   "slug": "invoice-vs-estimate-vs-quote",
+   "app": "invoiceqr",
+   "title": "Invoice vs Estimate vs Quote: What's the Difference?",
+   "description": "The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.",
+   "h1": "Invoice vs Estimate vs Quote: What's the Difference?",
+   "intro": "An estimate or a quote is a proposed price you send before doing the work, while an invoice is the bill you send afterward asking to be paid. In everyday use, \"estimate\" and \"quote\" mean close to the same thing — a starting figure that can still change — and the invoice is the only one of the three that is actually a request for payment.",
+   "sections": [
+    {
+     "h2": "What a quote or estimate is",
+     "html": "<p>A quote or an estimate lays out what a job is expected to cost before you start it. It gives a client something to approve, and it is not a bill — no payment is due just because an estimate exists. Some businesses use \"quote\" for a fixed price and \"estimate\" for a figure that may move once the real scope is clear, but neither term is standardized, so what matters more than the label is what the document itself says: the items, the price for each, and how long the price is valid for. A client can reject or ask you to revise a quote or estimate freely, since agreeing to it is exactly what turns it into a job in the first place.</p>"
+    },
+    {
+     "h2": "What an invoice is",
+     "html": "<p>An invoice is sent once the work is done, or once it's agreed to be billed, and it asks for payment by a due date. It typically lists the same client and line items as the estimate that came before it, plus payment terms and, often, a way to pay directly from the document. Where an estimate is a proposal a client can accept or push back on, an invoice is a request that's already been agreed to — the negotiating, in theory, already happened at the estimate stage, so by the time an invoice goes out the open question left should be when it gets paid, not whether the price is right.</p>"
+    },
+    {
+     "h2": "A note on legal or tax invoices",
+     "html": "<p>This isn't legal or tax advice, and requirements vary by country. In some places a \"tax invoice\" has specific legal requirements to be valid for tax purposes — Mexico's CFDI system is one example, where a sale generally needs a government-registered document to count for tax reporting. Invoice Maker creates commercial documents: invoices, estimates and quotes you send to a client, not government-registered tax invoices, so check your local rules if a formal tax invoice is what you need for a given sale. A commercial invoice can still be exactly what a freelancer or small business needs day to day — it's simply a different thing from a government tax filing, and the two aren't always required together.</p>"
+    },
+    {
+     "h2": "Turning an estimate into an invoice with one tap",
+     "html": "<p>Once a quote or estimate is approved, redoing the same client and line items as an invoice would be a waste of time. In <strong>Smart Invoice & Estimate Maker</strong> (Invoice Maker) you can start with an estimate or a quote, then turn it into an invoice with one tap, carrying the details across instead of re-entering them. The same saved clients, items and tax rates you used on the estimate stay attached, so switching from proposal to bill doesn't mean starting the paperwork over.</p>"
+    },
+    {
+     "h2": "The same tools, whichever document you're making",
+     "html": "<p>Invoice Maker draws on the same set of 100+ templates for its documents, so a quote and the invoice it eventually becomes can share a consistent look from proposal to payment. An invoice itself doesn't have to start blank, either — scan a paper invoice, or pick a photo of one, and it becomes an editable draft you can adjust. The app also carries features like discounts, shipping, payment methods, reusable terms and a handwritten signature drawn on your iPhone, the kind of detail that matters just as much on the bill as it did on the proposal that led to it.</p>"
+    },
+    {
+     "h2": "One free allowance covers all three document types",
+     "html": "<p>Invoice Maker gives you three documents free, no account or sign-up needed. That's three in total, not three a month, and invoices, estimates and quotes all draw on the same allowance rather than three separate ones. A document only counts once, the moment you create it — editing it or sending it again later doesn't use up any more of the allowance, so a quote you revise twice before a client approves it still only costs one document from the free total. Beyond that, going Pro removes the limit and unlocks the rest of the app's templates and QR styles. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> or the <a href=\"/tools/invoice-template/\">invoice template</a> to get a document started.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Is an estimate the same thing as a quote?",
+     "a": "In everyday use, yes. Both describe a proposed price sent before the work starts, and neither is a request for payment."
+    },
+    {
+     "q": "Is an invoice automatically a legal tax document?",
+     "a": "Not necessarily. Some countries require a specific tax invoice format, such as Mexico's CFDI, and Invoice Maker creates commercial documents rather than government tax invoices, so check local rules if you need one."
+    },
+    {
+     "q": "How do I turn an estimate into an invoice?",
+     "a": "In Invoice Maker, open the estimate or quote and turn it into an invoice with one tap, without re-entering the client or line items."
+    },
+    {
+     "q": "How many documents can I create for free?",
+     "a": "Three in total. Invoices, estimates and quotes all draw on the same free allowance, and it doesn't reset monthly."
+    }
+   ],
+   "keywords": [
+    "invoice vs estimate",
+    "estimate vs quote difference",
+    "what is a tax invoice",
+    "turn estimate into invoice",
+    "free invoice app"
+   ]
+  },
+  {
+   "slug": "travel-post-screenshot-to-itinerary",
+   "app": "beforego",
+   "title": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+   "description": "How to turn a screenshot, a link or a typed plan into a day-by-day itinerary, plus scanning tickets and bookings straight into it.",
+   "h1": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+   "intro": "Screenshot the travel post, paste the link, or just type out the plans, and BeforeGo: AI Itinerary Planner (BeforeGo) files it into a day-by-day trip plan on its own — the places worth seeing, the to-dos before you go, and each day the post lays out. You don't need to retype anything the post already spelled out.",
+   "sections": [
+    {
+     "h2": "Three ways to hand BeforeGo your plans",
+     "html": "<p>BeforeGo accepts a travel post in whatever form you have it in:</p><ul><li>A screenshot of the post itself.</li><li>A pasted link to the original page.</li><li>Plans you just type out yourself.</li></ul><p>Any of the three gets filed the same way, so you're not stuck retyping a plan someone else already wrote out for you, whether it came from a friend's message, a saved post, or a page you found while researching the trip. That matters most for the kind of post that's really a loose list — a string of restaurant names, a couple of neighborhoods worth a walk, a museum someone mentioned in passing — the sort of thing that's easy to save and easy to forget you saved.</p>"
+    },
+    {
+     "h2": "What BeforeGo pulls out of a guide",
+     "html": "<p>Hand it a travel guide — screenshots, pasted text, or a link — and BeforeGo files what it finds: to-dos join the packing list, places join the trip checklist, and each day the guide describes joins the plan. The packing list also writes itself from the trip's destination and dates, so it doesn't need a separate step once the trip itself is set up. A single guide post often mixes all three kinds of information in one block of text — a thing to do, a place to see, and a suggestion for which day to do it on — and sorting that out by hand is exactly the kind of small, repetitive work that's easy to put off.</p>"
+    },
+    {
+     "h2": "Scan tickets and bookings into the same plan",
+     "html": "<p>A ticket or booking confirmation lands on the plan the same way. Scan several at once and every flight, train and bus lands on the route in order, each with its own days — airports are placed using the code printed on the ticket rather than guessed, and a red-eye flight home ends the trip on the day it takes off rather than the day it lands. The editor for a new trip opens straight on its own fields, with the ticket scanner sitting right beside the trip's name, so scanning the first booking can be the very first thing you do — before you've even settled on which screenshots or links you want to add to the rest of the plan.</p>"
+    },
+    {
+     "h2": "Every import stays organized and removable",
+     "html": "<p>Every import is listed under its trip, so you can see where a place, to-do or day came from — whether it was pulled from a screenshot, a link, or a scanned ticket. If something got pulled in that you don't actually want, any line it added can be removed, rather than having to redo the whole import or start the trip over.</p>"
+    },
+    {
+     "h2": "Editing the trip after you've filed everything in",
+     "html": "<p>Plans change after the itinerary is already built, and Edit Trip covers more than the dates — it can also change the trip type and who's travelling. The checklist follows along automatically: rows the new answers need are added, and untouched rows the trip no longer needs are removed, so adding a travel companion or switching from a business trip to a family one doesn't mean rebuilding the checklist from scratch, or manually hunting down which rows are now out of date.</p>"
+    },
+    {
+     "h2": "What the plan turns into once you're there",
+     "html": "<p>The places you saved become a trip checklist you check off as you go — spots, food and experiences — and a day of stops sorts itself into the shortest walking route. Voice notes transcribe themselves while you walk, so a thought doesn't have to wait until you're back at the hotel to be written down.</p><p>After the trip, the photos, notes and voice memos you added stay attached to it, and can become a printable memories album alongside keepsakes like luggage tags, tickets and trip receipts. BeforeGo is free to start, with no ads and no account required, and a one-time lifetime purchase is available if you'd rather not subscribe for the rest. It is made for personal travel organization, though: it does not replace official visa, safety, health, airline, or government guidance, so always verify important requirements with official sources before you travel. See the <a href=\"/beforego/\">BeforeGo app page</a> for the rest of what it does.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "How do I add a travel post I saw on social media to my trip?",
+     "a": "Screenshot the post, paste a link, or just type out the plans, and BeforeGo files it into a day-by-day plan."
+    },
+    {
+     "q": "Can I import an already-booked flight or hotel?",
+     "a": "Yes. Scan the ticket or booking confirmation and BeforeGo places it on your route in order, including its days."
+    },
+    {
+     "q": "Can I remove something BeforeGo imported that I don't want?",
+     "a": "Yes. Every import is listed under its trip, and any line it added can be removed."
+    },
+    {
+     "q": "Does BeforeGo replace checking official travel requirements?",
+     "a": "No. BeforeGo is for personal travel organization, not official visa, safety, health, airline, or government guidance, so always confirm important requirements with official sources."
+    }
+   ],
+   "keywords": [
+    "screenshot to itinerary app",
+    "travel post to itinerary",
+    "ai trip planner app",
+    "day by day itinerary from screenshot",
+    "import flight ticket into itinerary"
+   ]
+  },
+  {
+   "slug": "packing-list-by-destination",
+   "app": "beforego",
+   "title": "A Packing List That Fits the Destination: Plugs, Currency, Rules",
+   "description": "What to check per destination before you pack, and how a generated packing list covers plugs, currency, entry rules and reminders.",
+   "h1": "A Packing List That Fits the Destination: Plugs, Currency, Entry Rules",
+   "intro": "A packing list that actually fits your destination checks a few things a generic list leaves out: the plug type and voltage, the local currency, any entry requirements, and which transit apps are used where you're going. BeforeGo: AI Itinerary Planner (BeforeGo) generates one of these automatically from your trip's destination and dates, and our free packing list generator can get you a starting point without opening the app at all.",
+   "sections": [
+    {
+     "h2": "What to check for any destination",
+     "html": "<p>Before you pack, it generally helps to look up a few destination-specific details rather than rely on a one-size-fits-all list:</p><ul><li>The plug and socket type used, and whether the local voltage needs an adapter or a converter.</li><li>The local currency, and roughly how the exchange rate compares to your own.</li><li>Entry requirements for your passport, such as visa rules or arrival paperwork.</li><li>Which transit apps or cards locals use to get around, since not every city runs on the same one.</li><li>The general weather range for your dates, which changes what clothing actually earns a spot in the bag.</li><li>Whether you'll want a local SIM or eSIM, or whether your existing plan already covers roaming where you're headed.</li></ul><p>None of this is official guidance — always confirm anything that actually matters, like a visa requirement or an entry document, with an official source before you travel, since rules can change and a general list can't account for your specific passport or circumstances.</p><p>A plug adapter is easy to forget precisely because it's small and cheap, which is exactly why it's worth checking before you're standing in an airport with a dead phone and an outlet that doesn't match. Currency is similar: knowing roughly what things should cost before you land makes it easier to notice when something is obviously overpriced.</p>"
+    },
+    {
+     "h2": "What BeforeGo generates for you",
+     "html": "<p>BeforeGo builds a destination-based packing list from the trip you've set up — plugs, currency, entry rules and transit apps for where you are going — so you're not starting from a blank checklist or a generic template that ignores where you're actually headed. Because it reads the destination and dates you already entered when the trip was created, there's nothing extra to fill in just to get the list started. The same trip can be built from a screenshot of a travel post, a pasted link, or plans you type yourself, so the packing list and the itinerary come from the same starting point rather than two separate setups.</p>"
+    },
+    {
+     "h2": "Organize the list the way you actually pack",
+     "html": "<p>The travel checklist can be grouped by category or by timeline, whichever matches how you think through packing — category if you'd rather see all your electronics together, timeline if you'd rather work through what needs to go in first versus last. You can also attach photos and notes to any item, useful for remembering exactly which charger or which pair of shoes you meant when the list just says \"charger\" or \"shoes.\" Either view stays in sync with the same underlying list, so switching between them while you're actually packing doesn't split the checklist into two different things to keep track of.</p>"
+    },
+    {
+     "h2": "Reminders before you forget something",
+     "html": "<p>Packing reminders arrive at 7 days, 3 days, 24 hours and 3 hours before departure, spacing out the list instead of leaving it all for the last morning. The 7-day and 3-day reminders leave time to actually buy something you're missing, while the 24-hour and 3-hour reminders are closer to a final check than a planning nudge, catching the phone charger still sitting on the counter rather than the passport you'd have remembered anyway. Countdown and checklist widgets on your home screen keep both the trip date and the remaining items visible without opening the app.</p>"
+    },
+    {
+     "h2": "What carries over to your next trip",
+     "html": "<p>Forgotten items carry over, so the next packing list starts smarter than the last one instead of repeating the same gap trip after trip — the list learns from what you actually missed, not just from the destination and dates on their own.</p>"
+    },
+    {
+     "h2": "Try it free",
+     "html": "<p>BeforeGo is free to start, with no ads and no account required, and a one-time lifetime purchase is available if you'd rather not subscribe. Try the free <a href=\"/tools/packing-list/\">packing list generator</a> for a quick destination-based list without opening the app, or see the <a href=\"/beforego/\">BeforeGo app page</a> for how the packing list fits into a full trip plan built from a screenshot, a link, or tickets you scan in directly.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "What should a packing list account for beyond clothes?",
+     "a": "It generally helps to check the plug type and voltage, the local currency, entry requirements like visas, and which transit apps are used locally."
+    },
+    {
+     "q": "Does BeforeGo build the packing list automatically?",
+     "a": "Yes. BeforeGo generates a destination-based packing list, including plugs, currency, entry rules and transit apps, from your trip's destination and dates."
+    },
+    {
+     "q": "When do packing reminders arrive?",
+     "a": "BeforeGo sends packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure."
+    },
+    {
+     "q": "What happens to items I forgot to pack last time?",
+     "a": "Forgotten items carry over, so your next packing list starts smarter."
+    }
+   ],
+   "keywords": [
+    "packing list by destination",
+    "what to pack for a trip",
+    "packing list generator",
+    "travel packing checklist app",
+    "packing list plugs currency"
+   ]
+  }
+ ]
+}

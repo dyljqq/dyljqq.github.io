@@ -20,11 +20,11 @@ TS = {  # 工具页专用界面词
   "en": {"tools": "Tools", "hub_title": "Free tools & guides", "hub_lede": "Small, free, no sign-up. Each one does the same everyday thing our apps do — in the browser.",
          "faq": "Questions people ask", "published": "Published", "updated": "Updated", "get": "Do this on your iPhone",
          "ask": "Ask an AI about this page", "days": "days", "day": "day", "weeks": "weeks", "today": "That's today!", "passed": "days ago",
-         "home": "Home", "other_lang": "Também em português (Brasil)", "other_lang_href": "/tools/pt-br/"},
+         "home": "Home", "other_lang": "Ferramentas grátis em português", "other_lang_href": "/tools/pt-br/"},
   "pt-BR": {"tools": "Ferramentas", "hub_title": "Ferramentas e guias grátis", "hub_lede": "Pequenas, grátis, sem cadastro. Cada uma faz no navegador a mesma coisa do dia a dia que os nossos apps fazem.",
             "faq": "Perguntas frequentes", "published": "Publicado em", "updated": "Atualizado em", "get": "Leve para o seu iPhone",
             "ask": "Pergunte a uma IA sobre esta página", "days": "dias", "day": "dia", "weeks": "semanas", "today": "É hoje!", "passed": "dias atrás",
-            "home": "Início", "other_lang": "Also in English", "other_lang_href": "/tools/"},
+            "home": "Início", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
@@ -83,6 +83,9 @@ build();})();
 CSS = bp.CSS + """
 .crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
 .crumbs li+li::before{content:"›";margin-right:8px}
+html[lang^=th] *{letter-spacing:0!important}
+.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;border:1px solid var(--rule);background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
+@media (max-width:760px){.crumbs li:last-child{display:none}}
 .article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
 .article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
 .article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
@@ -151,7 +154,11 @@ def shell(pg, body):
     body = wrap_tables(body)
     lang = pg["lang"]; T = lambda k, **kw: bp.t(lang, k, **kw)
     hub = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
-    crumbs = [(ts(lang, "home"), "/"), (ts(lang, "tools"), hub)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
+    home = "/pt-br/" if lang == "pt-BR" else "/"
+    if pg["path"].startswith("/blog/"):
+        crumbs = [(ts(lang, "home"), "/"), ("Blog", "/blog/" if pg["path"] != "/blog/" else None)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
+    else:
+        crumbs = [(ts(lang, "home"), home), (ts(lang, "tools"), hub)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
     crumb_html = "".join(f'<li>{f"<a href={chr(34)}{h}{chr(34)}>{esc(l)}</a>" if h else esc(l)}</li>' for l, h in crumbs)
     meta = ""
     if pg.get("published"):
@@ -173,12 +180,15 @@ def shell(pg, body):
 </head>
 <body>
 <header class="wrap top">
-  <a class="brand" href="/">{bp.LOGO}<b>go ka</b></a>
+  <a class="brand" href="{home}">{bp.LOGO}<b>go ka</b></a>
   <nav class="nav" aria-label="Main">
-    <a href="/">{esc(T("nav_all_apps"))}</a>
+    <a href="{home}">{esc(T("nav_all_apps"))}</a>
     <a href="{hub}">{esc(ts(lang, "tools"))}</a>
+    <a href="/blog/">Blog</a>
     <a href="mailto:{EMAIL}">{esc(T("nav_support"))}</a>
   </nav>
+  <!-- lang:start -->
+  <!-- lang:end -->
 </header>
 <main class="wrap">
 <ol class="crumbs">{crumb_html}</ol>
@@ -189,9 +199,9 @@ def shell(pg, body):
 {faq_html(pg["faq"], lang) if pg.get("faq") else ""}
 {app_card(pg["app"], lang) if pg.get("app") else ""}
 {ask_ai(ORIGIN + pg["path"], lang)}
-<p style="margin:28px 0 0;font-size:14px"><a href="{ts(lang, 'other_lang_href')}" hreflang="{'pt-BR' if lang == 'en' else 'en'}">{esc(ts(lang, 'other_lang'))} →</a></p>
+<p style="margin:28px 0 56px;font-size:14px"><a href="{ts(lang, 'other_lang_href')}" hreflang="{'pt-BR' if lang == 'en' else 'en'}">{esc(ts(lang, 'other_lang'))} →</a></p>
 </main>
-<footer><div class="wrap"><p>go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="/">{esc(T("nav_all_apps"))}</a></p></div></footer>
+<footer><div class="wrap"><p>go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{home}">{esc(T("nav_all_apps"))}</a></p>{bp.social_html(lang)}</div></footer>
 {scripts}
 </body>
 </html>
@@ -210,10 +220,10 @@ def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq
 <table><tbody>{"".join(f"<tr><th>{esc(k)}</th><td>{v}</td></tr>" for k, v in glance)}</tbody></table>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
-<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to {esc(fmt(d, lang))}. Turn on <strong>Repeat yearly</strong> if you want it back next year.</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> → Countdown. Choose the size you like.</li></ol>
+<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to {esc(fmt(d, lang))}. Turn on <strong>Repeat yearly</strong> if you want it back next year.</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
 <h2>Countdown ideas</h2>
 <ul>{"".join(f"<li>{i}</li>" for i in ideas)}</ul>
-<h2>{esc(name)} in the next few years</h2>
+<h2>{esc(re.sub(r'\s\d{4}$', '', name))} in the next few years</h2>
 <table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(fmt(dd, lang))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>"""
     return {"path": f"/tools/{slug}/", "lang": lang, "title": title, "description": desc, "crumb": name, "kind": "Article",
             "app": "countdown", "faq": faq, "published": "2026-09-26", "js": [COUNT_JS], "body": body, "hub_title": h1, "hub_desc": desc}
@@ -258,19 +268,19 @@ PAGES.append(holiday_page("days-until-christmas", "Christmas 2026", XMAS, "en",
    ("How many weeks until Christmas 2026?", f"Divide the days by seven: on {TODAY.strftime('%-d %B %Y')} there were {days_to(XMAS)} days, which is about {days_to(XMAS)//7} weeks. The counter at the top of this page recalculates it on the day you visit."),
    ("How many days between Halloween and Christmas?", "55 days. Halloween is 31 October and Christmas Day is 25 December, so there are 55 days from one to the other in any year."),
    ("When is Christmas 2027?", "Saturday, 25 December 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."),
-   ("How do I put a Christmas countdown on my iPhone Home Screen?", "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget, and choose Countdown. The widgets are free in every size, and the event can repeat every year.")],
+   ("How do I put a Christmas countdown on my iPhone Home Screen?", "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +), and choose Countdown. The widgets are free in every size, and the event can repeat every year.")],
   [(2026, XMAS), (2027, dt.date(2027, 12, 25)), (2028, dt.date(2028, 12, 25)), (2029, dt.date(2029, 12, 25))]))
 
 PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "en",
   "How many days until Halloween 2026? Live countdown", "Halloween 2026 is on Saturday, 31 October 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
   "How many days until Halloween 2026?",
-  "Halloween 2026 falls on <strong>Saturday, 31 October 2026</strong> — a weekend Halloween, which last happened in 2020. The counter below updates every day.",
+  "Halloween 2026 falls on <strong>Saturday, 31 October 2026</strong> — a weekend Halloween, which last happened in 2021. The counter below updates every day.",
   [("Halloween", "Saturday, 31 October 2026"), ("All Saints' Day", "Sunday, 1 November 2026"), ("Día de los Muertos", "Monday, 2 November 2026"), ("Days from Halloween to Christmas", "55")],
-  ["A countdown to the party with a reminder a week before, so the costume gets ordered in time.", "A trick-or-treat countdown on the kids' shared iPad.", "A Lock Screen widget with a pumpkin backdrop for October."],
+  ["A countdown to the party with a reminder a week before, so the costume gets ordered in time.", "A trick-or-treat countdown on the kids' shared iPad.", "A Home Screen widget counting down the days to October 31."],
   [("What day of the week is Halloween 2026?", "Saturday. Halloween 2026 is on Saturday, 31 October 2026, so parties and trick-or-treating fall on a weekend."),
    ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%-d %B %Y')} there were {days_to(HALLOWEEN)} days, about {days_to(HALLOWEEN)//7} weeks. The counter on this page recalculates when you open it."),
    ("When is Halloween 2027?", "Sunday, 31 October 2027. Halloween 2028 falls on a Tuesday."),
-   ("How do I get a Halloween countdown widget on iPhone?", "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget menu. Every widget size is free.")],
+   ("How do I get a Halloween countdown widget on iPhone?", "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
   [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))]))
 
 PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
@@ -288,14 +298,14 @@ PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
 # 5. ENEM 2026（pt-BR）
 PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-26",
   "title": "Quantos dias faltam para o ENEM 2026? Contagem regressiva", "crumb": "ENEM 2026",
-  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de início do iPhone.",
+  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
   "hub_title": "Quantos dias faltam para o ENEM 2026?", "hub_desc": "Contagem regressiva para os dois domingos de prova, 8 e 15 de novembro.",
   "js": [COUNT_JS], "faq": [
     ("Quando é o ENEM 2026?", "As provas serão aplicadas nos domingos 8 de novembro e 15 de novembro de 2026, conforme o Edital nº 64, publicado pelo Inep em 22 de maio de 2026."),
     ("Quando foram as inscrições do ENEM 2026?", "De 25 de maio a 12 de junho de 2026, pela Página do Participante do Inep."),
     ("O que cai em cada dia do ENEM 2026?", "No primeiro dia (8/11): Linguagens, Códigos e suas Tecnologias, Redação e Ciências Humanas e suas Tecnologias. No segundo dia (15/11): Ciências da Natureza e suas Tecnologias e Matemática e suas Tecnologias, com 90 questões objetivas."),
     ("Quando sai o gabarito do ENEM 2026?", "Segundo o edital, até o 10º dia útil após o segundo dia de prova."),
-    ("Como coloco a contagem regressiva do ENEM na tela de início?", "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a tela de início → Editar → Adicionar widget → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."),
+    ("Como coloco a contagem regressiva do ENEM na Tela de Início?", "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."),
   ],
   "body": f"""<h1>Quantos dias faltam para o ENEM 2026?</h1>
 <p class="lede">O ENEM 2026 tem dois domingos de prova: <strong>8 de novembro</strong> e <strong>15 de novembro de 2026</strong> (Edital nº 64 do Inep, 22 de maio de 2026). Os contadores abaixo atualizam todo dia.</p>
@@ -312,9 +322,9 @@ PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "k
 <tr><th>Gabarito</th><td>até o 10º dia útil após o 2º dia de aplicação</td></tr>
 </tbody></table>
 <p>Confira sempre as datas na página oficial do Inep (gov.br/inep); o cronograma acima segue o edital publicado.</p>
-<h2>A contagem na tela de início, sem abrir nada</h2>
-<p>Uma contagem regressiva que você precisa abrir para ver é uma contagem que você esquece. Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na tela de início ou na tela de bloqueio como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li><li>Segure a tela de início → <strong>Editar</strong> → <strong>Adicionar widget</strong> → Countdown. Escolha o tamanho.</li></ol>
+<h2>A contagem na Tela de Início, sem abrir nada</h2>
+<p>Uma contagem regressiva que você precisa abrir para ver é uma contagem que você esquece. Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
+<ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown. Escolha o tamanho.</li></ol>
 <h2>Ideias para a reta final</h2>
 <ul><li>Um evento por simulado, com lembrete na véspera.</li><li>Uma contagem progressiva desde o primeiro dia de estudo — o widget mostra a sequência em dias.</li><li>Depois da prova, uma contagem para a divulgação do resultado.</li></ul>"""})
 
@@ -327,7 +337,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
     ("Em que dia da semana cai o Réveillon 2026/2027?", "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."),
     ("Quando é o Carnaval 2027?", "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."),
     ("Quantos dias faltam para o Ano-Novo?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(NYE)} dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."),
-    ("Como coloco a contagem do Réveillon na tela de bloqueio?", "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na tela de bloqueio segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco a contagem do Réveillon na Tela Bloqueada?", "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para o Réveillon 2027?</h1>
 <p class="lede">A virada do ano é na <strong>quinta-feira, 31 de dezembro de 2026</strong>, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta. O Carnaval 2027 vai de <strong>sábado, 6</strong> a <strong>terça-feira, 9 de fevereiro</strong>. Contadores ao vivo abaixo.</p>
@@ -345,9 +355,9 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 <tr><th>Páscoa 2027</th><td>domingo, 28 de março de 2027</td></tr>
 <tr><th>Dias que restam em 2026</th><td>{days_to(REV) + 1} (em {TODAY.strftime('%d/%m/%Y')}, contando hoje)</td></tr>
 </tbody></table>
-<h2>A contagem na tela de início</h2>
-<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na tela de início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong>, escolha o modelo Réveillon ou digite o nome.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a tela de início → Editar → Adicionar widget → Countdown.</li></ol>
+<h2>A contagem na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome «Réveillon».</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
 
@@ -371,7 +381,7 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
 <div class="inv-head"><div><div class="inv-title">INVOICE</div><p style="margin:6px 0 0"><span contenteditable="true">Your Business Name</span><br><span contenteditable="true">Street, City, Country</span><br><span contenteditable="true">you@example.com · +1 000 000 0000</span></p></div>
 <div class="inv-meta"><div class="k">Invoice number</div><p style="margin:0 0 10px"><span contenteditable="true">INV-0001</span></p><div class="k">Date</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Due</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
 <div class="inv-parties"><div><div class="k">Bill to</div><p style="margin:0"><span contenteditable="true">Client name</span><br><span contenteditable="true">Client address</span><br><span contenteditable="true">client@example.com</span></p></div>
-<div><div class="k">Payment</div><p style="margin:0"><span contenteditable="true">Bank transfer — IBAN / account number</span><br><span contenteditable="true">Or scan the QR code on your Smart Invoice PDF</span></p></div></div>
+<div><div class="k">Payment</div><p style="margin:0"><span contenteditable="true">Bank transfer — IBAN / account number</span><br><span contenteditable="true">Other ways to pay (optional)</span></p></div></div>
 <table><thead><tr><th>Description</th><th>Qty</th><th>Price</th><th>Amount</th></tr></thead>
 <tbody><tr><td contenteditable="true">Design work — logo suite</td><td contenteditable="true">1</td><td contenteditable="true">1200.00</td><td>1,200.00</td></tr>
 <tr><td contenteditable="true">Landing page</td><td contenteditable="true">1</td><td contenteditable="true">800.00</td><td>800.00</td></tr></tbody></table>
@@ -386,7 +396,7 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
 <tr><td>Quote</td><td>Before the work</td><td>A fixed price, valid for a stated time.</td></tr>
 <tr><td>Invoice</td><td>After the work (or a milestone)</td><td>A request for payment with a due date.</td></tr>
 <tr><td>Receipt</td><td>After payment</td><td>Confirmation that the invoice was paid.</td></tr></tbody></table>
-<p>If you send more than a few invoices a month, an app that remembers clients, items and tax rates, numbers the invoices for you and shows what is paid, unpaid and overdue saves real time. That is what <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> does on iPhone — including a payment QR code on every invoice.</p>"""})
+<p>If you send more than a few invoices a month, an app that remembers clients, items and tax rates and shows what is paid, unpaid and overdue saves real time. That is what <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> does on iPhone — including a payment QR code on every invoice.</p>"""})
 
 # 8. 如何写发票（指南）
 PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "Article", "app": "invoiceqr", "published": "2026-09-26",
@@ -395,7 +405,7 @@ PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "
   "hub_title": "How to write an invoice", "hub_desc": "The eight things every invoice needs, numbering, payment terms and the mistakes that delay payment.",
   "faq": [
     ("What should I put on an invoice?", "The word Invoice, a unique number, issue and due dates, your business details, the client's details, each item with quantity and price, subtotal, tax and total, and how to pay. Add your tax ID if your country requires it."),
-    ("How do I number invoices?", "Sequentially and never reused: INV-0001, INV-0002… Many freelancers prefix the year (2026-001) so the sequence resets each January. Gaps are fine; duplicates are not."),
+    ("How do I number invoices?", "Sequentially and never reused: INV-0001, INV-0002… Many freelancers prefix the year (2026-001) so the sequence resets each January. Never reuse a number, and check local rules: some countries, such as France and Germany, expect an unbroken sequence."),
     ("What payment terms should a freelancer use?", "Net 14 or Net 30 are the most common — payment due 14 or 30 days after the invoice date. For new clients or small jobs, 'due on receipt' is normal. State the terms and the due date on the invoice itself."),
     ("Can I charge a late fee?", "Usually yes if the terms were agreed before the work — put them on the estimate or contract and repeat them on the invoice. Check local rules; some countries cap late interest."),
     ("What's the difference between an invoice and a receipt?", "An invoice asks for payment and has a due date. A receipt confirms that payment was made. Once an invoice is paid, the same document marked Paid with the paid date can serve as the receipt."),
@@ -424,7 +434,7 @@ PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "
 <h2>Mistakes that delay payment</h2>
 <ul><li>No due date, only "Net 30" — the client has to compute it, and won't.</li><li>Vague line items. "Consulting" gets queried; "Kick-off workshop, 3 h, 12 March" gets paid.</li><li>Missing bank details or a wrong account number — the most common reason for a two-week delay.</li><li>Sending it to the wrong person. Ask who approves invoices before you send the first one.</li><li>No follow-up. A friendly reminder the day after the due date is normal and expected.</li></ul>
 <h2>Do it in a minute</h2>
-<p>Use the <a href="/tools/invoice-template/">free invoice template</a> on this site for a one-off. If you invoice regularly, <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> on iPhone keeps clients, items and tax rates, numbers invoices for you, puts a payment QR code on each one and shows what's paid, unpaid and overdue.</p>"""})
+<p>Use the <a href="/tools/invoice-template/">free invoice template</a> on this site for a one-off. If you invoice regularly, <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> on iPhone keeps clients, items and tax rates, puts a payment QR code on each one and shows what's paid, unpaid and overdue.</p>"""})
 
 # 9. 打包清单
 PACK = {"base": {
@@ -468,9 +478,9 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 # 10. 榜单：iPhone 倒数日 app（含竞品；数据来自 09-26 美区 App Store 查询，只写商店描述里写明的事）
 BEST = [
   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "rating": None, "since": 2026, "ours": True,
-   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro only sells backdrops.",
+   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops and a Live Activity.",
    "widgets": "Home Screen + Lock Screen, all sizes, free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "The only app on this list where the widgets are not the paid feature. Every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription is for decorative backdrops. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by the free tier, which is the most generous here."},
+   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds decorative backdrops and, since version 1.4.7, a Live Activity on the Lock Screen and Dynamic Island. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "rating": (4.8, 215672), "since": 2012,
    "free": "Add as many events as you like; iCloud sync, repeating events and Home Screen widgets are listed as features (the listing does not spell out what is paid).",
    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "Not stated",
@@ -510,7 +520,7 @@ def best_page():
 <h2>Which one to pick</h2>
 <ul>
 <li><strong>You want widgets without paying:</strong> Countdown Widget: Any Event (ours) — every widget size is free, and so are unlimited events, repeats, reminders and iCloud sync. Countdown: Event Countdown gives you one free Next Event widget.</li>
-<li><strong>You want the longest track record:</strong> Countdown Star — 13 years and over 200,000 ratings, with an Apple Watch app and time zones per event.</li>
+<li><strong>You want the longest track record:</strong> Countdown Star — on the App Store since 2012, with over 200,000 ratings, with an Apple Watch app and time zones per event.</li>
 <li><strong>You count streaks and time since:</strong> DayCount — counters run before and after the date, with reminders on either side.</li>
 <li><strong>You want the prettiest calendar:</strong> Countdown: Event Countdown — month grid, Live Activities, countdown videos.</li>
 <li><strong>You only need one widget and want to design it:</strong> Countdown Buddy — 11 widget styles, one free.</li>
@@ -549,15 +559,70 @@ def hub_page(lang):
                             else "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais."),
             "body": body, "published": None, "faq": [], "js": []}
 
+# ------------------------------------------------------------------ 博客（09-26 用户要求：参照 EasyNotes 官网补博客）
+BLOG_SRC = ROOT / "tools/blog/posts.en.json"
+BLOG = json.loads(BLOG_SRC.read_text(encoding="utf-8"))["posts"] if BLOG_SRC.exists() else []
+APP_ORDER = {"countdown": 0, "invoiceqr": 1, "beforego": 2}
+POST_SHOT = {  # 每篇配一张对应功能的商店截图（编号同 features.en.json）
+    "countdown-widget-iphone-home-lock-screen": ("countdown", "01"), "count-down-birthday-exam-trip-iphone": ("countdown", "09"),
+    "payment-qr-code-on-invoice": ("invoiceqr", "02"), "invoice-vs-estimate-vs-quote": ("invoiceqr", "05"),
+    "travel-post-screenshot-to-itinerary": ("beforego", "01"), "packing-list-by-destination": ("beforego", "04"),
+}
+
+def post_image(slug):
+    if slug not in POST_SHOT:
+        return None
+    key, num = POST_SHOT[slug]; s = bp.store_of(BY_KEY[key])
+    u = next((x for x in s["screenshots"] if bp.shot_num(x) == num), None)
+    return bp.cdn(u, 920) if u else None
+
+def post_figure(slug):
+    if slug not in POST_SHOT:
+        return ""
+    key, num = POST_SHOT[slug]; s = bp.store_of(BY_KEY[key])
+    u = next((x for x in s["screenshots"] if bp.shot_num(x) == num), None)
+    if not u:
+        return ""
+    alt = next((f["title"] for f in bp.FEAT_EN.get(key, []) if f["shot"] == num), BY_KEY[key]["home"]["label"])
+    return (f'<figure class="shot"><img src="{bp.cdn(u, 460)}" srcset="{bp.cdn(u, 460)} 460w, {bp.cdn(u, 920)} 920w" sizes="280px" '
+            f'width="460" height="999" alt="{esc(alt)} — {esc(s["name"])}" loading="lazy" decoding="async">'
+            f'<figcaption>{esc(alt)} — {esc(s["name"])}</figcaption></figure>')
+
+def blog_page(post):
+    secs = "\n".join(f'<h2>{esc(x["h2"])}</h2>\n{x["html"]}' for x in post["sections"])
+    body = f"""<h1>{esc(post["h1"])}</h1>
+<p class="lede">{esc(post["intro"])}</p>
+{post_figure(post["slug"])}
+{secs}"""
+    return {"path": f"/blog/{post['slug']}/", "lang": "en", "kind": "Article", "app": post["app"], "published": post.get("published", "2026-09-26"),
+            "title": post["title"], "description": post["description"], "crumb": post["h1"] if len(post["h1"]) <= 60 else post["title"],
+            "body": body, "faq": [(f["q"], f["a"]) for f in post.get("faq", [])], "js": [],
+            "hub_title": post["title"], "hub_desc": post["description"], "headline": post["h1"], "image": post_image(post["slug"])}
+
+def blog_hub():
+    groups = []
+    for key in sorted({p["app"] for p in BLOG}, key=lambda k: APP_ORDER.get(k, 9)):
+        cards = "\n".join(f'  <a href="/blog/{p["slug"]}/"><b>{esc(p["title"])}</b><span>{esc(p["description"])}</span><small>{esc(BY_KEY[key]["home"]["label"])}</small></a>'
+                          for p in BLOG if p["app"] == key)
+        groups.append(f'<h2>{esc(BY_KEY[key]["home"]["label"])}</h2>\n<div class="hub">\n{cards}\n</div>')
+    body = f"""<h1>Blog</h1>
+<p class="lede">Plain how-to guides for the everyday things our apps do: countdown widgets, invoices and payment QR codes, trip plans and packing lists.</p>
+{chr(10).join(groups)}"""
+    return {"path": "/blog/", "lang": "en", "kind": "CollectionPage", "title": "Blog — guides for countdowns, invoices and trips | go ka",
+            "description": "How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.",
+            "body": body, "published": None, "faq": [], "js": []}
+
 def main():
     manifest = []
-    for pg in PAGES + [hub_page("en"), hub_page("pt-BR")]:
+    blog = [blog_page(p) for p in BLOG]
+    for pg in PAGES + blog + [hub_page("en"), hub_page("pt-BR")] + ([blog_hub()] if blog else []):
         out = ROOT / pg["path"].strip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(shell(pg, pg["body"]), encoding="utf-8")
         manifest.append({"path": pg["path"], "lang": pg["lang"], "kind": pg["kind"], "title": pg["title"], "description": pg["description"],
                          "faq": [{"q": q, "a": a} for q, a in pg.get("faq", [])], "published": pg.get("published"), "app": pg.get("app"),
-                         "hubTitle": pg.get("hub_title", pg["title"]), "items": pg.get("items", [])})
+                         "hubTitle": pg.get("hub_title", pg["title"]), "items": pg.get("items", []),
+                         "headline": pg.get("headline"), "image": pg.get("image")})
         print(f"  {pg['path']}")
     (ROOT / "tools/tools.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"工具页 {len(manifest)} 页；接着跑 tools/build_seo.py")

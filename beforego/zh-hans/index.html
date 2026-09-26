@@ -11,7 +11,7 @@
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-<link rel="preload" as="image" href="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp" imagesrcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/920x0w.webp 920w" imagesizes="(max-width:760px) 72vw, 360px">
+<link rel="preload" as="image" href="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp" imagesrcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/920x0w.webp 920w" imagesizes="(max-width:760px) 72vw, 360px">
 <style>
 @font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
 @font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -26,9 +26,13 @@ a{color:inherit}img,video,svg{display:block;max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
 .brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
-.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
 html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
 html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
 .nav a:hover{background:var(--cream)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
 .hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
@@ -38,8 +42,8 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
 .chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
-.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
-.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media{position:relative}.hero-media video,.hero-media img{width:min(100%,360px);height:auto;margin:0 auto;border-radius:28px;aspect-ratio:886/1920;background:var(--cream);object-fit:cover}
+.hero-media .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
@@ -48,7 +52,7 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
 .shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
-.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
 .feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
 .feat p{margin:0 0 10px;color:var(--muted)}
@@ -61,6 +65,10 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .card p{margin:10px 0 0;color:var(--muted);font-size:15px}
 .langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
 .langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,6vw,80px);align-items:center;padding:clamp(28px,5vw,56px) 0;border-top:1px solid var(--rule)}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;display:flex;justify-content:center}.hl img{width:min(100%,300px);height:auto;border-radius:26px;border:1px solid var(--rule);background:var(--cream)}.hl h3{margin:0 0 14px;font:500 clamp(26px,3.2vw,36px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
 .others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
@@ -68,33 +76,33 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
 footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
-@media (max-width:760px){:root{--gutter:16px}.top{height:68px}.hero{grid-template-columns:1fr}.hero-media{order:-1}.hero-media video,.hero-media img{width:min(72vw,300px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr}.hl:nth-child(even) figure{order:0}.hl figure{order:2}.hl img{width:min(70vw,280px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media video,.hero-media img{width:min(72vw,300px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。">
-<link rel="canonical" href="https://goka-xi.vercel.app/beforego/zh-hans/">
-<link rel="alternate" hreflang="en" href="https://goka-xi.vercel.app/beforego/">
-<link rel="alternate" hreflang="de" href="https://goka-xi.vercel.app/beforego/de/">
-<link rel="alternate" hreflang="fr" href="https://goka-xi.vercel.app/beforego/fr/">
-<link rel="alternate" hreflang="it" href="https://goka-xi.vercel.app/beforego/it/">
-<link rel="alternate" hreflang="es" href="https://goka-xi.vercel.app/beforego/es/">
-<link rel="alternate" hreflang="es-MX" href="https://goka-xi.vercel.app/beforego/es-mx/">
-<link rel="alternate" hreflang="pt-BR" href="https://goka-xi.vercel.app/beforego/pt-br/">
-<link rel="alternate" hreflang="ja" href="https://goka-xi.vercel.app/beforego/ja/">
-<link rel="alternate" hreflang="ko" href="https://goka-xi.vercel.app/beforego/ko/">
-<link rel="alternate" hreflang="zh-Hans" href="https://goka-xi.vercel.app/beforego/zh-hans/">
-<link rel="alternate" hreflang="zh-Hant" href="https://goka-xi.vercel.app/beforego/zh-hant/">
-<link rel="alternate" hreflang="th" href="https://goka-xi.vercel.app/beforego/th/">
-<link rel="alternate" hreflang="x-default" href="https://goka-xi.vercel.app/beforego/">
+<link rel="canonical" href="https://beforego.art/beforego/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/beforego/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/beforego/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/beforego/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/beforego/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/beforego/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/beforego/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/beforego/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/beforego/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/beforego/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/beforego/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/beforego/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/beforego/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/beforego/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="BeforeGo：AI行程规划·出国清单 — 从截图生成行程，包含打包清单">
 <meta property="og:description" content="截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。">
-<meta property="og:url" content="https://goka-xi.vercel.app/beforego/zh-hans/">
-<meta property="og:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
+<meta property="og:url" content="https://beforego.art/beforego/zh-hans/">
+<meta property="og:image" content="https://beforego.art/assets/beforego/checklist.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://goka-xi.vercel.app/assets/beforego/checklist.jpg">
+<meta name="twitter:image" content="https://beforego.art/assets/beforego/checklist.jpg">
 <meta name="twitter:title" content="BeforeGo：AI行程规划·出国清单 — 从截图生成行程，包含打包清单">
 <meta name="twitter:description" content="截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。">
 <meta name="apple-itunes-app" content="app-id=6786561175, affiliate-data=ct=web-beforego-app&amp;pt=128309253">
@@ -102,22 +110,22 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "@id": "https://goka-xi.vercel.app/beforego/zh-hans/#app",
+  "@id": "https://beforego.art/beforego/zh-hans/#app",
   "name": "BeforeGo：AI行程规划·出国清单",
   "alternateName": "BeforeGo",
   "applicationCategory": "TravelApplication",
   "operatingSystem": "iOS 17.0 or later",
   "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
-  "url": "https://goka-xi.vercel.app/beforego/zh-hans/",
+  "url": "https://beforego.art/beforego/zh-hans/",
   "inLanguage": "zh-Hans",
   "author": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "publisher": {
     "@type": "Organization",
-    "@id": "https://goka-xi.vercel.app/#org",
+    "@id": "https://beforego.art/#org",
     "name": "go ka"
   },
   "offers": {
@@ -130,14 +138,14 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   "sameAs": [
     "https://apps.apple.com/app/id6786561175"
   ],
-  "image": "https://goka-xi.vercel.app/assets/beforego/icon.png",
+  "image": "https://beforego.art/assets/beforego/icon.png",
   "screenshot": [
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/30/98/db309876-63f1-63f0-90e2-9bfdbd3cc251/02-thingstodo.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/14/d1/ae14d154-3869-1b0b-d354-9c334ab436a6/03-bookings.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/5c/9a/085c9a0a-0406-7cb0-ceea-7227e1e016bc/04-checklist.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/35/6e/18356e52-6485-64e1-70b4-c0c752135902/05-countdown.png/920x0w.webp",
-    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/57/61/33576137-31f6-d13a-63ba-6e7c9098c157/06-lens.png/920x0w.webp"
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/91/22/159122d5-2379-ca38-41a0-fcbccffa1d2d/06-lens.png/920x0w.webp"
   ]
 }
 </script>
@@ -145,7 +153,7 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://goka-xi.vercel.app/beforego/zh-hans/#faq",
+  "@id": "https://beforego.art/beforego/zh-hans/#faq",
   "inLanguage": "zh-Hans",
   "mainEntity": [
     {
@@ -213,44 +221,59 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 </head>
 <body>
 <header class="wrap top">
-  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <a class="brand" href="/zh-hans/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
-    <a href="/">所有应用</a>
-    <a href="/privacy-policy/">隐私</a>
+    <a href="/zh-hans/">所有应用</a>
+    <a href="/tools/">工具</a>
+    <a href="/blog/">博客</a>
     <a href="mailto:qinqiangji@gmail.com?subject=BeforeGo">支持</a>
   </nav>
+  <!-- lang:start -->
+  <style>.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);padding:10px 12px;border:1px solid var(--rule);border-radius:999px;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:16px;height:16px;flex:none}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 14px 34px -14px rgba(0,0,0,.28);min-width:200px;max-height:70vh;overflow:auto}.lang-switch li a{display:block;padding:10px 12px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 12px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.lang-switch .ln-code{display:none}@media (max-width:760px){.lang-switch .ln-full{display:none}.lang-switch .ln-code{display:inline}.lang-switch summary{padding:9px 10px}}</style><details class="lang-switch"><summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg><span class="ln-full">简体中文</span><span class="ln-code">简</span></summary><ul><li><a href="/beforego/" hreflang="en" lang="en">English</a></li><li><a href="/beforego/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/beforego/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/beforego/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li><li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/beforego/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/beforego/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/beforego/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" aria-current="true">简体中文</a></li><li><a href="/beforego/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
 </header>
 
 <main class="wrap">
 <section class="hero">
   <div>
     <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8a/1f/98/8a1f9850-7a0b-0cc7-376b-e0293f0eb840/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
-    <h1>BeforeGo：AI行程规划·出国清单</h1>
+    <h1><span class="seg">BeforeGo：</span><span class="seg">AI行程规划·</span><span class="seg">出国清单</span></h1>
     <div class="lede"><p>截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程：值得去的地方、出发前要办的事，还有攻略里每一天的安排。机票或订单确认一扫就进行程，行李清单按目的地和日期自动生成。</p></div>
     <a class="cta" href="https://apps.apple.com/cn/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>在 App Store 下载</a>
-    <ul class="chips"><li>免费下载</li><li>iPhone 和 iPad</li><li>iOS 17 或更高版本</li><li>无需账户</li></ul>
+    <ul class="chips"><li>免费下载</li><li>iPhone 和 iPad</li><li>iOS 17 或更高版本</li><li>无需注册</li></ul>
   </div>
-  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="BeforeGo：AI行程规划·出国清单 — 截屏 1" fetchpriority="high"></div>
+  <div class="hero-media"><img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 72vw, 360px" width="460" height="999" alt="BeforeGo：AI行程规划·出国清单 — 截图 1" fetchpriority="high"></div>
 </section>
 
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">功能特色</h2>
+  <div class="hls">
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="截屏进，行程出"></figure><div><h3>截屏进，行程出</h3><p>截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程：值得去的地方、出发前要办的事，还有攻略里每一天的安排。</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="预订加入行程"></figure><div><h3>预订加入行程</h3><p>扫描机票或预订确认，就能加入行程。预订会记下价格和币种，还包括演出、活动、接送和租车。</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="行李清单自动生成"></figure><div><h3>行李清单自动生成</h3><p>插头、货币、入境须知和当地交通 App，根据目的地和日期自动生成，并在出发前 7 天、3 天、24 小时和 3 小时提醒你。</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="打卡清单，边走边勾"></figure><div><h3>打卡清单，边走边勾</h3><p>存下的地点变成打卡清单——景点、美食、体验逐个完成；一天的行程自动排成最短步行路线。</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="分摊旅行费用"></figure><div><h3>分摊旅行费用</h3><p>用行程可选币种记账，选择谁付款，把每笔账按同行人拆分。拍下小票自动填写支出，「结清」会算出还清余额的最短方式。</p></div></div>
+    <div class="hl"><figure><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/920x0w.webp 920w" sizes="(max-width:760px) 70vw, 300px" width="460" height="999" alt="旅行结束后"></figure><div><h3>旅行结束后</h3><p>照片、笔记和语音备忘录按行程归档，还有可打印的回忆相册；忘带的东西会自动带入下一次清单，让打包更省心。</p></div></div>
+  </div>
+</section>
 <section class="sec" id="screenshots" aria-labelledby="h-screens">
-  <h2 id="h-screens">截屏</h2>
+  <h2 id="h-screens">截图</h2>
   <ul class="shots">
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/75/8c/4d/758c4dc5-258c-a61b-2aaf-19524dc277e6/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 1"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/30/98/db309876-63f1-63f0-90e2-9bfdbd3cc251/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/30/98/db309876-63f1-63f0-90e2-9bfdbd3cc251/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/db/30/98/db309876-63f1-63f0-90e2-9bfdbd3cc251/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 2"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/14/d1/ae14d154-3869-1b0b-d354-9c334ab436a6/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/14/d1/ae14d154-3869-1b0b-d354-9c334ab436a6/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ae/14/d1/ae14d154-3869-1b0b-d354-9c334ab436a6/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 3"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/5c/9a/085c9a0a-0406-7cb0-ceea-7227e1e016bc/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/5c/9a/085c9a0a-0406-7cb0-ceea-7227e1e016bc/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/5c/9a/085c9a0a-0406-7cb0-ceea-7227e1e016bc/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 4"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/35/6e/18356e52-6485-64e1-70b4-c0c752135902/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/35/6e/18356e52-6485-64e1-70b4-c0c752135902/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/35/6e/18356e52-6485-64e1-70b4-c0c752135902/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 5"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/57/61/33576137-31f6-d13a-63ba-6e7c9098c157/06-lens.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/57/61/33576137-31f6-d13a-63ba-6e7c9098c157/06-lens.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/57/61/33576137-31f6-d13a-63ba-6e7c9098c157/06-lens.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 6"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/4f/a5/1f4fa53a-1de9-7845-28f6-1f71f5f53b88/07-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/4f/a5/1f4fa53a-1de9-7845-28f6-1f71f5f53b88/07-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/4f/a5/1f4fa53a-1de9-7845-28f6-1f71f5f53b88/07-album.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 7"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/87/a3/7f87a31d-7702-da9a-d6c9-fed2208a4dbb/08-voice.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/87/a3/7f87a31d-7702-da9a-d6c9-fed2208a4dbb/08-voice.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/87/a3/7f87a31d-7702-da9a-d6c9-fed2208a4dbb/08-voice.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 8"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/4a/c9/d14ac947-5bd3-57c2-35cf-c740d185f10d/09-receipt.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/4a/c9/d14ac947-5bd3-57c2-35cf-c740d185f10d/09-receipt.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/4a/c9/d14ac947-5bd3-57c2-35cf-c740d185f10d/09-receipt.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 9"></li>
-      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/ba/7a/d8ba7a8f-0458-f062-a3ab-0991d631ac56/10-brand.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/ba/7a/d8ba7a8f-0458-f062-a3ab-0991d631ac56/10-brand.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d8/ba/7a/d8ba7a8f-0458-f062-a3ab-0991d631ac56/10-brand.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截屏 10"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 1"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/65/c3/f7/65c3f7d7-783c-7320-b4a6-0859376c0507/02-thingstodo.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 2"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/20/72/be/2072be5c-cf57-2613-4d60-9266d37c4012/03-bookings.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 3"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/e1/e5/dee1e515-b1fb-6b67-2e9e-7e415cdc28f4/04-checklist.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 4"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/f0/f3/a3f0f388-7d03-3dca-a00b-1d5cfeca5cac/05-countdown.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 5"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/91/22/159122d5-2379-ca38-41a0-fcbccffa1d2d/06-lens.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/91/22/159122d5-2379-ca38-41a0-fcbccffa1d2d/06-lens.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/15/91/22/159122d5-2379-ca38-41a0-fcbccffa1d2d/06-lens.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 6"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/63/19/8863199e-dc5e-51bb-6ba4-1109390e0c66/07-album.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 7"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/52/6e/14526e87-61ca-f752-0e39-999b17577a58/08-expenses.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 8"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/5e/fd/5b5efdfe-e636-7829-f31f-51a79b3374dd/09-receipt.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/5e/fd/5b5efdfe-e636-7829-f31f-51a79b3374dd/09-receipt.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/5e/fd/5b5efdfe-e636-7829-f31f-51a79b3374dd/09-receipt.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 9"></li>
+      <li><img loading="lazy" decoding="async" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/ff/ee/acffeede-9be8-f04c-c353-7823aa9a29d8/10-brand.png/460x0w.webp" srcset="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/ff/ee/acffeede-9be8-f04c-c353-7823aa9a29d8/10-brand.png/460x0w.webp 460w, https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/ff/ee/acffeede-9be8-f04c-c353-7823aa9a29d8/10-brand.png/920x0w.webp 920w" sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="BeforeGo：AI行程规划·出国清单 — 截图 10"></li>
   </ul>
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">内含功能</h2>
+  <h2 id="h-features">详情——App Store 原文</h2>
   <div class="feats">
     <div class="feat"><h3>行前</h3><ul><li>按目的地生成打包清单——插座、货币、入境准备、当地 App</li><li>分类与时间线两种视图,出发前 7 天/3 天/24 小时/3 小时提醒</li><li>倒计时与清单小组件,每个条目可加照片和备注</li></ul></div>
     <div class="feat"><h3>旅途中</h3><ul><li>存下的地点变成打卡清单——景点、美食、体验逐个完成</li><li>一天的行程自动排成最短步行路线</li><li>语音随手记,自动转文字</li></ul></div>
@@ -260,6 +283,10 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <details class="fine"><summary>价格和订阅条款</summary><p>BeforeGo Premium 高级订阅（自动续订） 订阅可解锁全部高级功能： • 月度订阅——每 1 个月计费一次 • 年度订阅——每 1 年计费一次 年度订阅为新用户提供 7 天免费试用。具体价格会在购买页确认前显示；另提供一次性永久解锁。</p><p>购买确认时将通过你的 Apple 账户付款。订阅会自动续订，除非在当前周期结束前至少 24 小时关闭自动续订。系统会在当前周期结束前 24 小时内扣款续订。你可随时在 App Store 账户设置中管理或取消订阅。</p></details>
 </section>
 
+<section class="sec" id="whats-new" aria-labelledby="h-new">
+  <h2 id="h-new">1.1.9 版更新内容</h2>
+  <div class="news"><p>扫几张机票车票就能排出整条路线，「编辑旅行」也能改同行人了。</p><ul><li>一次扫多张机票车票，每段航班、火车、大巴按顺序排进路线，每一站都有自己的到达和离开日期</li><li>机场按票上印的三字码定位，不再靠猜是哪座城市</li><li>回程是红眼航班时，行程算在起飞那天结束</li><li>「编辑旅行」可以改旅行类型和同行人，清单跟着变：新选择需要的条目自动补上，不再需要、你也没动过的条目会移除</li><li>编辑页打开就是字段，扫描车票的按钮在行程名旁边</li><li>在中国大陆，读攻略截图和订单截图更稳定了</li></ul></div>
+</section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
   <h2 id="faq">常见问题</h2>
@@ -301,28 +328,28 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
   <ul class="langs">
       <li><a href="/beforego/" hreflang="en" lang="en">English</a></li>
       <li><a href="/beforego/de/" hreflang="de" lang="de">Deutsch</a></li>
-      <li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li>
-      <li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/beforego/fr/" hreflang="fr" lang="fr">Français</a></li>
       <li><a href="/beforego/it/" hreflang="it" lang="it">Italiano</a></li>
+      <li><a href="/beforego/es/" hreflang="es" lang="es">Español</a></li>
+      <li><a href="/beforego/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li>
       <li><a href="/beforego/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
-      <li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li>
       <li><a href="/beforego/ja/" hreflang="ja" lang="ja">日本語</a></li>
+      <li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li>
       <li><a href="/beforego/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a></li>
       <li><a href="/beforego/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
-      <li><a href="/beforego/ko/" hreflang="ko" lang="ko">한국어</a></li>
+      <li><a href="/beforego/th/" hreflang="th" lang="th">ไทย</a></li>
   </ul>
 </section>
 
 <section class="sec" id="more" aria-labelledby="h-more">
-  <h2 id="h-more">go ka 的更多应用</h2>
+  <h2 id="h-more">go ka 的其他应用</h2>
   <div class="others">
-      <a href="/countdown/zh-hans/"><img src="/assets/countdown/icon.png" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
-      <a href="/invoiceqr/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
-      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
-      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
-      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
-      <a href="/repdex/"><img src="" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+      <a href="/countdown/zh-hans/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/32/f1/23/32f12332-84f7-ff1b-2940-cf86b3c63500/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>距离生日、旅行、考试、婚礼还有几天，留住回忆</small></span></a>
+      <a href="/invoiceqr/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>智能账单与回款管理，模板与PDF导出</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>减肥减脂·饮食记录·轻断食</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>二维码生成器、扫码与美化</small></span></a>
+      <a href="/citu/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>拍照识词·查英语作业·跟读打分·课内闯关</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>1324 个动作 · 离线训练记录</small></span></a>
   </div>
 </section>
 
@@ -333,10 +360,11 @@ footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 
 <footer>
   <div class="wrap">
-    <p>BeforeGo：AI行程规划·出国清单 由 go ka 创意打造。 问题或反馈: <a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
-    <p><a href="/privacy-policy/">隐私政策</a> · <a href="/terms-of-use/">使用条款</a> · <a href="/">go ka</a></p>
+    <p>BeforeGo：AI行程规划·出国清单 由 go ka 开发。问题或反馈：<a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a></p>
+    <p class="social">关注 go ka：<a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a> · <a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a> · <a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a> · <a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a> · <a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">小红书</a></p>
+    <p><a href="/privacy-policy/">隐私政策</a> · <a href="/terms-of-use/">使用条款</a> · <a href="/zh-hans/">go ka</a></p>
   </div>
 </footer>
-<script>document.querySelectorAll(".hero-media video").forEach(function(v){v.addEventListener("play",function(){var p=v.parentNode.querySelector(".play");if(p)p.remove()},{once:true})});</script>
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
 </body>
 </html>

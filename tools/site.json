@@ -14,13 +14,41 @@
     "商店文案改了就回来同步这里，别在这里改出第二套说法。label 是站内短名，storeNameEn 只给中文产品页的 app 用。"
   ],
   "site": {
-    "origin": "https://goka-xi.vercel.app",
+    "origin": "https://beforego.art",
     "brand": "go ka",
     "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
     "email": "qinqiangji@gmail.com",
     "developerUrl": "https://apps.apple.com/developer/id1854274317",
     "developerNote": "App Store 上七个 app 都挂在这个开发者账号下（显示名是个人实名，不是 go ka）。首页和 Organization.sameAs 用它把品牌和账号连起来。",
-    "originNote": "2026-09-26 起线上是 Vercel：项目 goka（team qinqiangji-3410），生产别名 https://goka-xi.vercel.app，`vercel --prod` 从仓库根目录直接发（静态站，无构建）。dyljqq.github.io 上还是旧站，未同步。自有域名 apps.jiqinqiang.com 等能操作 DNSPod 时再挂到 Vercel 并把 origin 改过去；主域 jiqinqiang.com 有备案、接入商腾讯云，永远不要指到境外。"
+    "originNote": "2026-09-26 起官网域名是 https://beforego.art（腾讯云 DNS：A @ 216.198.79.1 / 64.29.17.1，CNAME www → Vercel），托管在 Vercel 项目 goka（team qinqiangji-3410），`tools/publish.sh` 从仓库根目录直接发（静态站，无构建）。旧的生产别名 goka-xi.vercel.app 和 www.beforego.art 由 vercel.json 301 到 https://beforego.art。dyljqq.github.io 同步 main 作兜底，canonical 指向 beforego.art。主域 jiqinqiang.com 有备案、接入商腾讯云，永远不要指到境外。",
+    "social": [
+      {
+        "key": "tiktok",
+        "name": "TikTok",
+        "url": "https://www.tiktok.com/@getbeforego"
+      },
+      {
+        "key": "instagram",
+        "name": "Instagram",
+        "url": "https://www.instagram.com/dyljqq/"
+      },
+      {
+        "key": "x",
+        "name": "X",
+        "url": "https://x.com/dyljqq21"
+      },
+      {
+        "key": "reddit",
+        "name": "Reddit",
+        "url": "https://www.reddit.com/user/lybjqq/"
+      },
+      {
+        "key": "xhs",
+        "name": "小红书",
+        "nameIntl": "RedNote (小红书)",
+        "url": "https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd"
+      }
+    ]
   },
   "apps": [
     {
@@ -113,7 +141,7 @@
         },
         {
           "q": "Erstellt es eine Packliste?",
-          "a": "Ja. Die Packliste schreibt sich selbst von Reiseziel und Reisedaten – Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps für dein Ziel – gruppiert nach Kategorie oder nach Zeitplan, mit Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise."
+          "a": "Ja. Die Packliste erstellt sich selbst aus Reiseziel und Reisedaten – Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps für dein Ziel – gruppiert nach Kategorie oder nach Zeitplan, mit Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise."
         },
         {
           "q": "Merkt es sich, was ich letztes Mal vergessen habe?",
@@ -129,10 +157,10 @@
         },
         {
           "q": "Wie viel kostet BeforeGo Premium?",
-          "a": "Premium ist ein automatisch verlängerndes Abo monatlich oder jährlich, und der Jahresplan enthält 7 Tage kostenlos testen für neue Abonnenten. Ein einmaliger lebenslanger Kauf ist auch verfügbar. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt."
+          "a": "Premium ist ein sich automatisch verlängerndes Abo, monatlich oder jährlich, und das Jahresabo enthält für neue Abonnenten einen 7-tägigen kostenlosen Test. Ein einmaliger lebenslanger Kauf ist auch verfügbar. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt."
         },
         {
-          "q": "Kann ich mich auf Visa- oder Einreisebestimmungen verlassen?",
+          "q": "Kann ich mich bei Visa- und Einreisebestimmungen darauf verlassen?",
           "a": "Nein. BeforeGo ist für persönliche Reiseorganisation gedacht und ersetzt keine offiziellen Visa-, Sicherheits-, Gesundheits-, Airline- oder staatlichen Informationen. Überprüfe immer wichtige Anforderungen bei offiziellen Stellen, bevor du reist."
         }
       ]
@@ -205,7 +233,7 @@
       "faq": [
         {
           "q": "Che cosa fa BeforeGo con uno screenshot di un post di viaggio?",
-          "a": "Lo classifica in un piano di viaggio giorno per giorno: i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Un link incollato o piani scritti funzionano allo stesso modo, e un biglietto scansionato o una conferma di prenotazione finisce anche lei nel piano."
+          "a": "Lo trasforma in un piano di viaggio giorno per giorno: i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Funziona allo stesso modo con un link incollato o con i piani scritti a mano, e anche un biglietto o una conferma di prenotazione scansionati entrano nel piano."
         },
         {
           "q": "Fa una lista bagagli?",
@@ -228,7 +256,7 @@
           "a": "Premium è un abbonamento a rinnovo automatico, mensile o annuale, e il piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. È disponibile anche un acquisto singolo a vita. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma."
         },
         {
-          "q": "Posso affidarmi a questo per visti o requisiti d'ingresso?",
+          "q": "Posso affidarmi all'app per visti o requisiti d'ingresso?",
           "a": "No. BeforeGo è uno strumento di organizzazione personale; non sostituisce le informazioni ufficiali su visti, salute, sicurezza, compagnie aeree o governo. Verifica sempre i requisiti importanti presso fonti ufficiali prima di viaggiare."
         }
       ]
@@ -246,7 +274,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "Planificador viajes BeforeGo — Plan de viaje desde screenshot",
+      "title": "Planificador viajes BeforeGo — Plan de viaje desde capturas",
       "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "legal": [],
@@ -294,7 +322,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "Planificador viajes BeforeGo (México)",
+      "title": "Planificador viajes BeforeGo — Arma tu itinerario desde capturas",
       "oneLiner": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
       "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
       "legal": [],
@@ -348,8 +376,8 @@
       "legal": [],
       "faq": [
         {
-          "q": "O que BeforeGo faz com um print de um post de viagem?",
-          "a": "Organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere. Um link colado ou planos digitados funcionam do mesmo jeito, e um bilhete ou confirmação de reserva escaneados também entram no roteiro."
+          "q": "O que o BeforeGo faz com um print de um post de viagem?",
+          "a": "Organiza tudo em um roteiro dia a dia: os lugares que valem a visita, o que resolver antes de viajar e cada dia que o post sugere. Um link colado ou planos digitados funcionam do mesmo jeito, e uma passagem ou confirmação de reserva escaneadas também entram no roteiro."
         },
         {
           "q": "Faz uma lista de bagagem?",
@@ -364,7 +392,7 @@
           "a": "Não. Comece grátis — sem anúncios, sem conta."
         },
         {
-          "q": "Qual é o suporte de idiomas?",
+          "q": "Quais idiomas o app suporta?",
           "a": "Dez: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português e ไทย."
         },
         {
@@ -372,7 +400,7 @@
           "a": "Premium é uma assinatura com renovação automática, mensal ou anual, e o plano anual inclui 7 dias de teste grátis para novos assinantes. Também há um desbloqueio vitalício de pagamento único. O preço exato aparece na tela de compra antes de confirmar."
         },
         {
-          "q": "Posso confiar nisso para vistos ou requisitos de entrada?",
+          "q": "Posso confiar no app para vistos ou requisitos de entrada?",
           "a": "Não. BeforeGo é para organização pessoal de viagens; não substitui informações oficiais de visto, saúde, segurança, companhias aéreas ou governo. Sempre confirme requisitos importantes em fontes oficiais antes de viajar."
         }
       ]
@@ -390,7 +418,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo：AI旅行計画・旅行チェックリスト — 旅行計画をスクショから作成、持ち物リストも含む",
+      "title": "BeforeGo：AI旅行計画・旅行チェックリスト — スクショから旅程を作成",
       "oneLiner": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
       "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
       "legal": [],
@@ -420,7 +448,7 @@
           "a": "Premium は自動更新のサブスクリプションで、月額と年額があり、年間プランには新規のお客様向けの 7 日間無料トライアルが付いています。買い切りの永久アンロックもあります。正確な価格は購入確認画面に表示されます。"
         },
         {
-          "q": "ビザと入国要件に信頼できますか？",
+          "q": "ビザや入国条件の情報として頼れますか？",
           "a": "いいえ。BeforeGo は個人の旅行整理のためのアプリです。ビザ、安全、健康、航空会社、政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。"
         }
       ]
@@ -438,37 +466,37 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo: AI 여행 플래너·패킹리스트 — 스크린샷에서 여행 일정, 패킹리스트 포함",
+      "title": "BeforeGo: AI 여행 플래너·패킹리스트 — 스크린샷으로 여행 일정 만들기",
       "oneLiner": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
       "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
       "legal": [],
       "faq": [
         {
-          "q": "BeforeGo는 여행 게시물의 스크린샷으로 무엇을 합니까?",
+          "q": "BeforeGo는 여행 게시물 스크린샷으로 무엇을 하나요?",
           "a": "날짜별 여행 일정으로 정리해 줍니다. 가볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 링크를 붙여넣거나 계획을 입력해도 똑같이 작동하고, 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어갑니다."
         },
         {
-          "q": "패킹리스트를 만듭니까?",
-          "a": "네. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다——플러그, 환전, 입국 준비, 교통 앱——카테고리별·타임라인별로 정리되고, 출발 7일·3일·24시간·3시간 전에 알림을 보냅니다."
+          "q": "패킹리스트도 만들어 주나요?",
+          "a": "네. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다 — 플러그, 환전, 입국 준비, 교통 앱 — 카테고리별·타임라인별로 정리되고, 출발 7일·3일·24시간·3시간 전에 알림을 보냅니다."
         },
         {
-          "q": "지난번에 잊었던 물건을 기억합니까?",
+          "q": "지난번에 잊은 물건을 기억하나요?",
           "a": "네. 잊었던 물건은 다음 여행 리스트로 자동 이월되므로, 다음 리스트는 더 준비된 상태로 시작합니다."
         },
         {
-          "q": "계정이 필요합니까?",
-          "a": "아니요. 무료로 시작 — 광고 없음, 계정 불필요입니다."
+          "q": "계정이 필요한가요?",
+          "a": "아니요. 무료로 시작할 수 있고, 광고도 없고 계정도 필요 없습니다."
         },
         {
-          "q": "어떤 언어를 지원합니까?",
+          "q": "어떤 언어를 지원하나요?",
           "a": "열 가지입니다: English, 简体中文, 繁體中文, 日本語, 한국어, Français, Deutsch, Italiano, Português, ไทย."
         },
         {
-          "q": "BeforeGo Premium의 가격은?",
+          "q": "BeforeGo Premium은 얼마인가요?",
           "a": "Premium은 자동 갱신 구독으로 월간·연간이 있고, 연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. 일회성 평생 이용권도 제공됩니다. 정확한 가격은 구매 확인 화면에 표시됩니다."
         },
         {
-          "q": "비자와 입국 요건에 신뢰할 수 있습니까?",
+          "q": "비자와 입국 요건 정보를 믿고 써도 되나요?",
           "a": "아니요. BeforeGo는 개인 여행 준비용 도구이며 비자·안전·건강·항공사·정부의 공식 안내를 대체하지 않습니다. 중요한 요건은 반드시 공식 출처에서 확인하세요."
         }
       ]
@@ -556,7 +584,7 @@
           "a": "不需要。免費開始——無廣告、無需帳號。"
         },
         {
-          "q": "支持哪些語言？",
+          "q": "支援哪些語言？",
           "a": "十種：English、简体中文、繁體中文、日本語、한국어、Français、Deutsch、Italiano、Português 和 ไทย。"
         },
         {
@@ -564,7 +592,7 @@
           "a": "Premium 是自動續訂的訂閱，分月訂閱和年訂閱。年度訂閱為新用戶提供 7 天免費試用。也提供一次性永久解鎖。實際價格會在購買頁確認前顯示。"
         },
         {
-          "q": "我能靠它查簽證和入國要求嗎？",
+          "q": "我能靠它查簽證和入境規定嗎？",
           "a": "不能。BeforeGo 用於個人旅行整理，不能取代簽證、安全、健康、航空公司或政府的官方資訊。重要事項請務必以官方來源為準。"
         }
       ]
@@ -588,16 +616,16 @@
       "legal": [],
       "faq": [
         {
-          "q": "BeforeGo ทำอะไรกับแคปแพสต์เที่ยว?",
+          "q": "BeforeGo ทำอะไรกับแคปโพสต์เที่ยว?",
           "a": "จัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้ วางลิงก์หรือพิมพ์แผนก็ได้เช่นเดียวกัน สแกนตั๋วหรือใบยืนยันการจองก็เพิ่มลงในแผนได้เลย"
         },
         {
-          "q": "มันสร้างลิสต์จัดกระเป๋าได้ไหม?",
+          "q": "สร้างลิสต์จัดกระเป๋าให้ได้ไหม?",
           "a": "ได้ ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง — ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง แอปเดินทาง — แบบหมวดหมู่หรือไทม์ไลน์ มีแจ้งเตือน 7 วัน 3 วัน 24 ชม. และ 3 ชม. ก่อนออก"
         },
         {
-          "q": "มันจำของที่ลืมครั้งที่แล้วได้ไหม?",
-          "a": "ได้ ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้า ดังนั้นลิสต์ครั้งต่อไปก็ดีที่สุด"
+          "q": "จำของที่ลืมครั้งก่อนได้ไหม?",
+          "a": "ได้ ของที่ลืมจะถูกยกไปใส่ลิสต์ครั้งหน้า ลิสต์ทริปถัดไปจึงเริ่มต้นได้ครบกว่าเดิม"
         },
         {
           "q": "ต้องมีบัญชีไหม?",
@@ -612,7 +640,7 @@
           "a": "Premium เป็นการสมัครสมาชิกแบบต่ออายุอัตโนมัติ รายเดือนหรือรายปี แผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ มีตัวเลือกซื้อขาดแบบใช้ได้ตลอดชีพด้วย ราคาจะแสดงในหน้าชำระเงินก่อนยืนยัน"
         },
         {
-          "q": "ฉันเชื่อใจได้ไหมเรื่องวีซ่าและข้อกำหนดเข้าเมือง?",
+          "q": "เชื่อข้อมูลวีซ่าและข้อกำหนดเข้าเมืองจากแอปได้ไหม?",
           "a": "ไม่ได้ BeforeGo ใช้สำหรับจัดระเบียบการเดินทางส่วนตัว ไม่แทนข้อมูลทางการเรื่องวีซ่า สุขภาพ ความปลอดภัย หรือสายการบิน โปรดตรวจสอบข้อกำหนดสำคัญจากแหล่งทางการเสมอ"
         }
       ]
@@ -630,10 +658,10 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "Countdown Widget — Every Widget Free, No Event Limit",
       "oneLiner": "A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.",
-      "description": "A countdown that never loses your days. Every widget size on the Home and Lock Screen is free, events are unlimited, reminders are free, and the app takes a backup of your countdowns on device every day. Pro sells backdrops, never the function.",
+      "description": "A countdown widget app for iPhone: every widget size on the Home and Lock Screen is free, events are unlimited, and a daily backup keeps them safe. Pro adds backdrops and a Live Activity.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
       "free": "Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
-      "paid": "Pro unlocks 90 of the 122 backdrops. US$9.99/year with a 7-day free trial, US$1.49/month, or US$14.99 once for Lifetime.",
+      "paid": "Pro unlocks 88 of the 140 backdrops and the Live Activity on the Lock Screen and Dynamic Island. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
       "legal": [
         [
           "/countdown/privacy-policy/",
@@ -647,11 +675,11 @@
       "faq": [
         {
           "q": "Is there a countdown widget app for iPhone that is actually free?",
-          "a": "Yes. In Countdown Widget: Any Event every widget size works on both the Home Screen and the Lock Screen without paying, and the number of events is unlimited. Reminders, repeats and count-up are free as well. The paid tier only unlocks backdrops."
+          "a": "Yes. In Countdown Widget: Any Event every widget size works on both the Home Screen and the Lock Screen without paying, and the number of events is unlimited. Reminders, repeats and count-up are free as well. Pro adds backdrops and the Live Activity."
         },
         {
           "q": "How many countdowns can I create on the free tier?",
-          "a": "There is no limit. Most countdown apps cap the free tier at three to five events; this one does not cap it at any tier."
+          "a": "There is no limit on any plan — add as many events as you like."
         },
         {
           "q": "Can it count up from a date that already passed?",
@@ -662,12 +690,12 @@
           "a": "The app takes a snapshot of everything on the device once a day, and always before anything risky. Thirty days of history are kept and any snapshot restores in one tap. iCloud sync is available and needs no account."
         },
         {
-          "q": "What does Countdown Widget Pro cost, and what does it unlock?",
-          "a": "Pro unlocks 90 of the 122 backdrops, with a new drop every month. It is US$9.99 per year with a 7-day free trial, US$1.49 per month, or US$14.99 once for Lifetime. Countdowns, reminders and widgets behave identically with or without it."
+          "q": "What does Countdown Pro unlock, and how is it sold?",
+          "a": "Pro unlocks the Pro backdrops — 88 of the 140 full-screen backdrops — with a new drop every month, and whatever you unlock while subscribed stays yours. Since version 1.4.7 the Live Activity — an event pinned to the Lock Screen and Dynamic Island — is part of Pro too. It comes as an annual plan with a 7-day free trial, a monthly plan, or a one-time Lifetime purchase; the prices are shown in the app before purchase. Countdowns, reminders and widgets behave identically with or without it."
         },
         {
-          "q": "Does it need an account or an internet connection?",
-          "a": "No account and no sign-up. The app works offline; iCloud sync uses your own Apple Account when you turn it on."
+          "q": "Do I need an account?",
+          "a": "No account and no sign-up. iCloud sync uses your own Apple Account when you turn it on, and the daily backup stays on your iPhone."
         }
       ],
       "home": {
@@ -694,23 +722,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "Contagem Regressiva com Widget — Grátis, Eventos Ilimitados",
       "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos de widget são grátis e o número de eventos é ilimitado.",
-      "description": "App de contagem regressiva para iPhone: todos os tamanhos de widget na tela de início e na tela de bloqueio são grátis, eventos ilimitados, lembretes grátis, sem anúncios. O Pro vende só planos de fundo, nunca a função.",
+      "description": "App de contagem regressiva para iPhone: todos os widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios. O Pro acrescenta planos de fundo e a Atividade ao Vivo.",
       "audience": "Quem conta os dias para o ENEM, o Réveillon, o Carnaval, uma viagem, um casamento ou um aniversário — ou conta os dias desde uma data.",
       "free": "Todos os tamanhos de widget, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
-      "paid": "O Pro desbloqueia 90 dos 122 planos de fundo. R$ 69,90/ano com 7 dias grátis, R$ 9,90/mês, ou R$ 89,90 uma única vez (vitalício).",
+      "paid": "O Pro desbloqueia 88 dos 140 planos de fundo e a Atividade ao Vivo. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
       "legal": [],
       "faq": [
         {
           "q": "Existe um app de contagem regressiva com widget para iPhone que seja grátis de verdade?",
-          "a": "Sim. No Countdown: Contagem regressiva todos os tamanhos de widget funcionam na tela de início e na tela de bloqueio sem pagar, e o número de eventos é ilimitado. Lembretes, repetição e contagem progressiva também são grátis. O Pro só desbloqueia planos de fundo."
+          "a": "Sim. No Countdown: Contagem regressiva todos os tamanhos de widget funcionam na Tela de Início e na Tela Bloqueada sem pagar, e o número de eventos é ilimitado. Lembretes, repetição e contagem progressiva também são grátis. O Pro acrescenta planos de fundo e a Atividade ao Vivo."
         },
         {
           "q": "Quantas contagens regressivas posso criar na versão grátis?",
-          "a": "Não há limite. A maioria dos apps de contagem regressiva trava a versão grátis em três a cinco eventos; este não trava em nenhum plano."
+          "a": "Não há limite em nenhum plano — crie quantos eventos quiser."
         },
         {
           "q": "Serve para contar os dias até o ENEM, o Réveillon ou o Carnaval?",
-          "a": "Serve. Você cria o evento em um toque, escolhe se ele repete todo ano e recebe lembrete no dia e com a antecedência que quiser. Os feriados nacionais do Brasil já vêm prontos na lista."
+          "a": "Serve. Você cria o evento, escolhe se ele repete todo ano e recebe lembrete no dia e com a antecedência que quiser. São trinta e seis modelos prontos, do aniversário ao primeiro dia de trabalho, já com a repetição e os lembretes certos."
         },
         {
           "q": "Dá para contar os dias desde uma data que já passou?",
@@ -721,12 +749,12 @@
           "a": "O app guarda uma cópia de tudo no aparelho uma vez por dia, e sempre antes de qualquer operação arriscada. Trinta dias de histórico ficam salvos e qualquer cópia é restaurada em um toque. A sincronização pelo iCloud está disponível e não precisa de conta."
         },
         {
-          "q": "Quanto custa o Pro no Brasil e o que ele desbloqueia?",
-          "a": "O Pro desbloqueia 90 dos 122 planos de fundo, com novos todo mês. Custa R$ 69,90 por ano com 7 dias grátis, R$ 9,90 por mês, ou R$ 89,90 uma única vez (vitalício). Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
+          "q": "O que o Pro desbloqueia e como ele é vendido?",
+          "a": "O Pro desbloqueia os planos de fundo Pro — 88 dos 140 —, com novos todo mês, e o que você desbloquear durante a assinatura continua seu. Desde a versão 1.4.7, a Atividade ao Vivo — o evento fixado na Tela Bloqueada e na Dynamic Island — também faz parte do Pro. Há um plano anual com 7 dias grátis, um plano mensal ou uma compra única vitalícia; os preços aparecem no app antes da compra. Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
         },
         {
-          "q": "Precisa de conta ou de internet?",
-          "a": "Não precisa de conta nem de cadastro. O app funciona offline; a sincronização pelo iCloud usa a sua própria Conta Apple quando você a liga."
+          "q": "Precisa de conta?",
+          "a": "Não precisa de conta nem de cadastro. A sincronização pelo iCloud usa a sua própria Conta Apple quando você a ativa, e a cópia diária fica no seu iPhone."
         }
       ]
     },
@@ -745,23 +773,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse",
       "oneLiner": "Countdown-App für iPhone: jede Widget-Größe ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
-      "description": "Countdown-App für iPhone: jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ist kostenlos, Ereignisse sind unbegrenzt, Erinnerungen sind kostenlos, keine Werbung. Pro verkauft nur Hintergründe, nie die Funktion.",
+      "description": "Countdown-App für iPhone: Alle Widget-Größen für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung. Pro ergänzt Hintergründe und eine Live-Aktivität.",
       "audience": "Alle, die die Tage bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente oder zum Geburtstag zählen — oder die Tage seit einem Datum.",
       "free": "Jede Widget-Größe, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
-      "paid": "Pro schaltet 90 der 122 Hintergründe frei. 9,99 €/Jahr mit 7 Tagen kostenlos testen, 1,99 €/Monat oder 17,99 € einmalig (Lifetime).",
+      "paid": "Pro schaltet 88 der 140 Hintergründe und die Live-Aktivität frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
       "legal": [],
       "faq": [
         {
           "q": "Gibt es eine Countdown-App mit Widget für das iPhone, die wirklich kostenlos ist?",
-          "a": "Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Tage-zählen sind ebenfalls kostenlos. Pro schaltet nur Hintergründe frei."
+          "a": "Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Hochzählen ab einem Datum sind ebenfalls kostenlos. Pro ergänzt Hintergründe und die Live-Aktivität."
         },
         {
           "q": "Wie viele Countdowns kann ich in der kostenlosen Version anlegen?",
-          "a": "Es gibt keine Grenze. Die meisten Countdown-Apps begrenzen die kostenlose Version auf drei bis fünf Ereignisse; diese begrenzt sie in keiner Stufe."
+          "a": "Es gibt keine Grenze, in keinem Tarif – leg so viele Ereignisse an, wie du willst."
         },
         {
           "q": "Kann ich damit die Tage bis zur Rente, zum Urlaub oder bis Weihnachten zählen?",
-          "a": "Ja. Du legst das Ereignis mit einem Tipp an, wählst, ob es jedes Jahr wiederkehrt, und bekommst am Tag selbst und so weit im Voraus wie du willst eine Erinnerung. Die gesetzlichen Feiertage in Deutschland sind schon in der Liste."
+          "a": "Ja. Du legst das Ereignis an, wählst, ob es jedes Jahr wiederkehrt, und bekommst am Tag selbst und so weit im Voraus, wie du willst, eine Erinnerung. Dazu gibt es sechsunddreißig fertige Vorlagen, vom Geburtstag bis zum ersten Arbeitstag, mit passender Wiederholung und passenden Erinnerungen."
         },
         {
           "q": "Kann die App auch die Tage seit einem vergangenen Datum zählen?",
@@ -772,12 +800,12 @@
           "a": "Die App sichert einmal am Tag alles auf dem Gerät, und immer vor riskanten Vorgängen. Dreißig Tage Verlauf werden aufbewahrt, und jede Sicherung lässt sich mit einem Tipp wiederherstellen. iCloud-Sync ist verfügbar und braucht kein Konto."
         },
         {
-          "q": "Was kostet Countdown Widget Pro in Deutschland, und was schaltet es frei?",
-          "a": "Pro schaltet 90 der 122 Hintergründe frei, jeden Monat kommen neue dazu. Es kostet 9,99 € pro Jahr mit 7 Tagen kostenlos testen, 1,99 € pro Monat oder 17,99 € einmalig (Lifetime). Countdowns, Erinnerungen und Widgets verhalten sich mit und ohne Pro genau gleich."
+          "q": "Was schaltet Countdown Pro frei, und wie wird es verkauft?",
+          "a": "Pro schaltet die Pro-Hintergründe frei – 88 der 140 –, jeden Monat kommen neue dazu, und was du im Abo freischaltest, bleibt dir. Seit Version 1.4.7 gehört auch die Live-Aktivität – das Ereignis auf Sperrbildschirm und Dynamic Island – zu Pro. Es gibt ein Jahresabo mit 7 Tagen kostenlosem Test, ein Monatsabo oder einen einmaligen Lifetime-Kauf; die Preise stehen vor dem Kauf in der App. Countdowns, Erinnerungen und Widgets funktionieren mit und ohne Pro genau gleich."
         },
         {
-          "q": "Braucht die App ein Konto oder eine Internetverbindung?",
-          "a": "Kein Konto, keine Registrierung. Die App funktioniert offline; iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest."
+          "q": "Brauche ich ein Konto?",
+          "a": "Kein Konto, keine Registrierung. Der iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest, und die tägliche Sicherung bleibt auf deinem iPhone."
         }
       ]
     },
@@ -795,24 +823,24 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/countdown/home.jpg",
       "title": "Compte à rebours avec widget — Gratuit, événements illimités",
-      "oneLiner": "Appli de compte à rebours pour iPhone où chaque taille de widget est gratuite et le nombre d'événements illimité.",
-      "description": "Appli de compte à rebours pour iPhone : chaque taille de widget sur l'écran d'accueil et l'écran de verrouillage est gratuite, les événements sont illimités, les rappels sont gratuits, sans publicité. Pro ne vend que des fonds d'écran, jamais la fonction.",
+      "oneLiner": "App de compte à rebours pour iPhone où chaque taille de widget est gratuite et le nombre d'événements illimité.",
+      "description": "App de compte à rebours pour iPhone : tous les widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub. Pro ajoute des fonds et une activité en direct.",
       "audience": "Tous ceux qui comptent les jours avant les vacances, le mariage, le bac, la retraite ou un anniversaire — ou les jours depuis une date.",
       "free": "Chaque taille de widget, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
-      "paid": "Pro débloque 90 des 122 fonds d'écran. 9,99 €/an avec 7 jours d'essai gratuit, 1,99 €/mois, ou 17,99 € une seule fois (à vie).",
+      "paid": "Pro débloque 88 des 140 fonds d'écran et l'activité en direct. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
       "legal": [],
       "faq": [
         {
-          "q": "Existe-t-il une appli de compte à rebours avec widget pour iPhone vraiment gratuite ?",
-          "a": "Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran de verrouillage sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ne débloque que des fonds d'écran."
+          "q": "Existe-t-il une app de compte à rebours avec widget pour iPhone vraiment gratuite ?",
+          "a": "Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran verrouillé sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ajoute des fonds et l'activité en direct."
         },
         {
           "q": "Combien de comptes à rebours puis-je créer en version gratuite ?",
-          "a": "Il n'y a pas de limite. La plupart des applis de compte à rebours bloquent la version gratuite à trois ou cinq événements ; celle-ci ne bloque à aucun niveau."
+          "a": "Il n'y a aucune limite, quelle que soit la formule : créez autant d'événements que vous voulez."
         },
         {
           "q": "Peut-on compter les jours avant les vacances, le bac ou la retraite ?",
-          "a": "Oui. Vous créez l'événement d'un geste, choisissez s'il revient chaque année, et recevez un rappel le jour même et aussi longtemps à l'avance que vous voulez. Les jours fériés français sont déjà dans la liste."
+          "a": "Oui. Vous créez l'événement, choisissez s'il revient chaque année, et recevez un rappel le jour même et aussi longtemps à l'avance que vous voulez. Trente-six modèles prêts à l'emploi, de l'anniversaire au premier jour de travail, ont déjà la bonne répétition et les bons rappels."
         },
         {
           "q": "Peut-on compter les jours depuis une date passée ?",
@@ -820,15 +848,15 @@
         },
         {
           "q": "Que deviennent mes comptes à rebours après une mauvaise mise à jour ou une réinstallation ?",
-          "a": "L'appli fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte."
+          "a": "L'app fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte."
         },
         {
-          "q": "Combien coûte Countdown Widget Pro en France, et que débloque-t-il ?",
-          "a": "Pro débloque 90 des 122 fonds d'écran, avec des nouveaux chaque mois. C'est 9,99 € par an avec 7 jours d'essai gratuit, 1,99 € par mois, ou 17,99 € une seule fois (à vie). Comptes à rebours, rappels et widgets se comportent exactement pareil avec ou sans."
+          "q": "Que débloque Countdown Pro, et comment est-il vendu ?",
+          "a": "Pro débloque les fonds Pro – 88 des 140 –, avec des nouveaux chaque mois, et ce que vous débloquez pendant l'abonnement vous reste acquis. Depuis la version 1.4.7, l'activité en direct – l'événement épinglé sur l'écran verrouillé et dans la Dynamic Island – fait aussi partie de Pro. Il existe un abonnement annuel avec 7 jours d'essai gratuit, un abonnement mensuel ou un achat unique à vie ; les prix sont affichés dans l'app avant l'achat. Comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans."
         },
         {
-          "q": "Faut-il un compte ou une connexion internet ?",
-          "a": "Aucun compte, aucune inscription. L'appli fonctionne hors ligne ; la synchronisation iCloud utilise votre propre compte Apple quand vous l'activez."
+          "q": "Faut-il un compte ?",
+          "a": "Aucun compte, aucune inscription. La synchronisation iCloud utilise votre propre compte Apple quand vous l'activez, et la sauvegarde quotidienne reste sur votre iPhone."
         }
       ]
     },
@@ -847,23 +875,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "Conto alla rovescia con widget — Gratis, eventi illimitati",
       "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione di widget è gratis e il numero di eventi è illimitato.",
-      "description": "App di conto alla rovescia per iPhone: ogni dimensione di widget nella schermata Home e nella schermata di blocco è gratis, gli eventi sono illimitati, i promemoria sono gratis, senza pubblicità. Pro vende solo sfondi, mai la funzione.",
+      "description": "App di conto alla rovescia per iPhone: tutti i widget per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità. Pro aggiunge sfondi e un'attività in tempo reale.",
       "audience": "Chi conta i giorni alle vacanze, al matrimonio, alla maturità, alla pensione o a un compleanno — o i giorni da una data.",
       "free": "Ogni dimensione di widget, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
-      "paid": "Pro sblocca 90 dei 122 sfondi. 9,99 €/anno con 7 giorni di prova gratuita, 1,99 €/mese, oppure 17,99 € una tantum (a vita).",
+      "paid": "Pro sblocca 88 dei 140 sfondi e l'attività in tempo reale. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
       "legal": [],
       "faq": [
         {
           "q": "Esiste un'app di conto alla rovescia con widget per iPhone davvero gratis?",
-          "a": "Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro sblocca solo gli sfondi."
+          "a": "Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro aggiunge sfondi e l'attività in tempo reale."
         },
         {
           "q": "Quanti conti alla rovescia posso creare nella versione gratis?",
-          "a": "Non c'è limite. La maggior parte delle app di conto alla rovescia blocca la versione gratis a tre o cinque eventi; questa non la blocca a nessun livello."
+          "a": "Non c'è alcun limite, in nessun piano: crea tutti gli eventi che vuoi."
         },
         {
           "q": "Serve per contare i giorni alla maturità, alle vacanze o alla pensione?",
-          "a": "Sì. Crei l'evento con un tocco, scegli se si ripete ogni anno e ricevi un promemoria il giorno stesso e con l'anticipo che vuoi. Le festività italiane sono già nella lista."
+          "a": "Sì. Crei l'evento, scegli se si ripete ogni anno e ricevi un promemoria il giorno stesso e con l'anticipo che vuoi. Ci sono anche trentasei modelli pronti, dal compleanno al primo giorno di lavoro, con la ripetizione giusta e i promemoria già impostati."
         },
         {
           "q": "Può contare i giorni da una data già passata?",
@@ -874,12 +902,12 @@
           "a": "L'app fa un backup di tutto sul dispositivo una volta al giorno, e sempre prima di un'operazione rischiosa. Trenta giorni di cronologia restano salvati e ogni backup si ripristina con un tocco. La sincronizzazione iCloud è disponibile e non richiede account."
         },
         {
-          "q": "Quanto costa Countdown Widget Pro in Italia e cosa sblocca?",
-          "a": "Pro sblocca 90 dei 122 sfondi, con nuovi sfondi ogni mese. Costa 9,99 € all'anno con 7 giorni di prova gratuita, 1,99 € al mese, oppure 17,99 € una tantum (a vita). Conti alla rovescia, promemoria e widget si comportano esattamente allo stesso modo con o senza."
+          "q": "Cosa sblocca Countdown Pro e come si acquista?",
+          "a": "Pro sblocca gli sfondi Pro – 88 dei 140 –, con nuovi sfondi ogni mese, e ciò che sblocchi durante l'abbonamento resta tuo. Dalla versione 1.4.7 fa parte di Pro anche l'attività in tempo reale: l'evento fissato sulla schermata di blocco e nella Dynamic Island. C'è un piano annuale con 7 giorni di prova gratuita, un piano mensile o un acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto. Conti alla rovescia, promemoria e widget funzionano esattamente allo stesso modo con o senza Pro."
         },
         {
-          "q": "Serve un account o una connessione internet?",
-          "a": "Nessun account, nessuna registrazione. L'app funziona offline; la sincronizzazione iCloud usa il tuo account Apple quando la attivi."
+          "q": "Serve un account?",
+          "a": "Nessun account, nessuna registrazione. La sincronizzazione iCloud usa il tuo account Apple quando la attivi, e il backup quotidiano resta sul tuo iPhone."
         }
       ]
     },
@@ -898,23 +926,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "カウントダウン ウィジェット — 無料・イベント無制限",
       "oneLiner": "iPhone向けカウントダウンアプリ。ウィジェットは全サイズ無料、イベント数は無制限。",
-      "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proで買うのは背景だけで、機能は売りません。",
+      "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景とライブアクティビティが追加されます。",
       "audience": "受験、旅行、結婚式、推しのライブ、誕生日まであと何日かを数える人。ある日からの日数を数える人にも。",
       "free": "全サイズのウィジェット、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
-      "paid": "Proは122種の背景のうち90種を解放。年額1,500円（7日間無料トライアル付き）、月額200円、または買い切り2,500円。",
+      "paid": "Proは140種の背景のうち88種とライブアクティビティを解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
       "legal": [],
       "faq": [
         {
           "q": "iPhoneで本当に無料で使えるカウントダウンウィジェットのアプリはありますか？",
-          "a": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proで解放されるのは背景だけです。"
+          "a": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proでは背景とライブアクティビティが追加されます。"
         },
         {
           "q": "無料版でカウントダウンはいくつ作れますか？",
-          "a": "上限はありません。多くのカウントダウンアプリは無料版を3〜5件に制限しますが、このアプリはどのプランでも制限しません。"
+          "a": "上限はありません。どのプランでも、イベントはいくつでも作れます。"
         },
         {
           "q": "受験や旅行、推しのライブまであと何日かを数えるのに使えますか？",
-          "a": "使えます。ワンタップでイベントを作り、毎年繰り返すかを選び、当日と好きなだけ前にリマインダーを受け取れます。日本の祝日は最初からリストに入っています。"
+          "a": "使えます。イベントを作って毎年繰り返すかを選べば、当日と好きなだけ前にリマインダーが届きます。誕生日から入社初日まで36種類のテンプレートがあり、繰り返しと通知は設定済みです。"
         },
         {
           "q": "過ぎた日からの経過日数も数えられますか？",
@@ -925,12 +953,12 @@
           "a": "アプリは1日1回、そして危険な操作の前には必ず、端末内にすべてのバックアップを取ります。30日分の履歴が残り、どのバックアップもワンタップで復元できます。iCloud同期も使え、アカウント登録は不要です。"
         },
         {
-          "q": "日本でのProの価格と、解放される内容は？",
-          "a": "Proは122種の背景のうち90種を解放し、毎月新しい背景が追加されます。年額1,500円（7日間の無料トライアル付き）、月額200円、または買い切り2,500円です。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
+          "q": "Proで何が解放され、どのように購入できますか？",
+          "a": "Proでは全140種の全画面背景のうちPro用の88種が解放され、毎月新しい背景が追加されます。購読中に解放した背景はその後も使えます。バージョン1.4.7からは、ロック画面とダイナミックアイランドに固定するライブアクティビティもProの機能です。7日間の無料トライアル付き年額プラン、月額プラン、買い切りから選べ、価格は購入前にアプリ内に表示されます。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
         },
         {
-          "q": "アカウントやインターネット接続は必要ですか？",
-          "a": "アカウントも登録も不要です。アプリはオフラインで動きます。iCloud同期をオンにした場合はご自身のApple Accountが使われます。"
+          "q": "アカウントは必要ですか？",
+          "a": "アカウントも登録も不要です。iCloud同期をオンにするとご自身のApple Accountが使われ、毎日のバックアップはiPhone内に保存されます。"
         }
       ]
     },
@@ -949,23 +977,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
       "oneLiner": "iPhone용 디데이 카운트다운 앱. 위젯은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
-      "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경만 팔고 기능은 팔지 않습니다.",
+      "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.",
       "audience": "수능, 전역, 여행, 결혼식, 콘서트, 생일까지 며칠 남았는지 세는 사람. 어떤 날로부터 며칠 지났는지 세는 사람에게도.",
       "free": "모든 크기의 위젯, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
-      "paid": "Pro는 배경 122종 중 90종을 엽니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제.",
+      "paid": "Pro는 배경 140가지 중 88가지와 라이브 활동을 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
       "legal": [],
       "faq": [
         {
           "q": "iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?",
-          "a": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경만 엽니다."
+          "a": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경과 라이브 활동을 더합니다."
         },
         {
           "q": "무료 버전에서 디데이를 몇 개까지 만들 수 있나요?",
-          "a": "제한이 없습니다. 대부분의 카운트다운 앱은 무료 버전을 3~5개로 막지만, 이 앱은 어떤 등급에서도 막지 않습니다."
+          "a": "제한이 없습니다. 어떤 플랜에서도 이벤트를 원하는 만큼 만들 수 있습니다."
         },
         {
           "q": "수능, 전역, 콘서트까지 며칠 남았는지 세는 데 쓸 수 있나요?",
-          "a": "쓸 수 있습니다. 한 번의 탭으로 이벤트를 만들고, 매년 반복할지 정하고, 당일과 원하는 만큼 미리 알림을 받습니다. 한국의 공휴일은 처음부터 목록에 들어 있습니다."
+          "a": "쓸 수 있습니다. 이벤트를 만들고 매년 반복할지 정하면, 당일과 원하는 만큼 미리 알림을 받습니다. 생일부터 첫 출근까지 36가지 템플릿이 있고, 반복과 알림이 이미 맞춰져 있습니다."
         },
         {
           "q": "지난 날로부터 며칠 지났는지도 셀 수 있나요?",
@@ -976,12 +1004,12 @@
           "a": "앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다."
         },
         {
-          "q": "한국에서 Pro 가격은 얼마이고 무엇이 열리나요?",
-          "a": "Pro는 배경 122종 중 90종을 열고, 매달 새 배경이 추가됩니다. 연 17,000원(7일 무료 체험 포함), 월 2,200원, 또는 평생 이용권 25,000원 1회 결제입니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+          "q": "Pro는 무엇이 열리고, 어떻게 구매하나요?",
+          "a": "Pro는 전체 화면 배경 140가지 중 Pro 배경 88가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 연 배경은 계속 내 것으로 남습니다. 1.4.7 버전부터는 잠금 화면과 Dynamic Island에 고정하는 라이브 활동도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
         },
         {
-          "q": "계정이나 인터넷 연결이 필요한가요?",
-          "a": "계정도 가입도 필요 없습니다. 앱은 오프라인에서 작동하고, iCloud 동기화를 켜면 본인의 Apple 계정이 쓰입니다."
+          "q": "계정이 필요한가요?",
+          "a": "계정도 가입도 필요 없습니다. iCloud 동기화를 켜면 본인의 Apple 계정이 쓰이고, 매일 백업은 iPhone 안에 저장됩니다."
         }
       ]
     },
@@ -1000,23 +1028,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด",
       "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
-      "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro ขายแค่พื้นหลัง ไม่เคยขายฟังก์ชัน",
+      "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro เพิ่มพื้นหลังและกิจกรรมสด",
       "audience": "คนที่นับวันรอสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง หรือวันเกิด — หรือนับว่าผ่านมากี่วันแล้วจากวันหนึ่ง",
       "free": "วิดเจ็ตทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
-      "paid": "Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ 399 บาท/ปี พร้อมทดลองฟรี 7 วัน, 49 บาท/เดือน หรือซื้อขาดครั้งเดียว 499 บาท",
+      "paid": "Pro ปลดล็อกพื้นหลัง 88 จาก 140 แบบและกิจกรรมสด มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
       "legal": [],
       "faq": [
         {
           "q": "มีแอปนับถอยหลังพร้อมวิดเจ็ตสำหรับ iPhone ที่ฟรีจริงไหม",
-          "a": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอหลักและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro ปลดล็อกแค่พื้นหลัง"
+          "a": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอโฮมและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro เพิ่มพื้นหลังและกิจกรรมสด"
         },
         {
           "q": "เวอร์ชันฟรีสร้างนับถอยหลังได้กี่รายการ",
-          "a": "ไม่มีขีดจำกัด แอปนับถอยหลังส่วนใหญ่ล็อกเวอร์ชันฟรีไว้ที่ 3–5 อีเวนต์ แต่แอปนี้ไม่ล็อกในทุกระดับ"
+          "a": "ไม่มีขีดจำกัดในทุกแผน สร้างอีเวนต์ได้มากเท่าที่ต้องการ"
         },
         {
           "q": "ใช้นับวันรอสอบ ปีใหม่ หรือสงกรานต์ได้ไหม",
-          "a": "ได้ สร้างอีเวนต์ในแตะเดียว เลือกว่าจะให้ซ้ำทุกปีไหม แล้วรับแจ้งเตือนในวันนั้นและล่วงหน้าเท่าที่ต้องการ วันหยุดราชการของไทยอยู่ในรายการอยู่แล้ว"
+          "a": "ได้ สร้างอีเวนต์ เลือกว่าจะให้ซ้ำทุกปีไหม แล้วรับแจ้งเตือนในวันนั้นและล่วงหน้าเท่าที่ต้องการ มีเทมเพลตพร้อมใช้ 36 แบบ ตั้งแต่วันเกิดไปจนถึงวันแรกของงานใหม่ ตั้งค่าการทำซ้ำและการเตือนไว้ให้แล้ว"
         },
         {
           "q": "นับว่าผ่านมากี่วันแล้วจากวันที่ผ่านไปได้ไหม",
@@ -1027,12 +1055,12 @@
           "a": "แอปสำรองข้อมูลทั้งหมดไว้ในเครื่องวันละครั้ง และก่อนทำอะไรที่เสี่ยงเสมอ เก็บประวัติไว้ 30 วัน และกู้คืนได้ในแตะเดียว มีซิงก์ iCloud ให้ใช้โดยไม่ต้องมีบัญชี"
         },
         {
-          "q": "Pro ในไทยราคาเท่าไร และปลดล็อกอะไร",
-          "a": "Pro ปลดล็อกพื้นหลัง 90 จาก 122 แบบ และมีพื้นหลังใหม่ทุกเดือน ราคา 399 บาทต่อปี พร้อมทดลองฟรี 7 วัน, 49 บาทต่อเดือน หรือซื้อขาดครั้งเดียว 499 บาท นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
+          "q": "Pro ปลดล็อกอะไร และซื้อแบบไหนได้บ้าง",
+          "a": "Pro ปลดล็อกพื้นหลัง Pro 88 แบบจากทั้งหมด 140 แบบ และมีพื้นหลังใหม่ทุกเดือน สิ่งที่ปลดล็อกระหว่างสมัครสมาชิกจะเป็นของคุณตลอดไป ตั้งแต่เวอร์ชัน 1.4.7 กิจกรรมสดที่ปักหมุดไว้บนหน้าจอล็อกและ Dynamic Island ก็เป็นส่วนหนึ่งของ Pro มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว โดยราคาจะแสดงในแอปก่อนซื้อ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
         },
         {
-          "q": "ต้องมีบัญชีหรือต่ออินเทอร์เน็ตไหม",
-          "a": "ไม่ต้องมีบัญชี ไม่ต้องสมัคร แอปทำงานออฟไลน์ได้ ซิงก์ iCloud ใช้ Apple Account ของคุณเองเมื่อคุณเปิดใช้"
+          "q": "ต้องมีบัญชีไหม",
+          "a": "ไม่ต้องมีบัญชี ไม่ต้องสมัคร เมื่อเปิดซิงก์ iCloud จะใช้ Apple Account ของคุณเอง และข้อมูลสำรองรายวันจะเก็บไว้ใน iPhone ของคุณ"
         }
       ]
     },
@@ -1051,23 +1079,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "倒数日小组件 — 免费、事件不限量",
       "oneLiner": "iPhone 倒数日 App：小组件全尺寸免费，事件数量不限。",
-      "description": "iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 只卖背景，不卖功能。",
+      "description": "iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 增加背景和实时活动。",
       "audience": "给高考、考研、春节、旅行、婚礼、生日倒数的人，也给想知道「在一起多少天」的人。",
       "free": "全尺寸小组件、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
-      "paid": "Pro 解锁 122 款背景中的 90 款。¥68/年（含 7 天免费试用）、¥12/月，或 ¥98 一次买断。",
+      "paid": "Pro 解锁 140 张背景中的 88 张和实时活动。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
       "legal": [],
       "faq": [
         {
           "q": "iPhone 上有真正免费的倒数日小组件 App 吗？",
-          "a": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 只解锁背景。"
+          "a": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 增加背景和实时活动。"
         },
         {
           "q": "免费版能建多少个倒数日？",
-          "a": "没有上限。多数倒数日 App 把免费版卡在 3～5 个事件；这个 App 在任何档位都不设上限。"
+          "a": "没有上限，任何方案都一样，想加多少个事件都可以。"
         },
         {
           "q": "能给高考、春节、旅行倒数吗？",
-          "a": "能。一键新建事件，选好要不要每年重复，当天和你想要的任何提前量都会收到提醒。中国的法定节假日已经在列表里。"
+          "a": "能。新建事件，选好要不要每年重复，当天和你想要的任何提前量都会收到提醒。另有三十六个现成模板，从生日到入职第一天，重复规则和提醒都已经配好。"
         },
         {
           "q": "能算某一天已经过去了多少天吗？",
@@ -1078,12 +1106,12 @@
           "a": "App 每天在本机备份一次全部数据，任何有风险的操作前也一定先备份。保留 30 天历史，任何一份备份一键还原。iCloud 同步可用，不需要账号。"
         },
         {
-          "q": "Pro 在中国区多少钱，解锁什么？",
-          "a": "Pro 解锁 122 款背景中的 90 款，每月上新。¥68 一年（含 7 天免费试用）、¥12 一个月，或 ¥98 一次买断。倒数日、提醒和小组件有没有 Pro 都完全一样。"
+          "q": "Pro 解锁什么，怎么买？",
+          "a": "Pro 解锁 140 张整屏背景中属于 Pro 的 88 张，每月上新；订阅期间解锁过的永久归你。从 1.4.7 版起，固定到锁定屏幕和灵动岛的实时活动也属于 Pro。可以选年付（含 7 天免费试用）、月付或一次性买断，价格会在购买前显示在应用内。倒数日、提醒和小组件有没有 Pro 都完全一样。"
         },
         {
-          "q": "需要账号或联网吗？",
-          "a": "不需要账号，不用注册。App 离线可用；开启 iCloud 同步时用的是你自己的 Apple 账户。"
+          "q": "需要账号吗？",
+          "a": "不需要账号，不用注册。开启 iCloud 同步时用的是你自己的 Apple 账户，每天的备份也只存在你的 iPhone 里。"
         }
       ]
     },
@@ -1102,23 +1130,23 @@
       "ogImage": "/assets/countdown/home.jpg",
       "title": "倒數日小工具 — 免費、事件不限量",
       "oneLiner": "iPhone 倒數日 App：小工具全尺寸免費，事件數量不限。",
-      "description": "iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 只賣背景，不賣功能。",
+      "description": "iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景和即時動態。",
       "audience": "給學測、會考、過年、旅行、婚禮、演唱會、生日倒數的人，也給想知道「交往幾天」的人。",
       "free": "全尺寸小工具、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
-      "paid": "Pro 解鎖 122 款背景中的 90 款。台灣 NT$320/年（含 7 天免費試用）、NT$50/月，或 NT$490 一次買斷；香港 HK$88/年、HK$12/月，或 HK$118 買斷。",
+      "paid": "Pro 解鎖 140 張背景中的 88 張和即時動態。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
       "legal": [],
       "faq": [
         {
           "q": "iPhone 上有真正免費的倒數日小工具 App 嗎？",
-          "a": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 只解鎖背景。"
+          "a": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 增加背景和即時動態。"
         },
         {
           "q": "免費版能建幾個倒數日？",
-          "a": "沒有上限。多數倒數日 App 把免費版卡在 3～5 個事件；這個 App 在任何方案都不設上限。"
+          "a": "沒有上限，任何方案都一樣，想加多少個事件都可以。"
         },
         {
           "q": "能給學測、過年、演唱會倒數嗎？",
-          "a": "能。一鍵新增事件，選好要不要每年重複，當天和你想要的任何提前量都會收到提醒。台灣的國定假日已經在清單裡。"
+          "a": "能。新增事件，選好要不要每年重複，當天和你想要的任何提前量都會收到提醒。另有三十六個現成範本，從生日到到職第一天，重複規則和提醒都已經配好。"
         },
         {
           "q": "能算某一天已經過了幾天嗎？",
@@ -1129,12 +1157,12 @@
           "a": "App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。"
         },
         {
-          "q": "Pro 多少錢，解鎖什麼？",
-          "a": "Pro 解鎖 122 款背景中的 90 款，每月上新。台灣 App Store 是 NT$320 一年（含 7 天免費試用）、NT$50 一個月，或 NT$490 一次買斷；香港是 HK$88 一年、HK$12 一個月，或 HK$118 買斷。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
+          "q": "Pro 解鎖什麼，怎麼買？",
+          "a": "Pro 解鎖 140 張全螢幕背景中屬於 Pro 的 88 張，每月上新；訂閱期間解鎖過的永久歸你。從 1.4.7 版起，固定到鎖定畫面和動態島的即時動態也屬於 Pro。可以選年繳（含 7 天免費試用）、月繳或一次買斷，價格會在購買前顯示在 App 內。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
         },
         {
-          "q": "需要帳號或連網嗎？",
-          "a": "不需要帳號，不用註冊。App 離線可用；開啟 iCloud 同步時用的是你自己的 Apple 帳號。"
+          "q": "需要帳號嗎？",
+          "a": "不需要帳號，不用註冊。開啟 iCloud 同步時用的是你自己的 Apple 帳號，每天的備份也只存在你的 iPhone 裡。"
         }
       ]
     },
@@ -1151,7 +1179,7 @@
       "oneLiner": "An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with a scan-to-pay QR code on the invoice.",
       "description": "Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself. Clients, items and tax settings are reused, and nothing is uploaded to a server you do not control.",
       "audience": "Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.",
-      "free": "Three documents a month (invoices, estimates and quotes share the allowance), and four of the ready-made QR designs.",
+      "free": "Three documents in total, not three a month — invoices, estimates and quotes share the allowance, and editing or re-sending one is free — plus four of the ready-made QR designs.",
       "legal": [
         [
           "/invoiceqr/privacy-policy/",
@@ -1169,8 +1197,8 @@
           "a": "Yes. Smart Invoice & Estimate Maker has no account and no sign-up, and it works offline. Invoices, clients and QR codes sync through your own iCloud if you want them on more than one device."
         },
         {
-          "q": "How many invoices can I send for free?",
-          "a": "Three documents a month. The count moves when a document is created, not when you send it, and estimates and quotes draw on the same monthly allowance as invoices. A document you have already created is only counted once, so editing it or sending it again later in the month is free."
+          "q": "How many invoices can I create for free?",
+          "a": "Three documents in total, not three a month — invoices, estimates and quotes all draw on the same allowance. A document counts when you create it, and only once: editing it or sending it again later is free. No account, no sign-up."
         },
         {
           "q": "Can a client pay directly from the invoice?",
@@ -1182,7 +1210,7 @@
         },
         {
           "q": "Does it make QR codes for anything other than payment?",
-          "a": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and invoice — and 16 ready-made designs, four of which are free."
+          "a": "Yes. It includes a QR studio with 12 types — link, Wi-Fi, contact card, email, phone, SMS, chat, location, calendar, text, payment and Pix — and 16 ready-made designs, four of which are free."
         },
         {
           "q": "Can I recover an invoice I deleted by accident?",
@@ -1190,7 +1218,7 @@
         },
         {
           "q": "What does Invoice Maker Pro unlock?",
-          "a": "Unlimited invoices and QR exports, all 20 invoice templates, all 12 QR styles and 16 designs, the full brand kit (colour, font and logo), and custom QR colours, dots and frames."
+          "a": "Unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, the full brand kit (color, font and logo), custom QR colors, dots and frames, and no app line at the foot of exports."
         }
       ],
       "home": {
@@ -1200,7 +1228,8 @@
         "blurb": "The fastest way for freelancers and small businesses to send professional invoices, estimates and quotes — and get paid faster with built-in payment QR codes."
       },
       "generated": true,
-      "noAccount": true
+      "noAccount": true,
+      "paid": "Pro: unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, a full brand kit, custom QR colours, dots and frames, and no app line at the foot of exports."
     },
     {
       "key": "invoiceqr-de",
@@ -1215,40 +1244,41 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Smart Rechnung & Angebot — Rechnungen, Angebote",
-      "oneLiner": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
-      "description": "Erstellen Sie Rechnungen, Angebote und Quittungen auf dem iPhone und versenden Sie sie als PDF mit Bezahl-QR-Code.",
+      "title": "Smart Rechnung & Angebot — Rechnungen mit Bezahl-QR-Code am iPhone",
+      "oneLiner": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
+      "description": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
       "legal": [],
       "faq": [
         {
           "q": "Gibt es eine Rechnungs-App für das iPhone, die ohne Kontenerstellung funktioniert?",
-          "a": "Ja. Smart Rechnung & Angebot hat kein Konto und keine Anmeldung, und es funktioniert offline. Rechnungen, Kunden und QR-Codes werden über Ihre eigene iCloud synchronisiert, wenn Sie sie auf mehreren Geräten benötigen."
+          "a": "Ja. Smart Rechnung & Angebot kommt ohne Konto und ohne Anmeldung aus und funktioniert offline. Rechnungen, Kunden und QR-Codes werden über deine eigene iCloud synchronisiert, wenn du sie auf mehreren Geräten brauchst."
         },
         {
-          "q": "Wie viele Rechnungen kann ich kostenlos versenden?",
-          "a": "Drei Dokumente pro Monat. Der Zähler wird beim Erstellen eines Dokuments erhöht, nicht beim Versenden, und Kostenvoranschläge und Angebote teilen sich das gleiche Monatskontingent wie Rechnungen. Ein bereits erstelltes Dokument wird nur einmal gezählt, also ist das Bearbeiten oder spätere erneute Versenden kostenlos."
+          "q": "Wie viele Dokumente kann ich kostenlos erstellen?",
+          "a": "3 Dokumente kostenlos erstellen – ohne Konto, ohne Anmeldung. Diese 3 gelten insgesamt, nicht pro Monat – Rechnungen, Kostenvoranschläge und Angebote teilen sich dasselbe Kontingent. Gezählt wird beim Erstellen, und nur einmal pro Dokument – späteres Bearbeiten oder erneutes Senden kostet nichts."
         },
         {
           "q": "Kann ein Kunde direkt von der Rechnung aus bezahlen?",
-          "a": "Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Sie können dann die Zahlung in der App erfassen und die Rechnung zwischen unbezahlt, teilweise, bezahlt und überfällig verschieben."
+          "a": "Ja. Jede Rechnung kann einen Zahlungs-QR-Code tragen, den der Kunde scannt, um zu bezahlen. Danach erfasst du die Zahlung in der App und setzt die Rechnung auf unbezahlt, teilweise bezahlt, bezahlt oder überfällig."
         },
         {
-          "q": "Kann ich ein Angebot oder Kostenvoranschlag in eine Rechnung umwandeln?",
-          "a": "Ja, mit einem Tipp. Kunden, Positionen und Steuersätze werden einmal gespeichert und wiederverwendet, und Sie können Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen."
+          "q": "Kann ich ein Angebot oder einen Kostenvoranschlag in eine Rechnung umwandeln?",
+          "a": "Ja, mit einem Tipp. Kunden, Positionen und Steuersätze speicherst du einmal und verwendest sie wieder, und du kannst Rabatte, Versand, Zahlungsmethoden und wiederverwendbare Bedingungen hinzufügen."
         },
         {
-          "q": "Macht es QR-Codes für etwas anderes als Zahlungen?",
-          "a": "Ja. Es enthält ein QR-Studio mit 12 Typen — Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Kalender, Text, Zahlung und Pix — und 16 fertige Designs, davon vier kostenlos."
+          "q": "Erstellt die App auch QR-Codes für andere Zwecke als Zahlungen?",
+          "a": "12 QR-Typen: Link, WLAN, Visitenkarte, E-Mail, Telefon, SMS, Chat, Ort, Termin, Text, Zahlung und Pix. 16 fertige Designs: Poster, Menükarte, Preisschild, Neon, Visitenkarte und mehr – plus eigene Farben, Punkte, Rahmen und Verläufe."
         },
         {
           "q": "Kann ich eine versehentlich gelöschte Rechnung wiederherstellen?",
           "a": "Ja. Zuletzt gelöscht speichert Rechnungen für 30 Tage."
         },
         {
-          "q": "Was entsperrt Invoice Maker Pro?",
-          "a": "Unbegrenzte Rechnungen und QR-Exporte, alle 20 Rechnungsvorlagen, alle 12 QR-Stile und 16 Designs, das komplette Brand Kit (Farbe, Schrift und Logo) sowie benutzerdefinierte QR-Farben, -Punkte und -Rahmen."
+          "q": "Was schaltet Invoice Maker Pro frei?",
+          "a": "Unbegrenzte Rechnungen und QR-Exporte. 100+ Rechnungsvorlagen, 12+ QR-Stile und 16+ fertige Designs. Komplettes Marken-Kit: Farbe, Schrift und Logo. Individuelle QR-Farben, -Punkte und -Rahmen. Die Zeile mit dem App-Namen aus Exporten entfernen."
         }
-      ]
+      ],
+      "whatsNew": "• Deine erste Rechnung öffnet sich als fertiges Beispiel: Kunde und Position ändern – schon ist sie deine.\n• An mich senden: Hol dir das PDF aufs iPhone, in die Dateien-App oder per E-Mail an dich selbst, bevor es an einen Kunden geht.\n• Dein erstes Dokument kann jede Vorlage nutzen, auch Pro-Vorlagen.\n• Erinnerungen: ein Hinweis, wenn eine erstellte Rechnung noch nicht verschickt ist – zusätzlich zu den Fälligkeitserinnerungen."
     },
     {
       "key": "invoiceqr-fr",
@@ -1263,18 +1293,18 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Facture, Devis et Reçu — Factures, devis",
+      "title": "Facture, Devis et Reçu — factures et devis avec QR de paiement",
       "oneLiner": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
       "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
       "legal": [],
       "faq": [
         {
           "q": "Existe-t-il une app de facturation pour iPhone qui fonctionne sans créer de compte ?",
-          "a": "Oui. Facture, Devis et Reçu n'a pas de compte ni d'inscription, et elle fonctionne hors ligne. Factures, clients et codes QR se synchronisent via votre propre iCloud si vous les avez sur plusieurs appareils."
+          "a": "Oui. Facture, Devis et Reçu fonctionne sans compte ni inscription, et hors ligne. Factures, clients et codes QR se synchronisent via votre propre iCloud si vous utilisez plusieurs appareils."
         },
         {
-          "q": "Combien de factures puis-je envoyer gratuitement ?",
-          "a": "Trois documents par mois. Le décompte se fait à la création, non à l'envoi, et les devis et estimations puisent dans le même quota mensuel que les factures. Un document déjà créé n'est compté qu'une fois, donc le modifier ou le renvoyer plus tard est gratuit."
+          "q": "Combien de documents puis-je créer gratuitement ?",
+          "a": "Créez 3 documents gratuits — sans compte ni inscription. Ces 3 valent au total, pas par mois — factures, estimations et devis puisent dans le même quota. Le décompte se fait à la création, une seule fois par document — le modifier ou le renvoyer plus tard ne coûte rien."
         },
         {
           "q": "Un client peut-il payer directement depuis la facture ?",
@@ -1286,7 +1316,7 @@
         },
         {
           "q": "Fait-elle des codes QR pour autre chose que le paiement ?",
-          "a": "Oui. Elle inclut un studio QR avec 12 types — lien, Wi-Fi, carte de visite, e-mail, téléphone, SMS, chat, lieu, agenda, texte, paiement et Pix — et 16 designs prêts à l'emploi, dont quatre gratuits."
+          "a": "12 types de QR : lien, Wi-Fi, carte de visite, e-mail, téléphone, SMS, chat, lieu, agenda, texte, paiement et Pix. 16 designs prêts à l'emploi : affiche, carte du menu, étiquette promo, néon, carte de visite et plus, avec vos couleurs, points, cadres et dégradés."
         },
         {
           "q": "Puis-je récupérer une facture supprimée accidentellement ?",
@@ -1294,7 +1324,7 @@
         },
         {
           "q": "Qu'est-ce que Pro déverrouille ?",
-          "a": "Factures et exports QR illimités, tous les 20 modèles de facture, les 12 styles QR et 16 designs, le kit de marque complet (couleur, police et logo), ainsi que les couleurs, points et cadres QR personnalisés."
+          "a": "Factures et exports QR illimités. 100+ modèles de facture, les 12+ styles QR et les 16+ designs prêts à l'emploi. Kit de marque complet : couleur, police et logo. Couleurs, points et cadres QR personnalisés. Retirer la ligne au nom de l’app des exports."
         }
       ]
     },
@@ -1311,18 +1341,18 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Fattura, Preventivo e Ricevuta — Fatture, preventivi",
+      "title": "Fattura, Preventivo e Ricevuta — fatture con QR di pagamento",
       "oneLiner": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
       "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
       "legal": [],
       "faq": [
         {
           "q": "Esiste un'app di fatturazione per iPhone che funziona senza creare un account?",
-          "a": "Sì. Fattura, Preventivo e Ricevuta non ha account e non richiede iscrizione, e funziona offline. Fatture, clienti e codici QR si sincronizzano tramite il tuo iCloud se li hai su più dispositivi."
+          "a": "Sì. Fattura, Preventivo e Ricevuta funziona senza account né registrazione, anche offline. Fatture, clienti e codici QR si sincronizzano tramite il tuo iCloud se usi più dispositivi."
         },
         {
-          "q": "Quante fatture posso inviare gratuitamente?",
-          "a": "Tre documenti al mese. Il conteggio avviene alla creazione, non all'invio, e i preventivi e le stime condividono lo stesso limite mensile delle fatture. Un documento già creato viene contato una sola volta, quindi modificarlo o inviarlo di nuovo è gratuito."
+          "q": "Quanti documenti posso creare gratis?",
+          "a": "Crea 3 documenti gratis, senza account né registrazione. Sono 3 in tutto, non 3 al mese: fatture, stime e preventivi attingono allo stesso limite. Il conteggio avviene alla creazione, una sola volta per documento: modificarlo o inviarlo di nuovo non consuma nulla."
         },
         {
           "q": "Un cliente può pagare direttamente dalla fattura?",
@@ -1334,7 +1364,7 @@
         },
         {
           "q": "Fa codici QR per qualcosa di diverso dal pagamento?",
-          "a": "Sì. Include uno studio QR con 12 tipi — link, Wi-Fi, biglietto da visita, e-mail, telefono, SMS, chat, luogo, calendario, testo, pagamento e Pix — e 16 design pronti, di cui quattro gratuiti."
+          "a": "12 tipi di QR: link, Wi-Fi, biglietto da visita, e-mail, telefono, SMS, chat, luogo, calendario, testo, pagamento e Pix. 16 design pronti: poster, carta del menù, cartellino saldi, neon, biglietto da visita e altri, più i tuoi colori, punti, cornici e sfumature."
         },
         {
           "q": "Posso recuperare una fattura eliminata per errore?",
@@ -1342,7 +1372,7 @@
         },
         {
           "q": "Cosa sblocca Pro?",
-          "a": "Fatture ed esportazioni QR illimitate, tutti i 20 modelli di fattura, i 12 stili QR e 16 design, il brand kit completo (colore, font e logo), oltre a colori, punti e cornici QR personalizzati."
+          "a": "Fatture ed esportazioni QR illimitate. 100+ modelli di fattura, i 12+ stili QR e i 16+ design pronti. Brand kit completo: colore, font e logo. Colori, punti e cornici QR personalizzati. Rimuovere la riga con il nome dell’app dai file esportati."
         }
       ]
     },
@@ -1359,18 +1389,18 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Smart Factura y Presupuesto — Facturas, presupuestos",
+      "title": "Smart Factura y Presupuesto — facturas con QR de pago en iPhone",
       "oneLiner": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
       "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
       "legal": [],
       "faq": [
         {
           "q": "¿Existe una app de facturación para iPhone que funcione sin crear una cuenta?",
-          "a": "Sí. Smart Factura y Presupuesto no tiene cuenta ni registro, y funciona offline. Facturas, clientes y códigos QR se sincronizan a través de tu iCloud si los necesitas en varios dispositivos."
+          "a": "Sí. Smart Factura y Presupuesto funciona sin cuenta ni registro, y sin conexión. Facturas, clientes y códigos QR se sincronizan a través de tu propio iCloud si usas varios dispositivos."
         },
         {
-          "q": "¿Cuántas facturas puedo enviar gratuitamente?",
-          "a": "Tres documentos al mes. El conteo es cuando creas un documento, no cuando lo envías, y los presupuestos y cotizaciones comparten el mismo límite mensual que las facturas. Un documento ya creado se cuenta solo una vez, así que editarlo o reenviarlo después es gratis."
+          "q": "¿Cuántos documentos puedo crear gratis?",
+          "a": "Crea 3 documentos gratis, sin cuenta ni registro. Son 3 en total, no 3 al mes: facturas, estimaciones y presupuestos comparten el mismo cupo. Se cuenta al crearlo y solo una vez por documento: editarlo o volver a enviarlo después no consume nada."
         },
         {
           "q": "¿Puede un cliente pagar directamente desde la factura?",
@@ -1382,7 +1412,7 @@
         },
         {
           "q": "¿Hace códigos QR para algo más que pagos?",
-          "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de los cuales son gratis."
+          "a": "12 tipos de QR: enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix. 16 diseños listos: cartel, carta de menú, etiqueta de oferta, neón, tarjeta de visita y más, además de tus colores, puntos, marcos y degradados."
         },
         {
           "q": "¿Puedo recuperar una factura que eliminé por error?",
@@ -1390,7 +1420,7 @@
         },
         {
           "q": "¿Qué desbloquea Pro?",
-          "a": "Facturas y exportaciones QR ilimitadas, los 20 modelos de factura, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+          "a": "Facturas y exportaciones QR ilimitadas. 100+ plantillas de factura, los 12+ estilos QR y los 16+ diseños listos. Kit de marca completo: color, fuente y logo. Colores, puntos y marcos QR personalizados. Quitar la línea con el nombre de la app de los archivos exportados."
         }
       ]
     },
@@ -1407,40 +1437,50 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Nota de Venta, Cotización — Notas de venta",
-      "oneLiner": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
-      "description": "Crea notas de venta, cotizaciones y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague de inmediato.",
+      "title": "Nota de Venta, Cotización — cotiza y cobra con QR en iPhone",
+      "oneLiner": "Haz notas de venta, cotizaciones, remisiones y recibos en PDF desde tu iPhone, con QR o CLABE para cobrar y retenciones de ISR e IVA. Sin cuenta.",
+      "description": "Haz notas de venta, cotizaciones, remisiones y recibos en PDF desde tu iPhone, con QR o CLABE para cobrar y retenciones de ISR e IVA. Sin cuenta.",
       "legal": [],
       "faq": [
         {
           "q": "¿Hay una app de notas de venta para iPhone que no necesite crear cuenta?",
-          "a": "Sí. Nota de Venta, Cotización no tiene cuenta ni registro, y funciona sin conexión. Notas de venta, clientes y códigos QR se sincronizan por tu iCloud si los necesitas en varios dispositivos."
+          "a": "Sí. Nota de Venta, Cotización no pide cuenta ni registro, y funciona sin conexión. Documentos, clientes y códigos QR se sincronizan en privado con tu propio iCloud si la usas en varios dispositivos."
         },
         {
           "q": "¿Cuántos documentos puedo crear gratis?",
-          "a": "Tres documentos al mes. Se cuentan cuando los creas, no cuando los envías, y notas de venta, cotizaciones y remisiones comparten el mismo límite. Un documento ya creado se cuenta una sola vez, así que editarlo o reenviarlo después es gratis."
+          "a": "Crea 3 documentos gratis, sin cuenta ni registro. Son 3 en total, no 3 al mes: notas de venta y cotizaciones comparten el mismo cupo; las remisiones no lo consumen. Se cuenta al crearlo y solo una vez por documento: editarlo o volver a enviarlo después no consume nada."
         },
         {
-          "q": "¿Puede el cliente pagar directo desde la nota de venta?",
-          "a": "Sí. Cada nota de venta puede incluir un código QR de pago que el cliente escanea para pagar. Luego registras el pago en la app y la nota pasa entre pendiente, parcial, pagada y vencida."
+          "q": "¿Mi cliente puede pagar desde la nota de venta?",
+          "a": "Sí. Cada documento puede llevar tus datos de transferencia (banco, CLABE, beneficiario) o un código QR con tu link de pago. Lo compartes por WhatsApp, correo o impreso, y luego registras el pago: el estado pasa entre pendiente, parcial, pagada y vencida."
         },
         {
           "q": "¿Puedo convertir una cotización en nota de venta?",
-          "a": "Sí, en un toque. Clientes, artículos e impuestos se guardan una vez y reutilizan, y puedes añadir descuentos, envío, formas de pago y términos reutilizables."
+          "a": "Sí, con un toque. La remisión lleva la firma de quien recibe. Clientes, artículos e impuestos se guardan una vez para reutilizarlos, y puedes agregar descuentos, envío, formas de pago y condiciones reutilizables."
         },
         {
-          "q": "¿Hace códigos QR para algo más que pagos?",
-          "a": "Sí. Incluye un estudio QR con 12 tipos — enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix — y 16 diseños listos, cuatro de ellos gratis."
+          "q": "¿La app emite facturas CFDI?",
+          "a": "No. La app crea documentos comerciales —cotizaciones, notas de venta, remisiones y recibos— y no emite CFDI ni facturas fiscales ante el SAT. Guarda el RFC, código postal, régimen y uso CFDI de tu cliente para que tu contador facture con ellos."
         },
         {
-          "q": "¿Puedo recuperar un documento que eliminé por error?",
-          "a": "Sí. Eliminados recientemente guarda los documentos durante 30 días."
+          "q": "¿Calcula retenciones de ISR e IVA?",
+          "a": "Sí. Retenciones de ISR (10 % o 1.25 % RESICO) e IVA (dos terceras partes) con un interruptor; el documento termina en «Total a pagar»."
+        },
+        {
+          "q": "¿Hace códigos QR para algo más que cobros?",
+          "a": "Sí. 12 tipos de QR: enlace, Wi-Fi, tarjeta de contacto, correo, teléfono, SMS, chat, ubicación, calendario, texto, pago y Pix, y 16 diseños listos; 4 de ellos son gratis."
+        },
+        {
+          "q": "¿Puedo recuperar un documento que borré por error?",
+          "a": "Sí. Eliminados recientemente guarda los documentos 30 días: un toque en falso nunca es definitivo."
         },
         {
           "q": "¿Qué desbloquea Pro?",
-          "a": "Documentos y exportaciones QR ilimitadas, todos los modelos de nota de venta, los 12 estilos QR y 16 diseños, el kit de marca completo (color, fuente y logo), además de colores, puntos y marcos QR personalizados."
+          "a": "Documentos y exportaciones QR ilimitados, 100+ plantillas de documento, los 12+ estilos QR y los 16+ diseños listos, el kit de marca completo (color, fuente y logo), colores, puntos y marcos QR personalizados, y quita la línea con el nombre de la app de los archivos exportados."
         }
-      ]
+      ],
+      "shotStart": 1,
+      "whatsNew": "• Tu primera nota de venta se abre como un ejemplo terminado: cambia el cliente y el concepto, y ya es tuya.\n• Enviármela: recibe el PDF en tu celular, en Archivos o en tu propio correo antes de mandarlo a un cliente.\n• Tu primer documento puede usar cualquier plantilla, incluidas las Pro.\n• Recordatorios: un aviso cuando un documento que hiciste aún no se ha enviado, además de los recordatorios de vencimiento."
     },
     {
       "key": "invoiceqr-pt-br",
@@ -1455,18 +1495,18 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Fatura, Orçamento e Recibo — Faturas, orçamentos",
+      "title": "Fatura, Orçamento e Recibo — faturas com QR de pagamento",
       "oneLiner": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
       "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
       "legal": [],
       "faq": [
         {
           "q": "Existe um app de faturamento para iPhone que funciona sem criar conta?",
-          "a": "Sim. Fatura, Orçamento e Recibo não tem conta nem cadastro, e funciona offline. Faturas, clientes e códigos QR são sincronizados pela sua iCloud se você os precisar em vários dispositivos."
+          "a": "Sim. Fatura, Orçamento e Recibo funciona sem conta nem cadastro, e offline. Faturas, clientes e códigos QR são sincronizados pelo seu próprio iCloud se você usar vários dispositivos."
         },
         {
-          "q": "Quantas faturas posso enviar gratuitamente?",
-          "a": "Três documentos por mês. A contagem é quando você cria um documento, não quando o envia, e orçamentos e propostas compartilham o mesmo limite mensal das faturas. Um documento já criado é contado uma única vez, então editá-lo ou enviá-lo novamente é grátis."
+          "q": "Quantos documentos posso criar de graça?",
+          "a": "Crie 3 documentos grátis — sem conta e sem cadastro. São 3 no total, não 3 por mês — faturas, estimativas e orçamentos usam a mesma cota. A contagem acontece na criação, uma vez por documento — editar ou reenviar depois não gasta nada."
         },
         {
           "q": "O cliente pode pagar direto pela fatura?",
@@ -1478,15 +1518,15 @@
         },
         {
           "q": "Faz códigos QR para algo além de pagamento?",
-          "a": "Sim. Inclui um estúdio QR com 12 tipos — link, Wi-Fi, cartão de visita, e-mail, telefone, SMS, chat, localização, calendário, texto, pagamento e Pix — e 16 designs prontos, quatro deles gratuitos."
+          "a": "12 tipos de QR: link, Wi-Fi, cartão de contato, e-mail, telefone, SMS, chat, localização, calendário, texto, pagamento e Pix. 16 designs prontos: pôster, cartão de menu, etiqueta de promoção, neon, cartão de visita e mais, além das suas cores, pontos, molduras e gradientes."
         },
         {
           "q": "Posso recuperar uma fatura que deletei por engano?",
-          "a": "Sim. Deletados recentemente mantém as faturas por 30 dias."
+          "a": "Sim. A pasta Excluídos recentemente mantém as faturas por 30 dias."
         },
         {
           "q": "O que o Pro desbloqueia?",
-          "a": "Faturas e exportações QR ilimitadas, todos os 20 modelos de fatura, 12 estilos QR e 16 designs, kit de marca completo (cor, fonte e logo), além de cores, pontos e molduras QR personalizados."
+          "a": "Faturas e exportações QR ilimitadas. 100+ modelos de fatura, 12+ estilos de QR e 16+ designs prontos. Kit de marca completo: cor, fonte e logo. Cores, pontos e molduras de QR personalizados. Remover a linha com o nome do app dos arquivos exportados."
         }
       ]
     },
@@ -1503,38 +1543,38 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "請求書・見積書・領収書作成 インボイス対応 — 請求書・見積書・領収書を数分で作成",
-      "oneLiner": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
-      "description": "iPhoneで請求書・見積書・領収書を作成し、PDFとして書き出し、支払い用QRコードを追加して顧客が直接支払えるようにします。",
+      "title": "請求書・見積書・領収書作成 インボイス対応 — iPhoneでPDF作成",
+      "oneLiner": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
+      "description": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
       "legal": [],
       "faq": [
         {
           "q": "iPhoneで、アカウント登録なしで使える請求書アプリはありますか？",
-          "a": "あります。請求書・見積書・領収書作成は、アカウント登録不要で、オフライン動作します。請求書・顧客・QRコードは、複数のデバイスで必要なら自分のiCloudで同期されます。"
+          "a": "あります。請求書・見積書・領収書作成はアカウント登録が不要で、オフラインでも使えます。請求書・取引先・QR コードは、複数のデバイスで使う場合もご自身の iCloud 経由でプライベートに同期されます。"
         },
         {
-          "q": "無料で何件まで請求書を送れますか？",
-          "a": "月3件のドキュメント。カウントは作成時（送信時ではなく）に進み、見積書と提案書は請求書と同じ月額枠を使います。作成済みドキュメントは1回だけカウントされ、後で編集または再送信する分は無料です。"
+          "q": "無料で何件まで作成できますか？",
+          "a": "3 件まで無料で作成 — アカウント登録は不要。この 3 件は毎月ではなく合計です。請求書・概算見積書・見積書は同じ枠を共有します（納品書は枠を使いません）。カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません。"
         },
         {
-          "q": "顧客は請求書から直接支払えますか？",
-          "a": "はい。すべての請求書に支払いQRコードを付けることができ、顧客がスキャンして支払います。その後、アプリで支払いを記録すると、請求書の状態が未払い・一部支払い・支払い済み・期限切れの間で変わります。"
+          "q": "取引先は請求書から直接支払えますか？",
+          "a": "はい。決済リンクがある場合は、スキャンで支払えるQRコードも請求書に付けられます。アプリで入金を記録すれば、支払済み／未払い／一部入金／期限超過をひと目で把握できます。"
         },
         {
-          "q": "見積書や提案書を請求書に変換できますか？",
-          "a": "はい、ワンタップで。顧客・品目・税率は1回保存されて再利用でき、割引・送料・支払い方法・再利用可能な条件を追加できます。"
+          "q": "見積書を請求書に変換できますか？",
+          "a": "はい。概算見積書・見積書を送り、先方の合意後にワンタップで請求書へ変換できます。取引先・項目・税率は保存してワンタップで再利用でき、値引き・送料・支払方法・定型文言も追加できます。"
         },
         {
           "q": "支払い以外のQRコードも作れますか？",
-          "a": "はい。QRスタジオに12のタイプがあります。リンク・Wi-Fi・連絡先・メール・電話・SMS・チャット・位置情報・カレンダー・テキスト・支払い・Pixで、計16のテンプレートがあり、うち4つは無料です。"
+          "a": "12 種類の QR：リンク、Wi-Fi、名刺、メール、電話、SMS、チャット、位置情報、カレンダー、テキスト、決済、Pix。完成デザイン 16 種類：ポスター、メニューカード、セールタグ、ネオン、名刺など。色・ドット・フレーム・グラデーションも自由に調整。"
         },
         {
           "q": "誤って削除した請求書を復元できますか？",
-          "a": "はい。最近削除した項目に、30日間の請求書が保存されます。"
+          "a": "はい。「最近削除した項目」は 30 日間保持されるので、誤って削除しても元に戻せます。"
         },
         {
           "q": "Proで何が解放されますか？",
-          "a": "無制限の請求書・QR書き出し、20の請求書テンプレート、12のQRスタイルと16のデザイン、完全なブランドキット（色・フォント・ロゴ）、カスタムQRの色・ドット・フレームが利用できます。"
+          "a": "請求書と QR 書き出しが無制限に。100+ 種類の請求書テンプレート、12+ 種類の QR スタイル、16+ 種類の完成デザイン。ブランドキット（色・フォント・ロゴ）一式。QR の色・ドット・フレームのカスタマイズ。書き出したファイル下部のアプリ名の一行を非表示にできます。"
         }
       ]
     },
@@ -1558,11 +1598,11 @@
       "faq": [
         {
           "q": "계정 가입 없이 쓸 수 있는 iPhone 청구서 앱이 있나요?",
-          "a": "있습니다. 프리랜서 청구서·견적서·영수증은 계정이 없고 가입도 없으며 오프라인으로 작동합니다. 청구서·고객·QR코드는 필요하면 자신의 iCloud로 동기화되어 여러 기기에서 사용할 수 있습니다."
+          "a": "있습니다. 프리랜서 청구서·견적서·영수증은 계정도 가입도 필요 없고 오프라인에서도 작동합니다. 여러 기기에서 쓰려면 청구서·고객·QR 코드가 본인의 iCloud로 동기화됩니다."
         },
         {
           "q": "무료로 청구서를 몇 개까지 만들 수 있나요?",
-          "a": "월 3개 문서. 카운트는 작성 시(발송 시가 아님)에 증가하며, 견적서와 제안서는 청구서와 같은 월별 한도를 공유합니다. 작성한 문서는 1회만 계산되므로 나중에 편집하거나 재발송하는 것은 무료입니다."
+          "a": "3건을 무료로 작성 — 계정 가입 없이. 이 3건은 매달이 아니라 전체 기준입니다. 청구서·견적서·제안서가 같은 한도를 함께 씁니다 (거래명세서는 한도를 쓰지 않습니다). 작성할 때 차감되며 건당 한 번만 — 나중에 편집하거나 다시 보내도 추가로 차감되지 않습니다."
         },
         {
           "q": "고객이 청구서에서 바로 결제할 수 있나요?",
@@ -1570,11 +1610,11 @@
         },
         {
           "q": "견적서나 제안서를 청구서로 바꿀 수 있나요?",
-          "a": "네, 한 번의 탭으로. 고객·품목·세율은 한 번만 저장하고 재사용하며, 할인·배송·결제 수단·재사용 가능한 조건을 추가할 수 있습니다."
+          "a": "네, 탭 한 번이면 됩니다. 고객·품목·세율은 한 번 저장해 두고 재사용할 수 있고, 할인·배송비·결제 수단·자주 쓰는 약관도 추가할 수 있습니다."
         },
         {
           "q": "결제 외에 다른 QR코드도 만드나요?",
-          "a": "네. QR 스튜디오에 12가지 유형이 있습니다. 링크·Wi-Fi·연락처·이메일·전화·SMS·채팅·위치·달력·텍스트·결제·Pix이며, 준비된 디자인은 16가지고 이 중 4가지는 무료입니다."
+          "a": "12가지 QR: 링크, Wi-Fi, 명함, 이메일, 전화, 문자, 채팅, 위치, 일정, 텍스트, 결제, Pix. 완성 디자인 16종 — 포스터, 메뉴 카드, 세일 택, 네온, 명함 등에 색상·점·프레임·그러데이션까지 직접 조정."
         },
         {
           "q": "실수로 삭제한 청구서를 복구할 수 있나요?",
@@ -1582,7 +1622,7 @@
         },
         {
           "q": "Pro는 뭘 열어주나요?",
-          "a": "청구서와 QR 내보내기 무제한, 20개 청구서 템플릿, 12가지 QR 스타일과 16가지 디자인, 완전한 브랜드 키트(색상·글꼴·로고), 맞춤형 QR 색상·점·프레임을 제공합니다."
+          "a": "무제한 청구서 및 QR 내보내기. 100+가지 청구서 템플릿, 12+가지 QR 스타일, 완성 디자인 16+종 전체. 완전한 브랜드 키트 — 색상·글꼴·로고. QR 색상·점·프레임 커스텀. 내보낸 파일에서 앱 이름 문구 제거."
         }
       ]
     },
@@ -1600,39 +1640,40 @@
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "title": "開單、報價單、收據、送貨單產生器 — 開單、報價、掃碼付款的一體化工具",
-      "oneLiner": "在iPhone上建立開單、報價和收據，匯出為PDF，並加上付款QR碼，讓客戶直接支付。",
-      "description": "在iPhone上建立開單、報價和收據，匯出為PDF，並加上付款QR碼，讓客戶直接支付。",
+      "oneLiner": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
+      "description": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
       "legal": [],
       "faq": [
         {
-          "q": "iPhone上有不用建立帳號的開單app嗎？",
-          "a": "有。開單、報價單、收據、送貨單產生器不需要帳號，也不用註冊，可以離線使用。開單、客戶和QR碼如果需要在多台裝置使用，會透過你自己的iCloud同步。"
+          "q": "iPhone 上有不用建立帳號的開單 App 嗎？",
+          "a": "有。這款 App 不需要帳號，也不用註冊，可以離線使用。如果要在多台裝置使用，帳單、客戶和 QR Code 會透過你自己的 iCloud 同步。"
         },
         {
           "q": "免費可以開幾張單？",
-          "a": "一個月3張文件。計算是在你建立文件時（不是發送時），報價和提案共用和開單一樣的月度額度。一旦建立過的文件只算1次，所以之後編輯或重新發送都是免費。"
+          "a": "免費建立 3 份，免註冊帳號。這 3 份是一共，不是每月都有；帳單、估價單與報價單共用這份額度。建立時計次，同一份只計一次——之後編輯或重寄都不再計。"
         },
         {
-          "q": "客戶可以直接從開單上付款嗎？",
-          "a": "可以。每張開單都可以附加付款QR碼，客戶掃描就能付款。你在app裡記錄付款後，開單的狀態會在未付、部分支付、已付、逾期之間變更。"
+          "q": "客戶可以直接從帳單付款嗎？",
+          "a": "可以。每張帳單都可以附上收款 QR Code，客戶掃描就能付款。你在 App 裡記錄付款後，帳單狀態可以在未付、部分付款、已付、逾期之間切換。"
         },
         {
-          "q": "可以把報價單變成開單嗎？",
-          "a": "可以，一下子就行。客戶、品項、稅率只需要存一次就能重複使用，而且可以加折扣、運費、付款方式和可重複使用的條款。"
+          "q": "可以把報價單轉成帳單嗎？",
+          "a": "可以，一鍵就能轉。客戶、項目、稅率只要存一次就能重複使用，也可以加上折扣、運費、收款方式和常用條款。"
         },
         {
-          "q": "除了付款還能做其他QR碼嗎？",
-          "a": "可以。QR工作室有12種類型——連結、Wi-Fi、聯絡資訊、電子郵件、電話、簡訊、聊天、位置、日曆、文字、付款和Pix——以及16種現成設計，其中4種免費。"
+          "q": "除了付款還能做其他 QR Code 嗎？",
+          "a": "12 種 QR Code：連結、WiFi、名片、郵件、電話、簡訊、聊天、定位、日曆、文字、收款與 Pix。16 款現成設計：海報、菜單卡、促銷吊牌、霓虹、名片等，另可自訂顏色、碼點、外框與漸層。"
         },
         {
-          "q": "不小心刪除的開單能救回嗎？",
-          "a": "能。最近刪除會保存開單30天。"
+          "q": "不小心刪除的帳單能救回嗎？",
+          "a": "能。「最近刪除」會保存帳單 30 天。"
         },
         {
-          "q": "Pro解鎖什麼？",
-          "a": "無限開單和QR匯出、全部20套開單範本、12種QR風格和16種設計、完整品牌套件（色彩、字型、標誌），以及自訂QR色彩、圓點、邊框。"
+          "q": "Pro 解鎖什麼？",
+          "a": "無限帳單與 QR Code 匯出。100+ 款帳單範本、12+ 款 QR 樣式與 16+ 款現成設計。完整品牌套件 — 顏色、字型與 Logo。自訂 QR Code 樣式。去掉匯出檔案頁尾的 App 署名。"
         }
-      ]
+      ],
+      "whatsNew": "• 第一張帳單開啟時就是一張填好的範例：改掉客戶和這一行，它就是你的了。\n• 傳給自己：傳給客戶之前，先把 PDF 傳到自己的手機、「檔案」或信箱。\n• 第一份單據可以使用任何範本，包括 Pro 範本。\n• 提醒：做好但還沒寄出的帳單會提醒你，到期提醒照舊。"
     },
     {
       "key": "invoiceqr-th",
@@ -1648,37 +1689,37 @@
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "title": "ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษี",
-      "oneLiner": "สร้างใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษีบนiPhone ส่งออกเป็นPDF และเพิ่มQRชำระเงินเพื่อให้ลูกค้าชำระได้ทันที",
-      "description": "สร้างใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษีบนiPhone ส่งออกเป็นPDF และเพิ่มQRชำระเงินเพื่อให้ลูกค้าชำระได้ทันที",
+      "oneLiner": "สร้างใบแจ้งหนี้ ใบเสนอราคา และใบเสร็จบน iPhone ส่งออกเป็น PDF และแนบ QR ชำระเงินให้ลูกค้าสแกนจ่ายได้ทันที",
+      "description": "สร้างใบแจ้งหนี้ ใบเสนอราคา และใบเสร็จบน iPhone ส่งออกเป็น PDF และแนบ QR ชำระเงินให้ลูกค้าสแกนจ่ายได้ทันที",
       "legal": [],
       "faq": [
         {
-          "q": "มีแอปสร้างใบแจ้งหนี้สำหรับiPhoneที่ไม่ต้องสร้างบัญชีไหม",
-          "a": "มี ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษีไม่มีบัญชีและไม่ต้องสมัคร และใช้ได้แบบออฟไลน์ ใบแจ้งหนี้ ลูกค้า และQRโค้ดจะซิงค์ผ่านiCloudของคุณเองถ้าคุณต้องใช้บนหลายอุปกรณ์"
+          "q": "มีแอปออกใบแจ้งหนี้สำหรับ iPhone ที่ไม่ต้องสร้างบัญชีไหม",
+          "a": "มี แอปนี้ไม่มีระบบบัญชี ไม่ต้องสมัคร และใช้งานแบบออฟไลน์ได้ ถ้าต้องใช้หลายเครื่อง ใบแจ้งหนี้ ลูกค้า และ QR โค้ดจะซิงก์ผ่าน iCloud ของคุณเอง"
         },
         {
-          "q": "ฟรีได้สร้างใบแจ้งหนี้กี่ใบ",
-          "a": "3เอกสารต่อเดือน การนับจะเกิดขึ้นเมื่อคุณสร้างเอกสาร ไม่ใช่เมื่อส่ง และใบประเมิน ใบเสนอราคาใช้วงเงินเดือนเดียวกับใบแจ้งหนี้ เอกสารที่สร้างแล้วนับเพียงครั้งเดียว ดังนั้นการแก้ไขหรือส่งใหม่ทีหลังจึงฟรี"
+          "q": "ใช้ฟรีสร้างเอกสารได้กี่ใบ",
+          "a": "สร้างเอกสารฟรี 3 ใบ ไม่ต้องสมัครบัญชี 3 ใบนี้คือทั้งหมด ไม่ใช่ต่อเดือน — ใบแจ้งหนี้ ใบประเมินราคา และใบเสนอราคา ใช้โควตาก้อนเดียวกัน นับตอนสร้าง และนับครั้งเดียวต่อเอกสาร — แก้ไขหรือส่งซ้ำภายหลังไม่นับเพิ่ม"
         },
         {
           "q": "ลูกค้าสามารถชำระเงินจากใบแจ้งหนี้ได้โดยตรงหรือไม่",
-          "a": "ได้ ใบแจ้งหนี้ทุกใบสามารถมีQRโค้ดชำระเงิน ลูกค้าแสกนเพื่อชำระเงิน จากนั้นคุณบันทึกการชำระในแอป และใบแจ้งหนี้เปลี่ยนระหว่างยังไม่ชำระ ชำระบางส่วน ชำระแล้ว และเกินกำหนด"
+          "a": "ได้ ใบแจ้งหนี้ทุกใบแนบ QR โค้ดชำระเงินได้ ลูกค้าสแกนแล้วจ่ายได้เลย จากนั้นคุณบันทึกการชำระในแอป แล้วเปลี่ยนสถานะใบแจ้งหนี้เป็นยังไม่ชำระ ชำระบางส่วน ชำระแล้ว หรือเกินกำหนด"
         },
         {
           "q": "สามารถเปลี่ยนใบประเมินหรือใบเสนอราคาเป็นใบแจ้งหนี้ได้หรือไม่",
-          "a": "ได้ เพียงแตะครั้งเดียว ลูกค้า รายการ และอัตราภาษีบันทึกไว้ครั้งเดียวและนำกลับมาใช้ใหม่ได้ และคุณสามารถเพิ่มส่วนลด ค่าจัดส่ง วิธีการชำระเงิน และเงื่อนไขที่นำกลับมาใช้ใหม่ได้"
+          "a": "ได้ แตะครั้งเดียว ลูกค้า รายการ และอัตราภาษีบันทึกไว้ครั้งเดียวแล้วใช้ซ้ำได้ และยังเพิ่มส่วนลด ค่าจัดส่ง ช่องทางชำระเงิน และเงื่อนไขที่ใช้ซ้ำได้"
         },
         {
-          "q": "มันสร้างQRโค้ดสำหรับอย่างอื่นที่ไม่ใช่การชำระเงินหรือไม่",
-          "a": "มี QRสตูดิโอมี 12ประเภท คือ ลิงก์ Wi-Fi บัตรติดต่อ อีเมล โทรศัพท์ SMS แชท สถานที่ ปฏิทิน ข้อความ ชำระเงิน และPix และมีดีไซน์สำเร็จรูป 16แบบ ซึ่ง 4แบบฟรี"
+          "q": "สร้าง QR โค้ดสำหรับอย่างอื่นนอกจากการชำระเงินได้ไหม",
+          "a": "คิวอาร์ 12 แบบ: ลิงก์, Wi-Fi, นามบัตร, อีเมล, โทรศัพท์, SMS, แชท, ตำแหน่ง, ปฏิทิน, ข้อความ, ชำระเงิน และ Pix ดีไซน์สำเร็จรูป 16 แบบ: โปสเตอร์ การ์ดเมนู ป้ายลดราคา นีออน นามบัตร และอื่น ๆ พร้อมปรับสี จุด กรอบ และไล่เฉดเอง"
         },
         {
           "q": "สามารถกู้คืนใบแจ้งหนี้ที่ลบโดยไม่ตั้งใจได้หรือไม่",
-          "a": "ได้ ลบไปเร็วๆนี้เก็บใบแจ้งหนี้เป็นเวลา 30วัน"
+          "a": "ได้ รายการที่ลบล่าสุดจะเก็บใบแจ้งหนี้ไว้ 30 วัน"
         },
         {
           "q": "Pro ปลดล็อกอะไร",
-          "a": "ใบแจ้งหนี้และQRส่งออกไม่จำกัด แม่แบบใบแจ้งหนี้ 20รายการ สไตล์QR 12รูปแบบและดีไซน์ 16รูปแบบ ชุดแบรนด์ที่สมบูรณ์ (สี ฟอนต์ โลโก้) และสีQRที่กำหนดเอง จุด และเฟรม"
+          "a": "Pro ปลดล็อกทุกอย่าง: ใบแจ้งหนี้และการส่งออก QR ไม่จำกัด • เทมเพลตใบแจ้งหนี้ 100+ แบบ สไตล์ QR 12+ แบบ และดีไซน์สำเร็จรูป 16+ แบบ • ชุดแบรนด์ครบทั้งสี ฟอนต์ และโลโก้ • ปรับสี จุด และกรอบของ QR เองได้ • เอาบรรทัดชื่อแอปออกจากท้ายไฟล์ที่ส่งออก"
         }
       ]
     },
@@ -1695,7 +1736,7 @@
       "oneLiner": "An AI photo calorie counter for iPhone that shows what you can still eat today rather than what you already ate.",
       "description": "Photograph a meal and DailyCalorie estimates the dish, portion, calories and the protein/carb/fat split in a few seconds. The Today screen shows the calories you have left as remaining space, not as a number you have to interpret.",
       "audience": "People who quit other calorie apps because logging every item by hand was too slow.",
-      "free": "Manual logging, the daily window, and a limited number of photo scans.",
+      "free": "3 photo recognitions, full history and trends, the month calendar, the eating window, meals, exercise and the weight log.",
       "legal": [
         [
           "/dailycalorie/privacy-policy/",
@@ -1713,7 +1754,8 @@
         "label": "DailyCalorie",
         "tagline": "Calorie Budget & AI Food Scan",
         "blurb": "DailyCalorie is a calorie counter and food diary you fill in with your camera. Most calorie apps show you what you have eaten. DailyCalorie shows you what is left."
-      }
+      },
+      "paid": "Pro, monthly or yearly (the yearly plan begins with a 7-day free trial): unlimited photo recognition, protein/carb/fat targets for every meal, a custom goal weight and pace, and CSV export."
     },
     {
       "key": "qrcodestudio",
@@ -1721,14 +1763,14 @@
       "live": true,
       "appId": "6799589471",
       "name": "Custom QR Code Maker & Scan",
-      "shortName": "QR Code Studio",
+      "shortName": "QR Studio",
       "category": "UtilitiesApplication",
       "genre": "Utilities",
       "title": "Custom QR Code Maker & Scan — Design QR Codes That Still Scan",
       "oneLiner": "An iPhone QR code generator and scanner that lets you style a code with colours, shapes and a logo without breaking it.",
-      "description": "Make a QR code for a link, Wi-Fi network, contact card, text or phone number, then style it — colours, corner shapes, a logo in the middle — while the app keeps enough error correction that the code still scans. Includes a scanner and a history of what you made.",
+      "description": "Make a QR code for a link, Wi-Fi, contact, text or phone number and style it with colours, corner shapes and a logo, while it still scans. Includes a scanner and a history of what you made.",
       "audience": "Anyone putting a QR code on a menu, poster, business card or shop window and wanting it to look like it belongs there.",
-      "free": "Generating and scanning codes, and the standard styles.",
+      "free": "Making and scanning all twelve kinds of code, with the standard styles.",
       "legal": [
         [
           "/qrcodestudio/privacy-policy/",
@@ -1775,7 +1817,8 @@
         "label": "QR Studio",
         "tagline": "QR scanner, generator & design",
         "blurb": "Design a QR code people actually want to scan — and one that always scans. Most QR apps hand you a black square. QR Studio lets you shape it, colour it, drop your logo in the middle and set it into an illustrated poster — then checks, every time, that it still reads."
-      }
+      },
+      "paid": "QR Studio Pro, monthly or yearly (7-day free trial for new yearly subscribers): every illustrated scene, every frame and shape, gradients, custom colours and your own logo in the middle."
     },
     {
       "key": "citu",
@@ -1788,10 +1831,10 @@
       "genre": "Education",
       "lang": "zh-CN",
       "title": "单词兽 Word Beast — 中小学英语单词闯关背诵",
-      "oneLiner": "把课本单词表变成闯关任务的 iPhone 背单词 app，学完一组解锁一只单词兽。",
-      "description": "单词兽把中小学英语单词表拆成一组一关：学一组、闯一关、收集一只单词兽。不用注册账号，核心课程离线可用。",
-      "audience": "需要背课本单词表的中小学生和家长。",
-      "free": "核心课程、闯关和收集，无需注册。",
+      "oneLiner": "拍照学单词、闯关背单词的 iPhone app：1,671 个单词和句子排成 271 关，覆盖小学到初中常用词汇。",
+      "description": "单词兽把 1,671 个单词和句子排成一条路：271 关，一关一关往前走。拍一拍，身边的东西都变成单词。不用注册，没有网也能背。",
+      "audience": "学英语单词的小学、初中学生和家长。",
+      "free": "前 8 关、最近 7 天的错题复习、「拍拍」共 3 次、2 套基础换装与奖励。",
       "legal": [
         [
           "/citu/privacy-policy/",
@@ -1806,15 +1849,15 @@
       "faq": [
         {
           "q": "单词兽适合谁用？",
-          "a": "需要背课本单词表的中小学生。它把单词表拆成一组一关，学完一组闯一关，闯过后收集一只单词兽。"
+          "a": "学英语单词的小学、初中学生。单词兽把 1,671 个单词和句子排成一条路：271 关，一关一关往前走；认词、选义、拼写、听音一路闯过去，三颗星才算通关。"
         },
         {
           "q": "需要注册账号吗？",
-          "a": "不需要。打开就能用，App 会随机送一个名字和头像，在个人中心可以随时改成孩子自己的。核心课程离线可用。"
+          "a": "不需要。不用选年级、不用注册、不用登录，没有网也能背。"
         },
         {
           "q": "学习记录存在哪里？",
-          "a": "存在设备上。开了 iCloud 同步则存在你自己的 iCloud 里，开发者拿不到。"
+          "a": "学习进度保存在设备上。VIP 用户可以选择通过自己的私人 iCloud 账号同步，我们无法查看这些数据。"
         }
       ],
       "home": {
@@ -1824,7 +1867,8 @@
         "blurb": "Point the camera at anything — an apple, a backpack, the dog — and Word Beast's AI tells you what it's called in English, with phonetics, meaning and an example sentence you can listen to and read aloud. Snap a page of English homework to see which answers deserve a second look.",
         "storeNameEn": "Word Beast: AI Photo Words",
         "hreflang": "zh-CN"
-      }
+      },
+      "paid": "VIP（按月或按年自动续订，权益相同，支持家人共享）：全部 271 关、「拍拍」每天 50 次、完整错题本、熟练度分布、家长周报、iCloud 多设备同步。价格在确认购买前显示。"
     },
     {
       "key": "repdex",
@@ -1837,7 +1881,7 @@
       "genre": "Health & Fitness",
       "title": "Repdex — Gym Workout Log for iPhone",
       "oneLiner": "A gym workout log for iPhone.",
-      "description": "A workout log for tracking sets, reps and weight in the gym.",
+      "description": "A gym workout log for iPhone: 1,324 exercises with animations and instructions in 10 languages, all offline, and unlimited logging with no account.",
       "audience": "People logging strength training sessions.",
       "legal": [
         [
@@ -1854,7 +1898,9 @@
         "label": "Repdex",
         "tagline": "Lifting Log & Exercise Library",
         "blurb": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time."
-      }
+      },
+      "free": "All 1,324 exercises, all 10 instruction languages and unlimited workout logging; your history is never locked.",
+      "paid": "Repdex Pro, monthly, yearly (7-day free trial for new subscribers) or a one-time Lifetime purchase: unlimited routines, advanced stats, CSV export and home-screen widgets."
     },
     {
       "key": "diary",
@@ -1884,7 +1930,7 @@
   ],
   "home": {
     "title": "go ka — Small iPhone apps for everyday things",
-    "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
+    "description": "Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.",
     "ogImage": "/assets/brand/og-home.png",
     "logo": "/assets/brand/logo-512.png",
     "faq": [
