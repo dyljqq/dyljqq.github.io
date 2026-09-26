@@ -26,25 +26,25 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "goka-xi.vercel.app"
         }
       ],
-      "destination": "https://beforego.art/:path*",
+      "destination": "https://beforego.art/$1",
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.beforego.art"
         }
       ],
-      "destination": "https://beforego.art/:path*",
+      "destination": "https://beforego.art/$1",
       "permanent": true
     }
   ]

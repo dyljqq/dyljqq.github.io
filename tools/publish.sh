@@ -27,7 +27,11 @@ print('\n'.join(u[len(o):] for u in re.findall(r'<loc>(.*?)</loc>',open('sitemap
 if [ -n "$(git status --porcelain -- . ':!tools/gsc-indexing-log.json')" ]; then
   echo "✗ 有未提交的改动，先提交再发布（发布的内容必须能在 git 里找到）。"; git status --short | head; exit 1
 fi
-$VERCEL --prod --yes 2>&1 | grep -E '^▲ Aliased|Error' || true
+DEPLOY_LOG=$(mktemp)
+$VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true
+# 新版 CLI 输出 JSON（"message": "Deployment … ready."）；没有 ready 就是没部署上，停下别推 git、别报 IndexNow
+if ! grep -q 'ready' "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
+grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1
 git push -q origin HEAD:main && git push -q origin HEAD 2>/dev/null || true
 
 python3 - "$ORIGIN" <<'PY'
