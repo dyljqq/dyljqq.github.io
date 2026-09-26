@@ -130,7 +130,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo: KI-Reiseplaner — Reiseplan vom Screenshot",
+      "title": "BeforeGo: KI-Reiseplaner — Screenshots rein, Route raus",
       "oneLiner": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
       "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
       "legal": [],
@@ -178,7 +178,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "Planificateur voyage BeforeGo — Plan de voyage depuis une capture",
+      "title": "Planificateur voyage BeforeGo — un itinéraire depuis vos captures",
       "oneLiner": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
       "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
       "legal": [],
@@ -226,7 +226,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo: Itinerari e Bagagli — Piano di viaggio dallo screenshot",
+      "title": "BeforeGo: Itinerari e Bagagli — il viaggio da uno screenshot",
       "oneLiner": "Screenshot di un post di viaggio o un link: BeforeGo lo trasforma in un itinerario giorno per giorno. La lista bagagli si scrive da sola. Gratis, senza account.",
       "description": "Screenshot di un post di viaggio o un link: BeforeGo lo trasforma in un itinerario giorno per giorno. La lista bagagli si scrive da sola. Gratis, senza account.",
       "legal": [],
@@ -274,7 +274,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "Planificador viajes BeforeGo — Plan de viaje desde capturas",
+      "title": "Planificador viajes BeforeGo — Itinerario día a día desde capturas",
       "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "legal": [],
@@ -370,7 +370,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo: Roteiro de Viagem IA — Roteiro de viagem do screenshot",
+      "title": "BeforeGo: Roteiro de Viagem IA — tudo a partir de prints",
       "oneLiner": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
       "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
       "legal": [],
@@ -514,7 +514,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo：AI行程规划·出国清单 — 从截图生成行程，包含打包清单",
+      "title": "BeforeGo：AI行程规划·出国清单 — 丢进截图，每天怎么走自动排好",
       "oneLiner": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
       "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
       "legal": [],
@@ -562,7 +562,7 @@
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
       "ogImage": "/assets/beforego/checklist.jpg",
-      "title": "BeforeGo：AI行程規劃·行前清單 — 從截圖生成行程，包含行李清單",
+      "title": "BeforeGo：AI行程規劃·行前清單 — 丟進截圖，每天怎麼走自動排好",
       "oneLiner": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
       "description": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
       "legal": [],
@@ -1244,7 +1244,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Smart Rechnung & Angebot — Rechnungen mit Bezahl-QR-Code am iPhone",
+      "title": "Smart Rechnung & Angebot — mit Bezahl-QR-Code am iPhone",
       "oneLiner": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
       "description": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
       "legal": [],
@@ -1278,7 +1278,10 @@
           "a": "Unbegrenzte Rechnungen und QR-Exporte. 100+ Rechnungsvorlagen, 12+ QR-Stile und 16+ fertige Designs. Komplettes Marken-Kit: Farbe, Schrift und Logo. Individuelle QR-Farben, -Punkte und -Rahmen. Die Zeile mit dem App-Namen aus Exporten entfernen."
         }
       ],
-      "whatsNew": "• Deine erste Rechnung öffnet sich als fertiges Beispiel: Kunde und Position ändern – schon ist sie deine.\n• An mich senden: Hol dir das PDF aufs iPhone, in die Dateien-App oder per E-Mail an dich selbst, bevor es an einen Kunden geht.\n• Dein erstes Dokument kann jede Vorlage nutzen, auch Pro-Vorlagen.\n• Erinnerungen: ein Hinweis, wenn eine erstellte Rechnung noch nicht verschickt ist – zusätzlich zu den Fälligkeitserinnerungen."
+      "whatsNew": {
+        "version": "1.1.18",
+        "text": "• Thailand: Ein umsatzsteuerlich registriertes Unternehmen legt im Firmenprofil fest, welches Dokument seine Steuerrechnung (ใบกำกับภาษี) ist; Rechnungen in Baht tragen diesen Titel dann auf Thai. Die Quellensteuer (ภาษีหัก ณ ที่จ่าย) mit 1, 2, 3 oder 5 % ist ein Schalter unter Anpassungen.\n• Lieferscheine lassen sich ohne Preise drucken – nur Mengen, für den Empfänger, der die Ware quittiert.\n• Berichte: Der CSV-Export nennt jetzt die Gegenpartei und ob sie Kunde oder Lieferant ist.\n• Deine erste Rechnung kommt mit einer Checkliste in vier Schritten – Kunde, Positionen, Vorschau, Senden – statt der geführten Tour.\n• Jeden Montagmorgen eine Zusammenfassung, was dir noch geschuldet wird (nur solange eine Rechnung offen ist)."
+      }
     },
     {
       "key": "invoiceqr-fr",
@@ -1293,7 +1296,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Facture, Devis et Reçu — factures et devis avec QR de paiement",
+      "title": "Facture, Devis et Reçu — avec QR de paiement sur iPhone",
       "oneLiner": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
       "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
       "legal": [],
@@ -1341,7 +1344,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Fattura, Preventivo e Ricevuta — fatture con QR di pagamento",
+      "title": "Fattura, Preventivo e Ricevuta — con QR di pagamento su iPhone",
       "oneLiner": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
       "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
       "legal": [],
@@ -1389,7 +1392,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Smart Factura y Presupuesto — facturas con QR de pago en iPhone",
+      "title": "Smart Factura y Presupuesto — con QR de pago en iPhone",
       "oneLiner": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
       "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
       "legal": [],
@@ -1479,8 +1482,7 @@
           "a": "Documentos y exportaciones QR ilimitados, 100+ plantillas de documento, los 12+ estilos QR y los 16+ diseños listos, el kit de marca completo (color, fuente y logo), colores, puntos y marcos QR personalizados, y quita la línea con el nombre de la app de los archivos exportados."
         }
       ],
-      "shotStart": 1,
-      "whatsNew": "• Tu primera nota de venta se abre como un ejemplo terminado: cambia el cliente y el concepto, y ya es tuya.\n• Enviármela: recibe el PDF en tu celular, en Archivos o en tu propio correo antes de mandarlo a un cliente.\n• Tu primer documento puede usar cualquier plantilla, incluidas las Pro.\n• Recordatorios: un aviso cuando un documento que hiciste aún no se ha enviado, además de los recordatorios de vencimiento."
+      "shotStart": 1
     },
     {
       "key": "invoiceqr-pt-br",
@@ -1495,7 +1497,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "Fatura, Orçamento e Recibo — faturas com QR de pagamento",
+      "title": "Fatura, Orçamento e Recibo — com QR de pagamento no iPhone",
       "oneLiner": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
       "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
       "legal": [],
@@ -1543,7 +1545,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "請求書・見積書・領収書作成 インボイス対応 — iPhoneでPDF作成",
+      "title": "請求書・見積書・領収書作成 インボイス対応 — 決済QRコードとPDF共有",
       "oneLiner": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
       "description": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
       "legal": [],
@@ -1591,7 +1593,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "프리랜서 청구서·견적서·영수증 — 청구서, 견적서, 결제 QR을 몇 분 안에",
+      "title": "프리랜서 청구서·견적서·영수증 — 결제 QR까지 몇 분 만에",
       "oneLiner": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
       "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
       "legal": [],
@@ -1639,7 +1641,7 @@
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
       "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "title": "開單、報價單、收據、送貨單產生器 — 開單、報價、掃碼付款的一體化工具",
+      "title": "開單、報價單、收據、送貨單產生器 — 附收款 QR Code，掃碼就能付款",
       "oneLiner": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
       "description": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
       "legal": [],
@@ -1672,8 +1674,7 @@
           "q": "Pro 解鎖什麼？",
           "a": "無限帳單與 QR Code 匯出。100+ 款帳單範本、12+ 款 QR 樣式與 16+ 款現成設計。完整品牌套件 — 顏色、字型與 Logo。自訂 QR Code 樣式。去掉匯出檔案頁尾的 App 署名。"
         }
-      ],
-      "whatsNew": "• 第一張帳單開啟時就是一張填好的範例：改掉客戶和這一行，它就是你的了。\n• 傳給自己：傳給客戶之前，先把 PDF 傳到自己的手機、「檔案」或信箱。\n• 第一份單據可以使用任何範本，包括 Pro 範本。\n• 提醒：做好但還沒寄出的帳單會提醒你，到期提醒照舊。"
+      ]
     },
     {
       "key": "invoiceqr-th",

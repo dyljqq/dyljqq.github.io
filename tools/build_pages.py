@@ -144,7 +144,13 @@ SOCIAL = CFG["site"].get("social") or []      # [{"name": "Instagram", "url": ".
 
 def whatsnew(s, lang, override=None):
     """商店当前版本的更新说明（各语言商店原文）；override = site.json 的 whatsNew（原文把单据叫 factura / 發票、或用 Sie 时的改写版，事实不变）。"""
-    notes, ver = (override or s.get("releaseNotes") or "").strip(), s.get("version")
+    ver = s.get("version")
+    if isinstance(override, dict):          # 改写版绑定版本：商店更新到新版本而改写版没跟上时不出这一节，免得挂着旧版本的说明
+        if override.get("version") != ver:
+            print(f"  ⚠ 「更新内容」改写版是 {override.get('version')}，商店已是 {ver}：{lang} 这一节先不显示，去 site.json 更新 whatsNew", file=sys.stderr)
+            return ""
+        override = override.get("text")
+    notes = (override or s.get("releaseNotes") or "").strip()
     if not notes or not ver:
         return ""
     out = []

@@ -212,7 +212,7 @@ def build_llms():
     return "\n".join(out)
 
 # ---------------------------------------------------------------- head 改写
-def software_jsonld(app):
+def software_jsonld(app, kind="product"):
     d = {"@context": "https://schema.org", "@type": "SoftwareApplication",
          "@id": f"{ORIGIN}{app['path']}#app",
          "name": app["name"], "alternateName": app["shortName"],
@@ -233,9 +233,7 @@ def software_jsonld(app):
         d["image"] = asset(app["icon"])
     # 生成页：截图和预览视频来自商店缓存 / assets/<key>/preview（与页面上展示的一致）
     parent = next((a for a in APPS if a["key"] == app.get("variantOf")), None) or app
-    if parent.get("generated"):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location("bp", ROOT / "tools/build_pages.py")
+    if parent.get("generated") and kind == "product":      # 截图 / 视频只放在真有它们的产品页，法务页不带
         cache = json.loads((ROOT / f"tools/store/{parent['key']}.json").read_text(encoding="utf-8"))
         lang = app.get("lang", "en")
         L2S = {"en": "en-US", "en-GB": "en-GB", "de": "de-DE", "fr": "fr-FR", "it": "it", "es": "es-ES", "es-MX": "es-MX",
@@ -243,11 +241,11 @@ def software_jsonld(app):
         st = cache.get(L2S.get(lang, "en-US")) or cache["en-US"]
         d["screenshot"] = [re.sub(r"/[^/]+$", "/920x0w.webp", u) for u in st["screenshots"][:6]]
         d["inLanguage"] = lang
-        vf = {"en": "en", "en-GB": "en", "pt-BR": "pt", "es": "en", "es-MX": "en"}.get(lang, lang)
-        for cand in (vf, "en"):
+        vf = {"en": "en", "en-GB": "en", "pt-BR": "pt"}.get(lang, lang)
+        for cand in ((vf, "en") if lang in ("en", "en-GB") else (vf,)):   # 与页面一致：非英文页不拿英文视频顶
             f = ROOT / "assets" / parent["key"] / "preview" / f"{cand}.mp4"
             if f.exists():
-                d["video"] = {"@type": "VideoObject", "name": f"{st['name']} — app preview",
+                d["video"] = {"@type": "VideoObject", "name": bp.t(lang, "video_label", name=st["name"]),
                               "description": st["description"].split("\n")[0][:200],
                               "thumbnailUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.jpg",
                               "contentUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.mp4",
@@ -343,7 +341,7 @@ def head_block(url, app, kind):
         lines.append(f'<meta name="apple-itunes-app" content="app-id={app["appId"]}, '
                      f'affiliate-data=ct=web-{root_key(app)}-app&amp;pt={PT}">')
 
-    blobs = [software_jsonld(app)]
+    blobs = [software_jsonld(app, kind)]
     if is_product and app.get("faq"):
         blobs.append(faq_jsonld(app))
     for b in blobs:
@@ -407,6 +405,8 @@ def home_card(a, lang):
     text = ("" if lang.startswith(("zh", "ja")) else " ").join(lede) or (" ".join(sections[0]["paras"]) if sections and sections[0]["paras"] else
                               " ".join(sections[0]["items"][:3]) if sections else "")
     text = re.sub(r"(?<=[。！？」』）])\s+", "", text)
+    if lang.startswith(("zh", "ja")):
+        text = re.sub(r"(?<=[\u3040-\u30ff\u4e00-\u9fff]),\s*(?=[\u3040-\u30ff\u4e00-\u9fff])", "，" if lang.startswith("zh") else "、", text)
     blurb = cut_sentences(text)
     if not bp.localized(a, lang):          # 商店没这个语言：卡片文案用 tools/i18n/fallback.json 的译文（名字仍是商店名）
         sub = bp.fallback(a, lang, "tagline") or sub
