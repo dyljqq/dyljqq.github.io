@@ -29,8 +29,10 @@ if [ -n "$(git status --porcelain -- . ':!tools/gsc-indexing-log.json')" ]; then
 fi
 DEPLOY_LOG=$(mktemp)
 $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true
+# Vercel 偶发失败（09-26 遇到过一次，输出里只有 "retry deploy"）：自动再试一次
+if ! grep -q 'ready\|READY' "$DEPLOY_LOG"; then echo "Vercel 首次部署未就绪，重试一次…"; $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true; fi
 # 新版 CLI 输出 JSON（"message": "Deployment … ready."）；没有 ready 就是没部署上，停下别推 git、别报 IndexNow
-if ! grep -q 'ready' "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
+if ! grep -q 'ready\|READY' "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
 grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1
 git push -q origin HEAD:main && git push -q origin HEAD 2>/dev/null || true
 
