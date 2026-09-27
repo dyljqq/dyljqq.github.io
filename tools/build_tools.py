@@ -201,7 +201,7 @@ def shell(pg, body):
 {ask_ai(ORIGIN + pg["path"], lang)}
 <div style="height:48px"></div>
 </main>
-<footer><div class="wrap"><p>go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{home}">{esc(T("nav_all_apps"))}</a></p>{bp.social_html(lang)}</div></footer>
+<!-- sitefooter:start --><!-- sitefooter:end -->
 {scripts}
 </body>
 </html>

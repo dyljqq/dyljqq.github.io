@@ -354,8 +354,6 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
 .others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
-footer{border-top:1px solid var(--rule);padding:32px 0 48px;font-size:13px;color:var(--muted)}
-footer p{margin:0 0 8px}footer a{text-underline-offset:3px}
 @media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
 """
@@ -369,9 +367,6 @@ def render(a):
     name = s["name"]
     lede, sections, fine = parse_desc(s["description"])
     video, poster = video_of(a)
-    legal = a.get("legal") or p.get("legal") or []
-    privacy = next((h for h, l in legal if "privacy" in h), None)
-    terms = next((h for h, l in legal if "terms" in h), None)
     shots = s["screenshots"][:10]
     k = a.get("shotStart", 0)
     shots = shots[k:] + shots[:k]
@@ -501,13 +496,7 @@ def render(a):
 </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>{esc(T("footer_made", name=name))}{"" if lang.startswith(("zh", "ja")) else " "}{esc(T("footer_email", email=""))}<a href="mailto:{EMAIL}">{EMAIL}</a></p>
-    {social_html(lang)}
-    <p>{f'<a href="{privacy}">{esc(T("privacy"))}</a>' if privacy else ''}{' · ' if privacy and terms else ''}{f'<a href="{terms}">{esc(T("terms"))}</a>' if terms else ''} · <a href="{home}">go ka</a></p>
-  </div>
-</footer>
+<!-- sitefooter:start --><!-- sitefooter:end -->
 {SCRIPT}
 </body>
 </html>

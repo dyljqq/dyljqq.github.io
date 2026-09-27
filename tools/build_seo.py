@@ -53,9 +53,13 @@ def store_url(app):
 
 def _lastmod_norm(t: str) -> str:
     """只比 <title> 和 <body>，去掉 <style> 和日期串：head 里的 SEO 块是本脚本后补的，
-    只改样式或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）"""
+    只改样式或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）；
+    全站页脚也不算（09-28 统一页脚时 82 页的页脚都换了位置和内容，正文没变）；空白差异一并忽略。"""
     parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
-    return re.sub(r"\d{4}-\d{2}-\d{2}", "", re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S))
+    t = re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S)
+    t = re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), "", t, flags=re.S)
+    t = re.sub(r"<footer\b.*?</footer>", "", t, flags=re.S)
+    return re.sub(r"\s+", " ", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
 
 def git_lastmod(path: Path, text: str | None = None) -> str:
     """lastmod＝这个页面正文最后一次真正变化的那次提交的日期，不用构建时间，也不用「最后一次提交」——
@@ -64,6 +68,10 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
     today = date.today().isoformat()
     try:
         rel = str(path.relative_to(ROOT))
+        if text is None and path.suffix not in (".html", ".xml", ".txt"):     # 视频 / 图片：就用最后一次提交的日期
+            last = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
+                                  capture_output=True, text=True, timeout=10).stdout.strip()
+            return datetime.fromisoformat(last).astimezone().date().isoformat() if last else today
         cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"))
         revs = [l.split(" ", 1) for l in subprocess.run(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
                 capture_output=True, text=True, timeout=10).stdout.split("\n") if l.strip()]
@@ -624,9 +632,103 @@ def home_legal_html(lang="en"):
             label_of = lambda href, label: bp.t(lang, "privacy") if "privacy" in href else bp.t(lang, "terms")
         links = " · ".join('<a href="%s"%s>%s</a>' % (href, attr, esc_text(label_of(href, label)))
                            for href, label in a.get("legal", []))
-        rows.append("          <li>%s — %s</li>" % (esc_text(a["home"]["label"]), links))
-    return ('<!-- legal:start -->\n        <ul class="legal">\n' + "\n".join(rows)
-            + "\n        </ul>\n        <!-- legal:end -->")
+        rows.append('          <li><a class="gk-foot-app" href="%s">%s</a> — %s</li>'
+                    % (bp.page_for(a, lang, "footer"), esc_text(a["home"]["label"]), links))
+    return '<ul class="gk-foot-legal">\n' + "\n".join(rows) + "\n        </ul>"
+
+# ---------------------------------------------------------------- 全站页脚
+# 09-28 用户：全站页脚内容要一致。以前只有 12 个首页有完整页脚，产品页 / 工具页 / 博客 / 法务页 / 手写页各是一套，
+# 有的干脆没有。现在 82 页一律用这一份：品牌 + 各 app 隐私与条款 + 社媒 + 版权行，按页面 <html lang> 本地化。
+# 样式自带、类名带 gk- 前缀：法务页和手写页没有站点的 CSS 变量，也有自己的 h2 / a 样式，不能指望页面。
+FOOT_START, FOOT_END = "<!-- sitefooter:start -->", "<!-- sitefooter:end -->"
+FOOT_LANG = {"zh-CN": "zh-Hans"}                      # 单词兽的页面是简体中文
+TOOLS_HUB = {"pt-BR": "/tools/pt-br/"}                 # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
+FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath>'
+             '<circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/>'
+             '<path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>')
+# 字体 / 颜色一律写死，不借页面变量：DailyCalorie 的 --text 是颜色，借来当字体整条 font 声明失效。
+# 宽度和边距借 --wrap / --gutter（生成页是 1080 / 1120，手写页没有就回落 1120），让页脚和正文左右对齐。
+FOOT_FONT = '"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif'
+FOOT_CSS = ('<style id="gk-foot-css">'
+    'footer.gk-foot{border-top:1px solid #e7e5df;padding:40px 0 56px;margin:0;background:none;text-align:left;'
+    f'font:400 13px/1.7 {FOOT_FONT};letter-spacing:.1px;color:#5a5a5a}}'
+    '.gk-foot-in{box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}'
+    '.gk-foot-row{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}'
+    '.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;border:0}'
+    '.gk-foot-brand svg{width:34px;height:34px;flex:none}'
+    '.gk-foot-brand b{font:600 22px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}'
+    f'.gk-foot h2{{margin:0 0 14px;padding:0;border:0;font:700 11px/1 {FOOT_FONT};letter-spacing:2px;text-transform:uppercase;color:#141414}}'
+    '.gk-foot-legal{display:grid;grid-template-columns:repeat(2,minmax(0,auto));gap:8px 40px;margin:0;padding:0;list-style:none}'
+    '.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.7;font-weight:400;color:#5a5a5a}'
+    '.gk-foot a{color:#5a5a5a;font-weight:400;text-decoration:underline;text-underline-offset:3px;border:0}'
+    '.gk-foot a:hover{color:#141414}'
+    '.gk-foot a.gk-foot-app{color:#141414;text-decoration:none}'
+    '.gk-foot a.gk-foot-app:hover{text-decoration:underline}'
+    '.gk-foot p.gk-foot-copy{margin:34px 0 0}'
+    '.gk-foot-copy a{white-space:nowrap}'
+    '@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-legal{grid-template-columns:1fr}}'
+    '</style>')
+# 只给自己有深色模式的页面（DailyCalorie 三页）配深色页脚；其它页面深色模式下背景仍是白的，不能跟着变。
+FOOT_CSS_DARK = ('@media (prefers-color-scheme:dark){footer.gk-foot{border-top-color:#3a332c;color:#b3a898}'
+    '.gk-foot h2,.gk-foot a.gk-foot-brand,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}}')
+
+# 手写页 / 法务页没有 --wrap：页脚按各自正文列对齐（宽度＝正文列 + 两侧 20px 边距，09-28 实测），并补站点字体。
+# DailyCalorie 的 body 有左右 20px padding，页脚用负边距拉通栏。
+HAND_LAYOUT = [(r"^dailycalorie/", "760px", "margin-left:-20px;margin-right:-20px"),
+               (r"^(qrcodestudio|citu)/index\.html$", "800px", ""),
+               (r"", "820px", "")]                    # 法务页模板和 repdex：main max-width 780
+FOOT_FONTS = ('@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}'
+              '@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}')
+
+def foot_css(page, rel):
+    css = FOOT_CSS
+    extra = FOOT_CSS_DARK if re.search(r"prefers-color-scheme:\s*dark", page) else ""
+    if "--wrap:" not in page:
+        w, bleed = next((w, b) for pat, w, b in HAND_LAYOUT if re.search(pat, rel))
+        extra = (FOOT_FONTS if 'font-family:"Manrope"' not in page else "") + \
+                f"footer.gk-foot{{--gk-foot-w:{w};--gk-foot-g:20px;{bleed}}}" + extra
+    return css.replace("</style>", extra + "</style>")
+
+def foot_lang(page):
+    m = re.search(r'<html[^>]*\blang="([^"]+)"', page[:600])
+    lang = FOOT_LANG.get(m.group(1), m.group(1)) if m else "en"
+    return lang if lang in HOME_LANGS else "en"
+
+def site_footer_html(lang="en"):
+    colon = "：" if lang.startswith(("zh", "ja")) else ("\u00a0: " if lang == "fr" else ": ")
+    def social_name(x):
+        if x.get("key") == "xhs":
+            return "小紅書" if lang == "zh-Hant" else ("小红书" if lang.startswith("zh") else x.get("nameIntl", x["name"]))
+        return x["name"]
+    social = " · ".join('<a href="%s" rel="me noopener" target="_blank">%s</a>' % (esc_text(x["url"]), esc_text(social_name(x)))
+                        for x in bp.SOCIAL)
+    follow = f'\n    <p class="gk-foot-copy">{esc_text(H(lang, "follow"))}{colon}{social}</p>' if social else ""
+    return f"""{FOOT_START}
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-row">
+      <a class="gk-foot-brand" href="{home_path(lang)}">{FOOT_LOGO}<b>go ka</b></a>
+      <div>
+        <h2>{esc_text(H(lang, "legal_h"))}</h2>
+        {home_legal_html(lang)}
+      </div>
+    </div>{follow}
+    <p class="gk-foot-copy">© {date.today().year} go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{TOOLS_HUB.get(lang, "/tools/")}">{esc_text(H(lang, "tools_link"))}</a> · <a href="/llms.txt">llms.txt</a></p>
+  </div>
+</footer>
+{FOOT_END}"""
+
+def apply_site_footer(page, rel):
+    """每页：head 末尾放页脚样式；有标记就原地换，没有（首页 / 法务页 / 手写页的第一次迁移）就删掉旧 <footer>、放到 </body> 前。"""
+    page = re.sub(r'\s*<style id="gk-foot-css">.*?</style>', "", page, flags=re.S)
+    i = page.lower().find("</head>")
+    page = page[:i].rstrip() + "\n" + foot_css(page, rel) + "\n" + page[i:]
+    block = site_footer_html(foot_lang(page))
+    if FOOT_START in page:
+        return re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), lambda m: block, page, count=1, flags=re.S)
+    page = re.sub(r"\n?[ \t]*<footer\b.*?</footer>", "", page, count=1, flags=re.S)
+    j = page.lower().rfind("</body>")
+    return page[:j].rstrip() + "\n" + block + "\n" + page[j:]
 
 def tool_head(tp):
     url, lang = tp["path"], tp["lang"]; canonical = f"{ORIGIN}{url}"
@@ -700,8 +802,7 @@ def patch_home(path: Path, lang="en"):
                   head, count=1, flags=re.S)
     out = head.rstrip() + "\n" + home_head(lang) + rest
     out = fill_lang(out, lang, home_options())
-    for tag, fn in (("apps", lambda: home_apps_html(lang)), ("homefaq", lambda: home_faq_html(lang)),
-                    ("legal", lambda: home_legal_html(lang))):
+    for tag, fn in (("apps", lambda: home_apps_html(lang)), ("homefaq", lambda: home_faq_html(lang))):
         a, b = f"<!-- {tag}:start -->", f"<!-- {tag}:end -->"
         if a not in out or b not in out:
             raise SystemExit(f"index.html 缺少标记 {a} / {b}")
@@ -788,6 +889,7 @@ def main():
         if out is None:
             print(f"  !! 没有 </head>，跳过：{path}")
             continue
+        out = apply_site_footer(out, str(path.relative_to(ROOT)))
         if '<html lang="fr"' in out[:300]:
             out = french_spacing(out)
         final[path] = out

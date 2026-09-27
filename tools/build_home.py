@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """从英文首页模板（index.html）生成各语言首页 /<lang>/index.html。
 
-  python3 tools/build_home.py      # 然后必须跑 tools/build_seo.py（head、app 卡片、FAQ、页脚、语言切换由它按语言填）
+  python3 tools/build_home.py      # 然后必须跑 tools/build_seo.py（head、app 卡片、FAQ、全站页脚、语言切换由它按语言填）
 
 只替换模板里我们自己写的句子（tools/i18n/home.json，英文源在 home.en.json）；
 app 卡片是各语言商店的名字 / 副标题 / 描述首段，由 build_seo.py 的 home_card() 填。
@@ -50,9 +50,6 @@ def localize(tpl, lang):
         ('<p class="label" style="margin:0">Contact</p>', f'<p class="label" style="margin:0">{e(t["contact_label"])}</p>'),
         ('<h2 id="contact-title">Say hello.</h2>', f'<h2 id="contact-title">{e(t["contact_h"])}</h2>'),
         (f'<p>{EN["contact_p"]}</p>', f'<p>{e(t["contact_p"])}</p>'),
-        ('<h2>Privacy &amp; terms</h2>', f'<h2>{e(t["legal_h"])}</h2>'),
-        ('<a href="/tools/">Free tools &amp; guides</a>', f'<a href="{hub}">{e(t["tools_link"])}</a>'),
-        ('<p class="copy social">Follow go ka: ', f'<p class="copy social">{e(t["follow"])}{"：" if lang.startswith(("zh", "ja")) else ("\u00a0: " if lang == "fr" else ": ")}'),
     ]
     out = tpl
     for old, new in pairs:
@@ -66,11 +63,9 @@ def localize(tpl, lang):
                      lambda m: f'<p><span class="hl">{e(t["hero_p1"])}</span>\n     <span class="hl">{e(t["hero_p2"])}</span></p>', out)
     if n != 1:
         raise SystemExit(f"[{lang}] 首屏副标题没命中")
-    if lang.startswith("zh"):
-        out = out.replace(">RedNote (小红书)</a>", ">小紅書</a>" if lang == "zh-Hant" else ">小红书</a>")
-    # 页头、页脚的品牌 logo 回到本语言首页（两处）
-    if out.count('<a class="brand" href="/">') != 2:
-        raise SystemExit(f"[{lang}] 品牌链接应有 2 处")
+    # 页头的品牌 logo 回到本语言首页（页脚整块由 build_seo.py 按语言生成，这里不碰）
+    if out.count('<a class="brand" href="/">') != 1:
+        raise SystemExit(f"[{lang}] 页头品牌链接应有 1 处")
     out = out.replace('<a class="brand" href="/">', f'<a class="brand" href="/{lang.lower()}/">')
     # 暂停按钮的 aria 文案在 HTML 和脚本里各出现一次
     for key, en in (("pause_label", "Pause the animation"), ("play_label", "Play the animation")):
