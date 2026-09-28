@@ -104,16 +104,15 @@ def shot_num(url):
     m = re.match(r"(\d+)", url.rstrip("/").split("/")[-2])
     return m.group(1).zfill(2) if m else None
 
-def feature_shot(f, s, lang):
-    """功能块配哪张截图：有 key 就按文件名关键词找（各语言商店截图的编号不一定一样——BeforeGo 日文/简中的 07/09 互换、10 是品牌图），
-    没有 key 才按编号；该语言没有这张图就返回 None（这一块在该语言不出现）。"""
-    names = [(u, u.rstrip("/").split("/")[-2]) for u in s["screenshots"]]
-    if lang in f.get("skip", []):          # 该语言商店这张素材不对（如泰语 10 号拍的不是备份界面），这一块在该语言不出
-        return None
-    if f.get("key"):
-        return next((u for u, n in names if f["key"] in n), None)
-    num = f.get("override", {}).get(lang, f["shot"])
-    return next((u for u, n in names if shot_num(u) == num), None)
+# 09-28 用户：配图一律用 Codex 重画、不用商店截图。assets/art/<app>/<键>-460|920.webp，键＝功能块的 shot 编号或 hero；
+# 图里不画文字，所有语言共用一套。prompt 和裁图脚本在 tools/art/。
+def art(key, name):
+    base = f"/assets/art/{key}/{name}"
+    return (f"{base}-460.webp", f"{base}-920.webp") if (ROOT / "assets/art" / key / f"{name}-460.webp").exists() else None
+
+def art_img(pair, sizes, alt, extra=""):
+    return (f'<img src="{pair[0]}" srcset="{pair[0]} 460w, {pair[1]} 920w" sizes="{sizes}" width="460" height="575" '
+            f'alt="{esc(alt)}"{extra}>')
 
 def highlights(a, s, lang):
     """功能图文块（参照 EasyNotes 官网）：一张商店截图配一个标题 + 两三句。英文源稿 tools/i18n/features.en.json，
@@ -130,12 +129,11 @@ def highlights(a, s, lang):
             return ""
     rows = []
     for f, t in zip(src, texts):
-        u = feature_shot(f, s, lang)
-        if not u:
+        pic = art(p["key"], f["shot"])        # 插画不分语言，以前按语言挑截图、缺图就跳过的逻辑（skip / key / override）不再需要
+        if not pic:
             continue
-        rows.append(f'    <div class="hl"><figure><img loading="lazy" decoding="async" src="{cdn(u, 460)}" '
-                    f'srcset="{cdn(u, 460)} 460w, {cdn(u, 920)} 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="999" '
-                    f'alt="{esc(t["title"])}"></figure><div><h3>{esc(t["title"])}</h3><p>{esc(t["text"])}</p></div></div>')
+        rows.append(f'    <div class="hl"><figure>{art_img(pic, "(max-width:760px) 78vw, 320px", t["title"], ' loading="lazy" decoding="async"')}'
+                    f'</figure><div><h3>{esc(t["title"])}</h3><p>{esc(t["text"])}</p></div></div>')
     if not rows:
         return ""
     return (f'<section class="sec" id="highlights" aria-labelledby="h-highlights">\n  <h2 id="h-highlights">{esc(ui["h_highlights"])}</h2>\n'
@@ -325,12 +323,11 @@ h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.0
 .hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
 .hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
 .hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
 section{scroll-margin-top:20px}
 .sec{padding:clamp(40px,7vw,80px) 0 0}
 h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
 .label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
-.shots{display:flex;gap:14px;overflow-x:auto;padding:4px 0 18px;margin:0;list-style:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.shots li{flex:0 0 auto;scroll-snap-align:start}.shots img{width:230px;aspect-ratio:1320/2868;height:auto;border-radius:20px;border:1px solid var(--rule);background:var(--cream)}
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
 .feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
 .feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
@@ -354,8 +351,8 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
 .others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
-@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl:nth-child(even) figure{order:0}.hl figure{order:2;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
-.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}.shots img{width:200px}}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
 """
 
 SCRIPT = '<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>'
@@ -367,12 +364,6 @@ def render(a):
     name = s["name"]
     lede, sections, fine = parse_desc(s["description"])
     video, poster = video_of(a)
-    shots = s["screenshots"][:10]
-    k = a.get("shotStart", 0)
-    shots = shots[k:] + shots[:k]
-    # 首屏图别和「功能图文」第一块重复：挑第一张没被功能图文用到的截图（没有功能图文就照旧）
-    used = {feature_shot(f, s, lang_of(a)) for f in FEAT_EN.get(parent_of(a)["key"], [])} if highlights(a, s, lang_of(a)) else set()
-    hero_shot = next((u for u in shots if u not in used), shots[0] if shots else None)
     icon = cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else (p.get("icon") or "")
     fam = family(a)
     T = lambda k, **kw: t(lang, k, **kw)
@@ -383,21 +374,16 @@ def render(a):
     chips = [T("meta_free"), T("meta_devices"), T("meta_ios", v=(s.get("minOS") or "17.0").split(".")[0])]
     if p.get("noAccount"): chips.append(T("meta_no_account"))
 
-    media = ""
+    # 首屏只放插画（没有插画就不放图，不拿截图顶）；App 预览视频挪到功能图文后面单独一节
+    hero_art = art(p["key"], "hero")
+    media = f'<div class="hero-media">{art_img(hero_art, "(max-width:760px) 86vw, 420px", name, ' fetchpriority="high"')}</div>' if hero_art else ""
+    preview = ""
     if video:
-        media = (f'<div class="hero-media"><video playsinline preload="none" poster="{poster}" '
-                 f'aria-label="{esc(T("video_label", name=name))}"><source src="{video}" type="video/mp4"></video>'
-                 f'<button type="button" class="play" aria-label="{esc(T("video_label", name=name))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>')
-    elif shots:
-        # 截图上沿留白各 app 不一样：InvoiceQR 按 70% 会切到状态栏（09-27 评审），site.json 的 heroPos 单独调
-        pos = f' style="object-position:{parent_of(a)["heroPos"]}"' if parent_of(a).get("heroPos") else ""
-        media = (f'<div class="hero-media"><img src="{cdn(hero_shot, 460)}" srcset="{cdn(hero_shot, 460)} 460w, {cdn(hero_shot, 920)} 920w" '
-                 f'sizes="(max-width:760px) 86vw, 420px" width="460" height="999" alt="{esc(T("screenshot_alt", name=name, n=shots.index(hero_shot) + 1))}" fetchpriority="high"{pos}></div>')
-
-    shot_items = "\n".join(
-        f'      <li><img loading="lazy" decoding="async" src="{cdn(u, 460)}" srcset="{cdn(u, 460)} 460w, {cdn(u, 920)} 920w" '
-        f'sizes="(max-width:760px) 200px, 230px" width="230" height="500" alt="{esc(T("screenshot_alt", name=name, n=i))}"></li>'
-        for i, u in enumerate(shots, 1))
+        play = esc(T("video_label", name=name))
+        preview = (f'<section class="sec" id="preview" aria-labelledby="h-preview">\n  <h2 id="h-preview">{esc(T("h_preview"))}</h2>\n'
+                   f'  <div class="hero-media preview-media"><video playsinline preload="none" poster="{poster}" aria-label="{play}">'
+                   f'<source src="{video}" type="video/mp4"></video><button type="button" class="play" aria-label="{play}">'
+                   f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>\n</section>\n\n')
 
     feats = []
     for sec in sections:
@@ -435,7 +421,7 @@ def render(a):
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-{f'<link rel="preload" as="image" href="{poster}">' if video else (f'<link rel="preload" as="image" href="{cdn(hero_shot, 460)}" imagesrcset="{cdn(hero_shot, 460)} 460w, {cdn(hero_shot, 920)} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if shots else '')}
+{f'<link rel="preload" as="image" href="{hero_art[0]}" imagesrcset="{hero_art[0]} 460w, {hero_art[1]} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if hero_art else ''}
 <style>{CSS}</style>
 </head>
 <body>
@@ -463,14 +449,7 @@ def render(a):
   {media}
 </section>
 
-{hl_html}<section class="sec" id="screenshots" aria-labelledby="h-screens">
-  <h2 id="h-screens">{esc(T("h_screens"))}</h2>
-  <ul class="shots">
-{shot_items}
-  </ul>
-</section>
-
-<section class="sec" id="features" aria-labelledby="h-features">
+{hl_html}{preview}<section class="sec" id="features" aria-labelledby="h-features">
   <h2 id="h-features">{esc(details_h or T("h_features"))}</h2>
   <div class="feats">
 {chr(10).join(feats)}

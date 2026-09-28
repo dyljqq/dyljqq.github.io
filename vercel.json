@@ -46,6 +46,11 @@
       ],
       "destination": "https://beforego.art/$1",
       "permanent": true
+    },
+    {
+      "source": "/(.*)index.html",
+      "destination": "/$1",
+      "permanent": true
     }
   ]
 }

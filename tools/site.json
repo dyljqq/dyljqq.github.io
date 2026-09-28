@@ -61,7 +61,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: AI Itinerary Planner — Trip plans from screenshots",
       "oneLiner": "An AI itinerary planner for iPhone that turns a travel post, link or note into a day-by-day trip plan, and writes the packing list from your destination and dates.",
       "description": "Screenshot a travel post or paste a link and BeforeGo files it into a day-by-day trip plan. The packing list writes itself from your destination and dates. Free to start, no account.",
@@ -129,7 +129,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: KI-Reiseplaner — Screenshots rein, Route raus",
       "oneLiner": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
       "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tippe deine Pläne ab – BeforeGo macht daraus einen Reiseplan Tag für Tag.",
@@ -177,7 +177,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "Planificateur voyage BeforeGo — un itinéraire depuis vos captures",
       "oneLiner": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
       "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour.",
@@ -225,7 +225,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: Itinerari e Bagagli — il viaggio da uno screenshot",
       "oneLiner": "Screenshot di un post di viaggio o un link: BeforeGo lo trasforma in un itinerario giorno per giorno. La lista bagagli si scrive da sola. Gratis, senza account.",
       "description": "Screenshot di un post di viaggio o un link: BeforeGo lo trasforma in un itinerario giorno per giorno. La lista bagagli si scrive da sola. Gratis, senza account.",
@@ -273,7 +273,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "Planificador viajes BeforeGo — Itinerario día a día desde capturas",
       "oneLiner": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
       "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día.",
@@ -321,7 +321,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "Planificador viajes BeforeGo — Arma tu itinerario desde capturas",
       "oneLiner": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
       "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día.",
@@ -369,7 +369,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: Roteiro de Viagem IA — tudo a partir de prints",
       "oneLiner": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
       "description": "Tire um print de um post de viagem, cole um link ou só digite seus planos, e o BeforeGo organiza tudo em um roteiro dia a dia.",
@@ -417,7 +417,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo：AI旅行計画・旅行チェックリスト — スクショから旅程を作成",
       "oneLiner": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
       "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。持ち物リストは行き先と日程から自動で作られます。",
@@ -465,7 +465,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: AI 여행 플래너·패킹리스트 — 스크린샷으로 여행 일정 만들기",
       "oneLiner": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
       "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.",
@@ -513,7 +513,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo：AI行程规划·出国清单 — 丢进截图，每天怎么走自动排好",
       "oneLiner": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
       "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程。行李清单按目的地和日期自动生成。",
@@ -561,7 +561,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo：AI行程規劃·行前清單 — 丟進截圖，每天怎麼走自動排好",
       "oneLiner": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
       "description": "截圖一篇攻略、貼上連結，或隨手打幾句計畫，BeforeGo 幫你整理成每天的行程。行李清單依目的地與日期自動生成。",
@@ -609,7 +609,7 @@
       "category": "TravelApplication",
       "genre": "Travel",
       "icon": "/assets/beforego/icon.png",
-      "ogImage": "/assets/beforego/checklist.jpg",
+      "ogImage": "/assets/art/beforego/og.jpg",
       "title": "BeforeGo: วางแผนเที่ยวด้วย AI",
       "oneLiner": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง",
       "description": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง",
@@ -655,13 +655,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Countdown Widget — Every Widget Free, No Event Limit",
       "oneLiner": "A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.",
       "description": "A countdown widget app for iPhone: every widget size on the Home and Lock Screen is free, events are unlimited, and a daily backup keeps them safe. Pro adds backdrops and a Live Activity.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
       "free": "Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
-      "paid": "Pro unlocks 88 of the 140 backdrops and the Live Activity on the Lock Screen and Dynamic Island. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
+      "paid": "Pro unlocks 91 of the 143 backdrops and the Live Activity on the Lock Screen and Dynamic Island. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
       "legal": [
         [
           "/countdown/privacy-policy/",
@@ -691,7 +691,7 @@
         },
         {
           "q": "What does Countdown Pro unlock, and how is it sold?",
-          "a": "Pro unlocks the Pro backdrops — 88 of the 140 full-screen backdrops — with a new drop every month, and whatever you unlock while subscribed stays yours. Since version 1.4.7 the Live Activity — an event pinned to the Lock Screen and Dynamic Island — is part of Pro too. It comes as an annual plan with a 7-day free trial, a monthly plan, or a one-time Lifetime purchase; the prices are shown in the app before purchase. Countdowns, reminders and widgets behave identically with or without it."
+          "a": "Pro unlocks the Pro backdrops — 91 of the 143 full-screen backdrops — with a new drop every month, and whatever you unlock while subscribed stays yours. Since version 1.4.7 the Live Activity — an event pinned to the Lock Screen and Dynamic Island — is part of Pro too. It comes as an annual plan with a 7-day free trial, a monthly plan, or a one-time Lifetime purchase; the prices are shown in the app before purchase. Countdowns, reminders and widgets behave identically with or without it."
         },
         {
           "q": "Do I need an account?",
@@ -719,13 +719,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Contagem Regressiva com Widget — Grátis, Eventos Ilimitados",
       "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos de widget são grátis e o número de eventos é ilimitado.",
       "description": "App de contagem regressiva para iPhone: todos os widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios. O Pro acrescenta planos de fundo e a Atividade ao Vivo.",
       "audience": "Quem conta os dias para o ENEM, o Réveillon, o Carnaval, uma viagem, um casamento ou um aniversário — ou conta os dias desde uma data.",
       "free": "Todos os tamanhos de widget, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
-      "paid": "O Pro desbloqueia 88 dos 140 planos de fundo e a Atividade ao Vivo. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
+      "paid": "O Pro desbloqueia 91 dos 143 planos de fundo e a Atividade ao Vivo. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
       "legal": [],
       "faq": [
         {
@@ -750,7 +750,7 @@
         },
         {
           "q": "O que o Pro desbloqueia e como ele é vendido?",
-          "a": "O Pro desbloqueia os planos de fundo Pro — 88 dos 140 —, com novos todo mês, e o que você desbloquear durante a assinatura continua seu. Desde a versão 1.4.7, a Atividade ao Vivo — o evento fixado na Tela Bloqueada e na Dynamic Island — também faz parte do Pro. Há um plano anual com 7 dias grátis, um plano mensal ou uma compra única vitalícia; os preços aparecem no app antes da compra. Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
+          "a": "O Pro desbloqueia os planos de fundo Pro — 91 dos 143 —, com novos todo mês, e o que você desbloquear durante a assinatura continua seu. Desde a versão 1.4.7, a Atividade ao Vivo — o evento fixado na Tela Bloqueada e na Dynamic Island — também faz parte do Pro. Há um plano anual com 7 dias grátis, um plano mensal ou uma compra única vitalícia; os preços aparecem no app antes da compra. Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
         },
         {
           "q": "Precisa de conta?",
@@ -770,13 +770,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse",
       "oneLiner": "Countdown-App für iPhone: jede Widget-Größe ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
       "description": "Countdown-App für iPhone: Alle Widget-Größen für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung. Pro ergänzt Hintergründe und eine Live-Aktivität.",
       "audience": "Alle, die die Tage bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente oder zum Geburtstag zählen — oder die Tage seit einem Datum.",
       "free": "Jede Widget-Größe, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
-      "paid": "Pro schaltet 88 der 140 Hintergründe und die Live-Aktivität frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
+      "paid": "Pro schaltet 91 der 143 Hintergründe und die Live-Aktivität frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
       "legal": [],
       "faq": [
         {
@@ -801,7 +801,7 @@
         },
         {
           "q": "Was schaltet Countdown Pro frei, und wie wird es verkauft?",
-          "a": "Pro schaltet die Pro-Hintergründe frei – 88 der 140 –, jeden Monat kommen neue dazu, und was du im Abo freischaltest, bleibt dir. Seit Version 1.4.7 gehört auch die Live-Aktivität – das Ereignis auf Sperrbildschirm und Dynamic Island – zu Pro. Es gibt ein Jahresabo mit 7 Tagen kostenlosem Test, ein Monatsabo oder einen einmaligen Lifetime-Kauf; die Preise stehen vor dem Kauf in der App. Countdowns, Erinnerungen und Widgets funktionieren mit und ohne Pro genau gleich."
+          "a": "Pro schaltet die Pro-Hintergründe frei – 91 der 143 –, jeden Monat kommen neue dazu, und was du im Abo freischaltest, bleibt dir. Seit Version 1.4.7 gehört auch die Live-Aktivität – das Ereignis auf Sperrbildschirm und Dynamic Island – zu Pro. Es gibt ein Jahresabo mit 7 Tagen kostenlosem Test, ein Monatsabo oder einen einmaligen Lifetime-Kauf; die Preise stehen vor dem Kauf in der App. Countdowns, Erinnerungen und Widgets funktionieren mit und ohne Pro genau gleich."
         },
         {
           "q": "Brauche ich ein Konto?",
@@ -821,13 +821,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Compte à rebours avec widget — Gratuit, événements illimités",
       "oneLiner": "App de compte à rebours pour iPhone où chaque taille de widget est gratuite et le nombre d'événements illimité.",
       "description": "App de compte à rebours pour iPhone : tous les widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub. Pro ajoute des fonds et une activité en direct.",
       "audience": "Tous ceux qui comptent les jours avant les vacances, le mariage, le bac, la retraite ou un anniversaire — ou les jours depuis une date.",
       "free": "Chaque taille de widget, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
-      "paid": "Pro débloque 88 des 140 fonds d'écran et l'activité en direct. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
+      "paid": "Pro débloque 91 des 143 fonds d'écran et l'activité en direct. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
       "legal": [],
       "faq": [
         {
@@ -852,7 +852,7 @@
         },
         {
           "q": "Que débloque Countdown Pro, et comment est-il vendu ?",
-          "a": "Pro débloque les fonds Pro – 88 des 140 –, avec des nouveaux chaque mois, et ce que vous débloquez pendant l'abonnement vous reste acquis. Depuis la version 1.4.7, l'activité en direct – l'événement épinglé sur l'écran verrouillé et dans la Dynamic Island – fait aussi partie de Pro. Il existe un abonnement annuel avec 7 jours d'essai gratuit, un abonnement mensuel ou un achat unique à vie ; les prix sont affichés dans l'app avant l'achat. Comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans."
+          "a": "Pro débloque les fonds Pro – 91 des 143 –, avec des nouveaux chaque mois, et ce que vous débloquez pendant l'abonnement vous reste acquis. Depuis la version 1.4.7, l'activité en direct – l'événement épinglé sur l'écran verrouillé et dans la Dynamic Island – fait aussi partie de Pro. Il existe un abonnement annuel avec 7 jours d'essai gratuit, un abonnement mensuel ou un achat unique à vie ; les prix sont affichés dans l'app avant l'achat. Comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans."
         },
         {
           "q": "Faut-il un compte ?",
@@ -872,13 +872,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Conto alla rovescia con widget — Gratis, eventi illimitati",
       "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione di widget è gratis e il numero di eventi è illimitato.",
       "description": "App di conto alla rovescia per iPhone: tutti i widget per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità. Pro aggiunge sfondi e un'attività in tempo reale.",
       "audience": "Chi conta i giorni alle vacanze, al matrimonio, alla maturità, alla pensione o a un compleanno — o i giorni da una data.",
       "free": "Ogni dimensione di widget, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
-      "paid": "Pro sblocca 88 dei 140 sfondi e l'attività in tempo reale. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
+      "paid": "Pro sblocca 91 dei 143 sfondi e l'attività in tempo reale. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
       "legal": [],
       "faq": [
         {
@@ -903,7 +903,7 @@
         },
         {
           "q": "Cosa sblocca Countdown Pro e come si acquista?",
-          "a": "Pro sblocca gli sfondi Pro – 88 dei 140 –, con nuovi sfondi ogni mese, e ciò che sblocchi durante l'abbonamento resta tuo. Dalla versione 1.4.7 fa parte di Pro anche l'attività in tempo reale: l'evento fissato sulla schermata di blocco e nella Dynamic Island. C'è un piano annuale con 7 giorni di prova gratuita, un piano mensile o un acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto. Conti alla rovescia, promemoria e widget funzionano esattamente allo stesso modo con o senza Pro."
+          "a": "Pro sblocca gli sfondi Pro – 91 dei 143 –, con nuovi sfondi ogni mese, e ciò che sblocchi durante l'abbonamento resta tuo. Dalla versione 1.4.7 fa parte di Pro anche l'attività in tempo reale: l'evento fissato sulla schermata di blocco e nella Dynamic Island. C'è un piano annuale con 7 giorni di prova gratuita, un piano mensile o un acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto. Conti alla rovescia, promemoria e widget funzionano esattamente allo stesso modo con o senza Pro."
         },
         {
           "q": "Serve un account?",
@@ -923,13 +923,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "カウントダウン ウィジェット — 無料・イベント無制限",
       "oneLiner": "iPhone向けカウントダウンアプリ。ウィジェットは全サイズ無料、イベント数は無制限。",
       "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景とライブアクティビティが追加されます。",
       "audience": "受験、旅行、結婚式、推しのライブ、誕生日まであと何日かを数える人。ある日からの日数を数える人にも。",
       "free": "全サイズのウィジェット、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
-      "paid": "Proは140種の背景のうち88種とライブアクティビティを解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
+      "paid": "Proは143種の背景のうち91種とライブアクティビティを解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
       "legal": [],
       "faq": [
         {
@@ -954,7 +954,7 @@
         },
         {
           "q": "Proで何が解放され、どのように購入できますか？",
-          "a": "Proでは全140種の全画面背景のうちPro用の88種が解放され、毎月新しい背景が追加されます。購読中に解放した背景はその後も使えます。バージョン1.4.7からは、ロック画面とダイナミックアイランドに固定するライブアクティビティもProの機能です。7日間の無料トライアル付き年額プラン、月額プラン、買い切りから選べ、価格は購入前にアプリ内に表示されます。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
+          "a": "Proでは全143種の全画面背景のうちPro用の91種が解放され、毎月新しい背景が追加されます。購読中に解放した背景はその後も使えます。バージョン1.4.7からは、ロック画面とダイナミックアイランドに固定するライブアクティビティもProの機能です。7日間の無料トライアル付き年額プラン、月額プラン、買い切りから選べ、価格は購入前にアプリ内に表示されます。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
         },
         {
           "q": "アカウントは必要ですか？",
@@ -974,13 +974,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
       "oneLiner": "iPhone용 디데이 카운트다운 앱. 위젯은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
       "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경과 라이브 활동을 더합니다.",
       "audience": "수능, 전역, 여행, 결혼식, 콘서트, 생일까지 며칠 남았는지 세는 사람. 어떤 날로부터 며칠 지났는지 세는 사람에게도.",
       "free": "모든 크기의 위젯, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
-      "paid": "Pro는 배경 140가지 중 88가지와 라이브 활동을 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
+      "paid": "Pro는 배경 143가지 중 91가지와 라이브 활동을 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
       "legal": [],
       "faq": [
         {
@@ -1005,7 +1005,7 @@
         },
         {
           "q": "Pro는 무엇이 열리고, 어떻게 구매하나요?",
-          "a": "Pro는 전체 화면 배경 140가지 중 Pro 배경 88가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 연 배경은 계속 내 것으로 남습니다. 1.4.7 버전부터는 잠금 화면과 Dynamic Island에 고정하는 라이브 활동도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+          "a": "Pro는 전체 화면 배경 143가지 중 Pro 배경 91가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 연 배경은 계속 내 것으로 남습니다. 1.4.7 버전부터는 잠금 화면과 Dynamic Island에 고정하는 라이브 활동도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
         },
         {
           "q": "계정이 필요한가요?",
@@ -1025,13 +1025,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด",
       "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
       "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro เพิ่มพื้นหลังและกิจกรรมสด",
       "audience": "คนที่นับวันรอสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง หรือวันเกิด — หรือนับว่าผ่านมากี่วันแล้วจากวันหนึ่ง",
       "free": "วิดเจ็ตทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
-      "paid": "Pro ปลดล็อกพื้นหลัง 88 จาก 140 แบบและกิจกรรมสด มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
+      "paid": "Pro ปลดล็อกพื้นหลัง 91 จาก 143 แบบและกิจกรรมสด มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
       "legal": [],
       "faq": [
         {
@@ -1056,7 +1056,7 @@
         },
         {
           "q": "Pro ปลดล็อกอะไร และซื้อแบบไหนได้บ้าง",
-          "a": "Pro ปลดล็อกพื้นหลัง Pro 88 แบบจากทั้งหมด 140 แบบ และมีพื้นหลังใหม่ทุกเดือน สิ่งที่ปลดล็อกระหว่างสมัครสมาชิกจะเป็นของคุณตลอดไป ตั้งแต่เวอร์ชัน 1.4.7 กิจกรรมสดที่ปักหมุดไว้บนหน้าจอล็อกและ Dynamic Island ก็เป็นส่วนหนึ่งของ Pro มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว โดยราคาจะแสดงในแอปก่อนซื้อ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
+          "a": "Pro ปลดล็อกพื้นหลัง Pro 91 แบบจากทั้งหมด 143 แบบ และมีพื้นหลังใหม่ทุกเดือน สิ่งที่ปลดล็อกระหว่างสมัครสมาชิกจะเป็นของคุณตลอดไป ตั้งแต่เวอร์ชัน 1.4.7 กิจกรรมสดที่ปักหมุดไว้บนหน้าจอล็อกและ Dynamic Island ก็เป็นส่วนหนึ่งของ Pro มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว โดยราคาจะแสดงในแอปก่อนซื้อ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
         },
         {
           "q": "ต้องมีบัญชีไหม",
@@ -1076,13 +1076,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "倒数日小组件 — 免费、事件不限量",
       "oneLiner": "iPhone 倒数日 App：小组件全尺寸免费，事件数量不限。",
       "description": "iPhone 倒数日 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 增加背景和实时活动。",
       "audience": "给高考、考研、春节、旅行、婚礼、生日倒数的人，也给想知道「在一起多少天」的人。",
       "free": "全尺寸小组件、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
-      "paid": "Pro 解锁 140 张背景中的 88 张和实时活动。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
+      "paid": "Pro 解锁 143 张背景中的 91 张和实时活动。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
       "legal": [],
       "faq": [
         {
@@ -1107,7 +1107,7 @@
         },
         {
           "q": "Pro 解锁什么，怎么买？",
-          "a": "Pro 解锁 140 张整屏背景中属于 Pro 的 88 张，每月上新；订阅期间解锁过的永久归你。从 1.4.7 版起，固定到锁定屏幕和灵动岛的实时活动也属于 Pro。可以选年付（含 7 天免费试用）、月付或一次性买断，价格会在购买前显示在应用内。倒数日、提醒和小组件有没有 Pro 都完全一样。"
+          "a": "Pro 解锁 143 张整屏背景中属于 Pro 的 91 张，每月上新；订阅期间解锁过的永久归你。从 1.4.7 版起，固定到锁定屏幕和灵动岛的实时活动也属于 Pro。可以选年付（含 7 天免费试用）、月付或一次性买断，价格会在购买前显示在应用内。倒数日、提醒和小组件有没有 Pro 都完全一样。"
         },
         {
           "q": "需要账号吗？",
@@ -1127,13 +1127,13 @@
       "category": "ProductivityApplication",
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
-      "ogImage": "/assets/countdown/home.jpg",
+      "ogImage": "/assets/art/countdown/og.jpg",
       "title": "倒數日小工具 — 免費、事件不限量",
       "oneLiner": "iPhone 倒數日 App：小工具全尺寸免費，事件數量不限。",
       "description": "iPhone 倒數日 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景和即時動態。",
       "audience": "給學測、會考、過年、旅行、婚禮、演唱會、生日倒數的人，也給想知道「交往幾天」的人。",
       "free": "全尺寸小工具、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
-      "paid": "Pro 解鎖 140 張背景中的 88 張和即時動態。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
+      "paid": "Pro 解鎖 143 張背景中的 91 張和即時動態。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
       "legal": [],
       "faq": [
         {
@@ -1158,7 +1158,7 @@
         },
         {
           "q": "Pro 解鎖什麼，怎麼買？",
-          "a": "Pro 解鎖 140 張全螢幕背景中屬於 Pro 的 88 張，每月上新；訂閱期間解鎖過的永久歸你。從 1.4.7 版起，固定到鎖定畫面和動態島的即時動態也屬於 Pro。可以選年繳（含 7 天免費試用）、月繳或一次買斷，價格會在購買前顯示在 App 內。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
+          "a": "Pro 解鎖 143 張全螢幕背景中屬於 Pro 的 91 張，每月上新；訂閱期間解鎖過的永久歸你。從 1.4.7 版起，固定到鎖定畫面和動態島的即時動態也屬於 Pro。可以選年繳（含 7 天免費試用）、月繳或一次買斷，價格會在購買前顯示在 App 內。倒數日、提醒和小工具有沒有 Pro 都完全一樣。"
         },
         {
           "q": "需要帳號嗎？",
@@ -1230,7 +1230,8 @@
       },
       "generated": true,
       "noAccount": true,
-      "paid": "Pro: unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, a full brand kit, custom QR colours, dots and frames, and no app line at the foot of exports."
+      "paid": "Pro: unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, a full brand kit, custom QR colours, dots and frames, and no app line at the foot of exports.",
+      "ogImage": "/assets/art/invoiceqr/og.jpg"
     },
     {
       "key": "invoiceqr-de",
@@ -1244,7 +1245,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Smart Rechnung & Angebot — mit Bezahl-QR-Code am iPhone",
       "oneLiner": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
       "description": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
@@ -1280,8 +1281,8 @@
         }
       ],
       "whatsNew": {
-        "version": "1.1.18",
-        "text": "• Thailand: Ein umsatzsteuerlich registriertes Unternehmen legt im Firmenprofil fest, welches Dokument seine Steuerrechnung (ใบกำกับภาษี) ist; Rechnungen in Baht tragen diesen Titel dann auf Thai. Die Quellensteuer (ภาษีหัก ณ ที่จ่าย) mit 1, 2, 3 oder 5 % ist ein Schalter unter Anpassungen.\n• Lieferscheine lassen sich ohne Preise drucken – nur Mengen, für den Empfänger, der die Ware quittiert.\n• Berichte: Der CSV-Export nennt jetzt die Gegenpartei und ob sie Kunde oder Lieferant ist.\n• Deine erste Rechnung kommt mit einer Checkliste in vier Schritten – Kunde, Positionen, Vorschau, Senden – statt der geführten Tour.\n• Jeden Montagmorgen eine Zusammenfassung, was dir noch geschuldet wird (nur solange eine Rechnung offen ist)."
+        "version": "1.1.19",
+        "text": "• Dein erstes Dokument kann eine Rechnung, ein Angebot oder ein Lieferschein sein – du wählst es in der Checkliste, die vor der Vorschau jetzt auch nach deinem Firmennamen fragt, damit nichts als „My Business“ hinausgeht.\n• Behoben: Eine Position mit „Keine Steuer“ bleibt jetzt wirklich steuerfrei; „Satz des Dokuments“ folgt der Steuer des Dokuments.\n• Geteilte PDFs tragen einen klaren Namen – Art, Nummer und Kunde –, und beim Teilen über Nachrichten oder Mail kommt eine kurze Notiz mit.\n• Das Beispiel in der Einführung zeigt deine Währung und Sprache.\n• Aufgeräumtere Darstellung in allen Sprachen: Die Chips am Fuß des Blatts bleiben in einer Zeile, und die Vorschau hat eine Senden-Schaltfläche über einer Reihe von Aktionen."
       }
     },
     {
@@ -1296,7 +1297,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Facture, Devis et Reçu — avec QR de paiement sur iPhone",
       "oneLiner": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
       "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
@@ -1344,7 +1345,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Fattura, Preventivo e Ricevuta — con QR di pagamento su iPhone",
       "oneLiner": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
       "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
@@ -1392,7 +1393,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Smart Factura y Presupuesto — con QR de pago en iPhone",
       "oneLiner": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
       "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
@@ -1440,7 +1441,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Nota de Venta, Cotización — cotiza y cobra con QR en iPhone",
       "oneLiner": "Haz notas de venta, cotizaciones, remisiones y recibos en PDF desde tu iPhone, con QR o CLABE para cobrar y retenciones de ISR e IVA. Sin cuenta.",
       "description": "Haz notas de venta, cotizaciones, remisiones y recibos en PDF desde tu iPhone, con QR o CLABE para cobrar y retenciones de ISR e IVA. Sin cuenta.",
@@ -1497,7 +1498,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "Fatura, Orçamento e Recibo — com QR de pagamento no iPhone",
       "oneLiner": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
       "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
@@ -1545,7 +1546,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "請求書・見積書・領収書作成 インボイス対応 — 決済QRコードとPDF共有",
       "oneLiner": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
       "description": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
@@ -1593,7 +1594,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "프리랜서 청구서·견적서·영수증 — 결제 QR까지 몇 분 만에",
       "oneLiner": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
       "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
@@ -1641,7 +1642,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "開單、報價單、收據、送貨單產生器 — 附收款 QR Code，掃碼就能付款",
       "oneLiner": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
       "description": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
@@ -1689,7 +1690,7 @@
       "category": "BusinessApplication",
       "genre": "Business",
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
-      "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "ogImage": "/assets/art/invoiceqr/og.jpg",
       "title": "ใบแจ้งหนี้ ใบเสร็จ ใบกำกับภาษี",
       "oneLiner": "สร้างใบแจ้งหนี้ ใบเสนอราคา และใบเสร็จบน iPhone ส่งออกเป็น PDF และแนบ QR ชำระเงินให้ลูกค้าสแกนจ่ายได้ทันที",
       "description": "สร้างใบแจ้งหนี้ ใบเสนอราคา และใบเสร็จบน iPhone ส่งออกเป็น PDF และแนบ QR ชำระเงินให้ลูกค้าสแกนจ่ายได้ทันที",
@@ -1902,7 +1903,8 @@
         "blurb": "Repdex is a gym notebook that works the way training actually works: look something up, write down what you lifted, close the app. Twenty times a session, ten seconds at a time."
       },
       "free": "All 1,324 exercises, all 10 instruction languages and unlimited workout logging; your history is never locked.",
-      "paid": "Repdex Pro, monthly, yearly (7-day free trial for new subscribers) or a one-time Lifetime purchase: unlimited routines, advanced stats, CSV export and home-screen widgets."
+      "paid": "Repdex Pro, monthly, yearly (7-day free trial for new subscribers) or a one-time Lifetime purchase: unlimited routines, advanced stats, CSV export and home-screen widgets.",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg"
     },
     {
       "key": "diary",

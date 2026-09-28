@@ -101,6 +101,37 @@
   "image": null
  },
  {
+  "path": "/tools/days-until-diwali/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "How many days until Diwali 2026? Live countdown",
+  "description": "Diwali 2026 is on Sunday, 8 November 2026, the day of Lakshmi Puja, with Dhanteras on 6 November. Live countdown in days and weeks, plus a free iPhone widget.",
+  "faq": [
+   {
+    "q": "What date is Diwali in 2026?",
+    "a": "Sunday, 8 November 2026. That is the day of Lakshmi Puja, the main day of the festival. Dhanteras is on 6 November and Choti Diwali on 7 November; the dates given for Govardhan Puja and Bhai Dooj differ by a day between panchangs, somewhere from 9 to 11 November."
+   },
+   {
+    "q": "How many weeks until Diwali 2026?",
+    "a": "On 28 September 2026 there were 41 days, about 5 weeks. The counter on this page recalculates when you open it."
+   },
+   {
+    "q": "Why does the date of Diwali change every year?",
+    "a": "Diwali follows the Hindu lunisolar calendar: it falls on the new-moon night (Amavasya) of the month of Kartik, so its date in the Gregorian calendar moves between mid-October and mid-November."
+   },
+   {
+    "q": "How do I get a Diwali countdown widget on iPhone?",
+    "a": "Add 8 November 2026 as an event in Countdown Widget: Any Event, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Because the date moves, add next year's Diwali as a new event rather than repeating it yearly. Every widget size is free."
+   }
+  ],
+  "published": "2026-09-28",
+  "app": "countdown",
+  "hubTitle": "How many days until Diwali 2026?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/days-until-new-year/",
   "lang": "en",
   "kind": "Article",
@@ -395,7 +426,7 @@
   "hubTitle": "Add a Countdown to Your iPhone Home Screen and Lock Screen",
   "items": [],
   "headline": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f4/12/c7/f412c72e-a889-d352-e518-bf16d8782a50/01-watch-it-closer.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/countdown/07-920.webp"
  },
  {
   "path": "/blog/count-down-birthday-exam-trip-iphone/",
@@ -426,7 +457,7 @@
   "hubTitle": "Count Down to a Birthday, Exam or Trip on iPhone",
   "items": [],
   "headline": "How to Count Down to a Birthday, an Exam or a Trip on iPhone",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fb/64/d5/fb64d531-d362-2433-72e2-0891b45cb03a/09-start-from-a-template.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/countdown/09-920.webp"
  },
  {
   "path": "/blog/payment-qr-code-on-invoice/",
@@ -457,7 +488,7 @@
   "hubTitle": "Add a Payment QR Code to an Invoice and Get Paid Faster",
   "items": [],
   "headline": "How to Add a Payment QR Code to an Invoice (and Get Paid Faster)",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/55/1b/44551bc3-4e2a-2586-9215-2e95980ebb75/02-invoice.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/invoiceqr/08-920.webp"
  },
  {
   "path": "/blog/invoice-vs-estimate-vs-quote/",
@@ -488,7 +519,7 @@
   "hubTitle": "Invoice vs Estimate vs Quote: What's the Difference?",
   "items": [],
   "headline": "Invoice vs Estimate vs Quote: What's the Difference?",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a5/74/96/a5749683-7ee4-731e-a7a7-f37a39a12cf9/05-templates.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/invoiceqr/05-920.webp"
  },
  {
   "path": "/blog/travel-post-screenshot-to-itinerary/",
@@ -519,7 +550,7 @@
   "hubTitle": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
   "items": [],
   "headline": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/da/c0/39dac056-926e-c1a0-de27-e29b877f822e/01-guide-2026-09-24.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/beforego/01-920.webp"
  },
  {
   "path": "/blog/packing-list-by-destination/",
@@ -550,7 +581,7 @@
   "hubTitle": "A Packing List That Fits the Destination: Plugs, Currency, Rules",
   "items": [],
   "headline": "A Packing List That Fits the Destination: Plugs, Currency, Entry Rules",
-  "image": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/26/1c/52261c83-df1d-83e5-b9e5-d576e6587b85/04-checklist.png/920x0w.webp"
+  "image": "https://beforego.art/assets/art/beforego/04-920.webp"
  },
  {
   "path": "/tools/",

@@ -353,7 +353,8 @@ def head_block(url, app, kind):
               f'<meta property="og:url" content="{canonical}">']
     if img:
         lines.append(f'<meta property="og:image" content="{img}">')
-        lines.append('<meta name="twitter:card" content="summary_large_image">')
+        # 只有方形图标、没有横版分享图的（Repdex / DailyCalorie / 法务页）用小卡，大图卡会裁掉图标上下（09-28 评审）
+        lines.append(f'<meta name="twitter:card" content="{"summary_large_image" if is_product and app.get("ogImage") else "summary"}">')
         lines.append(f'<meta name="twitter:image" content="{img}">')
     else:
         lines.append('<meta name="twitter:card" content="summary">')
@@ -620,19 +621,21 @@ def home_faq_html(lang="en"):
     return ('<!-- homefaq:start -->\n  <div class="faq-list">\n' + rows
             + "\n  </div>\n  <!-- homefaq:end -->")
 
+FOOT_SHORT = {"en": {"privacy": "Privacy", "terms": "Terms"},   # 标题已写「Privacy & terms」，列里用短词
+              "de": {"privacy": "Datenschutz", "terms": "Bedingungen"}}   # 09-28 手机 375 宽下全称三列放不下（溢出 26px）
+
 def home_legal_html(lang="en"):
+    """09-28 用户嫌页脚乱：以前每行「App — Privacy Policy · Terms of Service」连成一串、全带下划线、英文页上单词兽还是中文标题。
+    改成三列对齐的表：app 名 | 隐私 | 条款，标签按页面语言统一，不再沿用各法务页自己的标题。"""
+    short = FOOT_SHORT.get(lang, {})
     rows = []
     for a in HOME_APPS:
         target = a["home"].get("hreflang") or "en"          # 法务页本身的语言
-        if lang == "en":                                    # 英文首页沿用原文标题（单词兽的是中文，标 lang）
-            attr = f' hreflang="{target}" lang="{target}"' if target != "en" else ""
-            label_of = lambda href, label: label
-        else:
-            attr = f' hreflang="{target}"'
-            label_of = lambda href, label: bp.t(lang, "privacy") if "privacy" in href else bp.t(lang, "terms")
-        links = " · ".join('<a href="%s"%s>%s</a>' % (href, attr, esc_text(label_of(href, label)))
-                           for href, label in a.get("legal", []))
-        rows.append('          <li><a class="gk-foot-app" href="%s">%s</a> — %s</li>'
+        attr = f' hreflang="{target}"' if target != lang else ""
+        cells = {("privacy" if "privacy" in href else "terms"): href for href, _ in a.get("legal", [])}
+        links = "".join('<a href="%s"%s>%s</a>' % (cells[k], attr, esc_text(short.get(k) or bp.t(lang, k)))
+                        if k in cells else "<span></span>" for k in ("privacy", "terms"))
+        rows.append('          <li><a class="gk-foot-app" href="%s">%s</a>%s</li>'
                     % (bp.page_for(a, lang, "footer"), esc_text(a["home"]["label"]), links))
     return '<ul class="gk-foot-legal">\n' + "\n".join(rows) + "\n        </ul>"
 
@@ -650,27 +653,36 @@ FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"
 # 宽度和边距借 --wrap / --gutter（生成页是 1080 / 1120，手写页没有就回落 1120），让页脚和正文左右对齐。
 FOOT_FONT = '"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif'
 FOOT_CSS = ('<style id="gk-foot-css">'
-    'footer.gk-foot{border-top:1px solid #e7e5df;padding:40px 0 56px;margin:0;background:none;text-align:left;'
-    f'font:400 13px/1.7 {FOOT_FONT};letter-spacing:.1px;color:#5a5a5a}}'
+    'footer.gk-foot{border-top:1px solid #e7e5df;padding:48px 0 36px;margin:0;background:none;text-align:left;'
+    f'font:400 13px/1.6 {FOOT_FONT};letter-spacing:.1px;color:#6b6760}}'
     '.gk-foot-in{box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}'
-    '.gk-foot-row{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}'
+    '.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}'
+    '.gk-foot-id{display:flex;flex-direction:column;gap:22px}'
     '.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;border:0}'
     '.gk-foot-brand svg{width:34px;height:34px;flex:none}'
     '.gk-foot-brand b{font:600 22px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}'
-    f'.gk-foot h2{{margin:0 0 14px;padding:0;border:0;font:700 11px/1 {FOOT_FONT};letter-spacing:2px;text-transform:uppercase;color:#141414}}'
-    '.gk-foot-legal{display:grid;grid-template-columns:repeat(2,minmax(0,auto));gap:8px 40px;margin:0;padding:0;list-style:none}'
-    '.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.7;font-weight:400;color:#5a5a5a}'
-    '.gk-foot a{color:#5a5a5a;font-weight:400;text-decoration:underline;text-underline-offset:3px;border:0}'
-    '.gk-foot a:hover{color:#141414}'
-    '.gk-foot a.gk-foot-app{color:#141414;text-decoration:none}'
-    '.gk-foot a.gk-foot-app:hover{text-decoration:underline}'
-    '.gk-foot p.gk-foot-copy{margin:34px 0 0}'
-    '.gk-foot-copy a{white-space:nowrap}'
-    '@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-legal{grid-template-columns:1fr}}'
+    f'.gk-foot h2{{margin:0 0 16px;padding:0;border:0;font:700 11px/1 {FOOT_FONT};letter-spacing:2px;text-transform:uppercase;color:#141414}}'
+    '.gk-foot h2:is(:lang(ja),:lang(zh),:lang(ko)){letter-spacing:.12em}'   # 大写字距套在汉字 / 假名上会拉散（09-28 评审）
+    '.gk-foot ul{margin:0;padding:0;list-style:none}'
+    '.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.6;font-weight:400;color:#6b6760}'
+    '.gk-foot a{color:#6b6760;font-weight:400;text-decoration:none;border:0}'
+    '.gk-foot a:hover{color:#141414;text-decoration:underline;text-underline-offset:3px}'
+    '.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:28px;row-gap:8px}'
+    '.gk-foot-legal li{display:contents}'
+    '.gk-foot a.gk-foot-app{color:#141414}'
+    '.gk-foot-social{display:flex;flex-wrap:wrap;gap:8px}'
+    '.gk-foot-social a{display:inline-block;padding:5px 12px;border:1px solid #dedad2;border-radius:999px;font-size:12.5px;line-height:1.4;color:#3d3a35}'
+    '.gk-foot-social a:hover{border-color:#141414;text-decoration:none}'
+    '.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:40px;padding-top:18px;border-top:1px solid #eeebe5;font-size:12.5px}'
+    '.gk-foot-bar p{font-size:12.5px}'
+    '.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}'
+    '@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top{flex-direction:column}'
+    '.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column}}'
     '</style>')
 # 只给自己有深色模式的页面（DailyCalorie 三页）配深色页脚；其它页面深色模式下背景仍是白的，不能跟着变。
 FOOT_CSS_DARK = ('@media (prefers-color-scheme:dark){footer.gk-foot{border-top-color:#3a332c;color:#b3a898}'
-    '.gk-foot h2,.gk-foot a.gk-foot-brand,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}}')
+    '.gk-foot h2,.gk-foot a.gk-foot-brand,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}'
+    '.gk-foot-social a{border-color:#4a4239;color:#e2dbd0}.gk-foot-social a:hover{border-color:#f2ede5}.gk-foot-bar{border-top-color:#3a332c}}')
 
 # 手写页 / 法务页没有 --wrap：页脚按各自正文列对齐（宽度＝正文列 + 两侧 20px 边距，09-28 实测），并补站点字体。
 # DailyCalorie 的 body 有左右 20px padding，页脚用负边距拉通栏。
@@ -695,25 +707,29 @@ def foot_lang(page):
     return lang if lang in HOME_LANGS else "en"
 
 def site_footer_html(lang="en"):
-    colon = "：" if lang.startswith(("zh", "ja")) else ("\u00a0: " if lang == "fr" else ": ")
     def social_name(x):
         if x.get("key") == "xhs":
             return "小紅書" if lang == "zh-Hant" else ("小红书" if lang.startswith("zh") else x.get("nameIntl", x["name"]))
         return x["name"]
-    social = " · ".join('<a href="%s" rel="me noopener" target="_blank">%s</a>' % (esc_text(x["url"]), esc_text(social_name(x)))
-                        for x in bp.SOCIAL)
-    follow = f'\n    <p class="gk-foot-copy">{esc_text(H(lang, "follow"))}{colon}{social}</p>' if social else ""
+    social = "".join('<li><a href="%s" rel="me noopener" target="_blank">%s</a></li>' % (esc_text(x["url"]), esc_text(social_name(x)))
+                     for x in bp.SOCIAL)
+    follow = (f'\n      <ul class="gk-foot-social" aria-label="{esc_text(H(lang, "follow"))}">{social}</ul>') if social else ""
     return f"""{FOOT_START}
 <footer class="gk-foot">
   <div class="gk-foot-in">
-    <div class="gk-foot-row">
-      <a class="gk-foot-brand" href="{home_path(lang)}">{FOOT_LOGO}<b>go ka</b></a>
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+      <a class="gk-foot-brand" href="{home_path(lang)}">{FOOT_LOGO}<b>go ka</b></a>{follow}
+      </div>
       <div>
         <h2>{esc_text(H(lang, "legal_h"))}</h2>
         {home_legal_html(lang)}
       </div>
-    </div>{follow}
-    <p class="gk-foot-copy">© {date.today().year} go ka · <a href="mailto:{EMAIL}">{EMAIL}</a> · <a href="{TOOLS_HUB.get(lang, "/tools/")}">{esc_text(H(lang, "tools_link"))}</a> · <a href="/llms.txt">llms.txt</a></p>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© {date.today().year} go ka</p>
+      <p class="gk-foot-links"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{TOOLS_HUB.get(lang, "/tools/")}">{esc_text(H(lang, "tools_link"))}</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
   </div>
 </footer>
 {FOOT_END}"""

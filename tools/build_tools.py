@@ -84,7 +84,7 @@ CSS = bp.CSS + """
 .crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
 .crumbs li+li::before{content:"›";margin-right:8px}
 html[lang^=th] *{letter-spacing:0!important}
-.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;border:1px solid var(--rule);background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
+.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
 @media (max-width:760px){.crumbs li:last-child{display:none}}
 .article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
 .article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
@@ -209,10 +209,15 @@ def shell(pg, body):
 
 # ------------------------------------------------------------------ 内容
 XMAS, NYE, HALLOWEEN, REV = dt.date(2026, 12, 25), dt.date(2027, 1, 1), dt.date(2026, 10, 31), dt.date(2026, 12, 31)
+DIWALI = dt.date(2026, 11, 8)   # Lakshmi Puja；11-06 Dhanteras、11-07 Choti Diwali 各家一致。Govardhan Puja / Bhai Dooj 各历书差一天
+# （维基 11-09/11-10，samvat.in 都在 11-10，dekhopanchang Bhai Dooj 11-11）——页面只写「11 月 9–11 日，按你用的历书」，不写死（09-28 评审）
 ENEM1, ENEM2 = dt.date(2026, 11, 8), dt.date(2026, 11, 15)
 CARN_SAT, CARN_TUE, ASH = dt.date(2027, 2, 6), dt.date(2027, 2, 9), dt.date(2027, 2, 10)
 
-def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates):
+def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates, moving=False, published="2026-09-26"):
+    # moving：按阴历 / 印度历定日子的节日（排灯节等）每年公历日期不同，「每年重复」会数错，改成提示明年另加
+    repeat = ("The date moves every year, so add next year's date as a new event instead of turning on <strong>Repeat yearly</strong>."
+              if moving else "Turn on <strong>Repeat yearly</strong> if you want it back next year.")
     body = f"""<h1>{esc(h1)}</h1>
 <p class="lede">{intro}</p>
 {counter(d, lang, name)}
@@ -220,13 +225,13 @@ def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq
 <table><tbody>{"".join(f"<tr><th>{esc(k)}</th><td>{v}</td></tr>" for k, v in glance)}</tbody></table>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
-<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to {esc(fmt(d, lang))}. Turn on <strong>Repeat yearly</strong> if you want it back next year.</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
+<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to {esc(fmt(d, lang))}. {repeat}</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
 <h2>Countdown ideas</h2>
 <ul>{"".join(f"<li>{i}</li>" for i in ideas)}</ul>
 <h2>{esc(re.sub(r'\s\d{4}$', '', name))} in the next few years</h2>
 <table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(fmt(dd, lang))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>"""
     return {"path": f"/tools/{slug}/", "lang": lang, "title": title, "description": desc, "crumb": name, "kind": "Article",
-            "app": "countdown", "faq": faq, "published": "2026-09-26", "js": [COUNT_JS], "body": body, "hub_title": h1, "hub_desc": desc}
+            "app": "countdown", "faq": faq, "published": published, "js": [COUNT_JS], "body": body, "hub_title": h1, "hub_desc": desc}
 
 PAGES = []
 
@@ -250,6 +255,7 @@ PAGES.append({"path": "/tools/days-until/", "lang": "en", "kind": "WebApplicatio
 <div class="pop">
 <a href="/tools/days-until-christmas/" data-date="{XMAS.isoformat()}"><b data-n>{days_to(XMAS)}</b><span><span data-unit>days</span> until Christmas 2026</span></a>
 <a href="/tools/days-until-halloween/" data-date="{HALLOWEEN.isoformat()}"><b data-n>{days_to(HALLOWEEN)}</b><span><span data-unit>days</span> until Halloween 2026</span></a>
+<a href="/tools/days-until-diwali/" data-date="{DIWALI.isoformat()}"><b data-n>{days_to(DIWALI)}</b><span><span data-unit>days</span> until Diwali 2026</span></a>
 <a href="/tools/days-until-new-year/" data-date="{NYE.isoformat()}"><b data-n>{days_to(NYE)}</b><span><span data-unit>days</span> until New Year 2027</span></a>
 </div>
 <p class="meta">Numbers above were computed on {TODAY.isoformat()} and update live when the page loads.</p>
@@ -282,6 +288,21 @@ PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "
    ("When is Halloween 2027?", "Sunday, 31 October 2027. Halloween 2028 falls on a Tuesday."),
    ("How do I get a Halloween countdown widget on iPhone?", "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
   [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))]))
+
+# 09-28 借势：排灯节搜索高峰在节前 4–6 周（现在），Countdown 有印度真实用户；首页被几个小倒数站占着，没有一家给 app / 小组件入口
+PAGES.append(holiday_page("days-until-diwali", "Diwali 2026", DIWALI, "en",
+  "How many days until Diwali 2026? Live countdown", "Diwali 2026 is on Sunday, 8 November 2026, the day of Lakshmi Puja, with Dhanteras on 6 November. Live countdown in days and weeks, plus a free iPhone widget.",
+  "How many days until Diwali 2026?",
+  "Diwali 2026 — the day of Lakshmi Puja — falls on <strong>Sunday, 8 November 2026</strong>. The festival opens with Dhanteras on Friday, 6 November; Govardhan Puja and Bhai Dooj follow between 9 and 11 November, depending on the panchang you follow. The counter below updates every day.",
+  [("Dhanteras", "Friday, 6 November 2026"), ("Choti Diwali (Naraka Chaturdashi)", "Saturday, 7 November 2026"),
+   ("Diwali (Lakshmi Puja)", "Sunday, 8 November 2026"), ("Govardhan Puja and Bhai Dooj", "9–11 November 2026, depending on the panchang")],
+  ["A countdown to Lakshmi Puja with a reminder a week before, for the shopping and the cleaning.", "A countdown to the trip home for the festival, with the train or flight details written on the back of the event.",
+   "A second countdown for Dhanteras on 6 November, so the shopping day does not sneak up on you."],
+  [("What date is Diwali in 2026?", "Sunday, 8 November 2026. That is the day of Lakshmi Puja, the main day of the festival. Dhanteras is on 6 November and Choti Diwali on 7 November; the dates given for Govardhan Puja and Bhai Dooj differ by a day between panchangs, somewhere from 9 to 11 November."),
+   ("How many weeks until Diwali 2026?", f"On {TODAY.strftime('%-d %B %Y')} there were {days_to(DIWALI)} days, about {days_to(DIWALI)//7} weeks. The counter on this page recalculates when you open it."),
+   ("Why does the date of Diwali change every year?", "Diwali follows the Hindu lunisolar calendar: it falls on the new-moon night (Amavasya) of the month of Kartik, so its date in the Gregorian calendar moves between mid-October and mid-November."),
+   ("How do I get a Diwali countdown widget on iPhone?", "Add 8 November 2026 as an event in Countdown Widget: Any Event, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Because the date moves, add next year's Diwali as a new event rather than repeating it yearly. Every widget size is free.")],
+  [(2026, DIWALI), (2027, dt.date(2027, 10, 29)), (2028, dt.date(2028, 10, 17))], moving=True, published="2026-09-28"))
 
 PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
   "How many days until New Year 2027? Live countdown", "New Year's Day 2027 is on Friday, 1 January 2027; New Year's Eve is Thursday, 31 December 2026. Live countdown plus a free iPhone widget.",
@@ -563,30 +584,28 @@ def hub_page(lang):
 BLOG_SRC = ROOT / "tools/blog/posts.en.json"
 BLOG = json.loads(BLOG_SRC.read_text(encoding="utf-8"))["posts"] if BLOG_SRC.exists() else []
 APP_ORDER = {"countdown": 0, "invoiceqr": 1, "beforego": 2}
-POST_SHOT = {  # 每篇配一张对应功能的商店截图（编号同 features.en.json）
-    "countdown-widget-iphone-home-lock-screen": ("countdown", "01"), "count-down-birthday-exam-trip-iphone": ("countdown", "09"),
-    "payment-qr-code-on-invoice": ("invoiceqr", "02"), "invoice-vs-estimate-vs-quote": ("invoiceqr", "05"),
+POST_SHOT = {  # 每篇配一张对应功能的插画（assets/art，编号同 features.en.json；09-28 起不用商店截图）
+    "countdown-widget-iphone-home-lock-screen": ("countdown", "07"), "count-down-birthday-exam-trip-iphone": ("countdown", "09"),
+    "payment-qr-code-on-invoice": ("invoiceqr", "08"), "invoice-vs-estimate-vs-quote": ("invoiceqr", "05", "Invoice, estimate and quote side by side"),
     "travel-post-screenshot-to-itinerary": ("beforego", "01"), "packing-list-by-destination": ("beforego", "04"),
 }
 
+def post_art(slug):
+    return bp.art(*POST_SHOT[slug][:2]) if slug in POST_SHOT else None
+
 def post_image(slug):
-    if slug not in POST_SHOT:
-        return None
-    key, num = POST_SHOT[slug]; s = bp.store_of(BY_KEY[key])
-    u = next((x for x in s["screenshots"] if bp.shot_num(x) == num), None)
-    return bp.cdn(u, 920) if u else None
+    pic = post_art(slug)
+    return ORIGIN + pic[1] if pic else None
 
 def post_figure(slug):
-    if slug not in POST_SHOT:
+    pic = post_art(slug)
+    if not pic:
         return ""
-    key, num = POST_SHOT[slug]; s = bp.store_of(BY_KEY[key])
-    u = next((x for x in s["screenshots"] if bp.shot_num(x) == num), None)
-    if not u:
-        return ""
-    alt = next((f["title"] for f in bp.FEAT_EN.get(key, []) if f["shot"] == num), BY_KEY[key]["home"]["label"])
-    return (f'<figure class="shot"><img src="{bp.cdn(u, 460)}" srcset="{bp.cdn(u, 460)} 460w, {bp.cdn(u, 920)} 920w" sizes="280px" '
-            f'width="460" height="999" alt="{esc(alt)} — {esc(s["name"])}" loading="lazy" decoding="async">'
-            f'<figcaption>{esc(alt)} — {esc(s["name"])}</figcaption></figure>')
+    key, num = POST_SHOT[slug][:2]; name = bp.store_of(BY_KEY[key])["name"]
+    # 图注：没有对应功能块的图（05）在 POST_SHOT 第三项写明，别退回 app 名（09-28 评审：「Invoice Maker — Smart Invoice & Estimate Maker」重复）
+    alt = POST_SHOT[slug][2] if len(POST_SHOT[slug]) > 2 else next(f["title"] for f in bp.FEAT_EN[key] if f["shot"] == num)
+    return (f'<figure class="shot">{bp.art_img(pic, "280px", f"{alt} — {name}", ' loading="lazy" decoding="async"')}'
+            f'<figcaption>{esc(alt)} — {esc(name)}</figcaption></figure>')
 
 def blog_page(post):
     secs = "\n".join(f'<h2>{esc(x["h2"])}</h2>\n{x["html"]}' for x in post["sections"])
