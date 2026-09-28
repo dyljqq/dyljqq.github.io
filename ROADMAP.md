@@ -114,7 +114,7 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 
 一个 es-MX 工具目录 `/tools/es-mx/` 同时服务两个 app：
 1. ~~Countdown：Aguinaldo 2026 + Navidad 2026~~ —— 09-28 取消：Countdown 没有西语版。等 Countdown 做了西语本地化再考虑（依据：LFT 第 87 条，15 天工资、12-20 前付，不满一年按比例）。
-2. InvoiceQR：**formato de cotización** 与 **nota de venta** 模板页（复用发票模板组件，可在线填写 + 下载，页里给 InvoiceQR 入口）；不写「factura」。
+2. ✅ 09-28 已上线：InvoiceQR **formato de cotización** 与 **nota de venta** 模板页 + `/tools/es-mx/` 目录（可在线填写 + 打印 / PDF，页里给 InvoiceQR 入口）；不把单据叫 factura，页内说明「不是 CFDI」。
    同批出 zh-Hant **報價單範本**（HK / TW）和 th **ใบเสนอราคา**（首页竞争 10 月上旬先抽查）。
 3. InvoiceQR 英文替代词页 **「Invoice Simple / Zoho Invoice / Invoice2go alternative」**：联想词有需求；只写可核实的功能 / 价格对比，竞品信息取自其商店页当日版本并注明日期。
 
