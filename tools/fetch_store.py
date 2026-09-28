@@ -1,17 +1,24 @@
 """重抓商店缓存 tools/store/<app>.json（iTunes lookup，按各语言已记录的 storefront）。
 用法：python3 tools/fetch_store.py [app ...]   默认 countdown invoiceqr beforego
 只覆盖 lookup 返回的字段；lookup 有几小时的缓存延迟，刚上架的版本可能还没出来。
-09-28 评审发现缓存停在 09-26（三个 app 之后都发了新版），补了这个脚本。"""
+09-28 评审发现缓存停在 09-26（三个 app 之后都发了新版），补了这个脚本。
+⚠ 必须带 lang：th / sg 等商店不带 lang 时返回英文（09-28 第一次重抓就把泰语页和 InvoiceQR 简中页冲成了英文、还上线了）。"""
 import json, sys, time, urllib.request, pathlib, datetime
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 IDS = {a["key"]: a["appId"] for a in json.loads((ROOT / "tools/site.json").read_text())["apps"] if a.get("appId")}
 MAP = {"name": "trackName", "version": "version", "releaseNotes": "releaseNotes", "description": "description",
        "screenshots": "screenshotUrls", "ipad": "ipadScreenshotUrls", "icon": "artworkUrl512", "minOS": "minimumOsVersion",
        "languages": "languageCodesISO2A", "rating": "averageUserRating", "ratingCount": "userRatingCount"}
+LANG = {"en-US": "en_us", "en-GB": "en_gb", "de-DE": "de_de", "fr-FR": "fr_fr", "it": "it_it", "es-ES": "es_es", "es-MX": "es_mx",
+        "pt-BR": "pt_br", "ja": "ja_jp", "ko": "ko_kr", "zh-Hans": "zh_cn", "zh-Hant": "zh_tw", "th": "th_th"}
+NON_LATIN = ("th", "ja", "ko", "zh-Hans", "zh-Hant")
+def looks_english(t):
+    letters = [c for c in t if c.isalpha()]
+    return bool(letters) and sum(c.isascii() for c in letters) / len(letters) > 0.6
 for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
     f = ROOT / f"tools/store/{app}.json"; data = json.loads(f.read_text()); changed = []
     for loc, cur in data.items():
-        url = f"https://itunes.apple.com/lookup?id={IDS[app]}&country={cur['storefront']}"
+        url = f"https://itunes.apple.com/lookup?id={IDS[app]}&country={cur['storefront']}&lang={LANG[loc]}"
         for attempt in range(3):
             try:
                 r = json.loads(urllib.request.urlopen(url, timeout=30).read())["results"]; break
@@ -20,6 +27,8 @@ for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
         if not r:
             print(f"  ✗ {app} {loc} 抓取失败"); continue
         new = {k: r[0].get(v, cur.get(k)) for k, v in MAP.items()}
+        if loc in NON_LATIN and looks_english(new["description"]) and not looks_english(cur.get("description", "")):
+            print(f"  ✗ {app} {loc} 抓回来是英文描述，拒绝覆盖（检查 lang 参数）"); continue
         if new["version"] != cur.get("version") or new["description"] != cur.get("description"):
             changed.append(f"{loc} {cur.get('version')}→{new['version']}{' 描述变' if new['description'] != cur.get('description') else ''}")
         cur.update(new); cur["fetched"] = datetime.date.today().isoformat()
