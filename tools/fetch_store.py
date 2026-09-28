@@ -1,5 +1,6 @@
 """重抓商店缓存 tools/store/<app>.json（iTunes lookup，按各语言已记录的 storefront）。
-用法：python3 tools/fetch_store.py [app ...]   默认 countdown invoiceqr beforego
+用法：python3 tools/fetch_store.py [--dry-run] [app ...]   默认 countdown invoiceqr beforego
+  --dry-run：只比对、不写文件（每周定时任务用它检测商店有没有更新）
 只覆盖 lookup 返回的字段；lookup 有几小时的缓存延迟，刚上架的版本可能还没出来。
 09-28 评审发现缓存停在 09-26（三个 app 之后都发了新版），补了这个脚本。
 ⚠ 必须带 lang：th / sg 等商店不带 lang 时返回英文（09-28 第一次重抓就把泰语页和 InvoiceQR 简中页冲成了英文、还上线了）。"""
@@ -21,7 +22,8 @@ def is_english(loc, t):
     if loc in NON_LATIN: return looks_english(t)
     words = [w.strip(".,;:!?()\"'—–-").lower() for w in t.split()]
     return sum(w in EN_WORDS for w in words) / max(1, len(words)) > 0.12
-for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
+DRY = "--dry-run" in sys.argv
+for app in [a for a in sys.argv[1:] if not a.startswith("--")] or ["countdown", "invoiceqr", "beforego"]:
     f = ROOT / f"tools/store/{app}.json"; data = json.loads(f.read_text()); changed = []
     for loc, cur in data.items():
         url = f"https://itunes.apple.com/lookup?id={IDS[app]}&country={cur['storefront']}&lang={LANG[loc]}"
@@ -42,5 +44,6 @@ for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
             changed.append(f"{loc} {cur.get('version')}→{new['version']}{' 描述变' if new['description'] != cur.get('description') else ''}")
         cur.update(new); cur["fetched"] = datetime.date.today().isoformat()
         time.sleep(0.4)
-    f.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
+    if not DRY:
+        f.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n")
     print(app, "；".join(changed) or "无变化")
