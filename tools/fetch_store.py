@@ -15,6 +15,12 @@ NON_LATIN = ("th", "ja", "ko", "zh-Hans", "zh-Hant")
 def looks_english(t):
     letters = [c for c in t if c.isalpha()]
     return bool(letters) and sum(c.isascii() for c in letters) / len(letters) > 0.6
+EN_WORDS = {"the", "and", "your", "you", "with", "to", "of", "for", "is", "it", "on", "in", "a", "every", "now"}
+def is_english(loc, t):
+    if not t.strip(): return False
+    if loc in NON_LATIN: return looks_english(t)
+    words = [w.strip(".,;:!?()\"'—–-").lower() for w in t.split()]
+    return sum(w in EN_WORDS for w in words) / max(1, len(words)) > 0.12
 for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
     f = ROOT / f"tools/store/{app}.json"; data = json.loads(f.read_text()); changed = []
     for loc, cur in data.items():
@@ -27,8 +33,11 @@ for app in sys.argv[1:] or ["countdown", "invoiceqr", "beforego"]:
         if not r:
             print(f"  ✗ {app} {loc} 抓取失败"); continue
         new = {k: r[0].get(v, cur.get(k)) for k, v in MAP.items()}
-        if loc in NON_LATIN and looks_english(new["description"]) and not looks_english(cur.get("description", "")):
-            print(f"  ✗ {app} {loc} 抓回来是英文描述，拒绝覆盖（检查 lang 参数）"); continue
+        # 原来不是英文、抓回来变成英文 → 多半是 lang 没生效，拒绝覆盖（描述和更新说明都查；拉丁语系看英语虚词占比）
+        flipped = [k for k in ("description", "releaseNotes") if not loc.startswith("en")
+                   and is_english(loc, new.get(k) or "") and not is_english(loc, cur.get(k) or "")]
+        if flipped:
+            print(f"  ✗ {app} {loc} 抓回来的 {'/'.join(flipped)} 是英文，拒绝覆盖（检查 lang 参数）"); continue
         if new["version"] != cur.get("version") or new["description"] != cur.get("description"):
             changed.append(f"{loc} {cur.get('version')}→{new['version']}{' 描述变' if new['description'] != cur.get('description') else ''}")
         cur.update(new); cur["fetched"] = datetime.date.today().isoformat()
