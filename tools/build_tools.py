@@ -383,9 +383,10 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
 
 # 6b. Black Friday + Natal 2026（pt-BR）——09-28 借势：巴西是 Countdown 唯一有付费 + 五星的市场，节前 4–6 周要被收录
-# 13º 日期依据 Lei 4.749/1965（1ª parcela até 30/11，2ª até 20/12；pt.wikipedia「Décimo terceiro salário」09-28 核对）；周末顺延规则没核实，不写
+# 13º 日期依据 Lei 4.749/1965（1ª parcela até 30/11，2ª até 20/12；pt.wikipedia「Décimo terceiro salário」09-28 核对）。
+# 2026 年 20/12 是周日 → 付款提前到前一个工作日 18/12（周五）：Contábeis 09-13、O Povo 两处 09-28 核对（评审第 5 轮指出）
 BF26, CYBER26, BF27, BF28 = dt.date(2026, 11, 27), dt.date(2026, 11, 30), dt.date(2027, 11, 26), dt.date(2028, 11, 24)
-DEC13_1, DEC13_2 = dt.date(2026, 11, 30), dt.date(2026, 12, 20)
+DEC13_1, DEC13_2, DEC13_2_PAY = dt.date(2026, 11, 30), dt.date(2026, 12, 20), dt.date(2026, 12, 18)
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
   "title": "Quantos dias faltam para a Black Friday 2026? Contagem regressiva", "crumb": "Black Friday 2026",
   "description": "A Black Friday 2026 é na sexta-feira, 27 de novembro de 2026, e a Cyber Monday na segunda, 30 de novembro. Contagem ao vivo e widget grátis para o iPhone.",
@@ -394,7 +395,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
     ("Quando é a Black Friday 2026?", "Na sexta-feira, 27 de novembro de 2026. A Black Friday é sempre a sexta-feira depois do Dia de Ação de Graças dos Estados Unidos, que em 2026 cai na quinta-feira, 26 de novembro."),
     ("Quando é a Cyber Monday 2026?", "Na segunda-feira, 30 de novembro de 2026 — a segunda-feira logo depois da Black Friday."),
     ("Quantos dias faltam para a Black Friday?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(BF26)} dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."),
-    ("Até quando sai a 1ª parcela do 13º salário?", "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela vai até 20 de dezembro."),
+    ("Até quando sai a 1ª parcela do 13º salário?", "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela tem prazo legal em 20 de dezembro; como em 2026 esse dia é um domingo, o pagamento vai para o dia útil anterior, sexta-feira, 18 de dezembro."),
     ("Como coloco a contagem da Black Friday na Tela de Início?", "Crie o evento 27 de novembro de 2026 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data da Black Friday muda todo ano, então para 2027 crie um evento novo (26 de novembro) em vez de repetir. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para a Black Friday 2026?</h1>
@@ -408,7 +409,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 <tr><th>Black Friday 2026</th><td>{fmt(BF26, "pt-BR")}</td></tr>
 <tr><th>Cyber Monday 2026</th><td>{fmt(CYBER26, "pt-BR")}</td></tr>
 <tr><th>1ª parcela do 13º (prazo legal)</th><td>até {fmt(DEC13_1, "pt-BR")}</td></tr>
-<tr><th>2ª parcela do 13º (prazo legal)</th><td>até {fmt(DEC13_2, "pt-BR")}</td></tr>
+<tr><th>2ª parcela do 13º</th><td>até {fmt(DEC13_2_PAY, "pt-BR")} (o prazo legal, 20/12, cai num domingo)</td></tr>
 <tr><th>Da Black Friday ao Natal</th><td>{(XMAS - BF26).days} dias</td></tr>
 </tbody></table>
 <h2>A Black Friday nos próximos anos</h2>
@@ -421,16 +422,16 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome «Black Friday».</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
 <h2>Ideias</h2>
-<ul><li>Uma contagem para a Black Friday com a lista do que você quer comprar escrita no verso do evento.</li><li>Um lembrete uma semana antes, para ter tempo de comparar os preços de antes.</li><li>Logo em seguida, a contagem para o <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">Natal 2026</a> — são {(XMAS - BF26).days} dias entre uma data e outra.</li></ul>"""})
+<ul><li>Uma contagem para a Black Friday com a lista do que você quer comprar escrita no verso do evento.</li><li>Um lembrete uma semana antes, para acompanhar os preços antes da data e saber se o desconto é real.</li><li>Logo em seguida, a contagem para o <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">Natal 2026</a> — são {(XMAS - BF26).days} dias entre uma data e outra.</li></ul>"""})
 
 PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
   "title": "Quantos dias faltam para o Natal 2026? Contagem regressiva", "crumb": "Natal 2026",
   "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
-  "hub_title": "Quantos dias faltam para o Natal 2026?", "hub_desc": "Contagem ao vivo para 25 de dezembro, com a véspera e o prazo da 2ª parcela do 13º.",
+  "hub_title": "Quantos dias faltam para o Natal 2026?", "hub_desc": "Contagem ao vivo para 25 de dezembro, com a véspera e o prazo da 2ª parcela do 13º (18/12 em 2026).",
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Natal 2026?", "Numa sexta-feira: 25 de dezembro de 2026. A véspera, 24 de dezembro, é uma quinta-feira, e o Natal emenda com o fim de semana."),
     ("Quantas semanas faltam para o Natal?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(XMAS)} dias, cerca de {days_to(XMAS) // 7} semanas. O contador desta página recalcula no dia em que você abre."),
-    ("Até quando sai a 2ª parcela do 13º salário?", "Pela Lei 4.749/1965, a segunda parcela do 13º deve ser paga até 20 de dezembro — em 2026, um domingo, cinco dias antes do Natal. A primeira parcela vai até 30 de novembro."),
+    ("Até quando sai a 2ª parcela do 13º salário?", "Pela Lei 4.749/1965, o prazo legal da segunda parcela do 13º é 20 de dezembro. Em 2026 esse dia cai num domingo, então o pagamento vai para o dia útil anterior: sexta-feira, 18 de dezembro, uma semana antes do Natal. A primeira parcela vai até 30 de novembro."),
     ("Quando é o Natal 2027?", "Num sábado, 25 de dezembro de 2027. Em 2028, o Natal cai numa segunda-feira."),
     ("Como coloco a contagem do Natal na Tela Bloqueada?", "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."),
   ],
@@ -442,7 +443,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
 <tr><th>Véspera de Natal</th><td>{fmt(dt.date(2026, 12, 24), "pt-BR")}</td></tr>
 <tr><th>Natal</th><td>{fmt(XMAS, "pt-BR")}</td></tr>
 <tr><th>Réveillon</th><td>{fmt(REV, "pt-BR")}</td></tr>
-<tr><th>2ª parcela do 13º (prazo legal)</th><td>até {fmt(DEC13_2, "pt-BR")}</td></tr>
+<tr><th>2ª parcela do 13º</th><td>até {fmt(DEC13_2_PAY, "pt-BR")} (o prazo legal, 20/12, cai num domingo)</td></tr>
 <tr><th>Black Friday 2026</th><td>{fmt(BF26, "pt-BR")}</td></tr>
 </tbody></table>
 <h2>O Natal nos próximos anos</h2>
