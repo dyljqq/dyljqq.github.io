@@ -87,7 +87,9 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 
 **结论**：AI 先用网页搜索召回 → App Store 页是主来源，其次是榜单文和 app 官网。我们三处都不在：
 1. **Bing 0 收录**（`site:beforego.art` 无结果）——ChatGPT 搜索大量依赖 Bing，这是第一卡点。IndexNow 09-28 已推 2 次；
-   **要用户登录 Bing Webmaster Tools 一次（用 Google 账号，从 Search Console 导入 beforego.art）**，之后提交 sitemap 我来做。
+   ✅ 09-28 已接上 Bing Webmaster Tools（用户用 Google 账号登录；从 Search Console 导入 beforego.art / dyljqq.github.io / goka-xi.vercel.app，
+   授权账号 jiqinqiang@polarisup.com）：sitemap 已导入（Processing），**全站 83 个网址已用「网址提交」一次推完**（每天配额 100）。
+   Bing「AI Performance（Beta）」= Copilot 等 AI 答案引用我们的次数，09-28 基线 **0**（近 3 个月）——10-05 复盘一起看。
 2. Google 收录中：09-28 已对 12 个关键页请求编入索引（排灯节、万圣节、ENEM、圣诞、新年、计算器、榜单页、/tools/、/beforego/、/blog/、/pt-br/、旅行截图那篇博客）。
 3. 站内已具备：AI 爬虫全部放行（7 种 UA 实测 200）、llms.txt 有每个 app 的「免费 / 付费 / 适合谁」事实清单、FAQ 与 JSON-LD。
 
