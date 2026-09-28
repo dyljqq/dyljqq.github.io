@@ -63,9 +63,9 @@
 | 截止上线 | 市场 | 页面 | 依据（联想词 / 日期来源） | app |
 |---|---|---|---|---|
 | ✅ 09-28 | IN / 全球英文 | Diwali 2026（11-08） | 「diwali 2026 date」联想词丰富；维基 + farmersalmanac | Countdown |
-| 10-17 | BR | Black Friday 2026（11-27）pt-BR | 与原 v1.2 计划吻合 | Countdown |
-| 10-24 | BR | Natal 2026「quantos dias faltam para o natal」 | 11–12 月是全年峰值 | Countdown |
-| 11-08 | MX | Aguinaldo 2026（12-20 截止，LFT 第 87 条）+ Navidad 2026，es-MX | 「fecha limite aguinaldo 2026」是首位联想词；expansion.mx | Countdown |
+| ✅ 09-28 | BR | Black Friday 2026（11-27）pt-BR，含 13º 第 1 期截止 | 与原 v1.2 计划吻合 | Countdown |
+| ✅ 09-28 | BR | Natal 2026「quantos dias faltam para o natal」，含 13º 第 2 期截止 | 11–12 月是全年峰值 | Countdown |
+| ✗ 取消 | MX | Aguinaldo 2026 + Navidad 2026，es-MX | 需求在（「fecha limite aguinaldo 2026」首位联想词），但 **Countdown 没有西语本地化**（商店语言无 ES，MX 商店页是英文），页里的 app 入口会是英文 → 墨西哥线改走 InvoiceQR（西语完整）的报价单模板页 | — |
 | 12-05 | JP | 共通テスト 2027（01-16~17）ja | resemom；Countdown 日本真人靠小组件留存 | Countdown |
 | 12-26 | HK / TW | 農曆新年 2027（02-06）zh-Hant | 「2027年春节」联想词丰富 | Countdown |
 
@@ -103,8 +103,8 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 
 ## v1.2 巴西借势（10-04 ~ 10-17）
 
-1. **pt-BR Black Friday 2026** 倒数页（复用节日模板，带 `ct=web-...`）。
-2. **pt-BR Natal 2026** 倒数页（可以和 Black Friday 同批上，比截止早两周）。
+1. ✅ **pt-BR Black Friday 2026** 倒数页（09-28 提前上线）。
+2. ✅ **pt-BR Natal 2026** 倒数页（09-28 提前上线）。
 3. **pt-BR 场景页 3 个**，标题直接对准联想词：「contagem regressiva para aniversário / casamento / viagem」+ 小组件步骤；en 版同批。原计划的 6 个里其余 3 个（baby / retirement / exam）等首批有展示再做。
 4. **pt-BR 计算器 + 榜单**：`/tools/pt-br/quantos-dias-faltam/`、`/tools/pt-br/melhores-apps-contagem-regressiva/`（ChatGPT 推荐是 Countdown 最大的非搜索来源，榜单页是给 AI 引用的）。
 
@@ -113,7 +113,7 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 ## v1.3 墨西哥双线（10-18 ~ 10-31）
 
 一个 es-MX 工具目录 `/tools/es-mx/` 同时服务两个 app：
-1. Countdown：**Aguinaldo 2026**（日期 + 怎么算：15 天工资、12-20 前付，引 LFT 第 87 条原文）+ **Navidad 2026** 倒数。
+1. ~~Countdown：Aguinaldo 2026 + Navidad 2026~~ —— 09-28 取消：Countdown 没有西语版。等 Countdown 做了西语本地化再考虑（依据：LFT 第 87 条，15 天工资、12-20 前付，不满一年按比例）。
 2. InvoiceQR：**formato de cotización** 与 **nota de venta** 模板页（复用发票模板组件，可在线填写 + 下载，页里给 InvoiceQR 入口）；不写「factura」。
    同批出 zh-Hant **報價單範本**（HK / TW）和 th **ใบเสนอราคา**（首页竞争 10 月上旬先抽查）。
 3. InvoiceQR 英文替代词页 **「Invoice Simple / Zoho Invoice / Invoice2go alternative」**：联想词有需求；只写可核实的功能 / 价格对比，竞品信息取自其商店页当日版本并注明日期。
