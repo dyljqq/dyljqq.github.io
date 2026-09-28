@@ -421,7 +421,7 @@ def render(a):
 <link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
-{f'<link rel="preload" as="image" href="{hero_art[0]}" imagesrcset="{hero_art[0]} 460w, {hero_art[1]} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if hero_art else ''}
+{f'<link rel="preload" as="image" fetchpriority="high" href="{hero_art[0]}" imagesrcset="{hero_art[0]} 460w, {hero_art[1]} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if hero_art else ''}
 <style>{CSS}</style>
 </head>
 <body>
