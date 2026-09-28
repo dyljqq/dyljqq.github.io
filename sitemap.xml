@@ -392,7 +392,12 @@
   </url>
   <url>
     <loc>https://beforego.art/tools/pt-br/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beforego.art/tools/pt-br/contagem-regressiva-black-friday-2026/</loc>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -402,6 +407,11 @@
   </url>
   <url>
     <loc>https://beforego.art/tools/pt-br/dias-para-o-enem-2026/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beforego.art/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/</loc>
     <lastmod>2026-09-28</lastmod>
     <priority>0.7</priority>
   </url>

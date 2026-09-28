@@ -229,6 +229,76 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/contagem-regressiva-black-friday-2026/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Quantos dias faltam para a Black Friday 2026? Contagem regressiva",
+  "description": "A Black Friday 2026 é na sexta-feira, 27 de novembro de 2026, e a Cyber Monday na segunda, 30 de novembro. Contagem ao vivo e widget grátis para o iPhone.",
+  "faq": [
+   {
+    "q": "Quando é a Black Friday 2026?",
+    "a": "Na sexta-feira, 27 de novembro de 2026. A Black Friday é sempre a sexta-feira depois do Dia de Ação de Graças dos Estados Unidos, que em 2026 cai na quinta-feira, 26 de novembro."
+   },
+   {
+    "q": "Quando é a Cyber Monday 2026?",
+    "a": "Na segunda-feira, 30 de novembro de 2026 — a segunda-feira logo depois da Black Friday."
+   },
+   {
+    "q": "Quantos dias faltam para a Black Friday?",
+    "a": "Em 28/09/2026 faltavam 60 dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."
+   },
+   {
+    "q": "Até quando sai a 1ª parcela do 13º salário?",
+    "a": "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela vai até 20 de dezembro."
+   },
+   {
+    "q": "Como coloco a contagem da Black Friday na Tela de Início?",
+    "a": "Crie o evento 27 de novembro de 2026 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data da Black Friday muda todo ano, então para 2027 crie um evento novo (26 de novembro) em vez de repetir. Os widgets são grátis em todos os tamanhos."
+   }
+  ],
+  "published": "2026-09-28",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para a Black Friday 2026?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Quantos dias faltam para o Natal 2026? Contagem regressiva",
+  "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
+  "faq": [
+   {
+    "q": "Em que dia da semana cai o Natal 2026?",
+    "a": "Numa sexta-feira: 25 de dezembro de 2026. A véspera, 24 de dezembro, é uma quinta-feira, e o Natal emenda com o fim de semana."
+   },
+   {
+    "q": "Quantas semanas faltam para o Natal?",
+    "a": "Em 28/09/2026 faltavam 88 dias, cerca de 12 semanas. O contador desta página recalcula no dia em que você abre."
+   },
+   {
+    "q": "Até quando sai a 2ª parcela do 13º salário?",
+    "a": "Pela Lei 4.749/1965, a segunda parcela do 13º deve ser paga até 20 de dezembro — em 2026, um domingo, cinco dias antes do Natal. A primeira parcela vai até 30 de novembro."
+   },
+   {
+    "q": "Quando é o Natal 2027?",
+    "a": "Num sábado, 25 de dezembro de 2027. Em 2028, o Natal cai numa segunda-feira."
+   },
+   {
+    "q": "Como coloco a contagem do Natal na Tela Bloqueada?",
+    "a": "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
+   }
+  ],
+  "published": "2026-09-28",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para o Natal 2026?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/invoice-template/",
   "lang": "en",
   "kind": "WebApplication",
