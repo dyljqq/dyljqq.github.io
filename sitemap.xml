@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://beforego.art/blog/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -197,7 +197,7 @@
   </url>
   <url>
     <loc>https://beforego.art/es-mx/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -372,6 +372,21 @@
   </url>
   <url>
     <loc>https://beforego.art/tools/days-until/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beforego.art/tools/es-mx/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beforego.art/tools/es-mx/formato-de-cotizacion/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beforego.art/tools/es-mx/nota-de-venta/</loc>
     <lastmod>2026-09-28</lastmod>
     <priority>0.7</priority>
   </url>

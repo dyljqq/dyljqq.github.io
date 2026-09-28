@@ -25,12 +25,23 @@ TS = {  # 工具页专用界面词
             "faq": "Perguntas frequentes", "published": "Publicado em", "updated": "Atualizado em", "get": "Leve para o seu iPhone",
             "ask": "Pergunte a uma IA sobre esta página", "days": "dias", "day": "dia", "weeks": "semanas", "today": "É hoje!", "passed": "dias atrás",
             "home": "Início", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 09-28：墨西哥线走 InvoiceQR（西语本地化完整；Countdown 没有西语版，不做西语倒数页）
+  "es-MX": {"tools": "Herramientas", "hub_title": "Herramientas y guías gratis", "hub_lede": "Pequeñas, gratis y sin registro. Cada una hace en el navegador lo mismo que nuestras apps hacen en el iPhone.",
+            "faq": "Preguntas frecuentes", "published": "Publicado", "updated": "Actualizado", "get": "Llévalo a tu iPhone",
+            "ask": "Pregúntale a una IA sobre esta página", "days": "días", "day": "día", "weeks": "semanas", "today": "¡Es hoy!", "passed": "días atrás",
+            "home": "Inicio", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
         wd = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"][d.weekday()]
         mo = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"][d.month - 1]
+        return f"{wd}, {d.day} de {mo} de {d.year}"
+    if lang == "es-MX":
+        wd = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"][d.weekday()]
+        mo = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"][d.month - 1]
         return f"{wd}, {d.day} de {mo} de {d.year}"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
@@ -60,10 +71,10 @@ INVOICE_JS = """
 function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
 function calc(){var sub=0;body.querySelectorAll('tr').forEach(function(tr){var q=parseFloat(tr.children[1].textContent)||0,p=parseFloat(tr.children[2].textContent.replace(/[^0-9.\\-]/g,''))||0;var a=q*p;tr.children[3].textContent=money(a);sub+=a;});
 var rate=parseFloat(document.getElementById('taxrate').textContent)||0;var tax=sub*rate/100;document.getElementById('sub').textContent=money(sub);document.getElementById('tax').textContent=money(tax);document.getElementById('total').textContent=money(sub+tax);}
-document.getElementById('addrow').addEventListener('click',function(){var tr=body.rows[0].cloneNode(true);tr.children[0].textContent='Item';tr.children[1].textContent='1';tr.children[2].textContent='0.00';body.appendChild(tr);calc();});
+document.getElementById('addrow').addEventListener('click',function(){var tr=body.rows[0].cloneNode(true);tr.children[0].textContent=t.getAttribute('data-newitem')||'Item';tr.children[1].textContent='1';tr.children[2].textContent='0.00';body.appendChild(tr);calc();});
 document.getElementById('print').addEventListener('click',function(){window.print();});
-t.addEventListener('input',calc);document.getElementById('taxrate').addEventListener('input',calc);document.getElementById('today').textContent=new Date().toLocaleDateString();
-var due=new Date();due.setDate(due.getDate()+30);document.getElementById('due').textContent=due.toLocaleDateString();calc();})();
+t.addEventListener('input',calc);document.getElementById('taxrate').addEventListener('input',calc);var L=document.documentElement.lang,loc=L==='en'?undefined:L;document.getElementById('today').textContent=new Date().toLocaleDateString(loc);
+var dd=document.getElementById('due');if(dd){var due=new Date();due.setDate(due.getDate()+(+t.getAttribute('data-days')||30));dd.textContent=due.toLocaleDateString(loc);}calc();})();
 """
 PACK_JS = """
 (function(){var f=document.getElementById('pack');if(!f)return;var out=document.getElementById('pack-out');var L=JSON.parse(document.getElementById('pack-data').textContent);
@@ -130,7 +141,8 @@ def app_card(app_key, lang):
             f'<a class="btn" href="{esc(bp.store_link({"variantOf": app_key, "lang": lang} if lang != "en" else p, s, "tool"))}">{bp.APPLE}{esc(bp.t(lang, "cta_store"))}</a> &nbsp; <a href="{page}" style="font-size:14px">{esc(p["home"]["label"])} →</a></div></aside>')
 
 def ask_ai(url, lang):
-    q = f"Read {url} and summarise its key points in a few sentences." if lang == "en" else f"Leia {url} e resuma os pontos principais em poucas frases."
+    q = {"pt-BR": f"Leia {url} e resuma os pontos principais em poucas frases.",
+         "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases."}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -153,8 +165,7 @@ def wrap_tables(body):
 def shell(pg, body):
     body = wrap_tables(body)
     lang = pg["lang"]; T = lambda k, **kw: bp.t(lang, k, **kw)
-    hub = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
-    home = "/pt-br/" if lang == "pt-BR" else "/"
+    hub, home = HUBS.get(lang, "/tools/"), HOMES.get(lang, "/")
     if pg["path"].startswith("/blog/"):
         crumbs = [(ts(lang, "home"), "/"), ("Blog", "/blog/" if pg["path"] != "/blog/" else None)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
     else:
@@ -495,6 +506,87 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
 <tr><td>Receipt</td><td>After payment</td><td>Confirmation that the invoice was paid.</td></tr></tbody></table>
 <p>If you send more than a few invoices a month, an app that remembers clients, items and tax rates and shows what is paid, unpaid and overdue saves real time. That is what <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> does on iPhone — including a payment QR code on every invoice.</p>"""})
 
+# 7b. 墨西哥：formato de cotización / nota de venta（es-MX，InvoiceQR）——09-28 借势
+# 依据：tools/store/invoiceqr.json es-MX 描述（3 documentos gratis sin cuenta；cotización → nota de venta con un toque；CLABE / QR de pago；
+# 「No emite CFDI ni facturas fiscales ante el SAT」）。IVA 只写「tasa general 16 %」（LIVA art. 1）；边境 8 % 是否延续没核实，不写。
+# ⛔ 不把我们的单据叫 factura（墨西哥 factura = CFDI）
+MX_NOTE = ('<p class="meta" style="margin-top:18px"><strong>Importante:</strong> una cotización o una nota de venta no es una factura. '
+           'En México, la factura es un CFDI: un comprobante fiscal digital que se emite a través del SAT o de un proveedor autorizado (PAC). '
+           'Ni este formato ni nuestra app emiten CFDI ni facturas fiscales ante el SAT.</p>')
+MX_APP = ('Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, '
+          'agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro.')
+
+PAGES.append({"path": "/tools/es-mx/formato-de-cotizacion/", "lang": "es-MX", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-28",
+  "title": "Formato de cotización gratis — llénalo, imprímelo o guárdalo en PDF", "crumb": "Formato de cotización",
+  "description": "Formato de cotización gratis para llenar en línea: tus datos, el cliente, los conceptos con importe e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.",
+  "hub_title": "Formato de cotización gratis", "hub_desc": "Llénalo aquí mismo: importes, IVA y total se calculan solos. Imprime o guarda en PDF.",
+  "js": [INVOICE_JS], "faq": [
+    ("¿Este formato de cotización es gratis?", "Sí. Todo pasa en tu navegador: no se sube nada, no hay cuenta ni marca de agua. Llena los campos y luego imprime o guarda en PDF."),
+    ("¿Qué debe llevar una cotización?", "La palabra Cotización y un folio, la fecha y la vigencia, tus datos de contacto, los datos del cliente, cada concepto con cantidad, precio unitario e importe, el subtotal, el IVA con su tasa y el total, y las condiciones: forma de pago, tiempo de entrega y anticipo si lo pides."),
+    ("¿Qué es la vigencia de una cotización?", "Es la fecha hasta la que respetas los precios. En este formato se llena sola a 15 días de hoy; cámbiala si ofreces otro plazo."),
+    ("¿Una cotización sirve como factura?", "No. La cotización es una propuesta de precio antes de la venta. Si tu cliente necesita factura, esa tiene que ser un CFDI emitido a través del SAT o de un proveedor autorizado (PAC)."),
+    ("¿Cómo guardo la cotización en PDF?", "Haz clic en Imprimir / Guardar PDF y, en la ventana de impresión, elige «Guardar como PDF» como destino. Solo se imprime la cotización; el resto de la página se oculta."),
+    ("¿Hay una app para hacer cotizaciones en el iPhone?", MX_APP),
+  ],
+  "body": f"""<h1>Formato de cotización gratis</h1>
+<p class="lede">Llénalo aquí mismo: haz clic en cualquier campo punteado para editarlo. El importe de cada concepto, el IVA y el total se calculan solos. Después imprímelo o guárdalo en PDF. Nada sale de tu navegador.</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">Imprimir / Guardar PDF</button><button class="btn ghost" id="addrow" type="button">+ Agregar concepto</button></div>
+<div class="inv" id="inv" data-newitem="Concepto" data-days="15">
+<div class="inv-head"><div><div class="inv-title">COTIZACIÓN</div><p style="margin:6px 0 0"><span contenteditable="true">Nombre de tu negocio</span><br><span contenteditable="true">Calle, colonia, ciudad</span><br><span contenteditable="true">tucorreo@ejemplo.com · 55 0000 0000</span></p></div>
+<div class="inv-meta"><div class="k">Folio</div><p style="margin:0 0 10px"><span contenteditable="true">COT-0001</span></p><div class="k">Fecha</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Vigencia</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">Cliente</div><p style="margin:0"><span contenteditable="true">Nombre del cliente</span><br><span contenteditable="true">Dirección del cliente</span><br><span contenteditable="true">cliente@ejemplo.com</span></p></div>
+<div><div class="k">Condiciones</div><p style="margin:0"><span contenteditable="true">Anticipo del 50 %, resto a la entrega</span><br><span contenteditable="true">Transferencia — CLABE 000 000 00000000000 0</span></p></div></div>
+<table><thead><tr><th>Concepto</th><th>Cant.</th><th>Precio unitario</th><th>Importe</th></tr></thead>
+<tbody><tr><td contenteditable="true">Diseño de logotipo</td><td contenteditable="true">1</td><td contenteditable="true">4500.00</td><td>4,500.00</td></tr>
+<tr><td contenteditable="true">Tarjetas de presentación (millar)</td><td contenteditable="true">2</td><td contenteditable="true">650.00</td><td>1,300.00</td></tr></tbody></table>
+<div class="totals"><div><span>Subtotal</span><span id="sub">5,800.00</span></div><div><span>IVA (<span contenteditable="true" id="taxrate">16</span>%)</span><span id="tax">928.00</span></div><div class="grand"><span>Total</span><span id="total">6,728.00</span></div></div>
+<p class="notes" contenteditable="true">Precios en pesos mexicanos (MXN). Cotización válida hasta la fecha de vigencia.</p>
+</div></div>
+<h2>Qué debe llevar una cotización</h2>
+<ul><li><strong>La palabra «Cotización»</strong> y un folio para identificarla.</li><li><strong>Fecha</strong> y <strong>vigencia</strong>: hasta cuándo respetas los precios.</li><li><strong>Tus datos</strong>: nombre o razón social y cómo contactarte.</li><li><strong>Los datos del cliente</strong>: nombre y dirección o correo.</li><li><strong>Conceptos</strong>: descripción, cantidad, precio unitario e importe.</li><li><strong>Subtotal, IVA</strong> (con la tasa que aplique; la tasa general es 16 %) y <strong>total</strong>.</li><li><strong>Condiciones</strong>: forma de pago, tiempo de entrega y anticipo, si lo pides.</li></ul>
+<h2>Cotización, nota de venta, remisión o factura</h2>
+<table><thead><tr><th>Documento</th><th>Cuándo se hace</th><th>Para qué sirve</th></tr></thead><tbody>
+<tr><td>Cotización</td><td>Antes de la venta</td><td>Propone un precio que respetas hasta la fecha de vigencia.</td></tr>
+<tr><td>Nota de venta</td><td>Al vender</td><td>Deja constancia de la venta entre tú y tu cliente. No es un comprobante fiscal.</td></tr>
+<tr><td>Remisión</td><td>Al entregar</td><td>Acredita que la mercancía se entregó; la firma quien la recibe.</td></tr>
+<tr><td>Factura (CFDI)</td><td>Cuando el cliente la pide o la ley lo exige</td><td>Comprobante fiscal digital, emitido a través del SAT o de un proveedor autorizado (PAC).</td></tr></tbody></table>
+<p>¿Tu cliente ya aceptó? Pasa los mismos conceptos a un <a href="/tools/es-mx/nota-de-venta/">formato de nota de venta</a>. Si haces varias cotizaciones al mes, <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a> en el iPhone guarda clientes y conceptos y convierte la cotización en nota de venta con un toque.</p>
+{MX_NOTE}"""})
+
+PAGES.append({"path": "/tools/es-mx/nota-de-venta/", "lang": "es-MX", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-28",
+  "title": "Formato de nota de venta gratis — llénalo, imprímelo o guárdalo en PDF", "crumb": "Formato de nota de venta",
+  "description": "Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.",
+  "hub_title": "Formato de nota de venta gratis", "hub_desc": "Folio, cliente y conceptos; los importes se suman solos. Imprime o guarda en PDF.",
+  "js": [INVOICE_JS], "faq": [
+    ("¿Este formato de nota de venta es gratis?", "Sí. Se llena en tu navegador, no se sube nada y no pide cuenta. Al terminar, imprímelo o guárdalo en PDF."),
+    ("¿Qué debe llevar una nota de venta?", "La leyenda Nota de venta y un folio, la fecha, tus datos, el nombre del cliente, cada concepto con cantidad, precio unitario e importe, el total y la forma de pago."),
+    ("¿La nota de venta sirve como factura?", "No. La nota de venta deja constancia de la venta entre tú y tu cliente, pero no es un comprobante fiscal. Si el cliente necesita factura, tiene que ser un CFDI emitido a través del SAT o de un proveedor autorizado (PAC)."),
+    ("¿Cómo guardo la nota de venta en PDF?", "Haz clic en Imprimir / Guardar PDF y elige «Guardar como PDF» como destino en la ventana de impresión. Solo se imprime la nota."),
+    ("¿Hay una app para hacer notas de venta en el iPhone?", MX_APP),
+  ],
+  "body": f"""<h1>Formato de nota de venta gratis</h1>
+<p class="lede">Llénalo aquí mismo: haz clic en cualquier campo punteado para editarlo. Los importes y el total se calculan solos; si cobras IVA, escribe la tasa. Después imprímelo o guárdalo en PDF. Nada sale de tu navegador.</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">Imprimir / Guardar PDF</button><button class="btn ghost" id="addrow" type="button">+ Agregar concepto</button></div>
+<div class="inv" id="inv" data-newitem="Concepto">
+<div class="inv-head"><div><div class="inv-title">NOTA DE VENTA</div><p style="margin:6px 0 0"><span contenteditable="true">Nombre de tu negocio</span><br><span contenteditable="true">Calle, colonia, ciudad</span><br><span contenteditable="true">tucorreo@ejemplo.com · 55 0000 0000</span></p></div>
+<div class="inv-meta"><div class="k">Folio</div><p style="margin:0 0 10px"><span contenteditable="true">NV-0001</span></p><div class="k">Fecha</div><p style="margin:0"><span contenteditable="true" id="today"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">Cliente</div><p style="margin:0"><span contenteditable="true">Nombre del cliente</span><br><span contenteditable="true">Teléfono o correo</span></p></div>
+<div><div class="k">Forma de pago</div><p style="margin:0"><span contenteditable="true">Efectivo / transferencia</span><br><span contenteditable="true">CLABE 000 000 00000000000 0</span></p></div></div>
+<table><thead><tr><th>Concepto</th><th>Cant.</th><th>Precio unitario</th><th>Importe</th></tr></thead>
+<tbody><tr><td contenteditable="true">Pastel de chocolate (20 personas)</td><td contenteditable="true">1</td><td contenteditable="true">850.00</td><td>850.00</td></tr>
+<tr><td contenteditable="true">Cupcakes decorados</td><td contenteditable="true">12</td><td contenteditable="true">35.00</td><td>420.00</td></tr></tbody></table>
+<div class="totals"><div><span>Subtotal</span><span id="sub">1,270.00</span></div><div><span>IVA (<span contenteditable="true" id="taxrate">0</span>%)</span><span id="tax">0.00</span></div><div class="grand"><span>Total</span><span id="total">1,270.00</span></div></div>
+<p class="notes" contenteditable="true">Gracias por tu compra.</p>
+</div></div>
+<h2>Qué debe llevar una nota de venta</h2>
+<ul><li><strong>La leyenda «Nota de venta»</strong> y un folio consecutivo.</li><li><strong>La fecha</strong> de la venta.</li><li><strong>Tus datos</strong>: nombre del negocio y cómo contactarte.</li><li><strong>El cliente</strong>: nombre y teléfono o correo.</li><li><strong>Conceptos</strong>: descripción, cantidad, precio unitario e importe.</li><li><strong>Total</strong> (con IVA si lo cobras; escribe la tasa que aplique) y <strong>forma de pago</strong>.</li></ul>
+<h2>¿Nota de venta o factura?</h2>
+<p>La nota de venta deja constancia de la venta entre tú y tu cliente; sirve para llevar tus cuentas y para que el cliente tenga un comprobante de lo que pagó. No es un comprobante fiscal: si tu cliente necesita deducir la compra, pídele sus datos y emite un CFDI a través del SAT o de un proveedor autorizado (PAC).</p>
+<p>¿Todavía no cierras la venta? Empieza por un <a href="/tools/es-mx/formato-de-cotizacion/">formato de cotización</a>. En el iPhone, <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a> guarda tus clientes y conceptos, lleva la cuenta de lo pagado y lo pendiente, y agrega tu CLABE o un código QR de pago a cada nota.</p>
+{MX_NOTE}"""})
+
 # 8. 如何写发票（指南）
 PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "Article", "app": "invoiceqr", "published": "2026-09-26",
   "title": "How to Write an Invoice (freelancers & small businesses) — 8 steps", "crumb": "How to write an invoice",
@@ -643,17 +735,23 @@ PAGES.append(best_page())
 
 # ------------------------------------------------------------------ 目录页
 def hub_page(lang):
-    hub_path = "/tools/pt-br/" if lang == "pt-BR" else "/tools/"
+    hub_path = HUBS[lang]
     items = [p for p in PAGES if p["lang"] == lang]
-    cards = "\n".join(f'  <a href="{p["path"]}"><b>{esc(p["hub_title"])}</b><span>{esc(p["hub_desc"])}</span><small>{esc(BY_KEY[p["app"]]["home"]["label"])}</small></a>' for p in items)
+    # 卡片小字：英文目录用 app 短名；其它语言用该语言商店名（09-28：西语目录显示 Invoice Maker 是英文）
+    label = lambda k: BY_KEY[k]["home"]["label"] if lang == "en" else bp.store_of({"variantOf": k, "lang": lang})["name"]
+    cards = "\n".join(f'  <a href="{p["path"]}"><b>{esc(p["hub_title"])}</b><span>{esc(p["hub_desc"])}</span><small>{esc(label(p["app"]))}</small></a>' for p in items)
     body = f"""<h1>{esc(ts(lang, "hub_title"))}</h1>
 <p class="lede">{esc(ts(lang, "hub_lede"))}</p>
 <div class="hub">
 {cards}
 </div>"""
-    return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": ("Free tools & guides — go ka" if lang == "en" else "Ferramentas e guias grátis — go ka"),
-            "description": ("Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator." if lang == "en"
-                            else "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais."),
+    title, desc = {
+        "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
+        "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, a Black Friday, o Natal, o Réveillon e o Carnaval 2027."),
+        "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
+    }[lang]
+    return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,
+            "description": desc,
             "body": body, "published": None, "faq": [], "js": []}
 
 # ------------------------------------------------------------------ 博客（09-26 用户要求：参照 EasyNotes 官网补博客）
@@ -710,7 +808,7 @@ def blog_hub():
 def main():
     manifest = []
     blog = [blog_page(p) for p in BLOG]
-    for pg in PAGES + blog + [hub_page("en"), hub_page("pt-BR")] + ([blog_hub()] if blog else []):
+    for pg in PAGES + blog + [hub_page(l) for l in HUBS] + ([blog_hub()] if blog else []):
         out = ROOT / pg["path"].strip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(shell(pg, pg["body"]), encoding="utf-8")

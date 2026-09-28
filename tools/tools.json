@@ -334,6 +334,80 @@
   "image": null
  },
  {
+  "path": "/tools/es-mx/formato-de-cotizacion/",
+  "lang": "es-MX",
+  "kind": "WebApplication",
+  "title": "Formato de cotización gratis — llénalo, imprímelo o guárdalo en PDF",
+  "description": "Formato de cotización gratis para llenar en línea: tus datos, el cliente, los conceptos con importe e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.",
+  "faq": [
+   {
+    "q": "¿Este formato de cotización es gratis?",
+    "a": "Sí. Todo pasa en tu navegador: no se sube nada, no hay cuenta ni marca de agua. Llena los campos y luego imprime o guarda en PDF."
+   },
+   {
+    "q": "¿Qué debe llevar una cotización?",
+    "a": "La palabra Cotización y un folio, la fecha y la vigencia, tus datos de contacto, los datos del cliente, cada concepto con cantidad, precio unitario e importe, el subtotal, el IVA con su tasa y el total, y las condiciones: forma de pago, tiempo de entrega y anticipo si lo pides."
+   },
+   {
+    "q": "¿Qué es la vigencia de una cotización?",
+    "a": "Es la fecha hasta la que respetas los precios. En este formato se llena sola a 15 días de hoy; cámbiala si ofreces otro plazo."
+   },
+   {
+    "q": "¿Una cotización sirve como factura?",
+    "a": "No. La cotización es una propuesta de precio antes de la venta. Si tu cliente necesita factura, esa tiene que ser un CFDI emitido a través del SAT o de un proveedor autorizado (PAC)."
+   },
+   {
+    "q": "¿Cómo guardo la cotización en PDF?",
+    "a": "Haz clic en Imprimir / Guardar PDF y, en la ventana de impresión, elige «Guardar como PDF» como destino. Solo se imprime la cotización; el resto de la página se oculta."
+   },
+   {
+    "q": "¿Hay una app para hacer cotizaciones en el iPhone?",
+    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro."
+   }
+  ],
+  "published": "2026-09-28",
+  "app": "invoiceqr",
+  "hubTitle": "Formato de cotización gratis",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/es-mx/nota-de-venta/",
+  "lang": "es-MX",
+  "kind": "WebApplication",
+  "title": "Formato de nota de venta gratis — llénalo, imprímelo o guárdalo en PDF",
+  "description": "Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.",
+  "faq": [
+   {
+    "q": "¿Este formato de nota de venta es gratis?",
+    "a": "Sí. Se llena en tu navegador, no se sube nada y no pide cuenta. Al terminar, imprímelo o guárdalo en PDF."
+   },
+   {
+    "q": "¿Qué debe llevar una nota de venta?",
+    "a": "La leyenda Nota de venta y un folio, la fecha, tus datos, el nombre del cliente, cada concepto con cantidad, precio unitario e importe, el total y la forma de pago."
+   },
+   {
+    "q": "¿La nota de venta sirve como factura?",
+    "a": "No. La nota de venta deja constancia de la venta entre tú y tu cliente, pero no es un comprobante fiscal. Si el cliente necesita factura, tiene que ser un CFDI emitido a través del SAT o de un proveedor autorizado (PAC)."
+   },
+   {
+    "q": "¿Cómo guardo la nota de venta en PDF?",
+    "a": "Haz clic en Imprimir / Guardar PDF y elige «Guardar como PDF» como destino en la ventana de impresión. Solo se imprime la nota."
+   },
+   {
+    "q": "¿Hay una app para hacer notas de venta en el iPhone?",
+    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro."
+   }
+  ],
+  "published": "2026-09-28",
+  "app": "invoiceqr",
+  "hubTitle": "Formato de nota de venta gratis",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/how-to-write-an-invoice/",
   "lang": "en",
   "kind": "Article",
@@ -672,11 +746,25 @@
   "lang": "pt-BR",
   "kind": "CollectionPage",
   "title": "Ferramentas e guias grátis — go ka",
-  "description": "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, Réveillon e Carnaval 2027, e mais.",
+  "description": "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, a Black Friday, o Natal, o Réveillon e o Carnaval 2027.",
   "faq": [],
   "published": null,
   "app": null,
   "hubTitle": "Ferramentas e guias grátis — go ka",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/es-mx/",
+  "lang": "es-MX",
+  "kind": "CollectionPage",
+  "title": "Herramientas y guías gratis — go ka",
+  "description": "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.",
+  "faq": [],
+  "published": null,
+  "app": null,
+  "hubTitle": "Herramientas y guías gratis — go ka",
   "items": [],
   "headline": null,
   "image": null

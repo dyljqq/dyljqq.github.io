@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 I18N = json.loads((ROOT / "tools/i18n/home.json").read_text(encoding="utf-8"))
 EN = json.loads((ROOT / "tools/i18n/home.en.json").read_text(encoding="utf-8"))
 LANGS = ("de", "fr", "it", "es", "es-MX", "pt-BR", "ja", "ko", "zh-Hans", "zh-Hant", "th")
-TOOLS_HUB = {"pt-BR": "/tools/pt-br/"}          # 有本语言工具目录的才换，其它指英文目录
+TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}   # 有本语言工具目录的才换，其它指英文目录
 
 e = lambda s: html.escape(s, quote=False)
 ea = lambda s: html.escape(s, quote=True)

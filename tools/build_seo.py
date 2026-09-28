@@ -484,9 +484,9 @@ def product_options(app):
     fam = [parent] + variants_of(parent)
     return [(a.get("lang", "en"), a["path"]) for a in sorted(fam, key=lambda a: bp.order_key(a.get("lang", "en")))]
 
-TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/"}
-ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português"}
-HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português"}
+TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}
+ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español"}
+HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español"}
 
 def tool_options(tp):
     """返回 (options, extra)。目录页互为语言版本；单语言工具页只列自己，另一种语言的目录放 extra。"""
@@ -645,7 +645,7 @@ def home_legal_html(lang="en"):
 # 样式自带、类名带 gk- 前缀：法务页和手写页没有站点的 CSS 变量，也有自己的 h2 / a 样式，不能指望页面。
 FOOT_START, FOOT_END = "<!-- sitefooter:start -->", "<!-- sitefooter:end -->"
 FOOT_LANG = {"zh-CN": "zh-Hans"}                      # 单词兽的页面是简体中文
-TOOLS_HUB = {"pt-BR": "/tools/pt-br/"}                 # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
+TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}   # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
 FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath>'
              '<circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/>'
              '<path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>')
@@ -758,7 +758,7 @@ def tool_head(tp):
              f'<meta property="og:image" content="{img}">', '<meta name="twitter:card" content="summary_large_image">',
              '<meta name="twitter:title" content="%s">' % esc(title), '<meta name="twitter:description" content="%s">' % esc(desc),
              f'<meta name="twitter:image" content="{img}">'] + hub_alts
-    hub = "/blog/" if url.startswith("/blog/") else ("/tools/pt-br/" if lang == "pt-BR" else "/tools/")
+    hub = "/blog/" if url.startswith("/blog/") else TOOL_HUBS.get(lang, "/tools/")
     page = {"@context": "https://schema.org", "@type": tp["kind"], "@id": f"{canonical}#page", "url": canonical, "name": title,
             "headline": tp.get("headline") or title, "description": desc, "inLanguage": lang, "isPartOf": {"@id": f"{ORIGIN}/#website"},
             "publisher": {"@id": f"{ORIGIN}/#org"}, "author": {"@id": f"{ORIGIN}/#org"}, "isAccessibleForFree": True, "image": tp.get("image") or img}
