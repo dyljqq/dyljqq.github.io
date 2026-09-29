@@ -23,7 +23,7 @@
 查某个 ref 带来多少人（在本仓库根目录跑）：
 
 ```bash
-npx -y --registry=https://registry.npmjs.org vercel@latest api "/v1/query/web-analytics/visits/aggregate?projectId=goka&slug=qinqiangji-3410&since=2026-09-29&until=2026-10-06&by=requestPath&limit=200"
+npx -y --registry=https://registry.npmjs.org vercel@latest api "/v1/query/web-analytics/visits/aggregate?projectId=goka&slug=qinqiangji-3410&since=2026-09-29&until=2026-10-06&by=requestPath&limit=100"
 ```
 
 输出里路径带 `~` 的就是带 ref 的落地；时间都是 UTC。
