@@ -497,7 +497,9 @@ TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"
 ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español"}
 HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español"}
 # 同一个工具的不同语言版本：互为 hreflang（x-default 指英文），页头语言菜单互链（09-29 评审：两个计算器各写「只有本语言」）
-TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/"}]
+TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/"},
+              # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
+              {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"}]
 def tool_pair(url):
     return next((p for p in TOOL_PAIRS if url in p.values()), None)
 

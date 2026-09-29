@@ -122,7 +122,9 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
      「contador de dias」有 entre datas / de namoro / corridos / úteis；「contagem regressiva」有 aniversário / férias。选举不做（政治话题、10-04 一轮来不及收录）。
    - ✅ 09-29 场景页 3 个已上线（评审 97）：`quantos-dias-faltam-para-o-meu-aniversario/`（+ 会满几岁、Instagram frases）、
      `quantos-dias-faltam-para-as-ferias/`（+ 工作日、CLT 年假条文）、`contador-de-dias-de-namoro/`（+ 下一个整百天 / 满月 / 周年、?desde= 分享、N 个月几天表）。
-     按联想词定，比原计划的 casamento / viagem 更有证据；en 版不做（英文结果页竞争大，目标是非美国）。榜单页仍待逐个核对 BR 商店竞品。
+     按联想词定，比原计划的 casamento / viagem 更有证据；en 版不做（英文结果页竞争大，目标是非美国）。
+   - ✅ 09-29 榜单 `/tools/pt-br/melhores-apps-contagem-regressiva/`（评审 92→98）：巴西区评分最多的 6 个倒数 app + 我们；只写 BR 商店 pt_br 描述写明的事，
+     与英文榜单互为语言版本。Pro 范围＝背景 / 字体 / 图标（1.4.10 说明）+ Live Activity（App 代码核实，现行商店文字没写）。
 
 判据（10-17）：Google `site:` 收录这批页；`web-*` 活动下载；巴西自然 / 活动下载。
 

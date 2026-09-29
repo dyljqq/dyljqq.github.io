@@ -104,7 +104,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
 .article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
 .article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
-.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -165,7 +165,7 @@ def counter(d, lang, label=""):
 
 def wrap_tables(body):
     """表格外包 .tbl（overflow-x:auto），手机上表格自己滚，不把页面撑宽。"""
-    return body.replace("<table>", '<div class="tbl"><table>').replace('<table class="cmp">', '<div class="tbl"><table class="cmp">').replace("</table>", "</table></div>")
+    return body.replace("<table>", '<div class="tbl"><table>').replace('<table class="cmp">', '<div class="tbl full"><table class="cmp">').replace("</table>", "</table></div>")
 
 def shell(pg, body):
     body = wrap_tables(body)
@@ -843,9 +843,9 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 # 10. 榜单：iPhone 倒数日 app（含竞品；数据来自 09-26 美区 App Store 查询，只写商店描述里写明的事）
 BEST = [
   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "rating": None, "since": 2026, "ours": True,
-   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops and a Live Activity.",
+   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops, fonts, icons and a Live Activity.",
    "widgets": "Home Screen + Lock Screen, all sizes, free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds decorative backdrops and, since version 1.4.7, a Live Activity on the Lock Screen and Dynamic Island. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
+   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds decorative backdrops, fonts and icons, and a Live Activity on the Lock Screen and Dynamic Island. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "rating": (4.8, 215672), "since": 2012,
    "free": "Add as many events as you like; iCloud sync, repeating events and Home Screen widgets are listed as features (the listing does not spell out what is paid).",
    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "Not stated",
@@ -908,6 +908,77 @@ def best_page():
               ("Is this list independent?", "We make Countdown Widget: Any Event, so no. Everything in the table comes from the public App Store listings, the fields are the same for every app, and each competitor is linked so you can check. We did not test paid tiers."),
             ], "js": [], "body": body}
 PAGES.append(best_page())
+
+# 10b. 葡语榜单（09-29）：联想词 app contagem regressiva (iphone / widget / grátis)、melhor app de contagem regressiva、
+# widget contagem regressiva iphone gratuito。选法同英文版：巴西区搜「contagem regressiva」「countdown widget」，
+# 取倒数专用 app 里巴西评分数最多的 6 个（Widgetsmith 是通用小组件，不收），只写 BR 商店描述（lang=pt_br，09-29 lookup）里写明的事。
+BEST_PT = [
+  {"name": "Countdown: Contagem regressiva", "by": "go ka (o nosso)", "id": 6799846628, "t": ("Tudo grátis; Pro: visual e Live Activity", "Início e Bloqueada, todos grátis", "Ano, mês, semana, a cada N dias", "iCloud, sem conta", "Não"), "rating": None, "since": 2026, "ours": True,
+   "free": "Eventos ilimitados, todos os widgets na Tela de Início e na Tela Bloqueada, repetição, lembretes e iCloud — tudo grátis. O Pro libera fundos, fontes e ícones extras e a Live Activity.",
+   "widgets": "Tela de Início e Tela Bloqueada, todos os tamanhos, grátis", "recur": "Todo ano, mês, semana ou a cada poucos dias", "sync": "iCloud, sem criar conta", "ads": "Sem anúncios",
+   "take": "Aqui os widgets não são o recurso pago: todos os tamanhos, eventos ilimitados, repetição, lembretes e sincronização com o iCloud são grátis, e a assinatura libera fundos, fontes e ícones extras e a Live Activity na Tela Bloqueada e na Dynamic Island. Guarda todo dia uma cópia dos eventos no aparelho, para que uma atualização não apague nada, e cada evento tem um verso com texto, fotos e voz. É novo em 2026 e ainda tem poucas avaliações no Brasil — julgue pelo que a versão grátis cobre."},
+  {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "t": ("Com anúncios; uma compra remove", "Início (P, M, G)", "Anual", "iCloud + Apple Watch", "Sim, na grátis"), "rating": (4.8, 16068), "since": 2012,
+   "free": "Versão gratuita com anúncios e uma compra opcional para removê-los; há também uma versão paga sem anúncios. iCloud, recorrência e widgets aparecem como recursos, sem separar o que é pago.",
+   "widgets": "Tela de Início: pequeno, médio e grande", "recur": "Eventos anuais avançam sozinhos", "sync": "iCloud (iPhone, iPad, Apple Watch)", "ads": "Sim, na versão grátis",
+   "take": "O veterano: está na App Store desde 2012 e é o mais avaliado entre os apps que encontramos na App Store do Brasil. Conta para frente e para trás, sincroniza com o Apple Watch e agrupa os eventos em contagem regressiva e progressiva. A versão grátis tem anúncios; a descrição não fala em widget na Tela Bloqueada."},
+  {"name": "Widget Casal: Dias Juntos", "by": "Jae Young Kim", "id": 1127692604, "t": ("Não informado", "Início, com fotos do casal", "Não informado", "Com o parceiro", "Não informado"), "rating": (4.7, 9956), "since": 2016,
+   "free": "Não informado.", "widgets": "Tela de Início, com temas e fotos do casal", "recur": "Não informado", "sync": "Compartilhado com o parceiro", "ads": "Não informado",
+   "take": "Não é um app de contagem regressiva geral: é feito para casais. Mostra os dias juntos em tempo real, lembra dos 10 e dos 100 dias, tem um diário do casal com fotos, um calendário com os aniversários e deixa o parceiro comentar e curtir as publicações."},
+  {"name": "Contagem Regressiva ◎", "by": "Find Appiness LLC", "id": 1403367428, "t": ("Eventos sem limite; widgets Premium", "Início e bloqueada — Premium", "Ano, mês, semana", "iCloud", "Não informado"), "rating": (4.8, 5263), "since": 2018,
+   "free": "Contador grátis com eventos sem limite, lembrete 1 dia ou 1 semana antes, iCloud, repetição e Apple Watch; os widgets da Tela de Início e da tela bloqueada e os formatos de contagem são Premium.",
+   "widgets": "Tela de Início e tela bloqueada — Premium", "recur": "Todo ano, mês ou semana", "sync": "iCloud", "ads": "Não informado",
+   "take": "Gratuito e muito fácil de usar: eventos sem limite, lembretes 1 dia e 1 semana antes, repetição, iCloud, Apple Watch, compartilhamento, tags e contagem para a frente de eventos passados. O ponto para quem quer widget: a descrição marca como Premium o widget da Tela de Início, o da tela bloqueada e a escolha do formato da contagem — sem pagar, a contagem fica no app e no Apple Watch."},
+  {"name": "Big Days - Contagem Regressiva", "by": "astrovicApps", "id": 940109775, "t": ("Não informado", "Início e Em Espera", "Não informado", "Não informado", "Não informado"), "rating": (4.7, 981), "since": 2014,
+   "free": "Não informado.", "widgets": "Tela de Início e modo Em Espera", "recur": "Não informado", "sync": "Não informado", "ads": "Não informado",
+   "take": "Para quem gosta de foto: cada contagem tem papel de parede, com busca de imagens do Pixabay dentro do app, dezenas de fontes e a opção de exportar a contagem para as redes sociais ou salvar como papel de parede. Conta os dias que faltam e os que já passaram, com lembretes personalizados."},
+  {"name": "Countdown Buddy", "by": "Taptics Ltd.", "id": 1534850579, "t": ("Não informado", "Início, 10 estilos", "Não informado", "Não informado", "Não informado"), "rating": (4.8, 810), "since": 2020,
+   "free": "Não informado.", "widgets": "Tela de Início, 10 estilos", "recur": "Não informado", "sync": "Não informado", "ads": "Não informado",
+   "take": "Mais um criador de widget do que uma lista de eventos: você monta um widget de contagem regressiva ou progressiva escolhendo entre 10 estilos e coloca na Tela de Início. Bom para quem só precisa de uma ou duas contagens à vista."},
+  {"name": "Contagens - Tempo de Eventos", "by": "Shayes Apps LLC", "id": 917514700, "t": ("Widgets grátis; iCloud pago", "iPhone, iPad e Mac — grátis", "Sim, grátis", "iCloud (pago)", "Não informado"), "rating": (4.8, 709), "since": 2014,
+   "free": "Grátis: widgets no iPhone, iPad e Mac, timers ilimitados e timers que repetem. iCloud e notificações personalizadas são pagos (assinatura ou compra única).",
+   "widgets": "iPhone, iPad e Mac — grátis", "recur": "Timers que repetem (grátis)", "sync": "iCloud — pago", "ads": "Não informado",
+   "take": "Para quem usa vários aparelhos: os timers rodam no iPhone, iPad, Mac e Apple Watch e contam para frente ou para trás — dos dias sem fumar ao próximo evento. Widgets e timers ilimitados são grátis; a sincronização pelo iCloud é paga."},
+]
+def best_page_pt():
+    rate = lambda b, short=False: ("★ %s · %s%s" % (str(b["rating"][0]).replace(".", ","), format(b["rating"][1], ",").replace(",", "."), "" if short else " avaliações")) if b["rating"] else ("Novo (poucas avaliações)" if short else "Novo em 2026 — poucas avaliações")
+    link = lambda b: "/countdown/pt-br/" if b.get("ours") else "https://apps.apple.com/br/app/id%d" % b["id"]
+    rows = "".join(f"<tr><th>{esc(b['name'])}{' <small>(nosso)</small>' if b.get('ours') else ''}</th>" + "".join(f"<td>{esc(x)}</td>" for x in b["t"]) + f"<td>{esc(rate(b, short=True))}</td></tr>" for b in BEST_PT)
+    entries = "".join(f"""<h3>{i}. {esc(b['name'])} <span style="font-weight:400;color:var(--soft)">— {esc(b['by'])}</span></h3>
+<p>{esc(b['take'])}</p>
+<p><strong>Versão grátis:</strong> {esc(b['free'])}<br><strong>Widgets:</strong> {esc(b['widgets'])} · <strong>Repetição:</strong> {esc(b['recur'])} · <strong>Sincronização:</strong> {esc(b['sync'])} · <strong>Anúncios:</strong> {esc(b['ads'])}</p>
+<p><a href="{link(b)}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'A nossa página do app' if b.get('ours') else 'Ver na App Store'} →</a></p>""" for i, b in enumerate(BEST_PT, 1))
+    body = f"""<h1>Melhores apps de contagem regressiva para iPhone (2026)</h1>
+<p class="lede">Sete apps de contagem regressiva para iPhone comparados no que realmente muda de um para outro: o que a versão grátis inclui, quais widgets são pagos, repetição, sincronização e anúncios. Os dados vêm da página de cada app na App Store do Brasil em 29 de setembro de 2026. Um dos sete é nosso; ele está marcado e é julgado pela mesma tabela que os outros.</p>
+<h2>A comparação</h2>
+<table class="cmp"><thead><tr><th>App</th><th>Versão grátis</th><th>Widgets</th><th>Repetição</th><th>Sincronização</th><th>Anúncios</th><th>Nota no Brasil</th></tr></thead><tbody>{rows}</tbody></table>
+<p class="meta">«Não informado» quer dizer que a descrição na App Store não diz. As avaliações são da App Store do Brasil em 29/09/2026 e mudam todo dia.</p>
+<h2>Qual escolher</h2>
+<ul>
+<li><strong>Quer widget sem pagar:</strong> Countdown: Contagem regressiva (o nosso) — todos os tamanhos são grátis, na Tela de Início e na Tela Bloqueada, sem anúncios. No Contagens, os widgets também fazem parte da versão gratuita.</li>
+<li><strong>Quer o mais avaliado desta lista:</strong> Countdown Star — desde 2012, com mais de 16 mil avaliações no Brasil e sincronização com o Apple Watch; a versão grátis tem anúncios.</li>
+<li><strong>Quer contar os dias de namoro:</strong> Widget Casal — feito para casais, com diário de fotos e lembretes de 10 e 100 dias. Para só calcular, use o nosso <a href="/tools/pt-br/contador-de-dias-de-namoro/">contador de dias de namoro</a>.</li>
+<li><strong>Quer foto e papel de parede:</strong> Big Days — busca de imagens do Pixabay e exportação da contagem como papel de parede.</li>
+<li><strong>Quer desenhar um único widget:</strong> Countdown Buddy — 10 estilos, contagem regressiva ou progressiva.</li>
+<li><strong>Usa Mac e Apple Watch:</strong> Contagens — timers em todos os aparelhos; o iCloud é pago.</li>
+</ul>
+<h2>Os sete apps</h2>
+{entries}
+<h2>Como escolhemos</h2>
+<p>Pesquisamos na App Store do Brasil «contagem regressiva» e «countdown widget», ficamos com os apps feitos para contagem com mais avaliações no Brasil e lemos a descrição de cada um em português para ver o que ela diz sobre a versão grátis, os widgets, a repetição, a sincronização e os anúncios. Criadores de widget em geral (como o Widgetsmith) ficaram de fora. Não testamos as versões pagas e não ordenamos por nota: o nosso vem primeiro porque somos nós que fazemos a lista, e os outros seguem pelo número de avaliações no Brasil. Nós fazemos um desses apps; ele entra porque é um app de contagem regressiva com widget para iPhone e é descrito com os mesmos campos que os outros. A <a href="/tools/best-countdown-widget-apps-iphone/" hreflang="en">versão em inglês desta lista</a> usa a App Store dos Estados Unidos, por isso os apps não são os mesmos.</p>"""
+    return {"path": "/tools/pt-br/melhores-apps-contagem-regressiva/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-29",
+            "title": "Melhores apps de contagem regressiva para iPhone (2026) com widget", "crumb": "Melhores apps",
+            "description": "Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.",
+            "hub_title": "Melhores apps de contagem regressiva para iPhone (2026)", "hub_desc": "Sete apps comparados: versão grátis, widgets, repetição, sincronização e anúncios.",
+            "items": [{"name": b["name"], "url": ("https://apps.apple.com/br/app/id%d" % b["id"])} for b in BEST_PT],
+            "faq": [
+              ("Qual app de contagem regressiva tem widget grátis na tela bloqueada?", "O Countdown: Contagem regressiva (o nosso) deixa todos os tamanhos de widget grátis, na Tela de Início e na Tela Bloqueada. No Contagem Regressiva ◎, o widget da tela bloqueada é recurso Premium, segundo a descrição; os outros da lista não dizem se o widget da tela bloqueada é grátis."),
+              ("Quais apps deixam criar eventos ilimitados de graça?", "Pela descrição na App Store do Brasil: o Countdown: Contagem regressiva («eventos ilimitados»), o Contagens («um número ilimitado de timers» na versão gratuita) e o Contagem Regressiva ◎ («crie quantos eventos quiser», sem marcar como Premium). O Countdown Star diz «adicione quantos eventos quiser», sem separar o que é grátis e o que é pago. Os outros não dizem."),
+              ("Qual é o melhor app para contar os dias de namoro?", "O Widget Casal é feito para isso: dias juntos, diário do casal e lembretes de 10 e 100 dias. O Countdown: Contagem regressiva também conta a partir de uma data e guarda texto, fotos e voz no verso do evento."),
+              ("Algum desses apps tem anúncios?", "O Countdown Star tem anúncios na versão grátis, com uma compra para removê-los. O Countdown: Contagem regressiva não tem anúncios. Os outros não dizem na descrição."),
+              ("Esta lista é independente?", "Não: nós fazemos o Countdown: Contagem regressiva. Tudo na tabela vem das páginas públicas na App Store do Brasil, os campos são os mesmos para todos os apps e cada concorrente tem link para você conferir. Não testamos as versões pagas."),
+            ], "js": [], "body": body}
+_ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/contador-de-dias-de-namoro/")
+PAGES.insert(_ci + 1, best_page_pt())   # 常青页一组：计算器 → 场景页 → 榜单 → 节日页
 
 # ------------------------------------------------------------------ 目录页
 def hub_page(lang):

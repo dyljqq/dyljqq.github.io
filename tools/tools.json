@@ -303,6 +303,70 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/melhores-apps-contagem-regressiva/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Melhores apps de contagem regressiva para iPhone (2026) com widget",
+  "description": "Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.",
+  "faq": [
+   {
+    "q": "Qual app de contagem regressiva tem widget grátis na tela bloqueada?",
+    "a": "O Countdown: Contagem regressiva (o nosso) deixa todos os tamanhos de widget grátis, na Tela de Início e na Tela Bloqueada. No Contagem Regressiva ◎, o widget da tela bloqueada é recurso Premium, segundo a descrição; os outros da lista não dizem se o widget da tela bloqueada é grátis."
+   },
+   {
+    "q": "Quais apps deixam criar eventos ilimitados de graça?",
+    "a": "Pela descrição na App Store do Brasil: o Countdown: Contagem regressiva («eventos ilimitados»), o Contagens («um número ilimitado de timers» na versão gratuita) e o Contagem Regressiva ◎ («crie quantos eventos quiser», sem marcar como Premium). O Countdown Star diz «adicione quantos eventos quiser», sem separar o que é grátis e o que é pago. Os outros não dizem."
+   },
+   {
+    "q": "Qual é o melhor app para contar os dias de namoro?",
+    "a": "O Widget Casal é feito para isso: dias juntos, diário do casal e lembretes de 10 e 100 dias. O Countdown: Contagem regressiva também conta a partir de uma data e guarda texto, fotos e voz no verso do evento."
+   },
+   {
+    "q": "Algum desses apps tem anúncios?",
+    "a": "O Countdown Star tem anúncios na versão grátis, com uma compra para removê-los. O Countdown: Contagem regressiva não tem anúncios. Os outros não dizem na descrição."
+   },
+   {
+    "q": "Esta lista é independente?",
+    "a": "Não: nós fazemos o Countdown: Contagem regressiva. Tudo na tabela vem das páginas públicas na App Store do Brasil, os campos são os mesmos para todos os apps e cada concorrente tem link para você conferir. Não testamos as versões pagas."
+   }
+  ],
+  "published": "2026-09-29",
+  "app": "countdown",
+  "hubTitle": "Melhores apps de contagem regressiva para iPhone (2026)",
+  "items": [
+   {
+    "name": "Countdown: Contagem regressiva",
+    "url": "https://apps.apple.com/br/app/id6799846628"
+   },
+   {
+    "name": "Countdown Star",
+    "url": "https://apps.apple.com/br/app/id576177593"
+   },
+   {
+    "name": "Widget Casal: Dias Juntos",
+    "url": "https://apps.apple.com/br/app/id1127692604"
+   },
+   {
+    "name": "Contagem Regressiva ◎",
+    "url": "https://apps.apple.com/br/app/id1403367428"
+   },
+   {
+    "name": "Big Days - Contagem Regressiva",
+    "url": "https://apps.apple.com/br/app/id940109775"
+   },
+   {
+    "name": "Countdown Buddy",
+    "url": "https://apps.apple.com/br/app/id1534850579"
+   },
+   {
+    "name": "Contagens - Tempo de Eventos",
+    "url": "https://apps.apple.com/br/app/id917514700"
+   }
+  ],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
