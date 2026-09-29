@@ -190,11 +190,6 @@ def web_tool(p, lang):
         return None
     mine = [x for x in items if x.get("app") == p["key"] and x["path"].startswith("/tools/")]
     want = "en" if lang == "en-GB" else lang
-    # 同语言只有节日倒数页时手动挑一个受众最广、有效期最长的（09-29 评审：ENEM 只对考生、11-15 就过期）。
-    # ⚠ Natal 页 12-25 后过期，届时换成 Réveillon 页
-    pick = {("countdown", "pt-BR"): "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/"}.get((p["key"], lang))
-    if pick:
-        return next(x for x in mine if x["path"] == pick)
     is_lang = lambda x, l: (x.get("lang") or "en") == l
     return (next((x for x in mine if is_lang(x, want) and x.get("kind") == "WebApplication"), None)
             or next((x for x in mine if is_lang(x, want) and want != "en"), None)

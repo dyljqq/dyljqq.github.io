@@ -2,8 +2,8 @@
  "en-US": {
   "storefront": "us",
   "name": "BeforeGo: AI Itinerary Planner",
-  "version": "1.2.0",
-  "releaseNotes": "Money and luggage now live with the trip.\n\n• Add expenses using the trip’s available currencies, choose who paid and split each bill across the people traveling\n• Photograph a receipt to fill an expense, then check every line before saving\n• Settle up shows the shortest way to clear the balances; export the whole summary or one person's bill\n• Bookings keep a price and currency, typed in or read from the confirmation, and Import from bookings in Expenses turns the priced ones into bills in one go\n• Build bags from the packing list, move items between them and plan outfits for each day\n• Photograph an item and add what BeforeGo recognizes to the packing list\n• A trip can start from a city, and bookings now include shows and events, transfers and rental cars\n• Creating a first trip no longer requires fixed dates\n• Fix anything the import got wrong before it's added — tap the dates, a place's day, or a flagged place\n• On first launch, importing a post that runs longer than your trip moves the return date out to cover every day",
+  "version": "1.2.1",
+  "releaseNotes": "Several receipts in one photo now become several bills.\n\n• Photograph a few receipts together and each one becomes its own bill; the review page shows a section per receipt with its lines\n• Scan several receipts at once: pick photos from your library or use the document camera\n• A scan fills in the shop as the merchant, and a receipt with no printed date uses the current date and time\n• Itemized bills can change their participants too\n• Live Activities follow the booking: flights, transport and stays each get their own layout, airport cities follow the app's language, and the countdown shows days, hours and minutes and updates on its own\n• Fixed: one-item receipts lost their line when reopened; VIP members could still be stopped by \"no scans left\" when scanning receipts or items; spa and massage receipts were filed as food; long receipts occasionally listed lines twice\n• Tips & how-tos moved to Settings; Undo after saving several bills works wherever you started; a new travel buddy gets an avatar nobody else has; Me in Expenses starts with your profile's illustrated avatar",
   "description": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.\n\nPACKING LIST, GENERATED\n• A destination-based packing list — plugs, currency, entry rules and transit apps for where you are going\n• Travel checklist grouped by category or by timeline\n• Packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure\n• Countdown and checklist widgets for your home screen\n• Photos and notes on any checklist item\n\nFROM A GUIDE\n• Hand it a travel guide — screenshots, pasted text or a link — and it files what it finds\n• To-dos join the packing list, places join the trip checklist, and each day joins the plan\n• Every import is listed under its trip, and any line it added can be removed\n\nTRIP CHECKLIST, ON THE ROAD\n• The places you saved become a trip checklist — spots, food and experiences to check off as you go\n• A day of stops sorts itself into the shortest walking route\n• Voice notes that transcribe themselves while you walk\n\nAFTER THE TRIP\n• Photos, notes and voice memos, kept by trip\n• A printable memories album, plus luggage tags, tickets and trip receipts\n• Forgotten items carry over, so the next packing list starts smarter\n\nPRICING\nFree to start — no ads, no account required. Premium unlocks everything; if you would rather not subscribe, a one-time lifetime purchase is available.\n\nBeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline, or government guidance; always verify important requirements with official sources before you travel.\n\n——————\nBeforeGo Premium (auto-renewing subscription)\nA subscription unlocks all premium features:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm; a one-time lifetime unlock is also available.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/39/da/c0/39dac056-926e-c1a0-de27-e29b877f822e/01-guide-2026-09-24.png/320x480bb.jpg",
@@ -29,7 +29,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/c4/8e/3fc48e70-724f-4dd8-4a90-416c562815be/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2a/b0/ba/2ab0ba70-bfaa-1cfc-a885-57d875aca4da/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -45,14 +45,14 @@
   ],
   "rating": 5,
   "ratingCount": 2,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "en-GB": {
   "storefront": "gb",
   "name": "BeforeGo: AI Itinerary Planner",
-  "version": "1.2.0",
-  "releaseNotes": "Money and luggage now live with the trip.\n\n• Add expenses using the trip’s available currencies, choose who paid and split each bill across the people travelling\n• Photograph a receipt to fill an expense, then check every line before saving\n• Settle up shows the shortest way to clear the balances; export the whole summary or one person's bill\n• Bookings keep a price and currency, typed in or read from the confirmation, and Import from bookings in Expenses turns the priced ones into bills in one go\n• Build bags from the packing list, move items between them and plan outfits for each day\n• Photograph an item and add what BeforeGo recognises to the packing list\n• A trip can start from a city, and bookings now include shows and events, transfers and rental cars\n• Creating a first trip no longer requires fixed dates\n• Fix anything the import got wrong before it's added — tap the dates, a place's day, or a flagged place\n• On first launch, importing a post that runs longer than your trip moves the return date out to cover every day",
+  "version": "1.2.1",
+  "releaseNotes": "Several receipts in one photo now become several bills.\n\n• Photograph a few receipts together and each one becomes its own bill; the review page shows a section per receipt with its lines\n• Scan several receipts at once: pick photos from your library or use the document camera\n• A scan fills in the shop as the merchant, and a receipt with no printed date uses the current date and time\n• Itemised bills can change their participants too\n• Live Activities follow the booking: flights, transport and stays each get their own layout, airport cities follow the app's language, and the countdown shows days, hours and minutes and updates on its own\n• Fixed: one-item receipts lost their line when reopened; VIP members could still be stopped by \"no scans left\" when scanning receipts or items; spa and massage receipts were filed as food; long receipts occasionally listed lines twice\n• Tips & how-tos moved to Settings; Undo after saving several bills works wherever you started; a new travel buddy gets an avatar nobody else has; Me in Expenses starts with your profile's illustrated avatar",
   "description": "Screenshot a travel post, paste a link, or just type your plans, and BeforeGo files it into a day-by-day trip plan: the places worth seeing, the to-dos before you go, and each day the post lays out. Scan a ticket or booking confirmation and it lands on the plan too. Meanwhile the packing list writes itself from your destination and dates.\n\nPACKING LIST, GENERATED\n• A destination-based packing list — plugs, currency, entry rules and transit apps for where you are going\n• Travel checklist grouped by category or by timeline\n• Packing reminders at 7 days, 3 days, 24 hours and 3 hours before departure\n• Countdown and checklist widgets for your home screen\n• Photos and notes on any checklist item\n\nFROM A GUIDE\n• Hand it a travel guide — screenshots, pasted text or a link — and it files what it finds\n• To-dos join the packing list, places join the trip checklist, and each day joins the plan\n• Every import is listed under its trip, and any line it added can be removed\n\nTRIP CHECKLIST, ON THE ROAD\n• The places you saved become a trip checklist — spots, food and experiences to check off as you go\n• A day of stops sorts itself into the shortest walking route\n• Voice notes that transcribe themselves while you walk\n\nAFTER THE TRIP\n• Photos, notes and voice memos, kept by trip\n• A printable memories album, plus luggage tags, tickets and trip receipts\n• Forgotten items carry over, so the next packing list starts smarter\n\nPRICING\nFree to start — no ads, no account required. Premium unlocks everything; if you would rather not subscribe, a one-time lifetime purchase is available.\n\nBeforeGo is made for personal travel organization. It does not replace official visa, safety, health, airline, or government guidance; always verify important requirements with official sources before you travel.\n\n——————\nBeforeGo Premium (auto-renewing subscription)\nA subscription unlocks all premium features:\n• Monthly plan — billed every 1 month\n• Yearly plan — billed every 1 year\nThe yearly plan includes a 7-day free trial for new subscribers. The exact price is shown on the purchase screen before you confirm; a one-time lifetime unlock is also available.\n\nPayment is charged to your Apple Account at confirmation of purchase. The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period. Your account is charged for renewal within 24 hours before the current period ends. You can manage or cancel your subscription anytime in your App Store account settings.\n\nTerms of Use (EULA): https://dyljqq.github.io/terms-of-use/\nPrivacy Policy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/81/3b/7a/813b7a7c-bfd8-ac76-82b4-ce443a317c5c/01-guide-2026-09-24.png/320x480bb.jpg",
@@ -78,7 +78,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4e/40/2a/4e402ab7-2c27-5a06-3d7e-6e621a99f7d7/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bc/a1/f9/bca1f9cc-b8a5-b079-086f-5813d60547ae/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -94,14 +94,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "de-DE": {
   "storefront": "de",
   "name": "BeforeGo: KI-Reiseplaner",
-  "version": "1.2.0",
-  "releaseNotes": "Geld und Gepäck gehören jetzt zur Reise.\n\n• Ausgaben in den für die Reise verfügbaren Währungen erfassen, Zahlende wählen und jede Rechnung auf die Mitreisenden verteilen\n• Einen Beleg fotografieren, um eine Ausgabe auszufüllen, und jede Zeile vor dem Speichern prüfen\n• „Abrechnen“ zeigt den kürzesten Weg zu ausgeglichenen Beträgen; exportiere die ganze Übersicht oder die Rechnung einer Person\n• Buchungen merken sich Preis und Währung – eingetippt oder aus der Bestätigung gelesen; mit „Aus Buchungen importieren“ werden alle mit Preis auf einmal zu Ausgaben\n• Koffer aus der Packliste anlegen, Dinge dazwischen verschieben und Outfits für jeden Tag planen\n• Einen Gegenstand fotografieren und das Erkannte zur Packliste hinzufügen\n• Eine Reise kann mit einer Stadt beginnen; Buchungen umfassen jetzt Shows und Events, Transfers und Mietwagen\n• Für die erste Reise sind keine festen Daten mehr nötig\n• Was der Import falsch erkannt hat, vor dem Hinzufügen korrigieren: auf die Daten, den Tag eines Ortes oder einen markierten Ort tippen\n• Beim ersten Start verlängert ein Import, der mehr Tage plant als die Reise, das Rückreisedatum, sodass jeder Tag hineinpasst",
+  "version": "1.2.1",
+  "releaseNotes": "Mehrere Belege auf einem Foto werden jetzt zu mehreren Ausgaben.\n\n• Fotografiere ein paar Belege zusammen – jeder wird zu einer eigenen Ausgabe, und die Prüfseite zeigt pro Beleg einen Abschnitt mit seinen Positionen\n• Mehrere Belege auf einmal scannen: Fotos aus der Mediathek wählen oder die Dokumentenkamera nutzen\n• Der Scan trägt das Geschäft ein, und ein Beleg ohne aufgedrucktes Datum bekommt das aktuelle Datum und die Uhrzeit\n• Auch aufgeschlüsselte Ausgaben können ihre Beteiligten ändern\n• Live-Aktivitäten folgen der Buchung: Flüge, Fahrten und Unterkünfte haben je ein eigenes Layout, Flughafenstädte folgen der Sprache der App, und der Countdown zeigt Tage, Stunden und Minuten und läuft von selbst\n• Behoben: Belege mit nur einer Position verloren sie beim erneuten Öffnen; VIP-Mitglieder konnten beim Scannen von Belegen oder Gegenständen noch an „keine Scans mehr“ hängen bleiben; Spa- und Massagebelege landeten unter Essen; lange Belege listeten gelegentlich Positionen doppelt\n• „Tipps & Anleitungen“ ist in die Einstellungen umgezogen; Rückgängig nach dem Speichern mehrerer Ausgaben funktioniert von überall; neue Mitreisende bekommen einen Avatar, den sonst niemand hat; „Ich“ in Ausgaben startet mit dem illustrierten Avatar deines Profils",
   "description": "Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tipp deine Pläne einfach ab – BeforeGo macht daraus einen Reiseplan, Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht. Scanne ein Ticket oder eine Buchungsbestätigung, und auch sie landet im Plan. Die Packliste schreibt sich derweil von selbst, passend zu Reiseziel und Reisedaten.\n\nPACKLISTE, AUTOMATISCH ERSTELLT\n• Packliste passend zum Reiseziel — Adapter, Währung, Einreise-Hinweise und Verkehrs-Apps\n• Reise-Checkliste nach Kategorie oder Zeitplan\n• Erinnerungen 7 Tage, 3 Tage, 24 Stunden und 3 Stunden vor Abreise\n• Countdown- und Checklisten-Widgets für den Homescreen\n• Fotos und Notizen an jedem Listenpunkt\n\nUNTERWEGS\n• Gespeicherte Orte werden zur Checkliste — Sehenswürdigkeiten, Essen, Erlebnisse zum Abhaken\n• Ein Tagesplan sortiert sich zur kürzesten Route\n• Sprachnotizen mit automatischer Transkription\n\nNACH DER REISE\n• Fotos, Notizen und Sprachmemos, nach Reisen geordnet\n• Druckbares Erinnerungsalbum, Kofferanhänger, Tickets und Reisebelege\n• Vergessenes wird übernommen — die nächste Packliste startet schlauer\n\nPREIS\nKostenlos starten — ohne Werbung, ohne Konto. Premium schaltet alles frei; wer kein Abo möchte, kann einmalig dauerhaft freischalten.\n\nBeforeGo dient der persönlichen Reiseorganisation und ersetzt keine offiziellen Visa-, Sicherheits-, Gesundheits- oder Airline-Informationen. Bitte prüfe wichtige Anforderungen immer bei offiziellen Stellen.\n\n——————\nBeforeGo Premium (automatisch verlängerndes Abo)\nDas Abo schaltet alle Premium-Funktionen frei:\n• Monatsabo — Abrechnung alle 1 Monat\n• Jahresabo — Abrechnung alle 1 Jahr\nDas Jahresabo enthält eine 7-tägige kostenlose Testphase für neue Abonnenten. Der genaue Preis wird vor der Bestätigung auf dem Kaufbildschirm angezeigt; ein einmaliger lebenslanger Kauf ist ebenfalls verfügbar.\n\nDie Zahlung wird bei Kaufbestätigung über dein Apple-Konto abgebucht. Das Abo verlängert sich automatisch, sofern die automatische Verlängerung nicht mindestens 24 Stunden vor Ende des aktuellen Zeitraums deaktiviert wird. Die Verlängerung wird innerhalb von 24 Stunden vor Ablauf des Zeitraums berechnet. Du kannst dein Abo jederzeit in den App-Store-Kontoeinstellungen verwalten oder kündigen.\n\nNutzungsbedingungen (EULA): https://dyljqq.github.io/terms-of-use/\nDatenschutzrichtlinie: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8c/e8/9f/8ce89f38-0958-5389-f58c-f8fc41c4dfad/01-guide.png/320x480bb.jpg",
@@ -127,7 +127,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/21/6c/fc216cf4-f546-3469-047d-f33ed746b0a8/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a0/e7/ce/a0e7ce63-b497-a358-cf96-745797aa9ac5/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -143,14 +143,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "fr-FR": {
   "storefront": "fr",
   "name": "Planificateur voyage BeforeGo",
-  "version": "1.2.0",
-  "releaseNotes": "L'argent et les bagages font maintenant partie du voyage.\n\n• Ajoutez des dépenses dans les devises disponibles pour le voyage, choisissez qui a payé et répartissez chaque note entre les voyageurs\n• Photographiez un reçu pour remplir une dépense, puis vérifiez chaque ligne avant d'enregistrer\n• Le règlement propose le chemin le plus court pour solder les comptes ; exportez le récapitulatif ou la note d'une personne\n• Les réservations gardent leur prix et leur devise, saisis ou lus sur la confirmation ; « Importer les réservations » transforme d'un coup celles qui ont un prix en dépenses\n• Créez des sacs depuis la liste, déplacez les objets et prévoyez une tenue par jour\n• Photographiez un objet et ajoutez à la liste ce que BeforeGo reconnaît\n• Un voyage peut partir d'une ville ; les réservations incluent spectacles, transferts et voitures de location\n• Le premier voyage n'exige plus de dates fixes\n• Corrigez ce que l'import a mal lu avant de l'ajouter : touchez les dates, le jour d'un lieu ou un lieu signalé\n• Au premier lancement, importer un post plus long que votre voyage repousse la date de retour pour couvrir tous les jours",
+  "version": "1.2.1",
+  "releaseNotes": "Plusieurs tickets sur une photo deviennent maintenant plusieurs dépenses.\n\n• Photographiez quelques tickets ensemble : chacun devient sa propre dépense, et la page de vérification montre une section par ticket avec ses lignes\n• Scannez plusieurs tickets d'un coup : choisissez des photos dans la photothèque ou utilisez l'appareil de numérisation de documents\n• Le scan remplit le commerce, et un ticket sans date imprimée prend la date et l'heure actuelles\n• Les dépenses détaillées peuvent aussi changer de participants\n• Les activités en direct suivent la réservation : vols, transports et hébergements ont chacun leur mise en page, les villes des aéroports suivent la langue de l'app, et le compte à rebours affiche jours, heures et minutes et avance tout seul\n• Corrigé : un ticket d'une seule ligne perdait cette ligne une fois rouvert ; les membres VIP pouvaient encore être bloqués par « plus de scans » en scannant tickets ou objets ; les tickets de spa et de massage étaient classés en repas ; les longs tickets répétaient parfois des lignes\n• Astuces & guides passe dans Réglages ; Annuler fonctionne après l'enregistrement de plusieurs dépenses, d'où que vous partiez ; un nouveau compagnon de voyage reçoit un avatar que personne n'a ; « Moi » dans Dépenses prend l'avatar illustré de votre profil",
   "description": "Faites une capture d'un post voyage, collez un lien ou tapez simplement votre programme : BeforeGo en fait un plan de voyage jour par jour, avec les lieux à voir, ce qu'il faut régler avant le départ et chaque journée prévue dans le post. Scannez un billet ou une confirmation de réservation, et elle rejoint le plan. Pendant ce temps, la liste de bagages se fait toute seule selon la destination et les dates.\n\nLISTE DE BAGAGES, GÉNÉRÉE\n• Liste adaptée à la destination — prises, monnaie, formalités d'entrée et applis de transport\n• Checklist voyage par catégorie ou par chronologie\n• Rappels à 7 jours, 3 jours, 24 h et 3 h du départ\n• Widgets compte à rebours et checklist sur l'écran d'accueil\n• Photos et notes sur chaque élément\n\nEN VOYAGE\n• Les lieux enregistrés deviennent une checklist — adresses, restaurants, expériences à cocher\n• Une journée d'étapes s'ordonne en itinéraire le plus court\n• Notes vocales transcrites automatiquement\n\nAPRÈS LE VOYAGE\n• Photos, notes et mémos vocaux, classés par voyage\n• Album souvenir imprimable, étiquettes bagage, billets et reçus de voyage\n• Les oublis sont repris — la prochaine liste démarre plus futée\n\nPRIX\nGratuit pour commencer — sans pub, sans compte. Premium débloque tout ; sans abonnement, un achat unique à vie est disponible.\n\nBeforeGo est un outil d'organisation personnelle ; il ne remplace pas les informations officielles (visa, santé, sécurité, compagnies aériennes). Vérifiez toujours les exigences importantes auprès des sources officielles.\n\n——————\nBeforeGo Premium (abonnement à renouvellement automatique)\nL'abonnement débloque toutes les fonctionnalités premium :\n• Formule mensuelle — facturée tous les 1 mois\n• Formule annuelle — facturée tous les 1 an\nL'abonnement annuel inclut un essai gratuit de 7 jours pour les nouveaux abonnés. Le prix exact est indiqué sur l'écran d'achat avant confirmation ; un achat unique à vie est également proposé.\n\nLe paiement est débité de votre compte Apple à la confirmation de l'achat. L'abonnement se renouvelle automatiquement sauf s'il est désactivé au moins 24 heures avant la fin de la période en cours. Le renouvellement est facturé dans les 24 heures précédant la fin de la période. Vous pouvez gérer ou résilier votre abonnement à tout moment dans les réglages de votre compte App Store.\n\nConditions d'utilisation (CLUF) : https://dyljqq.github.io/terms-of-use/\nPolitique de confidentialité : https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ee/ae/0e/eeae0e7e-b5ab-9ba2-9d30-f101202d5d2f/01-guide.png/320x480bb.jpg",
@@ -176,7 +176,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/35/d0/8b/35d08bb4-6c0b-b2ab-b675-10af50215e53/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/33/22/36332287-452c-7f3a-973f-b51bbcc8a88a/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -192,14 +192,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "it": {
   "storefront": "it",
   "name": "BeforeGo: Itinerari e Bagagli",
-  "version": "1.2.0",
-  "releaseNotes": "Denaro e bagagli ora fanno parte del viaggio.\n\n• Aggiungi spese nelle valute disponibili per il viaggio, scegli chi ha pagato e dividi ogni conto tra i viaggiatori\n• Fotografa uno scontrino per compilare una spesa e controlla ogni riga prima di salvare\n• Il saldo indica il modo più breve per pareggiare i conti; esporta il riepilogo o il conto di una persona\n• Le prenotazioni tengono prezzo e valuta, inseriti a mano o letti dalla conferma; con Importa dalle prenotazioni quelle con un prezzo diventano spese in un colpo solo\n• Crea valigie dalla lista, sposta gli oggetti e pianifica gli outfit per ogni giorno\n• Fotografa un oggetto e aggiungi alla lista ciò che BeforeGo riconosce\n• Un viaggio può partire da una città; le prenotazioni includono eventi, transfer e auto a noleggio\n• Il primo viaggio non richiede più date fisse\n• Correggi ciò che l'importazione ha letto male prima di aggiungerlo: tocca le date, il giorno di un luogo o un luogo segnalato\n• Al primo avvio, importare un post più lungo del viaggio sposta avanti la data di ritorno per coprire tutti i giorni",
+  "version": "1.2.1",
+  "releaseNotes": "Più scontrini in una foto ora diventano più spese.\n\n• Fotografa alcuni scontrini insieme e ognuno diventa una spesa a sé; la pagina di controllo mostra una sezione per scontrino con le sue righe\n• Scansiona più scontrini in una volta: scegli le foto dalla libreria o usa la fotocamera per documenti\n• La scansione compila il negozio, e uno scontrino senza data stampata usa la data e l'ora attuali\n• Anche le spese dettagliate possono cambiare i partecipanti\n• Le attività in tempo reale seguono la prenotazione: voli, trasporti e alloggi hanno ciascuno il proprio layout, le città degli aeroporti seguono la lingua dell'app, e il conto alla rovescia mostra giorni, ore e minuti e si aggiorna da solo\n• Corretto: gli scontrini con una sola riga la perdevano quando riaperti; i membri VIP potevano ancora essere fermati da «scansioni esaurite» scansionando scontrini o oggetti; gli scontrini di spa e massaggi finivano tra il cibo; gli scontrini lunghi a volte ripetevano delle righe\n• Consigli e guide si sposta in Impostazioni; Annulla dopo aver salvato più spese funziona da qualsiasi punto; un nuovo compagno di viaggio riceve un avatar che nessun altro ha; «Io» in Spese parte con l'avatar illustrato del tuo profilo",
   "description": "Fai uno screenshot di un post di viaggio, incolla un link o scrivi semplicemente i tuoi piani: BeforeGo li trasforma in un piano di viaggio giorno per giorno, con i luoghi da vedere, le cose da sistemare prima di partire e ogni giornata indicata nel post. Scansiona un biglietto o una conferma di prenotazione e finisce anche lei nel piano. Intanto la lista bagagli si fa da sola, in base a destinazione e date.\n\nLISTA BAGAGLI, GENERATA\n• Lista su misura per la destinazione — prese, valuta, requisiti d'ingresso e app di trasporto\n• Checklist viaggio per categoria o per cronologia\n• Promemoria a 7 giorni, 3 giorni, 24 ore e 3 ore dalla partenza\n• Widget con conto alla rovescia e checklist\n• Foto e note su ogni voce\n\nIN VIAGGIO\n• I luoghi salvati diventano una checklist — posti, cibo, esperienze da spuntare\n• Una giornata di tappe si ordina nel percorso più breve\n• Note vocali trascritte automaticamente\n\nDOPO IL VIAGGIO\n• Foto, note e memo vocali, ordinati per viaggio\n• Album dei ricordi stampabile, etichette bagaglio, biglietti e ricevute\n• Gli oggetti dimenticati si trasferiscono — la prossima lista parte più preparata\n\nPREZZO\nGratis per iniziare — senza pubblicità, senza account. Premium sblocca tutto; chi non vuole abbonarsi può acquistare una sola volta lo sblocco a vita.\n\nBeforeGo è uno strumento di organizzazione personale; non sostituisce le informazioni ufficiali su visti, salute, sicurezza o compagnie aeree. Verifica sempre i requisiti importanti presso fonti ufficiali.\n\n——————\nBeforeGo Premium (abbonamento a rinnovo automatico)\nL'abbonamento sblocca tutte le funzioni premium:\n• Piano mensile — addebito ogni 1 mese\n• Piano annuale — addebito ogni 1 anno\nIl piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. Il prezzo esatto è mostrato nella schermata di acquisto prima della conferma; è disponibile anche un acquisto singolo a vita.\n\nIl pagamento viene addebitato sul tuo account Apple alla conferma dell'acquisto. L'abbonamento si rinnova automaticamente se il rinnovo automatico non viene disattivato almeno 24 ore prima della fine del periodo in corso. L'addebito del rinnovo avviene entro 24 ore prima della fine del periodo. Puoi gestire o annullare l'abbonamento in qualsiasi momento nelle impostazioni del tuo account App Store.\n\nTermini d'uso (EULA): https://dyljqq.github.io/terms-of-use/\nInformativa sulla privacy: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6d/55/db/6d55dbbb-b4fc-0940-6bd5-6e433add760e/01-guide.png/320x480bb.jpg",
@@ -225,7 +225,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/06/71/86/06718693-d45e-b122-8d0a-1e1aea724be7/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7f/e0/7b/7fe07b28-0dad-3cc5-5239-c4b84fd6b131/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -241,14 +241,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "es-ES": {
   "storefront": "es",
   "name": "Planificador viajes BeforeGo",
-  "version": "1.2.0",
-  "releaseNotes": "El dinero y el equipaje ya forman parte del viaje.\n\n• Añade gastos en las monedas disponibles para el viaje, elige quién pagó y reparte cada cuenta entre los viajeros\n• Fotografía un recibo para rellenar un gasto y revisa cada línea antes de guardarlo\n• Ajustar cuentas muestra la forma más corta de saldar los balances; exporta el resumen completo o la cuenta de una persona\n• Las reservas guardan su precio y moneda, escritos a mano o leídos de la confirmación; con Importar de reservas, las que tienen precio pasan a gastos de una vez\n• Crea maletas desde la lista, mueve objetos entre ellas y planea conjuntos para cada día\n• Fotografía un objeto y añade a la lista lo que reconozca BeforeGo\n• Un viaje puede empezar desde una ciudad; las reservas incluyen espectáculos, traslados y coches de alquiler\n• Crear el primer viaje ya no exige fechas fijas\n• Corrige lo que la importación haya leído mal antes de añadirlo: toca las fechas, el día de un lugar o un lugar marcado\n• En el primer inicio, si importas un post con más días que tu viaje, la fecha de vuelta se amplía para que quepan todos",
+  "version": "1.2.1",
+  "releaseNotes": "Varios tickets en una foto ahora se convierten en varios gastos.\n\n• Fotografía varios tickets juntos y cada uno se convierte en su propio gasto; la página de revisión muestra una sección por ticket con sus líneas\n• Escanea varios tickets a la vez: elige fotos de tu fototeca o usa la cámara de documentos\n• El escaneo rellena la tienda, y un ticket sin fecha impresa usa la fecha y la hora actuales\n• Los gastos detallados también pueden cambiar de participantes\n• Las actividades en vivo siguen la reserva: vuelos, trayectos y alojamientos tienen cada uno su diseño, las ciudades de los aeropuertos siguen el idioma de la app, y la cuenta atrás muestra días, horas y minutos y avanza sola\n• Corregido: los tickets de una sola línea la perdían al volver a abrirlos; los miembros VIP aún podían toparse con «sin escaneos» al escanear tickets u objetos; los tickets de spa y masajes se clasificaban como comida; los tickets largos a veces repetían líneas\n• Trucos y guías pasa a Ajustes; Deshacer tras guardar varios gastos funciona desde cualquier entrada; un nuevo compañero de viaje recibe un avatar que nadie más tiene; «Yo» en Gastos empieza con el avatar ilustrado de tu perfil",
   "description": "Haz una captura de un post de viajes, pega un enlace o escribe tus planes, y BeforeGo lo ordena en un plan de viaje día a día: los lugares que merecen la pena, lo que tienes que hacer antes de salir y cada día que propone el post. Escanea un billete o una confirmación de reserva y también se añade al plan. Mientras tanto, la lista de equipaje se escribe sola según tu destino y tus fechas.\n\nQUÉ LLEVAR, GENERADO\n• Lista adaptada al destino — enchufes, moneda, requisitos de entrada y apps de transporte\n• Checklist de viaje por categoría o por cronología\n• Recordatorios 7 días, 3 días, 24 h y 3 h antes de salir\n• Widgets de cuenta regresiva y checklist\n• Fotos y notas en cada elemento\n\nDURANTE EL VIAJE\n• Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar\n• Un día de paradas se ordena en la ruta más corta\n• Notas de voz transcritas automáticamente\n\nDESPUÉS DEL VIAJE\n• Fotos, notas y notas de voz, ordenadas por viaje\n• Álbum de recuerdos imprimible, etiquetas de maleta, boletos y recibos\n• Lo olvidado pasa a la próxima lista\n\nPRECIO\nEmpieza gratis — sin anuncios, sin cuenta. Premium desbloquea todo; si prefieres no suscribirte, hay una compra única de por vida.\n\nBeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad o aerolíneas. Verifica siempre los requisitos importantes en fuentes oficiales.\n\n——————\nBeforeGo Premium (suscripción con renovación automática)\nLa suscripción desbloquea todas las funciones premium:\n• Plan mensual — se factura cada 1 mes\n• Plan anual — se factura cada 1 año\nEl plan anual incluye 7 días de prueba gratis para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar; también hay un desbloqueo vitalicio de pago único.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que desactives la renovación automática al menos 24 horas antes del final del período actual. El cargo por renovación se realiza dentro de las 24 horas previas al final del período. Puedes gestionar o cancelar tu suscripción en los ajustes de tu cuenta del App Store.\n\nCondiciones de uso (EULA): https://dyljqq.github.io/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/d2/0b/62d20b48-7646-67b3-226b-014e5a6d4434/01-guide.png/320x480bb.jpg",
@@ -274,7 +274,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/77/e6/a6/77e6a604-d266-9b65-d773-6098583d5c29/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/09/1b/75/091b7597-3d25-e493-d940-13b412b4bbbd/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -290,14 +290,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "es-MX": {
   "storefront": "mx",
   "name": "Planificador viajes BeforeGo",
-  "version": "1.2.0",
-  "releaseNotes": "El dinero y el equipaje ya forman parte del viaje.\n\n• Agrega gastos en las monedas disponibles para el viaje, elige quién pagó y divide cada cuenta entre los viajeros\n• Fotografía un recibo para llenar un gasto y revisa cada línea antes de guardarlo\n• Ajustar cuentas muestra la forma más corta de saldar los balances; exporta el resumen completo o la cuenta de una persona\n• Las reservaciones guardan su precio y moneda, escritos a mano o leídos de la confirmación; con Importar de reservas, las que tienen precio pasan a gastos de una vez\n• Crea maletas desde la lista, mueve objetos entre ellas y planea atuendos para cada día\n• Fotografía un objeto y agrega a la lista lo que reconozca BeforeGo\n• Un viaje puede empezar desde una ciudad; las reservaciones incluyen eventos, traslados y autos de alquiler\n• Crear el primer viaje ya no exige fechas fijas\n• Corrige lo que la importación haya leído mal antes de agregarlo: toca las fechas, el día de un lugar o un lugar marcado\n• En el primer inicio, si importas un post con más días que tu viaje, la fecha de regreso se extiende para que quepan todos",
+  "version": "1.2.1",
+  "releaseNotes": "Varios recibos en una foto ahora se convierten en varios gastos.\n\n• Fotografía varios recibos juntos y cada uno se convierte en su propio gasto; la página de revisión muestra una sección por recibo con sus líneas\n• Escanea varios recibos a la vez: elige fotos de tu fototeca o usa la cámara de documentos\n• El escaneo llena la tienda, y un recibo sin fecha impresa usa la fecha y la hora actuales\n• Los gastos detallados también pueden cambiar de participantes\n• Las actividades en vivo siguen la reservación: vuelos, traslados y hospedajes tienen cada uno su diseño, las ciudades de los aeropuertos siguen el idioma de la app, y la cuenta regresiva muestra días, horas y minutos y avanza sola\n• Corregido: los recibos de una sola línea la perdían al volver a abrirlos; los miembros VIP aún podían toparse con «sin escaneos» al escanear recibos u objetos; los recibos de spa y masajes se clasificaban como comida; los recibos largos a veces repetían líneas\n• Trucos y guías pasa a Ajustes; Deshacer después de guardar varios gastos funciona desde cualquier entrada; un nuevo compañero de viaje recibe un avatar que nadie más tiene; «Yo» en Gastos empieza con el avatar ilustrado de tu perfil",
   "description": "Toma captura de un post de viajes, pega un link o escribe tus planes, y BeforeGo lo acomoda en un plan de viaje día por día: los lugares que valen la pena, los pendientes antes de salir y cada día que propone el post. Escanea un boleto o una confirmación de reservación y también se agrega al plan. Mientras tanto, la lista de equipaje se arma sola según tu destino y tus fechas.\n\nQUÉ LLEVAR, GENERADO\n• Lista adaptada al destino — enchufes, moneda, requisitos de entrada y apps de transporte\n• Checklist de viaje por categoría o por cronología\n• Recordatorios 7 días, 3 días, 24 h y 3 h antes de salir\n• Widgets de cuenta regresiva y checklist\n• Fotos y notas en cada elemento\n\nDURANTE EL VIAJE\n• Los lugares guardados se vuelven checklist — sitios, comida y experiencias para marcar\n• Un día de paradas se ordena en la ruta más corta\n• Notas de voz transcritas automáticamente\n\nDESPUÉS DEL VIAJE\n• Fotos, notas y notas de voz, ordenadas por viaje\n• Álbum de recuerdos imprimible, etiquetas de maleta, boletos y recibos\n• Lo olvidado pasa a la próxima lista\n\nPRECIO\nEmpieza gratis — sin anuncios, sin cuenta. Premium desbloquea todo; si prefieres no suscribirte, hay una compra única de por vida.\n\nBeforeGo es para organización personal de viajes; no sustituye información oficial de visados, salud, seguridad o aerolíneas. Verifica siempre los requisitos importantes en fuentes oficiales.\n\n——————\nBeforeGo Premium (suscripción con renovación automática)\nLa suscripción desbloquea todas las funciones premium:\n• Plan mensual — se factura cada 1 mes\n• Plan anual — se factura cada 1 año\nEl plan anual incluye 7 días de prueba gratis para nuevos suscriptores. El precio exacto se muestra en la pantalla de compra antes de confirmar; también hay un desbloqueo vitalicio de pago único.\n\nEl pago se carga a tu cuenta de Apple al confirmar la compra. La suscripción se renueva automáticamente salvo que desactives la renovación automática al menos 24 horas antes del final del período actual. El cargo por renovación se realiza dentro de las 24 horas previas al final del período. Puedes gestionar o cancelar tu suscripción en los ajustes de tu cuenta del App Store.\n\nCondiciones de uso (EULA): https://dyljqq.github.io/terms-of-use/\nPolítica de privacidad: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/eb/47/c0/eb47c0bd-3035-7a13-6ee8-5edcbb179a1b/01-guide.png/320x480bb.jpg",
@@ -323,7 +323,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/81/a1/e8/81a1e8ea-03c6-855b-8df9-5b69d7b6384b/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/6a/63/d96a6320-80bb-be00-51a5-6131e60f5a76/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -339,7 +339,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "pt-BR": {
@@ -388,14 +388,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "ja": {
   "storefront": "jp",
   "name": "BeforeGo：AI旅行計画・旅行チェックリスト",
-  "version": "1.2.0",
-  "releaseNotes": "旅のお金と荷物をまとめて管理できるようになりました。\n\n• 旅行で利用できる通貨で支出を追加し、支払った人を選び、旅行者ごとに分担できます\n• レシートを撮って支出を入力し、保存前に明細を確認できます\n• 精算では残高を解消する最短の支払いを表示。全体の概要や一人分の明細を書き出せます\n• 予約に金額と通貨を記録できます（手入力、または予約確認から読み取り）。「予約から取り込む」で、金額のある予約をまとめて支出にできます\n• 持ち物リストからバッグを作り、物を移動し、日ごとのコーデを計画できます\n• 目の前の物を撮り、BeforeGoが認識した物を持ち物リストへ追加できます\n• 都市から旅行を始められ、予約に公演・イベント、送迎、レンタカーが加わりました\n• 最初の旅行は日程が未定でも作成できます\n• 取り込んだ内容は追加する前に直せます。日程、スポットの日にち、要確認のスポットをタップするだけです\n• 初回起動時に旅行より日数の多い投稿を取り込むと、すべての日が収まるよう帰りの日が延びます",
+  "version": "1.2.1",
+  "releaseNotes": "1枚の写真に写った複数のレシートが、それぞれの支出になりました。\n\n• 何枚かのレシートをまとめて撮ると、1枚ずつ別の支出になります。確認ページはレシートごとに区切られ、明細も表示されます\n• 複数のレシートを一度に読み取り：写真ライブラリから選ぶか、書類カメラで撮影\n• 読み取るとお店が入力され、日付が印字されていないレシートは現在の日時になります\n• 明細ごとの支出でも参加者をまとめて変更できます\n• ライブアクティビティが予約に合わせて表示：フライト・移動・宿泊それぞれのレイアウト、空港の都市名はアプリの言語で、カウントダウンは日・時間・分で自動的に進みます\n• 修正：明細が1行のレシートを開き直すと明細が消える問題、VIP でもレシートや持ち物の読み取りが「回数切れ」で止まることがある問題、スパやマッサージのレシートが飲食に分類される問題、長いレシートで明細がまれに重複する問題\n• 「使い方のヒント」を設定へ移動、複数の支出を保存した後の「元に戻す」がどこから開いても使えるように、新しい旅の仲間には誰とも重ならないアバター、支出の「自分」はプロフィールのイラストアバターから始まります",
   "description": "旅の投稿をスクショしたり、リンクを貼ったり、予定を打ち込んだりするだけで、BeforeGo が日ごとの旅行プランにまとめます。行きたい場所、出発前にやること、投稿に書かれた一日ごとの流れまで。航空券や予約確認をスキャンすればプランに加わり、持ち物リストは行き先と日程から自動で作られます。\n\n持ち物リスト、自動作成\n• 目的地に合わせたリスト——プラグ、通貨、入国準備、交通アプリ\n• カテゴリー別・タイムライン別のチェックリスト\n• 出発 7日前・3日前・24時間前・3時間前のリマインド\n• カウントダウンとチェックリストのウィジェット\n• 項目ごとに写真とメモ\n\n旅行中\n• 保存したスポットがチェックリストに——名所、グルメ、体験をひとつずつ\n• 1日の予定が最短ルートに並び替え\n• 音声メモは自動で文字起こし\n\n旅のあと\n• 写真・メモ・音声を旅ごとに整理\n• 印刷できる旅日記アルバム、ラゲッジタグ、チケット、旅の記録\n• 忘れ物は次の持ち物リストへ自動引き継ぎ\n\n価格\n無料で開始——広告なし、アカウント不要。プレミアムで全機能を解放。サブスクが苦手な方には買い切りもあります。\n\nBeforeGo は個人の旅行整理のためのアプリです。ビザ・安全・健康・航空会社・政府の公式情報の代わりにはなりません。重要な要件は必ず公式情報でご確認ください。\n\n——————\nBeforeGo Premium（自動更新サブスクリプション）\nサブスクリプションですべてのプレミアム機能を利用できます：\n• 月額プラン——1か月ごとに課金\n• 年額プラン——1年ごとに課金\n年間プランには新規のお客様向けの7日間無料トライアルが付いています。正確な価格は購入確認画面に表示されます。買い切りの永久アンロックもご用意しています。\n\nお支払いは購入確定時にApple アカウントへ請求されます。現在の期間終了の24時間前までに自動更新をオフにしない限り、サブスクリプションは自動的に更新されます。更新料は期間終了前の24時間以内に請求されます。購入後はApp Storeのアカウント設定でいつでも管理・解約できます。\n\n利用規約（EULA）：https://dyljqq.github.io/terms-of-use/\nプライバシーポリシー：https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/67/64/86/6764864f-ef46-8d51-0668-628aa5acff61/01-guide.png/320x480bb.jpg",
@@ -420,7 +420,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1b/08/aa/1b08aaec-7313-8861-2f18-fe8b65cebf90/08-tag.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ac/da/cc/acdacceb-5f8c-9bf4-db90-069e6c5f6027/09-brand.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -436,14 +436,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "ko": {
   "storefront": "kr",
   "name": "BeforeGo: AI 여행 플래너·패킹리스트",
-  "version": "1.2.0",
-  "releaseNotes": "여행 경비와 짐을 한곳에서 관리할 수 있어요.\n\n• 여행에서 사용할 수 있는 통화로 경비를 추가하고, 결제한 사람을 고른 뒤 여행자별로 나눌 수 있어요\n• 영수증을 찍어 경비를 채우고 저장 전에 모든 항목을 확인하세요\n• 정산은 잔액을 없애는 가장 짧은 송금 방법을 보여 줍니다. 전체 요약이나 한 사람의 내역을 내보낼 수 있어요\n• 예약에 금액과 통화를 기록할 수 있어요(직접 입력하거나 예약 확인에서 읽어 와요). '예약에서 가져오기'로 금액이 있는 예약을 한 번에 경비로 만들 수 있어요\n• 패킹리스트에서 가방을 만들고, 물건을 옮기고, 날짜별 옷차림을 계획하세요\n• 물건을 찍고 BeforeGo가 알아본 항목을 패킹리스트에 추가하세요\n• 도시에서 여행을 시작할 수 있고 예약에 공연·이벤트, 픽업, 렌터카가 추가됐어요\n• 첫 여행은 날짜가 정해지지 않아도 만들 수 있어요\n• 가져온 내용이 틀렸다면 추가하기 전에 고치세요. 날짜, 장소의 일차, 확인이 필요한 장소를 탭하면 돼요\n• 첫 실행 때 여행보다 일정이 긴 게시물을 가져오면, 모든 날이 들어가도록 돌아오는 날이 늘어나요",
+  "version": "1.2.1",
+  "releaseNotes": "사진 한 장에 찍힌 여러 영수증이 이제 각각의 지출이 돼요.\n\n• 영수증 몇 장을 함께 찍으면 한 장씩 따로 지출이 되고, 확인 페이지에서 영수증별 구역과 항목을 볼 수 있어요\n• 여러 영수증을 한 번에 스캔: 사진 보관함에서 고르거나 문서 카메라를 사용하세요\n• 스캔하면 가게가 채워지고, 날짜가 인쇄되지 않은 영수증은 현재 날짜와 시간을 써요\n• 항목별 지출도 참여자를 바꿀 수 있어요\n• 라이브 액티비티가 예약에 맞춰 표시돼요: 항공편, 교통, 숙소마다 레이아웃이 다르고, 공항 도시 이름은 앱 언어를 따르며, 카운트다운은 일·시간·분으로 저절로 줄어들어요\n• 수정: 항목이 하나인 영수증을 다시 열면 항목이 사라지던 문제, VIP인데도 영수증·물건 스캔이 '스캔 횟수 소진'으로 막히던 문제, 스파·마사지 영수증이 식비로 분류되던 문제, 긴 영수증에서 가끔 항목이 두 번 나오던 문제\n• '사용 팁'이 설정으로 옮겨졌어요. 지출 여러 건을 저장한 뒤 실행 취소는 어디서 시작했든 돼요. 새 여행 일행은 아무도 쓰지 않은 아바타를 받고, 지출의 '나'는 프로필 일러스트 아바타로 시작해요",
   "description": "여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 가 볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어가고, 패킹리스트는 목적지와 날짜에 맞춰 알아서 만들어집니다.\n\n패킹리스트 자동 생성\n• 목적지 맞춤 준비물 리스트 — 플러그, 환전, 입국 준비, 교통 앱\n• 카테고리별·타임라인별 체크리스트\n• 출발 7일·3일·24시간·3시간 전 알림\n• 홈 화면 카운트다운·체크리스트 위젯\n• 항목마다 사진과 메모 추가\n\n여행 중\n• 저장한 장소가 체크리스트로 — 명소, 맛집, 체험을 하나씩 완료\n• 하루 일정이 최단 도보 동선으로 정렬\n• 음성 메모 자동 텍스트 변환\n\n여행 후\n• 사진·메모·음성, 여행별로 정리\n• 인쇄 가능한 추억 앨범, 러기지 태그, 티켓, 여행 영수증\n• 잊었던 물건은 다음 여행 리스트로 자동 이월\n\n가격\n무료로 시작 — 광고 없음, 계정 불필요. 프리미엄으로 모든 기능을 열 수 있고, 구독을 원하지 않으면 평생 이용권을 한 번만 구매할 수 있습니다.\n\nBeforeGo는 개인 여행 준비용 도구이며 비자·안전·건강·항공사 등 공식 안내를 대체하지 않습니다. 중요한 요건은 반드시 공식 출처에서 확인하세요.\n\n——————\nBeforeGo Premium(자동 갱신 구독)\n구독하면 모든 프리미엄 기능을 사용할 수 있습니다:\n• 월간 플랜 — 1개월마다 결제\n• 연간 플랜 — 1년마다 결제\n연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. 정확한 가격은 구매 확인 화면에 표시되며, 일회성 평생 이용권도 제공됩니다.\n\n결제는 구매 확정 시 Apple 계정으로 청구됩니다. 현재 기간 종료 최소 24시간 전에 자동 갱신을 끄지 않으면 구독이 자동으로 갱신됩니다. 갱신 요금은 현재 기간 종료 전 24시간 이내에 청구됩니다. 구매 후 App Store 계정 설정에서 언제든지 관리하거나 해지할 수 있습니다.\n\n이용약관(EULA): https://dyljqq.github.io/terms-of-use/\n개인정보 처리방침: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/3f/d1/60/3fd160bb-3aa3-4641-07d8-42e40b514ec2/01-guide.png/320x480bb.jpg",
@@ -469,7 +469,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7c/39/29/7c39291b-c3da-97cc-e477-7c6fafe743cc/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/89/29/f5/8929f5ab-b2b4-9507-4fe2-94ecf4469708/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -485,14 +485,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "zh-Hans": {
   "storefront": "cn",
   "name": "BeforeGo：AI行程规划·出国清单",
-  "version": "1.2.0",
-  "releaseNotes": "账单和行李箱，现在都在行程里了。\n\n• 用行程可选币种记账，选择谁付款，并把每笔账按同行人拆分\n• 拍下小票自动填写账单，保存前逐行确认\n• 「结清」会算出最少的转账方式；可以导出整趟归总，也可以导出某个人的账单\n• 预订可以记下价格和币种（手动填写，或从订单确认里读出）；在账单里点「从预订导入」，有价格的预订一次变成账单\n• 从清单新建行李箱，在箱子间移动物品，并安排每天的穿搭\n• 拍下眼前的物品，把 BeforeGo 认出的东西加进打包清单\n• 行程可以从城市开始；预订新增演出、接送和租车\n• 第一次创建行程时，日期可以先不定\n• 导入的内容加入前可以改错：点顶部日期、地点排在第几天，或被标出的地点\n• 首次启动时导入比行程更长的攻略，返程日期会自动延后，盖住攻略的每一天",
+  "version": "1.2.1",
+  "releaseNotes": "一张照片里的几张小票，现在会拆成几笔账单。\n\n• 几张小票拍在一张照片里，每张各成一笔账单；核对页按小票分区，每区列出明细\n• 一次扫多张：从相册多选，或用文档相机连拍\n• 扫描自动填好商家；小票没印日期时，用当前的日期和时间\n• 按明细分摊的账单也能统一改参与人员\n• 实时活动按预订类型显示：航班、交通、住宿各有各的样式；机场城市名跟随 App 语言；倒计时只到天、小时、分钟，会自己走\n• 修复：只有一项的小票重新打开后明细不见；开了 VIP 扫小票和拍照识物仍可能被「次数用完」拦住；spa、按摩小票被归成餐饮；长小票偶尔把明细读重复\n• 其它：「使用技巧」挪到设置页；一次保存多笔账单后，从哪个入口进来都能撤销；新旅伴默认给一个没人用过的头像；账单里的「我」默认用个人页的插画头像",
   "description": "截图一篇攻略、贴一个链接，或者随手打几句计划，BeforeGo 帮你整理成按天的行程：值得去的地方、出发前要办的事，还有攻略里每一天的安排。机票或订单确认一扫就进行程，行李清单按目的地和日期自动生成。\n\n行前\n• 按目的地生成打包清单——插座、货币、入境准备、当地 App\n• 分类与时间线两种视图,出发前 7 天/3 天/24 小时/3 小时提醒\n• 倒计时与清单小组件,每个条目可加照片和备注\n\n旅途中\n• 存下的地点变成打卡清单——景点、美食、体验逐个完成\n• 一天的行程自动排成最短步行路线\n• 语音随手记,自动转文字\n\n行后\n• 照片、笔记、语音按旅程归档\n• 可打印的回忆相册、行李吊牌、票根与旅行小票\n• 忘带的东西自动带入下一次清单\n\n价格\n免费开始——无广告、无需账号。高级版解锁全部功能;不想订阅,可一次性买断。\n\nBeforeGo 用于个人旅行整理,不能替代签证、安全、健康、航司或政府的官方信息;重要要求请以官方渠道为准。\n\n——————\nBeforeGo Premium 高级订阅（自动续订）\n订阅可解锁全部高级功能：\n• 月度订阅——每 1 个月计费一次\n• 年度订阅——每 1 年计费一次\n年度订阅为新用户提供 7 天免费试用。具体价格会在购买页确认前显示；另提供一次性永久解锁。\n\n购买确认时将通过你的 Apple 账户付款。订阅会自动续订，除非在当前周期结束前至少 24 小时关闭自动续订。系统会在当前周期结束前 24 小时内扣款续订。你可随时在 App Store 账户设置中管理或取消订阅。\n\n服务条款（EULA）：https://dyljqq.github.io/terms-of-use/\n隐私政策：https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/29/f4/59/29f45982-215f-5832-62f2-6aa335c8c73e/01-guide.png/320x480bb.jpg",
@@ -517,7 +517,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/15/65/8d156552-9e84-1ba3-70a5-eae7e434f994/08-tag.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c6/45/1d/c6451da4-3148-f1b4-4808-502e80a542e7/09-brand.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -533,7 +533,7 @@
   ],
   "rating": 4,
   "ratingCount": 4,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "zh-Hant": {
@@ -582,14 +582,14 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  },
  "th": {
   "storefront": "th",
   "name": "BeforeGo: วางแผนเที่ยวด้วย AI",
-  "version": "1.2.0",
-  "releaseNotes": "จัดการค่าใช้จ่ายและสัมภาระไว้ในทริปเดียวกันได้แล้ว\n\n• เพิ่มค่าใช้จ่ายในสกุลเงินที่ใช้ได้สำหรับทริป เลือกคนจ่าย และแบ่งแต่ละบิลระหว่างผู้เดินทาง\n• ถ่ายรูปใบเสร็จเพื่อกรอกค่าใช้จ่าย แล้วตรวจทุกรายการก่อนบันทึก\n• สรุปหนี้จะแสดงวิธีชำระที่สั้นที่สุด ส่งออกได้ทั้งภาพรวมและบิลของแต่ละคน\n• การจองเก็บราคาและสกุลเงินได้ พิมพ์เองหรืออ่านจากใบยืนยัน แล้วใช้ นำเข้าจากการจอง เพื่อเปลี่ยนการจองที่มีราคาเป็นค่าใช้จ่ายได้ในครั้งเดียว\n• สร้างกระเป๋าจากลิสต์ ย้ายของระหว่างกระเป๋า และวางชุดสำหรับแต่ละวัน\n• ถ่ายรูปสิ่งของแล้วเพิ่มสิ่งที่ BeforeGo จำได้ลงในลิสต์จัดกระเป๋า\n• เริ่มทริปจากเมืองได้ และการจองรองรับงานแสดง รถรับส่ง และรถเช่า\n• สร้างทริปแรกได้แม้ยังไม่ได้กำหนดวัน\n• แก้สิ่งที่นำเข้าผิดได้ก่อนเพิ่ม แตะวันที่ วันของสถานที่ หรือสถานที่ที่ถูกทำเครื่องหมาย\n• ตอนเปิดแอปครั้งแรก ถ้านำเข้าโพสต์ที่มีจำนวนวันมากกว่าทริป วันกลับจะเลื่อนออกไปให้ครอบคลุมทุกวัน",
+  "version": "1.2.1",
+  "releaseNotes": "ใบเสร็จหลายใบในรูปเดียว ตอนนี้แยกเป็นหลายบิลได้แล้ว\n\n• ถ่ายใบเสร็จหลายใบรวมกัน แต่ละใบจะเป็นบิลของตัวเอง หน้าตรวจสอบแบ่งส่วนตามใบเสร็จพร้อมรายการ\n• สแกนใบเสร็จหลายใบพร้อมกัน: เลือกรูปจากคลังภาพ หรือใช้กล้องสแกนเอกสาร\n• การสแกนกรอกชื่อร้านให้ และใบเสร็จที่ไม่ได้พิมพ์วันที่จะใช้วันและเวลาปัจจุบัน\n• บิลที่แยกตามรายการก็เปลี่ยนผู้ร่วมจ่ายได้แล้ว\n• Live Activity แสดงตามการจอง: เที่ยวบิน การเดินทาง และที่พัก มีเลย์เอาต์ของตัวเอง ชื่อเมืองของสนามบินตามภาษาของแอป และนับถอยหลังเป็นวัน ชั่วโมง นาที เดินไปเอง\n• แก้ไข: ใบเสร็จรายการเดียวเปิดใหม่แล้วรายการหาย, สมาชิก VIP ยังถูกขวางด้วย \"สแกนหมดแล้ว\" ตอนสแกนใบเสร็จหรือสิ่งของ, ใบเสร็จสปาและนวดถูกจัดเป็นอาหาร, ใบเสร็จยาวบางครั้งมีรายการซ้ำ\n• เคล็ดลับการใช้งาน ย้ายไปอยู่ในการตั้งค่า, เลิกทำหลังบันทึกหลายบิลใช้ได้ไม่ว่าจะเริ่มจากตรงไหน, เพื่อนร่วมทริปคนใหม่ได้อวตารที่ไม่ซ้ำใคร, \"ฉัน\" ในค่าใช้จ่ายเริ่มด้วยอวตารภาพวาดจากโปรไฟล์",
   "description": "แคปโพสต์เที่ยว วางลิงก์ หรือพิมพ์แผนของคุณ แล้ว BeforeGo จะจัดให้เป็นแผนเที่ยวรายวัน ทั้งสถานที่ที่น่าไป สิ่งที่ต้องทำก่อนออกเดินทาง และแต่ละวันตามที่โพสต์วางไว้ สแกนตั๋วหรือใบยืนยันการจองก็เพิ่มลงในแผนได้เลย ส่วนลิสต์จัดกระเป๋าจะสร้างให้เองตามจุดหมายและวันเดินทาง\n\nเตรียมของก่อนเดินทาง\n• ลิสต์ตามจุดหมาย — ปลั๊ก สกุลเงิน การเตรียมเข้าเมือง แอปเดินทาง\n• เช็กลิสต์แบบหมวดหมู่หรือไทม์ไลน์\n• แจ้งเตือนล่วงหน้า 7 วัน 3 วัน 24 ชม. และ 3 ชม.\n• วิดเจ็ตนับถอยหลังและเช็กลิสต์\n• เพิ่มรูปและโน้ตในแต่ละรายการ\n\nระหว่างทริป\n• ที่ที่บันทึกไว้กลายเป็นเช็กลิสต์ — ที่เที่ยว ของกิน ประสบการณ์\n• แผนหนึ่งวันจัดเรียงเป็นเส้นทางเดินที่สั้นที่สุด\n• โน้ตเสียงถอดเป็นข้อความอัตโนมัติ\n\nหลังทริป\n• รูป โน้ต และเสียง จัดเก็บตามทริป\n• อัลบั้มความทรงจำพิมพ์ได้ ป้ายกระเป๋า ตั๋ว และใบเสร็จทริป\n• ของที่ลืมจะถูกส่งต่อไปยังลิสต์ครั้งหน้า\n\nราคา\nเริ่มใช้ฟรี — ไม่มีโฆษณา ไม่ต้องสมัครบัญชี พรีเมียมปลดล็อกทุกฟีเจอร์ หรือซื้อครั้งเดียวใช้ตลอดหากไม่ต้องการสมัครสมาชิก\n\nBeforeGo ใช้สำหรับจัดระเบียบการเดินทางส่วนตัว ไม่แทนข้อมูลทางการเรื่องวีซ่า สุขภาพ ความปลอดภัย หรือสายการบิน โปรดตรวจสอบข้อกำหนดสำคัญจากแหล่งทางการเสมอ\n\n——————\nBeforeGo Premium (การสมัครสมาชิกแบบต่ออายุอัตโนมัติ)\nการสมัครสมาชิกจะปลดล็อกฟีเจอร์พรีเมียมทั้งหมด:\n• แผนรายเดือน — เรียกเก็บเงินทุก 1 เดือน\n• แผนรายปี — เรียกเก็บเงินทุก 1 ปี\nแผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ ราคาจะแสดงในหน้าชำระเงินก่อนยืนยัน และมีตัวเลือกซื้อขาดแบบใช้ได้ตลอดชีพด้วย\n\nระบบจะเรียกเก็บเงินผ่านบัญชี Apple ของคุณเมื่อยืนยันการซื้อ การสมัครสมาชิกจะต่ออายุอัตโนมัติ เว้นแต่จะปิดการต่ออายุอัตโนมัติอย่างน้อย 24 ชั่วโมงก่อนสิ้นสุดรอบปัจจุบัน ระบบจะเรียกเก็บค่าต่ออายุภายใน 24 ชั่วโมงก่อนสิ้นสุดรอบ คุณสามารถจัดการหรือยกเลิกการสมัครได้ทุกเมื่อในการตั้งค่าบัญชี App Store\n\nข้อกำหนดการใช้งาน (EULA): https://dyljqq.github.io/terms-of-use/\nนโยบายความเป็นส่วนตัว: https://dyljqq.github.io/privacy-policy/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/7c/bc/7f7cbcce-a629-e9d0-b787-9b3ff1ba44f3/01-guide.png/320x480bb.jpg",
@@ -615,7 +615,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9e/c7/bb/9ec7bb6e-87cb-1735-a406-ea070a32f313/09-album.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0f/47/50/0f4750e4-cd4f-e7e1-2642-925b8913a41a/10-tag.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/0d/bc/560dbc40-004e-b6c9-7045-235e868059cc/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",
@@ -631,7 +631,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-09-28",
+  "fetched": "2026-09-29",
   "screenshotsFrom": "ASC 1.2.0 iPhone 6.7（用户 09-26 指定；1.2.0 未上线）"
  }
 }

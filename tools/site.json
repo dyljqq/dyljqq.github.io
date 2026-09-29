@@ -1281,8 +1281,8 @@
         }
       ],
       "whatsNew": {
-        "version": "1.1.19",
-        "text": "• Dein erstes Dokument kann eine Rechnung, ein Angebot oder ein Lieferschein sein – du wählst es in der Checkliste, die vor der Vorschau jetzt auch nach deinem Firmennamen fragt, damit nichts als „My Business“ hinausgeht.\n• Behoben: Eine Position mit „Keine Steuer“ bleibt jetzt wirklich steuerfrei; „Satz des Dokuments“ folgt der Steuer des Dokuments.\n• Geteilte PDFs tragen einen klaren Namen – Art, Nummer und Kunde –, und beim Teilen über Nachrichten oder Mail kommt eine kurze Notiz mit.\n• Das Beispiel in der Einführung zeigt deine Währung und Sprache.\n• Aufgeräumtere Darstellung in allen Sprachen: Die Chips am Fuß des Blatts bleiben in einer Zeile, und die Vorschau hat eine Senden-Schaltfläche über einer Reihe von Aktionen."
+        "version": "1.1.20",
+        "text": "• Die Checkliste für dein erstes Dokument richtet sich nach dir: Ein Schritt ist abgehakt, sobald du sein Fenster schließt – das Beispiel musst du dafür nicht ändern –, und das Öffnen des Sendefensters hakt den letzten Schritt ab.\n• Behoben: Ein aus der Vorschau gesendetes Dokument springt nicht mehr auf „Noch nicht gesendet“ zurück, wenn du danach im Editor etwas änderst."
       }
     },
     {

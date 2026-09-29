@@ -496,11 +496,17 @@ def product_options(app):
 TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}
 ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español"}
 HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español"}
+# 同一个工具的不同语言版本：互为 hreflang（x-default 指英文），页头语言菜单互链（09-29 评审：两个计算器各写「只有本语言」）
+TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/"}]
+def tool_pair(url):
+    return next((p for p in TOOL_PAIRS if url in p.values()), None)
 
 def tool_options(tp):
     """返回 (options, extra)。目录页互为语言版本；单语言工具页只列自己，另一种语言的目录放 extra。"""
     if tp["path"] in TOOL_HUBS.values():
         return list(TOOL_HUBS.items()), None
+    if tool_pair(tp["path"]):
+        return list(tool_pair(tp["path"]).items()), None
     extra = [(l, p, HUB_LABEL[l]) for l, p in TOOL_HUBS.items() if l != tp["lang"]]
     return [(tp["lang"], tp["path"])], {"note": ONLY_IN.get(tp["lang"], ""), "links": extra}
 
@@ -637,9 +643,9 @@ WEB_FIRST = {
     "en": [("/tools/days-until/", "Type a date, get the days and weeks left."),
            ("/tools/invoice-template/", "Fill it in on the page, then print or save as PDF."),
            ("/tools/packing-list/", "A checklist for your trip type and length.")],
-    "pt-BR": [("/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "Contagem ao vivo até 25 de dezembro."),
-              ("/tools/pt-br/contagem-regressiva-black-friday-2026/", "Contagem ao vivo até 27 de novembro."),
-              ("/tools/pt-br/dias-para-o-enem-2026/", "Contagem até as provas de 8 e 15 de novembro.")],
+    "pt-BR": [("/tools/pt-br/quantos-dias-faltam/", "Dias até qualquer data, ou desde uma data."),
+              ("/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "Contagem ao vivo até 25 de dezembro."),
+              ("/tools/pt-br/contagem-regressiva-black-friday-2026/", "Contagem ao vivo até 27 de novembro.")],
     "es-MX": [("/tools/es-mx/formato-de-cotizacion/", "Llénalo en línea, el IVA se calcula solo; imprímelo o guárdalo en PDF."),
               ("/tools/es-mx/nota-de-venta/", "Folio, cliente y conceptos; imprímela o guárdala en PDF.")],
 }
@@ -813,8 +819,9 @@ def apply_site_footer(page, rel):
 def tool_head(tp):
     url, lang = tp["path"], tp["lang"]; canonical = f"{ORIGIN}{url}"
     title, desc = tp["title"], meta_desc(tp["description"]); img = asset(HOME["ogImage"])
-    hub_alts = [f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">' for l, p in TOOL_HUBS.items()] + \
-               [f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}/tools/">'] if url in TOOL_HUBS.values() else []
+    group = TOOL_HUBS if url in TOOL_HUBS.values() else tool_pair(url)
+    hub_alts = [f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">' for l, p in group.items()] + \
+               [f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{group["en"]}">'] if group else []
     lines = [START, '<meta name="description" content="%s">' % esc(desc), f'<link rel="canonical" href="{canonical}">',
              '<meta property="og:type" content="%s">' % ("article" if tp["kind"] == "Article" else "website"),
              '<meta property="og:site_name" content="%s">' % esc(BRAND), '<meta property="og:title" content="%s">' % esc(title),

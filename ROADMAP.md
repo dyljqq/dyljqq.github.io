@@ -117,6 +117,10 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 2. ✅ **pt-BR Natal 2026** 倒数页（09-28 提前上线）。
 3. **pt-BR 场景页 3 个**，标题直接对准联想词：「contagem regressiva para aniversário / casamento / viagem」+ 小组件步骤；en 版同批。原计划的 6 个里其余 3 个（baby / retirement / exam）等首批有展示再做。
 4. **pt-BR 计算器 + 榜单**：`/tools/pt-br/quantos-dias-faltam/`、`/tools/pt-br/melhores-apps-contagem-regressiva/`（ChatGPT 推荐是 Countdown 最大的非搜索来源，榜单页是给 AI 引用的）。
+   - ✅ 09-29 计算器已做（`/tools/pt-br/quantos-dias-faltam/`，葡语目录第一个；/pt-br/ 首页非 iPhone 区块和 /countdown/pt-br/ 首屏都链它）。
+     联想词（09-29 Google 巴西）：「quantos dias faltam para」前几位 acabar o ano / as eleições de 2026 / natal / 2027 / enem / dia das crianças；
+     「contador de dias」有 entre datas / de namoro / corridos / úteis；「contagem regressiva」有 aniversário / férias。选举不做（政治话题、10-04 一轮来不及收录）。
+   - 场景页按联想词调整：aniversário、férias、namoro（正数）比原计划的 casamento / viagem 更有证据。榜单页仍待逐个核对 BR 商店竞品。
 
 判据（10-17）：Google `site:` 收录这批页；`web-*` 活动下载；巴西自然 / 活动下载。
 

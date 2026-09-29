@@ -163,6 +163,41 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/quantos-dias-faltam/",
+  "lang": "pt-BR",
+  "kind": "WebApplication",
+  "title": "Quantos dias faltam? Contador de dias até qualquer data",
+  "description": "Contador de dias grátis: digite uma data e veja quantos dias e semanas faltam e o dia da semana. Também conta os dias desde uma data. Sem cadastro.",
+  "faq": [
+   {
+    "q": "Como os dias são contados?",
+    "a": "A calculadora conta os dias corridos inteiros entre hoje e a data que você digitar, no fuso horário do seu aparelho. Hoje vale 0 e amanhã vale 1; o próprio dia do evento não entra na conta."
+   },
+   {
+    "q": "Ela conta dias úteis?",
+    "a": "Não. Ela conta dias corridos: todos os dias do calendário, com fins de semana e feriados. Para um prazo em dias úteis, é preciso descontar os sábados, os domingos e os feriados do período."
+   },
+   {
+    "q": "Dá para contar os dias desde uma data?",
+    "a": "Sim. Digite uma data que já passou e ela mostra há quantos dias foi — serve para o aniversário de namoro, os dias sem fumar ou o tempo no emprego novo. O app Countdown faz o mesmo na Tela de Início: conta até uma data ou a partir de uma data."
+   },
+   {
+    "q": "Posso compartilhar o resultado?",
+    "a": "Sim. Depois de calcular, a página gera um link com a data e o nome; quem abrir vê a mesma contagem, atualizada para o dia em que abrir."
+   },
+   {
+    "q": "Existe um app que deixa a contagem no celular?",
+    "a": "O Countdown: Contagem regressiva é o nosso app grátis para iPhone: eventos ilimitados, todos os widgets e tamanhos na Tela de Início e na Tela Bloqueada, lembretes e sincronização com o iCloud, sem criar conta."
+   }
+  ],
+  "published": "2026-09-29",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam? (contador de dias)",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
@@ -746,7 +781,7 @@
   "lang": "pt-BR",
   "kind": "CollectionPage",
   "title": "Ferramentas e guias grátis — go ka",
-  "description": "Ferramentas grátis e sem cadastro da go ka: contagem regressiva para o ENEM 2026, a Black Friday, o Natal, o Réveillon e o Carnaval 2027.",
+  "description": "Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.",
   "faq": [],
   "published": null,
   "app": null,
