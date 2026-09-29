@@ -542,8 +542,8 @@
  "zh-Hant": {
   "storefront": "tw",
   "name": "開單、報價單、收據、送貨單產生器",
-  "version": "1.1.19",
-  "releaseNotes": "• 第一張單據可以選帳單、報價單或送貨單（在清單中選擇）；預覽前也會詢問你的商家名稱，不會再以「My Business」送出。\n• 修正：把項目設為「無稅」後，這一行現在真的不計稅；「單據稅率」則依整張單據的稅率。\n• 分享出去的 PDF 依「類型 + 編號 + 客戶」命名，透過訊息或郵件分享時會附上一句說明。\n• 歡迎導覽裡的範例改用你的幣別與語言。\n• 各語言排版更整齊：紙面底部兩個標籤固定在一行，預覽頁改為一個傳送按鈕加一排操作。",
+  "version": "1.1.20",
+  "releaseNotes": "• 第一張單據的清單跟著你走：關掉某一步的頁面，這一步就算完成，不必修改範例也能繼續；打開傳送頁面即完成最後一步。\n• 修正：從預覽送出的單據，回到編輯器修改後不會再變回「尚未傳送」。",
   "description": "幫助自由工作者、自僱人士與小型商家幾分鐘開出專業的帳單、估價單與報價單，並用內建的收款 QR 碼更快收到錢。\n\n幾分鐘完成開單\n• 從 100+ 款範本中挑一款，填好客戶與項目，直接匯出精緻的 PDF\n• 拍下紙本發票，或選一張現有的圖片，它就會變成可編輯的草稿——辨識在裝置本機完成；只有你主動使用選用的 AI 核對時，這一頁才會傳送給 Google\n• 先寄估價單或報價單，客戶確認後一鍵轉成帳單\n• 客戶、項目與稅率一次儲存，隨時重用\n• 折扣、運費、收款方式與常用條款，隨開隨選\n• 直接在 iPhone 上手寫簽名，簽完即生效\n\n掃碼即付\n• 每份帳單都可附上收款 QR Code，客戶掃碼直接付款\n• 已付、未付、部分付款、逾期狀態一目了然\n• 記錄每筆收款，餘額始終清晰\n• 銷售報表按月看收入、看大客戶，也看還有多少沒收回來\n• 收款結清後，同一份帳單可直接當作收據分享——標記為已付，並附上結清日期\n\n品牌貫穿始終\n• 一次設定 Logo、品牌色與字型\n• 帳單、範本與 QR Code 設計自動套用你的品牌\n\n還有 QR 碼工作室\n• 12 種 QR 碼：連結、WiFi、名片、郵件、電話、簡訊、聊天、定位、日曆、文字、收款與 Pix\n• 16 款現成設計：海報、菜單卡、促銷吊牌、霓虹、名片等，另可自訂顏色、碼點、外框與漸層\n• 每個設計都會檢查對比度與靜默區，確保始終掃得出來；可匯出為圖片，用於分享、列印或做成桌卡\n\n桌面小工具\n• 三款小工具：應收與逾期、快速新增、隨時可掃的收款碼\n• 收款碼在桌面上就夠大，不用打開 App 也能讓對方掃\n• 50 款背景可選，字型與文字顏色也隨你定\n\n資料安全，隨身同步\n• 帳單、客戶與 QR 碼透過你自己的 iCloud 私密同步\n• 換新 iPhone，打開就在，不必手動搬移\n• 最近刪除保留 30 天，誤刪也找得回來\n• 免註冊帳號，離線也能用\n• 支援 13 種介面語言，含香港繁體，淺色與深色外觀\n\n免費開始使用\n• 免費建立 3 份，免註冊帳號\n• 這 3 份是一共，不是每月都有；帳單、估價單與報價單共用這份額度\n• 建立時計次，同一份只計一次——之後編輯或重寄都不再計\n• 16 款現成設計裡有 4 款免費，不開 Pro 也能用\n• 匯出的檔案頁尾有一行小字 App 署名，開通 Pro 可以關掉\n\nPro 會員\n• 無限帳單與 QR Code 匯出\n• 100+ 款帳單範本、12+ 款 QR 樣式與 16+ 款現成設計\n• 完整品牌套件 — 顏色、字型與 Logo\n• 自訂 QR Code 樣式\n• 去掉匯出檔案頁尾的 App 署名\n\n\n註：本 App 用於建立商業帳單／請款單，不用於開立稅務發票。\n\nPrivacy Policy: https://dyljqq.github.io/invoiceqr/privacy-policy/\nTerms of Use: https://dyljqq.github.io/invoiceqr/terms-of-service/",
   "screenshots": [
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7b/9d/08/7b9d086a-8761-568a-3f6c-0cd3a6169d9a/02-invoice.png/320x480bb.jpg",
@@ -569,7 +569,7 @@
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/af/74/94/af749413-5435-04e2-b2a5-57acf5418e97/11-widgets.png/360x480bb.jpg",
    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a2/4a/39/a24a39e8-6057-bd2a-152a-21f04d906bab/03-qr-designer.png/360x480bb.jpg"
   ],
-  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a5/c5/12/a5c512db-ddf8-d9f4-3121-c38809ca39f8/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/63/3a/ad633ae4-4d6f-8075-b0ca-fdcf31fdfe66/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
   "minOS": "17.0",
   "languages": [
    "EN",

@@ -25,6 +25,11 @@ TS = {  # 工具页专用界面词
             "faq": "Perguntas frequentes", "published": "Publicado em", "updated": "Atualizado em", "get": "Leve para o seu iPhone",
             "ask": "Pergunte a uma IA sobre esta página", "days": "dias", "day": "dia", "weeks": "semanas", "today": "É hoje!", "passed": "dias atrás",
             "home": "Início", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 09-29：日本线走 Countdown（日本真人靠小组件留存；共通テスト是 1 月的全国考试）
+  "ja": {"tools": "ツール", "hub_title": "無料ツールとガイド", "hub_lede": "登録不要で使える無料の小さなツールです。どれも、私たちの iPhone アプリと同じことをブラウザで行えます。",
+         "faq": "よくある質問", "published": "公開", "updated": "更新", "get": "iPhone で続ける", "ask": "このページを AI に要約してもらう",
+         "days": "日", "day": "日", "weeks": "週", "today": "今日です！", "passed": "日前",
+         "home": "ホーム", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
   # 09-29：港台线走 InvoiceQR（繁中商店名「開單、報價單、收據、送貨單產生器」）
   "zh-Hant": {"tools": "工具", "hub_title": "免費工具與指南", "hub_lede": "小工具，免費、不用註冊。每個工具都能在瀏覽器裡完成我們 iPhone App 做的事。",
               "faq": "常見問題", "published": "發布", "updated": "更新", "get": "在 iPhone 上完成", "ask": "請 AI 摘要這一頁",
@@ -36,8 +41,8 @@ TS = {  # 工具页专用界面词
             "ask": "Pregúntale a una IA sobre esta página", "days": "días", "day": "día", "weeks": "semanas", "today": "¡Es hoy!", "passed": "días atrás",
             "home": "Inicio", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
-HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/"}
-HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/"}
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
@@ -48,31 +53,35 @@ def fmt(d, lang):
         wd = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"][d.weekday()]
         mo = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"][d.month - 1]
         return f"{wd}, {d.day} de {mo} de {d.year}"
+    if lang == "ja":
+        return f"{d.year}年{d.month}月{d.day}日（{'月火水木金土日'[d.weekday()]}）"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
 
 # 共用 JS：data-date 的元素按访问当天重算天数；data-until 的把整句里的数字替换
 COUNT_JS = """
-(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás']}[document.documentElement.lang]||['days','day','Today','days ago'];
+(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前']}[document.documentElement.lang]||['days','day','Today','days ago'];
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]');if(w&&n>0){w.textContent=Math.floor(n/7)+' '+(document.documentElement.lang==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]'),L=document.documentElement.lang;if(w&&n>0){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 """
 CALC_JS = """
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
 var q=new URLSearchParams(location.search);if(q.get('date'))date.value=q.get('date');if(q.get('name'))name.value=q.get('name');
 function run(e){if(e)e.preventDefault();if(!date.value)return;var p=date.value.split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-var n=Math.round((d-now)/864e5);var PT=document.documentElement.lang==='pt-BR';var pl=function(k,a,b){return k===1?a:b};
-var label=(name.value.trim().slice(0,60)||(PT?'Sua data':'that day')).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});var pretty=d.toLocaleDateString(PT?'pt-BR':'en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});if(PT)pretty=pretty.replace(/(^|, )1 de /,'$11º de ');var s,w=Math.floor(n/7),r=n%7;
+var n=Math.round((d-now)/864e5);var PT=document.documentElement.lang==='pt-BR',JA=document.documentElement.lang==='ja';var pl=function(k,a,b){return k===1?a:b};
+var label=(name.value.trim().slice(0,60)||(PT?'Sua data':JA?'その日':'that day')).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});var pretty=JA?d.toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric',weekday:'short'}):d.toLocaleDateString(PT?'pt-BR':'en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});if(PT)pretty=pretty.replace(/(^|, )1 de /,'$11º de ');var s,w=Math.floor(n/7),r=n%7;
 if(PT){/* 名字在前加冒号：用户输入的名字没法配冠词（o Natal / a viagem） */
 if(n===0)s='<strong>'+label+'</strong>: é hoje ('+pretty+').';else if(n<0)s='<strong>'+label+'</strong>: foi há <strong>'+(-n)+pl(-n,' dia',' dias')+'</strong> ('+pretty+').';
 else s='<strong>'+label+'</strong>: '+pl(n,'falta ','faltam ')+'<strong>'+n+pl(n,' dia',' dias')+'</strong> — '+pretty+'.'+(n>=7?(w===1?' É ':' São ')+w+pl(w,' semana',' semanas')+(r?' e '+r+pl(r,' dia',' dias'):'')+'.':'');}
+else if(JA){if(n===0)s='<strong>'+label+'</strong>は今日です（'+pretty+'）。';else if(n<0)s='<strong>'+label+'</strong>から<strong>'+(-n)+'日</strong>たちました（'+pretty+'）。';
+else s='<strong>'+label+'</strong>まで、あと<strong>'+n+'日</strong>（'+pretty+'）。'+(n>=7?(r?w+'週と'+r+'日':w+'週間')+'です。':'');}
 else if(n===0)s='<strong>'+label+'</strong> is today ('+pretty+').';else if(n<0)s='<strong>'+label+'</strong> was <strong>'+(-n)+' day'+(n===-1?'':'s')+' ago</strong> ('+pretty+').';
 else{s='<strong>'+n+' day'+(n===1?'':'s')+'</strong> until <strong>'+label+'</strong> — '+pretty+'.'+(n>=7?' That\\'s '+w+' week'+(w===1?'':'s')+(r?' and '+r+' day'+(r===1?'':'s'):'')+'.':'');}
-out.innerHTML='<p class="big">'+s+'</p><p class="share"><a href="?date='+date.value+'&name='+encodeURIComponent(name.value.trim())+'" id="share">'+(PT?'Link para esta contagem':'Link to this countdown')+'</a></p>';out.hidden=false;
-var a=document.getElementById('share');a.addEventListener('click',function(ev){if(navigator.clipboard){ev.preventDefault();navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.textContent=PT?'Link copiado':'Link copied';}});}
+out.innerHTML='<p class="big">'+s+'</p><p class="share"><a href="?date='+date.value+'&name='+encodeURIComponent(name.value.trim())+'" id="share">'+(PT?'Link para esta contagem':JA?'このカウントダウンのリンク':'Link to this countdown')+'</a></p>';out.hidden=false;
+var a=document.getElementById('share');a.addEventListener('click',function(ev){if(navigator.clipboard){ev.preventDefault();navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.textContent=PT?'Link copiado':JA?'リンクをコピーしました':'Link copied';}});}
 f.addEventListener('submit',run);if(date.value)run();})();
 """
 INVOICE_JS = """
@@ -154,7 +163,8 @@ def app_card(app_key, lang):
 def ask_ai(url, lang):
     q = {"pt-BR": f"Leia {url} e resuma os pontos principais em poucas frases.",
          "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases.",
-         "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
+         "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。",
+         "ja": f"{url} を読んで、要点を数文でまとめてください。"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -167,6 +177,7 @@ def faq_html(faq, lang):
 def counter(d, lang, label=""):
     n = days_to(d); unit = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
     w = f"{n // 7} {ts(lang, 'weeks')}" + (f" + {n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n > 0 else ""
+    if lang == "ja" and n > 0: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
             f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
 
@@ -875,6 +886,71 @@ PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kin
 <p>還沒成交的話，先用<a href="/tools/zh-hant/bao-jia-dan-fan-ben/">報價單範本</a>。在 iPhone 上，<a href="/invoiceqr/zh-hant/">開單、報價單、收據、送貨單產生器</a>收款結清後，同一份帳單可以直接當作收據分享。</p>
 {ZH_NOTE}"""})
 
+# 7d. 日本：あと何日（日数計算）+ 共通テスト2027（ja，Countdown）——09-29
+# 依据：Google JP 联想词（共通テスト まであと何日 2027 / カウントダウン 待ち受け / あと何日 アプリ / 共通テスト 100日前 いつ；
+# あと何日 計算 / 今日 入れる / あと何日で今年終わる、日数計算 / 営業日）。
+# 日期出自大学入試センター「令和9年度試験」「令和10年度試験」页（09-29 取）：本試験 2027-01-16/17，追・再試験 01-23/24；2028-01-15/16。
+# app 说法只用 ja 商店描述里「免费」那部分（ウィジェットはすべて無料 / ホーム画面・ロック画面 / 節目の全画面 / 裏面 / カウントアップ）；
+# ⚠ jp 商店 09-29 还是 1.4.10，Pro 范围与 1.4.11 不同，所以页面不写 Pro 包含什么。
+KT1, KT2, KTM1, KTM2, KT28A, KT28B = (dt.date(2027, 1, 16), dt.date(2027, 1, 17), dt.date(2027, 1, 23), dt.date(2027, 1, 24),
+                                       dt.date(2028, 1, 15), dt.date(2028, 1, 16))
+JA_APP = ("「カウントダウン ウィジェット: 記念日」は私たちの無料 iPhone アプリです。ウィジェットはすべて無料で、ホーム画面にもロック画面にも置けます。"
+          "イベント数は無制限、繰り返しと通知、アカウント不要の iCloud 同期にも対応しています。")
+PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
+  "title": "あと何日？日数計算ツール（今日から指定日まで）", "crumb": "あと何日？",
+  "description": "日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。",
+  "hub_title": "あと何日？（日数計算）", "hub_desc": "今日から指定日までの日数と曜日。過ぎた日からの日数も。",
+  "js": [COUNT_JS, CALC_JS], "faq": [
+    ("今日は日数に入れますか？", "入れません。今日は0日、明日が1日です。指定した日そのものも足しません。「あと3日」なら、3回寝るとその日が来るという数え方です。"),
+    ("営業日（土日祝日を除く）で数えられますか？", "いいえ。このツールは土日や祝日も含めた暦の上の日数で数えます。営業日で数えるときは、期間中の土日と祝日を引いてください。"),
+    ("過ぎた日から何日たったかも分かりますか？", "はい。過去の日付を入れると、その日から何日たったかを表示します。カウントダウン ウィジェット: 記念日 でも、ある日からのカウントアップができます。"),
+    ("結果を共有できますか？", "はい。計算すると、日付と名前が入ったリンクが作られます。開いた人には、開いた日に合わせて再計算された日数が表示されます。"),
+    ("スマホに残り日数をずっと表示できるアプリは？", JA_APP),
+  ],
+  "body": f"""<h1>あと何日？</h1>
+<p class="lede">日付を入れるだけで、今日からその日まで<strong>あと何日</strong>か、何週間か、何曜日かが分かります。過ぎた日なら、何日たったかを表示します。登録不要で、結果はリンクで共有できます。</p>
+<form class="calc" id="calc"><label>イベント<input type="text" name="name" placeholder="誕生日、旅行、試験…" maxlength="60"></label><label>日付<input type="date" name="date" required></label><button type="submit">日数を数える</button></form>
+<div id="calc-out" hidden aria-live="polite"></div>
+<h2>よく数える日</h2>
+<div class="pop">
+<a href="/tools/ja/kyotsu-test-2027/" data-date="{KT1.isoformat()}"><b data-n>{days_to(KT1)}</b><span><span data-unit>日</span>（共通テスト2027まで）</span></a>
+<a href="/tools/days-until-new-year/" hreflang="en" data-date="{NYE.isoformat()}"><b data-n>{days_to(NYE)}</b><span><span data-unit>日</span>（2027年のお正月まで）</span></a>
+</div>
+<p class="meta">上の数字は {TODAY.year}年{TODAY.month}月{TODAY.day}日に計算したもので、ページを開いたときに更新されます。お正月のページは英語です。</p>
+<h2>数え方</h2>
+<p>今日を0日として、指定した日までに日付が何回変わるかを数えます。時刻はあなたの端末のタイムゾーンで数えます。指定した日が今日なら0日、過去の日付なら「何日たったか」になるので、記念日や禁煙の日数にも使えます。</p>
+<p>サイトを開かなくても残り日数が見えるように、下のアプリで iPhone のホーム画面やロック画面に置くこともできます。</p>"""})
+
+PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29",
+  "title": "共通テスト2027まであと何日？カウントダウン（1月16日・17日）", "crumb": "共通テスト2027",
+  "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。",
+  "hub_title": "共通テスト2027まであと何日？", "hub_desc": "本試験（1月16日・17日）までのカウントダウンと、100日前・30日前・1週間前の日付。",
+  "js": [COUNT_JS], "faq": [
+    ("共通テスト2027はいつですか？", f"本試験は{fmt(KT1, 'ja')}と{fmt(KT2, 'ja')}です。追・再試験は{fmt(KTM1, 'ja')}と{fmt(KTM2, 'ja')}です（大学入試センター「令和9年度試験」）。"),
+    ("共通テストまであと何週間ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で本試験まで{days_to(KT1)}日、約{days_to(KT1) // 7}週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
+    ("共通テストの100日前はいつですか？", f"{fmt(KT1 - dt.timedelta(days=100), 'ja')}です。50日前は{fmt(KT1 - dt.timedelta(days=50), 'ja')}、1週間前は{fmt(KT1 - dt.timedelta(days=7), 'ja')}です。"),
+    ("2028年の共通テストはいつですか？", f"令和10年度の本試験は{fmt(KT28A, 'ja')}と{fmt(KT28B, 'ja')}です（大学入試センター「令和10年度試験」）。"),
+    ("iPhone の待ち受け（ロック画面）にカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「共通テスト」を2027年1月16日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → カウントダウン、の順に進みます。ウィジェットはすべて無料です。"),
+  ],
+  "body": f"""<h1>共通テスト2027まであと何日？</h1>
+<p class="lede">令和9年度（2027年）の大学入学共通テストは、<strong>{fmt(KT1, "ja")}・{KT2.day}日（{'月火水木金土日'[KT2.weekday()]}）</strong>です。下のカウントダウンは毎日更新されます。</p>
+{counter(KT1, "ja", "本試験1日目")}
+<h2>日程</h2>
+<table><tbody>
+<tr><th>本試験</th><td>{fmt(KT1, "ja")}・{fmt(KT2, "ja")}</td></tr>
+<tr><th>追・再試験</th><td>{fmt(KTM1, "ja")}・{fmt(KTM2, "ja")}</td></tr>
+<tr><th>2028年（令和10年度）の本試験</th><td>{fmt(KT28A, "ja")}・{fmt(KT28B, "ja")}</td></tr>
+</tbody></table>
+<p class="meta">出典：大学入試センター「令和9年度試験」「令和10年度試験」（{TODAY.year}年{TODAY.month}月{TODAY.day}日に確認）。出願の手続きや時間割は、大学入試センターの案内で確認してください。</p>
+<h2>節目の日付</h2>
+<table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
+<h2>ロック画面・待ち受けに置く</h2>
+<p>毎回サイトを開かなくても残り日数が見えるように、iPhone のロック画面やホーム画面にウィジェットとして置けます。<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>なら、すべてのサイズのウィジェットが無料です。100日前・1週間前・当日の朝といった節目に達すると、アプリが全画面の数字で開き、共有できるカードを用意します。</p>
+<ol><li>アプリで <strong>+</strong> をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → カウントダウン。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
+<h2>カウントダウンの使い方</h2>
+<ul><li>イベントの裏面に、科目ごとの目標や模試の結果を書いておく。</li><li>追・再試験や二次試験、私立大学の入試日も別のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
+<p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>"""})
+
 # 8. 如何写发票（指南）
 PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "Article", "app": "invoiceqr", "published": "2026-09-26",
   "title": "How to Write an Invoice (freelancers & small businesses) — 8 steps", "crumb": "How to write an invoice",
@@ -955,9 +1031,9 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 # 10. 榜单：iPhone 倒数日 app（含竞品；数据来自 09-26 美区 App Store 查询，只写商店描述里写明的事）
 BEST = [
   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "rating": None, "since": 2026, "ours": True,
-   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops, fonts, icons and a Live Activity.",
+   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops, your own photos, typefaces, the Live Activity and counting down with someone you invite.",
    "widgets": "Home Screen + Lock Screen, all sizes, free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds decorative backdrops, fonts and icons, and a Live Activity on the Lock Screen and Dynamic Island. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
+   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "rating": (4.8, 215672), "since": 2012,
    "free": "Add as many events as you like; iCloud sync, repeating events and Home Screen widgets are listed as features (the listing does not spell out what is paid).",
    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "Not stated",
@@ -1025,10 +1101,10 @@ PAGES.append(best_page())
 # widget contagem regressiva iphone gratuito。选法同英文版：巴西区搜「contagem regressiva」「countdown widget」，
 # 取倒数专用 app 里巴西评分数最多的 6 个（Widgetsmith 是通用小组件，不收），只写 BR 商店描述（lang=pt_br，09-29 lookup）里写明的事。
 BEST_PT = [
-  {"name": "Countdown: Contagem regressiva", "by": "go ka (o nosso)", "id": 6799846628, "t": ("Tudo grátis; Pro: visual e Live Activity", "Início e Bloqueada, todos grátis", "Ano, mês, semana, a cada N dias", "iCloud, sem conta", "Não"), "rating": None, "since": 2026, "ours": True,
-   "free": "Eventos ilimitados, todos os widgets na Tela de Início e na Tela Bloqueada, repetição, lembretes e iCloud — tudo grátis. O Pro libera fundos, fontes e ícones extras e a Live Activity.",
+  {"name": "Countdown: Contagem regressiva", "by": "go ka (o nosso)", "id": 6799846628, "t": ("Tudo grátis; Pro: fundos, fotos e extras", "Início e Bloqueada, todos grátis", "Ano, mês, semana, a cada N dias", "iCloud, sem conta", "Não"), "rating": None, "since": 2026, "ours": True,
+   "free": "Eventos ilimitados, todos os widgets na Tela de Início e na Tela Bloqueada, repetição, lembretes e iCloud — tudo grátis. O Pro libera fundos Pro, suas próprias fotos, fontes, a Atividade ao Vivo e o convite para contar junto.",
    "widgets": "Tela de Início e Tela Bloqueada, todos os tamanhos, grátis", "recur": "Todo ano, mês, semana ou a cada poucos dias", "sync": "iCloud, sem criar conta", "ads": "Sem anúncios",
-   "take": "Aqui os widgets não são o recurso pago: todos os tamanhos, eventos ilimitados, repetição, lembretes e sincronização com o iCloud são grátis, e a assinatura libera fundos, fontes e ícones extras e a Live Activity na Tela Bloqueada e na Dynamic Island. Guarda todo dia uma cópia dos eventos no aparelho, para que uma atualização não apague nada, e cada evento tem um verso com texto, fotos e voz. É novo em 2026 e ainda tem poucas avaliações no Brasil — julgue pelo que a versão grátis cobre."},
+   "take": "Aqui os widgets não são o recurso pago: todos os tamanhos, eventos ilimitados, repetição, lembretes e sincronização com o iCloud são grátis; a assinatura libera fundos Pro, suas próprias fotos como fundo, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém contar junto com você. Guarda todo dia uma cópia dos eventos no aparelho, para que uma atualização não apague nada, e cada evento tem um verso com texto, fotos e voz. É novo em 2026 e ainda tem poucas avaliações no Brasil — julgue pelo que a versão grátis cobre."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "t": ("Com anúncios; uma compra remove", "Início (P, M, G)", "Anual", "iCloud + Apple Watch", "Sim, na grátis"), "rating": (4.8, 16068), "since": 2012,
    "free": "Versão gratuita com anúncios e uma compra opcional para removê-los; há também uma versão paga sem anúncios. iCloud, recorrência e widgets aparecem como recursos, sem separar o que é pago.",
    "widgets": "Tela de Início: pequeno, médio e grande", "recur": "Eventos anuais avançam sozinhos", "sync": "iCloud (iPhone, iPad, Apple Watch)", "ads": "Sim, na versão grátis",
@@ -1108,6 +1184,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
+        "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。"),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本與收據範本，線上填寫、自動計算，列印或存成 PDF。"),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,
