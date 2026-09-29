@@ -33,6 +33,8 @@ EN_UI = {
   "breadcrumb_home": "Home", "get_app": "Get {name}",
   "h_whatsnew": "What's new in version {v}", "h_guides": "Guides and free tools", "nav_blog": "Blog", "nav_tools": "Tools",
   "follow": "Follow go ka",
+  "web_alt": "Not on an iPhone? Try this in any browser: {tool}", "in_english": "",
+  "qr_scan": "On a computer? Scan this with your iPhone camera to download the app.",
 }
 # site.json 的 lang → 商店缓存的 locale 键
 LANG2STORE = {"en": "en-US", "en-GB": "en-GB", "de": "de-DE", "fr": "fr-FR", "it": "it", "es": "es-ES",
@@ -178,6 +180,42 @@ def guides(p, lang):
     cards = "".join(f'<a href="{x["path"]}"><b>{esc(x.get("hubTitle") or x.get("title"))}</b><span>{esc(x.get("description", ""))}</span></a>' for x in mine)
     return (f'<section class="sec" id="guides" aria-labelledby="h-guides">\n  <h2 id="h-guides">{esc(t(lang, "h_guides"))}</h2>\n'
             f'  <div class="guides">{cards}</div>\n</section>\n')
+
+def web_tool(p, lang):
+    """首屏给非 iPhone 访客的网页工具。顺序：同语言的 WebApplication → 同语言的工具页（如葡语倒数页；
+    09-29 评审：巴西页别链英文工具）→ 英文 WebApplication。"""
+    try:
+        items = json.loads(TOOLS_MANIFEST.read_text(encoding="utf-8"))
+    except OSError:
+        return None
+    mine = [x for x in items if x.get("app") == p["key"] and x["path"].startswith("/tools/")]
+    want = "en" if lang == "en-GB" else lang
+    # 同语言只有节日倒数页时手动挑一个受众最广、有效期最长的（09-29 评审：ENEM 只对考生、11-15 就过期）。
+    # ⚠ Natal 页 12-25 后过期，届时换成 Réveillon 页
+    pick = {("countdown", "pt-BR"): "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/"}.get((p["key"], lang))
+    if pick:
+        return next(x for x in mine if x["path"] == pick)
+    is_lang = lambda x, l: (x.get("lang") or "en") == l
+    return (next((x for x in mine if is_lang(x, want) and x.get("kind") == "WebApplication"), None)
+            or next((x for x in mine if is_lang(x, want) and want != "en"), None)
+            or next((x for x in mine if is_lang(x, "en") and x.get("kind") == "WebApplication"), None))
+
+def device_alt(p, lang):
+    """首屏按钮下方一张奶油色卡片：电脑上（is-desk）左边二维码、右边「扫码下载」和「浏览器里能用的工具」两句；
+    安卓（not-ios）只剩工具那句；iOS 不显示。显示与否由 head 里的设备脚本打的 class 决定。
+    09-29 评审：原来二维码卡和工具卡是两张样式不同的卡，左栏比插画长一截，合成了一张。"""
+    qr = (ROOT / f"assets/qr/{p['key']}.svg").exists()   # tools/make_qr.py 生成，ct=web-<app>-qr
+    tool = web_tool(p, lang)
+    if not qr and not tool:
+        return ""
+    img = f'<img class="alt-qr" src="/assets/qr/{p["key"]}.svg" width="96" height="96" alt="" loading="lazy">' if qr else ""
+    txt = f'<p class="alt-scan">{esc(t(lang, "qr_scan"))}</p>' if qr else ""
+    if tool:
+        english = (tool.get("lang") or "en") == "en" and lang not in ("en", "en-GB")
+        attr = ' hreflang="en" lang="en"' if english else ""
+        link = f'<a href="{tool["path"]}"{attr}>{esc(tool.get("hubTitle") or tool["title"])}</a>' + (esc(t(lang, "in_english")) if english else "")
+        txt += f'<p class="alt-web">{esc(t(lang, "web_alt", tool="\x00")).replace("\x00", link)}</p>'
+    return f'\n    <div class="alt{"" if tool else " qr-only"}">{img}<div class="alt-txt">{txt}</div></div>'
 
 SOCIAL_ICON = {
     "instagram": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2"/></svg>',
@@ -350,6 +388,11 @@ h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-sp
 .others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
 .others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
 .others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 @media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
@@ -444,7 +487,7 @@ def render(a):
     <h1>{title_html(name, lang)}</h1>
     <div class="lede">{"".join(f"<p>{esc(x)}</p>" for x in lede)}</div>
     <a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(T("cta_store"))}</a>
-    <ul class="chips">{"".join(f"<li>{esc(c)}</li>" for c in chips)}</ul>
+    <ul class="chips">{"".join(f"<li>{esc(c)}</li>" for c in chips)}</ul>{device_alt(p, lang)}
   </div>
   {media}
 </section>

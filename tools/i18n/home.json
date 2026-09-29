@@ -61,7 +61,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "go ka folgen"
+  "follow": "go ka folgen",
+  "web_h": "Kein iPhone?",
+  "web_p": "Diese kostenlosen Tools laufen in jedem Browser, auf dem Handy wie am Computer – ohne Anmeldung. Die Tools sind auf Englisch."
  },
  "fr": {
   "title": "go ka — petites applis iPhone pour chaque jour",
@@ -125,7 +127,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "Suivre go ka"
+  "follow": "Suivre go ka",
+  "web_h": "Pas d’iPhone ?",
+  "web_p": "Ces outils gratuits fonctionnent dans n’importe quel navigateur, sur téléphone comme sur ordinateur, sans inscription. Ils sont en anglais."
  },
  "it": {
   "title": "go ka — piccole app iPhone per ogni giorno",
@@ -189,7 +193,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "Segui go ka"
+  "follow": "Segui go ka",
+  "web_h": "Non hai un iPhone?",
+  "web_p": "Questi strumenti gratuiti funzionano in qualsiasi browser, sul telefono o sul computer, senza registrazione. Sono in inglese."
  },
  "es": {
   "title": "go ka — pequeñas apps para iPhone, para el día a día",
@@ -253,7 +259,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "Sigue a go ka"
+  "follow": "Sigue a go ka",
+  "web_h": "¿No tienes iPhone?",
+  "web_p": "Estas herramientas gratuitas funcionan en cualquier navegador, en el móvil o en el ordenador, sin registrarte. Están en inglés."
  },
  "es-MX": {
   "title": "go ka — apps pequeñas para iPhone, para el día a día",
@@ -317,7 +325,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "Sigue a go ka"
+  "follow": "Sigue a go ka",
+  "web_h": "¿No tienes iPhone?",
+  "web_p": "Estos formatos gratis funcionan en cualquier navegador, en el celular o en la computadora, sin registro."
  },
  "pt-BR": {
   "title": "go ka — pequenos apps para iPhone, para o dia a dia",
@@ -381,7 +391,9 @@
    }
   ],
   "nav_blog": "Blog",
-  "follow": "Siga a go ka"
+  "follow": "Siga a go ka",
+  "web_h": "Não tem iPhone?",
+  "web_p": "Essas contagens regressivas ao vivo funcionam em qualquer navegador, no celular ou no computador, sem cadastro."
  },
  "ja": {
   "title": "go ka — 毎日を彩るiPhoneアプリ",
@@ -445,7 +457,9 @@
    }
   ],
   "nav_blog": "ブログ",
-  "follow": "go ka をフォロー"
+  "follow": "go ka をフォロー",
+  "web_h": "iPhone をお持ちでない方へ",
+  "web_p": "下の無料ツールは、スマホでもパソコンでも、ブラウザでそのまま使えます。登録は不要です。ツールは英語です。"
  },
  "ko": {
   "title": "go ka — 일상을 돕는 작은 iPhone 앱들",
@@ -509,7 +523,9 @@
    }
   ],
   "nav_blog": "블로그",
-  "follow": "go ka 팔로우"
+  "follow": "go ka 팔로우",
+  "web_h": "iPhone이 없으신가요?",
+  "web_p": "아래 무료 도구는 휴대폰이든 컴퓨터든 브라우저에서 바로 쓸 수 있어요. 가입은 필요 없고, 도구는 영어로 되어 있어요."
  },
  "zh-Hans": {
   "title": "go ka — 日常小应用",
@@ -573,7 +589,9 @@
    }
   ],
   "nav_blog": "博客",
-  "follow": "关注 go ka"
+  "follow": "关注 go ka",
+  "web_h": "没有 iPhone？",
+  "web_p": "下面这些免费工具，手机和电脑的浏览器里都能直接用，不用注册。工具页面是英文的。"
  },
  "zh-Hant": {
   "title": "go ka — 日常小 App",
@@ -637,7 +655,9 @@
    }
   ],
   "nav_blog": "部落格",
-  "follow": "追蹤 go ka"
+  "follow": "追蹤 go ka",
+  "web_h": "沒有 iPhone？",
+  "web_p": "下面這些免費工具，手機和電腦的瀏覽器裡都能直接用，不用註冊。工具頁面是英文的。"
  },
  "th": {
   "title": "go ka — แอปเล็ก ๆ สำหรับชีวิตประจำวัน",
@@ -701,6 +721,8 @@
    }
   ],
   "nav_blog": "บล็อก",
-  "follow": "ติดตาม go ka"
+  "follow": "ติดตาม go ka",
+  "web_h": "ไม่ได้ใช้ iPhone ใช่ไหม",
+  "web_p": "เครื่องมือฟรีเหล่านี้ใช้ได้ในเบราว์เซอร์ทุกตัว ทั้งบนมือถือและคอมพิวเตอร์ ไม่ต้องสมัคร เครื่องมือเป็นภาษาอังกฤษ"
  }
 }

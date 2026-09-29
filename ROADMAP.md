@@ -52,6 +52,16 @@
 - 借势第一页：`/tools/days-until-diwali/`（排灯节 11-08，搜索高峰就在现在）。
 - SEO 修复：`/xxx/index.html` 301 到目录 URL；Repdex 补分享图。
 
+## v1.1.6 非 iPhone 分流 + 帖子归因（09-29）
+
+起因（Vercel 访问统计，09-26 上线 ~ 09-29）：91 访客里搜索引擎带来 2 个，唯一成规模的是 09-28 22–24 点（北京）Reddit 一波约 40 人——37 人里 26 个是安卓 / 电脑，36 个落在首页，平均 1.1 页就走。
+
+- 每页 head 的设备脚本给 `<html>` 打 `is-ios` / `not-ios` / `is-desk`。
+- 首页：非 iOS 访客在首屏下方先看到「不是 iPhone？」网页工具区块（en 等列英文工具，pt-BR 列葡语倒数页，es-MX 列西语模板）。
+- 产品页首屏（Countdown / InvoiceQR / BeforeGo）：电脑上加扫码下载（`assets/qr/`，`ct=web-<app>-qr`），非 iOS 加「浏览器里就能用」的工具卡片。
+- 帖子归因：外链带 `?ref=<平台>-<内容名>`，落地那次浏览在 Vercel Pages 里记成 `/<页面>/~<ref>`（Hobby 版读不到 UTM）；链接表在 `tools/LINKS.md`。
+- 10-05 复盘时看：非 iOS 访客的「首页 → 工具页」点击、`web-*-qr` 营销活动安装、带 `~` 的落地路径。
+
 ---
 
 ## 借势原则（09-28 定）

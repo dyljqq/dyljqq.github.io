@@ -138,6 +138,20 @@ section{scroll-margin-top:24px}
 .mail{display:inline-block;margin-top:34px;font:500 clamp(20px,3vw,28px)/1.2 var(--display);text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:6px}
 .mail:hover{background:linear-gradient(transparent 55%,var(--yellow) 55%)}
 
+/* 不是 iPhone：网页工具（只对非 iOS 显示，class 由 head 里的设备脚本打） */
+.web-first{display:none}
+html.not-ios .web-first{display:block;margin-top:clamp(40px,6vw,64px)}
+.web-box{background:var(--cream);border-radius:28px;padding:clamp(26px,4vw,44px) clamp(22px,4vw,52px)}
+.web-box h2{margin:0;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weight:600}
+.web-box>p{margin:10px 0 0;color:var(--muted);max-width:40em}
+.web-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:24px 0 0;padding:0;list-style:none}
+.web-list a{display:block;height:100%;text-decoration:none;background:#fff;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:border-color .2s}
+.web-list a:hover{border-color:var(--ink)}
+.web-list b{display:block;font:600 16px/1.35 var(--text)}
+.web-list span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.web-all{display:inline-block;margin-top:20px;font:700 14px/1.4 var(--text);text-underline-offset:4px}
+
 /* footer */
 
 @media (max-width:760px){
@@ -509,7 +523,8 @@ section{scroll-margin-top:24px}
   ]
 }
 </script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <!-- seo:end -->
 <style id="gk-foot-css">footer.gk-foot{border-top:1px solid #e7e5df;padding:48px 0 36px;margin:0;background:none;text-align:left;font:400 13px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#6b6760}.gk-foot-in{box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:22px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 22px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot h2{margin:0 0 16px;padding:0;border:0;font:700 11px/1 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#141414}.gk-foot h2:is(:lang(ja),:lang(zh),:lang(ko)){letter-spacing:.12em}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.6;font-weight:400;color:#6b6760}.gk-foot a{color:#6b6760;font-weight:400;text-decoration:none;border:0}.gk-foot a:hover{color:#141414;text-decoration:underline;text-underline-offset:3px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:28px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#141414}.gk-foot-social{display:flex;flex-wrap:wrap;gap:8px}.gk-foot-social a{display:inline-block;padding:5px 12px;border:1px solid #dedad2;border-radius:999px;font-size:12.5px;line-height:1.4;color:#3d3a35}.gk-foot-social a:hover{border-color:#141414;text-decoration:none}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:40px;padding-top:18px;border-top:1px solid #eeebe5;font-size:12.5px}.gk-foot-bar p{font-size:12.5px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top{flex-direction:column}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column}}</style>
@@ -578,6 +593,21 @@ section{scroll-margin-top:24px}
     </div>
   </div>
 </section>
+
+<!-- webtools:start -->
+<section class="wrap web-first" id="in-browser" aria-labelledby="web-title">
+  <div class="web-box">
+    <h2 id="web-title">Não tem iPhone?</h2>
+    <p>Essas contagens regressivas ao vivo funcionam em qualquer navegador, no celular ou no computador, sem cadastro.</p>
+    <ul class="web-list">
+      <li><a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/"><b>Quantos dias faltam para o Natal 2026?</b><span>Contagem ao vivo até 25 de dezembro.</span></a></li>
+      <li><a href="/tools/pt-br/contagem-regressiva-black-friday-2026/"><b>Quantos dias faltam para a Black Friday 2026?</b><span>Contagem ao vivo até 27 de novembro.</span></a></li>
+      <li><a href="/tools/pt-br/dias-para-o-enem-2026/"><b>Quantos dias faltam para o ENEM 2026?</b><span>Contagem até as provas de 8 e 15 de novembro.</span></a></li>
+    </ul>
+    <a class="web-all" href="/tools/pt-br/">Ferramentas e guias gratuitos →</a>
+  </div>
+</section>
+<!-- webtools:end -->
 
 <section class="wrap" id="apps" aria-labelledby="apps-title">
   <div class="sec-head">

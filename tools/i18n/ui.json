@@ -27,7 +27,10 @@
   "h_guides": "Guides and free tools",
   "nav_blog": "Blog",
   "nav_tools": "Tools",
-  "follow": "Follow go ka"
+  "follow": "Follow go ka",
+  "web_alt": "Not on an iPhone? Try this in any browser: {tool}",
+  "in_english": "",
+  "qr_scan": "On a computer? Scan this with your iPhone camera to download the app."
  },
  "en-GB": {
   "nav_all_apps": "All apps",
@@ -57,7 +60,10 @@
   "h_guides": "Guides and free tools",
   "nav_blog": "Blog",
   "nav_tools": "Tools",
-  "follow": "Follow go ka"
+  "follow": "Follow go ka",
+  "web_alt": "Not on an iPhone? Try this in any browser: {tool}",
+  "in_english": "",
+  "qr_scan": "On a computer? Scan this with your iPhone camera to download the app."
  },
  "de": {
   "nav_all_apps": "Alle Apps",
@@ -87,7 +93,10 @@
   "h_guides": "Ratgeber und kostenlose Tools",
   "nav_blog": "Blog",
   "nav_tools": "Tools",
-  "follow": "go ka folgen"
+  "follow": "go ka folgen",
+  "web_alt": "Kein iPhone? Das hier läuft in jedem Browser: {tool}",
+  "in_english": " (auf Englisch)",
+  "qr_scan": "Am Computer? Mit der iPhone-Kamera scannen und die App laden."
  },
  "fr": {
   "nav_all_apps": "Toutes les apps",
@@ -117,7 +126,10 @@
   "h_guides": "Guides et outils gratuits",
   "nav_blog": "Blog",
   "nav_tools": "Outils",
-  "follow": "Suivre go ka"
+  "follow": "Suivre go ka",
+  "web_alt": "Pas d’iPhone ? Cet outil fonctionne dans n’importe quel navigateur : {tool}",
+  "in_english": " (en anglais)",
+  "qr_scan": "Sur ordinateur ? Scannez ce code avec l’appareil photo de votre iPhone pour télécharger l’app."
  },
  "it": {
   "nav_all_apps": "Tutte le app",
@@ -147,7 +159,10 @@
   "h_guides": "Guide e strumenti gratuiti",
   "nav_blog": "Blog",
   "nav_tools": "Strumenti",
-  "follow": "Segui go ka"
+  "follow": "Segui go ka",
+  "web_alt": "Non hai un iPhone? Questo funziona in qualsiasi browser: {tool}",
+  "in_english": " (in inglese)",
+  "qr_scan": "Sei al computer? Inquadra il codice con la fotocamera dell’iPhone per scaricare l’app."
  },
  "es": {
   "nav_all_apps": "Todas las apps",
@@ -177,7 +192,10 @@
   "h_guides": "Guías y herramientas gratis",
   "nav_blog": "Blog",
   "nav_tools": "Herramientas",
-  "follow": "Sigue a go ka"
+  "follow": "Sigue a go ka",
+  "web_alt": "¿No tienes iPhone? Esto funciona en cualquier navegador: {tool}",
+  "in_english": " (en inglés)",
+  "qr_scan": "¿Estás en el ordenador? Escanea el código con la cámara del iPhone para descargar la app."
  },
  "es-MX": {
   "nav_all_apps": "Todas las apps",
@@ -207,7 +225,10 @@
   "h_guides": "Guías y herramientas gratis",
   "nav_blog": "Blog",
   "nav_tools": "Herramientas",
-  "follow": "Sigue a go ka"
+  "follow": "Sigue a go ka",
+  "web_alt": "¿No tienes iPhone? Esto funciona en cualquier navegador: {tool}",
+  "in_english": " (en inglés)",
+  "qr_scan": "¿Estás en la computadora? Escanea el código con la cámara del iPhone para descargar la app."
  },
  "pt-BR": {
   "nav_all_apps": "Todos os apps",
@@ -237,7 +258,10 @@
   "h_guides": "Guias e ferramentas grátis",
   "nav_blog": "Blog",
   "nav_tools": "Ferramentas",
-  "follow": "Siga a go ka"
+  "follow": "Siga a go ka",
+  "web_alt": "Não tem iPhone? Confira no navegador: {tool}",
+  "in_english": " (em inglês)",
+  "qr_scan": "No computador? Escaneie o código com a câmera do iPhone para baixar o app."
  },
  "ja": {
   "nav_all_apps": "すべてのアプリ",
@@ -267,7 +291,10 @@
   "h_guides": "ガイドと無料ツール",
   "nav_blog": "ブログ",
   "nav_tools": "ツール",
-  "follow": "go ka をフォロー"
+  "follow": "go ka をフォロー",
+  "web_alt": "iPhone をお持ちでない方は、ブラウザでこちらをどうぞ：{tool}",
+  "in_english": "（英語）",
+  "qr_scan": "パソコンで見ている方は、iPhone のカメラでこのコードを読み取るとアプリを入手できます。"
  },
  "ko": {
   "nav_all_apps": "모든 앱",
@@ -297,7 +324,10 @@
   "h_guides": "가이드와 무료 도구",
   "nav_blog": "블로그",
   "nav_tools": "도구",
-  "follow": "go ka 팔로우"
+  "follow": "go ka 팔로우",
+  "web_alt": "iPhone이 없으신가요? 브라우저에서 바로 쓸 수 있어요: {tool}",
+  "in_english": " (영어)",
+  "qr_scan": "컴퓨터로 보고 계신가요? iPhone 카메라로 이 코드를 스캔하면 앱을 받을 수 있어요."
  },
  "zh-Hans": {
   "nav_all_apps": "所有应用",
@@ -327,7 +357,10 @@
   "h_guides": "指南与免费工具",
   "nav_blog": "博客",
   "nav_tools": "工具",
-  "follow": "关注 go ka"
+  "follow": "关注 go ka",
+  "web_alt": "没有 iPhone？浏览器里就能用：{tool}",
+  "in_english": "（英文）",
+  "qr_scan": "在电脑上看？用 iPhone 相机扫这个码就能下载。"
  },
  "zh-Hant": {
   "nav_all_apps": "所有 App",
@@ -357,7 +390,10 @@
   "h_guides": "指南與免費工具",
   "nav_blog": "部落格",
   "nav_tools": "工具",
-  "follow": "追蹤 go ka"
+  "follow": "追蹤 go ka",
+  "web_alt": "沒有 iPhone？瀏覽器裡就能用：{tool}",
+  "in_english": "（英文）",
+  "qr_scan": "在電腦上看？用 iPhone 相機掃這個碼就能下載。"
  },
  "th": {
   "nav_all_apps": "แอปทั้งหมด",
@@ -387,6 +423,9 @@
   "h_guides": "คู่มือและเครื่องมือฟรี",
   "nav_blog": "บล็อก",
   "nav_tools": "เครื่องมือ",
-  "follow": "ติดตาม go ka"
+  "follow": "ติดตาม go ka",
+  "web_alt": "ไม่ได้ใช้ iPhone ใช่ไหม ลองอันนี้ในเบราว์เซอร์ได้เลย: {tool}",
+  "in_english": " (ภาษาอังกฤษ)",
+  "qr_scan": "ดูอยู่บนคอมพิวเตอร์ใช่ไหม สแกนโค้ดนี้ด้วยกล้อง iPhone เพื่อดาวน์โหลดแอป"
  }
 }

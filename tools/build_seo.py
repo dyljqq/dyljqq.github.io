@@ -38,7 +38,16 @@ START, END = "<!-- seo:start -->", "<!-- seo:end -->"
 # 结构化数据和 llms.txt 里保持干净的商店链接，只有页面上可点的按钮带参数。
 PT = "128309253"
 # Vercel Web Analytics（无 cookie）。/_vercel/insights/script.js 由 Vercel 在生产环境提供。
-ANALYTICS = ('<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script>\n'
+# Hobby 版不给 UTM 维度（API 返回 402），所以外链带 ?ref=<来源>（小写字母数字连字符）时，
+# 落地那一次浏览记成「原路径 + ~<来源>」，在 Pages 面板里单独一行，就能分出是哪个帖子带来的。
+# 同一段脚本给 <html> 打设备标记：is-ios / not-ios，桌面（非 iOS、非安卓、精确指针）再加 is-desk——
+# 产品页的「扫码下载」和「浏览器里能用的工具」、首页的网页工具区块都按这几个 class 显示，放在 head 里避免闪。
+DEVICE = ('<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);'
+          'h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>')
+ANALYTICS = (DEVICE + '\n'
+             '<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};'
+             'window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");'
+             'if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>\n'
              '<script defer src="/_vercel/insights/script.js"></script>')
 
 def root_key(app):
@@ -621,6 +630,61 @@ def home_faq_html(lang="en"):
     return ('<!-- homefaq:start -->\n  <div class="faq-list">\n' + rows
             + "\n  </div>\n  <!-- homefaq:end -->")
 
+# 首页「不是 iPhone？」区块：只对非 iOS 访客显示（DEVICE 打的 not-ios），放在首屏和 app 列表之间。
+# 09-28 Reddit 那波 37 人里 26 个是安卓 / 电脑，装不了 app，落在首页看一页就走——先给他们能当场用的网页工具。
+# 有本语言工具的语言用本语言的；其余语言首页列英文工具，链接标 hreflang/lang="en"，说明句里写明是英文。
+WEB_FIRST = {
+    "en": [("/tools/days-until/", "Type a date, get the days and weeks left."),
+           ("/tools/invoice-template/", "Fill it in on the page, then print or save as PDF."),
+           ("/tools/packing-list/", "A checklist for your trip type and length.")],
+    "pt-BR": [("/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "Contagem ao vivo até 25 de dezembro."),
+              ("/tools/pt-br/contagem-regressiva-black-friday-2026/", "Contagem ao vivo até 27 de novembro."),
+              ("/tools/pt-br/dias-para-o-enem-2026/", "Contagem até as provas de 8 e 15 de novembro.")],
+    "es-MX": [("/tools/es-mx/formato-de-cotizacion/", "Llénalo en línea, el IVA se calcula solo; imprímelo o guárdalo en PDF."),
+              ("/tools/es-mx/nota-de-venta/", "Folio, cliente y conceptos; imprímela o guárdala en PDF.")],
+}
+
+# 列英文工具的语言首页：工具名保持英文（标 lang="en"），说明句是我们自己写的，按页面语言给（09-29 评审：不许残留英文句子）
+WEB_BLURB = {
+    "/tools/days-until/": {
+        "de": "Datum eingeben, verbleibende Tage und Wochen sehen.", "fr": "Entrez une date : les jours et semaines qui restent s’affichent.",
+        "it": "Inserisci una data e vedi quanti giorni e settimane mancano.", "es": "Escribe una fecha y mira los días y semanas que faltan.",
+        "ja": "日付を入れると、残りの日数と週数がわかります。", "ko": "날짜를 입력하면 남은 일수와 주 수를 알려 줘요.",
+        "zh-Hans": "输入日期，就能看到还剩几天、几周。", "zh-Hant": "輸入日期，就能看到還剩幾天、幾週。",
+        "th": "ใส่วันที่ แล้วดูว่าเหลืออีกกี่วัน กี่สัปดาห์"},
+    "/tools/invoice-template/": {
+        "de": "Direkt auf der Seite ausfüllen, dann drucken oder als PDF speichern.", "fr": "À remplir sur la page, puis à imprimer ou enregistrer en PDF.",
+        "it": "Compila la fattura nella pagina, poi stampala o salvala in PDF.", "es": "Rellena la factura en la página y luego imprímela o guárdala en PDF.",
+        "ja": "ページ上で入力して、印刷するか PDF で保存できます。", "ko": "페이지에서 바로 작성하고 인쇄하거나 PDF로 저장하세요.",
+        "zh-Hans": "在网页上直接填写，然后打印或存成 PDF。", "zh-Hant": "在網頁上直接填寫，然後列印或存成 PDF。",
+        "th": "กรอกบนหน้าเว็บได้เลย แล้วพิมพ์หรือบันทึกเป็น PDF"},
+    "/tools/packing-list/": {
+        "de": "Eine Checkliste passend zu Reiseart und -dauer.", "fr": "Une liste adaptée au type et à la durée du voyage.",
+        "it": "Una checklist su misura per tipo e durata del viaggio.", "es": "Una lista según el tipo y la duración del viaje.",
+        "ja": "旅行のタイプと日数に合わせたチェックリスト。", "ko": "여행 유형과 기간에 맞춘 체크리스트예요.",
+        "zh-Hans": "按旅行类型和天数生成的清单。", "zh-Hant": "依旅行類型和天數產生的清單。",
+        "th": "เช็กลิสต์ตามประเภทและระยะเวลาของทริป"},
+}
+
+def home_webtools_html(lang="en"):
+    by_path = {t["path"]: t for t in TOOLS}
+    own = lang in WEB_FIRST
+    items = []
+    for path, blurb in WEB_FIRST.get(lang, WEB_FIRST["en"]):
+        tp = by_path[path]   # 工具页改名 / 下线时这里会直接报错，不会留下死链
+        name = esc_text(tp.get("hubTitle") or tp["title"])
+        if not (own or lang == "en"):
+            blurb = WEB_BLURB[path][lang]   # 缺语言直接报错
+            items.append(f'      <li><a href="{path}" hreflang="en"><b lang="en">{name}</b><span>{esc_text(blurb)}</span></a></li>')
+        else:
+            items.append(f'      <li><a href="{path}"><b>{name}</b><span>{esc_text(blurb)}</span></a></li>')
+    hub = TOOLS_HUB.get(lang, "/tools/")
+    hub_attr = ' hreflang="en"' if hub == "/tools/" and lang != "en" else ""
+    return (f'<!-- webtools:start -->\n<section class="wrap web-first" id="in-browser" aria-labelledby="web-title">\n'
+            f'  <div class="web-box">\n    <h2 id="web-title">{esc_text(H(lang, "web_h"))}</h2>\n'
+            f'    <p>{esc_text(H(lang, "web_p"))}</p>\n    <ul class="web-list">\n' + "\n".join(items)
+            + f'\n    </ul>\n    <a class="web-all" href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))} →</a>\n  </div>\n</section>\n<!-- webtools:end -->')
+
 FOOT_SHORT = {"en": {"privacy": "Privacy", "terms": "Terms"},   # 标题已写「Privacy & terms」，列里用短词
               "de": {"privacy": "Datenschutz", "terms": "Bedingungen"}}   # 09-28 手机 375 宽下全称三列放不下（溢出 26px）
 
@@ -818,7 +882,8 @@ def patch_home(path: Path, lang="en"):
                   head, count=1, flags=re.S)
     out = head.rstrip() + "\n" + home_head(lang) + rest
     out = fill_lang(out, lang, home_options())
-    for tag, fn in (("apps", lambda: home_apps_html(lang)), ("homefaq", lambda: home_faq_html(lang))):
+    for tag, fn in (("apps", lambda: home_apps_html(lang)), ("homefaq", lambda: home_faq_html(lang)),
+                    ("webtools", lambda: home_webtools_html(lang))):
         a, b = f"<!-- {tag}:start -->", f"<!-- {tag}:end -->"
         if a not in out or b not in out:
             raise SystemExit(f"index.html 缺少标记 {a} / {b}")
