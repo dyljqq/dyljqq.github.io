@@ -467,7 +467,7 @@ def render(a):
   <a class="brand" href="{home}">{LOGO}<b>go ka</b></a>
   <nav class="nav" aria-label="Main">
     <a href="{home}">{esc(T("nav_all_apps"))}</a>
-    <a href="{ {'pt-BR': '/tools/pt-br/', 'es-MX': '/tools/es-mx/'}.get(lang, '/tools/') }">{esc(T("nav_tools"))}</a>
+    <a href="{ {'pt-BR': '/tools/pt-br/', 'es-MX': '/tools/es-mx/', 'zh-Hant': '/tools/zh-hant/'}.get(lang, '/tools/') }">{esc(T("nav_tools"))}</a>
     <a href="/blog/">{esc(T("nav_blog"))}</a>
     <a href="mailto:{EMAIL}?subject={quote(p['shortName'])}">{esc(T("nav_support"))}</a>
   </nav>

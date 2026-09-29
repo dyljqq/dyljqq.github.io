@@ -158,6 +158,8 @@ A gym workout log for iPhone.
 - [Free invoice template](https://beforego.art/tools/invoice-template/) — A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.
 - [Formato de cotización gratis](https://beforego.art/tools/es-mx/formato-de-cotizacion/) — Formato de cotización gratis para llenar en línea: tus datos, el cliente, los conceptos con importe e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.
 - [Formato de nota de venta gratis](https://beforego.art/tools/es-mx/nota-de-venta/) — Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.
+- [報價單範本](https://beforego.art/tools/zh-hant/bao-jia-dan-fan-ben/) — 免費報價單範本：線上填好公司、客戶與品項，金額、稅額與總計自動計算，再列印或存成 PDF。不用註冊，港台都適用。
+- [收據範本](https://beforego.art/tools/zh-hant/shou-ju-fan-ben/) — 免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
@@ -170,6 +172,7 @@ A gym workout log for iPhone.
 - [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
 - [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.
 - [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.
+- [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本與收據範本，線上填寫、自動計算，列印或存成 PDF。
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ

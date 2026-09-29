@@ -493,9 +493,9 @@ def product_options(app):
     fam = [parent] + variants_of(parent)
     return [(a.get("lang", "en"), a["path"]) for a in sorted(fam, key=lambda a: bp.order_key(a.get("lang", "en")))]
 
-TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}
-ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español"}
-HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español"}
+TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/"}
+ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español", "zh-Hant": "這一頁只有繁體中文版"}
+HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español", "zh-Hant": "繁體中文免費工具"}
 # 同一个工具的不同语言版本：互为 hreflang（x-default 指英文），页头语言菜单互链（09-29 评审：两个计算器各写「只有本语言」）
 TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/"},
               # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
@@ -650,6 +650,8 @@ WEB_FIRST = {
               ("/tools/pt-br/contagem-regressiva-black-friday-2026/", "Contagem ao vivo até 27 de novembro.")],
     "es-MX": [("/tools/es-mx/formato-de-cotizacion/", "Llénalo en línea, el IVA se calcula solo; imprímelo o guárdalo en PDF."),
               ("/tools/es-mx/nota-de-venta/", "Folio, cliente y conceptos; imprímela o guárdala en PDF.")],
+    "zh-Hant": [("/tools/zh-hant/bao-jia-dan-fan-ben/", "線上填寫，金額與總計自動計算，列印或存成 PDF。"),
+                ("/tools/zh-hant/shou-ju-fan-ben/", "填好金額就自動寫出大寫，「茲收到」格式直接列印。")],
 }
 
 # 列英文工具的语言首页：工具名保持英文（标 lang="en"），说明句是我们自己写的，按页面语言给（09-29 评审：不许残留英文句子）
@@ -717,7 +719,7 @@ def home_legal_html(lang="en"):
 # 样式自带、类名带 gk- 前缀：法务页和手写页没有站点的 CSS 变量，也有自己的 h2 / a 样式，不能指望页面。
 FOOT_START, FOOT_END = "<!-- sitefooter:start -->", "<!-- sitefooter:end -->"
 FOOT_LANG = {"zh-CN": "zh-Hans"}                      # 单词兽的页面是简体中文
-TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}   # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
+TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/"}   # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
 FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath>'
              '<circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/>'
              '<path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>')

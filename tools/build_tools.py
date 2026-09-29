@@ -25,14 +25,19 @@ TS = {  # 工具页专用界面词
             "faq": "Perguntas frequentes", "published": "Publicado em", "updated": "Atualizado em", "get": "Leve para o seu iPhone",
             "ask": "Pergunte a uma IA sobre esta página", "days": "dias", "day": "dia", "weeks": "semanas", "today": "É hoje!", "passed": "dias atrás",
             "home": "Início", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 09-29：港台线走 InvoiceQR（繁中商店名「開單、報價單、收據、送貨單產生器」）
+  "zh-Hant": {"tools": "工具", "hub_title": "免費工具與指南", "hub_lede": "小工具，免費、不用註冊。每個工具都能在瀏覽器裡完成我們 iPhone App 做的事。",
+              "faq": "常見問題", "published": "發布", "updated": "更新", "get": "在 iPhone 上完成", "ask": "請 AI 摘要這一頁",
+              "days": "天", "day": "天", "weeks": "週", "today": "就是今天！", "passed": "天前",
+              "home": "首頁", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
   # 09-28：墨西哥线走 InvoiceQR（西语本地化完整；Countdown 没有西语版，不做西语倒数页）
   "es-MX": {"tools": "Herramientas", "hub_title": "Herramientas y guías gratis", "hub_lede": "Pequeñas, gratis y sin registro. Cada una hace en el navegador lo mismo que nuestras apps hacen en el iPhone.",
             "faq": "Preguntas frecuentes", "published": "Publicado", "updated": "Actualizado", "get": "Llévalo a tu iPhone",
             "ask": "Pregúntale a una IA sobre esta página", "days": "días", "day": "día", "weeks": "semanas", "today": "¡Es hoy!", "passed": "días atrás",
             "home": "Inicio", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
-HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/"}
-HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/"}
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
@@ -131,6 +136,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
 .inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
 .inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
 @media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
 @media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
@@ -147,7 +153,8 @@ def app_card(app_key, lang):
 
 def ask_ai(url, lang):
     q = {"pt-BR": f"Leia {url} e resuma os pontos principais em poucas frases.",
-         "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases."}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
+         "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases.",
+         "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -763,6 +770,111 @@ PAGES.append({"path": "/tools/es-mx/nota-de-venta/", "lang": "es-MX", "kind": "W
 <p>¿Todavía no cierras la venta? Empieza por un <a href="/tools/es-mx/formato-de-cotizacion/">formato de cotización</a>. En el iPhone, <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a> guarda tus clientes y conceptos, lleva la cuenta de lo pagado y lo pendiente, y agrega tu CLABE o un código QR de pago a cada nota.</p>
 {MX_NOTE}"""})
 
+# 7c. 港台：報價單範本 / 收據範本（zh-Hant，InvoiceQR）——09-29
+# 依据：Google HK / TW 联想词（報價單範本 excel/word/下載/pdf、報價單產生器；收據範本 word/excel/茲收到/數字/香港、免用統一發票 收據格式）；
+# app 说法全部出自 tools/store/invoiceqr.json zh-Hant 描述（商店名「開單、報價單、收據、送貨單產生器」；先寄報價單，確認後一鍵轉帳單；
+# 收款 QR Code；手寫簽名；結清後同一份帳單當收據分享；免費 3 份免註冊；「不用於開立稅務發票」）。
+# ⛔ 台灣的「發票」＝統一發票（稅務憑證），我們不開——同墨西哥 CFDI 的口径。營業稅只写一般稅率 5%；香港無營業稅。
+ZH_NOTE = ('<p class="meta" style="margin-top:18px"><strong>提醒：</strong>報價單和收據都不是稅務發票。在台灣，營業人依法開立的是統一發票；'
+           '這個範本和我們的 App 都不開立統一發票或其他稅務發票。</p>')
+ZH_APP = ('「開單、報價單、收據、送貨單產生器」是我們的 iPhone App，做的就是這件事，還會記住客戶與項目：先寄報價單，客戶確認後一鍵轉成帳單；'
+          '每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。免費建立 3 份，免註冊帳號。')
+RECEIPT_JS = r"""
+(function(){var r=document.getElementById('rcpt');if(!r)return;
+function cnUpper(n){if(!(n>=0)||n>=1e12)return '';n=Math.floor(n);if(n===0)return '零元整';
+ var D='零壹貳參肆伍陸柒捌玖',U=['','拾','佰','仟'],S=['','萬','億'],s=String(n),L=s.length,out='',zero=false;
+ for(var i=0;i<L;i++){var d=+s[i],p=L-1-i,u=p%4,g=Math.floor(p/4);
+  if(d===0)zero=true;else{if(zero){out+='零';zero=false;}out+=D[d]+U[u];}
+  if(u===0&&g>0&&+s.substring(Math.max(0,i-3),i+1)>0){out+=S[g];zero=false;}}
+ return out+'元整';}
+var a=document.getElementById('amt'),o=document.getElementById('amt-cn');
+function upd(){var v=parseFloat((a.textContent||'').replace(/[^0-9.]/g,''));o.textContent=isNaN(v)?'（請輸入數字）':(cnUpper(v)||'（金額太大）');}
+a.addEventListener('input',upd);upd();
+a.addEventListener('blur',function(){var v=parseFloat((a.textContent||'').replace(/[^0-9.]/g,''));if(!isNaN(v))a.textContent=Math.floor(v).toLocaleString('en-US');});
+var t=document.getElementById('today');if(t)t.textContent=new Date().toLocaleDateString('zh-Hant');
+document.getElementById('print').addEventListener('click',function(){window.print();});})();
+"""
+
+PAGES.append({"path": "/tools/zh-hant/bao-jia-dan-fan-ben/", "lang": "zh-Hant", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-29",
+  "title": "報價單範本（免費）— 線上填寫、列印或存成 PDF", "crumb": "報價單範本",
+  "description": "免費報價單範本：線上填好公司、客戶與品項，金額、稅額與總計自動計算，再列印或存成 PDF。不用註冊，港台都適用。",
+  "hub_title": "報價單範本", "hub_desc": "線上填寫，金額與總計自動計算；列印或存成 PDF。",
+  "js": [INVOICE_JS], "faq": [
+    ("這個報價單範本免費嗎？", "是。整份在你的瀏覽器裡填寫，不會上傳，不用帳號，也沒有浮水印。填好後列印或存成 PDF。"),
+    ("報價單要寫哪些內容？", "「報價單」字樣與編號、日期與有效期限、你的公司名稱與聯絡方式（台灣可加上統一編號）、客戶資料、每個項目的數量、單價與金額、小計、稅額與總計，以及付款條件和交期。"),
+    ("報價單的有效期限怎麼寫？", "就是你保證這個價格到哪一天。範本預設為今天起 15 天，可以直接改。"),
+    ("報價單要含稅嗎？", "在台灣，營業稅的一般稅率是 5%，報價時寫清楚含稅或未稅，之後比較不會有爭議；把稅率欄改成 5，稅額就會自動算出來。香港沒有營業稅，稅率欄保持 0。"),
+    ("有 Excel 或 Word 版本嗎？", "沒有。這個範本直接在網頁上填，完成後存成 PDF 寄給客戶，排版不會跑掉；如果要重複使用客戶與項目，可以用我們的 iPhone App。"),
+    ("怎麼存成 PDF？", "按「列印／存成 PDF」（香港叫打印），在列印視窗把目的地選成「另存為 PDF」。只會印出報價單本身，頁面其他內容會自動隱藏。"),
+    ("有 App 可以在 iPhone 上開報價單嗎？", ZH_APP),
+  ],
+  "body": f"""<h1>報價單範本</h1>
+<p class="lede">直接在這裡填：點任何虛線欄位就能修改。每個項目的金額、稅額與總計會自動計算，填好後列印或存成 PDF。資料不會離開你的瀏覽器。</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">列印／存成 PDF</button><button class="btn ghost" id="addrow" type="button">+ 新增項目</button></div>
+<div class="inv" id="inv" data-newitem="項目" data-days="15">
+<div class="inv-head"><div><div class="inv-title">報價單</div><p style="margin:6px 0 0"><span contenteditable="true">你的公司名稱</span><br><span contenteditable="true">統一編號／商業登記號碼</span><br><span contenteditable="true">地址 · 電話 · Email</span></p></div>
+<div class="inv-meta"><div class="k">報價單號</div><p style="margin:0 0 10px"><span contenteditable="true">Q-0001</span></p><div class="k">日期</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">有效期限</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">客戶</div><p style="margin:0"><span contenteditable="true">客戶名稱／聯絡人</span><br><span contenteditable="true">電話或 Email</span></p></div>
+<div><div class="k">條件</div><p style="margin:0"><span contenteditable="true">付款方式：訂金 50%，交貨後付清</span><br><span contenteditable="true">交期：確認後 14 天</span></p></div></div>
+<table><thead><tr><th>項目</th><th>數量</th><th>單價</th><th>金額</th></tr></thead>
+<tbody><tr><td contenteditable="true">網站設計（5 頁）</td><td contenteditable="true">1</td><td contenteditable="true">18000.00</td><td>18,000.00</td></tr>
+<tr><td contenteditable="true">商品攝影（半天）</td><td contenteditable="true">1</td><td contenteditable="true">6000.00</td><td>6,000.00</td></tr></tbody></table>
+<div class="totals"><div><span>小計</span><span id="sub">24,000.00</span></div><div><span>稅額（<span contenteditable="true" id="taxrate">0</span>%）</span><span id="tax">0.00</span></div><div class="grand"><span>總計</span><span id="total">24,000.00</span></div></div>
+<p class="notes" contenteditable="true">幣別：新台幣／港幣（請改成你的幣別）。本報價於有效期限內有效。客戶確認簽名／公司印章：</p>
+</div></div>
+<h2>報價單要寫什麼</h2>
+<ul><li><strong>「報價單」字樣</strong>與報價單號，方便日後對照。</li><li><strong>日期</strong>與<strong>有效期限</strong>：價格保證到哪一天。</li><li><strong>你的資料</strong>：公司或個人名稱、聯絡方式；台灣可加上統一編號。</li><li><strong>客戶資料</strong>：名稱、聯絡人、電話或 Email。</li><li><strong>項目</strong>：名稱、數量、單價、金額。</li><li><strong>小計、稅額、總計</strong>：台灣寫清楚含稅或未稅。</li><li><strong>條件</strong>：付款方式、訂金、交期，以及客戶確認回簽的位置。</li></ul>
+<h2>報價單、估價單、帳單、收據、統一發票</h2>
+<table><thead><tr><th>文件</th><th>什麼時候開</th><th>用途</th></tr></thead><tbody>
+<tr><td>報價單</td><td>成交前</td><td>提出價格，在有效期限內照這個價格做。</td></tr>
+<tr><td>估價單</td><td>成交前</td><td>估計費用，常見於工程與維修，實際金額可能再調整。</td></tr>
+<tr><td>帳單／請款單</td><td>交貨或完工後</td><td>向客戶請款，寫明金額與付款期限。</td></tr>
+<tr><td>收據</td><td>收到款項後</td><td>證明已經收到錢。</td></tr>
+<tr><td>統一發票（台灣）</td><td>依法開立</td><td>營業人開立的稅務憑證，多半是電子發票。</td></tr></tbody></table>
+<h2>要不要含稅</h2>
+<p>在台灣，營業稅的一般稅率是 5%。報價單上寫清楚「含稅」或「未稅」，之後開發票時才不會有爭議；要含稅就把稅率欄改成 5。香港沒有營業稅或增值稅，稅率欄保持 0 就好。</p>
+<p>客戶確認以後，收錢時用<a href="/tools/zh-hant/shou-ju-fan-ben/">收據範本</a>開收據。常常要報價的話，iPhone 上的<a href="/invoiceqr/zh-hant/">開單、報價單、收據、送貨單產生器</a>會記住客戶與項目，報價單確認後一鍵轉成帳單。</p>
+{ZH_NOTE}"""})
+
+PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-29",
+  "title": "收據範本（免費）— 茲收到格式，金額自動轉大寫", "crumb": "收據範本",
+  "description": "免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。",
+  "hub_title": "收據範本", "hub_desc": "「茲收到」格式，輸入金額自動寫出大寫；列印或存成 PDF。",
+  "js": [RECEIPT_JS], "faq": [
+    ("這個收據範本免費嗎？", "是。整份在你的瀏覽器裡填寫，不會上傳，不用帳號，也沒有浮水印。填好後列印或存成 PDF。"),
+    ("收據金額為什麼要寫大寫？", "大寫數字筆畫多、不容易被塗改，例如「壹萬貳仟參佰元整」；最後的「整」表示沒有零頭。在範本裡輸入數字，大寫會自動寫出來。"),
+    ("「茲收到」後面要寫什麼？", "寫付款人的姓名或公司名稱，接著寫「繳付」與款項的事由，例如「茲收到 王小明 繳付 十月份房租 款項」。"),
+    ("金額有小數怎麼辦？", "範本的大寫以整數元計算，小數會捨去；金額有角或分的話，請在大寫欄自己補上。"),
+    ("收據可以當發票用嗎？", "不行。收據證明你收到了款項；在台灣，營業人依法要開的是統一發票。在香港，「發票」通常指請款用的單據（invoice），不是稅務憑證。這個範本和我們的 App 都不開立稅務發票。"),
+    ("有 App 可以在 iPhone 上開收據嗎？", "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。免費建立 3 份，免註冊帳號。"),
+  ],
+  "body": f"""<h1>收據範本</h1>
+<p class="lede">直接在這裡填：點任何虛線欄位就能修改。輸入金額，下面會自動寫出中文大寫；填好後列印或存成 PDF。資料不會離開你的瀏覽器。</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">列印／存成 PDF</button></div>
+<div class="inv" id="rcpt">
+<div class="inv-head"><div><div class="inv-title">收據</div><p style="margin:6px 0 0"><span contenteditable="true">收款人或公司名稱</span><br><span contenteditable="true">地址 · 電話</span></p></div>
+<div class="inv-meta"><div class="k">收據編號</div><p style="margin:0 0 10px"><span contenteditable="true">R-0001</span></p><div class="k">日期</div><p style="margin:0"><span contenteditable="true" id="today"></span></p></div></div>
+<p class="rcpt-line">茲收到 <span contenteditable="true">付款人姓名／公司</span> 繳付 <span contenteditable="true">網站設計費用</span> 款項</p>
+<p class="rcpt-line">金額：<span contenteditable="true">新台幣</span> <strong id="amt-cn">參萬元整</strong></p>
+<p class="rcpt-line">（<span contenteditable="true">NT$</span> <span contenteditable="true" id="amt">30,000</span>）</p>
+<p class="rcpt-line">付款方式：<span contenteditable="true">銀行轉帳</span></p>
+<div class="rcpt-sign"><div>收款人簽名：＿＿＿＿＿＿</div><div>蓋章：</div></div>
+<p class="notes" contenteditable="true">此據。</p>
+</div></div>
+<h2>收據要寫什麼</h2>
+<ul><li><strong>「收據」字樣</strong>與收據編號。</li><li><strong>日期</strong>：收到款項的那一天。</li><li><strong>「茲收到 某某 繳付 某某款項」</strong>：付款人與事由。</li><li><strong>金額</strong>：中文大寫加阿拉伯數字，大寫最後寫「元整」，不容易被塗改。香港填港幣時，把「新台幣」和「NT$」改成「港幣」和「HK$」。</li><li><strong>付款方式</strong>：現金、轉帳、支票。</li><li><strong>收款人簽名或蓋章</strong>。</li></ul>
+<h2>金額大寫對照</h2>
+<table><thead><tr><th>數字</th><th>大寫</th></tr></thead><tbody>
+<tr><td>1 2 3 4 5</td><td>壹 貳 參 肆 伍</td></tr><tr><td>6 7 8 9 0</td><td>陸 柒 捌 玖 零</td></tr><tr><td>十、百、千</td><td>拾、佰、仟</td></tr><tr><td>萬、億</td><td>萬、億</td></tr>
+<tr><td>1,010</td><td>壹仟零壹拾元整</td></tr><tr><td>12,300</td><td>壹萬貳仟參佰元整</td></tr><tr><td>101,000</td><td>壹拾萬壹仟元整</td></tr><tr><td>100,001,000</td><td>壹億零壹仟元整</td></tr></tbody></table>
+<p>中間有零時只寫一個「零」，例如 10,005 是「壹萬零伍元整」；某一段整段是零時也要補「零」，所以 100,001,000 是「壹億零壹仟元整」。</p>
+<h2>營業用的收據</h2>
+<p>在台灣，已核准免用統一發票的小規模營業人開給客人的收據，格式要符合國稅局的規定；這個範本是一般的收款證明，營業用請先向國稅局確認。</p>
+<p>還沒成交的話，先用<a href="/tools/zh-hant/bao-jia-dan-fan-ben/">報價單範本</a>。在 iPhone 上，<a href="/invoiceqr/zh-hant/">開單、報價單、收據、送貨單產生器</a>收款結清後，同一份帳單可以直接當作收據分享。</p>
+{ZH_NOTE}"""})
+
 # 8. 如何写发票（指南）
 PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "Article", "app": "invoiceqr", "published": "2026-09-26",
   "title": "How to Write an Invoice (freelancers & small businesses) — 8 steps", "crumb": "How to write an invoice",
@@ -996,6 +1108,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
+        "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本與收據範本，線上填寫、自動計算，列印或存成 PDF。"),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,
             "description": desc,
