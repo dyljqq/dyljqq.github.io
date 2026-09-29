@@ -95,7 +95,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
 .calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn svg{width:18px;height:18px;flex:none;fill:currentColor}.appcard .btn{white-space:nowrap}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-#calc-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a{font-size:14px}
+#calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
+.tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
 .pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
 .pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
@@ -114,21 +115,21 @@ html[lang^=th] *{letter-spacing:0!important}
 .inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
 .inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
-@media (max-width:760px){.calc{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
 @media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 </style>
 <!-- seo:start -->
-<meta name="description" content="Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.">
+<meta name="description" content="Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.">
 <link rel="canonical" href="https://beforego.art/tools/pt-br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="Ferramentas e guias grátis — go ka">
-<meta property="og:description" content="Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.">
+<meta property="og:description" content="Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.">
 <meta property="og:url" content="https://beforego.art/tools/pt-br/">
 <meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ferramentas e guias grátis — go ka">
-<meta name="twitter:description" content="Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.">
+<meta name="twitter:description" content="Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.">
 <meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
 <link rel="alternate" hreflang="en" href="https://beforego.art/tools/">
 <link rel="alternate" hreflang="pt-BR" href="https://beforego.art/tools/pt-br/">
@@ -142,7 +143,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "url": "https://beforego.art/tools/pt-br/",
   "name": "Ferramentas e guias grátis — go ka",
   "headline": "Ferramentas e guias grátis — go ka",
-  "description": "Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.",
+  "description": "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.",
   "inLanguage": "pt-BR",
   "isPartOf": {
     "@id": "https://beforego.art/#website"
@@ -203,6 +204,9 @@ html[lang^=th] *{letter-spacing:0!important}
 <p class="lede">Pequenas, grátis, sem cadastro. Cada uma faz no navegador a mesma coisa do dia a dia que os nossos apps fazem.</p>
 <div class="hub">
   <a href="/tools/pt-br/quantos-dias-faltam/"><b>Quantos dias faltam? (contador de dias)</b><span>Dias até qualquer data — ou desde uma data — com link para compartilhar.</span><small>Countdown: Contagem regressiva</small></a>
+  <a href="/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/"><b>Quantos dias faltam para o meu aniversário?</b><span>Dias, meses e horas até o próximo aniversário — e quantos anos você vai fazer.</span><small>Countdown: Contagem regressiva</small></a>
+  <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/"><b>Quantos dias faltam para as férias?</b><span>Dias corridos e dias úteis até as férias — e quanto falta para acabarem.</span><small>Countdown: Contagem regressiva</small></a>
+  <a href="/tools/pt-br/contador-de-dias-de-namoro/"><b>Contador de dias de namoro</b><span>Há quantos dias vocês estão juntos, os próximos marcos e um link para compartilhar.</span><small>Countdown: Contagem regressiva</small></a>
   <a href="/tools/pt-br/dias-para-o-enem-2026/"><b>Quantos dias faltam para o ENEM 2026?</b><span>Contagem regressiva para os dois domingos de prova, 8 e 15 de novembro.</span><small>Countdown: Contagem regressiva</small></a>
   <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/"><b>Quantos dias faltam para o Réveillon 2027?</b><span>Réveillon, Ano-Novo e Carnaval 2027 na mesma página, com contagem ao vivo.</span><small>Countdown: Contagem regressiva</small></a>
   <a href="/tools/pt-br/contagem-regressiva-black-friday-2026/"><b>Quantos dias faltam para a Black Friday 2026?</b><span>Black Friday e Cyber Monday com contagem ao vivo, mais a 1ª parcela do 13º.</span><small>Countdown: Contagem regressiva</small></a>

@@ -112,7 +112,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
 .calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn svg{width:18px;height:18px;flex:none;fill:currentColor}.appcard .btn{white-space:nowrap}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-#calc-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a{font-size:14px}
+#calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
+.tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
 .pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
 .pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
@@ -131,7 +132,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
 .inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
-@media (max-width:760px){.calc{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
 @media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 """
 
@@ -501,9 +502,148 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam/", "lang": "pt-BR", "kin
 <p class="meta">Os números acima foram calculados em {TODAY.strftime("%d/%m/%Y")} e se atualizam quando a página abre.</p>
 <h2>Como a conta é feita</h2>
 <p>O resultado é a quantidade de dias corridos entre hoje e a data escolhida, no fuso horário do seu aparelho — do jeito que a gente fala «faltam 12 dias». Se a data é hoje, a resposta é 0. Uma data no passado mostra quantos dias se passaram, o que serve para aniversário de namoro, dias sem fumar ou o tempo no emprego novo.</p>
+<h2>Contadores prontos</h2>
+<ul><li><a href="/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/">Quantos dias faltam para o meu aniversário</a> — com os anos que você vai fazer</li><li><a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">Quantos dias faltam para as férias</a> — com os dias úteis</li><li><a href="/tools/pt-br/contador-de-dias-de-namoro/">Contador de dias de namoro</a> — há quantos dias vocês estão juntos</li></ul>
 <p>Para ver a contagem sem abrir nada, coloque-a na Tela de Início do iPhone com o app abaixo.</p>"""})
 _first_pt = next(i for i, p in enumerate(PAGES) if p["lang"] == "pt-BR")
 PAGES.insert(_first_pt, PAGES.pop())   # 计算器排在葡语工具目录第一个
+
+# 6d. 葡语场景页（09-29，Google 巴西联想词）：
+#   aniversário — quantos dias faltam para o meu aniversário / … do meu filho, da minha filha, do meu amor / frases / instagram / dias e horas
+#   férias      — quantos dias faltam para as férias (de julho, de dezembro, escolares, acabarem)；学校假期各州不同，不写死日期
+#   namoro      — contador de dias de namoro / quantos dias de namoro eu tenho / quantos dias tem N meses de namoro / 100 dias / qr code
+# 三个都只收日期和数字，结果里不拼任何用户输入的文字（没有 ?name= 那种注入面）。
+SCENE_JS = r"""
+(function(){var pl=function(n,a,b){return n===1?a:b},dias=function(n){return n+pl(n,' dia',' dias')};
+function today(){var t=new Date();return new Date(t.getFullYear(),t.getMonth(),t.getDate());}
+function diff(a,b){return Math.round((b-a)/864e5);}
+function pretty(d){return d.toLocaleDateString('pt-BR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).replace(/(^|, )1 de /,'$11º de ');}
+function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+function addMonths(d,k,day){var y=d.getFullYear(),m=d.getMonth()+k,last=new Date(y,m+1,0).getDate();return new Date(y,m,Math.min(day,last));}
+function ymd(from,to){var day=from.getDate(),k=0;while(addMonths(from,k+1,day)<=to)k++;return [Math.floor(k/12),k%12,diff(addMonths(from,k,day),to)];}
+function ymdText(a){var o=[];if(a[0])o.push(a[0]+pl(a[0],' ano',' anos'));if(a[1])o.push(a[1]+pl(a[1],' mês',' meses'));if(a[2]||!o.length)o.push(dias(a[2]));return o.length>1?o.slice(0,-1).join(', ')+' e '+o[o.length-1]:o[0];}
+function falta(t,d){var r=diff(t,d);return r===0?'é hoje!':pl(r,'falta ','faltam ')+dias(r);}
+function show(el,h){el.innerHTML=h;el.hidden=false;}
+function share(id){var a=document.getElementById(id);if(a)a.addEventListener('click',function(ev){if(navigator.clipboard){ev.preventDefault();navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.textContent='Link copiado';}});}
+var fa=document.getElementById('bday');if(fa){var oa=document.getElementById('bday-out');fa.addEventListener('submit',function(e){e.preventDefault();
+ var dd=+fa.dia.value,mm=+fa.mes.value,yy=+fa.ano.value||0,t=today(),h;
+ if(new Date(2024,mm-1,dd).getMonth()!==mm-1){show(oa,'<p class="big">Essa data não existe — confira o dia e o mês.</p>');return;}
+ var occ=function(y){var leap=(y%4===0&&y%100!==0)||y%400===0;return new Date(y,mm-1,(mm===2&&dd===29&&!leap)?28:dd);};
+ var nx=occ(t.getFullYear());if(nx<t)nx=occ(t.getFullYear()+1);var n=diff(t,nx);
+ if(n===0)h='<p class="big"><strong>É hoje!</strong> Feliz aniversário.</p>';
+ else h='<p class="big">'+pl(n,'Falta ','Faltam ')+'<strong>'+dias(n)+'</strong> para o aniversário — '+pretty(nx)+'.</p><p>'+(n>=31?'Isso dá '+ymdText(ymd(t,nx))+'. ':'')+'São cerca de '+Math.max(0,Math.floor((nx-new Date())/36e5))+' horas.</p>';
+ if(yy>=1900&&yy<=t.getFullYear()){var age=nx.getFullYear()-yy;if(age>0)h+='<p>'+(n===0?'Hoje você faz ':'Vai fazer ')+'<strong>'+age+pl(age,' ano',' anos')+'</strong>.</p>';}
+ show(oa,h);});}
+var ff=document.getElementById('ferias');if(ff){var of=document.getElementById('ferias-out');ff.addEventListener('submit',function(e){e.preventDefault();
+ var s=parse(ff.inicio.value),f=parse(ff.fim.value),t=today(),h;if(!s)return;
+ if(f&&f<s){show(of,'<p class="big">O último dia precisa ser depois do primeiro.</p>');return;}
+ var n=diff(t,s);
+ if(n>0){var u=0;for(var d=new Date(t.getFullYear(),t.getMonth(),t.getDate()+1);d<s;d.setDate(d.getDate()+1)){var w=d.getDay();if(w>0&&w<6)u++;}var wk=Math.floor(n/7);
+  h='<p class="big">'+pl(n,'Falta ','Faltam ')+'<strong>'+dias(n)+'</strong> para as férias — '+pretty(s)+'.</p><p>Dias úteis até lá (de segunda a sexta, de amanhã até a véspera, sem descontar feriados): <strong>'+u+'</strong>.'+(n>=7?' Em semanas: '+wk+pl(wk,' semana',' semanas')+(n%7?' e '+dias(n%7):'')+'.':'')+'</p>';
+  if(f)h+='<p>As férias duram <strong>'+dias(diff(s,f)+1)+'</strong>, até '+pretty(f)+'.</p>';}
+ else if(f&&diff(t,f)>=0){var r=diff(t,f);h='<p class="big">Você está de férias: '+(r===0?'<strong>hoje é o último dia</strong>':pl(r,'falta ','faltam ')+'<strong>'+dias(r)+'</strong> para acabar')+' — último dia: '+pretty(f)+'.</p>';}
+ else if(f)h='<p class="big">Essas férias acabaram há <strong>'+dias(-diff(t,f))+'</strong>.</p>';
+ else h='<p class="big">'+(n===0?'<strong>As férias começam hoje!</strong>':'As férias começaram há <strong>'+dias(-n)+'</strong>.')+'</p><p>Informe o último dia para ver quanto falta para acabarem.</p>';
+ show(of,h);});}
+var fn=document.getElementById('namoro');if(fn){var on=document.getElementById('namoro-out');
+ var q=new URLSearchParams(location.search).get('desde');if(parse(q))fn.desde.value=q;
+ var run=function(e){if(e)e.preventDefault();var s=parse(fn.desde.value),t=today(),h;if(!s)return;var n=diff(s,t);
+  if(n<0){show(on,'<p class="big">Essa data ainda não chegou: '+pl(-n,'falta ','faltam ')+'<strong>'+dias(-n)+'</strong>.</p>');return;}
+  h='<p class="big">'+(n===0?'<strong>Hoje é o primeiro dia</strong> de namoro.':'Vocês estão juntos há <strong>'+dias(n)+'</strong>.')+'</p>';
+  if(n>=31){var wk=Math.floor(n/7);h+='<p>Isso dá '+ymdText(ymd(s,t))+' — ou '+wk+pl(wk,' semana',' semanas')+'.</p>';}
+  var k=n>0&&n%100===0?n:(Math.floor(n/100)+1)*100,c=new Date(s.getFullYear(),s.getMonth(),s.getDate()+k),day=s.getDate(),mi=1,yi=1;
+  while(addMonths(s,mi,day)<t)mi++;while(addMonths(s,12*yi,day)<t)yi++;var mv=addMonths(s,mi,day),an=addMonths(s,12*yi,day);
+  h+='<ul><li><strong>'+k+' dias</strong>: '+pretty(c)+' ('+falta(t,c)+')</li>'+(mi%12?'<li>Próximo mesversário, <strong>'+mi+pl(mi,' mês',' meses')+'</strong>: '+pretty(mv)+' ('+falta(t,mv)+')</li>':'')
+   +'<li><strong>'+yi+pl(yi,' ano',' anos')+'</strong> de namoro: '+pretty(an)+' ('+falta(t,an)+')</li></ul><p class="share"><a href="?desde='+fn.desde.value+'" id="namoro-share">Link para esta contagem</a></p>';
+  show(on,h);share('namoro-share');};
+ fn.addEventListener('submit',run);if(fn.desde.value)run();}
+})();
+"""
+
+def month_span(n):
+    """n 个月有几天：从每个月 1 号起算，覆盖一个闰年周期，取最少和最多。"""
+    spans = [(dt.date(y + (m - 1 + n) // 12, (m - 1 + n) % 12 + 1, 1) - dt.date(y, m, 1)).days for y in range(2025, 2029) for m in range(1, 13)]
+    return min(spans), max(spans)
+M3_LO, M3_HI = 100 - month_span(3)[1], 100 - month_span(3)[0]   # 100 天 = 3 个月又几天
+M7_LO, M7_HI = month_span(7)
+PT_MONTHS = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+PT_WIDGET_STEP = "<li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li>"
+
+SCENES = [
+ {"path": "/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
+  "title": "Quantos dias faltam para o meu aniversário? Contagem regressiva", "crumb": "Meu aniversário",
+  "description": "Escolha o dia e o mês do seu aniversário e veja quantos dias, meses e horas faltam, em que dia da semana ele cai e quantos anos você vai fazer.",
+  "hub_title": "Quantos dias faltam para o meu aniversário?", "hub_desc": "Dias, meses e horas até o próximo aniversário — e quantos anos você vai fazer.",
+  "js": [SCENE_JS], "faq": [
+    ("Como a conta é feita?", "São dias corridos entre hoje e o próximo aniversário, no fuso horário do seu aparelho. Se o aniversário deste ano já passou, a conta vai para o do ano que vem; se é hoje, a página diz que é hoje."),
+    ("E quem nasceu em 29 de fevereiro?", "Nos anos que não são bissextos, a página conta até 28 de fevereiro. O próximo 29 de fevereiro é em 2028."),
+    ("Dá para contar os dias para o aniversário do meu filho?", "Sim: escolha o dia e o mês em que ele nasceu. No Countdown dá para ter um evento para cada pessoa da família, porque os eventos são ilimitados, e cada um pode aparecer num widget."),
+    ("Quantos dias e horas faltam?", "Depois de contar, a página mostra também as horas que faltam até a meia-noite em que o aniversário começa, no seu fuso horário."),
+    ("Existe um app com a contagem do aniversário no celular?", "O Countdown: Contagem regressiva é o nosso app grátis para iPhone: widgets em todos os tamanhos na Tela de Início e na Tela Bloqueada, eventos ilimitados, repetição todo ano e lembretes no dia e com a antecedência que você quiser."),
+  ],
+  "body": f"""<h1>Quantos dias faltam para o meu aniversário?</h1>
+<p class="lede">Escolha o dia e o mês em que você nasceu e veja quantos dias faltam para o próximo aniversário e em que dia da semana ele cai. Informe o ano, se quiser, para ver quantos anos vai fazer. Serve também para o aniversário do filho, da filha ou do amor.</p>
+<form class="calc c4" id="bday"><label>Dia<select name="dia" required>{"".join(f'<option value="{d}">{d}</option>' for d in range(1, 32))}</select></label><label>Mês<select name="mes" required>{"".join(f'<option value="{i}">{m}</option>' for i, m in enumerate(PT_MONTHS, 1))}</select></label><label>Ano (opcional)<input type="number" name="ano" min="1900" max="{TODAY.year}" placeholder="1995" inputmode="numeric"></label><button type="submit">Contar</button></form>
+<div id="bday-out" class="tool-out" hidden aria-live="polite"></div>
+<h2>A contagem na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> o aniversário fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos. O app tem modelos prontos, entre eles o de aniversário, que já vêm com a repetição e os lembretes certos. Os eventos são ilimitados: cabem o seu, o dos filhos e o de quem mais você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e escolha o modelo de aniversário.</li><li>Informe a data de nascimento.</li>{PT_WIDGET_STEP}</ol>
+<p>Quando a contagem chega a um marco — cem dias, uma semana, a manhã do dia —, o app abre o número em tela cheia e prepara um cartão para compartilhar.</p>
+<h2>Frases para a contagem regressiva</h2>
+<p>Para o story ou a legenda do Instagram:</p>
+<ul><li>«Contagem regressiva oficialmente aberta: falta uma semana para o meu dia.»</li><li>«Faltam 10 dias para mais um ano de história.»</li><li>«3, 2, 1… faltam só 3 dias!»</li><li>«Falta 1 dia. Amanhã é festa.»</li><li>«Faltam 30 dias para o aniversário do meu pequeno, e ele já pergunta todo dia quanto falta.»</li><li>«Um mês para o aniversário do meu amor — a surpresa já está sendo preparada.»</li></ul>
+<p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
+ {"path": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
+  "title": "Quantos dias faltam para as férias? Contagem com dias úteis", "crumb": "Férias",
+  "description": "Informe o primeiro dia das férias e veja quantos dias e quantos dias úteis faltam. Com o último dia, mostra a duração e quanto falta para acabarem.",
+  "hub_title": "Quantos dias faltam para as férias?", "hub_desc": "Dias corridos e dias úteis até as férias — e quanto falta para acabarem.",
+  "js": [SCENE_JS], "faq": [
+    ("Como os dias úteis são contados?", "São os dias de segunda a sexta entre amanhã e a véspera do primeiro dia de férias. Os feriados não são descontados, porque mudam de cidade para cidade: se houver feriado de segunda a sexta no período, tire um dia por feriado."),
+    ("Quando são as férias escolares?", "Depende do estado, da cidade e da rede de ensino. O calendário oficial é publicado pela secretaria de educação ou pela escola; digite a data de início no contador acima."),
+    ("Em quantas partes posso dividir as férias pela CLT?", "Em até três, se você concordar: um período de pelo menos 14 dias corridos e os outros de pelo menos 5 dias corridos cada (art. 134, § 1º, da CLT)."),
+    ("Quanto falta para as minhas férias acabarem?", "Informe o primeiro e o último dia. Se hoje estiver dentro desse intervalo, a página mostra quantos dias faltam para acabarem."),
+    ("Dá para ver a contagem das férias no celular?", "Sim. No Countdown: Contagem regressiva, grátis para iPhone, a contagem fica num widget da Tela de Início ou da Tela Bloqueada, com lembretes no dia e com antecedência. Os eventos são ilimitados e sincronizam pelo iCloud, sem criar conta."),
+  ],
+  "body": f"""<h1>Quantos dias faltam para as férias?</h1>
+<p class="lede">Informe o primeiro dia das férias e veja quantos dias faltam — e quantos dias úteis ainda tem pela frente. Com o último dia, a página mostra quanto tempo as férias duram e, se você já estiver de férias, quanto falta para acabarem.</p>
+<form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
+<div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
+<h2>Férias escolares</h2>
+<p>O calendário escolar muda de estado para estado e entre as redes estadual, municipal e particular. Por isso a página não traz uma data pronta: confira o calendário publicado pela secretaria de educação ou pela escola e digite o primeiro dia acima. Em geral há um recesso no meio do ano, em julho, e as férias grandes no fim do ano.</p>
+<h2>Férias do trabalho (CLT)</h2>
+<ul><li>São 30 dias corridos a cada 12 meses de trabalho para quem teve até 5 faltas injustificadas no período (art. 130).</li><li>Com a sua concordância, podem ser divididas em até três períodos: um de pelo menos 14 dias e os outros de pelo menos 5 dias cada (art. 134, § 1º).</li><li>A empresa comunica as férias por escrito com pelo menos 30 dias de antecedência (art. 135), e o pagamento sai até 2 dias antes do início (art. 145).</li></ul>
+<h2>A contagem na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome «Férias».</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
+<p>Se as férias vão ter viagem, o <a href="/beforego/pt-br/">BeforeGo</a> monta um roteiro dia a dia a partir do print de um post de viagem, e a lista de bagagem se monta sozinha a partir do destino e das datas.</p>
+<p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
+ {"path": "/tools/pt-br/contador-de-dias-de-namoro/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
+  "title": "Contador de dias de namoro: há quantos dias vocês estão juntos", "crumb": "Dias de namoro",
+  "description": "Digite a data em que começaram a namorar e veja há quantos dias, meses e anos estão juntos, o próximo mesversário, os 100 dias e o aniversário de namoro.",
+  "hub_title": "Contador de dias de namoro", "hub_desc": "Há quantos dias vocês estão juntos, os próximos marcos e um link para compartilhar.",
+  "js": [SCENE_JS], "faq": [
+    ("Como sei quantos dias de namoro eu tenho?", "Digite a data em que vocês começaram. A página conta os dias corridos até hoje, no fuso horário do seu aparelho; o dia em que começaram vale 0."),
+    ("Quantos dias tem 7 meses de namoro?", f"Entre {M7_LO} e {M7_HI} dias, conforme o mês em que o namoro começou. Os outros meses estão na tabela desta página."),
+    ("100 dias de namoro são quantos meses?", f"São 3 meses e mais {M3_LO} a {M3_HI} dias, conforme o mês em que vocês começaram."),
+    ("O link mostra a nossa contagem para outra pessoa?", "Sim. O link leva só a data (?desde=…), nenhum nome; quem abrir vê a contagem atualizada para o dia em que abrir. Dá para transformar o link num QR code de presente."),
+    ("Tem app para ver os dias de namoro no celular?", "O Countdown: Contagem regressiva, grátis para iPhone, conta até uma data ou a partir de uma data e mostra o número num widget da Tela de Início ou da Tela Bloqueada. Widgets grátis em todos os tamanhos, eventos ilimitados e sincronização com o iCloud, sem criar conta."),
+  ],
+  "body": f"""<h1>Contador de dias de namoro</h1>
+<p class="lede">Digite a data em que vocês começaram a namorar e veja há quantos dias estão juntos — em dias, semanas, meses e anos — e quando caem o próximo mesversário, a próxima centena de dias e o próximo aniversário de namoro. A página gera um link para compartilhar.</p>
+<form class="calc c2" id="namoro"><label>Começamos a namorar em<input type="date" name="desde" max="{TODAY.isoformat()}" required></label><button type="submit">Contar os dias</button></form>
+<div id="namoro-out" class="tool-out" hidden aria-live="polite"></div>
+<h2>Quantos dias têm os meses de namoro</h2>
+<p>Os meses não têm o mesmo tamanho, então «7 meses de namoro» dá um número de dias diferente conforme o mês em que vocês começaram. A tabela mostra o mínimo e o máximo:</p>
+<table><thead><tr><th>Tempo de namoro</th><th>Dias</th></tr></thead><tbody>{"".join(f"<tr><td>{n} {'mês' if n == 1 else 'meses'}</td><td>{lo} a {hi} dias</td></tr>" for n, (lo, hi) in ((n, month_span(n)) for n in range(1, 12)))}<tr><td>1 ano</td><td>365 ou 366 dias</td></tr></tbody></table>
+<h2>Marcos para comemorar</h2>
+<ul><li><strong>Mesversário</strong>: todo mês, no mesmo dia em que começaram; quando o mês não tem esse dia, no último dia do mês.</li><li><strong>100 dias</strong>: dá 3 meses e mais {M3_LO} a {M3_HI} dias, conforme o mês de início. Depois vêm os 200, os 500 e os 1.000 dias.</li><li><strong>Aniversário de namoro</strong>: 365 dias, ou 366 quando o ano passa por um 29 de fevereiro.</li></ul>
+<h2>A contagem no celular</h2>
+<p>No <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> um evento pode contar a partir de uma data: crie o dia em que vocês começaram e ele mostra há quantos dias estão juntos num widget grátis da Tela de Início. No verso do evento dá para escrever algumas linhas, guardar fotos e gravar uma voz — a história do dia fica junto com o dia.</p>
+<ol><li>Toque em <strong>+</strong>, dê um nome e escolha a data em que começaram.</li><li>Escolha contar a partir dessa data.</li><li>Para o mesversário, crie outro evento que se repete todo mês.</li>{PT_WIDGET_STEP}</ol>
+<p>Quer dar a contagem de presente em QR code? Copie o link gerado acima e transforme em QR code com qualquer gerador — o nosso é o <a href="/qrcodestudio/" hreflang="en">QR Studio</a>, para iPhone (página em inglês).</p>"""},
+]
+_ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/quantos-dias-faltam/")
+PAGES[_ci + 1:_ci + 1] = SCENES   # 场景页紧跟在计算器后面（常青页排在节日页前面）
 
 # 7. 发票模板
 PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-26",
@@ -783,7 +923,7 @@ def hub_page(lang):
 </div>"""
     title, desc = {
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
-        "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon."),
+        "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,

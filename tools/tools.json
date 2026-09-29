@@ -198,6 +198,111 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/",
+  "lang": "pt-BR",
+  "kind": "WebApplication",
+  "title": "Quantos dias faltam para o meu aniversário? Contagem regressiva",
+  "description": "Escolha o dia e o mês do seu aniversário e veja quantos dias, meses e horas faltam, em que dia da semana ele cai e quantos anos você vai fazer.",
+  "faq": [
+   {
+    "q": "Como a conta é feita?",
+    "a": "São dias corridos entre hoje e o próximo aniversário, no fuso horário do seu aparelho. Se o aniversário deste ano já passou, a conta vai para o do ano que vem; se é hoje, a página diz que é hoje."
+   },
+   {
+    "q": "E quem nasceu em 29 de fevereiro?",
+    "a": "Nos anos que não são bissextos, a página conta até 28 de fevereiro. O próximo 29 de fevereiro é em 2028."
+   },
+   {
+    "q": "Dá para contar os dias para o aniversário do meu filho?",
+    "a": "Sim: escolha o dia e o mês em que ele nasceu. No Countdown dá para ter um evento para cada pessoa da família, porque os eventos são ilimitados, e cada um pode aparecer num widget."
+   },
+   {
+    "q": "Quantos dias e horas faltam?",
+    "a": "Depois de contar, a página mostra também as horas que faltam até a meia-noite em que o aniversário começa, no seu fuso horário."
+   },
+   {
+    "q": "Existe um app com a contagem do aniversário no celular?",
+    "a": "O Countdown: Contagem regressiva é o nosso app grátis para iPhone: widgets em todos os tamanhos na Tela de Início e na Tela Bloqueada, eventos ilimitados, repetição todo ano e lembretes no dia e com a antecedência que você quiser."
+   }
+  ],
+  "published": "2026-09-29",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para o meu aniversário?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+  "lang": "pt-BR",
+  "kind": "WebApplication",
+  "title": "Quantos dias faltam para as férias? Contagem com dias úteis",
+  "description": "Informe o primeiro dia das férias e veja quantos dias e quantos dias úteis faltam. Com o último dia, mostra a duração e quanto falta para acabarem.",
+  "faq": [
+   {
+    "q": "Como os dias úteis são contados?",
+    "a": "São os dias de segunda a sexta entre amanhã e a véspera do primeiro dia de férias. Os feriados não são descontados, porque mudam de cidade para cidade: se houver feriado de segunda a sexta no período, tire um dia por feriado."
+   },
+   {
+    "q": "Quando são as férias escolares?",
+    "a": "Depende do estado, da cidade e da rede de ensino. O calendário oficial é publicado pela secretaria de educação ou pela escola; digite a data de início no contador acima."
+   },
+   {
+    "q": "Em quantas partes posso dividir as férias pela CLT?",
+    "a": "Em até três, se você concordar: um período de pelo menos 14 dias corridos e os outros de pelo menos 5 dias corridos cada (art. 134, § 1º, da CLT)."
+   },
+   {
+    "q": "Quanto falta para as minhas férias acabarem?",
+    "a": "Informe o primeiro e o último dia. Se hoje estiver dentro desse intervalo, a página mostra quantos dias faltam para acabarem."
+   },
+   {
+    "q": "Dá para ver a contagem das férias no celular?",
+    "a": "Sim. No Countdown: Contagem regressiva, grátis para iPhone, a contagem fica num widget da Tela de Início ou da Tela Bloqueada, com lembretes no dia e com antecedência. Os eventos são ilimitados e sincronizam pelo iCloud, sem criar conta."
+   }
+  ],
+  "published": "2026-09-29",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para as férias?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/pt-br/contador-de-dias-de-namoro/",
+  "lang": "pt-BR",
+  "kind": "WebApplication",
+  "title": "Contador de dias de namoro: há quantos dias vocês estão juntos",
+  "description": "Digite a data em que começaram a namorar e veja há quantos dias, meses e anos estão juntos, o próximo mesversário, os 100 dias e o aniversário de namoro.",
+  "faq": [
+   {
+    "q": "Como sei quantos dias de namoro eu tenho?",
+    "a": "Digite a data em que vocês começaram. A página conta os dias corridos até hoje, no fuso horário do seu aparelho; o dia em que começaram vale 0."
+   },
+   {
+    "q": "Quantos dias tem 7 meses de namoro?",
+    "a": "Entre 212 e 215 dias, conforme o mês em que o namoro começou. Os outros meses estão na tabela desta página."
+   },
+   {
+    "q": "100 dias de namoro são quantos meses?",
+    "a": "São 3 meses e mais 8 a 11 dias, conforme o mês em que vocês começaram."
+   },
+   {
+    "q": "O link mostra a nossa contagem para outra pessoa?",
+    "a": "Sim. O link leva só a data (?desde=…), nenhum nome; quem abrir vê a contagem atualizada para o dia em que abrir. Dá para transformar o link num QR code de presente."
+   },
+   {
+    "q": "Tem app para ver os dias de namoro no celular?",
+    "a": "O Countdown: Contagem regressiva, grátis para iPhone, conta até uma data ou a partir de uma data e mostra o número num widget da Tela de Início ou da Tela Bloqueada. Widgets grátis em todos os tamanhos, eventos ilimitados e sincronização com o iCloud, sem criar conta."
+   }
+  ],
+  "published": "2026-09-29",
+  "app": "countdown",
+  "hubTitle": "Contador de dias de namoro",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
@@ -781,7 +886,7 @@
   "lang": "pt-BR",
   "kind": "CollectionPage",
   "title": "Ferramentas e guias grátis — go ka",
-  "description": "Ferramentas grátis e sem cadastro da go ka: contador de dias até qualquer data e contagem regressiva para o ENEM 2026, a Black Friday, o Natal e o Réveillon.",
+  "description": "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.",
   "faq": [],
   "published": null,
   "app": null,
