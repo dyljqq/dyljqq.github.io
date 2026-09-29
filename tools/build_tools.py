@@ -55,17 +55,19 @@ def fmt(d, lang):
         return f"{wd}, {d.day} de {mo} de {d.year}"
     if lang == "ja":
         return f"{d.year}年{d.month}月{d.day}日（{'月火水木金土日'[d.weekday()]}）"
+    if lang == "zh-Hant":
+        return f"{d.year}年{d.month}月{d.day}日（星期{'一二三四五六日'[d.weekday()]}）"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
 
 # 共用 JS：data-date 的元素按访问当天重算天数；data-until 的把整句里的数字替换
 COUNT_JS = """
-(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前']}[document.documentElement.lang]||['days','day','Today','days ago'];
+(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前']}[document.documentElement.lang]||['days','day','Today','days ago'];
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]'),L=document.documentElement.lang;if(w&&n>0){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 """
 CALC_JS = """
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
@@ -176,8 +178,9 @@ def faq_html(faq, lang):
 
 def counter(d, lang, label=""):
     n = days_to(d); unit = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
-    w = f"{n // 7} {ts(lang, 'weeks')}" + (f" + {n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n > 0 else ""
-    if lang == "ja" and n > 0: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
+    w = f"{n // 7} {ts(lang, 'weeks')}" + (f" + {n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n >= 7 else ""
+    if lang == "ja" and n >= 7: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
+    if lang == "zh-Hant" and n >= 7: w = f"{n // 7} 週又 {n % 7} 天" if n % 7 else f"{n // 7} 週"
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
             f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
 
@@ -886,6 +889,47 @@ PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kin
 <p>還沒成交的話，先用<a href="/tools/zh-hant/bao-jia-dan-fan-ben/">報價單範本</a>。在 iPhone 上，<a href="/invoiceqr/zh-hant/">開單、報價單、收據、送貨單產生器</a>收款結清後，同一份帳單可以直接當作收據分享。</p>
 {ZH_NOTE}"""})
 
+# 7e. 港台：農曆新年 2027 倒數（zh-Hant，Countdown）——09-29
+# 依据：Google HK / TW 联想词（農曆新年 2027 日期 / 假期 / 香港假期 / 生肖；過年 倒數 幾天；2027 春節連假 / 放幾天；2027 過年時間）。
+# 日期：GovHK「2027 年公眾假期」（初一 2/6 六、初三 2/8 一、初四 2/9 二，初二逢星期日→初四補假）；
+# 行政院人事行政總處 116 年辦公日曆表新聞稿（春節假期 7 日，初一初二逢週末→2/9、2/10 補假；區間 2/4–2/10 據 104 職場力等轉述）。
+# App 没有农历重复（HolidayTemplates.swift：农历节日是一次性，"Set to this year's date, which moves every year"）——页面教「明年另加新日期」。
+CNY_EVE, CNY = dt.date(2027, 2, 5), dt.date(2027, 2, 6)
+CNY_MD = lambda d: f"{d.month}月{d.day}日（星期{'一二三四五六日'[d.weekday()]}）"   # 句中不带年份，避免「年初一（2027年…（星期六））」括号套括号
+PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-09-29",
+  "title": "2027 農曆新年倒數：過年還有幾天？（除夕 2/5、初一 2/6）", "crumb": "農曆新年 2027",
+  "description": "2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。",
+  "hub_title": "2027 農曆新年倒數", "hub_desc": "除夕、初一與港台假期日期，每天更新的過年倒數。",
+  "js": [COUNT_JS], "faq": [
+    ("2027 年農曆新年是哪一天？", f"大年初一是{fmt(CNY, 'zh-Hant')}，除夕是{fmt(CNY_EVE, 'zh-Hant')}。"),
+    ("2027 年台灣過年放幾天？", f"依行政院人事行政總處公布的 116 年辦公日曆表，春節假期共 7 天，從{fmt(dt.date(2027, 2, 4), 'zh-Hant')}放到{fmt(dt.date(2027, 2, 10), 'zh-Hant')}；初一、初二逢週末，於2月9日、10日補假。"),
+    ("2027 年香港農曆新年有哪幾天公眾假期？", f"年初一是{CNY_MD(CNY)}、年初三是{CNY_MD(dt.date(2027, 2, 8))}、年初四是{CNY_MD(dt.date(2027, 2, 9))}。年初二是星期日，所以年初四定為補假。"),
+    ("2027 年是什麼生肖？", "羊年，天干地支是丁未。"),
+    ("過年還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離大年初一還有 {days_to(CNY)} 天，約 {days_to(CNY) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("怎麼把過年倒數放在 iPhone 鎖定畫面？", "在倒數計時 Widget：紀念日提醒 建立2027年2月6日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
+  ],
+  "body": f"""<h1>2027 農曆新年倒數</h1>
+<p class="lede">2027 年的農曆新年（大年初一）是<strong>{CNY_MD(CNY)}</strong>，除夕是{CNY_MD(CNY_EVE)}，這一年是羊年。下面的倒數每天更新。</p>
+{counter(CNY, "zh-Hant", "大年初一")}
+<h2>過年的日期</h2>
+<table><tbody>
+<tr><th>除夕</th><td>{fmt(CNY_EVE, "zh-Hant")}</td></tr>
+<tr><th>初一</th><td>{fmt(CNY, "zh-Hant")}</td></tr>
+<tr><th>初二</th><td>{fmt(dt.date(2027, 2, 7), "zh-Hant")}</td></tr>
+<tr><th>初三</th><td>{fmt(dt.date(2027, 2, 8), "zh-Hant")}</td></tr>
+<tr><th>初四</th><td>{fmt(dt.date(2027, 2, 9), "zh-Hant")}</td></tr>
+<tr><th>生肖</th><td>羊（丁未年）</td></tr>
+</tbody></table>
+<h2>台灣：春節連假 7 天</h2>
+<p>依行政院人事行政總處公布的 116 年政府行政機關辦公日曆表，春節假期從{fmt(dt.date(2027, 2, 4), "zh-Hant")}放到{fmt(dt.date(2027, 2, 10), "zh-Hant")}，共 7 天。初一、初二（2月6日、7日）剛好是週六、週日，所以在2月9日、10日補假。</p>
+<h2>香港：農曆新年公眾假期</h2>
+<p>依政府公布的 2027 年公眾假期，放假的是年初一{CNY_MD(CNY)}、年初三{CNY_MD(dt.date(2027, 2, 8))}和年初四{CNY_MD(dt.date(2027, 2, 9))}。年初二是星期日，所以年初四定為補假。</p>
+<p class="meta">資料來源：行政院人事行政總處新聞稿、香港政府一站通「2027 年公眾假期」（{TODAY.year}年{TODAY.month}月{TODAY.day}日確認）。公司與學校的假期可能不同。</p>
+<h2>把過年倒數放在鎖定畫面</h2>
+<p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具全部尺寸都免費，事件數量不限；倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。</p>
+<ol><li>點 <strong>+</strong>，輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
+<p>點一下事件，它會翻到自己的背面：可以寫下年貨清單、放幾張照片，這一天的故事就留在這一天裡。</p>"""})
+
 # 7d. 日本：あと何日（日数計算）+ 共通テスト2027（ja，Countdown）——09-29
 # 依据：Google JP 联想词（共通テスト まであと何日 2027 / カウントダウン 待ち受け / あと何日 アプリ / 共通テスト 100日前 いつ；
 # あと何日 計算 / 今日 入れる / あと何日で今年終わる、日数計算 / 営業日）。
@@ -930,7 +974,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
     ("共通テストまであと何週間ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で本試験まで{days_to(KT1)}日、約{days_to(KT1) // 7}週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
     ("共通テストの100日前はいつですか？", f"{fmt(KT1 - dt.timedelta(days=100), 'ja')}です。50日前は{fmt(KT1 - dt.timedelta(days=50), 'ja')}、1週間前は{fmt(KT1 - dt.timedelta(days=7), 'ja')}です。"),
     ("2028年の共通テストはいつですか？", f"令和10年度の本試験は{fmt(KT28A, 'ja')}と{fmt(KT28B, 'ja')}です（大学入試センター「令和10年度試験」）。"),
-    ("iPhone の待ち受け（ロック画面）にカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「共通テスト」を2027年1月16日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → カウントダウン、の順に進みます。ウィジェットはすべて無料です。"),
+    ("iPhone の待ち受け（ロック画面）にカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「共通テスト」を2027年1月16日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。ウィジェットはすべて無料です。"),
   ],
   "body": f"""<h1>共通テスト2027まであと何日？</h1>
 <p class="lede">令和9年度（2027年）の大学入学共通テストは、<strong>{fmt(KT1, "ja")}・{KT2.day}日（{'月火水木金土日'[KT2.weekday()]}）</strong>です。下のカウントダウンは毎日更新されます。</p>
@@ -946,7 +990,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
 <h2>ロック画面・待ち受けに置く</h2>
 <p>毎回サイトを開かなくても残り日数が見えるように、iPhone のロック画面やホーム画面にウィジェットとして置けます。<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>なら、すべてのサイズのウィジェットが無料です。100日前・1週間前・当日の朝といった節目に達すると、アプリが全画面の数字で開き、共有できるカードを用意します。</p>
-<ol><li>アプリで <strong>+</strong> をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → カウントダウン。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
+<ol><li>アプリで <strong>+</strong> をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
 <h2>カウントダウンの使い方</h2>
 <ul><li>イベントの裏面に、科目ごとの目標や模試の結果を書いておく。</li><li>追・再試験や二次試験、私立大学の入試日も別のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>"""})
@@ -1185,7 +1229,7 @@ def hub_page(lang):
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。"),
-        "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本與收據範本，線上填寫、自動計算，列印或存成 PDF。"),
+        "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,
             "description": desc,

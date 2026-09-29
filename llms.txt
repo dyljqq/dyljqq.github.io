@@ -160,6 +160,7 @@ A gym workout log for iPhone.
 - [Formato de nota de venta gratis](https://beforego.art/tools/es-mx/nota-de-venta/) — Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.
 - [報價單範本](https://beforego.art/tools/zh-hant/bao-jia-dan-fan-ben/) — 免費報價單範本：線上填好公司、客戶與品項，金額、稅額與總計自動計算，再列印或存成 PDF。不用註冊，港台都適用。
 - [收據範本](https://beforego.art/tools/zh-hant/shou-ju-fan-ben/) — 免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。
+- [2027 農曆新年倒數](https://beforego.art/tools/zh-hant/nong-li-xin-nian-2027/) — 2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
 - [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
@@ -174,7 +175,7 @@ A gym workout log for iPhone.
 - [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
 - [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.
 - [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.
-- [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本與收據範本，線上填寫、自動計算，列印或存成 PDF。
+- [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 

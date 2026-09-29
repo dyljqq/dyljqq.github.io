@@ -653,7 +653,8 @@ WEB_FIRST = {
     "ja": [("/tools/ja/ato-nannichi/", "日付を入れるだけで、あと何日かと曜日が分かります。"),
            ("/tools/ja/kyotsu-test-2027/", "2027年1月16日の本試験まで、毎日更新のカウントダウン。")],
     "zh-Hant": [("/tools/zh-hant/bao-jia-dan-fan-ben/", "線上填寫，金額與總計自動計算，列印或存成 PDF。"),
-                ("/tools/zh-hant/shou-ju-fan-ben/", "填好金額就自動寫出大寫，「茲收到」格式直接列印。")],
+                ("/tools/zh-hant/shou-ju-fan-ben/", "填好金額就自動寫出大寫，「茲收到」格式直接列印。"),
+                ("/tools/zh-hant/nong-li-xin-nian-2027/", "除夕、初一與港台假期，每天更新的過年倒數。")],
 }
 
 # 列英文工具的语言首页：工具名保持英文（标 lang="en"），说明句是我们自己写的，按页面语言给（09-29 评审：不许残留英文句子）

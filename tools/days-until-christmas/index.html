@@ -312,12 +312,12 @@ html[lang^=th] *{letter-spacing:0!important}
 </footer>
 <!-- sitefooter:end -->
 <script>
-(function(){var T={en:['days','day','That\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前']}[document.documentElement.lang]||['days','day','Today','days ago'];
+(function(){var T={en:['days','day','That\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前']}[document.documentElement.lang]||['days','day','Today','days ago'];
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]'),L=document.documentElement.lang;if(w&&n>0){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script>
 </body>
 </html>
