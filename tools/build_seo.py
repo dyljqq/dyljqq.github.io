@@ -449,8 +449,9 @@ def home_card(a, lang):
 GLOBE = ('<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" '
          'stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9s1.3-6.2 3.9-9z"/></svg>')
 SWITCH_CSS = ('<style>'   # 参照 GoFasting 官网：页头右上角「EN ⌄」小按钮 + 白色圆角下拉（09-26 用户要求，底部语言列表已去掉）
+  '.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}'
   '.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;'
-  'font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}'
+  'font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}'
   '.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}'
   '.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}'
   '.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;'
@@ -458,18 +459,42 @@ SWITCH_CSS = ('<style>'   # 参照 GoFasting 官网：页头右上角「EN ⌄�
   '.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}'
   '.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}'
   '.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}'
-  '@media (max-width:760px){.lang-switch summary{padding:8px 10px 8px 12px}}</style>')
+  '.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;'
+  'background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}'
+  '.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}'
+  '.top .nav{min-width:0}'
+  '@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}'
+  '@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}'
+  '@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style>')
 CHEVRON = ('<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" '
            'stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg>')
+HEADER_APPLE = ('<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>')
 SWITCH_JS = ('<script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach('
              'function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>')
 SHORT = {"zh-Hans": "简中", "zh-Hant": "繁中", "es-MX": "ES-MX", "pt-BR": "PT-BR"}
 
-def lang_switch(current, options, extra=None):
+def header_app(app_key, lang):
+    """工具/文章的 app key 指主条目；页头商店链接要用当前语言变体，才能落到对应国家商店。"""
+    parent = next((a for a in APPS if a["key"] == app_key), None)
+    if not parent:
+        return None
+    return next((a for a in [parent] + variants_of(parent) if a.get("lang", "en") == lang), parent)
+
+def header_download(current, app=None):
+    ui_lang = {"zh-CN": "zh-Hans"}.get(current, current)
+    if app:
+        store_app = dict(app, lang=ui_lang) if ui_lang != current else app
+        href = bp.store_link(store_app, bp.store_of(store_app), "header")
+        label, aria = "App Store", bp.t(ui_lang, "cta_store")
+    else:
+        href = (home_path(current) if current in HOME_LANGS else "/") + "#apps"
+        label = aria = bp.t(ui_lang, "nav_all_apps")
+    return (f'<a class="header-download" href="{esc(href)}" aria-label="{esc(aria)}">'
+            f'{HEADER_APPLE}<span>{esc_text(label)}</span></a>')
+
+def lang_switch(current, options, extra=None, app=None):
     """页头语言切换：<details> 下拉，全是真实 <a href>，爬虫顺着能走到每个语言版本。options = [(lang, path)]，
     只放「同一内容」的语言版本；extra = {"note", "links": [(lang, path, label)]} 放在分隔线下（单语言工具页指向另一种语言的工具目录）。"""
-    if len({l for l, _ in options}) < 2 and not extra:
-        return "<!-- lang:start -->\n  <!-- lang:end -->"
     items = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>'
                     % (p, l, l, ' aria-current="true"' if l == current else "", esc_text(bp.NATIVE.get(l, l))) for l, p in options)
     if extra:
@@ -477,13 +502,16 @@ def lang_switch(current, options, extra=None):
             items += '<li class="ln-note">%s</li>' % esc_text(extra["note"])
         items += "".join('<li class="ln-other"><a href="%s" hreflang="%s" lang="%s">%s</a></li>' % (p, l, l, esc_text(lb))
                          for l, p, lb in extra["links"])
-    code = SHORT.get(current, current.split("-")[0].upper())
+    details = ""
+    if len({l for l, _ in options}) >= 2 or extra:
+        code = SHORT.get(current, current.split("-")[0].upper())
+        details = (f'<details class="lang-switch"><summary title="{esc(bp.NATIVE.get(current, current))}"><span>{esc_text(code)}</span>{CHEVRON}</summary>'
+                   f'<ul>{items}</ul></details>')
     return ("<!-- lang:start -->\n  " + SWITCH_CSS +
-            f'<details class="lang-switch"><summary title="{esc(bp.NATIVE.get(current, current))}"><span>{esc_text(code)}</span>{CHEVRON}</summary>'
-            f'<ul>{items}</ul></details>' + SWITCH_JS + "\n  <!-- lang:end -->")
+            f'<div class="header-actions">{details}{header_download(current, app)}</div>' + SWITCH_JS + "\n  <!-- lang:end -->")
 
-def fill_lang(html, current, options, extra=None):
-    return re.sub(r"<!-- lang:start -->.*?<!-- lang:end -->", lambda m: lang_switch(current, options, extra), html, count=1, flags=re.S)
+def fill_lang(html, current, options, extra=None, app=None):
+    return re.sub(r"<!-- lang:start -->.*?<!-- lang:end -->", lambda m: lang_switch(current, options, extra, app), html, count=1, flags=re.S)
 
 def home_options():
     return [(l, home_path(l)) for l in HOME_LANGS if (ROOT / home_path(l).strip("/") / "index.html").exists() or l == "en"]
@@ -875,7 +903,8 @@ def patch_tool(path: Path, tp):
     for pat in OWNED:
         head = re.sub(pat, "", head, flags=re.S | re.I)
     opts, extra = tool_options(tp)
-    out = fill_lang(head.rstrip() + "\n" + tool_head(tp) + rest, tp["lang"], opts, extra)
+    app = header_app(tp.get("app"), tp["lang"]) if tp.get("app") else None
+    out = fill_lang(head.rstrip() + "\n" + tool_head(tp) + rest, tp["lang"], opts, extra, app)
     if tp.get("published"):
         # 修改日期要拿最终页面去比（tool_head 时语言菜单还没填，半成品必然和提交版不同），
         # 再把 JSON-LD 和页面上的「Updated」统一成同一个日期，和 sitemap 同口径（09-27 评审）
@@ -949,7 +978,7 @@ def patch(path: Path, url, app, kind):
     head = head.rstrip() + "\n" + head_block(url, app, kind)
     out = head + campaignize_body(rest)
     if kind == "product" and "<!-- lang:start -->" in out:
-        out = fill_lang(out, app.get("lang", "en"), product_options(app))
+        out = fill_lang(out, app.get("lang", "en"), product_options(app), app=app)
     if kind == "product" and app.get("faq") and FAQ_START in out:
         out = re.sub(re.escape(FAQ_START) + r".*?" + re.escape(FAQ_END),
                      lambda m: faq_html(app), out, flags=re.S)

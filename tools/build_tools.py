@@ -112,17 +112,19 @@ build();})();
 """
 
 CSS = bp.CSS + """
-.crumbs{margin:18px 0 0;padding:0;list-style:none;display:flex;gap:8px;font-size:13px;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
+.crumbs{margin:24px 0 28px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 8px;font-size:13px;line-height:1.6;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
 .crumbs li+li::before{content:"›";margin-right:8px}
 html[lang^=th] *{letter-spacing:0!important}
 .shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
-@media (max-width:760px){.crumbs li:last-child{display:none}}
-.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px)}.article .lede{font-size:18px}
-.article h2{font:500 clamp(24px,3vw,32px)/1.2 var(--display);margin:44px 0 14px}.article h3{font:600 18px/1.4 var(--text);margin:26px 0 8px}
+@media (max-width:760px){.crumbs{margin:20px 0 24px}.crumbs li:last-child{display:none}}
+.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px);line-height:1.15;margin:0 0 20px}.article .lede{font-size:18px;margin:0 0 28px}
+.article h2{font:500 clamp(24px,3vw,32px)/1.25 var(--display);margin:48px 0 18px}.article h3{font:600 18px/1.4 var(--text);margin:28px 0 12px}
 .article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
 .tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
+@media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
 .calc label{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
 .calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
@@ -426,7 +428,7 @@ BF26, CYBER26, BF27, BF28 = dt.date(2026, 11, 27), dt.date(2026, 11, 30), dt.dat
 DEC13_1, DEC13_2, DEC13_2_PAY = dt.date(2026, 11, 30), dt.date(2026, 12, 20), dt.date(2026, 12, 18)
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
   "title": "Quantos dias faltam para a Black Friday 2026? Contagem regressiva", "crumb": "Black Friday 2026",
-  "description": "A Black Friday 2026 é na sexta-feira, 27 de novembro de 2026, e a Cyber Monday na segunda, 30 de novembro. Contagem ao vivo e widget grátis para o iPhone.",
+  "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
   "hub_title": "Quantos dias faltam para a Black Friday 2026?", "hub_desc": "Black Friday e Cyber Monday com contagem ao vivo, mais a 1ª parcela do 13º.",
   "js": [COUNT_JS], "faq": [
     ("Quando é a Black Friday 2026?", "Na sexta-feira, 27 de novembro de 2026. A Black Friday é sempre a sexta-feira depois do Dia de Ação de Graças dos Estados Unidos, que em 2026 cai na quinta-feira, 26 de novembro."),
@@ -436,9 +438,10 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
     ("Como coloco a contagem da Black Friday na Tela de Início?", "Crie o evento 27 de novembro de 2026 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data da Black Friday muda todo ano, então para 2027 crie um evento novo (26 de novembro) em vez de repetir. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para a Black Friday 2026?</h1>
-<p class="lede">A Black Friday 2026 é na <strong>sexta-feira, 27 de novembro de 2026</strong>, e a Cyber Monday na <strong>segunda-feira, 30 de novembro</strong>. No mesmo dia 30 termina o prazo da 1ª parcela do 13º salário. Os contadores abaixo atualizam todo dia.</p>
-<h2>Black Friday — 27 de novembro de 2026</h2>
+<p class="lede">A Black Friday 2026 é na <strong>sexta-feira, 27 de novembro</strong>. Veja abaixo quantos dias e semanas faltam: a contagem atualiza conforme a data do seu aparelho.</p>
+<div class="countdown-result" aria-label="Contagem regressiva para a Black Friday 2026">
 {counter(BF26, "pt-BR", "Black Friday")}
+</div>
 <h2>Cyber Monday — 30 de novembro de 2026</h2>
 {counter(CYBER26, "pt-BR", "Cyber Monday")}
 <h2>Datas de uma vez</h2>
@@ -626,8 +629,9 @@ SCENES = [
     ("Dá para ver a contagem das férias no celular?", "Sim. No Countdown: Contagem regressiva, grátis para iPhone, a contagem fica num widget da Tela de Início ou da Tela Bloqueada, com lembretes no dia e com antecedência. Os eventos são ilimitados e sincronizam pelo iCloud, sem criar conta."),
   ],
   "body": f"""<h1>Quantos dias faltam para as férias?</h1>
-<p class="lede">Informe o primeiro dia das férias e veja quantos dias faltam — e quantos dias úteis ainda tem pela frente. Com o último dia, a página mostra quanto tempo as férias duram e, se você já estiver de férias, quanto falta para acabarem.</p>
+<p class="lede">Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
 <form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
+<p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados. Para férias escolares, use a data do calendário da sua escola.</p>
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>Férias escolares</h2>
 <p>O calendário escolar muda de estado para estado e entre as redes estadual, municipal e particular. Por isso a página não traz uma data pronta: confira o calendário publicado pela secretaria de educação ou pela escola e digite o primeiro dia acima. Em geral há um recesso no meio do ano, em julho, e as férias grandes no fim do ano.</p>

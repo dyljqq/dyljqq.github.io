@@ -1,6 +1,7 @@
 *.md
 .claude
 .git
+.env*
 /tools/*.json
 /tools/*.mjs
 /tools/*.py
