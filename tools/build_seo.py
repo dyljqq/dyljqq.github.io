@@ -49,6 +49,10 @@ ANALYTICS = (DEVICE + '\n'
              'window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");'
              'if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>\n'
              '<script defer src="/_vercel/insights/script.js"></script>')
+# Ahrefs Web Analytics（无 cookie；能把搜索 / AI 引荐来源单独分出来）。key 在 site.json，删掉 key 就不输出。
+# 隐私政策各页的「This Website」一节写明了这两项统计，换 / 加统计工具时那一节要跟着改。
+if CFG["site"].get("ahrefsAnalyticsKey"):
+    ANALYTICS += '\n<script src="https://analytics.ahrefs.com/analytics.js" data-key="%s" async></script>' % CFG["site"]["ahrefsAnalyticsKey"]
 
 def root_key(app):
     return app.get("variantOf") or app["key"]
