@@ -15,6 +15,8 @@
   ],
   "site": {
     "origin": "https://beforego.art",
+    "verificationNote": "站长工具的所有权验证标签，只写进根首页 / 的 head。删掉对应项 = 那个工具里的验证失效。",
+    "verification": {"ahrefs-site-verification": "83442f87d3b226453debae2e1a09b2ae1cd691acfdb2f30698fe66644dbeb57d"},
     "brand": "go ka",
     "brandNote": "App Store 上的开发者名。站内所有页面页脚统一用它，别再出现别的写法。",
     "email": "qinqiangji@gmail.com",

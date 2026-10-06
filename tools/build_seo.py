@@ -547,6 +547,8 @@ def home_head(lang="en"):
     lines = [START,
              '<meta name="description" content="%s">' % esc(desc),
              f'<link rel="canonical" href="{canonical}">']
+    if lang == "en":   # 站长工具（Ahrefs 等）的所有权验证只认根首页
+        lines += [f'<meta name="{n}" content="{esc(v)}">' for n, v in CFG["site"].get("verification", {}).items()]
     for l, p in home_options():
         lines.append(f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">')
     lines.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}/">')
