@@ -4,6 +4,7 @@
 #   tools/publish.sh --check    只重建和检查，不发布
 set -euo pipefail
 cd "$(dirname "$0")/.."
+export TZ=Asia/Ho_Chi_Minh   # 日期口径固定为越南时间，不跟机器时区走（原因见 tools/build_seo.py 开头）
 export NVM_DIR="$HOME/.nvm"; . "$NVM_DIR/nvm.sh" >/dev/null 2>&1; nvm use 22.23.1 >/dev/null 2>&1
 VERCEL="npx -y --registry=https://registry.npmjs.org vercel@latest"   # 默认 npm 源 npmmirror 上解析不到 vercel@latest
 

@@ -14,9 +14,13 @@
 
 手写的 FAQPage JSON-LD 不动：那是页面自己的内容，标记块之外的东西一律保留。
 """
-import json, re, subprocess, sys
+import json, os, re, subprocess, sys, time
 from datetime import date, datetime, timezone
 from pathlib import Path
+
+# 所有日期（倒数天数、dateModified、sitemap lastmod）一律按越南时间算，不跟机器时区走：
+# 2026-10 这台机器改成了 CST(+08)，直接跑会把 07-04 23:xx 的提交算成 07-05，sitemap 平白多出改动、publish.sh 拦发布。
+os.environ["TZ"] = "Asia/Ho_Chi_Minh"; time.tzset()
 
 ROOT = Path(__file__).resolve().parent.parent
 CFG = json.loads((ROOT / "tools" / "site.json").read_text(encoding="utf-8"))
@@ -348,7 +352,15 @@ def head_block(url, app, kind):
     else:
         label = next((l for h, l in app.get("legal", []) if h == url), "Legal")
         title = f"{label} · {app['name']}"
-        desc = f"{label} for {app['name']}. {app['oneLiner']}"
+        # 法务页的描述说这一页本身讲什么。以前是「{label} for {name}. {oneLiner}」：一句话简介稍长就被 meta_desc 整句截掉，
+        # 只剩 50 字左右；中文页还会拼出「隐私政策 for 单词兽…」这种中英混排。
+        privacy = "privacy" in url
+        if app.get("lang", "en").lower().startswith("zh"):
+            desc = (f"{app['name']}的{label}：App 会处理哪些信息、数据存在哪里、用到哪些联网服务，以及如何联系我们。" if privacy else
+                    f"{app['name']}的{label}：服务内容、付费订阅与免费版范围、你的内容，以及责任限制。")
+        else:
+            desc = (f"{label} for {app['name']}. What information the app uses, where it is stored, which services process it, and how to contact us." if privacy else
+                    f"{label} for {app['name']}. How the service works, paid features, your content, availability and limits of liability.")
         img = asset(app["icon"]) if app.get("icon") else None
 
     desc = meta_desc(desc)

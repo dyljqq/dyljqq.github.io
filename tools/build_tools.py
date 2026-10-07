@@ -6,14 +6,20 @@
 
 内容全在本文件里（PAGES），日期类数字在构建时算一次写进静态文本，页面上的 JS 再按访问当天更新。
 """
-import datetime as dt, json, html, re, sys
+import datetime as dt, json, html, os, re, sys, time
 from pathlib import Path
+
+# 日期口径固定为越南时间，原因见 build_seo.py 开头。
+os.environ["TZ"] = "Asia/Ho_Chi_Minh"; time.tzset()
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_pages as bp
 
 ROOT, CFG, APPS, BY_KEY, EMAIL = bp.ROOT, bp.CFG, bp.APPS, bp.BY_KEY, bp.EMAIL
 ORIGIN = CFG["site"]["origin"]
 TODAY = dt.date.today()
+# 页面上写的「来源确认日」必须是真去核对官方来源的那一天，不能用构建日——每次构建都会变，等于谎称当天又核对过。
+# 重新核对了官方来源（大学入試センター / 行政院人事行政總處 / 香港政府一站通）之后再改这个日期。
+SOURCES_CHECKED = dt.date(2026, 9, 29)
 esc = bp.esc
 
 TS = {  # 工具页专用界面词
@@ -928,7 +934,7 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
 <p>依行政院人事行政總處公布的 116 年政府行政機關辦公日曆表，春節假期從{fmt(dt.date(2027, 2, 4), "zh-Hant")}放到{fmt(dt.date(2027, 2, 10), "zh-Hant")}，共 7 天。初一、初二（2月6日、7日）剛好是週六、週日，所以在2月9日、10日補假。</p>
 <h2>香港：農曆新年公眾假期</h2>
 <p>依政府公布的 2027 年公眾假期，放假的是年初一{CNY_MD(CNY)}、年初三{CNY_MD(dt.date(2027, 2, 8))}和年初四{CNY_MD(dt.date(2027, 2, 9))}。年初二是星期日，所以年初四定為補假。</p>
-<p class="meta">資料來源：行政院人事行政總處新聞稿、香港政府一站通「2027 年公眾假期」（{TODAY.year}年{TODAY.month}月{TODAY.day}日確認）。公司與學校的假期可能不同。</p>
+<p class="meta">資料來源：行政院人事行政總處新聞稿、香港政府一站通「2027 年公眾假期」（{SOURCES_CHECKED.year}年{SOURCES_CHECKED.month}月{SOURCES_CHECKED.day}日確認）。公司與學校的假期可能不同。</p>
 <h2>把過年倒數放在鎖定畫面</h2>
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具全部尺寸都免費，事件數量不限；倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。</p>
 <ol><li>點 <strong>+</strong>，輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
@@ -989,7 +995,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <tr><th>追・再試験</th><td>{fmt(KTM1, "ja")}・{fmt(KTM2, "ja")}</td></tr>
 <tr><th>2028年（令和10年度）の本試験</th><td>{fmt(KT28A, "ja")}・{fmt(KT28B, "ja")}</td></tr>
 </tbody></table>
-<p class="meta">出典：大学入試センター「令和9年度試験」「令和10年度試験」（{TODAY.year}年{TODAY.month}月{TODAY.day}日に確認）。出願の手続きや時間割は、大学入試センターの案内で確認してください。</p>
+<p class="meta">出典：大学入試センター「令和9年度試験」「令和10年度試験」（{SOURCES_CHECKED.year}年{SOURCES_CHECKED.month}月{SOURCES_CHECKED.day}日に確認）。出願の手続きや時間割は、大学入試センターの案内で確認してください。</p>
 <h2>節目の日付</h2>
 <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
 <h2>ロック画面・待ち受けに置く</h2>
