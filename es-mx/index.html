@@ -268,7 +268,12 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   "about": {
     "@id": "https://beforego.art/#org"
   },
-  "primaryImageOfPage": "https://beforego.art/assets/brand/og-home.png",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://beforego.art/assets/brand/og-home.png",
+    "width": 1200,
+    "height": 630
+  },
   "mainEntity": {
     "@type": "ItemList",
     "@id": "https://beforego.art/es-mx/#apps",
@@ -361,6 +366,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         "position": 4,
         "item": {
           "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/dailycalorie/#app",
           "name": "DailyCalorie: Calorías",
           "alternateName": "DailyCalorie",
           "url": "https://beforego.art/dailycalorie/",
@@ -387,6 +393,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         "position": 5,
         "item": {
           "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/qrcodestudio/#app",
           "name": "Creador de códigos QR y lector",
           "alternateName": "QR Studio",
           "url": "https://beforego.art/qrcodestudio/",
@@ -413,6 +420,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         "position": 6,
         "item": {
           "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/citu/#app",
           "name": "Word Beast: AI Photo Words",
           "alternateName": "Word Beast",
           "url": "https://beforego.art/citu/",
@@ -439,6 +447,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         "position": 7,
         "item": {
           "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/repdex/#app",
           "name": "Repdex: Diario de Gimnasio",
           "alternateName": "Repdex",
           "url": "https://beforego.art/repdex/",

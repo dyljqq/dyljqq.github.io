@@ -269,7 +269,12 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   "about": {
     "@id": "https://beforego.art/#org"
   },
-  "primaryImageOfPage": "https://beforego.art/assets/brand/og-home.png",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://beforego.art/assets/brand/og-home.png",
+    "width": 1200,
+    "height": 630
+  },
   "mainEntity": {
     "@type": "ItemList",
     "@id": "https://beforego.art/#apps",
@@ -416,6 +421,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         "position": 6,
         "item": {
           "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/citu/#app",
           "name": "Word Beast: AI Photo Words",
           "alternateName": "Word Beast",
           "url": "https://beforego.art/citu/",

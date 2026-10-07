@@ -573,11 +573,12 @@ def home_head(lang="en"):
     for i, a in enumerate(HOME_APPS, 1):
         c = home_card(a, lang); su = store_url(a)
         # 结构化数据里永远用站内页面地址（卡片链接可能是带活动参数的商店链接，不能进 JSON-LD）；
-        # 只有卡片上的名字和那一页实体的名字一致时才挂 @id，免得同一个 @id 在不同页面叫不同名字
+        # @id 一律指向那一页的应用实体。卡片上的名字可以和那一页实体的名字不同——同一个 app 在不同语言商店的名字。
+        # 以前名字不一致就不挂 @id，结果这些条目被 Ahrefs 当成独立的 SoftwareApplication 按 Google「软件应用」
+        # 富结果校验，报缺 aggregateRating（2026-10-07 首轮体检 12 个语言首页全中；Google 自己的测试只当选填）。
         target = bp.sibling_path(a, lang)
-        ent = next((x for x in APPS if x["path"] == target), a)
         item = {"@type": "SoftwareApplication",
-                **({"@id": f"{ORIGIN}{target}#app"} if c["name"] == ent["name"] else {}),
+                "@id": f"{ORIGIN}{target}#app",
                 "name": c["name"], "alternateName": a["home"]["label"],
                 "url": f"{ORIGIN}{target}", "description": c["blurb"],
                 "applicationCategory": a["category"],
@@ -598,7 +599,7 @@ def home_head(lang="en"):
         {"@context": "https://schema.org", "@type": "CollectionPage", "@id": f"{canonical}#webpage",
          "url": canonical, "name": title, "description": desc, "inLanguage": lang,
          "isPartOf": {"@id": f"{ORIGIN}/#website"}, "about": {"@id": f"{ORIGIN}/#org"},
-         "primaryImageOfPage": img,
+         "primaryImageOfPage": {"@type": "ImageObject", "url": img, "width": 1200, "height": 630},
          "mainEntity": {"@type": "ItemList", "@id": f"{canonical}#apps", "name": f"Apps by {BRAND}",
                         "numberOfItems": len(items), "itemListElement": items}},
         {"@context": "https://schema.org", "@type": "FAQPage", "@id": f"{canonical}#faq",
