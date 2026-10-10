@@ -150,6 +150,15 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 - 「更多问题」折叠块（`"more"` 字段）：把搜索词的其它问法写成默认折叠、点开可见的问答，不进结构化数据。**用户想要「放关键词但不展示」——只做这种合规写法，不做隐藏文字**（Google 垃圾内容政策点名 hidden text / keyword stuffing）。
 - 下一轮（用户已同意按建议做）：巴西分州放假 / 开学页（联想词有 em são paulo / no paraná / volta as aulas 2027 rs·rj·sc）、「quinto dia útil」「quantos dias úteis tem」工具（先核对劳动法口径）、台湾「2027 連假行事曆」。
 
+**10-10 第三次发布（上面「下一轮」的三项）**
+- 巴西分州校历页 5 个：`/tools/pt-br/ferias-escolares-<sao-paulo|minas-gerais|parana|rio-grande-do-sul|pernambuco>-2026/`。标题直接写结课日；每页是该州州立网络 2026 全年校历（开学、学期、7 月假期、结课），
+  圣保罗页另写市立网络（22/12），南里奥格兰德页写 2027 预告（15/02–17/12，州政府 10-02 稿）。只写读过官方文件的日期；其余州的「2027 开学」一律写「由州教育厅公布」。和假期页一样 12-18 过期。
+- `/tools/pt-br/quinto-dia-util/`：每月工资最迟发放日（到 2027-12）+ 每月工作日数，首屏数字自动跳到下一个（`NEXT_JS` + `next_counter()`）。
+  规则读过原文：CLT art. 459 § 1º；Instrução Normativa MTP n.º 2/2021 art. 14（周六算、周日和节假日不算，含市级节日）。只扣全国性节日，Carnaval / Corpus Christi 不算。
+- `/tools/zh-hant/2027-lian-jia-xing-shi-li/`：台湾 2027 年 9 个连假 + 2026 年底剩下的两个 + 请假攻略；依据人事行政總處 115.05.21 / 114.06.13 新聞稿原文。
+- 「更多问题」折叠块扩到 Black Friday、Natal、Réveillon、農曆新年四页（问法取自 GSC 查询词）。站点 109 页。
+- 待看（10-24）：这 7 页的收录与曝光；分州页有没有和假期页抢同一批词（抢了就把假期页的表格缩成指向分州页的链接）。
+
 ## v1.3 墨西哥双线（10-18 ~ 10-31）
 
 一个 es-MX 工具目录 `/tools/es-mx/` 同时服务两个 app：

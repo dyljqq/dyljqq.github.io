@@ -72,7 +72,7 @@ COUNT_JS = """
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
-if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
+if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=n===-1?T[3].replace(/^(dias|days)/,function(m){return m.slice(0,-1)}):T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
 var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 """
 CALC_JS = """
@@ -130,7 +130,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
 .ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
-.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:14px 0}.more summary{cursor:pointer;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:10px 0 0;color:var(--muted)}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:0}.more summary{cursor:pointer;padding:14px 0;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:0 0 14px;color:var(--muted)}
 .countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
 @media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -188,6 +188,7 @@ def faq_html(faq, lang):
 
 def counter(d, lang, label=""):
     n = days_to(d); unit = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
+    if n == -1: unit = unit.replace("dias", "dia").replace("days", "day")
     wk = {"pt-BR": "semana", "en": "week"}.get(lang) if n // 7 == 1 else None
     w = f"{n // 7} {wk or ts(lang, 'weeks')}" + (f"{' e ' if lang == 'pt-BR' else ' + '}{n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n >= 7 else ""
     if lang == "ja" and n >= 7: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
@@ -208,6 +209,12 @@ MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほか
 def more_html(items, lang):
     rows = "".join(f"<details><summary>{esc(q)}</summary><p>{a}</p></details>" for q, a in items)
     return f'<section class="sec more"><h2>{esc(MORE_H[lang])}</h2>{rows}</section>'
+
+def live(d, lang="pt-BR"):
+    """正文里的一小段实时天数（COUNT_JS 在访问当天重算）。"""
+    n = days_to(d); u = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
+    if n == -1: u = u.replace("dias", "dia").replace("days", "day")
+    return f'<span data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span> <span data-unit>{esc(u)}</span></span>'
 
 def wrap_tables(body):
     """表格外包 .tbl（overflow-x:auto），手机上表格自己滚，不把页面撑宽。"""
@@ -419,6 +426,12 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
   "title": "Quantos dias faltam para o Réveillon 2027? (quinta, 31/12)", "crumb": "Réveillon 2027",
   "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
   "hub_title": "Quantos dias faltam para o Réveillon 2027?", "hub_desc": "Réveillon e Ano-Novo com contagem ao vivo, mais as datas do Carnaval 2027.",
+  "more": [
+    ('Quantos dias faltam para acabar o ano?', f'O ano termina na quinta-feira, 31 de dezembro de 2026. Contagem de hoje: {live(REV)}.'),
+    ('Quantas semanas faltam para o fim do ano?', 'A linha abaixo do contador mostra as semanas e os dias que faltam para 31 de dezembro de 2026.'),
+    ('Quantos dias faltam para 2027?', 'Um a mais que o contador do Réveillon: 2027 começa na sexta-feira, 1º de janeiro.'),
+    ('Quantos dias faltam para a virada do ano?', 'A virada é na noite de quinta-feira, 31 de dezembro de 2026, para sexta-feira, 1º de janeiro de 2027; o contador desta página conta até o dia 31.'),
+  ],
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Réveillon 2026/2027?", "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."),
     ("Quando é o Carnaval 2027?", "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."),
@@ -501,6 +514,12 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
   "title": "Quantos dias faltam para a Black Friday 2026? (27 de novembro)", "crumb": "Black Friday 2026",
   "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
   "hub_title": "Quantos dias faltam para a Black Friday 2026?", "hub_desc": "Black Friday e Cyber Monday com contagem ao vivo, mais a 1ª parcela do 13º.",
+  "more": [
+    ('Faltam quantos dias para a Black Friday?', f'A Black Friday 2026 é sexta-feira, 27 de novembro. Contagem de hoje: {live(BF26)}.'),
+    ('Quantas semanas faltam para a Black Friday?', 'A linha abaixo do contador mostra as semanas e os dias que faltam para 27 de novembro de 2026.'),
+    ('Quando é a Black Friday 2027?', 'Sexta-feira, 26 de novembro de 2027.'),
+    ('A Black Friday é sempre na última sexta-feira de novembro?', 'Nem sempre. Ela é a sexta-feira seguinte ao Dia de Ação de Graças dos Estados Unidos, que cai na quarta quinta-feira de novembro; quando a última sexta-feira do mês é dia 30, como em 2029, a Black Friday é a penúltima. Em 2026 é dia 27; em 2027, dia 26.'),
+  ],
   "js": [COUNT_JS], "faq": [
     ("Quando é a Black Friday 2026?", "Na sexta-feira, 27 de novembro de 2026. A Black Friday é sempre a sexta-feira depois do Dia de Ação de Graças dos Estados Unidos, que em 2026 cai na quinta-feira, 26 de novembro."),
     ("Quando é a Cyber Monday 2026?", "Na segunda-feira, 30 de novembro de 2026 — a segunda-feira logo depois da Black Friday."),
@@ -539,6 +558,11 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
   "title": "Quantos dias faltam para o Natal 2026? (sexta-feira, 25/12)", "crumb": "Natal 2026",
   "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
   "hub_title": "Quantos dias faltam para o Natal 2026?", "hub_desc": "Contagem ao vivo para 25 de dezembro, com a véspera e o prazo da 2ª parcela do 13º (18/12 em 2026).",
+  "more": [
+    ('Faltam quantos dias para o Natal?', f'O Natal 2026 é sexta-feira, 25 de dezembro. Contagem de hoje: {live(XMAS)}.'),
+    ('Quando é a véspera de Natal 2026?', 'Quinta-feira, 24 de dezembro de 2026.'),
+    ('Quantos dias faltam para a véspera de Natal?', 'Um a menos que o contador desta página, que conta até 25 de dezembro.'),
+  ],
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Natal 2026?", "Numa sexta-feira: 25 de dezembro de 2026. A véspera, 24 de dezembro, é uma quinta-feira, e o Natal emenda com o fim de semana."),
     ("Quantas semanas faltam para o Natal?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(XMAS)} dias, cerca de {days_to(XMAS) // 7} semanas. O contador desta página recalcula no dia em que você abre."),
@@ -745,6 +769,7 @@ SCENES = [
 <table><thead><tr><th>Rede de ensino</th><th>Último dia de aula</th><th>Faltam</th></tr></thead><tbody>{ferias_rows()}</tbody></table>
 <p>Para os alunos, as férias começam depois do último dia de aula. Quem fica de recuperação pode ter atividades depois dessa data: em Pernambuco, por exemplo, a recuperação final está marcada para 24, 28 e 29 de dezembro.</p>
 <p class="meta">Datas dos calendários oficiais de 2026 de cada rede, conferidas em {FERIAS_CHECKED.day} de {PT_MONTHS[FERIAS_CHECKED.month - 1]} de {FERIAS_CHECKED.year}. A escola pode ajustar o calendário (reposição de aulas, feriados municipais), e as redes municipais e particulares têm datas próprias: confirme com a sua escola.</p>
+<p>O calendário completo de cada rede, com o recesso de julho e a volta às aulas, está nas páginas de <a href="/tools/pt-br/ferias-escolares-sao-paulo-2026/">São Paulo</a>, <a href="/tools/pt-br/ferias-escolares-minas-gerais-2026/">Minas Gerais</a>, <a href="/tools/pt-br/ferias-escolares-parana-2026/">Paraná</a>, <a href="/tools/pt-br/ferias-escolares-rio-grande-do-sul-2026/">Rio Grande do Sul</a> e <a href="/tools/pt-br/ferias-escolares-pernambuco-2026/">Pernambuco</a>.</p>
 <p>O seu estado não está na tabela? O calendário é publicado pela secretaria de educação do estado ou pela escola: digite o primeiro dia das férias no contador abaixo.</p>
 <h2>Conte os dias até as suas férias</h2>
 <p>Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
@@ -756,6 +781,7 @@ SCENES = [
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
+<p>Para saber até quando o salário do mês precisa ser pago, veja <a href="/tools/pt-br/quinto-dia-util/">quando é o quinto dia útil</a> de cada mês.</p>
 <p>Se as férias vão ter viagem, o <a href="/beforego/pt-br/">BeforeGo</a> monta um roteiro dia a dia a partir do print de um post de viagem, e a lista de bagagem se monta sozinha a partir do destino e das datas.</p>
 <p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
  {"path": "/tools/pt-br/contador-de-dias-de-namoro/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
@@ -785,6 +811,203 @@ SCENES = [
 ]
 _ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/quantos-dias-faltam/")
 PAGES[_ci + 1:_ci + 1] = SCENES   # 场景页紧跟在计算器后面（常青页排在节日页前面）
+
+# ------------------------------------------------------------------ 8. 10-10 第三轮：巴西分州校历页 + 「quinto dia útil」
+# 依据：10-10 Google 巴西联想词「quando começam as férias escolares em são paulo / no paraná / em minas gerais」「volta as aulas 2027 rs」
+# 「quinto dia útil de <mês> 2026」「quantos dias úteis tem <mês> de 2026」。写页规矩同假期页：标题和首屏先给答案。
+# 每个州只写亲自读过官方文件的日期（10-10）：
+#   SP  Seduc-SP 服务门户 SED-08404（Resolução Seduc 125/2025）+ Agência SP；市立见 prefeitura.sp.gov.br
+#   MG  Agência Minas 128101（2025-11-05）   PR  Seed-PR Resolução 6.494/2025 附件日历（逐格读过颜色图例）
+#   RS  educacao.rs.gov.br（Portaria 704/2025）；2027 预告见 estado.rs.gov.br 2026-10-02 稿   PE  DOE 2025-12-12 的 IN SEE/PE 19/2025
+# ⚠ 和 FERIAS_2026 一起在 12-18 过期（上面的 SystemExit 会拦住构建）。
+PT_DMW = lambda d: f"{PT_DM(d)} ({PT_WD[d.weekday()]})"
+ESC_2027_PADRAO = "O calendário de 2026 foi {verbo} em {pub}; o de 2027 ainda não está nesta página. Como referência, em 2026 as aulas começaram em {inicio}."
+ESCOLAS = [
+ {"slug": "ferias-escolares-sao-paulo-2026", "pub": "setembro de 2025", "hub_desc": "Aulas até 18 de dezembro na rede estadual e até 22 na rede municipal da capital, com a contagem dos dias.", "nome": "São Paulo", "em": "em São Paulo", "da": "de São Paulo",
+  "title": "Quando começam as férias escolares em São Paulo? Aulas até 18/12/2026",
+  "inicio": dt.date(2026, 2, 2), "fim": dt.date(2026, 12, 18),
+  "rows": [("Início das aulas", "2 de fevereiro"), ("1º bimestre", "2 de fevereiro a 22 de abril"), ("2º bimestre", "23 de abril a 6 de julho"),
+           ("Férias de julho dos alunos", "7 a 23 de julho"), ("3º bimestre", "24 de julho a 2 de outubro"), ("4º bimestre", "5 de outubro a 18 de dezembro"),
+           ("Último dia de aula", "18 de dezembro (sexta-feira)"), ("Recesso escolar de fim de ano", "19 a 31 de dezembro")],
+  "julho": "As férias de julho dos alunos foram de 7 a 23 de julho, com volta às aulas em 24 de julho.",
+  "fontes": [("Seduc-SP, calendário escolar 2026 (Resolução Seduc n.º 125/2025)", "https://atendimento.educacao.sp.gov.br/knowledgebase/article/SED-08404/pt-br"),
+             ("Agência SP", "https://www.agenciasp.sp.gov.br/calendario-2026-sp-define-para-2-de-fevereiro-inicio-do-proximo-ano-letivo-nas-escolas-estaduais/")],
+  "desc_extra": "as datas da rede municipal da capital",
+  "extra": ('<h2>E na rede municipal da capital?</h2>'
+            '<p>Na rede municipal da cidade de São Paulo o calendário é outro: o ano letivo de 2026 começou em 4 de fevereiro e vai até <strong>terça-feira, 22 de dezembro</strong> '
+            '(contagem de hoje: <span data-date="2026-12-22"><span data-n>{n_cap}</span> <span data-unit>{u_cap}</span></span>), e o recesso do meio do ano foi de 6 a 17 de julho. '
+            'Fonte: <a href="https://prefeitura.sp.gov.br/w/ano-letivo-na-rede-municipal-da-capital-come%C3%A7a-em-4-de-fevereiro-veja-o-calend%C3%A1rio-de-2026" rel="noopener">Prefeitura de São Paulo</a>.</p>')},
+ {"slug": "ferias-escolares-minas-gerais-2026", "pub": "novembro de 2025", "pub_verbo": "anunciado", "hub_desc": "Aulas até 18 de dezembro na rede estadual; recesso da Semana do Professor de 13 a 16 de outubro.", "nome": "Minas Gerais", "em": "em Minas Gerais", "da": "de Minas Gerais",
+  "title": "Quando começam as férias escolares em Minas Gerais? Aulas até 18/12",
+  "inicio": dt.date(2026, 2, 4), "fim": dt.date(2026, 12, 18),
+  "rows": [("Início do ano letivo", "4 de fevereiro"), ("Recesso de julho", "20 a 31 de julho"), ("Recesso da Semana do Professor", "13 a 16 de outubro"),
+           ("Término do ano letivo", "18 de dezembro (sexta-feira)")],
+  "julho": "O recesso de julho, para professores e estudantes, foi de 20 a 31 de julho.",
+  "fontes": [("Agência Minas, calendário escolar 2026 (SEE-MG e Undime)", "https://www.agenciaminas.mg.gov.br/noticia/secretaria-de-educacao-e-undime-anunciam-calendario-escolar-2026-128101")],
+  "desc_extra": "os recessos de julho e de outubro",
+  "extra": ('<h2>Recesso de outubro</h2>'
+            '<p>Além do recesso de julho, o calendário de Minas Gerais tem o recesso da Semana do Professor, de 13 a 16 de outubro de 2026. '
+            'Como 12 de outubro, segunda-feira, é feriado nacional, a semana inteira fica sem aula.</p>'
+            '<h2>Um calendário para a rede estadual e as municipais</h2>'
+            '<p>O calendário de 2026 foi elaborado pela Secretaria de Estado de Educação em parceria com a Undime-MG e alinha as agendas da rede estadual e das redes municipais. '
+            'Os sábados letivos passam a ser dedicados a ações de mobilização familiar e comunitária.</p>')},
+ {"slug": "ferias-escolares-parana-2026", "pub": "novembro de 2025", "hub_desc": "Aulas até 18 de dezembro na rede estadual, com os trimestres e o recesso de julho.", "nome": "Paraná", "em": "no Paraná", "da": "do Paraná",
+  "title": "Quando começam as férias escolares no Paraná? Aulas até 18/12/2026",
+  "inicio": dt.date(2026, 2, 5), "fim": dt.date(2026, 12, 18),
+  "rows": [("Início das aulas", "5 de fevereiro"), ("1º trimestre", "5 de fevereiro a 14 de maio"), ("2º trimestre", "18 de maio a 4 de setembro"),
+           ("Recesso de julho", "13 a 22 de julho"), ("Volta às aulas no 2º semestre", "27 de julho"), ("3º trimestre", "8 de setembro a 18 de dezembro"), ("Recesso do Dia do Professor", "13 de outubro (terça-feira)"),
+           ("Último dia de aula", "18 de dezembro (sexta-feira)"), ("Dias letivos no ano", "201")],
+  "julho": "O recesso escolar de julho foi de 13 a 22 de julho; os dias 23 e 24 foram de estudo e planejamento dos profissionais, e as aulas voltaram em 27 de julho.",
+  "fontes": [("Seed-PR, Calendário Escolar 2026 (anexo da Resolução n.º 6.494/2025)", "https://www.educacao.pr.gov.br/Pagina/Calendario-Escolar")],
+  "desc_extra": "os trimestres e o recesso de julho",
+  "extra": ('<h2>Depois do último dia de aula</h2>'
+            '<p>No calendário oficial, o sábado, 19 de dezembro, está marcado como conselho de classe e fechamento do ano letivo; 21 e 22 de dezembro, como recesso escolar; '
+            'e o período de férias começa em 23 de dezembro.</p>')},
+ {"slug": "ferias-escolares-rio-grande-do-sul-2026", "nome": "Rio Grande do Sul", "em": "no Rio Grande do Sul", "da": "do Rio Grande do Sul",
+  "title": "Férias escolares no Rio Grande do Sul: aulas até 18/12/2026",
+  "inicio": dt.date(2026, 2, 18), "fim": dt.date(2026, 12, 18),
+  "rows": [("Início do ano letivo", "18 de fevereiro"), ("1º trimestre", "18 de fevereiro a 22 de maio"), ("2º trimestre", "25 de maio a 4 de setembro"),
+           ("Recesso escolar", "27 de julho a 2 de agosto"), ("3º trimestre", "8 de setembro a 18 de dezembro"),
+           ("Encerramento do ano letivo", "18 de dezembro (sexta-feira)"), ("Dias letivos no ano", "202")],
+  "julho": "O recesso escolar de estudantes e professores foi de 27 de julho a 2 de agosto, com volta às aulas em 3 de agosto.",
+  "fontes": [("Seduc-RS, Calendário Escolar de 2026 (Portaria n.º 704/2025)", "https://educacao.rs.gov.br/calendario-escolar-de-2026")],
+  "desc_extra": "a previsão de volta às aulas em 2027",
+  "y2027": ('O governo do estado informou, em 2 de outubro de 2026, que o calendário letivo de 2027 da rede estadual está previsto para começar em 15 de fevereiro e terminar em 17 de dezembro.',
+            ' Fonte: <a href="https://www.estado.rs.gov.br/aberto-periodo-de-inscricoes-para-ingresso-na-rede-estadual-de-educacao" rel="noopener">Governo do Rio Grande do Sul</a>.'),
+  "hub_desc": "Aulas até 18 de dezembro na rede estadual; a volta às aulas de 2027 está prevista para 15 de fevereiro.",
+  "extra": ('<h2>EJA e cursos técnicos</h2>'
+            '<p>Os trimestres da tabela valem para o Ensino Fundamental e o Ensino Médio. Na EJA, nos cursos técnicos subsequentes e concomitantes e no Curso Normal – Aproveitamento de Estudos, '
+            'o ano é dividido em semestres: de 18 de fevereiro a 24 de julho e de 3 de agosto a 18 de dezembro.</p>')},
+ {"slug": "ferias-escolares-pernambuco-2026", "pub": "dezembro de 2025", "hub_desc": "Aulas até 23 de dezembro na rede estadual; recuperação final em 24, 28 e 29 de dezembro.", "nome": "Pernambuco", "em": "em Pernambuco", "da": "de Pernambuco",
+  "title": "Quando começam as férias escolares em Pernambuco? Aulas até 23/12/2026",
+  "inicio": dt.date(2026, 2, 3), "fim": dt.date(2026, 12, 23),
+  "rows": [("Início do ano letivo", "3 de fevereiro"), ("1º trimestre", "3 de fevereiro a 19 de maio"), ("2º trimestre", "21 de maio a 11 de setembro"),
+           ("Recesso escolar", "10 a 26 de julho"), ("3º trimestre", "14 de setembro a 23 de dezembro"), ("Término do ano letivo", "23 de dezembro (quarta-feira)"),
+           ("Recuperação final", "24, 28 e 29 de dezembro"), ("Dias letivos no ano", "202")],
+  "julho": "O recesso escolar foi de 10 a 26 de julho, e o 2º semestre começou em 27 de julho.",
+  "fontes": [("SEE-PE, Instrução Normativa n.º 19/2025", "https://portal.educacao.pe.gov.br/calendario-escolar-2026/")],
+  "desc_extra": "as datas da recuperação final",
+  "extra": ('<h2>Recuperação final</h2>'
+            '<p>Depois do término do ano letivo, o calendário de Pernambuco reserva 24, 28 e 29 de dezembro para novas oportunidades de aprendizagem e recuperação final. '
+            'Quem não fica de recuperação entra de férias depois de 23 de dezembro.</p>')},
+]
+def escola_page(e):
+    fim, rede, wd = e["fim"], f"rede estadual {e['da']}", PT_WD[e["fim"].weekday()]
+    path = f"/tools/pt-br/{e['slug']}/"
+    n_cap = days_to(dt.date(2026, 12, 22))
+    extra = e["extra"].replace("{n_cap}", str(abs(n_cap)) if n_cap else "").replace("{u_cap}", "É hoje!" if n_cap == 0 else ("dias atrás" if n_cap < 0 else ("dia" if n_cap == 1 else "dias")))
+    y27, y27_src = e.get("y2027", (ESC_2027_PADRAO.format(verbo=e.get("pub_verbo", "publicado"), pub=e.get("pub", ""), inicio=PT_DM(e["inicio"])), ""))
+    rows = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in e["rows"])
+    fontes = " e ".join(f'<a href="{u}" rel="noopener">{esc(t)}</a>' for t, u in e["fontes"])
+    _o = [f'{o["da"].split()[0]} <a href="/tools/pt-br/{o["slug"]}/">{esc(o["nome"])}</a>' for o in ESCOLAS if o is not e]
+    outros = ", ".join(_o[:-1]) + " e " + _o[-1]
+    title = e["title"]; assert len(title) <= 70, (len(title), title)
+    desc = f"As aulas de 2026 na {rede} vão até {wd}, {PT_DM(fim)}. Veja quantos dias faltam e {e['desc_extra']}."
+    assert len(desc) <= 165, (len(desc), desc)
+    body = f"""<h1>Quando começam as férias escolares {e['em']}?</h1>
+<p class="lede">Na {rede}, as aulas de 2026 vão até <strong>{wd}, {PT_DM(fim)}</strong>. As férias de fim de ano dos alunos começam depois desse dia. A contagem abaixo é refeita todo dia.</p>
+{counter(fim, "pt-BR", f"Último dia de aula na {rede}")}
+<h2>Calendário escolar 2026 da {rede}</h2>
+<table><tbody>{rows}</tbody></table>
+<p class="meta">Fonte: {fontes}. Datas conferidas em {FERIAS_CHECKED.day} de {PT_MONTHS[FERIAS_CHECKED.month - 1]} de {FERIAS_CHECKED.year}. A escola pode ajustar o calendário (reposição de aulas, feriados municipais), e as redes municipais e particulares têm datas próprias: confirme com a sua escola.</p>
+{extra}
+<h2>Volta às aulas em 2027</h2>
+<p>{esc(y27)}{y27_src}</p>
+<h2>Outros estados</h2>
+<p>Veja também o calendário {outros}. A página <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a> compara as redes lado a lado e tem um contador com dias úteis para as férias do trabalho.</p>
+<h2>A contagem na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: {PT_DM(fim)} de 2026, o último dia de aula. Adicione um lembrete uma semana antes.</li>{PT_WIDGET_STEP}</ol>"""
+    return {"path": path, "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+            "title": title, "crumb": f"Férias escolares: {e['nome']}", "description": desc,
+            "hub_title": f"Férias escolares {e['em']} (2026)", "hub_desc": e["hub_desc"],
+            "js": [COUNT_JS], "body": body,
+            "faq": [
+              (f"Quando começam as férias escolares {e['em']} em 2026?", f"Na {rede}, o último dia de aula de 2026 é {wd}, {PT_DM(fim)}; as férias dos alunos começam depois desse dia. Redes municipais e escolas particulares têm calendário próprio."),
+              (f"Quando foram as férias de julho de 2026 na {rede}?", e["julho"]),
+              *([(f"Quando voltam as aulas em 2027 {e['em']}?", y27)] if "y2027" in e else []),
+              ("Dá para ver a contagem das férias no celular?", "Sim. No Countdown: Contagem regressiva, grátis para iPhone, a contagem fica num widget da Tela de Início ou da Tela Bloqueada, com lembretes no dia e com antecedência. Os eventos são ilimitados e sincronizam pelo iCloud, sem criar conta."),
+            ],
+            "more": [
+              (f"Quantos dias faltam para as férias escolares {e['em']}?", f"O contador no alto da página mostra quantos dias faltam hoje para {PT_DM(fim)} de 2026, o último dia de aula da {rede}."),
+              (f"Quando acabam as aulas {e['em']} em 2026?", f"Na {wd}, {PT_DM(fim)} de 2026, na {rede}."),
+              ("As escolas particulares seguem o mesmo calendário?", "Não necessariamente. Cada escola particular define o seu calendário, respeitando o mínimo de 200 dias letivos da Lei de Diretrizes e Bases da Educação; confirme as datas com a escola."),
+            ]}
+_fi = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/quantos-dias-faltam-para-as-ferias/")
+PAGES[_fi + 1:_fi + 1] = [escola_page(e) for e in ESCOLAS]   # 紧跟在假期页后面
+
+# 8b. Quinto dia útil（工资最迟发放日）+ 每月工作日数
+# 规则：CLT art. 459 § 1º（次月第 5 个工作日前发）；Instrução Normativa MTP n.º 2/2021 art. 14, I（数的时候周六算、周日和节假日不算，含市级节日）、
+#       II（走银行的，钱要在第 5 个工作日前到账可用）——10-10 读过 gov.br 上的 PDF 原文。
+# 全国性节日按法律固定日期（Lei 662/1949、6.802/1980、10.607/2002、14.759/2023）+ Paixão de Cristo；Carnaval 和 Corpus Christi 不是全国节日，不算。
+def br_feriados(y):
+    return {dt.date(y, 1, 1): "Confraternização Universal", easter(y) - dt.timedelta(days=2): "Paixão de Cristo", dt.date(y, 4, 21): "Tiradentes",
+            dt.date(y, 5, 1): "Dia do Trabalho", dt.date(y, 9, 7): "Independência", dt.date(y, 10, 12): "Nossa Senhora Aparecida", dt.date(y, 11, 2): "Finados",
+            dt.date(y, 11, 15): "Proclamação da República", dt.date(y, 11, 20): "Consciência Negra", dt.date(y, 12, 25): "Natal"}
+def quinto_dia_util(y, m):
+    fer, d, k = br_feriados(y), dt.date(y, m, 1), 0
+    while True:
+        if d.weekday() != 6 and d not in fer: k += 1
+        if k == 5: return d
+        d += dt.timedelta(days=1)
+def dias_uteis_mes(y, m):
+    fer, d, k = br_feriados(y), dt.date(y, m, 1), 0
+    while d.month == m:
+        if d.weekday() < 5 and d not in fer: k += 1
+        d += dt.timedelta(days=1)
+    return k
+assert quinto_dia_util(2026, 10) == dt.date(2026, 10, 6) and quinto_dia_util(2026, 11) == dt.date(2026, 11, 7) and quinto_dia_util(2027, 1) == dt.date(2027, 1, 7)
+QDU_MESES = [(y, m) for y in (2026, 2027) for m in range(1, 13) if (y, m) >= (TODAY.year, TODAY.month)]
+QDU = [(y, m, quinto_dia_util(y, m), dias_uteis_mes(y, m)) for y, m in QDU_MESES]
+QDU_NEXT = [q for q in QDU if q[2] >= TODAY][:3]
+QDU_LBL = lambda q: f"Quinto dia útil de {PT_MONTHS[q[1] - 1]} de {q[0]} · {PT_WD[q[2].weekday()]}, {PT_DM(q[2])}"
+# 首屏大数字要自己跳到「下一个」：把后面每个月的日期放进 data-list，访问当天挑第一个没过的，再交给 COUNT_JS 算天数
+NEXT_JS = """
+(function(){document.querySelectorAll('[data-list]').forEach(function(el){var L=JSON.parse(el.getAttribute('data-list')),n=new Date();n=new Date(n.getFullYear(),n.getMonth(),n.getDate());
+for(var i=0;i<L.length;i++){var p=L[i][0].split('-');if(new Date(+p[0],+p[1]-1,+p[2])>=n||i===L.length-1){el.setAttribute('data-date',L[i][0]);var s=document.getElementById(el.id+'-sub');if(s)s.textContent=L[i][1];break;}}});})();
+"""
+def next_counter(el_id, items, lang):
+    """items: [(date, 说明文字)]，按时间升序。静态先渲染第一个没过的；NEXT_JS 在访问当天改成当时的下一个。"""
+    d, label = next((x for x in items if x[0] >= TODAY), items[-1]); n = days_to(d)
+    unit = ts(lang, "today") if n == 0 else (ts(lang, "day") if n == 1 else ts(lang, "days"))
+    lst = esc(json.dumps([[x[0].isoformat(), x[1]] for x in items], ensure_ascii=False))
+    return (f'<div class="count" id="{el_id}" data-date="{d.isoformat()}" data-list="{lst}"><span data-n>{n if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
+            f'<p class="count-sub"><span id="{el_id}-sub">{esc(label)}</span></p>')
+def _qdu_obs(y, m, q):
+    fer = br_feriados(y); early = [f"{PT_DM(d)} é feriado ({n})" for d, n in sorted(fer.items()) if d.year == y and d.month == m and d <= q and d.weekday() != 6]
+    return "; ".join(early)
+_q1, _q2 = QDU_NEXT[0], QDU_NEXT[1]
+PAGES.insert(_fi + 1 + len(ESCOLAS), {"path": "/tools/pt-br/quinto-dia-util/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+  "title": "Quinto dia útil 2026 e 2027: a data do pagamento em cada mês", "crumb": "Quinto dia útil",
+  "description": f"O quinto dia útil de {PT_MONTHS[_q1[1] - 1]} de {_q1[0]} é {PT_WD[_q1[2].weekday()]}, {_q1[2].day}; o de {PT_MONTHS[_q2[1] - 1]}, {PT_WD[_q2[2].weekday()]}, {_q2[2].day}. Veja todos os meses até dezembro de 2027 e como contar: o sábado entra.",
+  "hub_title": "Quando é o quinto dia útil do mês?", "hub_desc": "A data-limite do pagamento do salário em cada mês de 2026 e 2027, com a contagem dos dias — e quantos dias úteis cada mês tem.",
+  "js": [NEXT_JS, COUNT_JS],
+  "faq": [
+    ("O sábado conta como dia útil para o pagamento do salário?", "Conta. Pela Instrução Normativa MTP n.º 2/2021 (art. 14, I), na contagem dos dias entra o sábado e ficam de fora o domingo e o feriado, inclusive o municipal."),
+    ("E se o quinto dia útil cair no sábado?", "O prazo termina nesse sábado. Quando o pagamento é feito pelo banco, o valor precisa estar à disposição do empregado até o quinto dia útil (art. 14, II, da mesma instrução normativa)."),
+    ("Feriado municipal ou estadual muda o quinto dia útil?", "Muda. O feriado local não entra na contagem, então, se ele cair nos primeiros dias do mês, o quinto dia útil passa para o dia útil seguinte na sua cidade. A tabela desta página considera só os feriados nacionais."),
+    ("De onde vem a regra do quinto dia útil?", "Do art. 459, § 1º, da CLT: quando o pagamento é mensal, ele deve ser feito, o mais tardar, até o quinto dia útil do mês seguinte ao trabalhado."),
+    ("Como coloco o dia do pagamento na Tela de Início?", "Crie no Countdown: Contagem regressiva um evento com a data do quinto dia útil deste mês e adicione o widget na Tela de Início. Como a data muda de mês para mês, atualize o evento no mês seguinte; se a sua empresa paga sempre no mesmo dia, use a repetição mensal. Os widgets são grátis em todos os tamanhos."),
+  ],
+  "more": [(f"Quando é o quinto dia útil de {PT_MONTHS[m - 1]} de {y}?", f"É {PT_WD[q.weekday()]}, {PT_DM(q)} de {y}, contando o sábado e sem contar domingos e feriados nacionais.") for y, m, q, _ in QDU_NEXT[:2]]
+        + [("Quando cai o pagamento este mês?", "Depende da empresa: a lei fixa só a data-limite, que é o quinto dia útil do mês. Muitas empresas pagam antes, em dia fixo, por acordo ou convenção coletiva.")],
+  "body": f"""<h1>Quando é o quinto dia útil do mês?</h1>
+<p class="lede">O salário do mês precisa ser pago até o quinto dia útil do mês seguinte. Na contagem o sábado entra; o domingo e os feriados, não. Em {PT_MONTHS[_q1[1] - 1]} de {_q1[0]}, o quinto dia útil é <strong>{PT_WD[_q1[2].weekday()]}, {PT_DM(_q1[2])}</strong>.</p>
+{next_counter("qdu", [(q[2], QDU_LBL(q)) for q in QDU], "pt-BR")}
+<h2>Quinto dia útil de cada mês</h2>
+<table><thead><tr><th>Mês</th><th>Quinto dia útil</th><th>Dias úteis no mês</th></tr></thead><tbody>{"".join(f'<tr><td>{PT_MONTHS[m - 1].capitalize()} de {y}</td><td>{q.day} ({PT_WD[q.weekday()]}){"<br><small>" + esc(_qdu_obs(y, m, q)) + "</small>" if _qdu_obs(y, m, q) else ""}</td><td>{u}</td></tr>' for y, m, q, u in QDU)}</tbody></table>
+<p class="meta">A coluna “Quinto dia útil” conta de segunda a sábado; a coluna “Dias úteis no mês” conta de segunda a sexta. As duas descontam só os feriados nacionais: um feriado estadual ou municipal nos primeiros dias do mês empurra o quinto dia útil para o dia útil seguinte na sua cidade.</p>
+<h2>Como contar o quinto dia útil</h2>
+<ul><li><strong>A regra</strong>: quando o salário é mensal, o pagamento deve ser feito, o mais tardar, até o quinto dia útil do mês seguinte ao trabalhado (CLT, art. 459, § 1º).</li>
+<li><strong>O sábado entra</strong>: na contagem dos dias inclui-se o sábado e excluem-se o domingo e o feriado, inclusive o municipal (Instrução Normativa MTP n.º&nbsp;2/2021, art. 14, I).</li>
+<li><strong>Pagamento pelo banco</strong>: o valor precisa estar à disposição do empregado até o quinto dia útil (art. 14, II).</li></ul>
+<p>Um exemplo: em novembro de 2026, o dia 1º é domingo e o dia 2, segunda-feira, é feriado (Finados). Contam terça, 3, quarta, 4, quinta, 5, sexta, 6, e sábado, 7 — o quinto dia útil é sábado, 7 de novembro.</p>
+<h2>Quantos dias úteis tem cada mês?</h2>
+<p>Para o trabalho de segunda a sexta, a conta é outra: os dias de segunda a sexta do mês, menos os feriados nacionais que caem nesses dias. É a terceira coluna da tabela. Os feriados nacionais considerados são 1º de janeiro, Paixão de Cristo, 21 de abril, 1º de maio, 7 de setembro, 12 de outubro, 2, 15 e 20 de novembro e 25 de dezembro. Carnaval e Corpus Christi não são feriados nacionais — são ponto facultativo ou feriado local —, por isso não foram descontados.</p>
+<h2>O dia do pagamento na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem até o pagamento fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembrete no dia.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Pagamento”.</li><li>Data: o quinto dia útil deste mês. Como ele muda de mês para mês, atualize a data no mês seguinte; se a empresa paga sempre no mesmo dia, ligue a repetição mensal.</li>{PT_WIDGET_STEP}</ol>
+<p>Para contar até qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>; para as férias, veja <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a>.</p>"""})
 
 # 7. 发票模板
 PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-26",
@@ -1020,6 +1243,12 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
   "title": "2027 農曆新年倒數：過年還有幾天？（除夕 2/5、初一 2/6）", "crumb": "農曆新年 2027",
   "description": "2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。",
   "hub_title": "2027 農曆新年倒數", "hub_desc": "除夕、初一與港台假期日期，每天更新的過年倒數。",
+  "more": [
+    ('離過年還有幾天？', '2027 年農曆新年（初一）是 2 月 6 日星期六。頁面最上方的數字會在你打開的當天重新計算。'),
+    ('2027 除夕是哪一天？', '2027 年除夕是 2 月 5 日星期五。'),
+    ('2027 過年是什麼時候？', '除夕是 2 月 5 日（五），初一是 2 月 6 日（六）。台灣的春節假期從 2 月 4 日放到 2 月 10 日。'),
+    ('2027 年還有哪些連假？', '台灣 2027 年 3 天以上的連假有 9 個，日期和倒數整理在 <a href="/tools/zh-hant/2027-lian-jia-xing-shi-li/">2027 連假行事曆</a>。'),
+  ],
   "js": [COUNT_JS], "faq": [
     ("2027 年農曆新年是哪一天？", f"大年初一是{fmt(CNY, 'zh-Hant')}，除夕是{fmt(CNY_EVE, 'zh-Hant')}。"),
     ("2027 年台灣過年放幾天？", f"依行政院人事行政總處公布的 116 年辦公日曆表，春節假期共 7 天，從{fmt(dt.date(2027, 2, 4), 'zh-Hant')}放到{fmt(dt.date(2027, 2, 10), 'zh-Hant')}；初一、初二逢週末，於2月9日、10日補假。"),
@@ -1049,6 +1278,80 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具全部尺寸都免費，事件數量不限；倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。</p>
 <ol><li>點 <strong>+</strong>，輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
 <p>點一下事件，它會翻到自己的背面：可以寫下年貨清單、放幾張照片，這一天的故事就留在這一天裡。</p>"""})
+
+# 7c2. 台灣：2027 連假行事曆（zh-Hant，Countdown）——10-10
+# 依據：10-10 Google 台灣聯想詞「2027 連假行事曆 / 2027 連假 / 2027 春節 連假 / 2027 過年 連假 / 過年 還有幾天」。
+# 日期出自行政院人事行政總處新聞稿（115.05.21「行政院核定116年政府行政機關辦公日曆表」：9 個連假與各自日數、春節與兒童節補假；
+# 114.06.13 稿：115 年國慶 / 光復 / 行憲各 3 日、處理要點刪除補行上班）——10-10 直接讀官網原文；起迄日按「逢六前補、逢日後補」逐個核對過星期。
+# 端午 6/9、中秋 9/15 是農曆固定日換算；教師節 9/28。App 說法只用 zh-Hant 商店描述裡免費的部分。⛔ 不用「倒數日」（APP280001-B）。
+TW_CHECKED = dt.date(2026, 10, 10)
+_tw = lambda y, m, d: dt.date(y, m, d)
+TW_2026 = [("臺灣光復暨金門古寧頭大捷紀念日", _tw(2026, 10, 24), _tw(2026, 10, 26), "10/25 是星期日，10/26（一）補假"),
+           ("行憲紀念日", _tw(2026, 12, 25), _tw(2026, 12, 27), "12/25 是星期五")]
+TW_2027 = [("元旦（開國紀念日）", _tw(2027, 1, 1), _tw(2027, 1, 3), "1/1 是星期五"),
+           ("農曆春節", _tw(2027, 2, 4), _tw(2027, 2, 10), "初一、初二是週六、週日，2/9、2/10 補假"),
+           ("和平紀念日（228）", _tw(2027, 2, 27), _tw(2027, 3, 1), "2/28 是星期日，3/1（一）補假"),
+           ("兒童節及清明節", _tw(2027, 4, 3), _tw(2027, 4, 6), "4/4 兒童節是星期日，4/6（二）補假"),
+           ("勞動節", _tw(2027, 4, 30), _tw(2027, 5, 2), "5/1 是星期六，4/30（五）補假"),
+           ("國慶日", _tw(2027, 10, 9), _tw(2027, 10, 11), "10/10 是星期日，10/11（一）補假"),
+           ("臺灣光復暨金門古寧頭大捷紀念日", _tw(2027, 10, 23), _tw(2027, 10, 25), "10/25 是星期一"),
+           ("行憲紀念日", _tw(2027, 12, 24), _tw(2027, 12, 26), "12/25 是星期六，12/24（五）補假"),
+           ("2028 年元旦", _tw(2027, 12, 31), _tw(2028, 1, 2), "2028/1/1 是星期六，12/31（五）補假")]
+assert [(a.weekday(), b.weekday()) for _, a, b, _ in TW_2027] == [(4, 6), (3, 2), (5, 0), (5, 1), (4, 6), (5, 0), (5, 0), (4, 6), (4, 6)]
+assert [(a.weekday(), b.weekday()) for _, a, b, _ in TW_2026] == [(5, 0), (4, 6)]
+TW_WD = lambda d: "一二三四五六日"[d.weekday()]
+TW_MD = lambda d: f"{d.month}/{d.day}（{TW_WD(d)}）"
+def tw_rows(items):
+    out = []
+    for name, a, b, note in items:
+        n = days_to(a); left = f'<span data-n>{abs(n) if n else ""}</span> <span data-unit>{"就是今天！" if n == 0 else ("天前" if n < 0 else "天")}</span>'
+        nb = "border-bottom:0;padding-bottom:4px"
+        out.append(f'<tr><td style="{nb}">{esc(name)}</td><td style="{nb}"><span style="white-space:nowrap">{TW_MD(a)}</span>–<span style="white-space:nowrap">{TW_MD(b)}</span></td>'
+                   f'<td style="white-space:nowrap;{nb}">{(b - a).days + 1} 天</td><td data-date="{a.isoformat()}" style="white-space:nowrap;{nb}">{left}</td></tr>'
+                   f'<tr><td colspan="4" style="padding-top:0"><small>{esc(note)}</small></td></tr>')
+    return "".join(out)
+PAGES.append({"path": "/tools/zh-hant/2027-lian-jia-xing-shi-li/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+  "title": "2027 連假行事曆（民國 116 年）：9 個連假與請假攻略，還有幾天？", "crumb": "2027 連假行事曆",
+  "description": "2027 年（民國 116 年）3 天以上的連假有 9 個：元旦 1/1–1/3、春節 2/4–2/10 共 7 天，還有 228、清明、勞動節、國慶、光復節、行憲紀念日。每個連假還有幾天，每天更新。",
+  "hub_title": "2027 連假行事曆：下一個連假還有幾天？", "hub_desc": "民國 116 年的 9 個連假、補假日與請假攻略，每個連假都有每天更新的倒數。",
+  "js": [NEXT_JS, COUNT_JS],
+  "faq": [
+    ("2027 年有幾個連假？", "依行政院核定的 116 年政府行政機關辦公日曆表，3 天以上的連假有 9 個：元旦、農曆春節、和平紀念日、兒童節及清明節、勞動節、國慶日、臺灣光復暨金門古寧頭大捷紀念日、行憲紀念日，以及 2028 年元旦補假形成的跨年連假。全年放假 121 天。"),
+    ("2027 年春節放幾天？", "從 2 月 4 日（四）放到 2 月 10 日（三），共 7 天。初一、初二（2 月 6 日、7 日）是週六、週日，所以在 2 月 9 日、10 日補假。"),
+    ("2027 年有補班日嗎？", "沒有。現行的補假規定已經刪除「調整放假、補行上班」的做法：放假日遇到星期六，在前一個上班日補假；遇到星期日，在後一個上班日補假。"),
+    ("民間企業也照這份行事曆放假嗎？", "這份日曆表適用於政府行政機關，公營事業原則上比照辦理；學校和警察、消防、軍事等機關另有規定。民間企業的放假依勞動基準法和勞動部的規定辦理。"),
+    ("怎麼把連假倒數放在 iPhone 主畫面？", "在「倒數計時 Widget：紀念日提醒」裡點 +，輸入連假名稱和第一天的日期，再長按主畫面 → 編輯 → 加入小工具 → Countdown。小工具全部尺寸都免費，事件數量不限。"),
+  ],
+  "more": [
+    ("2027 過年連假是哪幾天？", "2 月 4 日（四）到 2 月 10 日（三），共 7 天；除夕是 2 月 5 日，初一是 2 月 6 日。"),
+    ("2027 清明連假是哪幾天？", "4 月 3 日（六）到 4 月 6 日（二），共 4 天。4 月 4 日兒童節是星期日，改在 4 月 6 日補假。"),
+    ("2027 國慶連假是哪幾天？", "10 月 9 日（六）到 10 月 11 日（一），共 3 天。"),
+    ("2027 中秋節是哪一天？有連假嗎？", "2027 年中秋節是 9 月 15 日星期三，放假 1 天，沒有形成連假。"),
+    ("2027 端午節是哪一天？", "2027 年端午節是 6 月 9 日星期三，放假 1 天，沒有形成連假。"),
+    ("2026 年還有連假嗎？", "還有兩個：光復節連假 10 月 24 日（六）到 10 月 26 日（一），行憲紀念日連假 12 月 25 日（五）到 12 月 27 日（日）。"),
+  ],
+  "body": f"""<h1>2027 連假行事曆：下一個連假還有幾天？</h1>
+<p class="lede">依行政院核定的 116 年（2027 年）政府行政機關辦公日曆表，2027 年 3 天以上的連假有 <strong>9 個</strong>，春節連放 <strong>7 天</strong>，全年沒有補班日。下面的數字會在你打開頁面的當天重新計算。</p>
+{next_counter("lj", [(a, f"下一個連假：{name} · {TW_MD(a)}–{TW_MD(b)}，共 {(b - a).days + 1} 天") for name, a, b, _ in TW_2026 + TW_2027], "zh-Hant")}
+<h2>2027 年的 9 個連假</h2>
+<table><thead><tr><th>連假</th><th>日期</th><th style="white-space:nowrap">天數</th><th style="white-space:nowrap">還有幾天</th></tr></thead><tbody>{tw_rows(TW_2027)}</tbody></table>
+<h2>2026 年底前還有的連假</h2>
+<table><thead><tr><th>連假</th><th>日期</th><th style="white-space:nowrap">天數</th><th style="white-space:nowrap">還有幾天</th></tr></thead><tbody>{tw_rows(TW_2026)}</tbody></table>
+<h2>沒有連假的國定假日</h2>
+<ul><li>端午節：6 月 9 日（三）</li><li>中秋節：9 月 15 日（三）</li><li>孔子誕辰紀念日／教師節：9 月 28 日（二）</li></ul>
+<h2>請假攻略</h2>
+<ul><li><strong>春節</strong>：2 月 11 日（四）、12 日（五）請 2 天，從 2 月 4 日連休到 2 月 14 日，共 11 天。</li>
+<li><strong>端午節</strong>：6 月 7 日（一）、8 日（二）請 2 天，從 6 月 5 日連休到 6 月 9 日，共 5 天。</li>
+<li><strong>中秋節</strong>：9 月 13 日（一）、14 日（二）請 2 天，從 9 月 11 日連休到 9 月 15 日，共 5 天。</li>
+<li><strong>教師節</strong>：9 月 27 日（一）請 1 天，從 9 月 25 日連休到 9 月 28 日，共 4 天。</li></ul>
+<h2>補假怎麼算</h2>
+<p>放假的紀念日或節日遇到星期六，在前一個上班日補假；遇到星期日，在後一個上班日補假。除夕和春節遇到例假日，可以在前一個或後一個上班日補假。現行規定已經沒有「先放假、再補班」的做法。</p>
+<p>這份日曆表適用於政府行政機關，公營事業原則上比照辦理；學校和警察、消防、軍事等機關另有規定，民間企業則依勞動基準法和勞動部的規定辦理。</p>
+<p class="meta">資料來源：<a href="https://www.dgpa.gov.tw/information?pid=12983&amp;uid=82" rel="noopener">行政院人事行政總處新聞稿</a>（115 年 5 月 21 日、114 年 6 月 13 日）與 116 年政府行政機關辦公日曆表（{TW_CHECKED.year} 年 {TW_CHECKED.month} 月 {TW_CHECKED.day} 日確認）。公司與學校的假期可能不同。</p>
+<h2>把連假倒數放在主畫面</h2>
+<p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。「<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>」的小工具全部尺寸都免費，事件數量不限。</p>
+<ol><li>點 <strong>+</strong>，輸入連假的名稱，例如「春節連假」。</li><li>日期設為連假的第一天，例如 2027 年 2 月 4 日。</li><li>長按主畫面 →「編輯」→「加入小工具」→ Countdown。</li></ol>
+<p>農曆新年的日期和香港的公眾假期，見 <a href="/tools/zh-hant/nong-li-xin-nian-2027/">2027 農曆新年倒數</a>。</p>"""})
 
 # 7d. 日本：あと何日（日数計算）+ 共通テスト2027（ja，Countdown）——09-29
 # 依据：Google JP 联想词（共通テスト まであと何日 2027 / カウントダウン 待ち受け / あと何日 アプリ / 共通テスト 100日前 いつ；
@@ -1380,7 +1683,7 @@ PAGES.insert(_ci + 1, best_page_pt())   # 常青页一组：计算器 → 场景
 # ------------------------------------------------------------------ 目录页
 def hub_page(lang):
     hub_path = HUBS[lang]
-    items = [p for p in PAGES if p["lang"] == lang]
+    items = sorted([p for p in PAGES if p["lang"] == lang], key=lambda p: "/ferias-escolares-" in p["path"])   # 分州校历页排在其它工具后面（稳定排序）
     # 卡片小字：英文目录用 app 短名；其它语言用该语言商店名（09-28：西语目录显示 Invoice Maker 是英文）
     label = lambda k: BY_KEY[k]["home"]["label"] if lang == "en" else bp.store_of({"variantOf": k, "lang": lang})["name"]
     cards = "\n".join(f'  <a href="{p["path"]}"><b>{esc(p["hub_title"])}</b><span>{esc(p["hub_desc"])}</span><small>{esc(label(p["app"]))}</small></a>' for p in items)
