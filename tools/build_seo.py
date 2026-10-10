@@ -51,7 +51,10 @@ DEVICE = ('<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.tes
 ANALYTICS = (DEVICE + '\n'
              '<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};'
              'window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");'
-             'if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>\n'
+             'if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});'
+             # 点 App Store 按钮 = 一次路径为 /<页面>/~out-<ct> 的浏览：能看出哪一页、哪个位置的按钮被点了（10-10 加；隐私政策「This Website」一节已写明）
+             'document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest(\'a[href*="apps.apple.com"]\');if(!a)return;'
+             'var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>\n'
              '<script defer src="/_vercel/insights/script.js"></script>')
 # Ahrefs Web Analytics（无 cookie；能把搜索 / AI 引荐来源单独分出来）。key 在 site.json，删掉 key 就不输出。
 # 隐私政策各页的「This Website」一节写明了这两项统计，换 / 加统计工具时那一节要跟着改。

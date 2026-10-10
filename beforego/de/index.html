@@ -218,7 +218,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
@@ -241,7 +241,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <main class="wrap">
 <section class="hero">
   <div>
-    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/22/83/3e2283b9-5c22-ffc2-d99d-85b28cbd5a60/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
     <h1>BeforeGo: KI-Reiseplaner</h1>
     <div class="lede"><p>Mach einen Screenshot von einem Reise-Post, füge einen Link ein oder tipp deine Pläne einfach ab – BeforeGo macht daraus einen Reiseplan, Tag für Tag: die Orte, die sich lohnen, die To-dos vor der Abreise und jeden Tag, den der Post vorsieht. Scanne ein Ticket oder eine Buchungsbestätigung, und auch sie landet im Plan. Die Packliste schreibt sich derweil von selbst, passend zu Reiseziel und Reisedaten.</p></div>
     <a class="cta" href="https://apps.apple.com/de/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Laden im App Store</a>
@@ -275,8 +275,8 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 </section>
 
 <section class="sec" id="whats-new" aria-labelledby="h-new">
-  <h2 id="h-new">Neu in Version 1.2.1</h2>
-  <div class="news"><p>Mehrere Belege auf einem Foto werden jetzt zu mehreren Ausgaben.</p><ul><li>Fotografiere ein paar Belege zusammen – jeder wird zu einer eigenen Ausgabe, und die Prüfseite zeigt pro Beleg einen Abschnitt mit seinen Positionen</li><li>Mehrere Belege auf einmal scannen: Fotos aus der Mediathek wählen oder die Dokumentenkamera nutzen</li><li>Der Scan trägt das Geschäft ein, und ein Beleg ohne aufgedrucktes Datum bekommt das aktuelle Datum und die Uhrzeit</li><li>Auch aufgeschlüsselte Ausgaben können ihre Beteiligten ändern</li><li>Live-Aktivitäten folgen der Buchung: Flüge, Fahrten und Unterkünfte haben je ein eigenes Layout, Flughafenstädte folgen der Sprache der App, und der Countdown zeigt Tage, Stunden und Minuten und läuft von selbst</li><li>Behoben: Belege mit nur einer Position verloren sie beim erneuten Öffnen; VIP-Mitglieder konnten beim Scannen von Belegen oder Gegenständen noch an „keine Scans mehr“ hängen bleiben; Spa- und Massagebelege landeten unter Essen; lange Belege listeten gelegentlich Positionen doppelt</li><li>„Tipps &amp; Anleitungen“ ist in die Einstellungen umgezogen; Rückgängig nach dem Speichern mehrerer Ausgaben funktioniert von überall; neue Mitreisende bekommen einen Avatar, den sonst niemand hat; „Ich“ in Ausgaben startet mit dem illustrierten Avatar deines Profils</li></ul></div>
+  <h2 id="h-new">Neu in Version 1.2.5</h2>
+  <div class="news"><ul><li>Im Editor einer Reise öffnet sich „Als Guide importieren“ jetzt mit dem Text und den Screenshots, die du bereits eingefügt hast.</li><li>Neuigkeiten-Karten und einmalige Hinweise warten, bis du die App wirklich öffnest, statt bei einem Start im Hintergrund verbraucht zu werden.</li><li>Fehlerbehebungen und Feinschliff.</li></ul></div>
 </section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
@@ -318,7 +318,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <section class="sec" id="more" aria-labelledby="h-more">
   <h2 id="h-more">Weitere Apps von go ka</h2>
   <div class="others">
-      <a href="/countdown/de/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/ee/0e/c2ee0ed4-89fc-f119-e517-675ae84b4771/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Hochzeit, Urlaub, Erinnerungen</small></span></a>
+      <a href="/countdown/de/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/7e/8b/6d7e8bb8-707e-39c7-ac0b-7a2e771de487/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Hochzeit, Urlaub, Erinnerungen</small></span></a>
       <a href="/invoiceqr/de/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Rechnungsprogramm, Beleg &amp; PDF</small></span></a>
       <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>KI Kalorien Tracker mit Foto</small></span></a>
       <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR-Code gestalten und scannen</small></span></a>

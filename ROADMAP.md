@@ -139,6 +139,17 @@ Loy Krathong 人搜的是日期和仪式，不是倒数；Countdown 竞品替代
 - ⚠ **12-18 之后这些日期全过期**：12-15 前把 `FERIAS_2026` 换成 2027 学年（开学日 / 7 月假期）并改 `FERIAS_CHECKED`。
 - 写页规矩（从这次数据得出）：**标题和描述里必须有答案本身（日期或数字），首屏不许让人先填表**；搜的人要的是答案，工具放第二屏。
 
+**10-10 第二次发布（用户「一起改了」「所有都按你的建议」）**
+- 商店缓存全线同步：Countdown 1.4.16（背景 151 张、Pro 99 张；ja / ko / th 的 Pro 范围补齐）、InvoiceQR 1.1.22（免费额度 3 份 → 第一份，12 语 FAQ / 工具页 / 博客同改）、BeforeGo 1.2.5。
+- **简繁中文不再出现「倒数日 / 倒數日」**（Apple Legal APP280001-B）：site.json 改「倒计时 / 倒數計時」，商店缓存已是新文案。
+- ⚠ **Countdown 中国区商店页 10-10 是 404**（lookup 0 条）：简中页文案改从新加坡区取、下载链接指 `/sg/`。中国区恢复后把 `tools/store/countdown.json` 的 zh-Hans storefront 改回 cn。
+- 标题带答案：Black Friday（27 de novembro）、ENEM（8 e 15 de novembro）、Natal（sexta-feira, 25/12）、Réveillon（quinta, 31/12）。
+- 新页 2 个：`/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/`（从 Réveillon 页拆出）、`/tools/ja/countdown-machiuke-iphone/`（待ち受け / ロック画面教程）。站点 102 页。
+- 首个倒数数字正下方加一行下载按钮（只给 iPhone 访客显示，`ct=web-countdown-top`）。
+- **App Store 按钮点击统计**：点一次记成一次路径为 `/<页面>/~out-<ct>` 的浏览（Vercel 免费版没有自定义事件）。拉数时 `requestPath` 里带 `~out-` 的就是按钮点击，算 PV 时要剔掉。七份隐私政策已写明，日期改到 10-10。
+- 「更多问题」折叠块（`"more"` 字段）：把搜索词的其它问法写成默认折叠、点开可见的问答，不进结构化数据。**用户想要「放关键词但不展示」——只做这种合规写法，不做隐藏文字**（Google 垃圾内容政策点名 hidden text / keyword stuffing）。
+- 下一轮（用户已同意按建议做）：巴西分州放假 / 开学页（联想词有 em são paulo / no paraná / volta as aulas 2027 rs·rj·sc）、「quinto dia útil」「quantos dias úteis tem」工具（先核对劳动法口径）、台湾「2027 連假行事曆」。
+
 ## v1.3 墨西哥双线（10-18 ~ 10-31）
 
 一个 es-MX 工具目录 `/tools/es-mx/` 同时服务两个 app：

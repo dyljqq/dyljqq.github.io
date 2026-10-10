@@ -116,7 +116,7 @@
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
@@ -127,7 +127,7 @@
     <nav>Countdown</nav>
     <article>
       <h1>Countdown Privacy Policy</h1>
-      <p class="updated">Last updated: October 7, 2026</p>
+      <p class="updated">Last updated: October 10, 2026</p>
       <p>Countdown counts the days to the things you are waiting for, and puts them on your Home Screen and Lock Screen. This Privacy Policy explains what information the app uses and how it is handled.</p>
 
       <h2>Information We Use</h2>
@@ -172,7 +172,7 @@
       <p>Apple provides iCloud and In-App Purchase services. Google Firebase provides Analytics and Crashlytics services. These providers process data under their own terms and privacy practices and are required to protect it consistently with this policy and applicable agreements. Learn more about <a href="https://www.apple.com/legal/privacy/">Apple Privacy</a> and <a href="https://firebase.google.com/support/privacy/">Privacy and Security in Firebase</a>.</p>
 
       <h2>This Website</h2>
-      <p>This policy is published on beforego.art. The website uses Vercel Web Analytics and Ahrefs Web Analytics to count page visits and to see which websites, search engines, or AI assistants send visitors. Neither service uses cookies. They process technical request data such as the page address, the referring site, country, browser, and device type to produce aggregate statistics, and we do not use them to identify you. This applies to the website only, not to the app.</p>
+      <p>This policy is published on beforego.art. The website uses Vercel Web Analytics and Ahrefs Web Analytics to count page visits and to see which websites, search engines, or AI assistants send visitors, and how often the App Store buttons on its pages are tapped. Neither service uses cookies. They process technical request data such as the page address, the referring site, country, browser, and device type to produce aggregate statistics, and we do not use them to identify you. This applies to the website only, not to the app.</p>
 
       <h2>Children</h2>
       <p>Countdown is a general-purpose utility app, is not directed to children, and does not knowingly collect personal information from children.</p>

@@ -170,7 +170,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
       "name": "無料で何件まで作成できますか？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "3 件まで無料で作成 — アカウント登録は不要。この 3 件は毎月ではなく合計です。請求書・概算見積書・見積書は同じ枠を共有します（納品書は枠を使いません）。カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません。"
+        "text": "最初の1件は無料で、アカウント登録も不要です。この1件は毎月ではなく合計で、請求書・概算見積書・見積書のどれでも同じ枠を使います（納品書は枠を使いません）。カウントされるのは作成したときの1回だけで、あとから編集や再送をしても増えません。"
       }
     },
     {
@@ -217,7 +217,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
@@ -240,7 +240,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <main class="wrap">
 <section class="hero">
   <div>
-    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/63/3a/ad633ae4-4d6f-8075-b0ca-fdcf31fdfe66/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/d7/80/8dd78015-b2f8-faec-0e88-a7870e5335b6/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
     <h1><span class="seg">請求書・</span><span class="seg">見積書・</span><span class="seg">領収書作成 インボイス対応</span></h1>
     <div class="lede"><p>フリーランスや個人事業主・小規模事業者のための、請求書・見積書・納品書・領収書づくりのアプリです。適格請求書の記載事項も、源泉徴収も、スマホだけで整います。</p></div>
     <a class="cta" href="https://apps.apple.com/jp/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store でダウンロード</a>
@@ -272,15 +272,15 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     <div class="feat"><h3>QR コードスタジオも</h3><ul><li>12 種類の QR：リンク、Wi-Fi、名刺、メール、電話、SMS、チャット、位置情報、カレンダー、テキスト、決済、Pix</li><li>完成デザイン 16 種類：ポスター、メニューカード、セールタグ、ネオン、名刺など。色・ドット・フレーム・グラデーションも自由に調整</li><li>コントラストとクワイエットゾーンを自動チェック。常に読み取れる状態で画像に書き出し、共有・印刷・POP に利用</li></ul></div>
     <div class="feat"><h3>ホーム画面にも</h3><ul><li>ウィジェットは3種類：未回収額、クイック作成、すぐ見せられる決済QR</li><li>コードは大きく表示されるので、アプリを開かずにそのままスキャンしてもらえます</li><li>背景は50種類。フォントと文字色も選べます</li></ul></div>
     <div class="feat"><h3>安全に、いつでも同期</h3><ul><li>請求書・取引先・QR コードは、ご自身の iCloud 経由でプライベートに同期</li><li>iPhone を買い替えても、開けばそのまま続きから</li><li>「最近削除した項目」は 30 日間保持。誤操作でも元に戻せます</li><li>アカウント登録は不要。オフラインでも使えます</li><li>13 言語の表示に対応、ライト／ダーク外観</li></ul></div>
-    <div class="feat"><h3>まずは無料で</h3><ul><li>3 件まで無料で作成 — アカウント登録は不要</li><li>この 3 件は毎月ではなく合計です。請求書・概算見積書・見積書は同じ枠を共有します（納品書は枠を使いません）</li><li>カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません</li><li>完成デザイン 16 種類のうち 4 種類は Pro なしで無料で使えます</li><li>書き出したファイルには、ページ下部にアプリ名の小さな一行が入ります。Pro ではオフにできます</li></ul></div>
+    <div class="feat"><h3>まずは無料で</h3><ul><li>最初の 1 件は無料 — アカウント登録は不要</li><li>この 1 件は毎月ではなく合計です。請求書・概算見積書・見積書のどれでも同じ枠を使います（納品書は枠を使いません）</li><li>カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません</li><li>完成デザイン 16 種類のうち 4 種類は Pro なしで無料で使えます</li><li>書き出したファイルには、ページ下部にアプリ名の小さな一行が入ります。Pro ではオフにできます</li></ul></div>
     <div class="feat"><h3>Pro でできること</h3><ul><li>無制限の請求書とQR書き出し</li><li>100+ 種類の請求書テンプレート、12+ 種類の QR スタイル、16+ 種類の完成デザイン</li><li>完全なブランドキット（色・フォント・ロゴ）</li><li>QRの色・ドット・フレームのカスタム</li><li>書き出したファイルからアプリ名の一行を削除</li></ul><p>ご質問・ご要望は、このページのサポートリンクからお気軽にどうぞ。</p><p>※本アプリは請求書・見積書を作成するツールです。適格請求書（インボイス制度）の記載要件を満たすかどうかは、記載内容をご自身でご確認ください。</p></div>
   </div>
 
 </section>
 
 <section class="sec" id="whats-new" aria-labelledby="h-new">
-  <h2 id="h-new">バージョン 1.1.20 の新機能</h2>
-  <div class="news"><ul><li>最初の書類のチェックリストが、使い方に合わせて進むようになりました。各ステップは画面を閉じた時点で完了となり、サンプルを書き換えなくても先に進めます。送信画面を開くと最後のステップが完了します。</li><li>修正：プレビューから送信した書類が、エディタに戻って編集すると「未送信」に戻ってしまう問題を修正しました。</li></ul></div>
+  <h2 id="h-new">バージョン 1.1.22 の新機能</h2>
+  <div class="news"><ul><li>無料プランで作成できるのは最初の 1 件です。初回起動からそのとおり表示されるようになりました。</li><li>作成済みの書類は、これまでどおり無料で編集・送信・書き出しできます。納品書は引き続き無制限です。</li></ul></div>
 </section>
 <section class="sec" id="faq-section">
   <!-- faq:start -->
@@ -292,7 +292,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     </div>
     <div class="card">
       <h3>無料で何件まで作成できますか？</h3>
-      <p>3 件まで無料で作成 — アカウント登録は不要。この 3 件は毎月ではなく合計です。請求書・概算見積書・見積書は同じ枠を共有します（納品書は枠を使いません）。カウントされるのは作成したときで、1 件につき 1 回だけ。あとから編集しても、再送してもカウントは増えません。</p>
+      <p>最初の1件は無料で、アカウント登録も不要です。この1件は毎月ではなく合計で、請求書・概算見積書・見積書のどれでも同じ枠を使います（納品書は枠を使いません）。カウントされるのは作成したときの1回だけで、あとから編集や再送をしても増えません。</p>
     </div>
     <div class="card">
       <h3>取引先は請求書から直接支払えますか？</h3>
@@ -322,8 +322,8 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <section class="sec" id="more" aria-labelledby="h-more">
   <h2 id="h-more">go ka のほかのアプリ</h2>
   <div class="others">
-      <a href="/countdown/ja/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/ee/0e/c2ee0ed4-89fc-f119-e517-675ae84b4771/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>旅行・誕生日・受験まであと何日。思い出も</small></span></a>
-      <a href="/beforego/ja/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/c8/ae/cac8aeab-100f-6795-8e49-794bdaf4c724/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>スクショから旅程を自動作成</small></span></a>
+      <a href="/countdown/ja/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/7e/8b/6d7e8bb8-707e-39c7-ac0b-7a2e771de487/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>旅行・誕生日・受験まであと何日。思い出も</small></span></a>
+      <a href="/beforego/ja/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/22/83/3e2283b9-5c22-ffc2-d99d-85b28cbd5a60/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>スクショから旅程を自動作成</small></span></a>
       <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>写真でカロリー計算・AI食事記録</small></span></a>
       <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>デザインQR・読み取り・名刺</small></span></a>
       <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>小学1〜中学3年の単語ゲーム</small></span></a>

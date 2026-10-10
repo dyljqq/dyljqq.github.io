@@ -77,7 +77,7 @@
     },
     {
      "h2": "Make it look like the event, not a spreadsheet row",
-     "html": "<p>Countdown gives each event 200 drawn icons and the whole emoji keyboard to choose from, plus a hundred and forty-three full-screen backdrops — twenty-two of them photographs, and ninety-one of the 143 in Countdown Pro. A birthday can carry its own icon and backdrop, an exam a different one, and a trip another, so the countdown for each one is easy to tell apart at a glance rather than reading the label every time — useful once you have more than one or two events on the same list widget and need to recognize them without stopping to read.</p>"
+     "html": "<p>Countdown gives each event 200 drawn icons and the whole emoji keyboard to choose from, plus a hundred and fifty-one full-screen backdrops — twenty-two of them photographs, and ninety-nine of the 151 in Countdown Pro. A birthday can carry its own icon and backdrop, an exam a different one, and a trip another, so the countdown for each one is easy to tell apart at a glance rather than reading the label every time — useful once you have more than one or two events on the same list widget and need to recognize them without stopping to read.</p>"
     },
     {
      "h2": "Get a card worth sharing when the day arrives",
@@ -144,7 +144,7 @@
     },
     {
      "h2": "Everything else the invoice can carry",
-     "html": "<p>The payment QR code sits alongside the rest of what an invoice needs: your saved clients, items and tax rates for one-tap reuse, discounts, shipping, payment methods, reusable terms, and a handwritten signature drawn right on your iPhone. Your logo, brand color and fonts carry across every invoice once you set them, so the document with the payment QR code on it still looks like the rest of your paperwork. You don't have to start from a blank invoice either — pick one of 100+ templates, or scan a paper invoice (or a photo of one) and it becomes an editable draft you can add a payment QR code to.</p><p>You can create three documents free, no account or sign-up needed, and four of the ready-made QR designs are free to use as well; free exports carry a small line at the foot of the page naming the app, and Pro switches that off along with unlocking unlimited invoices and QR exports. Either way, invoices, clients and QR codes sync privately through your own iCloud, the app works offline with no account required, and Recently Deleted keeps an invoice for 30 days in case one wrong tap deletes something you needed. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> for the rest of what's included, or read <a href=\"/tools/how-to-write-an-invoice/\">how to write an invoice</a> if you're starting from a blank one.</p>"
+     "html": "<p>The payment QR code sits alongside the rest of what an invoice needs: your saved clients, items and tax rates for one-tap reuse, discounts, shipping, payment methods, reusable terms, and a handwritten signature drawn right on your iPhone. Your logo, brand color and fonts carry across every invoice once you set them, so the document with the payment QR code on it still looks like the rest of your paperwork. You don't have to start from a blank invoice either — pick one of 100+ templates, or scan a paper invoice (or a photo of one) and it becomes an editable draft you can add a payment QR code to.</p><p>Your first document is free, no account or sign-up needed, and four of the ready-made QR designs are free to use as well; free exports carry a small line at the foot of the page naming the app, and Pro switches that off along with unlocking unlimited invoices and QR exports. Either way, invoices, clients and QR codes sync privately through your own iCloud, the app works offline with no account required, and Recently Deleted keeps an invoice for 30 days in case one wrong tap deletes something you needed. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> for the rest of what's included, or read <a href=\"/tools/how-to-write-an-invoice/\">how to write an invoice</a> if you're starting from a blank one.</p>"
     }
    ],
    "faq": [
@@ -203,7 +203,7 @@
     },
     {
      "h2": "One free allowance covers all three document types",
-     "html": "<p>Invoice Maker gives you three documents free, no account or sign-up needed. That's three in total, not three a month, and invoices, estimates and quotes all draw on the same allowance rather than three separate ones. A document only counts once, the moment you create it — editing it or sending it again later doesn't use up any more of the allowance, so a quote you revise twice before a client approves it still only costs one document from the free total. Beyond that, going Pro removes the limit and unlocks the rest of the app's templates and QR styles. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> or the <a href=\"/tools/invoice-template/\">invoice template</a> to get a document started.</p>"
+     "html": "<p>Invoice Maker gives you your first document free, no account or sign-up needed. That's one in total, not one a month, whether it's an invoice, an estimate or a quote — there isn't a separate allowance for each type. A document only counts once, the moment you create it — editing it or sending it again later is free, so a quote you revise twice before a client approves it is still that one document. Beyond that, going Pro removes the limit and unlocks the rest of the app's templates and QR styles. See the <a href=\"/invoiceqr/\">Invoice Maker app page</a> or the <a href=\"/tools/invoice-template/\">invoice template</a> to get a document started.</p>"
     }
    ],
    "faq": [
@@ -221,7 +221,7 @@
     },
     {
      "q": "How many documents can I create for free?",
-     "a": "Three in total. Invoices, estimates and quotes all draw on the same free allowance, and it doesn't reset monthly."
+     "a": "One in total. Your first document is free, whether it's an invoice, an estimate or a quote — there isn't a separate allowance for each type, and it doesn't reset monthly. Editing it or sending it again later is free."
     }
    ],
    "keywords": [

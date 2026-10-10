@@ -90,6 +90,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:14px 0}.more summary{cursor:pointer;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:10px 0 0;color:var(--muted)}
 .countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
 @media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -100,7 +102,7 @@ html[lang^=th] *{letter-spacing:0!important}
 #calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
 .tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
 .pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
-.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
 .appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
 .ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
@@ -178,7 +180,7 @@ html[lang^=th] *{letter-spacing:0!important}
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
@@ -219,6 +221,7 @@ html[lang^=th] *{letter-spacing:0!important}
 </div>
 
 </article>
+
 
 
 <p class="ask">Ask an AI about this page: <a href="https://chatgpt.com/?q=Read%20https%3A//beforego.art/blog/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=Read%20https%3A//beforego.art/blog/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=Read%20https%3A//beforego.art/blog/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Claude</a></p>

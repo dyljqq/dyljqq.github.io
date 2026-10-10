@@ -90,6 +90,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:14px 0}.more summary{cursor:pointer;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:10px 0 0;color:var(--muted)}
 .countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
 @media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -100,7 +102,7 @@ html[lang^=th] *{letter-spacing:0!important}
 #calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
 .tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
 .pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
-.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
 .appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
 .ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
@@ -156,7 +158,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-28",
-  "dateModified": "2026-10-05",
+  "dateModified": "2026-10-10",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (web browser)",
   "browserRequirements": "Requires JavaScript",
@@ -248,14 +250,14 @@ html[lang^=th] *{letter-spacing:0!important}
       "name": "¿Hay una app para hacer cotizaciones en el iPhone?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro."
+        "text": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Tu primer documento es gratis, sin cuenta ni registro."
       }
     }
   ]
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
@@ -302,7 +304,7 @@ html[lang^=th] *{letter-spacing:0!important}
 <tr><td>Factura (CFDI)</td><td>Cuando el cliente la pide o la ley lo exige</td><td>Comprobante fiscal digital, emitido a través del SAT o de un proveedor autorizado (PAC).</td></tr></tbody></table></div>
 <p>¿Tu cliente ya aceptó? Pasa los mismos conceptos a un <a href="/tools/es-mx/nota-de-venta/">formato de nota de venta</a>. Si haces varias cotizaciones al mes, <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a> en el iPhone guarda clientes y conceptos y convierte la cotización en nota de venta con un toque.</p>
 <p class="meta" style="margin-top:18px"><strong>Importante:</strong> una cotización o una nota de venta no es una factura. En México, la factura es un CFDI: un comprobante fiscal digital que se emite a través del SAT o de un proveedor autorizado (PAC). Ni este formato ni nuestra app emiten CFDI ni facturas fiscales ante el SAT.</p>
-<p class="meta">Publicado 2026-09-28 · Actualizado 2026-10-05 · go ka</p>
+<p class="meta">Publicado 2026-09-28 · Actualizado 2026-10-10 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Preguntas frecuentes</h2><div class="grid">
     <div class="card"><h3>¿Este formato de cotización es gratis?</h3><p>Sí. Todo pasa en tu navegador: no se sube nada, no hay cuenta ni marca de agua. Llena los campos y luego imprime o guarda en PDF.</p></div>
@@ -310,9 +312,10 @@ html[lang^=th] *{letter-spacing:0!important}
     <div class="card"><h3>¿Qué es la vigencia de una cotización?</h3><p>Es la fecha hasta la que respetas los precios. En este formato se llena sola a 15 días de hoy; cámbiala si ofreces otro plazo.</p></div>
     <div class="card"><h3>¿Una cotización sirve como factura?</h3><p>No. La cotización es una propuesta de precio antes de la venta. Si tu cliente necesita factura, esa tiene que ser un CFDI emitido a través del SAT o de un proveedor autorizado (PAC).</p></div>
     <div class="card"><h3>¿Cómo guardo la cotización en PDF?</h3><p>Haz clic en Imprimir / Guardar PDF y, en la ventana de impresión, elige «Guardar como PDF» como destino. Solo se imprime la cotización; el resto de la página se oculta.</p></div>
-    <div class="card"><h3>¿Hay una app para hacer cotizaciones en el iPhone?</h3><p>Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro.</p></div>
+    <div class="card"><h3>¿Hay una app para hacer cotizaciones en el iPhone?</h3><p>Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Tu primer documento es gratis, sin cuenta ni registro.</p></div>
 </div></section>
-<aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ad/63/3a/ad633ae4-4d6f-8075-b0ca-fdcf31fdfe66/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">Llévalo a tu iPhone</p><b>Nota de Venta, Cotización</b><p>La forma más rápida para freelancers y pequeñas empresas de crear cotizaciones, notas de venta, remisiones y recibos profesionales — y cobrar antes por transfer</p><a class="btn" href="https://apps.apple.com/mx/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Descargar en el App Store</a> &nbsp; <a href="/invoiceqr/es-mx/" style="font-size:14px">Invoice Maker →</a></div></aside>
+
+<aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8d/d7/80/8dd78015-b2f8-faec-0e88-a7870e5335b6/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">Llévalo a tu iPhone</p><b>Nota de Venta, Cotización</b><p>La forma más rápida para freelancers y pequeñas empresas de crear cotizaciones, notas de venta, remisiones y recibos profesionales — y cobrar antes por transfer</p><a class="btn" href="https://apps.apple.com/mx/app/apple-store/id6790383156?pt=128309253&amp;ct=web-invoiceqr-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Descargar en el App Store</a> &nbsp; <a href="/invoiceqr/es-mx/" style="font-size:14px">Invoice Maker →</a></div></aside>
 <p class="ask">Pregúntale a una IA sobre esta página: <a href="https://chatgpt.com/?q=Lee%20https%3A//beforego.art/tools/es-mx/formato-de-cotizacion/%20y%20resume%20sus%20puntos%20principales%20en%20pocas%20frases." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=Lee%20https%3A//beforego.art/tools/es-mx/formato-de-cotizacion/%20y%20resume%20sus%20puntos%20principales%20en%20pocas%20frases." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=Lee%20https%3A//beforego.art/tools/es-mx/formato-de-cotizacion/%20y%20resume%20sus%20puntos%20principales%20en%20pocas%20frases." rel="nofollow noopener">Claude</a></p>
 <div style="height:48px"></div>
 </main>

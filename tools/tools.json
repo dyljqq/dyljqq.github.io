@@ -370,7 +370,7 @@
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
-  "title": "Quantos dias faltam para o ENEM 2026? Contagem regressiva",
+  "title": "Quantos dias faltam para o ENEM 2026? (8 e 15 de novembro)",
   "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
   "faq": [
    {
@@ -405,7 +405,7 @@
   "path": "/tools/pt-br/contagem-regressiva-reveillon-2027/",
   "lang": "pt-BR",
   "kind": "Article",
-  "title": "Quantos dias faltam para o Réveillon 2027 e o Carnaval 2027?",
+  "title": "Quantos dias faltam para o Réveillon 2027? (quinta, 31/12)",
   "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
   "faq": [
    {
@@ -433,10 +433,45 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Quantos dias faltam para o Carnaval 2027? (6 a 9 de fevereiro)",
+  "description": "O Carnaval 2027 vai de sábado, 6, a terça-feira, 9 de fevereiro; a Quarta-feira de Cinzas é dia 10. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "faq": [
+   {
+    "q": "Quando é o Carnaval 2027?",
+    "a": "De sábado, 6 de fevereiro, a terça-feira, 9 de fevereiro de 2027. A Quarta-feira de Cinzas é 10 de fevereiro."
+   },
+   {
+    "q": "Quantos dias faltam para o Carnaval 2027?",
+    "a": "Em 10/10/2026 faltavam 119 dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."
+   },
+   {
+    "q": "O Carnaval é feriado nacional?",
+    "a": "Não. O Carnaval não está entre os feriados nacionais: nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura."
+   },
+   {
+    "q": "Quando é o Carnaval 2028?",
+    "a": "A terça-feira de Carnaval de 2028 é 29 de fevereiro, e o sábado de Carnaval é 26 de fevereiro."
+   },
+   {
+    "q": "Como coloco a contagem do Carnaval na Tela de Início?",
+    "a": "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."
+   }
+  ],
+  "published": "2026-10-10",
+  "app": "countdown",
+  "hubTitle": "Quantos dias faltam para o Carnaval 2027?",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/pt-br/contagem-regressiva-black-friday-2026/",
   "lang": "pt-BR",
   "kind": "Article",
-  "title": "Quantos dias faltam para a Black Friday 2026? Contagem regressiva",
+  "title": "Quantos dias faltam para a Black Friday 2026? (27 de novembro)",
   "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
   "faq": [
    {
@@ -471,7 +506,7 @@
   "path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/",
   "lang": "pt-BR",
   "kind": "Article",
-  "title": "Quantos dias faltam para o Natal 2026? Contagem regressiva",
+  "title": "Quantos dias faltam para o Natal 2026? (sexta-feira, 25/12)",
   "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
   "faq": [
    {
@@ -527,7 +562,7 @@
    },
    {
     "q": "Is there an app that keeps invoices, clients and payments?",
-    "a": "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Three documents are free, with no account."
+    "a": "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Your first document is free, with no account."
    }
   ],
   "published": "2026-09-26",
@@ -566,7 +601,7 @@
    },
    {
     "q": "¿Hay una app para hacer cotizaciones en el iPhone?",
-    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro."
+    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Tu primer documento es gratis, sin cuenta ni registro."
    }
   ],
   "published": "2026-09-28",
@@ -601,7 +636,7 @@
    },
    {
     "q": "¿Hay una app para hacer notas de venta en el iPhone?",
-    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro."
+    "a": "Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Tu primer documento es gratis, sin cuenta ni registro."
    }
   ],
   "published": "2026-09-28",
@@ -644,7 +679,7 @@
    },
    {
     "q": "有 App 可以在 iPhone 上開報價單嗎？",
-    "a": "「開單、報價單、收據、送貨單產生器」是我們的 iPhone App，做的就是這件事，還會記住客戶與項目：先寄報價單，客戶確認後一鍵轉成帳單；每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。免費建立 3 份，免註冊帳號。"
+    "a": "「開單、報價單、收據、送貨單產生器」是我們的 iPhone App，做的就是這件事，還會記住客戶與項目：先寄報價單，客戶確認後一鍵轉成帳單；每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。第一份免費，免註冊帳號。"
    }
   ],
   "published": "2026-09-29",
@@ -683,7 +718,7 @@
    },
    {
     "q": "有 App 可以在 iPhone 上開收據嗎？",
-    "a": "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。免費建立 3 份，免註冊帳號。"
+    "a": "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。第一份免費，免註冊帳號。"
    }
   ],
   "published": "2026-09-29",
@@ -798,6 +833,41 @@
   "published": "2026-09-29",
   "app": "countdown",
   "hubTitle": "共通テスト2027まであと何日？",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/ja/countdown-machiuke-iphone/",
+  "lang": "ja",
+  "kind": "Article",
+  "title": "カウントダウンを待ち受け（ロック画面）にする方法｜iPhone",
+  "description": "iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。",
+  "faq": [
+   {
+    "q": "待ち受け（ロック画面）のカウントダウンは無料で使えますか？",
+    "a": "はい。カウントダウン ウィジェット: 記念日 のウィジェットは、ロック画面用もホーム画面用もすべてのサイズが無料です。イベントの数にも上限はありません。"
+   },
+   {
+    "q": "壁紙そのものに数字を入れることはできますか？",
+    "a": "壁紙は画像なので、入れた数字はその日のまま変わりません。毎日変わる「あと何日」を待ち受けに出したいときは、ロック画面のウィジェットを使います。"
+   },
+   {
+    "q": "受験までのカウントダウンにも使えますか？",
+    "a": "使えます。大学入学共通テスト2027なら、イベントの日付を2027年1月16日にします。残りの日数は、このサイトの共通テスト2027のカウントダウンでも毎日確認できます。"
+   },
+   {
+    "q": "ライブアクティビティとは違いますか？",
+    "a": "違います。ロック画面のウィジェットは無料で、時計の下に表示されます。ロック画面のライブアクティビティは Countdown Pro の機能です。"
+   },
+   {
+    "q": "Android でも使えますか？",
+    "a": "このアプリは iPhone 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"
+   }
+  ],
+  "published": "2026-10-10",
+  "app": "countdown",
+  "hubTitle": "カウントダウンを待ち受けにする方法（iPhone）",
   "items": [],
   "headline": null,
   "image": null
@@ -1050,7 +1120,7 @@
    },
    {
     "q": "How many documents can I create for free?",
-    "a": "Three in total. Invoices, estimates and quotes all draw on the same free allowance, and it doesn't reset monthly."
+    "a": "One in total. Your first document is free, whether it's an invoice, an estimate or a quote — there isn't a separate allowance for each type, and it doesn't reset monthly. Editing it or sending it again later is free."
    }
   ],
   "published": "2026-09-26",
@@ -1183,7 +1253,7 @@
   "lang": "ja",
   "kind": "CollectionPage",
   "title": "無料ツールとガイド — go ka",
-  "description": "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。",
+  "description": "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。",
   "faq": [],
   "published": null,
   "app": null,

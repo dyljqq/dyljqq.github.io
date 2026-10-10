@@ -67,7 +67,7 @@ A countdown widget app for iPhone where every widget size is free and the number
 - Category: Productivity
 - For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
 - Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
-- Paid: Pro unlocks 91 of the 143 backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
+- Paid: Pro unlocks 99 of the 151 backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
 
 ### Smart Invoice & Estimate Maker
 
@@ -88,7 +88,7 @@ An iPhone invoice app that makes invoices, estimates and receipts as PDFs, with 
 - Platform: iOS (iPhone, iPad)
 - Category: Business
 - For: Freelancers, contractors and small businesses who bill from their phone rather than a desktop accounting suite.
-- Free: Three documents in total, not three a month — invoices, estimates and quotes share the allowance, and editing or re-sending one is free — plus four of the ready-made QR designs.
+- Free: Your first document — one in total, not one a month, whether it's an invoice, an estimate or a quote; editing or re-sending it is free — plus four of the ready-made QR designs.
 - Paid: Pro: unlimited invoices and QR exports, 100+ invoice templates, 12+ QR styles and 16+ ready-made designs, a full brand kit, custom QR colours, dots and frames, and no app line at the foot of exports.
 
 ### DailyCalorie: Calories Left
@@ -153,6 +153,7 @@ A gym workout log for iPhone.
 - [Melhores apps de contagem regressiva para iPhone (2026)](https://beforego.art/tools/pt-br/melhores-apps-contagem-regressiva/) — Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.
 - [Quantos dias faltam para o ENEM 2026?](https://beforego.art/tools/pt-br/dias-para-o-enem-2026/) — As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.
 - [Quantos dias faltam para o Réveillon 2027?](https://beforego.art/tools/pt-br/contagem-regressiva-reveillon-2027/) — Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.
+- [Quantos dias faltam para o Carnaval 2027?](https://beforego.art/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/) — O Carnaval 2027 vai de sábado, 6, a terça-feira, 9 de fevereiro; a Quarta-feira de Cinzas é dia 10. Contagem regressiva ao vivo e widget grátis para o iPhone.
 - [Quantos dias faltam para a Black Friday 2026?](https://beforego.art/tools/pt-br/contagem-regressiva-black-friday-2026/) — Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.
 - [Quantos dias faltam para o Natal 2026?](https://beforego.art/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/) — O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.
 - [Free invoice template](https://beforego.art/tools/invoice-template/) — A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.
@@ -163,6 +164,7 @@ A gym workout log for iPhone.
 - [2027 農曆新年倒數](https://beforego.art/tools/zh-hant/nong-li-xin-nian-2027/) — 2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
 - [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。
+- [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
@@ -176,7 +178,7 @@ A gym workout log for iPhone.
 - [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.
 - [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
-- [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。
+- [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ

@@ -13,6 +13,7 @@
   需要看手机画面时同样用 CDP 设备模拟截图，或只看桌面截图 + 该脚本的结论。
 - 自动审计：`python3 tools/check_structure.py .`
 - 事实依据：`tools/store/<app>.json`（各语言 App Store 商店描述缓存）、`tools/store/subtitles.json`
+- Countdown「加入别人分享给你的倒计时不需要订阅」依据 1.4.11 更新说明原文（2026-09-29 商店）：“Inviting someone is part of Countdown Pro; joining a countdown someone shares with you needs no subscription.” 现行商店描述只写了邀请属于 Pro，没重复这半句，不算无依据。
 - BeforeGo 1.2.0 已于 09-26 上线（09-28 iTunes lookup 核实），「功能图文」文案依据 `tools/store/beforego-1.2.0.json` 与线上商店一致。商店缓存用 `python3 tools/fetch_store.py` 重抓，评审发现版本落后就报。
 - **配图（用户 09-28 定）**：产品页和博客的配图一律是 Codex 重画的插画（`assets/art/<app>/`，prompt 在 `tools/art/prompts.json`），**页面上不再出现商店截图**；插画里不画文字——**数字不算文字**（不分语言，如 Countdown 的「12」、BeforeGo 的日程序号 1/2/3 和小组件「7」），所有语言共用一套。JSON-LD 的 `screenshot` 字段仍指向商店截图（给搜索引擎的元数据，页面不显示），不算违规。
 - 页面结构（参照 EasyNotes 官网与 11 个同类 app 官网调研）：产品页 = 首屏（右侧 4:5 浅底圆角面板放该 app 的首屏插画）→ 功能图文（浅底圆角卡片：4:5 插画 + 标题 + 两三句，参照 EasyNotes）→ 有预览视频的 app 另有「See it in action」一节放视频 → 商店原文细节 → 当前版本更新内容 → FAQ → 指南与免费工具 → 其他 app；截图画廊已取消。语言切换只在页头（参照 GoFasting 的「EN ⌄」菜单），页面底部不再列语言；另有 `/blog/`（英文指南）与 `/tools/`。

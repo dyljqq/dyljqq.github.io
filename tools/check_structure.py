@@ -100,8 +100,9 @@ for path in pages:
         h = a.get("href")
         if h in (None, "", "#") or (h or "").startswith("javascript:"): bad(f"空链接 {h!r}")
         elif h.startswith("/") and not h.startswith("//"):
-            target = ROOT / h.lstrip("/").split("#")[0]
-            if h.split("#")[0].endswith("/"): target = target / "index.html"
+            path = h.split("#")[0].split("?")[0]   # 带 ?date=… 这类参数的站内链接按路径判断（10-10）
+            target = ROOT / path.lstrip("/")
+            if path.endswith("/"): target = target / "index.html"
             if not target.exists(): bad(f"站内死链 {h}")
         if a.get("target") == "_blank" and "noopener" not in (a.get("rel") or ""): bad(f"_blank 缺 noopener {h}")
     for i in p.imgs:

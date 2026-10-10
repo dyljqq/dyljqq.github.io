@@ -129,6 +129,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
 .count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
 .count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:14px 0}.more summary{cursor:pointer;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:10px 0 0;color:var(--muted)}
 .countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
 @media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
 .calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
@@ -139,7 +141,7 @@ html[lang^=th] *{letter-spacing:0!important}
 #calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
 .tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
 .pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
-.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
 .appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
 .ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
@@ -193,6 +195,20 @@ def counter(d, lang, label=""):
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
             f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
 
+# 首个倒数数字正下方的一行下载按钮：只对 iOS 访客显示（build_seo 的 DEVICE 给 <html> 打 is-ios）。
+# 10-10 复盘：下载按钮原来只在页面靠后的位置，搜进来的人看完数字就走。ct=web-countdown-top，和页尾卡片的 -tool 分开计。
+TOP_CTA = {"en": "Add it to your Home Screen — free", "pt-BR": "Colocar na Tela de Início — grátis",
+           "ja": "ホーム画面・ロック画面に置く（無料）", "zh-Hant": "放到主畫面（免費）"}   # 短到 375 宽一行放得下
+def top_cta(app_key, lang):
+    p = BY_KEY[app_key]; a = {"variantOf": app_key, "lang": lang} if lang != "en" else p
+    return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(TOP_CTA[lang])}</a></p>'
+
+# 「更多问题」：搜索词的其它问法（GSC 查询词 / 联想词），默认折叠、点开可见，正文真实存在——不做隐藏文字。不进 FAQPage 结构化数据。
+MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題"}
+def more_html(items, lang):
+    rows = "".join(f"<details><summary>{esc(q)}</summary><p>{a}</p></details>" for q, a in items)
+    return f'<section class="sec more"><h2>{esc(MORE_H[lang])}</h2>{rows}</section>'
+
 def wrap_tables(body):
     """表格外包 .tbl（overflow-x:auto），手机上表格自己滚，不把页面撑宽。"""
     return body.replace("<table>", '<div class="tbl"><table>').replace('<table class="cmp">', '<div class="tbl full"><table class="cmp">').replace("</table>", "</table></div>")
@@ -200,6 +216,8 @@ def wrap_tables(body):
 def shell(pg, body):
     body = wrap_tables(body)
     lang = pg["lang"]; T = lambda k, **kw: bp.t(lang, k, **kw)
+    if pg.get("app") == "countdown" and lang in TOP_CTA and '<p class="count-sub">' in body:
+        body = re.sub(r'(<p class="count-sub">.*?</p>)', lambda m: m.group(1) + top_cta("countdown", lang), body, count=1, flags=re.S)
     hub, home = HUBS.get(lang, "/tools/"), HOMES.get(lang, "/")
     if pg["path"].startswith("/blog/"):
         crumbs = [(ts(lang, "home"), "/"), ("Blog", "/blog/" if pg["path"] != "/blog/" else None)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
@@ -243,6 +261,7 @@ def shell(pg, body):
 {meta}
 </article>
 {faq_html(pg["faq"], lang) if pg.get("faq") else ""}
+{more_html(pg["more"], lang) if pg.get("more") else ""}
 {app_card(pg["app"], lang) if pg.get("app") else ""}
 {ask_ai(ORIGIN + pg["path"], lang)}
 <div style="height:48px"></div>
@@ -364,7 +383,7 @@ PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
 
 # 5. ENEM 2026（pt-BR）
 PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-26",
-  "title": "Quantos dias faltam para o ENEM 2026? Contagem regressiva", "crumb": "ENEM 2026",
+  "title": "Quantos dias faltam para o ENEM 2026? (8 e 15 de novembro)", "crumb": "ENEM 2026",
   "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
   "hub_title": "Quantos dias faltam para o ENEM 2026?", "hub_desc": "Contagem regressiva para os dois domingos de prova, 8 e 15 de novembro.",
   "js": [COUNT_JS], "faq": [
@@ -397,9 +416,9 @@ PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "k
 
 # 6. Réveillon + Carnaval 2027（pt-BR）
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-26",
-  "title": "Quantos dias faltam para o Réveillon 2027 e o Carnaval 2027?", "crumb": "Réveillon e Carnaval 2027",
+  "title": "Quantos dias faltam para o Réveillon 2027? (quinta, 31/12)", "crumb": "Réveillon 2027",
   "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
-  "hub_title": "Quantos dias faltam para o Réveillon 2027?", "hub_desc": "Réveillon, Ano-Novo e Carnaval 2027 na mesma página, com contagem ao vivo.",
+  "hub_title": "Quantos dias faltam para o Réveillon 2027?", "hub_desc": "Réveillon e Ano-Novo com contagem ao vivo, mais as datas do Carnaval 2027.",
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Réveillon 2026/2027?", "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."),
     ("Quando é o Carnaval 2027?", "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."),
@@ -410,9 +429,10 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 <p class="lede">A virada do ano é na <strong>quinta-feira, 31 de dezembro de 2026</strong>, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta. O Carnaval 2027 vai de <strong>sábado, 6</strong> a <strong>terça-feira, 9 de fevereiro</strong>. Contadores ao vivo abaixo.</p>
 <h2>Réveillon — 31 de dezembro de 2026</h2>
 {counter(REV, "pt-BR", "Réveillon")}
-<h2>Carnaval 2027 — terça-feira, 9 de fevereiro</h2>
-{counter(CARN_TUE, "pt-BR", "Terça de Carnaval")}
-<h2>Datas de uma vez</h2>
+<h2>Carnaval 2027 — de 6 a 9 de fevereiro</h2>
+{counter(CARN_SAT, "pt-BR", "Sábado de Carnaval")}
+<p>O Carnaval tem a sua própria página: <a href="/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/">quantos dias faltam para o Carnaval 2027</a>, com as datas de cada dia e dos próximos anos.</p>
+<h2>Todas as datas</h2>
 <table><tbody>
 <tr><th>Réveillon</th><td>quinta-feira, 31 de dezembro de 2026</td></tr>
 <tr><th>Ano-Novo</th><td>sexta-feira, 1º de janeiro de 2027</td></tr>
@@ -423,10 +443,54 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 <tr><th>Dias que restam em 2026</th><td>{days_to(REV) + 1} (em {TODAY.strftime('%d/%m/%Y')}, contando hoje)</td></tr>
 </tbody></table>
 <h2>A contagem na Tela de Início</h2>
-<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
+
+# 6a. Carnaval 2027（pt-BR）——10-10 从 Réveillon 页拆出。日期只用历法能算出来的（复活节前 47 天）；
+# 各城市游行 / bloco 的日程每年由市政府另行公布，不写。「是不是假日」只写通则（联邦 ponto facultativo，州 / 市法另定）。
+def easter(y):
+    a, b, c = y % 19, y // 100, y % 100
+    d, e = b // 4, b % 4; f = (b + 8) // 25; g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30; i, k = c // 4, c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7; m = (a + 11 * h + 22 * l) // 451
+    return dt.date(y, (h + l - 7 * m + 114) // 31, (h + l - 7 * m + 114) % 31 + 1)
+assert easter(2027) == dt.date(2027, 3, 28) and easter(2027) - dt.timedelta(days=47) == CARN_TUE
+CARN_NEXT = [(y, easter(y) - dt.timedelta(days=47)) for y in (2027, 2028, 2029, 2030)]
+PT_DM = lambda d: f"{'1º' if d.day == 1 else d.day} de {['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'][d.month - 1]}"
+PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+  "title": "Quantos dias faltam para o Carnaval 2027? (6 a 9 de fevereiro)", "crumb": "Carnaval 2027",
+  "description": "O Carnaval 2027 vai de sábado, 6, a terça-feira, 9 de fevereiro; a Quarta-feira de Cinzas é dia 10. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "hub_title": "Quantos dias faltam para o Carnaval 2027?", "hub_desc": "De sábado, 6, a terça-feira, 9 de fevereiro de 2027, com contagem ao vivo e as datas dos próximos anos.",
+  "js": [COUNT_JS], "faq": [
+    ("Quando é o Carnaval 2027?", "De sábado, 6 de fevereiro, a terça-feira, 9 de fevereiro de 2027. A Quarta-feira de Cinzas é 10 de fevereiro."),
+    ("Quantos dias faltam para o Carnaval 2027?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(CARN_SAT)} dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."),
+    ("O Carnaval é feriado nacional?", "Não. O Carnaval não está entre os feriados nacionais: nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura."),
+    ("Quando é o Carnaval 2028?", f"A terça-feira de Carnaval de 2028 é {PT_DM(CARN_NEXT[1][1])}, e o sábado de Carnaval é {PT_DM(CARN_NEXT[1][1] - dt.timedelta(days=3))}."),
+    ("Como coloco a contagem do Carnaval na Tela de Início?", "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."),
+  ],
+  "body": f"""<h1>Quantos dias faltam para o Carnaval 2027?</h1>
+<p class="lede">O Carnaval 2027 começa no <strong>sábado, 6 de fevereiro</strong>, e a terça-feira de Carnaval é <strong>9 de fevereiro</strong>. A contagem abaixo é refeita todo dia.</p>
+{counter(CARN_SAT, "pt-BR", "Sábado de Carnaval")}
+<h2>Datas do Carnaval 2027</h2>
+<table><tbody>
+<tr><th>Sábado de Carnaval</th><td>{PT_DM(CARN_SAT)} de 2027</td></tr>
+<tr><th>Domingo de Carnaval</th><td>{PT_DM(CARN_SAT + dt.timedelta(days=1))} de 2027</td></tr>
+<tr><th>Segunda-feira de Carnaval</th><td>{PT_DM(CARN_SAT + dt.timedelta(days=2))} de 2027</td></tr>
+<tr><th>Terça-feira de Carnaval</th><td>{PT_DM(CARN_TUE)} de 2027</td></tr>
+<tr><th>Quarta-feira de Cinzas</th><td>{PT_DM(ASH)} de 2027</td></tr>
+</tbody></table>
+<h2>Por que a data muda todo ano</h2>
+<p>O Carnaval acompanha a Páscoa: a terça-feira de Carnaval é sempre 47 dias antes do domingo de Páscoa. Em 2027 a Páscoa é em 28 de março, então a terça-feira de Carnaval cai em 9 de fevereiro.</p>
+<h2>O Carnaval é feriado?</h2>
+<p>O Carnaval não está entre os feriados nacionais. Nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura antes de marcar a viagem.</p>
+<h2>O Carnaval nos próximos anos</h2>
+<table><thead><tr><th>Ano</th><th>Sábado de Carnaval</th><th>Terça-feira de Carnaval</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{PT_DM(t - dt.timedelta(days=3))}</td><td>{PT_DM(t)}</td></tr>" for y, t in CARN_NEXT)}</tbody></table>
+<h2>A contagem na Tela de Início</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia e com a antecedência que você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Carnaval”.</li><li>Data: 6 de fevereiro de 2027. A data muda todo ano, então para 2028 crie um evento novo em vez de repetir.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
+<p>Antes do Carnaval vem o fim do ano: veja <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/">quantos dias faltam para o Réveillon</a> e <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">para o Natal</a>.</p>"""})
 
 # 6b. Black Friday + Natal 2026（pt-BR）——09-28 借势：巴西是 Countdown 唯一有付费 + 五星的市场，节前 4–6 周要被收录
 # 13º 日期依据 Lei 4.749/1965（1ª parcela até 30/11，2ª até 20/12；pt.wikipedia「Décimo terceiro salário」09-28 核对）。
@@ -434,7 +498,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 BF26, CYBER26, BF27, BF28 = dt.date(2026, 11, 27), dt.date(2026, 11, 30), dt.date(2027, 11, 26), dt.date(2028, 11, 24)
 DEC13_1, DEC13_2, DEC13_2_PAY = dt.date(2026, 11, 30), dt.date(2026, 12, 20), dt.date(2026, 12, 18)
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
-  "title": "Quantos dias faltam para a Black Friday 2026? Contagem regressiva", "crumb": "Black Friday 2026",
+  "title": "Quantos dias faltam para a Black Friday 2026? (27 de novembro)", "crumb": "Black Friday 2026",
   "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
   "hub_title": "Quantos dias faltam para a Black Friday 2026?", "hub_desc": "Black Friday e Cyber Monday com contagem ao vivo, mais a 1ª parcela do 13º.",
   "js": [COUNT_JS], "faq": [
@@ -451,7 +515,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 </div>
 <h2>Cyber Monday — 30 de novembro de 2026</h2>
 {counter(CYBER26, "pt-BR", "Cyber Monday")}
-<h2>Datas de uma vez</h2>
+<h2>Todas as datas</h2>
 <table><tbody>
 <tr><th>Black Friday 2026</th><td>{fmt(BF26, "pt-BR")}</td></tr>
 <tr><th>Cyber Monday 2026</th><td>{fmt(CYBER26, "pt-BR")}</td></tr>
@@ -472,7 +536,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 <ul><li>Uma contagem para a Black Friday com a lista do que você quer comprar escrita no verso do evento.</li><li>Um lembrete uma semana antes, para acompanhar os preços antes da data e saber se o desconto é real.</li><li>Logo em seguida, a contagem para o <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">Natal 2026</a> — são {(XMAS - BF26).days} dias entre uma data e outra.</li></ul>"""})
 
 PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
-  "title": "Quantos dias faltam para o Natal 2026? Contagem regressiva", "crumb": "Natal 2026",
+  "title": "Quantos dias faltam para o Natal 2026? (sexta-feira, 25/12)", "crumb": "Natal 2026",
   "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
   "hub_title": "Quantos dias faltam para o Natal 2026?", "hub_desc": "Contagem ao vivo para 25 de dezembro, com a véspera e o prazo da 2ª parcela do 13º (18/12 em 2026).",
   "js": [COUNT_JS], "faq": [
@@ -661,6 +725,12 @@ SCENES = [
   "title": "Quantos dias faltam para as férias escolares 2026? SP, MG, PR, RS e PE", "crumb": "Férias",
   "description": "As aulas de 2026 vão até 18/12 na rede estadual de SP, MG, PR e RS e até 23/12 em PE. Veja quantos dias faltam ou conte os dias até as suas férias do trabalho.",
   "hub_title": "Quantos dias faltam para as férias?", "hub_desc": "Fim das aulas de 2026 em SP, MG, PR, RS e PE, com os dias que faltam hoje — e um contador com dias úteis para as suas férias.",
+  "more": [
+    ("Quantos dias faltam para as férias de dezembro?", "Nas redes da tabela acima, as aulas de 2026 terminam entre 18 e 23 de dezembro, e a tabela mostra quantos dias faltam em cada uma. Para as férias do trabalho, use o contador com a data combinada com a empresa."),
+    ("Quantos dias faltam para as férias de julho?", "O recesso de julho de 2026 já passou: foi de 7 a 23 de julho na rede estadual de São Paulo, de 20 a 31 de julho em Minas Gerais, de 10 a 26 de julho em Pernambuco e de 27 de julho a 2 de agosto no Rio Grande do Sul. Para julho de 2027, digite no contador a data do calendário de 2027 da sua rede."),
+    ("Quantas semanas faltam para as férias?", "A contagem no alto da página mostra também as semanas e os dias que faltam para 18 de dezembro. No contador, o resultado vem em dias, em dias úteis e em semanas."),
+    ("Quantos dias faltam para as férias do fim do ano no trabalho?", "Depende da data combinada com a empresa. Digite o primeiro dia das férias no contador para ver os dias corridos e os dias úteis que faltam."),
+  ],
   "js": [SCENE_JS, COUNT_JS], "faq": [
     ("Como os dias úteis são contados?", "São os dias de segunda a sexta entre amanhã e a véspera do primeiro dia de férias. Os feriados não são descontados, porque mudam de cidade para cidade: se houver feriado de segunda a sexta no período, tire um dia por feriado."),
     ("Quando começam as férias escolares de fim de ano em 2026?", "Depende do estado, da cidade e da rede de ensino. Pelos calendários oficiais, as aulas de 2026 terminam em 18 de dezembro nas redes estaduais de São Paulo, Minas Gerais, Paraná e Rio Grande do Sul, em 22 de dezembro na rede municipal da cidade de São Paulo e em 23 de dezembro na rede estadual de Pernambuco. Para outras redes, confira o calendário da secretaria de educação ou da escola."),
@@ -726,7 +796,7 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
     ("What must an invoice include?", "The word Invoice, a unique invoice number, the issue date and due date, your business name and contact details, the client's name and address, a description of each item with quantity and price, the subtotal, any tax with its rate, the total due, and how to pay."),
     ("How do I save the invoice as a PDF?", "Click Print / Save as PDF. In the print dialog choose 'Save as PDF' as the destination. Only the invoice is printed — the rest of the page is hidden."),
     ("Does it calculate tax?", "Yes. Type a tax rate in the Tax field and the tax amount and total update. Leave it at 0 if you do not charge tax."),
-    ("Is there an app that keeps invoices, clients and payments?", "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Three documents are free, with no account."),
+    ("Is there an app that keeps invoices, clients and payments?", "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Your first document is free, with no account."),
   ],
   "body": f"""<h1>Free invoice template</h1>
 <p class="lede">Fill it in right here — click any dashed field to edit. Totals and tax add up by themselves. Then print it or save it as a PDF. Nothing leaves your browser.</p>
@@ -754,14 +824,14 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
 <p>If you send more than a few invoices a month, an app that remembers clients, items and tax rates and shows what is paid, unpaid and overdue saves real time. That is what <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> does on iPhone — including a payment QR code on every invoice.</p>"""})
 
 # 7b. 墨西哥：formato de cotización / nota de venta（es-MX，InvoiceQR）——09-28 借势
-# 依据：tools/store/invoiceqr.json es-MX 描述（3 documentos gratis sin cuenta；cotización → nota de venta con un toque；CLABE / QR de pago；
+# 依据：tools/store/invoiceqr.json es-MX 描述（primer documento gratis sin cuenta（1.1.22 起）；cotización → nota de venta con un toque；CLABE / QR de pago；
 # 「No emite CFDI ni facturas fiscales ante el SAT」）。IVA 只写「tasa general 16 %」（LIVA art. 1）；边境 8 % 是否延续没核实，不写。
 # ⛔ 不把我们的单据叫 factura（墨西哥 factura = CFDI）
 MX_NOTE = ('<p class="meta" style="margin-top:18px"><strong>Importante:</strong> una cotización o una nota de venta no es una factura. '
            'En México, la factura es un CFDI: un comprobante fiscal digital que se emite a través del SAT o de un proveedor autorizado (PAC). '
            'Ni este formato ni nuestra app emiten CFDI ni facturas fiscales ante el SAT.</p>')
 MX_APP = ('Nota de Venta, Cotización, nuestra app para iPhone, hace esto mismo y guarda tus clientes y conceptos: envía primero la cotización y conviértela en nota de venta con un toque, '
-          'agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Puedes crear 3 documentos gratis, sin cuenta ni registro.')
+          'agrega tus datos de transferencia (CLABE) o un código QR de pago, y comparte el PDF por WhatsApp. Tu primer documento es gratis, sin cuenta ni registro.')
 
 PAGES.append({"path": "/tools/es-mx/formato-de-cotizacion/", "lang": "es-MX", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-28",
   "title": "Formato de cotización gratis — llénalo, imprímelo o guárdalo en PDF", "crumb": "Formato de cotización",
@@ -837,12 +907,12 @@ PAGES.append({"path": "/tools/es-mx/nota-de-venta/", "lang": "es-MX", "kind": "W
 # 7c. 港台：報價單範本 / 收據範本（zh-Hant，InvoiceQR）——09-29
 # 依据：Google HK / TW 联想词（報價單範本 excel/word/下載/pdf、報價單產生器；收據範本 word/excel/茲收到/數字/香港、免用統一發票 收據格式）；
 # app 说法全部出自 tools/store/invoiceqr.json zh-Hant 描述（商店名「開單、報價單、收據、送貨單產生器」；先寄報價單，確認後一鍵轉帳單；
-# 收款 QR Code；手寫簽名；結清後同一份帳單當收據分享；免費 3 份免註冊；「不用於開立稅務發票」）。
+# 收款 QR Code；手寫簽名；結清後同一份帳單當收據分享；第一份免費免註冊（1.1.22 起）；「不用於開立稅務發票」）。
 # ⛔ 台灣的「發票」＝統一發票（稅務憑證），我們不開——同墨西哥 CFDI 的口径。營業稅只写一般稅率 5%；香港無營業稅。
 ZH_NOTE = ('<p class="meta" style="margin-top:18px"><strong>提醒：</strong>報價單和收據都不是稅務發票。在台灣，營業人依法開立的是統一發票；'
            '這個範本和我們的 App 都不開立統一發票或其他稅務發票。</p>')
 ZH_APP = ('「開單、報價單、收據、送貨單產生器」是我們的 iPhone App，做的就是這件事，還會記住客戶與項目：先寄報價單，客戶確認後一鍵轉成帳單；'
-          '每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。免費建立 3 份，免註冊帳號。')
+          '每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。第一份免費，免註冊帳號。')
 RECEIPT_JS = r"""
 (function(){var r=document.getElementById('rcpt');if(!r)return;
 function cnUpper(n){if(!(n>=0)||n>=1e12)return '';n=Math.floor(n);if(n===0)return '零元整';
@@ -911,7 +981,7 @@ PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kin
     ("「茲收到」後面要寫什麼？", "寫付款人的姓名或公司名稱，接著寫「繳付」與款項的事由，例如「茲收到 王小明 繳付 十月份房租 款項」。"),
     ("金額有小數怎麼辦？", "範本的大寫以整數元計算，小數會捨去；金額有角或分的話，請在大寫欄自己補上。"),
     ("收據可以當發票用嗎？", "不行。收據證明你收到了款項；在台灣，營業人依法要開的是統一發票。在香港，「發票」通常指請款用的單據（invoice），不是稅務憑證。這個範本和我們的 App 都不開立稅務發票。"),
-    ("有 App 可以在 iPhone 上開收據嗎？", "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。免費建立 3 份，免註冊帳號。"),
+    ("有 App 可以在 iPhone 上開收據嗎？", "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。第一份免費，免註冊帳號。"),
   ],
   "body": f"""<h1>收據範本</h1>
 <p class="lede">直接在這裡填：點任何虛線欄位就能修改。輸入金額，下面會自動寫出中文大寫；填好後列印或存成 PDF。資料不會離開你的瀏覽器。</p>
@@ -985,7 +1055,7 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
 # あと何日 計算 / 今日 入れる / あと何日で今年終わる、日数計算 / 営業日）。
 # 日期出自大学入試センター「令和9年度試験」「令和10年度試験」页（09-29 取）：本試験 2027-01-16/17，追・再試験 01-23/24；2028-01-15/16。
 # app 说法只用 ja 商店描述里「免费」那部分（ウィジェットはすべて無料 / ホーム画面・ロック画面 / 節目の全画面 / 裏面 / カウントアップ）；
-# ⚠ jp 商店 09-29 还是 1.4.10，Pro 范围与 1.4.11 不同，所以页面不写 Pro 包含什么。
+# jp 商店 10-10 已是 1.4.16（Pro＝背景 / 自分の写真 / Pro フォント / ロック画面のライブアクティビティ / 招待）。
 KT1, KT2, KTM1, KTM2, KT28A, KT28B = (dt.date(2027, 1, 16), dt.date(2027, 1, 17), dt.date(2027, 1, 23), dt.date(2027, 1, 24),
                                        dt.date(2028, 1, 15), dt.date(2028, 1, 16))
 JA_APP = ("「カウントダウン ウィジェット: 記念日」は私たちの無料 iPhone アプリです。ウィジェットはすべて無料で、ホーム画面にもロック画面にも置けます。"
@@ -1016,6 +1086,10 @@ PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebAppli
 <p>サイトを開かなくても残り日数が見えるように、下のアプリで iPhone のホーム画面やロック画面に置くこともできます。</p>"""})
 
 PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29",
+  "more": [
+    ("共通テスト2027の追・再試験はいつですか？", f"{fmt(KTM1, 'ja')}・{KTM2.day}日（{'月火水木金土日'[KTM2.weekday()]}）です。"),
+    ("共通テストまであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2026, 12, 16), 'ja')}、30日前は{fmt(KT1 - dt.timedelta(days=30), 'ja')}です。"),
+  ],
   "title": "共通テスト2027まであと何日？カウントダウン（1月16日・17日）", "crumb": "共通テスト2027",
   "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。",
   "hub_title": "共通テスト2027まであと何日？", "hub_desc": "本試験（1月16日・17日）までのカウントダウンと、100日前・30日前・1週間前の日付。",
@@ -1043,7 +1117,48 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <ol><li>アプリで <strong>+</strong> をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
 <h2>カウントダウンの使い方</h2>
 <ul><li>イベントの裏面に、科目ごとの目標や模試の結果を書いておく。</li><li>追・再試験や二次試験、私立大学の入試日も別のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
-<p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>"""})
+<p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
+<p>ロック画面に置く手順は<a href="/tools/ja/countdown-machiuke-iphone/">カウントダウンを待ち受けにする方法（iPhone）</a>にくわしくまとめました。</p>"""})
+
+# 7e. 日本：カウントダウンを待ち受けにする方法（ja，Countdown）——10-10
+# 依据：GSC 10-06 前「共通テストカウントダウン 待ち受け」16 次曝光排名 8.8、「…待ち受け iphone」排名 13；
+# Google JP 联想词「カウントダウン 待ち受け iphone / アプリ / にする方法 / android」「受験 カウントダウン ロック画面」。
+# app 说法只用 ja 商店 1.4.16 描述：ウィジェットは全サイズ無料（ホーム画面・ロック画面）、イベント無制限；ロック画面のライブアクティビティは Pro。
+PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+  "title": "カウントダウンを待ち受け（ロック画面）にする方法｜iPhone", "crumb": "待ち受けにカウントダウン",
+  "description": "iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。",
+  "hub_title": "カウントダウンを待ち受けにする方法（iPhone）", "hub_desc": "ロック画面とホーム画面に「あと何日」を出す手順。受験・ライブ・記念日に。",
+  "js": [COUNT_JS], "faq": [
+    ("待ち受け（ロック画面）のカウントダウンは無料で使えますか？", "はい。カウントダウン ウィジェット: 記念日 のウィジェットは、ロック画面用もホーム画面用もすべてのサイズが無料です。イベントの数にも上限はありません。"),
+    ("壁紙そのものに数字を入れることはできますか？", "壁紙は画像なので、入れた数字はその日のまま変わりません。毎日変わる「あと何日」を待ち受けに出したいときは、ロック画面のウィジェットを使います。"),
+    ("受験までのカウントダウンにも使えますか？", "使えます。大学入学共通テスト2027なら、イベントの日付を2027年1月16日にします。残りの日数は、このサイトの共通テスト2027のカウントダウンでも毎日確認できます。"),
+    ("ライブアクティビティとは違いますか？", "違います。ロック画面のウィジェットは無料で、時計の下に表示されます。ロック画面のライブアクティビティは Countdown Pro の機能です。"),
+    ("Android でも使えますか？", "このアプリは iPhone 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"),
+  ],
+  "body": f"""<h1>カウントダウンを待ち受けにする方法（iPhone）</h1>
+<p class="lede">受験日やライブ、記念日までの「あと何日」を、iPhone の待ち受け（ロック画面）に出しておく方法です。数字を書き込んだ壁紙画像は毎日作り直すことになりますが、ウィジェットなら日付を一度入れるだけで、数字が毎日自動で減っていきます。</p>
+{top_cta("countdown", "ja")}
+<h2>壁紙画像とウィジェットの違い</h2>
+<table><thead><tr><th></th><th>数字入りの壁紙画像</th><th>ウィジェット</th></tr></thead><tbody>
+<tr><th>数字</th><td>作った日のまま</td><td>毎日自動で変わる</td></tr>
+<tr><th>手間</th><td>毎日作り直す</td><td>日付を一度入れるだけ</td></tr>
+<tr><th style="white-space:nowrap">場所</th><td>ロック画面・ホーム画面の背景</td><td>ロック画面の時計の下、ホーム画面</td></tr>
+</tbody></table>
+<h2>ロック画面に置く手順</h2>
+<ol><li>App Store で<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>を入れ、<strong>+</strong> をタップしてイベント名（例：共通テスト）と日付を入れます。</li><li>ロック画面を長押しして「カスタマイズ」をタップし、ロック画面を選びます。</li><li>「ウィジェットを追加」から Countdown を選び、置きたいウィジェットをタップします。</li><li>右上の「完了」をタップします。</li></ol>
+<p>ウィジェットはすべてのサイズが無料で、イベントはいくつでも作れます。</p>
+<h2>ホーム画面に置く手順</h2>
+<ol><li>ホーム画面を長押しします。</li><li>左上の「編集」→「ウィジェットを追加」をタップします（iOS 17 では左上の「＋」）。</li><li>Countdown を選び、サイズを決めて「ウィジェットを追加」をタップします。</li></ol>
+<h2>よくカウントダウンされる日</h2>
+<div class="pop">
+<a href="/tools/ja/kyotsu-test-2027/" data-date="{KT1.isoformat()}"><b data-n>{days_to(KT1)}</b><span><span data-unit>日</span>（共通テスト2027まで）</span></a>
+<a href="/tools/ja/ato-nannichi/?date={XMAS.isoformat()}&amp;name=%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9" data-date="{XMAS.isoformat()}"><b data-n>{days_to(XMAS)}</b><span><span data-unit>日</span>（クリスマスまで）</span></a>
+<a href="/tools/ja/ato-nannichi/?date={NYE.isoformat()}&amp;name=%E5%85%83%E6%97%A5" data-date="{NYE.isoformat()}"><b data-n>{days_to(NYE)}</b><span><span data-unit>日</span>（2027年の元日まで）</span></a>
+</div>
+<p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
+<h2>節目を迎えたとき</h2>
+<p>カウントダウンが100日、1週間、当日の朝といった節目を迎えると、アプリが数字を全画面で表示し、共有できるカードを用意します。</p>"""})
+
 
 # 8. 如何写发票（指南）
 PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "Article", "app": "invoiceqr", "published": "2026-09-26",
@@ -1278,7 +1393,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
-        "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算と、共通テスト2027までのカウントダウン。"),
+        "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,
