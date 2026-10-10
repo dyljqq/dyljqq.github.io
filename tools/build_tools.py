@@ -73,7 +73,7 @@ var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 """
 CALC_JS = """
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
@@ -186,7 +186,8 @@ def faq_html(faq, lang):
 
 def counter(d, lang, label=""):
     n = days_to(d); unit = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
-    w = f"{n // 7} {ts(lang, 'weeks')}" + (f" + {n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n >= 7 else ""
+    wk = {"pt-BR": "semana", "en": "week"}.get(lang) if n // 7 == 1 else None
+    w = f"{n // 7} {wk or ts(lang, 'weeks')}" + (f"{' e ' if lang == 'pt-BR' else ' + '}{n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n >= 7 else ""
     if lang == "ja" and n >= 7: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
     if lang == "zh-Hant" and n >= 7: w = f"{n // 7} 週又 {n % 7} 天" if n % 7 else f"{n // 7} 週"
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
@@ -423,7 +424,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 </tbody></table>
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou de bloqueio como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome «Réveillon».</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
 
@@ -466,7 +467,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 </tbody></table>
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome «Black Friday».</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Black Friday”.</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a Black Friday com a lista do que você quer comprar escrita no verso do evento.</li><li>Um lembrete uma semana antes, para acompanhar os preços antes da data e saber se o desconto é real.</li><li>Logo em seguida, a contagem para o <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">Natal 2026</a> — são {(XMAS - BF26).days} dias entre uma data e outra.</li></ul>"""})
 
@@ -500,7 +501,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
 </tbody></table>
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Natal volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome «Natal».</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Natal”.</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a ceia com o que cada pessoa vai levar escrito no verso do evento.</li><li>Um lembrete duas semanas antes para os presentes que vêm pelo correio.</li><li>Depois do Natal, a contagem para o <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/">Réveillon e o Carnaval 2027</a>.</li></ul>"""})
 
@@ -531,7 +532,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam/", "lang": "pt-BR", "kin
 </div>
 <p class="meta">Os números acima foram calculados em {TODAY.strftime("%d/%m/%Y")} e se atualizam quando a página abre.</p>
 <h2>Como a conta é feita</h2>
-<p>O resultado é a quantidade de dias corridos entre hoje e a data escolhida, no fuso horário do seu aparelho — do jeito que a gente fala «faltam 12 dias». Se a data é hoje, a resposta é 0. Uma data no passado mostra quantos dias se passaram, o que serve para aniversário de namoro, dias sem fumar ou o tempo no emprego novo.</p>
+<p>O resultado é a quantidade de dias corridos entre hoje e a data escolhida, no fuso horário do seu aparelho — do jeito que a gente fala “faltam 12 dias”. Se a data é hoje, a resposta é 0. Uma data no passado mostra quantos dias se passaram, o que serve para aniversário de namoro, dias sem fumar ou o tempo no emprego novo.</p>
 <h2>Contadores prontos</h2>
 <ul><li><a href="/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/">Quantos dias faltam para o meu aniversário</a> — com os anos que você vai fazer</li><li><a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">Quantos dias faltam para as férias</a> — com os dias úteis</li><li><a href="/tools/pt-br/contador-de-dias-de-namoro/">Contador de dias de namoro</a> — há quantos dias vocês estão juntos</li></ul>
 <p>Para ver a contagem sem abrir nada, coloque-a na Tela de Início do iPhone com o app abaixo.</p>"""})
@@ -540,7 +541,7 @@ PAGES.insert(_first_pt, PAGES.pop())   # 计算器排在葡语工具目录第一
 
 # 6d. 葡语场景页（09-29，Google 巴西联想词）：
 #   aniversário — quantos dias faltam para o meu aniversário / … do meu filho, da minha filha, do meu amor / frases / instagram / dias e horas
-#   férias      — quantos dias faltam para as férias (de julho, de dezembro, escolares, acabarem)；学校假期各州不同，不写死日期
+#   férias      — quantos dias faltam para as férias (de julho, de dezembro, escolares, acabarem)；学校假期各州不同，10-10 起首屏列出核对过官方文件的网络（FERIAS_2026）
 #   namoro      — contador de dias de namoro / quantos dias de namoro eu tenho / quantos dias tem N meses de namoro / 100 dias / qr code
 # 三个都只收日期和数字，结果里不拼任何用户输入的文字（没有 ?name= 那种注入面）。
 SCENE_JS = r"""
@@ -599,6 +600,38 @@ M7_LO, M7_HI = month_span(7)
 PT_MONTHS = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
 PT_WIDGET_STEP = "<li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li>"
 
+# 巴西学校假期：2026 学年结束日。只收直接读过官方文件的教育网络（10-10 核对）；没核到官方原文的州（RJ、BA 等）不列。
+# 依据：GSC 10-02~10-06 这页 747 次曝光 0 点击，查询词大半是「férias escolares」，要的是现成答案。
+# ⚠ 12-18 之后这些日期都过了：届时换成 2027 学年（开学日 / 7 月假期），并改 FERIAS_CHECKED。
+FERIAS_CHECKED = dt.date(2026, 10, 10)
+FERIAS_2026 = [
+    ("São Paulo — rede estadual", dt.date(2026, 12, 18), "Seduc-SP",
+     "https://www.agenciasp.sp.gov.br/calendario-2026-sp-define-para-2-de-fevereiro-inicio-do-proximo-ano-letivo-nas-escolas-estaduais/"),
+    ("São Paulo (capital) — rede municipal", dt.date(2026, 12, 22), "Prefeitura de São Paulo",
+     "https://prefeitura.sp.gov.br/w/ano-letivo-na-rede-municipal-da-capital-come%C3%A7a-em-4-de-fevereiro-veja-o-calend%C3%A1rio-de-2026"),
+    ("Minas Gerais — rede estadual", dt.date(2026, 12, 18), "SEE-MG",
+     "https://www.agenciaminas.mg.gov.br/noticia/secretaria-de-educacao-e-undime-anunciam-calendario-escolar-2026-128101"),
+    ("Paraná — rede estadual", dt.date(2026, 12, 18), "Seed-PR, Resolução n.º 6.494/2025",
+     "https://www.educacao.pr.gov.br/Pagina/Calendario-Escolar"),
+    ("Rio Grande do Sul — rede estadual", dt.date(2026, 12, 18), "Seduc-RS, Portaria n.º 704/2025",
+     "https://educacao.rs.gov.br/calendario-escolar-de-2026"),
+    ("Pernambuco — rede estadual", dt.date(2026, 12, 23), "SEE-PE, Instrução Normativa n.º 19/2025",
+     "https://portal.educacao.pe.gov.br/calendario-escolar-2026/"),
+]
+FERIAS_MAIN = dt.date(2026, 12, 18)   # 四个州立网络共同的结课日，首屏大数字数到这一天
+if TODAY > FERIAS_MAIN:
+    raise SystemExit("FERIAS_2026 已过期：把假期页换成 2027 学年的日期（开学日 / 7 月假期），并更新 FERIAS_CHECKED。")
+PT_WD = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
+def ferias_rows():
+    out = []
+    for rede, d, fonte, url in FERIAS_2026:
+        n = days_to(d)
+        left = (f'<span data-n>{abs(n) if n else ""}</span> <span data-unit>'
+                f'{"É hoje!" if n == 0 else ("dias atrás" if n < 0 else ("dia" if n == 1 else "dias"))}</span>')
+        out.append(f'<tr><td>{esc(rede)}<br><small>Fonte: <a href="{url}" rel="noopener">{esc(fonte)}</a></small></td>'
+                   f'<td>{d.day} de {PT_MONTHS[d.month - 1]} ({PT_WD[d.weekday()]})</td><td data-date="{d.isoformat()}" style="white-space:nowrap">{left}</td></tr>')
+    return "".join(out)
+
 SCENES = [
  {"path": "/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
   "title": "Quantos dias faltam para o meu aniversário? Contagem regressiva", "crumb": "Meu aniversário",
@@ -621,31 +654,38 @@ SCENES = [
 <p>Quando a contagem chega a um marco — cem dias, uma semana, a manhã do dia —, o app abre o número em tela cheia e prepara um cartão para compartilhar.</p>
 <h2>Frases para a contagem regressiva</h2>
 <p>Para o story ou a legenda do Instagram:</p>
-<ul><li>«Contagem regressiva oficialmente aberta: falta uma semana para o meu dia.»</li><li>«Faltam 10 dias para mais um ano de história.»</li><li>«3, 2, 1… faltam só 3 dias!»</li><li>«Falta 1 dia. Amanhã é festa.»</li><li>«Faltam 30 dias para o aniversário do meu pequeno, e ele já pergunta todo dia quanto falta.»</li><li>«Um mês para o aniversário do meu amor — a surpresa já está sendo preparada.»</li></ul>
+<ul><li>“Contagem regressiva oficialmente aberta: falta uma semana para o meu dia.”</li><li>“Faltam 10 dias para mais um ano de história.”</li><li>“3, 2, 1… faltam só 3 dias!”</li><li>“Falta 1 dia. Amanhã é festa.”</li><li>“Faltam 30 dias para o aniversário do meu pequeno, e ele já pergunta todo dia quanto falta.”</li><li>“Um mês para o aniversário do meu amor — a surpresa já está sendo preparada.”</li></ul>
 <p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
  {"path": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
-  "title": "Quantos dias faltam para as férias? Contagem com dias úteis", "crumb": "Férias",
-  "description": "Informe o primeiro dia das férias e veja quantos dias e quantos dias úteis faltam. Com o último dia, mostra a duração e quanto falta para acabarem.",
-  "hub_title": "Quantos dias faltam para as férias?", "hub_desc": "Dias corridos e dias úteis até as férias — e quanto falta para acabarem.",
-  "js": [SCENE_JS], "faq": [
+  "updated": FERIAS_CHECKED.isoformat(),
+  "title": "Quantos dias faltam para as férias escolares 2026? SP, MG, PR, RS e PE", "crumb": "Férias",
+  "description": "As aulas de 2026 vão até 18/12 na rede estadual de SP, MG, PR e RS e até 23/12 em PE. Veja quantos dias faltam ou conte os dias até as suas férias do trabalho.",
+  "hub_title": "Quantos dias faltam para as férias?", "hub_desc": "Fim das aulas de 2026 em SP, MG, PR, RS e PE, com os dias que faltam hoje — e um contador com dias úteis para as suas férias.",
+  "js": [SCENE_JS, COUNT_JS], "faq": [
     ("Como os dias úteis são contados?", "São os dias de segunda a sexta entre amanhã e a véspera do primeiro dia de férias. Os feriados não são descontados, porque mudam de cidade para cidade: se houver feriado de segunda a sexta no período, tire um dia por feriado."),
-    ("Quando são as férias escolares?", "Depende do estado, da cidade e da rede de ensino. O calendário oficial é publicado pela secretaria de educação ou pela escola; digite a data de início no contador acima."),
+    ("Quando começam as férias escolares de fim de ano em 2026?", "Depende do estado, da cidade e da rede de ensino. Pelos calendários oficiais, as aulas de 2026 terminam em 18 de dezembro nas redes estaduais de São Paulo, Minas Gerais, Paraná e Rio Grande do Sul, em 22 de dezembro na rede municipal da cidade de São Paulo e em 23 de dezembro na rede estadual de Pernambuco. Para outras redes, confira o calendário da secretaria de educação ou da escola."),
     ("Em quantas partes posso dividir as férias pela CLT?", "Em até três, se você concordar: um período de pelo menos 14 dias corridos e os outros de pelo menos 5 dias corridos cada (art. 134, § 1º, da CLT)."),
     ("Quanto falta para as minhas férias acabarem?", "Informe o primeiro e o último dia. Se hoje estiver dentro desse intervalo, a página mostra quantos dias faltam para acabarem."),
     ("Dá para ver a contagem das férias no celular?", "Sim. No Countdown: Contagem regressiva, grátis para iPhone, a contagem fica num widget da Tela de Início ou da Tela Bloqueada, com lembretes no dia e com antecedência. Os eventos são ilimitados e sincronizam pelo iCloud, sem criar conta."),
   ],
   "body": f"""<h1>Quantos dias faltam para as férias?</h1>
-<p class="lede">Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
+<p class="lede">Em 2026, as aulas das redes estaduais de São Paulo, Minas Gerais, Paraná e Rio Grande do Sul vão até sexta-feira, 18 de dezembro. Veja quantos dias faltam em cada rede — ou informe a data das suas férias, da escola ou do trabalho, e conte até lá.</p>
+{counter(FERIAS_MAIN, "pt-BR", "Fim das aulas na rede estadual de SP, MG, PR e RS")}
+<h2>Férias escolares: quando acabam as aulas em 2026</h2>
+<table><thead><tr><th>Rede de ensino</th><th>Último dia de aula</th><th>Faltam</th></tr></thead><tbody>{ferias_rows()}</tbody></table>
+<p>Para os alunos, as férias começam depois do último dia de aula. Quem fica de recuperação pode ter atividades depois dessa data: em Pernambuco, por exemplo, a recuperação final está marcada para 24, 28 e 29 de dezembro.</p>
+<p class="meta">Datas dos calendários oficiais de 2026 de cada rede, conferidas em {FERIAS_CHECKED.day} de {PT_MONTHS[FERIAS_CHECKED.month - 1]} de {FERIAS_CHECKED.year}. A escola pode ajustar o calendário (reposição de aulas, feriados municipais), e as redes municipais e particulares têm datas próprias: confirme com a sua escola.</p>
+<p>O seu estado não está na tabela? O calendário é publicado pela secretaria de educação do estado ou pela escola: digite o primeiro dia das férias no contador abaixo.</p>
+<h2>Conte os dias até as suas férias</h2>
+<p>Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
 <form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
-<p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados. Para férias escolares, use a data do calendário da sua escola.</p>
+<p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados.</p>
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
-<h2>Férias escolares</h2>
-<p>O calendário escolar muda de estado para estado e entre as redes estadual, municipal e particular. Por isso a página não traz uma data pronta: confira o calendário publicado pela secretaria de educação ou pela escola e digite o primeiro dia acima. Em geral há um recesso no meio do ano, em julho, e as férias grandes no fim do ano.</p>
 <h2>Férias do trabalho (CLT)</h2>
 <ul><li>São 30 dias corridos a cada 12 meses de trabalho para quem teve até 5 faltas injustificadas no período (art. 130).</li><li>Com a sua concordância, podem ser divididas em até três períodos: um de pelo menos 14 dias e os outros de pelo menos 5 dias cada (art. 134, § 1º).</li><li>A empresa comunica as férias por escrito com pelo menos 30 dias de antecedência (art. 135), e o pagamento sai até 2 dias antes do início (art. 145).</li></ul>
 <h2>A contagem na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome «Férias».</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
 <p>Se as férias vão ter viagem, o <a href="/beforego/pt-br/">BeforeGo</a> monta um roteiro dia a dia a partir do print de um post de viagem, e a lista de bagagem se monta sozinha a partir do destino e das datas.</p>
 <p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
  {"path": "/tools/pt-br/contador-de-dias-de-namoro/", "lang": "pt-BR", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
@@ -664,7 +704,7 @@ SCENES = [
 <form class="calc c2" id="namoro"><label>Começamos a namorar em<input type="date" name="desde" max="{TODAY.isoformat()}" required></label><button type="submit">Contar os dias</button></form>
 <div id="namoro-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>Quantos dias têm os meses de namoro</h2>
-<p>Os meses não têm o mesmo tamanho, então «7 meses de namoro» dá um número de dias diferente conforme o mês em que vocês começaram. A tabela mostra o mínimo e o máximo:</p>
+<p>Os meses não têm o mesmo tamanho, então “7 meses de namoro” dá um número de dias diferente conforme o mês em que vocês começaram. A tabela mostra o mínimo e o máximo:</p>
 <table><thead><tr><th>Tempo de namoro</th><th>Dias</th></tr></thead><tbody>{"".join(f"<tr><td>{n} {'mês' if n == 1 else 'meses'}</td><td>{lo} a {hi} dias</td></tr>" for n, (lo, hi) in ((n, month_span(n)) for n in range(1, 12)))}<tr><td>1 ano</td><td>365 ou 366 dias</td></tr></tbody></table>
 <h2>Marcos para comemorar</h2>
 <ul><li><strong>Mesversário</strong>: todo mês, no mesmo dia em que começaram; quando o mês não tem esse dia, no último dia do mês.</li><li><strong>100 dias</strong>: dá 3 meses e mais {M3_LO} a {M3_HI} dias, conforme o mês de início. Depois vêm os 200, os 500 e os 1.000 dias.</li><li><strong>Aniversário de namoro</strong>: 365 dias, ou 366 quando o ano passa por um 29 de fevereiro.</li></ul>
@@ -1193,7 +1233,7 @@ def best_page_pt():
 <p class="lede">Sete apps de contagem regressiva para iPhone comparados no que realmente muda de um para outro: o que a versão grátis inclui, quais widgets são pagos, repetição, sincronização e anúncios. Os dados vêm da página de cada app na App Store do Brasil em 29 de setembro de 2026. Um dos sete é nosso; ele está marcado e é julgado pela mesma tabela que os outros.</p>
 <h2>A comparação</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Versão grátis</th><th>Widgets</th><th>Repetição</th><th>Sincronização</th><th>Anúncios</th><th>Nota no Brasil</th></tr></thead><tbody>{rows}</tbody></table>
-<p class="meta">«Não informado» quer dizer que a descrição na App Store não diz. As avaliações são da App Store do Brasil em 29/09/2026 e mudam todo dia.</p>
+<p class="meta">“Não informado” quer dizer que a descrição na App Store não diz. As avaliações são da App Store do Brasil em 29/09/2026 e mudam todo dia.</p>
 <h2>Qual escolher</h2>
 <ul>
 <li><strong>Quer widget sem pagar:</strong> Countdown: Contagem regressiva (o nosso) — todos os tamanhos são grátis, na Tela de Início e na Tela Bloqueada, sem anúncios. No Contagens, os widgets também fazem parte da versão gratuita.</li>
@@ -1206,7 +1246,7 @@ def best_page_pt():
 <h2>Os sete apps</h2>
 {entries}
 <h2>Como escolhemos</h2>
-<p>Pesquisamos na App Store do Brasil «contagem regressiva» e «countdown widget», ficamos com os apps feitos para contagem com mais avaliações no Brasil e lemos a descrição de cada um em português para ver o que ela diz sobre a versão grátis, os widgets, a repetição, a sincronização e os anúncios. Criadores de widget em geral (como o Widgetsmith) ficaram de fora. Não testamos as versões pagas e não ordenamos por nota: o nosso vem primeiro porque somos nós que fazemos a lista, e os outros seguem pelo número de avaliações no Brasil. Nós fazemos um desses apps; ele entra porque é um app de contagem regressiva com widget para iPhone e é descrito com os mesmos campos que os outros. A <a href="/tools/best-countdown-widget-apps-iphone/" hreflang="en">versão em inglês desta lista</a> usa a App Store dos Estados Unidos, por isso os apps não são os mesmos.</p>"""
+<p>Pesquisamos na App Store do Brasil “contagem regressiva” e “countdown widget”, ficamos com os apps feitos para contagem com mais avaliações no Brasil e lemos a descrição de cada um em português para ver o que ela diz sobre a versão grátis, os widgets, a repetição, a sincronização e os anúncios. Criadores de widget em geral (como o Widgetsmith) ficaram de fora. Não testamos as versões pagas e não ordenamos por nota: o nosso vem primeiro porque somos nós que fazemos a lista, e os outros seguem pelo número de avaliações no Brasil. Nós fazemos um desses apps; ele entra porque é um app de contagem regressiva com widget para iPhone e é descrito com os mesmos campos que os outros. A <a href="/tools/best-countdown-widget-apps-iphone/" hreflang="en">versão em inglês desta lista</a> usa a App Store dos Estados Unidos, por isso os apps não são os mesmos.</p>"""
     return {"path": "/tools/pt-br/melhores-apps-contagem-regressiva/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-29",
             "title": "Melhores apps de contagem regressiva para iPhone (2026) com widget", "crumb": "Melhores apps",
             "description": "Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.",
@@ -1214,7 +1254,7 @@ def best_page_pt():
             "items": [{"name": b["name"], "url": ("https://apps.apple.com/br/app/id%d" % b["id"])} for b in BEST_PT],
             "faq": [
               ("Qual app de contagem regressiva tem widget grátis na tela bloqueada?", "O Countdown: Contagem regressiva (o nosso) deixa todos os tamanhos de widget grátis, na Tela de Início e na Tela Bloqueada. No Contagem Regressiva ◎, o widget da tela bloqueada é recurso Premium, segundo a descrição; os outros da lista não dizem se o widget da tela bloqueada é grátis."),
-              ("Quais apps deixam criar eventos ilimitados de graça?", "Pela descrição na App Store do Brasil: o Countdown: Contagem regressiva («eventos ilimitados»), o Contagens («um número ilimitado de timers» na versão gratuita) e o Contagem Regressiva ◎ («crie quantos eventos quiser», sem marcar como Premium). O Countdown Star diz «adicione quantos eventos quiser», sem separar o que é grátis e o que é pago. Os outros não dizem."),
+              ("Quais apps deixam criar eventos ilimitados de graça?", "Pela descrição na App Store do Brasil: o Countdown: Contagem regressiva (“eventos ilimitados”), o Contagens (“um número ilimitado de timers” na versão gratuita) e o Contagem Regressiva ◎ (“crie quantos eventos quiser”, sem marcar como Premium). O Countdown Star diz “adicione quantos eventos quiser”, sem separar o que é grátis e o que é pago. Os outros não dizem."),
               ("Qual é o melhor app para contar os dias de namoro?", "O Widget Casal é feito para isso: dias juntos, diário do casal e lembretes de 10 e 100 dias. O Countdown: Contagem regressiva também conta a partir de uma data e guarda texto, fotos e voz no verso do evento."),
               ("Algum desses apps tem anúncios?", "O Countdown Star tem anúncios na versão grátis, com uma compra para removê-los. O Countdown: Contagem regressiva não tem anúncios. Os outros não dizem na descrição."),
               ("Esta lista é independente?", "Não: nós fazemos o Countdown: Contagem regressiva. Tudo na tabela vem das páginas públicas na App Store do Brasil, os campos são os mesmos para todos os apps e cada concorrente tem link para você conferir. Não testamos as versões pagas."),

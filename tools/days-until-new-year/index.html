@@ -156,7 +156,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-26",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-10",
   "about": {
     "@id": "https://beforego.art/countdown/#app"
   }
@@ -208,7 +208,7 @@ html[lang^=th] *{letter-spacing:0!important}
       "name": "How many days are left in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As of 7 October 2026 there were 86 days left in 2026, counting today. The counter on this page recalculates when you open it."
+        "text": "As of 10 October 2026 there were 83 days left in 2026, counting today. The counter on this page recalculates when you open it."
       }
     },
     {
@@ -255,9 +255,9 @@ html[lang^=th] *{letter-spacing:0!important}
 <article class="article">
 <h1>How many days until New Year 2027?</h1>
 <p class="lede">New Year's Day 2027 falls on <strong>Friday, 1 January 2027</strong>, so New Year's Eve is Thursday, 31 December 2026. The counter below updates every day.</p>
-<div class="count" data-date="2027-01-01"><span data-n>86</span><small data-unit>days</small></div><p class="count-sub">New Year 2027 · Friday, 1 January 2027 · <span data-weeks>12 weeks + 2 days</span></p>
+<div class="count" data-date="2027-01-01"><span data-n>83</span><small data-unit>days</small></div><p class="count-sub">New Year 2027 · Friday, 1 January 2027 · <span data-weeks>11 weeks + 6 days</span></p>
 <h2>New Year 2027 at a glance</h2>
-<div class="tbl"><table><tbody><tr><th>New Year&#x27;s Eve</th><td>Thursday, 31 December 2026</td></tr><tr><th>New Year&#x27;s Day</th><td>Friday, 1 January 2027</td></tr><tr><th>Lunar New Year 2027</th><td>Saturday, 6 February 2027 (Year of the Goat)</td></tr><tr><th>Days left in 2026</th><td>86 (as of 2026-10-07)</td></tr></tbody></table></div>
+<div class="tbl"><table><tbody><tr><th>New Year&#x27;s Eve</th><td>Thursday, 31 December 2026</td></tr><tr><th>New Year&#x27;s Day</th><td>Friday, 1 January 2027</td></tr><tr><th>Lunar New Year 2027</th><td>Saturday, 6 February 2027 (Year of the Goat)</td></tr><tr><th>Days left in 2026</th><td>83 (as of 2026-10-10)</td></tr></tbody></table></div>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
 <ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to Friday, 1 January 2027. Turn on <strong>Repeat yearly</strong> if you want it back next year.</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
@@ -265,11 +265,11 @@ html[lang^=th] *{letter-spacing:0!important}
 <ul><li>A countdown to midnight with the party address in the notes on the back of the event.</li><li>A count-up from 1 January for a new habit — the widget shows the streak in days.</li><li>One countdown for the first working day, so the holiday has a shape.</li></ul>
 <h2>New Year in the next few years</h2>
 <div class="tbl"><table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody><tr><td>2027</td><td>Friday, 1 January 2027</td><td>Friday</td></tr><tr><td>2028</td><td>Saturday, 1 January 2028</td><td>Saturday</td></tr><tr><td>2029</td><td>Monday, 1 January 2029</td><td>Monday</td></tr><tr><td>2030</td><td>Tuesday, 1 January 2030</td><td>Tuesday</td></tr></tbody></table></div>
-<p class="meta">Published 2026-09-26 · Updated 2026-10-07 · go ka</p>
+<p class="meta">Published 2026-09-26 · Updated 2026-10-10 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Questions people ask</h2><div class="grid">
     <div class="card"><h3>What day of the week is New Year&#x27;s Day 2027?</h3><p>Friday. New Year&#x27;s Eve 2026 is a Thursday and 1 January 2027 is a Friday, which makes a three-day weekend for many people.</p></div>
-    <div class="card"><h3>How many days are left in 2026?</h3><p>As of 7 October 2026 there were 86 days left in 2026, counting today. The counter on this page recalculates when you open it.</p></div>
+    <div class="card"><h3>How many days are left in 2026?</h3><p>As of 10 October 2026 there were 83 days left in 2026, counting today. The counter on this page recalculates when you open it.</p></div>
     <div class="card"><h3>When is Lunar New Year 2027?</h3><p>Saturday, 6 February 2027. It begins the Year of the Goat.</p></div>
     <div class="card"><h3>How do I keep a New Year countdown on my Lock Screen?</h3><p>Add 1 January 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.</p></div>
 </div></section>
@@ -311,7 +311,7 @@ var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script>
 </body>
 </html>

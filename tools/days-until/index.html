@@ -160,7 +160,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-26",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-10",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (web browser)",
   "browserRequirements": "Requires JavaScript",
@@ -279,16 +279,16 @@ html[lang^=th] *{letter-spacing:0!important}
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>Popular countdowns</h2>
 <div class="pop">
-<a href="/tools/days-until-christmas/" data-date="2026-12-25"><b data-n>79</b><span><span data-unit>days</span> until Christmas 2026</span></a>
-<a href="/tools/days-until-halloween/" data-date="2026-10-31"><b data-n>24</b><span><span data-unit>days</span> until Halloween 2026</span></a>
-<a href="/tools/days-until-diwali/" data-date="2026-11-08"><b data-n>32</b><span><span data-unit>days</span> until Diwali 2026</span></a>
-<a href="/tools/days-until-new-year/" data-date="2027-01-01"><b data-n>86</b><span><span data-unit>days</span> until New Year 2027</span></a>
+<a href="/tools/days-until-christmas/" data-date="2026-12-25"><b data-n>76</b><span><span data-unit>days</span> until Christmas 2026</span></a>
+<a href="/tools/days-until-halloween/" data-date="2026-10-31"><b data-n>21</b><span><span data-unit>days</span> until Halloween 2026</span></a>
+<a href="/tools/days-until-diwali/" data-date="2026-11-08"><b data-n>29</b><span><span data-unit>days</span> until Diwali 2026</span></a>
+<a href="/tools/days-until-new-year/" data-date="2027-01-01"><b data-n>83</b><span><span data-unit>days</span> until New Year 2027</span></a>
 </div>
-<p class="meta">Numbers above were computed on 2026-10-07 and update live when the page loads.</p>
+<p class="meta">Numbers above were computed on 2026-10-10 and update live when the page loads.</p>
 <h2>How the count works</h2>
 <p>The result is the number of midnights between today and your date, in your own time zone — the same way people usually say "12 days to go". If your date is today, the answer is 0. A date in the past gives you the days since, which is handy for anniversaries and streaks.</p>
 <p>For a countdown you can see without opening anything, put it on your iPhone Home Screen with the app below.</p>
-<p class="meta">Published 2026-09-26 · Updated 2026-10-07 · go ka</p>
+<p class="meta">Published 2026-09-26 · Updated 2026-10-10 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Questions people ask</h2><div class="grid">
     <div class="card"><h3>How are the days counted?</h3><p>The calculator counts whole calendar days between today and the date you enter, in your device&#x27;s time zone. Today counts as 0; tomorrow counts as 1. The day of the event itself is not added on top.</p></div>
@@ -335,7 +335,7 @@ var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script><script>
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
 var q=new URLSearchParams(location.search);if(q.get('date'))date.value=q.get('date');if(q.get('name'))name.value=q.get('name');

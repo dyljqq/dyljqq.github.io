@@ -160,7 +160,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-29",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-10",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (web browser)",
   "browserRequirements": "Requires JavaScript",
@@ -279,18 +279,18 @@ html[lang^=th] *{letter-spacing:0!important}
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>As contagens mais procuradas</h2>
 <div class="pop">
-<a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/" data-date="2026-12-25"><b data-n>79</b><span><span data-unit>dias</span> para o Natal 2026</span></a>
-<a href="/tools/pt-br/contagem-regressiva-reveillon-2027/" data-date="2027-01-01"><b data-n>86</b><span><span data-unit>dias</span> para 2027 (fim do ano)</span></a>
-<a href="/tools/pt-br/dias-para-o-enem-2026/" data-date="2026-11-08"><b data-n>32</b><span><span data-unit>dias</span> para o 1º dia do ENEM 2026</span></a>
-<a href="/tools/pt-br/contagem-regressiva-black-friday-2026/" data-date="2026-11-27"><b data-n>51</b><span><span data-unit>dias</span> para a Black Friday 2026</span></a>
+<a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/" data-date="2026-12-25"><b data-n>76</b><span><span data-unit>dias</span> para o Natal 2026</span></a>
+<a href="/tools/pt-br/contagem-regressiva-reveillon-2027/" data-date="2027-01-01"><b data-n>83</b><span><span data-unit>dias</span> para 2027 (fim do ano)</span></a>
+<a href="/tools/pt-br/dias-para-o-enem-2026/" data-date="2026-11-08"><b data-n>29</b><span><span data-unit>dias</span> para o 1º dia do ENEM 2026</span></a>
+<a href="/tools/pt-br/contagem-regressiva-black-friday-2026/" data-date="2026-11-27"><b data-n>48</b><span><span data-unit>dias</span> para a Black Friday 2026</span></a>
 </div>
-<p class="meta">Os números acima foram calculados em 07/10/2026 e se atualizam quando a página abre.</p>
+<p class="meta">Os números acima foram calculados em 10/10/2026 e se atualizam quando a página abre.</p>
 <h2>Como a conta é feita</h2>
-<p>O resultado é a quantidade de dias corridos entre hoje e a data escolhida, no fuso horário do seu aparelho — do jeito que a gente fala «faltam 12 dias». Se a data é hoje, a resposta é 0. Uma data no passado mostra quantos dias se passaram, o que serve para aniversário de namoro, dias sem fumar ou o tempo no emprego novo.</p>
+<p>O resultado é a quantidade de dias corridos entre hoje e a data escolhida, no fuso horário do seu aparelho — do jeito que a gente fala “faltam 12 dias”. Se a data é hoje, a resposta é 0. Uma data no passado mostra quantos dias se passaram, o que serve para aniversário de namoro, dias sem fumar ou o tempo no emprego novo.</p>
 <h2>Contadores prontos</h2>
 <ul><li><a href="/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/">Quantos dias faltam para o meu aniversário</a> — com os anos que você vai fazer</li><li><a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">Quantos dias faltam para as férias</a> — com os dias úteis</li><li><a href="/tools/pt-br/contador-de-dias-de-namoro/">Contador de dias de namoro</a> — há quantos dias vocês estão juntos</li></ul>
 <p>Para ver a contagem sem abrir nada, coloque-a na Tela de Início do iPhone com o app abaixo.</p>
-<p class="meta">Publicado em 2026-09-29 · Atualizado em 2026-10-07 · go ka</p>
+<p class="meta">Publicado em 2026-09-29 · Atualizado em 2026-10-10 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Perguntas frequentes</h2><div class="grid">
     <div class="card"><h3>Como os dias são contados?</h3><p>A calculadora conta os dias corridos inteiros entre hoje e a data que você digitar, no fuso horário do seu aparelho. Hoje vale 0 e amanhã vale 1; o próprio dia do evento não entra na conta.</p></div>
@@ -337,7 +337,7 @@ var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script><script>
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
 var q=new URLSearchParams(location.search);if(q.get('date'))date.value=q.get('date');if(q.get('name'))name.value=q.get('name');

@@ -156,7 +156,7 @@ html[lang^=th] *{letter-spacing:0!important}
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-26",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-10",
   "about": {
     "@id": "https://beforego.art/countdown/#app"
   }
@@ -264,9 +264,9 @@ html[lang^=th] *{letter-spacing:0!important}
 <h1>Quantos dias faltam para o ENEM 2026?</h1>
 <p class="lede">O ENEM 2026 tem dois domingos de prova: <strong>8 de novembro</strong> e <strong>15 de novembro de 2026</strong> (Edital nº 64 do Inep, 22 de maio de 2026). Os contadores abaixo atualizam todo dia.</p>
 <h2>1º dia — Linguagens, Redação e Ciências Humanas</h2>
-<div class="count" data-date="2026-11-08"><span data-n>32</span><small data-unit>dias</small></div><p class="count-sub">1º dia · domingo, 8 de novembro de 2026 · <span data-weeks>4 semanas + 4 dias</span></p>
+<div class="count" data-date="2026-11-08"><span data-n>29</span><small data-unit>dias</small></div><p class="count-sub">1º dia · domingo, 8 de novembro de 2026 · <span data-weeks>4 semanas e 1 dia</span></p>
 <h2>2º dia — Ciências da Natureza e Matemática</h2>
-<div class="count" data-date="2026-11-15"><span data-n>39</span><small data-unit>dias</small></div><p class="count-sub">2º dia · domingo, 15 de novembro de 2026 · <span data-weeks>5 semanas + 4 dias</span></p>
+<div class="count" data-date="2026-11-15"><span data-n>36</span><small data-unit>dias</small></div><p class="count-sub">2º dia · domingo, 15 de novembro de 2026 · <span data-weeks>5 semanas e 1 dia</span></p>
 <h2>Datas do ENEM 2026</h2>
 <div class="tbl"><table><tbody>
 <tr><th>Edital</th><td>Edital nº 64, publicado pelo Inep em 22 de maio de 2026</td></tr>
@@ -281,7 +281,7 @@ html[lang^=th] *{letter-spacing:0!important}
 <ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown. Escolha o tamanho.</li></ol>
 <h2>Ideias para a reta final</h2>
 <ul><li>Um evento por simulado, com lembrete na véspera.</li><li>Uma contagem progressiva desde o primeiro dia de estudo — o widget mostra a sequência em dias.</li><li>Depois da prova, uma contagem para a divulgação do resultado.</li></ul>
-<p class="meta">Publicado em 2026-09-26 · Atualizado em 2026-10-07 · go ka</p>
+<p class="meta">Publicado em 2026-09-26 · Atualizado em 2026-10-10 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">Perguntas frequentes</h2><div class="grid">
     <div class="card"><h3>Quando é o ENEM 2026?</h3><p>As provas serão aplicadas nos domingos 8 de novembro e 15 de novembro de 2026, conforme o Edital nº 64, publicado pelo Inep em 22 de maio de 2026.</p></div>
@@ -328,7 +328,7 @@ var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?'semanas':'weeks')+(n%7?' + '+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script>
 </body>
 </html>
