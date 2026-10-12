@@ -860,6 +860,146 @@
   "image": null
  },
  {
+  "path": "/tools/es-mx/app-para-hacer-cotizaciones-iphone/",
+  "lang": "es-MX",
+  "kind": "Article",
+  "title": "App para hacer cotizaciones en iPhone: paso a paso, la primera gratis",
+  "description": "Cómo hacer una cotización en el iPhone y mandarla en PDF por WhatsApp: cliente, conceptos, IVA, retenciones y CLABE; luego pásala a nota de venta.",
+  "faq": [
+   {
+    "q": "¿Cuánto cuesta?",
+    "a": "Tu primer documento es gratis, sin cuenta ni registro: uno en total, sea cotización o nota de venta; las remisiones no lo consumen. Se cuenta una sola vez al crearlo, así que editarlo o reenviarlo no gasta nada. Con Pro los documentos son ilimitados; el precio aparece en la App Store antes de comprar."
+   },
+   {
+    "q": "¿Puedo mandar la cotización por WhatsApp?",
+    "a": "Sí. La cotización se comparte en PDF por WhatsApp, por correo o impresa."
+   },
+   {
+    "q": "¿La app emite factura (CFDI)?",
+    "a": "No. Crea cotizaciones, notas de venta, remisiones y recibos comerciales. Guarda el RFC, el código postal, el régimen y el uso CFDI de tu cliente para que tu contador facture con ellos."
+   },
+   {
+    "q": "¿Calcula retenciones?",
+    "a": "Sí: retención de ISR (10 % o 1.25 % RESICO) e IVA (dos terceras partes) con un interruptor, y el documento termina en «Total a pagar»."
+   },
+   {
+    "q": "¿Necesito internet o una cuenta?",
+    "a": "No. Funciona sin conexión y sin cuenta ni registro; tus documentos y clientes se sincronizan en privado con tu propio iCloud."
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "invoiceqr",
+  "hubTitle": "App para hacer cotizaciones en el iPhone",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/es-mx/alternativa-a-invoice-simple/",
+  "lang": "es-MX",
+  "kind": "Article",
+  "title": "Alternativa a Invoice Simple en México: cotización y nota de venta",
+  "description": "Invoice Simple y Nota de Venta, Cotización lado a lado según la App Store de México: documentos, CFDI, cuántos son gratis, CLABE, retenciones y envío.",
+  "faq": [
+   {
+    "q": "¿Cuál es mejor, Invoice Simple o Nota de Venta, Cotización?",
+    "a": "Depende de cómo trabajes. Invoice Simple tiene muchas más calificaciones y te manda una notificación cuando se abre, se paga o vence un documento. Nota de Venta, Cotización usa los nombres de documentos de México (cotización, nota de venta, remisión), pone tu CLABE o un QR de pago y calcula retenciones de ISR e IVA."
+   },
+   {
+    "q": "¿Alguna de las dos emite CFDI?",
+    "a": "Nota de Venta, Cotización no emite CFDI: guarda el RFC, el código postal, el régimen y el uso CFDI del cliente para que tu contador facture. La descripción de Invoice Simple en la App Store de México no menciona el CFDI."
+   },
+   {
+    "q": "¿Cuántos documentos puedo hacer gratis?",
+    "a": "Según cada descripción: dos en Invoice Simple y uno en Nota de Venta, Cotización (uno en total; las remisiones no lo consumen). Para hacer más, revisa en la App Store lo que ofrece cada una."
+   },
+   {
+    "q": "¿Puedo pasar mis clientes a otra app?",
+    "a": "En Nota de Venta, Cotización los clientes, artículos e impuestos se guardan para reutilizarlos y se sincronizan con tu iCloud. Si cambias de app, cuenta con capturar de nuevo los datos de tus clientes."
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "invoiceqr",
+  "hubTitle": "Alternativa a Invoice Simple en México",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/th/bai-sanoe-rakha/",
+  "lang": "th",
+  "kind": "WebApplication",
+  "title": "ใบเสนอราคา ฟรี — กรอกออนไลน์ บุคคลธรรมดาใช้ได้ พิมพ์หรือบันทึก PDF",
+  "description": "แบบฟอร์มใบเสนอราคาฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง แล้วพิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร ไม่ต้องโหลด Excel หรือ Word",
+  "faq": [
+   {
+    "q": "ฟอร์มนี้ฟรีจริงไหม",
+    "a": "ฟรี ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด ไม่ต้องสมัคร และไม่มีลายน้ำ กรอกเสร็จแล้วพิมพ์หรือบันทึกเป็น PDF ได้เลย"
+   },
+   {
+    "q": "บุคคลธรรมดาออกใบเสนอราคาได้ไหม",
+    "a": "ได้ ใบเสนอราคาคือเอกสารเสนอราคาก่อนตกลงซื้อขาย ฟรีแลนซ์และบุคคลธรรมดาออกได้ ใส่ชื่อ ที่อยู่ และช่องทางติดต่อของคุณแทนชื่อบริษัท"
+   },
+   {
+    "q": "ต้องใส่ภาษีมูลค่าเพิ่มไหม",
+    "a": "ถ้าคุณไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ให้ปล่อยช่องภาษีเป็น 0 ถ้าจดทะเบียนแล้ว ให้ใส่อัตราที่ใช้อยู่ ยอดภาษีและยอดรวมจะคำนวณให้เอง"
+   },
+   {
+    "q": "ใบเสนอราคาควรมีกำหนดยืนราคาไหม",
+    "a": "ควรมี เพื่อบอกว่าราคานี้ใช้ได้ถึงวันไหน ในฟอร์มนี้จะตั้งไว้ให้ 15 วันนับจากวันนี้ แก้เป็นวันอื่นได้"
+   },
+   {
+    "q": "บันทึกเป็น PDF อย่างไร",
+    "a": "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสนอราคา"
+   },
+   {
+    "q": "มีแอปทำใบเสนอราคาบน iPhone ไหม",
+    "a": "ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ คือแอป iPhone ของเรา ทำเรื่องเดียวกันนี้ได้ในไม่กี่นาที และจำลูกค้ากับรายการไว้ใช้ซ้ำ: เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้เลย เอกสารใบแรกฟรี ไม่ต้องสมัครบัญชี"
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "invoiceqr",
+  "hubTitle": "ใบเสนอราคา ฟรี",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/th/bai-set-rap-ngoen/",
+  "lang": "th",
+  "kind": "WebApplication",
+  "title": "ใบเสร็จรับเงิน ฟรี — บุคคลธรรมดาใช้ได้ กรอกออนไลน์ พิมพ์หรือบันทึก PDF",
+  "description": "แบบฟอร์มใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและร้านค้าเล็ก ๆ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง มีช่องลายมือชื่อผู้รับเงิน พิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร",
+  "faq": [
+   {
+    "q": "บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม",
+    "a": "ได้ ใบเสร็จรับเงินคือหลักฐานว่าได้รับเงินแล้ว บุคคลธรรมดาและฟรีแลนซ์ออกให้ลูกค้าได้ ใส่ชื่อ ที่อยู่ และลงลายมือชื่อผู้รับเงิน"
+   },
+   {
+    "q": "ใบเสร็จรับเงินควรมีอะไรบ้าง",
+    "a": "คำว่าใบเสร็จรับเงิน เลขที่และวันที่ ชื่อผู้รับเงินและผู้จ่ายเงิน รายการพร้อมจำนวนเงิน ยอดรวม วิธีชำระ และลายมือชื่อผู้รับเงิน"
+   },
+   {
+    "q": "ใบเสร็จรับเงินกับใบกำกับภาษีต่างกันอย่างไร",
+    "a": "ใบเสร็จรับเงินยืนยันว่าได้รับเงินแล้ว ส่วนใบกำกับภาษีเป็นเอกสารภาษีมูลค่าเพิ่ม ออกโดยผู้ประกอบการที่จดทะเบียนภาษีมูลค่าเพิ่ม ฟอร์มในหน้านี้ไม่ใช่ใบกำกับภาษี"
+   },
+   {
+    "q": "บันทึกเป็น PDF อย่างไร",
+    "a": "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสร็จ"
+   },
+   {
+    "q": "มีแอปออกใบเสร็จบน iPhone ไหม",
+    "a": "ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ คือแอป iPhone ของเรา ทำเรื่องเดียวกันนี้ได้ในไม่กี่นาที และจำลูกค้ากับรายการไว้ใช้ซ้ำ: เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้เลย เอกสารใบแรกฟรี ไม่ต้องสมัครบัญชี"
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "invoiceqr",
+  "hubTitle": "ใบเสร็จรับเงิน ฟรี",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/zh-hant/bao-jia-dan-fan-ben/",
   "lang": "zh-Hant",
   "kind": "WebApplication",
@@ -1586,7 +1726,7 @@
   "lang": "es-MX",
   "kind": "CollectionPage",
   "title": "Herramientas y guías gratis — go ka",
-  "description": "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.",
+  "description": "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple.",
   "faq": [],
   "published": null,
   "app": null,
@@ -1619,6 +1759,20 @@
   "published": null,
   "app": null,
   "hubTitle": "無料ツールとガイド — go ka",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/th/",
+  "lang": "th",
+  "kind": "CollectionPage",
+  "title": "เครื่องมือและคู่มือฟรี — go ka",
+  "description": "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF",
+  "faq": [],
+  "published": null,
+  "app": null,
+  "hubTitle": "เครื่องมือและคู่มือฟรี — go ka",
   "items": [],
   "headline": null,
   "image": null

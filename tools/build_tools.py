@@ -46,9 +46,14 @@ TS = {  # 工具页专用界面词
             "faq": "Preguntas frecuentes", "published": "Publicado", "updated": "Actualizado", "get": "Llévalo a tu iPhone",
             "ask": "Pregúntale a una IA sobre esta página", "days": "días", "day": "día", "weeks": "semanas", "today": "¡Es hoy!", "passed": "días atrás",
             "home": "Inicio", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 10-12：泰国线走 InvoiceQR（泰国是 InvoiceQR 唯一产出试用的市场）
+  "th": {"tools": "เครื่องมือ", "hub_title": "เครื่องมือและคู่มือฟรี", "hub_lede": "เครื่องมือเล็ก ๆ ใช้ฟรี ไม่ต้องสมัคร ทำงานในเบราว์เซอร์ได้เหมือนที่แอป iPhone ของเราทำ",
+         "faq": "คำถามที่พบบ่อย", "published": "เผยแพร่", "updated": "อัปเดต", "get": "ทำต่อบน iPhone", "ask": "ให้ AI สรุปหน้านี้",
+         "days": "วัน", "day": "วัน", "weeks": "สัปดาห์", "today": "วันนี้!", "passed": "วันที่แล้ว",
+         "home": "หน้าแรก", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
-HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/"}
-HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/"}
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/", "th": "/th/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
@@ -160,7 +165,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
 @media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
-@media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+@media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 """
 
 def app_card(app_key, lang):
@@ -176,7 +181,8 @@ def ask_ai(url, lang):
     q = {"pt-BR": f"Leia {url} e resuma os pontos principais em poucas frases.",
          "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases.",
          "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。",
-         "ja": f"{url} を読んで、要点を数文でまとめてください。"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
+         "ja": f"{url} を読んで、要点を数文でまとめてください。",
+         "th": f"อ่าน {url} แล้วสรุปประเด็นสำคัญเป็นไม่กี่ประโยค"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -205,7 +211,7 @@ def top_cta(app_key, lang, label=None):   # label：锁屏教程页说「放到�
     return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(label or TOP_CTA[lang])}</a></p>'
 
 # 「更多问题」：搜索词的其它问法（GSC 查询词 / 联想词），默认折叠、点开可见，正文真实存在——不做隐藏文字。不进 FAQPage 结构化数据。
-MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題"}
+MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題", "es-MX": "Más preguntas", "th": "คำถามเพิ่มเติม"}
 def more_html(items, lang):
     rows = "".join(f"<details><summary>{esc(q)}</summary><p>{a}</p></details>" for q, a in items)
     return f'<section class="sec more"><h2>{esc(MORE_H[lang])}</h2>{rows}</section>'
@@ -1194,6 +1200,177 @@ PAGES.append({"path": "/tools/es-mx/nota-de-venta/", "lang": "es-MX", "kind": "W
 <p>¿Todavía no cierras la venta? Empieza por un <a href="/tools/es-mx/formato-de-cotizacion/">formato de cotización</a>. En el iPhone, <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a> guarda tus clientes y conceptos, lleva la cuenta de lo pagado y lo pendiente, y agrega tu CLABE o un código QR de pago a cada nota.</p>
 {MX_NOTE}"""})
 
+# 7b2. 墨西哥：用 iPhone 做报价单 + Invoice Simple 替代对比（es-MX，InvoiceQR）——10-12
+# 依据：10-12 Google 墨西哥联想词「app para hacer cotizaciones gratis / en iphone / en iphone gratis / mejor app para hacer cotizaciones」
+# 「invoice simple gratis / app / factura」。app 说法只用 tools/store/invoiceqr.json es-MX 描述（1.1.23 与 1.1.22 描述相同）。
+# Invoice Simple 只用它墨西哥商店页的描述（iTunes lookup id=694831622&country=mx&lang=es_mx，10-12 取）：名称「Invoice Simple: Facturas」、
+# Zenvoice Inc.、「tus dos primeras facturas/presupuestos/recibos gratis」、datos bancarios、correo/SMS/WhatsApp/PDF、avisos al abrirse/pagarse/vencer、
+# 评分 4.85（860）。我们 5.0（2）。⛔ 官网不写具体价格（两边都不写）；描述里没写的功能一律写「su descripción no lo menciona」，不替对方下结论。
+COMPARED_ON = dt.date(2026, 10, 12)
+PAGES.append({"path": "/tools/es-mx/app-para-hacer-cotizaciones-iphone/", "lang": "es-MX", "kind": "Article", "app": "invoiceqr", "published": "2026-10-12",
+  "title": "App para hacer cotizaciones en iPhone: paso a paso, la primera gratis", "crumb": "Cotizaciones en el iPhone",
+  "description": "Cómo hacer una cotización en el iPhone y mandarla en PDF por WhatsApp: cliente, conceptos, IVA, retenciones y CLABE; luego pásala a nota de venta.",
+  "hub_title": "App para hacer cotizaciones en el iPhone", "hub_desc": "Paso a paso: de la cotización en PDF por WhatsApp a la nota de venta, con CLABE o QR de pago.",
+  "more": [
+    ("¿Hay una app para hacer cotizaciones gratis?", "Nota de Venta, Cotización te deja hacer tu primer documento gratis, sin cuenta ni registro. Es uno en total, no uno al mes; para más documentos está Pro. Si solo necesitas una cotización de vez en cuando, el <a href=\"/tools/es-mx/formato-de-cotizacion/\">formato de cotización</a> de esta página es gratis y se llena en el navegador."),
+    ("¿Hay app para hacer cotizaciones en Android?", "Nota de Venta, Cotización es para iPhone y iPad. Desde un teléfono Android puedes usar el <a href=\"/tools/es-mx/formato-de-cotizacion/\">formato de cotización en línea</a> y guardarlo en PDF."),
+    ("¿Cuál es la mejor app para hacer cotizaciones?", 'Depende de cómo trabajes. Si cotizas en México y cobras por transferencia, conviene una que hable de cotización y nota de venta, ponga tu CLABE y calcule retenciones. Comparamos la nuestra con Invoice Simple, que tiene 860 calificaciones en la App Store de México, en <a href="/tools/es-mx/alternativa-a-invoice-simple/">alternativa a Invoice Simple</a>.'),
+  ],
+  "faq": [
+    ("¿Cuánto cuesta?", "Tu primer documento es gratis, sin cuenta ni registro: uno en total, sea cotización o nota de venta; las remisiones no lo consumen. Se cuenta una sola vez al crearlo, así que editarlo o reenviarlo no gasta nada. Con Pro los documentos son ilimitados; el precio aparece en la App Store antes de comprar."),
+    ("¿Puedo mandar la cotización por WhatsApp?", "Sí. La cotización se comparte en PDF por WhatsApp, por correo o impresa."),
+    ("¿La app emite factura (CFDI)?", "No. Crea cotizaciones, notas de venta, remisiones y recibos comerciales. Guarda el RFC, el código postal, el régimen y el uso CFDI de tu cliente para que tu contador facture con ellos."),
+    ("¿Calcula retenciones?", "Sí: retención de ISR (10 % o 1.25 % RESICO) e IVA (dos terceras partes) con un interruptor, y el documento termina en «Total a pagar»."),
+    ("¿Necesito internet o una cuenta?", "No. Funciona sin conexión y sin cuenta ni registro; tus documentos y clientes se sincronizan en privado con tu propio iCloud."),
+  ],
+  "body": f"""<h1>App para hacer cotizaciones en el iPhone</h1>
+<p class="lede">Si cotizas en la calle o con el cliente enfrente, hazlo desde el iPhone: eliges una plantilla, agregas al cliente y los conceptos, y mandas el PDF por WhatsApp. Cuando el cliente acepta, la misma cotización se convierte en nota de venta con un toque.</p>
+{top_cta("invoiceqr", "es-MX", "Descargar en el iPhone — el primero es gratis")}
+<h2>Cómo hacer una cotización en el iPhone, paso a paso</h2>
+<p>Con <a href="/invoiceqr/es-mx/">Nota de Venta, Cotización</a>, nuestra app:</p>
+<ol><li>Elige una plantilla (en Pro hay más de 100). Tu logo, color y fuente se configuran una sola vez y se aplican a todos tus documentos; el kit de marca completo es parte de Pro.</li><li>Agrega al cliente. Queda guardado para la próxima vez, igual que tus artículos e impuestos.</li><li>Agrega los conceptos con cantidad y precio. Puedes sumar descuentos y envío, y activar las retenciones de ISR (10 % o 1.25 % RESICO) e IVA (dos terceras partes) con un interruptor; el documento termina en «Total a pagar».</li><li>Pon tus datos de transferencia (banco, CLABE, beneficiario) o un código QR con tu link de pago.</li><li>Comparte el PDF por WhatsApp, por correo o imprímelo.</li><li>Cuando el cliente acepte, convierte la cotización en nota de venta con un toque. Si entregas mercancía, la remisión lleva la firma de quien recibe.</li></ol>
+<p>También puedes firmar a mano alzada en la pantalla, y si tienes un documento en papel, tómale una foto: se convierte en un borrador editable.</p>
+<h2>Después de mandarla</h2>
+<ul><li>Ves de un vistazo qué está pagado, pendiente, parcial o vencido.</li><li>Registras los pagos y el saldo pendiente se mantiene exacto.</li><li>Cuando te pagan completo, compartes el mismo documento como recibo, marcado como pagado y con la fecha de cobro.</li><li>Un widget en la pantalla de inicio te muestra lo que te deben.</li></ul>
+<h2>Qué es gratis y qué es Pro</h2>
+<table><thead><tr><th>Gratis</th><th>Pro</th></tr></thead><tbody>
+<tr><td>Tu primer documento, sin cuenta ni registro (uno en total, no uno al mes; las remisiones no lo consumen)</td><td>Documentos y exportaciones QR ilimitados</td></tr>
+<tr><td>4 de los 16 diseños QR listos</td><td>Más de 100 plantillas de documento, todos los estilos y diseños QR</td></tr>
+<tr><td>Los archivos llevan al pie una línea pequeña con el nombre de la app</td><td>Kit de marca completo y sin la línea con el nombre de la app</td></tr>
+</tbody></table>
+<h2>¿Sin el iPhone a la mano?</h2>
+<p>Llena el <a href="/tools/es-mx/formato-de-cotizacion/">formato de cotización</a> en el navegador: el importe, el IVA y el total se calculan solos y lo guardas en PDF. Cuando el cliente acepte, usa el <a href="/tools/es-mx/nota-de-venta/">formato de nota de venta</a>.</p>
+{MX_NOTE}"""})
+
+PAGES.append({"path": "/tools/es-mx/alternativa-a-invoice-simple/", "lang": "es-MX", "kind": "Article", "app": "invoiceqr", "published": "2026-10-12",
+  "title": "Alternativa a Invoice Simple en México: cotización y nota de venta", "crumb": "Alternativa a Invoice Simple",
+  "description": "Invoice Simple y Nota de Venta, Cotización lado a lado según la App Store de México: documentos, CFDI, cuántos son gratis, CLABE, retenciones y envío.",
+  "hub_title": "Alternativa a Invoice Simple en México", "hub_desc": "Las dos apps lado a lado según la App Store de México: documentos, CFDI, gratis, CLABE y retenciones.",
+  "more": [
+    ("¿Invoice Simple es gratis?", "Se descarga gratis. Según su descripción en la App Store de México, tus dos primeras facturas, presupuestos o recibos son gratis; la descripción no dice cuánto cuesta seguir, así que revisa su página en la App Store."),
+    ("¿Invoice Simple hace facturas para el SAT?", "Su descripción en la App Store de México no menciona el CFDI ni el SAT. En México, una factura fiscal es un CFDI emitido a través del SAT o de un proveedor autorizado (PAC)."),
+  ],
+  "faq": [
+    ("¿Cuál es mejor, Invoice Simple o Nota de Venta, Cotización?", "Depende de cómo trabajes. Invoice Simple tiene muchas más calificaciones y te manda una notificación cuando se abre, se paga o vence un documento. Nota de Venta, Cotización usa los nombres de documentos de México (cotización, nota de venta, remisión), pone tu CLABE o un QR de pago y calcula retenciones de ISR e IVA."),
+    ("¿Alguna de las dos emite CFDI?", "Nota de Venta, Cotización no emite CFDI: guarda el RFC, el código postal, el régimen y el uso CFDI del cliente para que tu contador facture. La descripción de Invoice Simple en la App Store de México no menciona el CFDI."),
+    ("¿Cuántos documentos puedo hacer gratis?", "Según cada descripción: dos en Invoice Simple y uno en Nota de Venta, Cotización (uno en total; las remisiones no lo consumen). Para hacer más, revisa en la App Store lo que ofrece cada una."),
+    ("¿Puedo pasar mis clientes a otra app?", "En Nota de Venta, Cotización los clientes, artículos e impuestos se guardan para reutilizarlos y se sincronizan con tu iCloud. Si cambias de app, cuenta con capturar de nuevo los datos de tus clientes."),
+  ],
+  "body": f"""<h1>Alternativa a Invoice Simple en México</h1>
+<p class="lede">Invoice Simple es una app para hacer facturas, presupuestos y recibos, y en la App Store de México tiene 860 calificaciones. Si trabajas en México, a lo mejor buscas otra cosa: documentos que se llamen como aquí se llaman, tu CLABE en cada PDF y las retenciones ya calculadas. Esta es la comparación, con lo que dice cada app en su página de la App Store de México.</p>
+<table class="cmp"><thead><tr><th></th><th>Invoice Simple: Facturas</th><th>Nota de Venta, Cotización (nuestra)</th></tr></thead><tbody>
+<tr><th>Documentos</th><td>Facturas, presupuestos y recibos</td><td>Cotizaciones, notas de venta, remisiones y recibos</td></tr>
+<tr><th>CFDI ante el SAT</th><td>Su descripción no lo menciona</td><td>No emite CFDI; guarda RFC, código postal, régimen y uso CFDI del cliente para tu contador</td></tr>
+<tr><th>Gratis para empezar</th><td>Tus dos primeros documentos</td><td>Tu primer documento (uno en total; las remisiones no lo consumen)</td></tr>
+<tr><th>Datos de pago</th><td>Tus datos bancarios</td><td>Banco, CLABE y beneficiario, o un QR con tu link de pago</td></tr>
+<tr><th>Retenciones de ISR e IVA</th><td>Su descripción no lo menciona (sí permite ajustar impuestos y descuentos)</td><td>ISR 10 % o 1.25 % RESICO e IVA (dos terceras partes) con un interruptor</td></tr>
+<tr><th>De cotización a venta</th><td>Su descripción no lo menciona</td><td>La cotización se convierte en nota de venta con un toque</td></tr>
+<tr><th>Envío</th><td>Correo, SMS, WhatsApp o PDF</td><td>WhatsApp, correo o impresión (PDF)</td></tr>
+<tr><th>Notificaciones</th><td>Te avisa cuando se abre, se paga o vence un documento</td><td>Nuestra descripción no lo menciona; ves de un vistazo qué está pagada, pendiente, parcial o vencida</td></tr>
+<tr><th>Cuenta y conexión</th><td>Su descripción no lo menciona</td><td>Sin cuenta ni registro; funciona sin conexión y sincroniza con tu iCloud</td></tr>
+<tr><th>Calificación en la App Store de México</th><td>4.9 (860 calificaciones)</td><td>5.0 (2 calificaciones)</td></tr>
+</tbody></table>
+<p class="meta">Datos tomados de la página de cada app en la App Store de México el {COMPARED_ON.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][COMPARED_ON.month - 1]} de {COMPARED_ON.year}. Las dos se descargan gratis; lo que cuesta seguir después de los documentos gratis aparece en la página de cada app en la App Store. Invoice Simple es una marca de Zenvoice Inc.; no tenemos relación con ellos.</p>
+<h2>Cuándo conviene cada una</h2>
+<ul><li><strong>Invoice Simple</strong>: si quieres recibir una notificación cuando se abra, se pague o venza un documento, o si te importa elegir una app con cientos de calificaciones.</li><li><strong>Nota de Venta, Cotización</strong>: si cotizas y luego vendes en México, cobras por transferencia con CLABE, necesitas retenciones de ISR o IVA, o quieres trabajar sin cuenta y sin conexión.</li></ul>
+<h2>Una palabra sobre «factura»</h2>
+<p>En México, factura quiere decir CFDI: un comprobante fiscal digital que se emite a través del SAT o de un proveedor autorizado (PAC). Por eso nuestra app no llama factura a lo que crea: hace cotizaciones, notas de venta, remisiones y recibos, y guarda los datos fiscales de tu cliente para que tu contador facture.</p>
+<p>¿Quieres probar sin instalar nada? Llena el <a href="/tools/es-mx/formato-de-cotizacion/">formato de cotización</a> en el navegador. Y si ya decidiste, aquí está <a href="/tools/es-mx/app-para-hacer-cotizaciones-iphone/">cómo hacer una cotización en el iPhone, paso a paso</a>.</p>"""})
+
+# 7b3. 泰国：ใบเสนอราคา / ใบเสร็จรับเงิน 模板（th，InvoiceQR）——10-12
+# 依据：泰国是 InvoiceQR 唯一产出试用的市场（见 invoiceqr-th-* 记忆）。10-12 Google 泰国联想词：「ใบเสนอราคา ตัวอย่าง / ฟอร์ม / excel ฟรี / บุคคลธรรมดา / ฟรี / word」
+# 「ใบเสร็จรับเงิน ภาษาอังกฤษ / (excel ฟรี) / บุคคลธรรมดา / ไฟล์ word / ฟอร์ม」。app 说法只用 tools/store/invoiceqr.json th 描述：
+# เอกสารใบแรกฟรี ไม่ต้องสมัครบัญชี（ฟรีใบเดียวทั้งหมด）；เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว；คิวอาร์โค้ดชำระเงิน；
+# ใบแจ้งหนี้ที่ชำระครบแล้ว แชร์เป็นใบเสร็จได้；ลายเซ็นเขียนมือ；ไม่ต้องสมัครบัญชี ใช้งานออฟไลน์ได้。
+# 法规只写一句通则：ใบกำกับภาษี 由 VAT 登记的经营者开具（ประมวลรัษฎากร มาตรา 86）；税率不写死（默认 0，用户自己填）。⛔ 不说我们开 ใบกำกับภาษี。
+TH_NOTE = ('<p class="meta" style="margin-top:18px"><strong>หมายเหตุ:</strong> แบบฟอร์มนี้เป็นใบเสนอราคาและใบเสร็จรับเงินทั่วไป ไม่ใช่ใบกำกับภาษี '
+           'ใบกำกับภาษีออกโดยผู้ประกอบการที่จดทะเบียนภาษีมูลค่าเพิ่มตามมาตรา 86 แห่งประมวลรัษฎากร และต้องมีรายการตามที่กฎหมายกำหนด '
+           'ถ้าคุณจดทะเบียนภาษีมูลค่าเพิ่ม โปรดตรวจรายการกับกรมสรรพากรก่อนใช้</p>')
+TH_APP = ('ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ คือแอป iPhone ของเรา ทำเรื่องเดียวกันนี้ได้ในไม่กี่นาที และจำลูกค้ากับรายการไว้ใช้ซ้ำ: '
+          'เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย '
+          'และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้เลย เอกสารใบแรกฟรี ไม่ต้องสมัครบัญชี')
+PAGES.append({"path": "/tools/th/bai-sanoe-rakha/", "lang": "th", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-12",
+  "title": "ใบเสนอราคา ฟรี — กรอกออนไลน์ บุคคลธรรมดาใช้ได้ พิมพ์หรือบันทึก PDF", "crumb": "ใบเสนอราคา",
+  "description": "แบบฟอร์มใบเสนอราคาฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง แล้วพิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร ไม่ต้องโหลด Excel หรือ Word",
+  "hub_title": "ใบเสนอราคา ฟรี", "hub_desc": "กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึกเป็น PDF ได้ทันที",
+  "js": [INVOICE_JS],
+  "more": [
+    ("ใบเสนอราคา excel ฟรี มีไหม", "หน้านี้ไม่ต้องโหลด Excel: กรอกบนหน้าเว็บได้เลย ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง แล้วกด «พิมพ์ / บันทึก PDF»"),
+    ("ใบเสนอราคา word ใช้แทนได้ไหม", "ได้ บันทึกเป็น PDF จากหน้านี้แล้วส่งให้ลูกค้า ไฟล์ PDF เปิดได้ทุกเครื่องและแก้ไขไม่ได้โดยไม่ตั้งใจ"),
+    ("ใบเสนอราคา ตัวอย่าง ควรมีอะไรบ้าง", "ดูหัวข้อ «ใบเสนอราคาควรมีอะไรบ้าง» ด้านล่าง ตัวอย่างในฟอร์มนี้ก็กรอกไว้ให้ดูแล้ว แก้ทับได้ทุกช่อง"),
+  ],
+  "faq": [
+    ("ฟอร์มนี้ฟรีจริงไหม", "ฟรี ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด ไม่ต้องสมัคร และไม่มีลายน้ำ กรอกเสร็จแล้วพิมพ์หรือบันทึกเป็น PDF ได้เลย"),
+    ("บุคคลธรรมดาออกใบเสนอราคาได้ไหม", "ได้ ใบเสนอราคาคือเอกสารเสนอราคาก่อนตกลงซื้อขาย ฟรีแลนซ์และบุคคลธรรมดาออกได้ ใส่ชื่อ ที่อยู่ และช่องทางติดต่อของคุณแทนชื่อบริษัท"),
+    ("ต้องใส่ภาษีมูลค่าเพิ่มไหม", "ถ้าคุณไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ให้ปล่อยช่องภาษีเป็น 0 ถ้าจดทะเบียนแล้ว ให้ใส่อัตราที่ใช้อยู่ ยอดภาษีและยอดรวมจะคำนวณให้เอง"),
+    ("ใบเสนอราคาควรมีกำหนดยืนราคาไหม", "ควรมี เพื่อบอกว่าราคานี้ใช้ได้ถึงวันไหน ในฟอร์มนี้จะตั้งไว้ให้ 15 วันนับจากวันนี้ แก้เป็นวันอื่นได้"),
+    ("บันทึกเป็น PDF อย่างไร", "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสนอราคา"),
+    ("มีแอปทำใบเสนอราคาบน iPhone ไหม", TH_APP),
+  ],
+  "body": f"""<h1>ใบเสนอราคา ฟรี</h1>
+<p class="lede">กรอกได้บนหน้านี้เลย คลิกช่องที่มีเส้นประเพื่อแก้ไข ยอดของแต่ละรายการ ภาษี และยอดรวมคำนวณให้เอง จากนั้นพิมพ์หรือบันทึกเป็น PDF ข้อมูลไม่ออกจากเบราว์เซอร์ของคุณ</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">พิมพ์ / บันทึก PDF</button><button class="btn ghost" id="addrow" type="button">+ เพิ่มรายการ</button></div>
+<div class="inv" id="inv" data-newitem="รายการ" data-days="15">
+<div class="inv-head"><div><div class="inv-title">ใบเสนอราคา</div><p style="margin:6px 0 0"><span contenteditable="true">ชื่อของคุณหรือชื่อร้าน</span><br><span contenteditable="true">ที่อยู่</span><br><span contenteditable="true">อีเมล · 08x-xxx-xxxx</span></p></div>
+<div class="inv-meta"><div class="k">เลขที่</div><p style="margin:0 0 10px"><span contenteditable="true">QT-0001</span></p><div class="k">วันที่</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">ยืนราคาถึง</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">เสนอราคาให้</div><p style="margin:0"><span contenteditable="true">ชื่อลูกค้า</span><br><span contenteditable="true">ที่อยู่ลูกค้า</span><br><span contenteditable="true">อีเมลหรือเบอร์โทรลูกค้า</span></p></div>
+<div><div class="k">เงื่อนไข</div><p style="margin:0"><span contenteditable="true">มัดจำ 50% ส่วนที่เหลือชำระเมื่อส่งงาน</span><br><span contenteditable="true">โอนเข้าบัญชี ธนาคาร … เลขที่ …</span></p></div></div>
+<table><thead><tr><th>รายการ</th><th>จำนวน</th><th>ราคาต่อหน่วย</th><th>จำนวนเงิน</th></tr></thead>
+<tbody><tr><td contenteditable="true">ออกแบบโลโก้</td><td contenteditable="true">1</td><td contenteditable="true">5000.00</td><td>5,000.00</td></tr>
+<tr><td contenteditable="true">ออกแบบนามบัตร</td><td contenteditable="true">1</td><td contenteditable="true">1500.00</td><td>1,500.00</td></tr></tbody></table>
+<div class="totals"><div><span>รวม</span><span id="sub">6,500.00</span></div><div><span>ภาษีมูลค่าเพิ่ม (<span contenteditable="true" id="taxrate">0</span>%)</span><span id="tax">0.00</span></div><div class="grand"><span>รวมทั้งสิ้น</span><span id="total">6,500.00</span></div></div>
+<p class="notes" contenteditable="true">ราคาเป็นเงินบาท ใบเสนอราคานี้มีผลถึงวันที่ยืนราคา</p>
+</div></div>
+<h2>ใบเสนอราคาควรมีอะไรบ้าง</h2>
+<ul><li><strong>คำว่า «ใบเสนอราคา»</strong> และเลขที่เอกสาร</li><li><strong>วันที่</strong> และ <strong>วันยืนราคา</strong>: ราคานี้ใช้ได้ถึงวันไหน</li><li><strong>ข้อมูลของคุณ</strong>: ชื่อหรือชื่อร้าน ที่อยู่ และช่องทางติดต่อ</li><li><strong>ข้อมูลลูกค้า</strong>: ชื่อ ที่อยู่ หรืออีเมล</li><li><strong>รายการ</strong>: รายละเอียด จำนวน ราคาต่อหน่วย และจำนวนเงิน</li><li><strong>ยอดรวม</strong> ภาษี (ถ้ามี) และ <strong>ยอดรวมทั้งสิ้น</strong></li><li><strong>เงื่อนไข</strong>: การชำระเงิน มัดจำ และระยะเวลาส่งงาน</li></ul>
+<h2>ใบเสนอราคา ใบแจ้งหนี้ ใบเสร็จรับเงิน ต่างกันอย่างไร</h2>
+<table><thead><tr><th>เอกสาร</th><th>ออกเมื่อไร</th><th>ใช้ทำอะไร</th></tr></thead><tbody>
+<tr><td>ใบเสนอราคา</td><td>ก่อนตกลงซื้อขาย</td><td>เสนอราคาที่ยืนให้จนถึงวันยืนราคา</td></tr>
+<tr><td>ใบแจ้งหนี้</td><td>เมื่อส่งงานหรือส่งของ</td><td>แจ้งยอดที่ลูกค้าต้องชำระและกำหนดชำระ</td></tr>
+<tr><td>ใบเสร็จรับเงิน</td><td>เมื่อได้รับเงินแล้ว</td><td>ยืนยันว่าได้รับเงินจำนวนนั้นแล้ว</td></tr>
+</tbody></table>
+<p>ลูกค้าตกลงและจ่ายเงินแล้ว? ใช้<a href="/tools/th/bai-set-rap-ngoen/">แบบฟอร์มใบเสร็จรับเงิน</a>ต่อได้เลย ถ้าทำใบเสนอราคาหลายใบต่อเดือน <a href="/invoiceqr/th/">ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ</a> บน iPhone จำลูกค้าและรายการไว้ให้ และแปลงใบเสนอราคาเป็นใบแจ้งหนี้ได้ในแตะเดียว</p>
+{TH_NOTE}"""})
+
+PAGES.append({"path": "/tools/th/bai-set-rap-ngoen/", "lang": "th", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-12",
+  "title": "ใบเสร็จรับเงิน ฟรี — บุคคลธรรมดาใช้ได้ กรอกออนไลน์ พิมพ์หรือบันทึก PDF", "crumb": "ใบเสร็จรับเงิน",
+  "description": "แบบฟอร์มใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและร้านค้าเล็ก ๆ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง มีช่องลายมือชื่อผู้รับเงิน พิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร",
+  "hub_title": "ใบเสร็จรับเงิน ฟรี", "hub_desc": "รายการ ยอดรวม และช่องลายมือชื่อผู้รับเงิน กรอกบนหน้าเว็บแล้วพิมพ์หรือบันทึกเป็น PDF",
+  "js": [INVOICE_JS],
+  "more": [
+    ("ใบเสร็จรับเงิน excel ฟรี มีไหม", "หน้านี้ไม่ต้องโหลด Excel: กรอกบนหน้าเว็บได้เลย ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง แล้วกด «พิมพ์ / บันทึก PDF»"),
+    ("ใบเสร็จรับเงิน ภาษาอังกฤษ เรียกว่าอะไร", "ภาษาอังกฤษเรียกว่า Receipt ส่วนใบเสนอราคาเรียกว่า Quotation และใบแจ้งหนี้เรียกว่า Invoice"),
+  ],
+  "faq": [
+    ("บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม", "ได้ ใบเสร็จรับเงินคือหลักฐานว่าได้รับเงินแล้ว บุคคลธรรมดาและฟรีแลนซ์ออกให้ลูกค้าได้ ใส่ชื่อ ที่อยู่ และลงลายมือชื่อผู้รับเงิน"),
+    ("ใบเสร็จรับเงินควรมีอะไรบ้าง", "คำว่าใบเสร็จรับเงิน เลขที่และวันที่ ชื่อผู้รับเงินและผู้จ่ายเงิน รายการพร้อมจำนวนเงิน ยอดรวม วิธีชำระ และลายมือชื่อผู้รับเงิน"),
+    ("ใบเสร็จรับเงินกับใบกำกับภาษีต่างกันอย่างไร", "ใบเสร็จรับเงินยืนยันว่าได้รับเงินแล้ว ส่วนใบกำกับภาษีเป็นเอกสารภาษีมูลค่าเพิ่ม ออกโดยผู้ประกอบการที่จดทะเบียนภาษีมูลค่าเพิ่ม ฟอร์มในหน้านี้ไม่ใช่ใบกำกับภาษี"),
+    ("บันทึกเป็น PDF อย่างไร", "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสร็จ"),
+    ("มีแอปออกใบเสร็จบน iPhone ไหม", TH_APP),
+  ],
+  "body": f"""<h1>ใบเสร็จรับเงิน ฟรี</h1>
+<p class="lede">กรอกได้บนหน้านี้เลย คลิกช่องที่มีเส้นประเพื่อแก้ไข ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง ถ้าคิดภาษีให้ใส่อัตรา จากนั้นพิมพ์หรือบันทึกเป็น PDF ข้อมูลไม่ออกจากเบราว์เซอร์ของคุณ</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">พิมพ์ / บันทึก PDF</button><button class="btn ghost" id="addrow" type="button">+ เพิ่มรายการ</button></div>
+<div class="inv" id="inv" data-newitem="รายการ">
+<div class="inv-head"><div><div class="inv-title">ใบเสร็จรับเงิน</div><p style="margin:6px 0 0"><span contenteditable="true">ชื่อของคุณหรือชื่อร้าน</span><br><span contenteditable="true">ที่อยู่</span><br><span contenteditable="true">อีเมล · 08x-xxx-xxxx</span></p></div>
+<div class="inv-meta"><div class="k">เลขที่</div><p style="margin:0 0 10px"><span contenteditable="true">RC-0001</span></p><div class="k">วันที่</div><p style="margin:0"><span contenteditable="true" id="today"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">ได้รับเงินจาก</div><p style="margin:0"><span contenteditable="true">ชื่อลูกค้า</span><br><span contenteditable="true">ที่อยู่หรือเบอร์โทรลูกค้า</span></p></div>
+<div><div class="k">ชำระโดย</div><p style="margin:0"><span contenteditable="true">เงินสด / โอนเงิน / พร้อมเพย์</span></p></div></div>
+<table><thead><tr><th>รายการ</th><th>จำนวน</th><th>ราคาต่อหน่วย</th><th>จำนวนเงิน</th></tr></thead>
+<tbody><tr><td contenteditable="true">เค้กช็อกโกแลต 2 ปอนด์</td><td contenteditable="true">1</td><td contenteditable="true">650.00</td><td>650.00</td></tr>
+<tr><td contenteditable="true">คัพเค้ก</td><td contenteditable="true">12</td><td contenteditable="true">35.00</td><td>420.00</td></tr></tbody></table>
+<div class="totals"><div><span>รวม</span><span id="sub">1,070.00</span></div><div><span>ภาษีมูลค่าเพิ่ม (<span contenteditable="true" id="taxrate">0</span>%)</span><span id="tax">0.00</span></div><div class="grand"><span>รวมทั้งสิ้น</span><span id="total">1,070.00</span></div></div>
+<p class="notes" contenteditable="true">ได้รับเงินถูกต้องครบถ้วนแล้ว ขอบคุณที่ใช้บริการ<br><br>ลงชื่อ ................................ ผู้รับเงิน</p>
+</div></div>
+<h2>ใบเสร็จรับเงินควรมีอะไรบ้าง</h2>
+<ul><li><strong>คำว่า «ใบเสร็จรับเงิน»</strong> และเลขที่เรียงกันไป</li><li><strong>วันที่</strong> ได้รับเงิน</li><li><strong>ชื่อผู้รับเงิน</strong>: ชื่อของคุณหรือชื่อร้าน และที่อยู่</li><li><strong>ชื่อผู้จ่ายเงิน</strong>: ชื่อลูกค้า</li><li><strong>รายการ</strong>: รายละเอียด จำนวน ราคาต่อหน่วย และจำนวนเงิน</li><li><strong>ยอดรวมทั้งสิ้น</strong> และวิธีชำระ</li><li><strong>ลายมือชื่อผู้รับเงิน</strong></li></ul>
+<h2>บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม</h2>
+<p>ได้ ใบเสร็จรับเงินเป็นหลักฐานว่าคุณได้รับเงินจากลูกค้าแล้ว ฟรีแลนซ์ แม่ค้าออนไลน์ และร้านเล็ก ๆ ที่ยังไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ใช้ฟอร์มนี้ออกให้ลูกค้าได้ ปล่อยช่องภาษีเป็น 0 แล้วลงลายมือชื่อผู้รับเงิน</p>
+<p>ยังไม่ได้ตกลงราคา? เริ่มจาก<a href="/tools/th/bai-sanoe-rakha/">แบบฟอร์มใบเสนอราคา</a>ก่อน บน iPhone <a href="/invoiceqr/th/">ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ</a> ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้ทันที</p>
+{TH_NOTE}"""})
+
 # 7c. 港台：報價單範本 / 收據範本（zh-Hant，InvoiceQR）——09-29
 # 依据：Google HK / TW 联想词（報價單範本 excel/word/下載/pdf、報價單產生器；收據範本 word/excel/茲收到/數字/香港、免用統一發票 收據格式）；
 # app 说法全部出自 tools/store/invoiceqr.json zh-Hant 描述（商店名「開單、報價單、收據、送貨單產生器」；先寄報價單，確認後一鍵轉帳單；
@@ -1892,7 +2069,8 @@ def hub_page(lang):
     title, desc = {
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
-        "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF."),
+        "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple."),
+        "th": ("เครื่องมือและคู่มือฟรี — go ka", "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF"),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
     }[lang]

@@ -166,6 +166,10 @@ A gym workout log for iPhone.
 - [Free invoice template](https://beforego.art/tools/invoice-template/) — A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.
 - [Formato de cotización gratis](https://beforego.art/tools/es-mx/formato-de-cotizacion/) — Formato de cotización gratis para llenar en línea: tus datos, el cliente, los conceptos con importe e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.
 - [Formato de nota de venta gratis](https://beforego.art/tools/es-mx/nota-de-venta/) — Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos. Imprime o guarda en PDF, sin registro.
+- [App para hacer cotizaciones en el iPhone](https://beforego.art/tools/es-mx/app-para-hacer-cotizaciones-iphone/) — Cómo hacer una cotización en el iPhone y mandarla en PDF por WhatsApp: cliente, conceptos, IVA, retenciones y CLABE; luego pásala a nota de venta.
+- [Alternativa a Invoice Simple en México](https://beforego.art/tools/es-mx/alternativa-a-invoice-simple/) — Invoice Simple y Nota de Venta, Cotización lado a lado según la App Store de México: documentos, CFDI, cuántos son gratis, CLABE, retenciones y envío.
+- [ใบเสนอราคา ฟรี](https://beforego.art/tools/th/bai-sanoe-rakha/) — แบบฟอร์มใบเสนอราคาฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง แล้วพิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร ไม่ต้องโหลด Excel หรือ Word
+- [ใบเสร็จรับเงิน ฟรี](https://beforego.art/tools/th/bai-set-rap-ngoen/) — แบบฟอร์มใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและร้านค้าเล็ก ๆ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง มีช่องลายมือชื่อผู้รับเงิน พิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร
 - [報價單範本](https://beforego.art/tools/zh-hant/bao-jia-dan-fan-ben/) — 免費報價單範本：線上填好公司、客戶與品項，金額、稅額與總計自動計算，再列印或存成 PDF。不用註冊，港台都適用。
 - [收據範本](https://beforego.art/tools/zh-hant/shou-ju-fan-ben/) — 免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。
 - [2027 農曆新年倒數](https://beforego.art/tools/zh-hant/nong-li-xin-nian-2027/) — 2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。
@@ -187,9 +191,10 @@ A gym workout log for iPhone.
 - [A Packing List That Fits the Destination: Plugs, Currency, Rules](https://beforego.art/blog/packing-list-by-destination/) — What to check per destination before you pack, and how a generated packing list covers plugs, currency, entry rules and reminders.
 - [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
 - [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.
-- [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formato de cotización y formato de nota de venta para llenar en línea, imprimir o guardar en PDF.
+- [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
+- [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ
