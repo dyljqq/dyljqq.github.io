@@ -200,9 +200,9 @@ def counter(d, lang, label=""):
 # 10-10 复盘：下载按钮原来只在页面靠后的位置，搜进来的人看完数字就走。ct=web-countdown-top，和页尾卡片的 -tool 分开计。
 TOP_CTA = {"en": "Add it to your Home Screen — free", "pt-BR": "Colocar na Tela de Início — grátis",
            "ja": "ホーム画面・ロック画面に置く（無料）", "zh-Hant": "放到主畫面（免費）"}   # 短到 375 宽一行放得下
-def top_cta(app_key, lang):
+def top_cta(app_key, lang, label=None):   # label：锁屏教程页说「放到锁屏」，其余页默认说主屏
     p = BY_KEY[app_key]; a = {"variantOf": app_key, "lang": lang} if lang != "en" else p
-    return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(TOP_CTA[lang])}</a></p>'
+    return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(label or TOP_CTA[lang])}</a></p>'
 
 # 「更多问题」：搜索词的其它问法（GSC 查询词 / 联想词），默认折叠、点开可见，正文真实存在——不做隐藏文字。不进 FAQPage 结构化数据。
 MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題"}
@@ -388,17 +388,24 @@ PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
    ("How do I keep a New Year countdown on my Lock Screen?", "Add 1 January 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.")],
   [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))]))
 
+# 10-12：GSC 显示有点击的是「想把倒数放到手机上」的词（锁屏 / 待ち受け），所以每页的手机一节先讲 Tela Bloqueada，再讲 Tela de Início，
+# 并链到锁屏教程页。原来这里只写了 Tela de Início 的步骤。
+PT_WIDGET_STEP = ("<li>Na Tela Bloqueada: toque e segure → <strong>Personalizar</strong> → Tela Bloqueada → <strong>Adicionar widgets</strong> → Countdown.</li>"
+                  "<li>Na Tela de Início: segure a tela → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li>")
+PT_LOCK_LINK = ('<p>Passo a passo, e a diferença entre papel de parede e widget: <a href="/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/">'
+                'como colocar contagem regressiva na tela de bloqueio do iPhone</a>.</p>')
+
 # 5. ENEM 2026（pt-BR）
 PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-26",
   "title": "Quantos dias faltam para o ENEM 2026? (8 e 15 de novembro)", "crumb": "ENEM 2026",
-  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
+  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "hub_title": "Quantos dias faltam para o ENEM 2026?", "hub_desc": "Contagem regressiva para os dois domingos de prova, 8 e 15 de novembro.",
   "js": [COUNT_JS], "faq": [
     ("Quando é o ENEM 2026?", "As provas serão aplicadas nos domingos 8 de novembro e 15 de novembro de 2026, conforme o Edital nº 64, publicado pelo Inep em 22 de maio de 2026."),
     ("Quando foram as inscrições do ENEM 2026?", "De 25 de maio a 12 de junho de 2026, pela Página do Participante do Inep."),
     ("O que cai em cada dia do ENEM 2026?", "No primeiro dia (8/11): Linguagens, Códigos e suas Tecnologias, Redação e Ciências Humanas e suas Tecnologias. No segundo dia (15/11): Ciências da Natureza e suas Tecnologias e Matemática e suas Tecnologias, com 90 questões objetivas."),
     ("Quando sai o gabarito do ENEM 2026?", "Segundo o edital, até o 10º dia útil após o segundo dia de prova."),
-    ("Como coloco a contagem regressiva do ENEM na Tela de Início?", "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."),
+    ("Como coloco a contagem regressiva do ENEM na tela de bloqueio do iPhone?", "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."),
   ],
   "body": f"""<h1>Quantos dias faltam para o ENEM 2026?</h1>
 <p class="lede">O ENEM 2026 tem dois domingos de prova: <strong>8 de novembro</strong> e <strong>15 de novembro de 2026</strong> (Edital nº 64 do Inep, 22 de maio de 2026). Os contadores abaixo atualizam todo dia.</p>
@@ -415,16 +422,17 @@ PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "k
 <tr><th>Gabarito</th><td>até o 10º dia útil após o 2º dia de aplicação</td></tr>
 </tbody></table>
 <p>Confira sempre as datas na página oficial do Inep (gov.br/inep); o cronograma acima segue o edital publicado.</p>
-<h2>A contagem na Tela de Início, sem abrir nada</h2>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Uma contagem regressiva que você precisa abrir para ver é uma contagem que você esquece. Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown. Escolha o tamanho.</li></ol>
+<ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <h2>Ideias para a reta final</h2>
 <ul><li>Um evento por simulado, com lembrete na véspera.</li><li>Uma contagem progressiva desde o primeiro dia de estudo — o widget mostra a sequência em dias.</li><li>Depois da prova, uma contagem para a divulgação do resultado.</li></ul>"""})
 
 # 6. Réveillon + Carnaval 2027（pt-BR）
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-26",
   "title": "Quantos dias faltam para o Réveillon 2027? (quinta, 31/12)", "crumb": "Réveillon 2027",
-  "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "description": "Réveillon: quinta-feira, 31/12/2026. Carnaval 2027: sábado, 6, a terça, 9 de fevereiro. Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "hub_title": "Quantos dias faltam para o Réveillon 2027?", "hub_desc": "Réveillon e Ano-Novo com contagem ao vivo, mais as datas do Carnaval 2027.",
   "more": [
     ('Quantos dias faltam para acabar o ano?', f'O ano termina na quinta-feira, 31 de dezembro de 2026. Contagem de hoje: {live(REV)}.'),
@@ -436,7 +444,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
     ("Em que dia da semana cai o Réveillon 2026/2027?", "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."),
     ("Quando é o Carnaval 2027?", "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."),
     ("Quantos dias faltam para o Ano-Novo?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(NYE)} dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."),
-    ("Como coloco a contagem do Réveillon na Tela Bloqueada?", "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco a contagem do Réveillon na Tela Bloqueada?", "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para o Réveillon 2027?</h1>
 <p class="lede">A virada do ano é na <strong>quinta-feira, 31 de dezembro de 2026</strong>, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta. O Carnaval 2027 vai de <strong>sábado, 6</strong> a <strong>terça-feira, 9 de fevereiro</strong>. Contadores ao vivo abaixo.</p>
@@ -455,9 +463,10 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 <tr><th>Páscoa 2027</th><td>domingo, 28 de março de 2027</td></tr>
 <tr><th>Dias que restam em 2026</th><td>{days_to(REV) + 1} (em {TODAY.strftime('%d/%m/%Y')}, contando hoje)</td></tr>
 </tbody></table>
-<h2>A contagem na Tela de Início</h2>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
 
@@ -474,14 +483,14 @@ CARN_NEXT = [(y, easter(y) - dt.timedelta(days=47)) for y in (2027, 2028, 2029, 
 PT_DM = lambda d: f"{'1º' if d.day == 1 else d.day} de {['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'][d.month - 1]}"
 PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
   "title": "Quantos dias faltam para o Carnaval 2027? (6 a 9 de fevereiro)", "crumb": "Carnaval 2027",
-  "description": "O Carnaval 2027 vai de sábado, 6, a terça-feira, 9 de fevereiro; a Quarta-feira de Cinzas é dia 10. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "description": "Carnaval 2027: de sábado, 6, a terça-feira, 9 de fevereiro (Cinzas, dia 10). Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "hub_title": "Quantos dias faltam para o Carnaval 2027?", "hub_desc": "De sábado, 6, a terça-feira, 9 de fevereiro de 2027, com contagem ao vivo e as datas dos próximos anos.",
   "js": [COUNT_JS], "faq": [
     ("Quando é o Carnaval 2027?", "De sábado, 6 de fevereiro, a terça-feira, 9 de fevereiro de 2027. A Quarta-feira de Cinzas é 10 de fevereiro."),
     ("Quantos dias faltam para o Carnaval 2027?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(CARN_SAT)} dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."),
     ("O Carnaval é feriado nacional?", "Não. O Carnaval não está entre os feriados nacionais: nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura."),
     ("Quando é o Carnaval 2028?", f"A terça-feira de Carnaval de 2028 é {PT_DM(CARN_NEXT[1][1])}, e o sábado de Carnaval é {PT_DM(CARN_NEXT[1][1] - dt.timedelta(days=3))}."),
-    ("Como coloco a contagem do Carnaval na Tela de Início?", "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco a contagem do Carnaval na tela de bloqueio do iPhone?", "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para o Carnaval 2027?</h1>
 <p class="lede">O Carnaval 2027 começa no <strong>sábado, 6 de fevereiro</strong>, e a terça-feira de Carnaval é <strong>9 de fevereiro</strong>. A contagem abaixo é refeita todo dia.</p>
@@ -498,11 +507,12 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/", 
 <p>O Carnaval acompanha a Páscoa: a terça-feira de Carnaval é sempre 47 dias antes do domingo de Páscoa. Em 2027 a Páscoa é em 28 de março, então a terça-feira de Carnaval cai em 9 de fevereiro.</p>
 <h2>O Carnaval é feriado?</h2>
 <p>O Carnaval não está entre os feriados nacionais. Nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura antes de marcar a viagem.</p>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia e com a antecedência que você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Carnaval”.</li><li>Data: 6 de fevereiro de 2027. A data muda todo ano, então para 2028 crie um evento novo em vez de repetir.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <h2>O Carnaval nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Sábado de Carnaval</th><th>Terça-feira de Carnaval</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{PT_DM(t - dt.timedelta(days=3))}</td><td>{PT_DM(t)}</td></tr>" for y, t in CARN_NEXT)}</tbody></table>
-<h2>A contagem na Tela de Início</h2>
-<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Carnaval”.</li><li>Data: 6 de fevereiro de 2027. A data muda todo ano, então para 2028 crie um evento novo em vez de repetir.</li><li>Segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown.</li></ol>
 <p>Antes do Carnaval vem o fim do ano: veja <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/">quantos dias faltam para o Réveillon</a> e <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">para o Natal</a>.</p>"""})
 
 # 6b. Black Friday + Natal 2026（pt-BR）——09-28 借势：巴西是 Countdown 唯一有付费 + 五星的市场，节前 4–6 周要被收录
@@ -512,7 +522,7 @@ BF26, CYBER26, BF27, BF28 = dt.date(2026, 11, 27), dt.date(2026, 11, 30), dt.dat
 DEC13_1, DEC13_2, DEC13_2_PAY = dt.date(2026, 11, 30), dt.date(2026, 12, 20), dt.date(2026, 12, 18)
 PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
   "title": "Quantos dias faltam para a Black Friday 2026? (27 de novembro)", "crumb": "Black Friday 2026",
-  "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
+  "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias faltam, a Cyber Monday e como pôr a contagem na tela de bloqueio do iPhone.",
   "hub_title": "Quantos dias faltam para a Black Friday 2026?", "hub_desc": "Black Friday e Cyber Monday com contagem ao vivo, mais a 1ª parcela do 13º.",
   "more": [
     ('Faltam quantos dias para a Black Friday?', f'A Black Friday 2026 é sexta-feira, 27 de novembro. Contagem de hoje: {live(BF26)}.'),
@@ -525,7 +535,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
     ("Quando é a Cyber Monday 2026?", "Na segunda-feira, 30 de novembro de 2026 — a segunda-feira logo depois da Black Friday."),
     ("Quantos dias faltam para a Black Friday?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(BF26)} dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."),
     ("Até quando sai a 1ª parcela do 13º salário?", "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela tem prazo legal em 20 de dezembro; como em 2026 esse dia é um domingo, o pagamento vai para o dia útil anterior, sexta-feira, 18 de dezembro."),
-    ("Como coloco a contagem da Black Friday na Tela de Início?", "Crie o evento 27 de novembro de 2026 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data da Black Friday muda todo ano, então para 2027 crie um evento novo (26 de novembro) em vez de repetir. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco a contagem da Black Friday na tela de bloqueio do iPhone?", "Com o widget do Countdown: Contagem regressiva — o passo a passo está na seção sobre a tela de bloqueio, logo acima. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para a Black Friday 2026?</h1>
 <p class="lede">A Black Friday 2026 é na <strong>sexta-feira, 27 de novembro</strong>. Veja abaixo quantos dias e semanas faltam: a contagem atualiza conforme a data do seu aparelho.</p>
@@ -542,21 +552,22 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 <tr><th>2ª parcela do 13º</th><td>até {fmt(DEC13_2_PAY, "pt-BR")} (o prazo legal, 20/12, cai num domingo)</td></tr>
 <tr><th>Da Black Friday ao Natal</th><td>{(XMAS - BF26).days} dias</td></tr>
 </tbody></table>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Black Friday”.</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <h2>A Black Friday nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Data</th></tr></thead><tbody>
 <tr><td>2026</td><td>{fmt(BF26, "pt-BR")}</td></tr>
 <tr><td>2027</td><td>{fmt(BF27, "pt-BR")}</td></tr>
 <tr><td>2028</td><td>{fmt(BF28, "pt-BR")}</td></tr>
 </tbody></table>
-<h2>A contagem na Tela de Início</h2>
-<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Black Friday”.</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a Black Friday com a lista do que você quer comprar escrita no verso do evento.</li><li>Um lembrete uma semana antes, para acompanhar os preços antes da data e saber se o desconto é real.</li><li>Logo em seguida, a contagem para o <a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/">Natal 2026</a> — são {(XMAS - BF26).days} dias entre uma data e outra.</li></ul>"""})
 
 PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-09-28",
   "title": "Quantos dias faltam para o Natal 2026? (sexta-feira, 25/12)", "crumb": "Natal 2026",
-  "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
+  "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "hub_title": "Quantos dias faltam para o Natal 2026?", "hub_desc": "Contagem ao vivo para 25 de dezembro, com a véspera e o prazo da 2ª parcela do 13º (18/12 em 2026).",
   "more": [
     ('Faltam quantos dias para o Natal?', f'O Natal 2026 é sexta-feira, 25 de dezembro. Contagem de hoje: {live(XMAS)}.'),
@@ -568,7 +579,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
     ("Quantas semanas faltam para o Natal?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(XMAS)} dias, cerca de {days_to(XMAS) // 7} semanas. O contador desta página recalcula no dia em que você abre."),
     ("Até quando sai a 2ª parcela do 13º salário?", "Pela Lei 4.749/1965, o prazo legal da segunda parcela do 13º é 20 de dezembro. Em 2026 esse dia cai num domingo, então o pagamento vai para o dia útil anterior: sexta-feira, 18 de dezembro, uma semana antes do Natal. A primeira parcela vai até 30 de novembro."),
     ("Quando é o Natal 2027?", "Num sábado, 25 de dezembro de 2027. Em 2028, o Natal cai numa segunda-feira."),
-    ("Como coloco a contagem do Natal na Tela Bloqueada?", "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco a contagem do Natal na Tela Bloqueada?", "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para o Natal 2026?</h1>
 <p class="lede">O Natal 2026 é na <strong>sexta-feira, 25 de dezembro de 2026</strong>, e a véspera na <strong>quinta-feira, 24</strong>. O contador abaixo atualiza todo dia.</p>
@@ -581,15 +592,16 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
 <tr><th>2ª parcela do 13º</th><td>até {fmt(DEC13_2_PAY, "pt-BR")} (o prazo legal, 20/12, cai num domingo)</td></tr>
 <tr><th>Black Friday 2026</th><td>{fmt(BF26, "pt-BR")}</td></tr>
 </tbody></table>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
+<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Natal volta sozinho em 2027.</p>
+<ol><li>Toque em <strong>+</strong> e dê o nome “Natal”.</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <h2>O Natal nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Dia da semana</th></tr></thead><tbody>
 <tr><td>2026</td><td>{fmt(XMAS, "pt-BR")}</td></tr>
 <tr><td>2027</td><td>{fmt(dt.date(2027, 12, 25), "pt-BR")}</td></tr>
 <tr><td>2028</td><td>{fmt(dt.date(2028, 12, 25), "pt-BR")}</td></tr>
 </tbody></table>
-<h2>A contagem na Tela de Início</h2>
-<p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Natal volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Natal”.</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li><li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li></ol>
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a ceia com o que cada pessoa vai levar escrito no verso do evento.</li><li>Um lembrete duas semanas antes para os presentes que vêm pelo correio.</li><li>Depois do Natal, a contagem para o <a href="/tools/pt-br/contagem-regressiva-reveillon-2027/">Réveillon e o Carnaval 2027</a>.</li></ul>"""})
 
@@ -686,7 +698,6 @@ def month_span(n):
 M3_LO, M3_HI = 100 - month_span(3)[1], 100 - month_span(3)[0]   # 100 天 = 3 个月又几天
 M7_LO, M7_HI = month_span(7)
 PT_MONTHS = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
-PT_WIDGET_STEP = "<li>Segure a Tela de Início → <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong>) → Countdown.</li>"
 
 # 巴西学校假期：2026 学年结束日。只收直接读过官方文件的教育网络（10-10 核对）；没核到官方原文的州（RJ、BA 等）不列。
 # 依据：GSC 10-02~10-06 这页 747 次曝光 0 点击，查询词大半是「férias escolares」，要的是现成答案。
@@ -725,6 +736,10 @@ SCENES = [
   "title": "Quantos dias faltam para o meu aniversário? Contagem regressiva", "crumb": "Meu aniversário",
   "description": "Escolha o dia e o mês do seu aniversário e veja quantos dias, meses e horas faltam, em que dia da semana ele cai e quantos anos você vai fazer.",
   "hub_title": "Quantos dias faltam para o meu aniversário?", "hub_desc": "Dias, meses e horas até o próximo aniversário — e quantos anos você vai fazer.",
+  "more": [
+    ("Como colocar a contagem do aniversário na tela de bloqueio do iPhone?", "Crie o evento com o modelo de aniversário no Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. O widget é grátis e a contagem se repete sozinha todo ano."),
+    ("Como fazer contagem regressiva de aniversário no Instagram?", "No story, use a figurinha de contagem regressiva do próprio Instagram e escolha a data. As frases desta página servem de legenda; para ver os dias no celular todo dia, use o widget."),
+  ],
   "js": [SCENE_JS], "faq": [
     ("Como a conta é feita?", "São dias corridos entre hoje e o próximo aniversário, no fuso horário do seu aparelho. Se o aniversário deste ano já passou, a conta vai para o do ano que vem; se é hoje, a página diz que é hoje."),
     ("E quem nasceu em 29 de fevereiro?", "Nos anos que não são bissextos, a página conta até 28 de fevereiro. O próximo 29 de fevereiro é em 2028."),
@@ -736,9 +751,10 @@ SCENES = [
 <p class="lede">Escolha o dia e o mês em que você nasceu e veja quantos dias faltam para o próximo aniversário e em que dia da semana ele cai. Informe o ano, se quiser, para ver quantos anos vai fazer. Serve também para o aniversário do filho, da filha ou do amor.</p>
 <form class="calc c4" id="bday"><label>Dia<select name="dia" required>{"".join(f'<option value="{d}">{d}</option>' for d in range(1, 32))}</select></label><label>Mês<select name="mes" required>{"".join(f'<option value="{i}">{m}</option>' for i, m in enumerate(PT_MONTHS, 1))}</select></label><label>Ano (opcional)<input type="number" name="ano" min="1900" max="{TODAY.year}" placeholder="1995" inputmode="numeric"></label><button type="submit">Contar</button></form>
 <div id="bday-out" class="tool-out" hidden aria-live="polite"></div>
-<h2>A contagem na Tela de Início</h2>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> o aniversário fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos. O app tem modelos prontos, entre eles o de aniversário, que já vêm com a repetição e os lembretes certos. Os eventos são ilimitados: cabem o seu, o dos filhos e o de quem mais você quiser.</p>
 <ol><li>Toque em <strong>+</strong> e escolha o modelo de aniversário.</li><li>Informe a data de nascimento.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <p>Quando a contagem chega a um marco — cem dias, uma semana, a manhã do dia —, o app abre o número em tela cheia e prepara um cartão para compartilhar.</p>
 <h2>Frases para a contagem regressiva</h2>
 <p>Para o story ou a legenda do Instagram:</p>
@@ -753,6 +769,7 @@ SCENES = [
     ("Quantos dias faltam para as férias de dezembro?", "Nas redes da tabela acima, as aulas de 2026 terminam entre 18 e 23 de dezembro, e a tabela mostra quantos dias faltam em cada uma. Para as férias do trabalho, use o contador com a data combinada com a empresa."),
     ("Quantos dias faltam para as férias de julho?", "O recesso de julho de 2026 já passou: foi de 7 a 23 de julho na rede estadual de São Paulo, de 20 a 31 de julho em Minas Gerais, de 10 a 26 de julho em Pernambuco e de 27 de julho a 2 de agosto no Rio Grande do Sul. Para julho de 2027, digite no contador a data do calendário de 2027 da sua rede."),
     ("Quantas semanas faltam para as férias?", "A contagem no alto da página mostra também as semanas e os dias que faltam para 18 de dezembro. No contador, o resultado vem em dias, em dias úteis e em semanas."),
+    ("Como colocar a contagem regressiva das férias na tela de bloqueio?", "No iPhone, crie o evento “Férias” no Countdown: Contagem regressiva com a data do último dia de aula ou do primeiro dia de férias e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. O widget é grátis e o número diminui sozinho todo dia."),
     ("Quantos dias faltam para as férias do fim do ano no trabalho?", "Depende da data combinada com a empresa. Digite o primeiro dia das férias no contador para ver os dias corridos e os dias úteis que faltam."),
   ],
   "js": [SCENE_JS, COUNT_JS], "faq": [
@@ -776,11 +793,12 @@ SCENES = [
 <form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
 <p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados.</p>
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
-<h2>Férias do trabalho (CLT)</h2>
-<ul><li>São 30 dias corridos a cada 12 meses de trabalho para quem teve até 5 faltas injustificadas no período (art. 130).</li><li>Com a sua concordância, podem ser divididas em até três períodos: um de pelo menos 14 dias e os outros de pelo menos 5 dias cada (art. 134, § 1º).</li><li>A empresa comunica as férias por escrito com pelo menos 30 dias de antecedência (art. 135), e o pagamento sai até 2 dias antes do início (art. 145).</li></ul>
-<h2>A contagem na Tela de Início</h2>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
+<h2>Férias do trabalho (CLT)</h2>
+<ul><li>São 30 dias corridos a cada 12 meses de trabalho para quem teve até 5 faltas injustificadas no período (art. 130).</li><li>Com a sua concordância, podem ser divididas em até três períodos: um de pelo menos 14 dias e os outros de pelo menos 5 dias cada (art. 134, § 1º).</li><li>A empresa comunica as férias por escrito com pelo menos 30 dias de antecedência (art. 135), e o pagamento sai até 2 dias antes do início (art. 145).</li></ul>
 <p>Para saber até quando o salário do mês precisa ser pago, veja <a href="/tools/pt-br/quinto-dia-util/">quando é o quinto dia útil</a> de cada mês.</p>
 <p>Se as férias vão ter viagem, o <a href="/beforego/pt-br/">BeforeGo</a> monta um roteiro dia a dia a partir do print de um post de viagem, e a lista de bagagem se monta sozinha a partir do destino e das datas.</p>
 <p>Para qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
@@ -804,10 +822,57 @@ SCENES = [
 <table><thead><tr><th>Tempo de namoro</th><th>Dias</th></tr></thead><tbody>{"".join(f"<tr><td>{n} {'mês' if n == 1 else 'meses'}</td><td>{lo} a {hi} dias</td></tr>" for n, (lo, hi) in ((n, month_span(n)) for n in range(1, 12)))}<tr><td>1 ano</td><td>365 ou 366 dias</td></tr></tbody></table>
 <h2>Marcos para comemorar</h2>
 <ul><li><strong>Mesversário</strong>: todo mês, no mesmo dia em que começaram; quando o mês não tem esse dia, no último dia do mês.</li><li><strong>100 dias</strong>: dá 3 meses e mais {M3_LO} a {M3_HI} dias, conforme o mês de início. Depois vêm os 200, os 500 e os 1.000 dias.</li><li><strong>Aniversário de namoro</strong>: 365 dias, ou 366 quando o ano passa por um 29 de fevereiro.</li></ul>
-<h2>A contagem no celular</h2>
-<p>No <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> um evento pode contar a partir de uma data: crie o dia em que vocês começaram e ele mostra há quantos dias estão juntos num widget grátis da Tela de Início. No verso do evento dá para escrever algumas linhas, guardar fotos e gravar uma voz — a história do dia fica junto com o dia.</p>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
+<p>No <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> um evento pode contar a partir de uma data: crie o dia em que vocês começaram e ele mostra há quantos dias estão juntos num widget grátis da Tela Bloqueada ou da Tela de Início. No verso do evento dá para escrever algumas linhas, guardar fotos e gravar uma voz — a história do dia fica junto com o dia.</p>
 <ol><li>Toque em <strong>+</strong>, dê um nome e escolha a data em que começaram.</li><li>Escolha contar a partir dessa data.</li><li>Para o mesversário, crie outro evento que se repete todo mês.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <p>Quer dar a contagem de presente em QR code? Copie o link gerado acima e transforme em QR code com qualquer gerador — o nosso é o <a href="/qrcodestudio/" hreflang="en">QR Studio</a>, para iPhone (página em inglês).</p>"""},
+ # 10-12：锁屏教程页（pt-BR，Countdown）。依据 10-12 GSC：「quantos dias faltam…」这类词被 Google AI 概览直接答掉，排第 8 也 0 点击；
+ # 全站唯一有点击的查询是日语「共通テストカウントダウン 待ち受け」（想把倒数放到手机上）。Google 巴西联想词：
+ # 「como colocar contagem regressiva na tela de bloqueio do iphone / … do celular / … android / … samsung」「widget contagem regressiva iphone gratuito」
+ # 「contagem regressiva iphone foto」「contador de dias widget iphone」「como colocar contagem regressiva no calendário do celular」。
+ # app 说法只用 pt-BR 商店 1.4.16 描述：widgets 全尺寸免费（Tela de Início / Tela Bloqueada）、eventos ilimitados、repetição、importar de calendário；
+ # fotos próprias como fundo、Atividade ao Vivo na Tela Bloqueada 属于 Pro；「Suas contagens, lembretes e widgets funcionam igual, assinando ou não」。
+ {"path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+  "title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "crumb": "Na tela de bloqueio",
+  "description": "Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.",
+  "hub_title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "hub_desc": "Widget grátis na Tela Bloqueada e na Tela de Início: o número de dias muda sozinho, sem refazer papel de parede.",
+  "more": [
+    ("Como colocar contagem regressiva na tela do celular?", "No iPhone, com um widget: crie o evento no app e adicione o widget na Tela Bloqueada ou na Tela de Início, como nos passos acima. No Android, o caminho depende do aparelho e do app que você usar."),
+    ("Como fazer uma contagem regressiva de dias no celular?", 'Dê um nome ao evento e escolha a data: o widget mostra quantos dias faltam e o número diminui sozinho a cada dia. Se você só quer saber o número de hoje, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.'),
+    ("Dá para usar os eventos do calendário do iPhone?", "Dá: o Countdown importa eventos do calendário e mostra quantos dias faltam no widget."),
+  ],
+  "js": [COUNT_JS], "faq": [
+    ("O widget de contagem regressiva é grátis?", "Sim. No Countdown: Contagem regressiva, todos os widgets são grátis em todos os tamanhos, na Tela de Início e na Tela Bloqueada, e não há limite de eventos."),
+    ("Posso colocar o número no papel de parede?", "Pode, mas o papel de parede é uma imagem: o número fica parado no dia em que você fez a imagem. Para um número que muda sozinho, use o widget da Tela Bloqueada, que fica abaixo do relógio."),
+    ("Dá para usar uma foto minha na contagem?", "No Countdown, usar uma foto sua como fundo faz parte do Countdown Pro. As contagens, os lembretes e os widgets funcionam igual, assinando ou não."),
+    ("Funciona no Android, Samsung ou Xiaomi?", "Não: o Countdown é um app para iPhone e iPad. No Android, procure na Google Play um app de contagem regressiva com widget para a tela inicial."),
+    ("O widget é a mesma coisa que a Atividade ao Vivo?", "Não. O widget da Tela Bloqueada fica abaixo do relógio e é grátis. A Atividade ao Vivo na Tela Bloqueada é um recurso do Countdown Pro."),
+    ("A contagem se repete todo ano?", "Se você quiser: o evento pode repetir todo ano, todo mês, toda semana ou a cada poucos dias. Aniversários e o Natal voltam sozinhos; datas que mudam todo ano, como o Carnaval e a Black Friday, pedem um evento novo."),
+  ],
+  "body": f"""<h1>Como colocar contagem regressiva na tela de bloqueio do iPhone</h1>
+<p class="lede">Para ver quantos dias faltam para as férias, o Natal ou um aniversário sem abrir nada, deixe a contagem na tela de bloqueio (a Tela Bloqueada) ou na Tela de Início do iPhone. Um papel de parede com o número precisa ser refeito todo dia; um widget recebe a data uma vez e o número diminui sozinho.</p>
+{top_cta("countdown", "pt-BR", "Colocar na tela de bloqueio — grátis")}
+<h2>Papel de parede ou widget?</h2>
+<table><thead><tr><th></th><th>Papel de parede com o número</th><th>Widget</th></tr></thead><tbody>
+<tr><th>Número</th><td>fica como no dia em que você fez a imagem</td><td>muda sozinho todo dia</td></tr>
+<tr><th>Trabalho</th><td>refazer a imagem todo dia</td><td>informar a data uma vez</td></tr>
+<tr><th style="white-space:nowrap">Onde fica</th><td>no fundo da Tela Bloqueada e da Tela de Início</td><td>abaixo do relógio, na Tela Bloqueada, e na Tela de Início</td></tr>
+</tbody></table>
+<h2>Na tela de bloqueio, passo a passo</h2>
+<ol><li>Instale o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a>, toque em <strong>+</strong> e informe o nome (por exemplo, “Férias”) e a data.</li><li>Na Tela Bloqueada, toque e segure até aparecer <strong>Personalizar</strong>, e toque nele.</li><li>Escolha a Tela Bloqueada e toque em <strong>Adicionar widgets</strong>.</li><li>Escolha Countdown e toque no widget que você quer. A contagem passa a aparecer abaixo do relógio.</li></ol>
+<p>Todos os widgets são grátis, em todos os tamanhos, e os eventos são ilimitados: dá para ter as férias, o aniversário e o Natal ao mesmo tempo.</p>
+<h2>Na Tela de Início</h2>
+<ol><li>Toque e segure um espaço vazio da Tela de Início.</li><li>Toque em <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong> no canto superior esquerdo).</li><li>Escolha Countdown e o tamanho, e toque em <strong>Adicionar widget</strong>.</li></ol>
+<h2>As datas que mais se contam</h2>
+<div class="pop">
+<a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/" data-date="{FERIAS_MAIN.isoformat()}"><b data-n>{days_to(FERIAS_MAIN)}</b><span><span data-unit>dias</span> para o fim das aulas (rede estadual de SP, MG, PR e RS)</span></a>
+<a href="/tools/pt-br/contagem-regressiva-black-friday-2026/" data-date="{BF26.isoformat()}"><b data-n>{days_to(BF26)}</b><span><span data-unit>dias</span> para a Black Friday 2026</span></a>
+<a href="/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/" data-date="{XMAS.isoformat()}"><b data-n>{days_to(XMAS)}</b><span><span data-unit>dias</span> para o Natal 2026</span></a>
+</div>
+<p class="meta">Os números acima foram calculados em {TODAY.strftime("%d/%m/%Y")} e se atualizam quando a página abre.</p>
+<h2>Quando a contagem chega a um marco</h2>
+<p>Cem dias, uma semana, a manhã do dia: quando a contagem chega a um marco, o app abre o número em tela cheia e prepara um cartão para compartilhar. Para saber o número de qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>.</p>"""},
 ]
 _ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/quantos-dias-faltam/")
 PAGES[_ci + 1:_ci + 1] = SCENES   # 场景页紧跟在计算器后面（常青页排在节日页前面）
@@ -915,9 +980,10 @@ def escola_page(e):
 <p>{esc(y27)}{y27_src}</p>
 <h2>Outros estados</h2>
 <p>Veja também o calendário {outros}. A página <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a> compara as redes lado a lado e tem um contador com dias úteis para as férias do trabalho.</p>
-<h2>A contagem na Tela de Início</h2>
+<h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: {PT_DM(fim)} de 2026, o último dia de aula. Adicione um lembrete uma semana antes.</li>{PT_WIDGET_STEP}</ol>"""
+<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: {PT_DM(fim)} de 2026, o último dia de aula. Adicione um lembrete uma semana antes.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}"""
     return {"path": path, "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
             "title": title, "crumb": f"Férias escolares: {e['nome']}", "description": desc,
             "hub_title": f"Férias escolares {e['em']} (2026)", "hub_desc": e["hub_desc"],
@@ -987,7 +1053,7 @@ PAGES.insert(_fi + 1 + len(ESCOLAS), {"path": "/tools/pt-br/quinto-dia-util/", "
     ("E se o quinto dia útil cair no sábado?", "O prazo termina nesse sábado. Quando o pagamento é feito pelo banco, o valor precisa estar à disposição do empregado até o quinto dia útil (art. 14, II, da mesma instrução normativa)."),
     ("Feriado municipal ou estadual muda o quinto dia útil?", "Muda. O feriado local não entra na contagem, então, se ele cair nos primeiros dias do mês, o quinto dia útil passa para o dia útil seguinte na sua cidade. A tabela desta página considera só os feriados nacionais."),
     ("De onde vem a regra do quinto dia útil?", "Do art. 459, § 1º, da CLT: quando o pagamento é mensal, ele deve ser feito, o mais tardar, até o quinto dia útil do mês seguinte ao trabalhado."),
-    ("Como coloco o dia do pagamento na Tela de Início?", "Crie no Countdown: Contagem regressiva um evento com a data do quinto dia útil deste mês e adicione o widget na Tela de Início. Como a data muda de mês para mês, atualize o evento no mês seguinte; se a sua empresa paga sempre no mesmo dia, use a repetição mensal. Os widgets são grátis em todos os tamanhos."),
+    ("Como coloco o dia do pagamento na tela de bloqueio do iPhone?", "Crie no Countdown: Contagem regressiva um evento com a data do quinto dia útil deste mês e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Como a data muda de mês para mês, atualize o evento no mês seguinte; se a sua empresa paga sempre no mesmo dia, use a repetição mensal. Os widgets são grátis em todos os tamanhos."),
   ],
   "more": [(f"Quando é o quinto dia útil de {PT_MONTHS[m - 1]} de {y}?", f"É {PT_WD[q.weekday()]}, {PT_DM(q)} de {y}, contando o sábado e sem contar domingos e feriados nacionais.") for y, m, q, _ in QDU_NEXT[:2]]
         + [("Quando cai o pagamento este mês?", "Depende da empresa: a lei fixa só a data-limite, que é o quinto dia útil do mês. Muitas empresas pagam antes, em dia fixo, por acordo ou convenção coletiva.")],
@@ -1004,9 +1070,10 @@ PAGES.insert(_fi + 1 + len(ESCOLAS), {"path": "/tools/pt-br/quinto-dia-util/", "
 <p>Um exemplo: em novembro de 2026, o dia 1º é domingo e o dia 2, segunda-feira, é feriado (Finados). Contam terça, 3, quarta, 4, quinta, 5, sexta, 6, e sábado, 7 — o quinto dia útil é sábado, 7 de novembro.</p>
 <h2>Quantos dias úteis tem cada mês?</h2>
 <p>Para o trabalho de segunda a sexta, a conta é outra: os dias de segunda a sexta do mês, menos os feriados nacionais que caem nesses dias. É a terceira coluna da tabela. Os feriados nacionais considerados são 1º de janeiro, Paixão de Cristo, 21 de abril, 1º de maio, 7 de setembro, 12 de outubro, 2, 15 e 20 de novembro e 25 de dezembro. Carnaval e Corpus Christi não são feriados nacionais — são ponto facultativo ou feriado local —, por isso não foram descontados.</p>
-<h2>O dia do pagamento na Tela de Início</h2>
+<h2>O dia do pagamento na tela de bloqueio e na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem até o pagamento fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembrete no dia.</p>
 <ol><li>Toque em <strong>+</strong> e dê o nome “Pagamento”.</li><li>Data: o quinto dia útil deste mês. Como ele muda de mês para mês, atualize a data no mês seguinte; se a empresa paga sempre no mesmo dia, ligue a repetição mensal.</li>{PT_WIDGET_STEP}</ol>
+{PT_LOCK_LINK}
 <p>Para contar até qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>; para as férias, veja <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a>.</p>"""})
 
 # 7. 发票模板
@@ -1277,7 +1344,7 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
 <h2>把過年倒數放在鎖定畫面</h2>
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具全部尺寸都免費，事件數量不限；倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。</p>
 <ol><li>點 <strong>+</strong>，輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
-<p>點一下事件，它會翻到自己的背面：可以寫下年貨清單、放幾張照片，這一天的故事就留在這一天裡。</p>"""})
+<p>點一下事件，它會翻到自己的背面：可以寫下年貨清單、放幾張照片，這一天的故事就留在這一天裡。桌布和小工具差在哪裡，見 <a href="/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>"""})
 
 # 7c2. 台灣：2027 連假行事曆（zh-Hant，Countdown）——10-10
 # 依據：10-10 Google 台灣聯想詞「2027 連假行事曆 / 2027 連假 / 2027 春節 連假 / 2027 過年 連假 / 過年 還有幾天」。
@@ -1351,7 +1418,137 @@ PAGES.append({"path": "/tools/zh-hant/2027-lian-jia-xing-shi-li/", "lang": "zh-H
 <h2>把連假倒數放在主畫面</h2>
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。「<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>」的小工具全部尺寸都免費，事件數量不限。</p>
 <ol><li>點 <strong>+</strong>，輸入連假的名稱，例如「春節連假」。</li><li>日期設為連假的第一天，例如 2027 年 2 月 4 日。</li><li>長按主畫面 →「編輯」→「加入小工具」→ Countdown。</li></ol>
-<p>農曆新年的日期和香港的公眾假期，見 <a href="/tools/zh-hant/nong-li-xin-nian-2027/">2027 農曆新年倒數</a>。</p>"""})
+<p>農曆新年的日期和香港的公眾假期，見 <a href="/tools/zh-hant/nong-li-xin-nian-2027/">2027 農曆新年倒數</a>；放到鎖定畫面的完整步驟，見 <a href="/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>"""})
+
+# 7c3. 台灣：116 學測 / 116 會考倒數 + iPhone 主畫面倒數教學（zh-Hant，Countdown）——10-12
+# 依据：10-12 GSC——「…まであと何日 / いつ」「quantos dias faltam…」這類問日期、問天數的詞被 Google AI 概覽直接答掉，排第 8 也 0 點擊；
+# 全站唯一有點擊的是「共通テストカウントダウン 待ち受け」（想把考試倒數放到手機上）。Google 台灣聯想詞：「會考 倒數 桌布 / 116 會考 倒數 桌布 /
+# 學 測 倒數 桌布 / 分科 倒數 桌布」「iphone 倒數 計時 桌面」「倒數 app 桌面」「iphone 倒數 widget」「考試倒數 app」。
+# 日期只用 10-12 讀過的官方原文：大考中心「116學年度考試重要試務日期」PDF（ceec.edu.tw 首頁「重要日程」）；
+# 教育部 115-09-11 臺教授國部字第1155404304號函「116學年度國中教育會考及全國高級中等學校與專科學校五年制適性入學重要日程表」PDF（cap.rcpet.edu.tw）。
+# app 說法只用 zh-Hant 商店 1.4.16 描述：小工具全部尺寸免費（主畫面和鎖定畫面）、事件數量無限制、節點整螢幕；
+# 自己的照片做背景、鎖定畫面即時動態屬於 Pro；「無論訂不訂閱，倒數、提醒和小工具都照常能用」。⛔ 不用「倒數日」三個字（APP280001-B）。
+EXAMS_CHECKED = dt.date(2026, 10, 12)
+XC1, XC3, XC_REG1, XC_REG2, XC_ROOM, XC_SCORE, XC_MAIL = (dt.date(2027, 1, 22), dt.date(2027, 1, 24), dt.date(2026, 10, 27), dt.date(2026, 11, 10),
+                                                          dt.date(2027, 1, 5), dt.date(2027, 2, 25), dt.date(2027, 2, 26))
+FK1, FK2, FK_SCORE = dt.date(2027, 7, 10), dt.date(2027, 7, 11), dt.date(2027, 7, 29)
+HK1, HK2, HK_REG1, HK_REG2, HK_TICKET, HK_SCORE = dt.date(2027, 5, 15), dt.date(2027, 5, 16), dt.date(2027, 3, 4), dt.date(2027, 3, 6), dt.date(2027, 4, 9), dt.date(2027, 6, 4)
+ZH_LOCK_PATH = "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/"
+ZH_LOCK_STEPS = ('<li>鎖定畫面：長按鎖定畫面 →「自訂」→ 鎖定畫面 →「加入小工具」→ 選 Countdown。</li>'
+                 '<li>主畫面：長按主畫面 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）→ 選 Countdown，挑一個尺寸。</li>')
+def zh_nodes(d):
+    return "".join(f"<tr><td>{k}</td><td>{fmt(d - dt.timedelta(days=n), 'zh-Hant')}</td></tr>"
+                   for k, n in (("100 天前", 100), ("50 天前", 50), ("30 天前", 30), ("1 週前", 7), ("前一天", 1)))
+
+PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+  "title": "116 學測倒數還有幾天？2027/1/22–1/24 考試，倒數放 iPhone 桌面", "crumb": "116 學測倒數",
+  "description": "116 學年度學科能力測驗在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。每天更新的學測倒數、報名與分科測驗日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "hub_title": "116 學測倒數", "hub_desc": "1 月 22 日到 24 日考試，報名、成績公布與分科測驗日期，每天更新的倒數。",
+  "more": [
+    ("有學測倒數桌布嗎？", f'桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 1 月 22 日，數字每天自動減一。步驟在下方「把學測倒數放到 iPhone 桌面」。'),
+    ("學測還有幾週？", "頁面最上方的數字下面，會寫還有幾週又幾天，打開當天重新計算。"),
+    ("學測倒數 100 天是哪一天？", f"{fmt(XC1 - dt.timedelta(days=100), 'zh-Hant')}。其他節點見「倒數的節點」表。"),
+  ],
+  "js": [COUNT_JS], "faq": [
+    ("116 學測是哪幾天？", f"{fmt(XC1, 'zh-Hant')}到{fmt(XC3, 'zh-Hant')}，一共三天。"),
+    ("116 學測什麼時候報名？", f"{fmt(XC_REG1, 'zh-Hant')}到{fmt(XC_REG2, 'zh-Hant')}。"),
+    ("學測成績什麼時候公布？", f"{fmt(XC_SCORE, 'zh-Hant')}公布成績並開放查詢，隔天寄發成績通知單。"),
+    ("116 分科測驗是哪一天？", f"{fmt(FK1, 'zh-Hant')}和{fmt(FK2, 'zh-Hant')}，成績在{fmt(FK_SCORE, 'zh-Hant')}公布。"),
+    ("學測還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離學測第一天還有 {days_to(XC1)} 天，約 {days_to(XC1) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("怎麼把學測倒數放在 iPhone 鎖定畫面？", "在「倒數計時 Widget：紀念日提醒」建立 2027 年 1 月 22 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
+  ],
+  "body": f"""<h1>116 學測倒數</h1>
+<p class="lede">116 學年度學科能力測驗在 <strong>2027 年 1 月 22 日（星期五）到 24 日（星期日）</strong>。下面的倒數每天更新；想每天在手機上看到，可以把它放到 iPhone 的主畫面或鎖定畫面。</p>
+{counter(XC1, "zh-Hant", "學測第一天")}
+<h2>116 學年度考試日程</h2>
+<table><thead><tr><th>項目</th><th>日期</th></tr></thead><tbody>
+<tr><td>學測報名</td><td>{fmt(XC_REG1, "zh-Hant")}～{fmt(XC_REG2, "zh-Hant")}</td></tr>
+<tr><td>開放查詢應試號碼、考試地點</td><td>{fmt(XC_ROOM, "zh-Hant")}</td></tr>
+<tr><td>學測考試</td><td>{fmt(XC1, "zh-Hant")}～{fmt(XC3, "zh-Hant")}</td></tr>
+<tr><td>學測公布成績</td><td>{fmt(XC_SCORE, "zh-Hant")}</td></tr>
+<tr><td>寄發學測成績通知單</td><td>{fmt(XC_MAIL, "zh-Hant")}</td></tr>
+<tr><td>分科測驗</td><td>{fmt(FK1, "zh-Hant")}～{fmt(FK2, "zh-Hant")}</td></tr>
+<tr><td>分科測驗公布成績</td><td>{fmt(FK_SCORE, "zh-Hant")}</td></tr>
+</tbody></table>
+<p class="meta">資料來源：<a href="https://www.ceec.edu.tw/" rel="noopener">大學入學考試中心</a>「116學年度考試重要試務日期」（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。各科的考試時間與應考規定，以大考中心公告的簡章為準。</p>
+<h2>把學測倒數放到 iPhone 桌面</h2>
+<p>很多人會找「學測倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
+<ol><li>點 <strong>+</strong>，輸入「學測」，日期設為 2027 年 1 月 22 日。想一起倒數分科測驗，就再加一個 7 月 10 日的事件。</li>{ZH_LOCK_STEPS}</ol>
+<p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
+<h2>倒數的節點</h2>
+<table><thead><tr><th>節點</th><th>日期</th></tr></thead><tbody>{zh_nodes(XC1)}</tbody></table>
+<p>國中教育會考的倒數，見 <a href="/tools/zh-hant/116-hui-kao-dao-shu/">116 會考倒數</a>。</p>"""})
+
+PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+  "title": "116 會考倒數還有幾天？2027/5/15–5/16 考試，倒數放 iPhone 桌面", "crumb": "116 會考倒數",
+  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。每天更新的會考倒數、報名與准考證日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "hub_title": "116 會考倒數", "hub_desc": "5 月 15 日、16 日考試，報名、准考證與成績日期，每天更新的倒數。",
+  "more": [
+    ("有會考倒數桌布嗎？", '桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 5 月 15 日，數字每天自動減一。步驟在下方「把會考倒數放到 iPhone 桌面」。'),
+    ("會考還有幾週？", "頁面最上方的數字下面，會寫還有幾週又幾天，打開當天重新計算。"),
+    ("會考倒數 100 天是哪一天？", f"{fmt(HK1 - dt.timedelta(days=100), 'zh-Hant')}。其他節點見「倒數的節點」表。"),
+  ],
+  "js": [COUNT_JS], "faq": [
+    ("116 會考是哪幾天？", f"{fmt(HK1, 'zh-Hant')}和{fmt(HK2, 'zh-Hant')}。"),
+    ("116 會考什麼時候報名？", f"{fmt(HK_REG1, 'zh-Hant')}到{fmt(HK_REG2, 'zh-Hant')}。"),
+    ("會考准考證什麼時候寄？", f"{fmt(HK_TICKET, 'zh-Hant')}寄發准考證。"),
+    ("會考成績什麼時候公布？", f"{fmt(HK_SCORE, 'zh-Hant')}寄發成績通知單，並開放網路查詢。"),
+    ("會考還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離會考第一天還有 {days_to(HK1)} 天，約 {days_to(HK1) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("怎麼把會考倒數放在 iPhone 鎖定畫面？", "在「倒數計時 Widget：紀念日提醒」建立 2027 年 5 月 15 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
+  ],
+  "body": f"""<h1>116 會考倒數</h1>
+<p class="lede">116 年國中教育會考在 <strong>2027 年 5 月 15 日（星期六）、16 日（星期日）</strong>。下面的倒數每天更新；想每天在手機上看到，可以把它放到 iPhone 的主畫面或鎖定畫面。</p>
+{counter(HK1, "zh-Hant", "會考第一天")}
+<h2>116 年會考日程</h2>
+<table><thead><tr><th>項目</th><th>日期</th></tr></thead><tbody>
+<tr><td>會考報名</td><td>{fmt(HK_REG1, "zh-Hant")}～{fmt(HK_REG2, "zh-Hant")}</td></tr>
+<tr><td>寄發准考證</td><td>{fmt(HK_TICKET, "zh-Hant")}</td></tr>
+<tr><td>會考考試</td><td>{fmt(HK1, "zh-Hant")}～{fmt(HK2, "zh-Hant")}</td></tr>
+<tr><td>寄發成績通知單、開放網路查詢</td><td>{fmt(HK_SCORE, "zh-Hant")}</td></tr>
+</tbody></table>
+<p class="meta">資料來源：教育部 115 年 9 月 11 日臺教授國部字第 1155404304 號函「116學年度國中教育會考及全國高級中等學校與專科學校五年制適性入學重要日程表」，刊於<a href="https://cap.rcpet.edu.tw/" rel="noopener">國中教育會考網站</a>（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。報名方式和考試時間表，以會考簡章為準。</p>
+<h2>把會考倒數放到 iPhone 桌面</h2>
+<p>很多人會找「會考倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
+<ol><li>點 <strong>+</strong>，輸入「會考」，日期設為 2027 年 5 月 15 日。</li>{ZH_LOCK_STEPS}</ol>
+<p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
+<h2>倒數的節點</h2>
+<table><thead><tr><th>節點</th><th>日期</th></tr></thead><tbody>{zh_nodes(HK1)}</tbody></table>
+<p>大學學測的倒數，見 <a href="/tools/zh-hant/116-xue-ce-dao-shu/">116 學測倒數</a>。</p>"""})
+
+PAGES.append({"path": ZH_LOCK_PATH, "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+  "title": "iPhone 桌面倒數怎麼放？主畫面、鎖定畫面倒數小工具教學", "crumb": "iPhone 桌面倒數",
+  "description": "把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。",
+  "hub_title": "iPhone 桌面倒數教學", "hub_desc": "在主畫面和鎖定畫面放「還有幾天」的步驟，學測、會考、過年都適用。",
+  "js": [COUNT_JS], "faq": [
+    ("桌面倒數小工具要錢嗎？", "不用。「倒數計時 Widget：紀念日提醒」的小工具全部尺寸都免費，主畫面和鎖定畫面都能放，事件數量也沒有上限。"),
+    ("桌布可以直接寫上倒數天數嗎？", "可以，但桌布是一張圖片，數字會停在做圖那一天。想讓「還有幾天」每天自己變，要用鎖定畫面或主畫面的小工具。"),
+    ("可以用自己的照片當背景嗎？", "可以，用你自己的照片做背景屬於 Countdown Pro。無論訂不訂閱，倒數、提醒和小工具都照常能用。"),
+    ("鎖定畫面小工具和即時動態一樣嗎？", "不一樣。鎖定畫面的小工具在時間下方，免費；鎖定畫面的即時動態是 Countdown Pro 的功能。"),
+    ("Android 手機可以用嗎？", "這個 App 只有 iPhone 和 iPad 版，沒有 Android 版。Android 手機請到 Google Play 找支援桌面小工具的倒數計時 App。"),
+  ],
+  "body": f"""<h1>iPhone 桌面倒數怎麼放？</h1>
+<p class="lede">學測、會考、過年、旅行……想不打開任何東西就看到「還有幾天」，可以把倒數放到 iPhone 的鎖定畫面或主畫面。寫上數字的桌布每天都得重做一張；小工具只要設定一次日期，數字就會每天自動減一。</p>
+{top_cta("countdown", "zh-Hant", "放到鎖定畫面（免費）")}
+<h2>桌布和小工具差在哪裡</h2>
+<table><thead><tr><th></th><th>寫上數字的桌布</th><th>小工具</th></tr></thead><tbody>
+<tr><th>數字</th><td>停在做圖那一天</td><td>每天自動更新</td></tr>
+<tr><th>要做的事</th><td>每天重做一張</td><td>設定一次日期</td></tr>
+<tr><th style="white-space:nowrap">位置</th><td>鎖定畫面、主畫面的背景</td><td>鎖定畫面的時間下方、主畫面</td></tr>
+</tbody></table>
+<h2>放到鎖定畫面</h2>
+<ol><li>安裝<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>，點 <strong>+</strong>，輸入名稱（例如「學測」）和日期。</li><li>長按鎖定畫面，等「自訂」出現後點一下，選擇鎖定畫面。</li><li>點「加入小工具」，選 Countdown，再點想用的小工具。倒數就會出現在時間下方。</li></ol>
+<p>小工具全部尺寸都免費，事件數量沒有上限：學測、分科測驗和過年可以同時倒數。</p>
+<h2>放到主畫面</h2>
+<ol><li>長按主畫面的空白處。</li><li>點左上角的「編輯」→「加入小工具」（iOS 17 是點左上角的「＋」）。</li><li>選 Countdown 和尺寸，再點「加入小工具」。</li></ol>
+<h2>大家常倒數的日子</h2>
+<div class="pop">
+<a href="/tools/zh-hant/116-xue-ce-dao-shu/" data-date="{XC1.isoformat()}"><b data-n>{days_to(XC1)}</b><span><span data-unit>天</span>（116 學測）</span></a>
+<a href="/tools/zh-hant/116-hui-kao-dao-shu/" data-date="{HK1.isoformat()}"><b data-n>{days_to(HK1)}</b><span><span data-unit>天</span>（116 會考）</span></a>
+<a href="/tools/zh-hant/nong-li-xin-nian-2027/" data-date="{CNY.isoformat()}"><b data-n>{days_to(CNY)}</b><span><span data-unit>天</span>（2027 農曆新年）</span></a>
+</div>
+<p class="meta">上面的數字是 {TODAY.year}年{TODAY.month}月{TODAY.day}日算的，打開頁面時會重新計算。2027 年的連假日期見 <a href="/tools/zh-hant/2027-lian-jia-xing-shi-li/">2027 連假行事曆</a>。</p>
+<h2>倒數走到節點時</h2>
+<p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。點一下事件，它會翻到自己的背面，可以寫幾句話、放照片、錄一段聲音。</p>"""})
 
 # 7d. 日本：あと何日（日数計算）+ 共通テスト2027（ja，Countdown）——09-29
 # 依据：Google JP 联想词（共通テスト まであと何日 2027 / カウントダウン 待ち受け / あと何日 アプリ / 共通テスト 100日前 いつ；
@@ -1436,7 +1633,7 @@ PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "lang": "ja", "kin
     ("壁紙そのものに数字を入れることはできますか？", "壁紙は画像なので、入れた数字はその日のまま変わりません。毎日変わる「あと何日」を待ち受けに出したいときは、ロック画面のウィジェットを使います。"),
     ("受験までのカウントダウンにも使えますか？", "使えます。大学入学共通テスト2027なら、イベントの日付を2027年1月16日にします。残りの日数は、このサイトの共通テスト2027のカウントダウンでも毎日確認できます。"),
     ("ライブアクティビティとは違いますか？", "違います。ロック画面のウィジェットは無料で、時計の下に表示されます。ロック画面のライブアクティビティは Countdown Pro の機能です。"),
-    ("Android でも使えますか？", "このアプリは iPhone 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"),
+    ("Android でも使えますか？", "このアプリは iPhone・iPad 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"),
   ],
   "body": f"""<h1>カウントダウンを待ち受けにする方法（iPhone）</h1>
 <p class="lede">受験日やライブ、記念日までの「あと何日」を、iPhone の待ち受け（ロック画面）に出しておく方法です。数字を書き込んだ壁紙画像は毎日作り直すことになりますが、ウィジェットなら日付を一度入れるだけで、数字が毎日自動で減っていきます。</p>

@@ -47,7 +47,7 @@
    },
    {
     "q": "How many weeks until Christmas 2026?",
-    "a": "Divide the days by seven: on 10 October 2026 there were 76 days, which is about 10 weeks. The counter at the top of this page recalculates it on the day you visit."
+    "a": "Divide the days by seven: on 12 October 2026 there were 74 days, which is about 10 weeks. The counter at the top of this page recalculates it on the day you visit."
    },
    {
     "q": "How many days between Halloween and Christmas?",
@@ -82,7 +82,7 @@
    },
    {
     "q": "How many weeks until Halloween 2026?",
-    "a": "On 10 October 2026 there were 21 days, about 3 weeks. The counter on this page recalculates when you open it."
+    "a": "On 12 October 2026 there were 19 days, about 2 weeks. The counter on this page recalculates when you open it."
    },
    {
     "q": "When is Halloween 2027?",
@@ -113,7 +113,7 @@
    },
    {
     "q": "How many weeks until Diwali 2026?",
-    "a": "On 10 October 2026 there were 29 days, about 4 weeks. The counter on this page recalculates when you open it."
+    "a": "On 12 October 2026 there were 27 days, about 3 weeks. The counter on this page recalculates when you open it."
    },
    {
     "q": "Why does the date of Diwali change every year?",
@@ -144,7 +144,7 @@
    },
    {
     "q": "How many days are left in 2026?",
-    "a": "As of 10 October 2026 there were 83 days left in 2026, counting today. The counter on this page recalculates when you open it."
+    "a": "As of 12 October 2026 there were 81 days left in 2026, counting today. The counter on this page recalculates when you open it."
    },
    {
     "q": "When is Lunar New Year 2027?",
@@ -430,8 +430,8 @@
     "a": "Do art. 459, § 1º, da CLT: quando o pagamento é mensal, ele deve ser feito, o mais tardar, até o quinto dia útil do mês seguinte ao trabalhado."
    },
    {
-    "q": "Como coloco o dia do pagamento na Tela de Início?",
-    "a": "Crie no Countdown: Contagem regressiva um evento com a data do quinto dia útil deste mês e adicione o widget na Tela de Início. Como a data muda de mês para mês, atualize o evento no mês seguinte; se a sua empresa paga sempre no mesmo dia, use a repetição mensal. Os widgets são grátis em todos os tamanhos."
+    "q": "Como coloco o dia do pagamento na tela de bloqueio do iPhone?",
+    "a": "Crie no Countdown: Contagem regressiva um evento com a data do quinto dia útil deste mês e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Como a data muda de mês para mês, atualize o evento no mês seguinte; se a sua empresa paga sempre no mesmo dia, use a repetição mensal. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-10-10",
@@ -541,11 +541,50 @@
   "image": null
  },
  {
+  "path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
+  "lang": "pt-BR",
+  "kind": "Article",
+  "title": "Como colocar contagem regressiva na tela de bloqueio do iPhone",
+  "description": "Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.",
+  "faq": [
+   {
+    "q": "O widget de contagem regressiva é grátis?",
+    "a": "Sim. No Countdown: Contagem regressiva, todos os widgets são grátis em todos os tamanhos, na Tela de Início e na Tela Bloqueada, e não há limite de eventos."
+   },
+   {
+    "q": "Posso colocar o número no papel de parede?",
+    "a": "Pode, mas o papel de parede é uma imagem: o número fica parado no dia em que você fez a imagem. Para um número que muda sozinho, use o widget da Tela Bloqueada, que fica abaixo do relógio."
+   },
+   {
+    "q": "Dá para usar uma foto minha na contagem?",
+    "a": "No Countdown, usar uma foto sua como fundo faz parte do Countdown Pro. As contagens, os lembretes e os widgets funcionam igual, assinando ou não."
+   },
+   {
+    "q": "Funciona no Android, Samsung ou Xiaomi?",
+    "a": "Não: o Countdown é um app para iPhone e iPad. No Android, procure na Google Play um app de contagem regressiva com widget para a tela inicial."
+   },
+   {
+    "q": "O widget é a mesma coisa que a Atividade ao Vivo?",
+    "a": "Não. O widget da Tela Bloqueada fica abaixo do relógio e é grátis. A Atividade ao Vivo na Tela Bloqueada é um recurso do Countdown Pro."
+   },
+   {
+    "q": "A contagem se repete todo ano?",
+    "a": "Se você quiser: o evento pode repetir todo ano, todo mês, toda semana ou a cada poucos dias. Aniversários e o Natal voltam sozinhos; datas que mudam todo ano, como o Carnaval e a Black Friday, pedem um evento novo."
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "countdown",
+  "hubTitle": "Como colocar contagem regressiva na tela de bloqueio do iPhone",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para o ENEM 2026? (8 e 15 de novembro)",
-  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a Tela de Início do iPhone.",
+  "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "faq": [
    {
     "q": "Quando é o ENEM 2026?",
@@ -564,8 +603,8 @@
     "a": "Segundo o edital, até o 10º dia útil após o segundo dia de prova."
    },
    {
-    "q": "Como coloco a contagem regressiva do ENEM na Tela de Início?",
-    "a": "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva, depois segure a Tela de Início → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."
+    "q": "Como coloco a contagem regressiva do ENEM na tela de bloqueio do iPhone?",
+    "a": "Adicione 8 de novembro de 2026 no app Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Todos os tamanhos de widget são grátis e você pode criar outro evento para o dia 15."
    }
   ],
   "published": "2026-09-26",
@@ -580,7 +619,7 @@
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para o Réveillon 2027? (quinta, 31/12)",
-  "description": "Réveillon: quinta-feira, 31 de dezembro de 2026. Carnaval 2027: de sábado 6 a terça 9 de fevereiro. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "description": "Réveillon: quinta-feira, 31/12/2026. Carnaval 2027: sábado, 6, a terça, 9 de fevereiro. Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "faq": [
    {
     "q": "Em que dia da semana cai o Réveillon 2026/2027?",
@@ -592,11 +631,11 @@
    },
    {
     "q": "Quantos dias faltam para o Ano-Novo?",
-    "a": "Em 10/10/2026 faltavam 83 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 12/10/2026 faltavam 81 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Como coloco a contagem do Réveillon na Tela Bloqueada?",
-    "a": "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
+    "a": "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-09-26",
@@ -611,7 +650,7 @@
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para o Carnaval 2027? (6 a 9 de fevereiro)",
-  "description": "O Carnaval 2027 vai de sábado, 6, a terça-feira, 9 de fevereiro; a Quarta-feira de Cinzas é dia 10. Contagem regressiva ao vivo e widget grátis para o iPhone.",
+  "description": "Carnaval 2027: de sábado, 6, a terça-feira, 9 de fevereiro (Cinzas, dia 10). Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "faq": [
    {
     "q": "Quando é o Carnaval 2027?",
@@ -619,7 +658,7 @@
    },
    {
     "q": "Quantos dias faltam para o Carnaval 2027?",
-    "a": "Em 10/10/2026 faltavam 119 dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 12/10/2026 faltavam 117 dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "O Carnaval é feriado nacional?",
@@ -630,8 +669,8 @@
     "a": "A terça-feira de Carnaval de 2028 é 29 de fevereiro, e o sábado de Carnaval é 26 de fevereiro."
    },
    {
-    "q": "Como coloco a contagem do Carnaval na Tela de Início?",
-    "a": "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."
+    "q": "Como coloco a contagem do Carnaval na tela de bloqueio do iPhone?",
+    "a": "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-10-10",
@@ -646,7 +685,7 @@
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para a Black Friday 2026? (27 de novembro)",
-  "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias e semanas faltam, a data da Cyber Monday e o widget para iPhone.",
+  "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias faltam, a Cyber Monday e como pôr a contagem na tela de bloqueio do iPhone.",
   "faq": [
    {
     "q": "Quando é a Black Friday 2026?",
@@ -658,15 +697,15 @@
    },
    {
     "q": "Quantos dias faltam para a Black Friday?",
-    "a": "Em 10/10/2026 faltavam 48 dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 12/10/2026 faltavam 46 dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Até quando sai a 1ª parcela do 13º salário?",
     "a": "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela tem prazo legal em 20 de dezembro; como em 2026 esse dia é um domingo, o pagamento vai para o dia útil anterior, sexta-feira, 18 de dezembro."
    },
    {
-    "q": "Como coloco a contagem da Black Friday na Tela de Início?",
-    "a": "Crie o evento 27 de novembro de 2026 no Countdown: Contagem regressiva e, na Tela de Início, segure → Editar → Adicionar widget (no iOS 17, toque em +) → Countdown. A data da Black Friday muda todo ano, então para 2027 crie um evento novo (26 de novembro) em vez de repetir. Os widgets são grátis em todos os tamanhos."
+    "q": "Como coloco a contagem da Black Friday na tela de bloqueio do iPhone?",
+    "a": "Com o widget do Countdown: Contagem regressiva — o passo a passo está na seção sobre a tela de bloqueio, logo acima. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-09-28",
@@ -681,7 +720,7 @@
   "lang": "pt-BR",
   "kind": "Article",
   "title": "Quantos dias faltam para o Natal 2026? (sexta-feira, 25/12)",
-  "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo em dias e semanas e widget grátis para o iPhone.",
+  "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
   "faq": [
    {
     "q": "Em que dia da semana cai o Natal 2026?",
@@ -689,7 +728,7 @@
    },
    {
     "q": "Quantas semanas faltam para o Natal?",
-    "a": "Em 10/10/2026 faltavam 76 dias, cerca de 10 semanas. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 12/10/2026 faltavam 74 dias, cerca de 10 semanas. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Até quando sai a 2ª parcela do 13º salário?",
@@ -701,7 +740,7 @@
    },
    {
     "q": "Como coloco a contagem do Natal na Tela Bloqueada?",
-    "a": "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, segure → Personalizar → adicione o widget Countdown. Os widgets são grátis em todos os tamanhos."
+    "a": "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."
    }
   ],
   "published": "2026-09-28",
@@ -927,7 +966,7 @@
    },
    {
     "q": "過年還有幾天？",
-    "a": "在2026年10月10日，離大年初一還有 119 天，約 17 週。本頁的倒數會在你打開當天重新計算。"
+    "a": "在2026年10月12日，離大年初一還有 117 天，約 16 週。本頁的倒數會在你打開當天重新計算。"
    },
    {
     "q": "怎麼把過年倒數放在 iPhone 鎖定畫面？",
@@ -972,6 +1011,119 @@
   "published": "2026-10-10",
   "app": "countdown",
   "hubTitle": "2027 連假行事曆：下一個連假還有幾天？",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/zh-hant/116-xue-ce-dao-shu/",
+  "lang": "zh-Hant",
+  "kind": "Article",
+  "title": "116 學測倒數還有幾天？2027/1/22–1/24 考試，倒數放 iPhone 桌面",
+  "description": "116 學年度學科能力測驗在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。每天更新的學測倒數、報名與分科測驗日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "faq": [
+   {
+    "q": "116 學測是哪幾天？",
+    "a": "2027年1月22日（星期五）到2027年1月24日（星期日），一共三天。"
+   },
+   {
+    "q": "116 學測什麼時候報名？",
+    "a": "2026年10月27日（星期二）到2026年11月10日（星期二）。"
+   },
+   {
+    "q": "學測成績什麼時候公布？",
+    "a": "2027年2月25日（星期四）公布成績並開放查詢，隔天寄發成績通知單。"
+   },
+   {
+    "q": "116 分科測驗是哪一天？",
+    "a": "2027年7月10日（星期六）和2027年7月11日（星期日），成績在2027年7月29日（星期四）公布。"
+   },
+   {
+    "q": "學測還有幾天？",
+    "a": "在2026年10月12日，離學測第一天還有 102 天，約 14 週。本頁的倒數會在你打開當天重新計算。"
+   },
+   {
+    "q": "怎麼把學測倒數放在 iPhone 鎖定畫面？",
+    "a": "在「倒數計時 Widget：紀念日提醒」建立 2027 年 1 月 22 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "countdown",
+  "hubTitle": "116 學測倒數",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/zh-hant/116-hui-kao-dao-shu/",
+  "lang": "zh-Hant",
+  "kind": "Article",
+  "title": "116 會考倒數還有幾天？2027/5/15–5/16 考試，倒數放 iPhone 桌面",
+  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。每天更新的會考倒數、報名與准考證日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "faq": [
+   {
+    "q": "116 會考是哪幾天？",
+    "a": "2027年5月15日（星期六）和2027年5月16日（星期日）。"
+   },
+   {
+    "q": "116 會考什麼時候報名？",
+    "a": "2027年3月4日（星期四）到2027年3月6日（星期六）。"
+   },
+   {
+    "q": "會考准考證什麼時候寄？",
+    "a": "2027年4月9日（星期五）寄發准考證。"
+   },
+   {
+    "q": "會考成績什麼時候公布？",
+    "a": "2027年6月4日（星期五）寄發成績通知單，並開放網路查詢。"
+   },
+   {
+    "q": "會考還有幾天？",
+    "a": "在2026年10月12日，離會考第一天還有 215 天，約 30 週。本頁的倒數會在你打開當天重新計算。"
+   },
+   {
+    "q": "怎麼把會考倒數放在 iPhone 鎖定畫面？",
+    "a": "在「倒數計時 Widget：紀念日提醒」建立 2027 年 5 月 15 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "countdown",
+  "hubTitle": "116 會考倒數",
+  "items": [],
+  "headline": null,
+  "image": null
+ },
+ {
+  "path": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/",
+  "lang": "zh-Hant",
+  "kind": "Article",
+  "title": "iPhone 桌面倒數怎麼放？主畫面、鎖定畫面倒數小工具教學",
+  "description": "把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。",
+  "faq": [
+   {
+    "q": "桌面倒數小工具要錢嗎？",
+    "a": "不用。「倒數計時 Widget：紀念日提醒」的小工具全部尺寸都免費，主畫面和鎖定畫面都能放，事件數量也沒有上限。"
+   },
+   {
+    "q": "桌布可以直接寫上倒數天數嗎？",
+    "a": "可以，但桌布是一張圖片，數字會停在做圖那一天。想讓「還有幾天」每天自己變，要用鎖定畫面或主畫面的小工具。"
+   },
+   {
+    "q": "可以用自己的照片當背景嗎？",
+    "a": "可以，用你自己的照片做背景屬於 Countdown Pro。無論訂不訂閱，倒數、提醒和小工具都照常能用。"
+   },
+   {
+    "q": "鎖定畫面小工具和即時動態一樣嗎？",
+    "a": "不一樣。鎖定畫面的小工具在時間下方，免費；鎖定畫面的即時動態是 Countdown Pro 的功能。"
+   },
+   {
+    "q": "Android 手機可以用嗎？",
+    "a": "這個 App 只有 iPhone 和 iPad 版，沒有 Android 版。Android 手機請到 Google Play 找支援桌面小工具的倒數計時 App。"
+   }
+  ],
+  "published": "2026-10-12",
+  "app": "countdown",
+  "hubTitle": "iPhone 桌面倒數教學",
   "items": [],
   "headline": null,
   "image": null
@@ -1024,7 +1176,7 @@
    },
    {
     "q": "共通テストまであと何週間ですか？",
-    "a": "2026年10月10日の時点で本試験まで98日、約14週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
+    "a": "2026年10月12日の時点で本試験まで96日、約13週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
    },
    {
     "q": "共通テストの100日前はいつですか？",
@@ -1071,7 +1223,7 @@
    },
    {
     "q": "Android でも使えますか？",
-    "a": "このアプリは iPhone 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"
+    "a": "このアプリは iPhone・iPad 用です。Android では、ホーム画面ウィジェットに対応したカウントダウンアプリを Google Play で探してください。"
    }
   ],
   "published": "2026-10-10",

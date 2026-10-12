@@ -546,7 +546,10 @@ HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grát
 # 同一个工具的不同语言版本：互为 hreflang（x-default 指英文），页头语言菜单互链（09-29 评审：两个计算器各写「只有本语言」）
 TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/", "ja": "/tools/ja/ato-nannichi/"},
               # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
-              {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"}]
+              {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"},
+              # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题
+              {"ja": "/tools/ja/countdown-machiuke-iphone/", "pt-BR": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
+               "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/"}]
 def tool_pair(url):
     return next((p for p in TOOL_PAIRS if url in p.values()), None)
 
@@ -878,7 +881,7 @@ def tool_head(tp):
     title, desc = tp["title"], meta_desc(tp["description"]); img = asset(HOME["ogImage"])
     group = TOOL_HUBS if url in TOOL_HUBS.values() else tool_pair(url)
     hub_alts = [f'<link rel="alternate" hreflang="{l}" href="{ORIGIN}{p}">' for l, p in group.items()] + \
-               [f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{group["en"]}">'] if group else []
+               [f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{group["en"]}">' for _ in [0] if "en" in group] if group else []   # 没有英文版的组（锁屏教程）不写 x-default
     lines = [START, '<meta name="description" content="%s">' % esc(desc), f'<link rel="canonical" href="{canonical}">',
              '<meta property="og:type" content="%s">' % ("article" if tp["kind"] == "Article" else "website"),
              '<meta property="og:site_name" content="%s">' % esc(BRAND), '<meta property="og:title" content="%s">' % esc(title),
