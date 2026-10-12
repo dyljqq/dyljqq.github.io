@@ -183,6 +183,9 @@ A gym workout log for iPhone.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
+- [行程規劃 App 推薦（2026）](https://beforego.art/tools/zh-hant/xing-cheng-gui-hua-app/) — 7 款 iPhone 行程規劃 App 比較：行程怎麼排、能不能共同編輯、離線、行前清單。資料取自台灣 App Store 頁面（2026 年 10 月 12 日）。
+- [旅行計画アプリおすすめ7選（2026）](https://beforego.art/tools/ja/ryoko-keikaku-app/) — iPhoneの旅行計画アプリ7つを、プランの作り方・共同編集・オフライン・持ち物リスト・有料機能で比較。日本のApp Storeの掲載内容（2026年10月12日）から。
+- [여행 일정 앱 추천 (2026)](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.
 - [How to Put a Countdown on Your iPhone Lock Screen](https://beforego.art/blog/countdown-widget-iphone-home-lock-screen/) — Here is how to add a countdown widget to your iPhone Home Screen and Lock Screen, plus what Live Activity adds on top of it.
 - [Count Down to a Birthday, Exam or Trip on iPhone](https://beforego.art/blog/count-down-birthday-exam-trip-iphone/) — How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.
 - [Add a Payment QR Code to an Invoice and Get Paid Faster](https://beforego.art/blog/payment-qr-code-on-invoice/) — What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.
@@ -195,6 +198,7 @@ A gym workout log for iPhone.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
 - [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
+- [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 트리플 서비스 종료 후 쓸 만한 여행 일정 앱을 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ

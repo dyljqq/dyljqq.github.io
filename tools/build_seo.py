@@ -540,16 +540,18 @@ def product_options(app):
     fam = [parent] + variants_of(parent)
     return [(a.get("lang", "en"), a["path"]) for a in sorted(fam, key=lambda a: bp.order_key(a.get("lang", "en")))]
 
-TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/"}
-ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español", "zh-Hant": "這一頁只有繁體中文版", "ja": "このページは日本語版のみです", "th": "หน้านี้มีเฉพาะภาษาไทย"}
-HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español", "zh-Hant": "繁體中文免費工具", "th": "เครื่องมือฟรีภาษาไทย", "ja": "日本語の無料ツール"}
+TOOL_HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/", "ko": "/tools/ko/"}
+ONLY_IN = {"en": "This page is in English only", "pt-BR": "Esta página só existe em português", "es-MX": "Esta página solo existe en español", "zh-Hant": "這一頁只有繁體中文版", "ja": "このページは日本語版のみです", "th": "หน้านี้มีเฉพาะภาษาไทย", "ko": "이 페이지는 한국어로만 제공됩니다"}
+HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grátis em português", "es-MX": "Herramientas gratis en español", "zh-Hant": "繁體中文免費工具", "th": "เครื่องมือฟรีภาษาไทย", "ko": "한국어 무료 가이드", "ja": "日本語の無料ツール"}
 # 同一个工具的不同语言版本：互为 hreflang（x-default 指英文），页头语言菜单互链（09-29 评审：两个计算器各写「只有本语言」）
 TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/", "ja": "/tools/ja/ato-nannichi/"},
               # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
               {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"},
               # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题
               {"ja": "/tools/ja/countdown-machiuke-iphone/", "pt-BR": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
-               "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/"}]
+               "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/"},
+              # 10-12：BeforeGo「行程规划 App 推荐」三语榜单，各按本国商店选 app，主题相同
+              {"zh-Hant": "/tools/zh-hant/xing-cheng-gui-hua-app/", "ja": "/tools/ja/ryoko-keikaku-app/", "ko": "/tools/ko/yeohaeng-iljeong-aep/"}]
 def tool_pair(url):
     return next((p for p in TOOL_PAIRS if url in p.values()), None)
 
@@ -704,6 +706,7 @@ WEB_FIRST = {
     "es-MX": [("/tools/es-mx/formato-de-cotizacion/", "Llénalo en línea, el IVA se calcula solo; imprímelo o guárdalo en PDF."),
               ("/tools/es-mx/nota-de-venta/", "Folio, cliente y conceptos; imprímela o guárdala en PDF."),
               ("/tools/es-mx/app-para-hacer-cotizaciones-iphone/", "Paso a paso: de la cotización por WhatsApp a la nota de venta.")],
+    "ko": [("/tools/ko/yeohaeng-iljeong-aep/", "트리플 종료 후 대안: 여행 일정 앱 5가지 비교.")],
     "th": [("/tools/th/bai-sanoe-rakha/", "กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึกเป็น PDF"),
            ("/tools/th/bai-set-rap-ngoen/", "รายการ ยอดรวม และช่องลายมือชื่อผู้รับเงิน บันทึกเป็น PDF ได้")],
     "ja": [("/tools/ja/ato-nannichi/", "日付を入れるだけで、あと何日かと曜日が分かります。"),
@@ -778,7 +781,7 @@ def home_legal_html(lang="en"):
 # 样式自带、类名带 gk- 前缀：法务页和手写页没有站点的 CSS 变量，也有自己的 h2 / a 样式，不能指望页面。
 FOOT_START, FOOT_END = "<!-- sitefooter:start -->", "<!-- sitefooter:end -->"
 FOOT_LANG = {"zh-CN": "zh-Hans"}                      # 单词兽的页面是简体中文
-TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/"}   # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
+TOOLS_HUB = {"pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/", "ko": "/tools/ko/"}   # 有本语言工具目录的才换，其它指英文目录（同 build_home.py）
 FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath>'
              '<circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/>'
              '<path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>')

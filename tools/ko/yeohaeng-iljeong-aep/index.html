@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+
+.crumbs{margin:24px 0 28px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 8px;font-size:13px;line-height:1.6;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
+.crumbs li+li::before{content:"›";margin-right:8px}
+html[lang^=th] *{letter-spacing:0!important}
+.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
+@media (max-width:760px){.crumbs{margin:20px 0 24px}.crumbs li:last-child{display:none}}
+.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px);line-height:1.15;margin:0 0 20px}.article .lede{font-size:18px;margin:0 0 28px}
+.article h2{font:500 clamp(24px,3vw,32px)/1.25 var(--display);margin:48px 0 18px}.article h3{font:600 18px/1.4 var(--text);margin:28px 0 12px}
+.article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
+.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
+.count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:0}.more summary{cursor:pointer;padding:14px 0;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:0 0 14px;color:var(--muted)}
+.countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
+@media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
+.calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.calc label{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
+.calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn svg{width:18px;height:18px;flex:none;fill:currentColor}.appcard .btn{white-space:nowrap}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+#calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
+.tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
+.pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
+.appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
+.ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
+.meta{font-size:13px;color:var(--soft);margin:16px 0 0}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0 0}.hub a{text-decoration:none;border:1px solid var(--rule);border-radius:20px;padding:22px;display:block;transition:background .2s}.hub a:hover{background:var(--cream)}
+.hub b{display:block;font:500 22px/1.25 var(--display);letter-spacing:-.02em}.hub span{display:block;color:var(--muted);font-size:14.5px;margin-top:8px}.hub small{display:block;margin-top:12px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.inv{border:1.5px solid var(--ink);border-radius:16px;padding:32px;background:#fff;font-size:15px;color:var(--ink)}
+.inv [contenteditable]{outline:none;border-bottom:1px dashed #cfcac0;min-width:2ch}.inv [contenteditable]:focus{background:var(--cream)}
+.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-title{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties .k,.inv-meta .k{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv table{width:100%;border-collapse:collapse;margin:8px 0}.inv th{font:700 11px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--ink)}
+.inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
+.inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
+.inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
+.check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
+html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+@media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.">
+<link rel="canonical" href="https://beforego.art/tools/ko/yeohaeng-iljeong-aep/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교">
+<meta property="og:description" content="트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.">
+<meta property="og:url" content="https://beforego.art/tools/ko/yeohaeng-iljeong-aep/">
+<meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교">
+<meta name="twitter:description" content="트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.">
+<meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/tools/zh-hant/xing-cheng-gui-hua-app/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/tools/ja/ryoko-keikaku-app/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/tools/ko/yeohaeng-iljeong-aep/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://beforego.art/tools/ko/yeohaeng-iljeong-aep/#page",
+  "url": "https://beforego.art/tools/ko/yeohaeng-iljeong-aep/",
+  "name": "여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교",
+  "headline": "여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교",
+  "description": "트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.",
+  "inLanguage": "ko",
+  "isPartOf": {
+    "@id": "https://beforego.art/#website"
+  },
+  "publisher": {
+    "@id": "https://beforego.art/#org"
+  },
+  "author": {
+    "@id": "https://beforego.art/#org"
+  },
+  "isAccessibleForFree": true,
+  "image": "https://beforego.art/assets/brand/og-home.png",
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-13",
+  "about": {
+    "@id": "https://beforego.art/beforego/#app"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://beforego.art/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ferramentas",
+      "item": "https://beforego.art/tools/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교",
+      "item": "https://beforego.art/tools/ko/yeohaeng-iljeong-aep/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://beforego.art/tools/ko/yeohaeng-iljeong-aep/#list",
+  "name": "여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교",
+  "itemListOrder": "https://schema.org/ItemListOrderAscending",
+  "numberOfItems": 5,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "BeforeGo: AI 여행 플래너·패킹리스트",
+      "url": "https://apps.apple.com/kr/app/id6786561175"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "NOL : 야놀자와 인터파크의 새로운 이름",
+      "url": "https://apps.apple.com/kr/app/id436731843"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wanderlog 여행계획 - 트래블로그 여행 플래너",
+      "url": "https://apps.apple.com/kr/app/id1476732439"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "트립노트 - 여행은 계획부터 즐거워야 하니까",
+      "url": "https://apps.apple.com/kr/app/id6740430211"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Funliday - 여행계획",
+      "url": "https://apps.apple.com/kr/app/id905768387"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://beforego.art/tools/ko/yeohaeng-iljeong-aep/#faq",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "트리플은 언제 종료되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "트리플의 한국 App Store 설명에 따르면 11월 3일에 서비스를 종료하고 NOL로 통합됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "트리플 일정은 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "트리플 설명에 따르면 트리플의 여행 일정 기능은 NOL에서 이어지고, 기존 일정을 그대로 불러올 수 있습니다. 정확한 방법은 트리플과 NOL의 안내를 확인하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "트리플 일정을 다른 앱으로 옮길 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "트리플 설명에 따르면 NOL에서 기존 일정을 그대로 불러올 수 있습니다. 이 표의 다른 앱(BeforeGo, Wanderlog, 트립노트, Funliday) 설명에는 트리플 일정을 자동으로 가져오는 기능이 적혀 있지 않습니다. BeforeGo는 계획을 입력하거나 링크·캡처를 넣으면 날짜별 일정으로 정리한다고 설명합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "친구와 함께 일정을 짤 수 있는 앱은?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "한국 App Store 설명 기준으로 Wanderlog(실시간 협업)와 Funliday가 공동 편집을 지원합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이 비교는 중립적인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. BeforeGo는 우리가 만든 앱입니다. 표의 내용은 모두 공개된 App Store 설명에서 가져왔고, 모든 앱을 같은 항목으로 적었으며, 확인할 수 있도록 각 앱에 링크를 달았습니다."
+      }
+    }
+  ]
+}
+</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
+<!-- seo:end -->
+<style id="gk-foot-css">footer.gk-foot{border-top:1px solid #e7e5df;padding:48px 0 36px;margin:0;background:none;text-align:left;font:400 13px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#6b6760}.gk-foot-in{box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:22px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 22px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot h2{margin:0 0 16px;padding:0;border:0;font:700 11px/1 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:2px;text-transform:uppercase;color:#141414}.gk-foot h2:is(:lang(ja),:lang(zh),:lang(ko)){letter-spacing:.12em}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.6;font-weight:400;color:#6b6760}.gk-foot a{color:#6b6760;font-weight:400;text-decoration:none;border:0}.gk-foot a:hover{color:#141414;text-decoration:underline;text-underline-offset:3px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:28px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#141414}.gk-foot-social{display:flex;flex-wrap:wrap;gap:8px}.gk-foot-social a{display:inline-block;padding:5px 12px;border:1px solid #dedad2;border-radius:999px;font-size:12.5px;line-height:1.4;color:#3d3a35}.gk-foot-social a:hover{border-color:#141414;text-decoration:none}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:40px;padding-top:18px;border-top:1px solid #eeebe5;font-size:12.5px}.gk-foot-bar p{font-size:12.5px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top{flex-direction:column}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column}}</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/ko/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/ko/">모든 앱</a>
+    <a href="/tools/ko/">도구</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com">지원</a>
+  </nav>
+  <!-- lang:start -->
+  <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="한국어"><span>KO</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/tools/zh-hant/xing-cheng-gui-hua-app/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/tools/ja/ryoko-keikaku-app/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/tools/ko/yeohaeng-iljeong-aep/" hreflang="ko" lang="ko" aria-current="true">한국어</a></li></ul></details><a class="header-download" href="https://apps.apple.com/kr/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-header&amp;mt=8" aria-label="App Store에서 다운로드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
+</header>
+<main class="wrap">
+<ol class="crumbs"><li><a href="/ko/">홈</a></li><li><a href="/tools/ko/">도구</a></li><li>여행 일정 앱 추천</li></ol>
+<article class="article">
+<h1>여행 일정 앱 추천 (2026) — 트리플 종료 후 대안</h1>
+<p class="lede">트리플은 App Store 설명에서 11월 3일 서비스를 종료하고 NOL로 통합된다고 안내하고 있습니다. 다른 여행 일정 앱을 찾는다면 아래 표를 보세요. 일정 짜는 방식, 공동 편집, 오프라인, 준비물 체크리스트를 각 앱의 한국 App Store 설명(2026년 10월 12일)으로 비교했습니다. 이 중 하나는 우리 앱이며, 같은 항목으로 적었습니다.</p>
+<h2>트리플 일정은 어떻게 되나요?</h2>
+<p>트리플의 한국 App Store 설명에 따르면 서비스는 11월 3일 종료되고 NOL로 통합되며, 트리플의 여행 일정 기능도 NOL에서 이어지고 기존 일정은 그대로 불러올 수 있다고 합니다. 같은 일정을 계속 쓰고 싶다면 NOL을 먼저 확인해 보세요. 정확한 이전 방법은 트리플과 NOL의 안내를 확인하세요.</p>
+<h2>비교표</h2>
+<div class="tbl full"><table class="cmp"><thead><tr><th>앱</th><th>일정 짜는 방식</th><th>공동 편집</th><th>오프라인</th><th>준비물 체크리스트</th><th>한국 평점</th></tr></thead><tbody><tr><th>BeforeGo: AI 여행 플래너·패킹리스트 (우리 앱)</th><td>여행 게시물 캡처·링크·입력한 계획을 날짜별 일정으로 정리</td><td>설명에 없음</td><td>설명에 없음</td><td>목적지·날짜에 맞춰 자동 생성, 출발 7일 전~3시간 전 알림</td><td>평점 없음</td></tr><tr><th>NOL : 야놀자와 인터파크의 새로운 이름</th><td>트리플 설명에 따르면 트리플 일정 기능과 기존 일정이 NOL로 이어짐</td><td>설명에 없음</td><td>설명에 없음</td><td>설명에 없음</td><td>★ 4.8 · 974,911개</td></tr><tr><th>Wanderlog 여행계획 - 트래블로그 여행 플래너</th><td>장소를 지도에 추가하고 드래그 앤 드롭으로 순서 변경, 루트 최적화</td><td>가능 (실시간)</td><td>가능</td><td>설명에 없음</td><td>★ 4.8 · 228개</td></tr><tr><th>트립노트 - 여행은 계획부터 즐거워야 하니까</th><td>장소를 추가하면 지도에 순서와 경로 표시</td><td>설명에 없음</td><td>설명에 없음</td><td>있음 (가방별로 나눠 관리)</td><td>★ 3.9 · 74개</td></tr><tr><th>Funliday - 여행계획</th><td>전 세계 명소를 탐색해 일정에 추가, 운전·도보·대중교통 경로</td><td>가능</td><td>가능 (지도 제외)</td><td>설명에 없음</td><td>★ 4.4 · 58개</td></tr></tbody></table></div>
+<p class="meta">‘설명에 없음’은 App Store 설명에 적혀 있지 않다는 뜻이며, 기능이 없다는 뜻은 아닙니다. 평점은 2026년 10월 12일 한국 App Store 기준이며 매일 바뀝니다.</p>
+<h2>이렇게 고르세요</h2>
+<ul><li><strong>트리플 일정을 그대로 이어서 쓰고 싶다면:</strong> NOL (트리플 안내에 따름).</li><li><strong>여행 게시물·캡처를 바로 일정으로:</strong> BeforeGo (우리 앱).</li><li><strong>친구와 실시간 공동 편집, 예산, 예약 정리까지:</strong> Wanderlog.</li><li><strong>가계부와 준비물 체크리스트를 함께:</strong> 트립노트.</li><li><strong>공동 편집과 오프라인(지도 제외) 보기:</strong> Funliday.</li></ul>
+<h2>5가지 앱</h2>
+<h3>1. BeforeGo: AI 여행 플래너·패킹리스트 <span style="font-weight:400;color:var(--soft)">— go ka</span></h3>
+<p>여행 게시물을 바로 일정으로: 게시물을 캡처하거나 링크를 붙여넣거나 계획을 입력하면, 가 볼 만한 장소와 출발 전에 할 일, 하루하루의 흐름까지 날짜별 일정으로 정리합니다. 항공권이나 예약 확인서는 스캔하면 일정에 들어갑니다. 패킹리스트는 목적지와 날짜에 맞춰 자동으로 만들어지고(플러그, 환전, 입국 준비, 교통 앱), 하루 일정은 최단 도보 동선으로 정렬됩니다. 무료로 시작, 광고 없음, 계정 불필요. 프리미엄은 구독 또는 평생 이용권.</p>
+<p><a href="/beforego/ko/">제품 페이지 →</a></p><h3>2. NOL : 야놀자와 인터파크의 새로운 이름 <span style="font-weight:400;color:var(--soft)">— YANOLJA CO.,LTD</span></h3>
+<p>트리플의 공식 후속 앱입니다. NOL 자체 설명은 항공권·숙소·공연·입장권 예약 중심이고, 일정 기능은 트리플 설명에서 ‘기존 일정 그대로 불러오고 AI 맞춤 추천으로 준비’할 수 있다고 안내하고 있습니다. 트리플 일정을 그대로 이어서 쓰려면 가장 먼저 확인할 앱입니다.</p>
+<p><a href="https://apps.apple.com/kr/app/id436731843" rel="nofollow noopener">App Store에서 보기 →</a></p><h3>3. Wanderlog 여행계획 - 트래블로그 여행 플래너 <span style="font-weight:400;color:var(--soft)">— Vacation and Travel Planner App LLC</span></h3>
+<p>일정, 여행 비용, 항공·호텔 예약 정리, 지도를 한곳에서 보고, 친구를 초대해 실시간으로 함께 편집합니다. 이메일 전달이나 Gmail 연결로 예약을 자동으로 가져오고, 일정은 오프라인에 자동 저장됩니다. Google 지도로 내보내기와 Gmail 연결은 선택 구독 기능입니다.</p>
+<p><a href="https://apps.apple.com/kr/app/id1476732439" rel="nofollow noopener">App Store에서 보기 →</a></p><h3>4. 트립노트 - 여행은 계획부터 즐거워야 하니까 <span style="font-weight:400;color:var(--soft)">— Wanderers Inc.</span></h3>
+<p>일정, 가계부, 체크리스트 세 가지에 집중한 앱입니다. 장소를 추가하면 지도에 순서와 경로가 나오고, 여행 경비를 카테고리별로 정리하며, 준비물은 가방별로 나눠 챙길 수 있습니다.</p>
+<p><a href="https://apps.apple.com/kr/app/id6740430211" rel="nofollow noopener">App Store에서 보기 →</a></p><h3>5. Funliday - 여행계획 <span style="font-weight:400;color:var(--soft)">— Funliday Inc.</span></h3>
+<p>수천 개 여행지의 명소를 일정에 추가하고 동행자와 함께 편집하며, 오프라인으로 일정을 볼 수 있습니다(지도 제외). iOS Safari의 공유 기능으로 명소를 바로 추가할 수 있고, 이메일·WhatsApp·Line으로 일정을 공유합니다.</p>
+<p><a href="https://apps.apple.com/kr/app/id905768387" rel="nofollow noopener">App Store에서 보기 →</a></p>
+<h2>고른 기준</h2>
+<p>한국 App Store에서 ‘여행 계획’을 검색해 숙소·항공 예약 앱과 지도 앱을 빼고, 여행 일정 전용 앱과 트리플의 후속 앱인 NOL을 골라 각 앱의 한국어 설명에 적힌 내용만 같은 항목으로 정리했습니다. 유료 기능은 직접 테스트하지 않았습니다. 평점 순위가 아니라, 우리 앱을 맨 앞에 두고 나머지는 트리플 안내와 관련된 NOL, 그다음 한국 평점 수 순서입니다.</p>
+<p class="meta">게시 2026-10-12 · 업데이트 2026-10-13 · go ka</p>
+</article>
+<section class="sec" id="faq-section"><h2 id="faq">자주 묻는 질문</h2><div class="grid">
+    <div class="card"><h3>트리플은 언제 종료되나요?</h3><p>트리플의 한국 App Store 설명에 따르면 11월 3일에 서비스를 종료하고 NOL로 통합됩니다.</p></div>
+    <div class="card"><h3>트리플 일정은 어떻게 되나요?</h3><p>트리플 설명에 따르면 트리플의 여행 일정 기능은 NOL에서 이어지고, 기존 일정을 그대로 불러올 수 있습니다. 정확한 방법은 트리플과 NOL의 안내를 확인하세요.</p></div>
+    <div class="card"><h3>트리플 일정을 다른 앱으로 옮길 수 있나요?</h3><p>트리플 설명에 따르면 NOL에서 기존 일정을 그대로 불러올 수 있습니다. 이 표의 다른 앱(BeforeGo, Wanderlog, 트립노트, Funliday) 설명에는 트리플 일정을 자동으로 가져오는 기능이 적혀 있지 않습니다. BeforeGo는 계획을 입력하거나 링크·캡처를 넣으면 날짜별 일정으로 정리한다고 설명합니다.</p></div>
+    <div class="card"><h3>친구와 함께 일정을 짤 수 있는 앱은?</h3><p>한국 App Store 설명 기준으로 Wanderlog(실시간 협업)와 Funliday가 공동 편집을 지원합니다.</p></div>
+    <div class="card"><h3>이 비교는 중립적인가요?</h3><p>아니요. BeforeGo는 우리가 만든 앱입니다. 표의 내용은 모두 공개된 App Store 설명에서 가져왔고, 모든 앱을 같은 항목으로 적었으며, 확인할 수 있도록 각 앱에 링크를 달았습니다.</p></div>
+</div></section>
+<section class="sec more"><h2>더 궁금한 점</h2><details><summary>트리플 대체 어플은 뭐가 있나요?</summary><p>트리플 일정을 그대로 이어서 쓰려면 트리플이 안내한 NOL을 먼저 확인하세요. 다른 앱을 쓰려면 위 표의 BeforeGo, Wanderlog, 트립노트, Funliday를 비교해 보세요.</p></details><details><summary>여행 일정 짜기 좋은 앱은?</summary><p>여행 게시물을 일정으로 바꾸고 싶다면 BeforeGo, 친구와 함께 짜려면 Wanderlog나 Funliday, 경비와 준비물까지 같이 관리하려면 트립노트가 맞습니다.</p></details></section>
+<aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/22/83/3e2283b9-5c22-ffc2-d99d-85b28cbd5a60/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">iPhone에서 계속하기</p><b>BeforeGo: AI 여행 플래너·패킹리스트</b><p>여행 게시물을 캡처하거나 링크를 붙여넣거나 계획을 그냥 입력하면, BeforeGo가 날짜별 여행 일정으로 정리해 줍니다. 가 볼 만한 장소, 출발 전에 할 일, 게시물에 나온 하루하루의 흐름까지요. 항공권이나 예약 확인서를 스캔하면 일정에 함께 들어가고, 패킹리스트는 목적지와 날짜에 맞</p><a class="btn" href="https://apps.apple.com/kr/app/apple-store/id6786561175?pt=128309253&amp;ct=web-beforego-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store에서 다운로드</a> &nbsp; <a href="/beforego/ko/" style="font-size:14px">BeforeGo →</a></div></aside>
+<p class="ask">이 페이지를 AI에게 요약 요청: <a href="https://chatgpt.com/?q=https%3A//beforego.art/tools/ko/yeohaeng-iljeong-aep/%20%EC%9D%84%28%EB%A5%BC%29%20%EC%9D%BD%EA%B3%A0%20%ED%95%B5%EC%8B%AC%EC%9D%84%20%EB%AA%87%20%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C%20%EC%9A%94%EC%95%BD%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=https%3A//beforego.art/tools/ko/yeohaeng-iljeong-aep/%20%EC%9D%84%28%EB%A5%BC%29%20%EC%9D%BD%EA%B3%A0%20%ED%95%B5%EC%8B%AC%EC%9D%84%20%EB%AA%87%20%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C%20%EC%9A%94%EC%95%BD%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=https%3A//beforego.art/tools/ko/yeohaeng-iljeong-aep/%20%EC%9D%84%28%EB%A5%BC%29%20%EC%9D%BD%EA%B3%A0%20%ED%95%B5%EC%8B%AC%EC%9D%84%20%EB%AA%87%20%EB%AC%B8%EC%9E%A5%EC%9C%BC%EB%A1%9C%20%EC%9A%94%EC%95%BD%ED%95%B4%20%EC%A3%BC%EC%84%B8%EC%9A%94." rel="nofollow noopener">Claude</a></p>
+<div style="height:48px"></div>
+</main>
+<!-- sitefooter:start -->
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+      <a class="gk-foot-brand" href="/ko/"><svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/><path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+      <ul class="gk-foot-social" aria-label="go ka 팔로우"><li><a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank">TikTok</a></li><li><a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank">Instagram</a></li><li><a href="https://x.com/dyljqq21" rel="me noopener" target="_blank">X</a></li><li><a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank">Reddit</a></li><li><a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank">RedNote (小红书)</a></li></ul>
+      </div>
+      <div>
+        <h2>개인정보 보호 &amp; 이용약관</h2>
+        <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="/countdown/ko/">Countdown</a><a href="/countdown/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/countdown/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/beforego/ko/">BeforeGo</a><a href="/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/terms-of-use/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/invoiceqr/ko/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/invoiceqr/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/dailycalorie/">DailyCalorie</a><a href="/dailycalorie/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/dailycalorie/terms-of-use/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/qrcodestudio/">QR Studio</a><a href="/qrcodestudio/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/qrcodestudio/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-footer&mt=8">Word Beast</a><a href="/citu/privacy-policy/" hreflang="zh-CN">개인정보 보호정책</a><a href="/citu/terms-of-use/" hreflang="zh-CN">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/repdex/">Repdex</a><a href="/repdex/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/repdex/terms-of-use/" hreflang="en">이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© 2026 go ka</p>
+      <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/tools/ko/">무료 도구 &amp; 가이드</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
+  </div>
+</footer>
+<!-- sitefooter:end -->
+
+</body>
+</html>

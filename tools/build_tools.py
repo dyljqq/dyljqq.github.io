@@ -51,9 +51,14 @@ TS = {  # 工具页专用界面词
          "faq": "คำถามที่พบบ่อย", "published": "เผยแพร่", "updated": "อัปเดต", "get": "ทำต่อบน iPhone", "ask": "ให้ AI สรุปหน้านี้",
          "days": "วัน", "day": "วัน", "weeks": "สัปดาห์", "today": "วันนี้!", "passed": "วันที่แล้ว",
          "home": "หน้าแรก", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 10-12：韩国线走 BeforeGo（트리플 11-03 停服，联想词有「트리플 대체 어플」「여행 일정 앱 추천」）
+  "ko": {"tools": "도구", "hub_title": "무료 도구와 가이드", "hub_lede": "가입 없이 무료로 쓰는 작은 도구와 가이드입니다. 우리 iPhone 앱이 하는 일을 브라우저에서도 할 수 있게 만들었습니다.",
+         "faq": "자주 묻는 질문", "published": "게시", "updated": "업데이트", "get": "iPhone에서 계속하기", "ask": "이 페이지를 AI에게 요약 요청",
+         "days": "일", "day": "일", "weeks": "주", "today": "오늘입니다!", "passed": "일 지남",
+         "home": "홈", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
-HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/"}
-HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/", "th": "/th/"}
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/", "ko": "/tools/ko/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/", "th": "/th/", "ko": "/ko/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
@@ -164,6 +169,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
 .rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
+html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
 @media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
 @media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 """
@@ -182,7 +188,8 @@ def ask_ai(url, lang):
          "es-MX": f"Lee {url} y resume sus puntos principales en pocas frases.",
          "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。",
          "ja": f"{url} を読んで、要点を数文でまとめてください。",
-         "th": f"อ่าน {url} แล้วสรุปประเด็นสำคัญเป็นไม่กี่ประโยค"}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
+         "th": f"อ่าน {url} แล้วสรุปประเด็นสำคัญเป็นไม่กี่ประโยค",
+         "ko": f"{url} 을(를) 읽고 핵심을 몇 문장으로 요약해 주세요."}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -211,7 +218,7 @@ def top_cta(app_key, lang, label=None):   # label：锁屏教程页说「放到�
     return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(label or TOP_CTA[lang])}</a></p>'
 
 # 「更多问题」：搜索词的其它问法（GSC 查询词 / 联想词），默认折叠、点开可见，正文真实存在——不做隐藏文字。不进 FAQPage 结构化数据。
-MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題", "es-MX": "Más preguntas", "th": "คำถามเพิ่มเติม"}
+MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題", "es-MX": "Más preguntas", "th": "คำถามเพิ่มเติม", "ko": "더 궁금한 점"}
 def more_html(items, lang):
     rows = "".join(f"<details><summary>{esc(q)}</summary><p>{a}</p></details>" for q, a in items)
     return f'<section class="sec more"><h2>{esc(MORE_H[lang])}</h2>{rows}</section>'
@@ -2054,6 +2061,203 @@ def best_page_pt():
 _ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/contador-de-dias-de-namoro/")
 PAGES.insert(_ci + 1, best_page_pt())   # 常青页一组：计算器 → 场景页 → 榜单 → 节日页
 
+# 10c. BeforeGo「行程规划 App 推荐」三语榜单（zh-Hant / ja / ko）——10-12
+# 依据：10-12 Google 联想词「行程規劃 app 推薦 / dcard / ptt / 日本 / ai」「旅行 計画 アプリ おすすめ / 無料 / 海外 / 共有」
+# 「여행 계획 앱 추천」「여행 일정 앱 추천 / 디시」「트리플 종료 / 트리플 앱 종료 / 트리플 대체 어플」。
+# 选法同 Countdown 榜单：各国商店搜「行程規劃」「旅行 計画」「여행 계획」，去掉订房订票平台、行事历、地图，留下专门排行程的 app，
+# 只写各自本地商店描述（iTunes lookup，10-12）里写明的事；没写的格子写「说明没写」。我们的 app 说法只用 tools/store/beforego.json 对应语言。
+# 트리플：其韩国商店描述写「11월 3일 서비스 종료, NOL로 통합；기존 일정 그대로 불러오고」——只引用它自己的说法。
+LISTED_ON = dt.date(2026, 10, 12)
+BG_L10N = {
+    "zh-Hant": {"ours": "（我們的）", "none": "尚無評分", "see": "在 App Store 查看", "our_page": "我們的產品頁", "unit": " 則評分", "page": "/beforego/zh-hant/", "cc": "tw"},
+    "ja": {"ours": "（自社）", "none": "評価なし", "see": "App Store で見る", "our_page": "製品ページ", "unit": "件", "page": "/beforego/ja/", "cc": "jp"},
+    "ko": {"ours": " (우리 앱)", "none": "평점 없음", "see": "App Store에서 보기", "our_page": "제품 페이지", "unit": "개", "page": "/beforego/ko/", "cc": "kr"},
+}
+def bg_rate(b, L):
+    return f"★ {b['rating'][0]:.1f} · {format(b['rating'][1], ',')}{L['unit']}" if b.get("rating") else L["none"]   # 日韩写成「数字+单位」，繁中单位自带前导空格
+def bg_list_page(spec):
+    lang = spec["lang"]; L = BG_L10N[lang]; apps = spec["apps"]
+    link = lambda b: L["page"] if b.get("ours") else f"https://apps.apple.com/{L['cc']}/app/id{b['id']}"
+    rows = "".join(f"<tr><th>{esc(b['name'])}{esc(L['ours']) if b.get('ours') else ''}</th>" + "".join(f"<td>{esc(c)}</td>" for c in b["t"]) + f"<td>{esc(bg_rate(b, L))}</td></tr>" for b in apps)
+    entries = "".join(f"""<h3>{i}. {esc(b['name'])} <span style="font-weight:400;color:var(--soft)">— {esc(b['by'])}</span></h3>
+<p>{esc(b['take'])}</p>
+<p><a href="{link(b)}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{esc(L['our_page'] if b.get('ours') else L['see'])} →</a></p>""" for i, b in enumerate(apps, 1))
+    head = "".join(f"<th>{esc(h)}</th>" for h in spec["cols"])
+    body = f"""<h1>{esc(spec['h1'])}</h1>
+<p class="lede">{spec['lede']}</p>
+{spec.get('pre', '')}<h2>{esc(spec['h_cmp'])}</h2>
+<table class="cmp"><thead><tr>{head}</tr></thead><tbody>{rows}</tbody></table>
+<p class="meta">{spec['note']}</p>
+<h2>{esc(spec['h_pick'])}</h2>
+<ul>{''.join(f'<li>{x}</li>' for x in spec['pick'])}</ul>
+<h2>{esc(spec['h_apps'])}</h2>
+{entries}
+<h2>{esc(spec['h_method'])}</h2>
+<p>{spec['method']}</p>"""
+    return {"path": spec["path"], "lang": lang, "kind": "Article", "app": "beforego", "published": "2026-10-12",
+            "title": spec["title"], "crumb": spec["crumb"], "description": spec["description"],
+            "hub_title": spec["hub_title"], "hub_desc": spec["hub_desc"], "more": spec.get("more", []),
+            "items": [{"name": b["name"], "url": f"https://apps.apple.com/{L['cc']}/app/id{b['id']}"} for b in apps],
+            "faq": spec["faq"], "js": [], "body": body}
+
+PAGES.append(bg_list_page({
+  "lang": "zh-Hant", "path": "/tools/zh-hant/xing-cheng-gui-hua-app/",
+  "title": "行程規劃 App 推薦 2026：7 款 iPhone 旅遊行程 App 比較", "crumb": "行程規劃 App 推薦",
+  "description": "7 款 iPhone 行程規劃 App 比較：行程怎麼排、能不能共同編輯、離線、行前清單。資料取自台灣 App Store 頁面（2026 年 10 月 12 日）。",
+  "hub_title": "行程規劃 App 推薦（2026）", "hub_desc": "7 款旅遊行程 App 比較：怎麼排行程、共同編輯、離線與行前清單。",
+  "h1": "行程規劃 App 推薦（2026）",
+  "lede": "7 款能在 iPhone 上排旅遊行程的 App，比較真正有差的地方：行程怎麼排出來、能不能和旅伴共同編輯、沒網路能不能看、有沒有行前清單。資料來自各 App 在台灣 App Store 的頁面（2026 年 10 月 12 日）。其中一款是我們做的，已標出，並用同樣的欄位描述。",
+  "h_cmp": "比較表", "h_pick": "怎麼選", "h_apps": "7 款 App", "h_method": "我們怎麼選",
+  "cols": ["App", "行程怎麼排", "共同編輯", "離線", "行前清單", "台灣評分"],
+  "note": "「說明沒寫」表示 App Store 說明裡沒有提到，不代表一定沒有這個功能。評分是 2026 年 10 月 12 日台灣 App Store 的數字，每天都會變。",
+  "apps": [
+    {"name": "BeforeGo：AI行程規劃·行前清單", "by": "go ka", "id": 6786561175, "rating": None, "ours": True,
+     "t": ("截圖攻略、貼連結或打字，整理成每天的行程", "說明沒寫", "說明沒寫", "依目的地自動生成，出發前 7 天到 3 小時提醒"),
+     "take": "把看到的攻略直接變成行程：截圖一篇攻略、貼上連結，或隨手打幾句計畫，就整理成每天的行程，連同值得去的地方和出發前要辦的事；機票或訂單確認一掃就進行程。行李清單依目的地與日期自動生成（插座、貨幣、入境準備、交通 App），一天的行程會自動排成最短步行路線。免費開始、無廣告、無需帳號；Premium 可以訂閱，也可以一次買斷。"},
+    {"name": "Funliday -全球旅遊行程規劃平台", "by": "Funliday Inc.", "id": 905768387, "rating": (4.48, 10517),
+     "t": ("搜全球景點，拖拉排行程，自動規劃路徑", "可以", "可以（不含地圖）", "說明沒寫"),
+     "take": "在台灣有一萬多則評分，也是旅遊社群：可以看別人的遊記，掃部落客文章裡的 Funliday QR Code 就能拿到對方排好的行程。景點不用自己填地址電話，拖拉就能排，路徑自動規劃；登入後行程存在雲端同步，離線也能看行程與景點資訊（不含地圖）。"},
+    {"name": "去趣 chicTrip", "by": "HOTAI MOTOR CO., Ltd.", "id": 6443825385, "rating": (4.6, 5177),
+     "t": ("加景點後 AI 一鍵排出順路路線，可複製他人行程", "可以", "說明沒寫", "有行李清單，另有共同記帳"),
+     "take": "社群和工具都有：大量旅人上傳的公開行程可以直接複製，加入想去的景點後 AI 一鍵排序成最順的路線。多人共編、共同記帳、行李清單都在裡面，也能預訂台灣、日本等地的住宿與旅遊 eSIM，台灣和日本有叫車、租車、機場接送。"},
+    {"name": "Japan Travel – 乘換案內與日本旅遊規劃", "by": "NAVITIME JAPAN CO.,LTD.", "id": 686373726, "rating": (4.81, 2101),
+     "t": ("把收藏的日本景點排到時間軸，可參考編輯推薦行程", "說明沒寫（可分享行程）", "離線地點搜尋、離線查看路線紀錄", "說明沒寫"),
+     "take": "專做日本：日本的電車、計程車、飛機、渡輪路線查詢和行程規劃在同一個 App，還能在離線時搜尋免費 Wi-Fi、換匯、ATM 和車站。從收藏的景點排出時間軸行程，也能參考編輯推薦行程。電車誤點時更新路線、語音導航等是付費功能。"},
+    {"name": "Tripiday - 最佳旅行規劃App", "by": "Hsin Jung Huang", "id": 1450106361, "rating": (4.76, 481),
+     "t": ("搜尋景點加入行程，依日期排序，可複製公開行程", "可以", "說明沒寫", "說明沒寫"),
+     "take": "搜尋世界知名景點加進行程，依日期排好；可以邀請朋友一起規劃、複製別人公開的行程再自己改，預算支援多國幣別。"},
+    {"name": "TripHugger - 旅遊規劃 | 行程討論分享", "by": "TripHugger Inc.", "id": 882313848, "rating": (4.5549, 337),
+     "t": ("用 Google 地圖資料加景點，地圖與行程同一畫面拖拉", "可以，另有私密討論區", "可以，離線也能改", "說明沒寫"),
+     "take": "適合一群人邊討論邊排：內建共同編輯器、Google 地圖和行程專屬的私密討論區，拖拉行程時地圖路線跟著變。看過的行程會存在手機裡，離線也能調整，連線後自動同步給所有旅伴。"},
+    {"name": "Pathly 旅遊行程規劃・多人共同編輯分享與自由行工具", "by": "Mono Incorporated", "id": 6753792428, "rating": (4.96, 27),
+     "t": ("跟 AI 說目的地與想做的事，AI 排時間與路線", "可以", "說明沒寫", "說明沒寫"),
+     "take": "另一種 AI 做法：跟 AI 說「台南 3 天 2 夜，主攻古蹟和小吃」，時間分配和路線就排好，再和旅伴一起微調。旅途中一張地圖看景點順序與路線，回來後行程變成相簿。"},
+  ],
+  "pick": [
+    "<strong>想把看到的攻略直接變成行程：</strong>BeforeGo（我們的），截圖、貼連結或打字就整理成每天的行程；Pathly 則是跟 AI 說目的地與天數。",
+    "<strong>想和旅伴一起排：</strong>Funliday、去趣、Tripiday、TripHugger、Pathly 的說明都寫了共同編輯；TripHugger 還有行程專屬的討論區。",
+    "<strong>想拿別人排好的行程來改：</strong>去趣與 Tripiday 可以複製公開行程，Funliday 可以掃部落客的 QR Code。",
+    "<strong>只去日本：</strong>Japan Travel（NAVITIME），行程、乘換查詢與離線地點搜尋在同一個 App。",
+    "<strong>在意出發前的準備：</strong>BeforeGo 依目的地自動生成行李清單並在出發前提醒；去趣有行李清單與共同記帳。",
+  ],
+  "method": "我們在台灣 App Store 搜尋「行程規劃」，排除訂房訂票平台、一般行事曆與地圖，留下專門排旅遊行程、在台灣評分較多的 App，再加上一款用 AI 排行程的新 App（Pathly），逐一讀它們的繁體中文說明，看說明怎麼寫行程的排法、共同編輯、離線與行前清單。我們沒有測試付費版，也不是按評分排名：我們的放第一，因為這份清單是我們做的，其餘依台灣評分數排列。Wanderlog 在台灣 App Store 的說明是英文，所以沒有放進來。",
+  "more": [
+    ("有用 AI 排行程的 App 嗎？", "有。BeforeGo 把截圖、連結或文字整理成每天的行程；Pathly 是跟 AI 說目的地與天數；去趣是加入景點後由 AI 一鍵排序路線。"),
+    ("去日本用哪個行程規劃 App？", "只去日本的話，Japan Travel（NAVITIME）把行程、乘換查詢與離線地點搜尋放在一起。其他幾款也都能排日本行程。"),
+  ],
+  "faq": [
+    ("哪個行程規劃 App 可以把截圖或貼文變成行程？", "BeforeGo 的說明寫：截圖一篇攻略、貼上連結或隨手打幾句計畫，就整理成每天的行程，機票或訂單確認一掃也會進行程。"),
+    ("哪些 App 可以和朋友共同編輯行程？", "依台灣 App Store 的說明：Funliday、去趣、Tripiday、TripHugger、Pathly。"),
+    ("出國沒網路能看行程嗎？", "Funliday（不含地圖）和 TripHugger 的說明寫了離線瀏覽；Japan Travel 可以離線搜尋地點、離線查看路線紀錄。其他 App 的說明沒寫。"),
+    ("這些 App 要錢嗎？", "7 款都可以免費下載。說明裡寫了付費功能的有 Japan Travel（誤點更新路線、語音導航等）和 BeforeGo（Premium 訂閱或一次買斷）；其他 App 的說明沒寫付費內容。"),
+    ("這份清單是中立的嗎？", "不是：BeforeGo 是我們做的。表格內容全部來自公開的 App Store 說明，欄位對每款都一樣，每款都附連結可以查證。"),
+  ],
+}))
+
+PAGES.append(bg_list_page({
+  "lang": "ja", "path": "/tools/ja/ryoko-keikaku-app/",
+  "title": "旅行計画アプリおすすめ7選（2026）旅のしおり・共同編集・持ち物リストを比較", "crumb": "旅行計画アプリ",
+  "description": "iPhoneの旅行計画アプリ7つを、プランの作り方・共同編集・オフライン・持ち物リスト・有料機能で比較。日本のApp Storeの掲載内容（2026年10月12日）から。",
+  "hub_title": "旅行計画アプリおすすめ7選（2026）", "hub_desc": "旅のしおり・共同編集・オフライン・持ち物リストを比べました。",
+  "h1": "旅行計画アプリおすすめ7選（2026）",
+  "lede": "iPhoneで旅行の計画や旅のしおりを作れるアプリ7つを、実際に違いが出るところで比べました。プランの作り方、同行者との共同編集、オフラインで見られるか、持ち物リストの有無、説明に書かれた有料機能です。データは各アプリの日本のApp Storeのページ（2026年10月12日）から取りました。7つのうち1つは私たちのアプリで、同じ項目で書いています。",
+  "h_cmp": "比較表", "h_pick": "選び方", "h_apps": "7つのアプリ", "h_method": "選び方の基準",
+  "cols": ["アプリ", "プランの作り方", "共同編集", "オフライン", "持ち物リスト", "日本の評価"],
+  "note": "「記載なし」は App Store の説明に書かれていないという意味で、その機能がないとは限りません。評価は2026年10月12日の日本の App Store の数字で、毎日変わります。",
+  "apps": [
+    {"name": "BeforeGo：AI旅行計画・旅行チェックリスト", "by": "go ka", "id": 6786561175, "rating": None, "ours": True,
+     "t": ("旅の投稿のスクショ・リンク・テキストから日ごとのプランに", "記載なし", "記載なし", "行き先と日程から自動作成、出発7日前〜3時間前にリマインド"),
+     "take": "旅の投稿をそのままプランに：スクショやリンク、打ち込んだ予定から、行きたい場所・出発前にやること・一日ごとの流れまでまとめます。航空券や予約確認はスキャンでプランへ。持ち物リストは行き先と日程から自動で作られ（プラグ、通貨、入国準備、交通アプリ）、1日の予定は最短ルートに並び替えます。無料で開始、広告なし、アカウント不要。プレミアムはサブスクのほか買い切りもあります。"},
+    {"name": "-tabiori- 共有できる旅のしおり", "by": "Gotaru,Co.,Ltd.", "id": 1193502519, "rating": (4.51, 61153),
+     "t": ("スケジュール・持ち物・位置情報・写真をまとめたしおり", "できる", "できる", "あり（共有の持ち物も）"),
+     "take": "日本で6万件以上の評価がある旅のしおりアプリ。スケジュール、持ち物、位置情報、写真をリアルタイムで同期し、同行者を追加すれば共同編集できます。オフライン閲覧に対応し、しおりは提携コンビニで印刷も可能。月額のプレミアムでは広告除去や動画共有などが使えます。"},
+    {"name": "旅のしおり", "by": "NORIHIKO HAYASAKA", "id": 976004299, "rating": (4.43, 18325),
+     "t": ("スケジュール・持ち物・お土産リストを作る", "共有コードで送れる", "記載なし", "あり（初期リストを保存できる）"),
+     "take": "シンプルに管理したい人向け。スケジュール（アラーム付き）、持ち物リスト、お土産リスト、メモを一冊のしおりにまとめ、共有コードで友達に送れます。プレミアムで広告削除としおり保存数の上限拡張。"},
+    {"name": "ニコディ-旅のしおり作成・観光スポット検索・計画立て・マップ", "by": "ANY TRAVEL Inc.", "id": 1515379808, "rating": (4.55, 11852),
+     "t": ("しおり作成と観光スポット検索、ホテル予約", "できる（LINEで招待、希望を一か所にまとめられる）", "記載なし", "記載なし"),
+     "take": "旅行準備に特化したアプリ。ホテルスタッフが作った「ホテリエしおり」でローカルな穴場情報が読めます。広告非表示、海外旅行対応、経路時間計算、定休日アラートなどは月額会員（ニコディサポーターズ）向けの機能です。"},
+    {"name": "ホリデー 国内・韓国旅行の計画やしおりを共同編集できる", "by": "Holiday Inc.", "id": 962231929, "rating": (4.56, 7170),
+     "t": ("保存した「行きたい場所」を組み合わせて行程に", "できる", "記載なし", "記載なし"),
+     "take": "Instagramやテレビで見つけた行きたい場所を保存しておき、組み合わせて旅行プランに。国内約1万エリアのおでかけ情報と韓国のスポットが探せて、友達を招待して共同編集で旅のしおりを作れます。韓国のテーマパークのチケット予約も。"},
+    {"name": "旅のしおり作成・旅行計画 - NAVITIME Travel", "by": "NAVITIME JAPAN CO.,LTD.", "id": 1279724919, "rating": (4.38, 7126),
+     "t": ("スポットを登録すると移動ルート・所要時間・交通費を自動計算", "プレミアム（1人の入会で最大10人）", "記載なし", "記載なし"),
+     "take": "移動の計算をまかせたい人向け。行きたいスポットを登録するだけで、移動ルート・所要時間・交通費を自動計算してスケジュールを組みます。航空券・新幹線・ホテル・レンタカーの予約もアプリ内で。複数人での共同編集はプレミアムコースの機能です。"},
+    {"name": "アバトラベル - 旅行計画・旅のしおり・AI旅行アプリ", "by": "AVA Intelligence, inc.", "id": 6470335943, "rating": (4.14, 207),
+     "t": ("行き先やスポットをスワイプで選ぶとAIが旅程に", "できる（リアルタイム）", "記載なし", "あり（VISA・現地通貨などの準備情報も）"),
+     "take": "AIと一緒に作るタイプ。気になる行き先やスポットをスワイプで選ぶと、移動時間をふまえた旅程にAIがまとめます。航空券・ホテル予約から、持ち物リスト、VISA、現地通貨などの出発前の準備情報までひとつに。"},
+  ],
+  "pick": [
+    "<strong>旅の投稿をそのままプランにしたい：</strong>BeforeGo（自社）。スクショ・リンク・テキストから日ごとのプランに。",
+    "<strong>みんなで旅のしおりを作りたい：</strong>tabiori（共同編集・オフライン・コンビニ印刷）、ホリデー（行きたい場所の保存と共同編集）。",
+    "<strong>移動時間や交通費まで自動で：</strong>NAVITIME Travel（共同編集はプレミアム）。",
+    "<strong>AIにおまかせしたい：</strong>アバトラベル（スワイプで選ぶとAIが旅程に）。",
+    "<strong>持ち物とお土産をシンプルに管理：</strong>旅のしおり。",
+    "<strong>国内のローカル情報が欲しい：</strong>ニコディ（ホテリエしおり。海外旅行対応は月額会員向け）。",
+  ],
+  "method": "日本の App Store で「旅行 計画」と検索し、宿や航空券の予約サイト、地図アプリを除いて、旅行計画・旅のしおり専用で日本の評価が多いアプリと、AIで旅程を作る新しいアプリ（アバトラベル）を選び、日本語の説明に書かれていることだけを同じ項目で並べました。有料版は試していません。評価順のランキングではなく、私たちのアプリを先頭に、残りは日本の評価数の順です。",
+  "more": [
+    ("無料で使える旅行計画アプリは？", "7つともダウンロードは無料です。説明に有料機能が書かれているのは tabiori（広告除去など）、旅のしおり（広告削除・保存数の上限拡張）、ニコディ（広告非表示・海外旅行対応など）、NAVITIME Travel（共同編集など）、BeforeGo（プレミアム）です。"),
+    ("海外旅行の計画に使えるアプリは？", "BeforeGo は行き先に合わせてプラグ・通貨・入国準備・交通アプリまで持ち物リストを作ります。アバトラベルは VISA や現地通貨などの準備情報を案内します。ニコディの海外旅行対応は月額会員向けの機能です。"),
+  ],
+  "faq": [
+    ("旅の投稿から旅行プランを作れるアプリは？", "BeforeGo の説明では、旅の投稿のスクショやリンク、打ち込んだ予定から、日ごとの旅行プランにまとめます。航空券や予約確認もスキャンでプランに加わります。"),
+    ("友達と共同編集できる旅行計画アプリは？", "日本の App Store の説明では、tabiori、ニコディ、ホリデー、アバトラベルが共同編集に対応し、NAVITIME Travel はプレミアムで最大10人まで共同編集できます。旅のしおりは共有コードでしおりを送れます。"),
+    ("電波がなくても旅のしおりを見られる？", "tabiori の説明にはオフライン閲覧が書かれています。ほかのアプリの説明には記載がありません。"),
+    ("持ち物リストがあるアプリは？", "BeforeGo（行き先と日程から自動作成）、tabiori、旅のしおり、アバトラベルの説明に持ち物リストがあります。"),
+    ("このランキングは中立ですか？", "いいえ。BeforeGo は私たちのアプリです。表の内容はすべて公開されている App Store の説明から取り、全アプリ同じ項目で書き、確かめられるようにそれぞれリンクを付けています。"),
+  ],
+}))
+
+PAGES.append(bg_list_page({
+  "lang": "ko", "path": "/tools/ko/yeohaeng-iljeong-aep/",
+  "title": "여행 일정 앱 추천 2026: 트리플 서비스 종료(11월 3일) 후 대안 비교", "crumb": "여행 일정 앱 추천",
+  "description": "트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.",
+  "hub_title": "여행 일정 앱 추천 (2026)", "hub_desc": "트리플 종료 후 대안: 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트 비교.",
+  "h1": "여행 일정 앱 추천 (2026) — 트리플 종료 후 대안",
+  "lede": "트리플은 App Store 설명에서 11월 3일 서비스를 종료하고 NOL로 통합된다고 안내하고 있습니다. 다른 여행 일정 앱을 찾는다면 아래 표를 보세요. 일정 짜는 방식, 공동 편집, 오프라인, 준비물 체크리스트를 각 앱의 한국 App Store 설명(2026년 10월 12일)으로 비교했습니다. 이 중 하나는 우리 앱이며, 같은 항목으로 적었습니다.",
+  "pre": '<h2>트리플 일정은 어떻게 되나요?</h2>\n<p>트리플의 한국 App Store 설명에 따르면 서비스는 11월 3일 종료되고 NOL로 통합되며, 트리플의 여행 일정 기능도 NOL에서 이어지고 기존 일정은 그대로 불러올 수 있다고 합니다. 같은 일정을 계속 쓰고 싶다면 NOL을 먼저 확인해 보세요. 정확한 이전 방법은 트리플과 NOL의 안내를 확인하세요.</p>\n',
+  "h_cmp": "비교표", "h_pick": "이렇게 고르세요", "h_apps": "5가지 앱", "h_method": "고른 기준",
+  "cols": ["앱", "일정 짜는 방식", "공동 편집", "오프라인", "준비물 체크리스트", "한국 평점"],
+  "note": "‘설명에 없음’은 App Store 설명에 적혀 있지 않다는 뜻이며, 기능이 없다는 뜻은 아닙니다. 평점은 2026년 10월 12일 한국 App Store 기준이며 매일 바뀝니다.",
+  "apps": [
+    {"name": "BeforeGo: AI 여행 플래너·패킹리스트", "by": "go ka", "id": 6786561175, "rating": None, "ours": True,
+     "t": ("여행 게시물 캡처·링크·입력한 계획을 날짜별 일정으로 정리", "설명에 없음", "설명에 없음", "목적지·날짜에 맞춰 자동 생성, 출발 7일 전~3시간 전 알림"),
+     "take": "여행 게시물을 바로 일정으로: 게시물을 캡처하거나 링크를 붙여넣거나 계획을 입력하면, 가 볼 만한 장소와 출발 전에 할 일, 하루하루의 흐름까지 날짜별 일정으로 정리합니다. 항공권이나 예약 확인서는 스캔하면 일정에 들어갑니다. 패킹리스트는 목적지와 날짜에 맞춰 자동으로 만들어지고(플러그, 환전, 입국 준비, 교통 앱), 하루 일정은 최단 도보 동선으로 정렬됩니다. 무료로 시작, 광고 없음, 계정 불필요. 프리미엄은 구독 또는 평생 이용권."},
+    {"name": "NOL : 야놀자와 인터파크의 새로운 이름", "by": "YANOLJA CO.,LTD", "id": 436731843, "rating": (4.8, 974911),
+     "t": ("트리플 설명에 따르면 트리플 일정 기능과 기존 일정이 NOL로 이어짐", "설명에 없음", "설명에 없음", "설명에 없음"),
+     "take": "트리플의 공식 후속 앱입니다. NOL 자체 설명은 항공권·숙소·공연·입장권 예약 중심이고, 일정 기능은 트리플 설명에서 ‘기존 일정 그대로 불러오고 AI 맞춤 추천으로 준비’할 수 있다고 안내하고 있습니다. 트리플 일정을 그대로 이어서 쓰려면 가장 먼저 확인할 앱입니다."},
+    {"name": "Wanderlog 여행계획 - 트래블로그 여행 플래너", "by": "Vacation and Travel Planner App LLC", "id": 1476732439, "rating": (4.82, 228),
+     "t": ("장소를 지도에 추가하고 드래그 앤 드롭으로 순서 변경, 루트 최적화", "가능 (실시간)", "가능", "설명에 없음"),
+     "take": "일정, 여행 비용, 항공·호텔 예약 정리, 지도를 한곳에서 보고, 친구를 초대해 실시간으로 함께 편집합니다. 이메일 전달이나 Gmail 연결로 예약을 자동으로 가져오고, 일정은 오프라인에 자동 저장됩니다. Google 지도로 내보내기와 Gmail 연결은 선택 구독 기능입니다."},
+    {"name": "트립노트 - 여행은 계획부터 즐거워야 하니까", "by": "Wanderers Inc.", "id": 6740430211, "rating": (3.86, 74),
+     "t": ("장소를 추가하면 지도에 순서와 경로 표시", "설명에 없음", "설명에 없음", "있음 (가방별로 나눠 관리)"),
+     "take": "일정, 가계부, 체크리스트 세 가지에 집중한 앱입니다. 장소를 추가하면 지도에 순서와 경로가 나오고, 여행 경비를 카테고리별로 정리하며, 준비물은 가방별로 나눠 챙길 수 있습니다."},
+    {"name": "Funliday - 여행계획", "by": "Funliday Inc.", "id": 905768387, "rating": (4.38, 58),
+     "t": ("전 세계 명소를 탐색해 일정에 추가, 운전·도보·대중교통 경로", "가능", "가능 (지도 제외)", "설명에 없음"),
+     "take": "수천 개 여행지의 명소를 일정에 추가하고 동행자와 함께 편집하며, 오프라인으로 일정을 볼 수 있습니다(지도 제외). iOS Safari의 공유 기능으로 명소를 바로 추가할 수 있고, 이메일·WhatsApp·Line으로 일정을 공유합니다."},
+  ],
+  "pick": [
+    "<strong>트리플 일정을 그대로 이어서 쓰고 싶다면:</strong> NOL (트리플 안내에 따름).",
+    "<strong>여행 게시물·캡처를 바로 일정으로:</strong> BeforeGo (우리 앱).",
+    "<strong>친구와 실시간 공동 편집, 예산, 예약 정리까지:</strong> Wanderlog.",
+    "<strong>가계부와 준비물 체크리스트를 함께:</strong> 트립노트.",
+    "<strong>공동 편집과 오프라인(지도 제외) 보기:</strong> Funliday.",
+  ],
+  "method": "한국 App Store에서 ‘여행 계획’을 검색해 숙소·항공 예약 앱과 지도 앱을 빼고, 여행 일정 전용 앱과 트리플의 후속 앱인 NOL을 골라 각 앱의 한국어 설명에 적힌 내용만 같은 항목으로 정리했습니다. 유료 기능은 직접 테스트하지 않았습니다. 평점 순위가 아니라, 우리 앱을 맨 앞에 두고 나머지는 트리플 안내와 관련된 NOL, 그다음 한국 평점 수 순서입니다.",
+  "more": [
+    ("트리플 대체 어플은 뭐가 있나요?", "트리플 일정을 그대로 이어서 쓰려면 트리플이 안내한 NOL을 먼저 확인하세요. 다른 앱을 쓰려면 위 표의 BeforeGo, Wanderlog, 트립노트, Funliday를 비교해 보세요."),
+    ("여행 일정 짜기 좋은 앱은?", "여행 게시물을 일정으로 바꾸고 싶다면 BeforeGo, 친구와 함께 짜려면 Wanderlog나 Funliday, 경비와 준비물까지 같이 관리하려면 트립노트가 맞습니다."),
+  ],
+  "faq": [
+    ("트리플은 언제 종료되나요?", "트리플의 한국 App Store 설명에 따르면 11월 3일에 서비스를 종료하고 NOL로 통합됩니다."),
+    ("트리플 일정은 어떻게 되나요?", "트리플 설명에 따르면 트리플의 여행 일정 기능은 NOL에서 이어지고, 기존 일정을 그대로 불러올 수 있습니다. 정확한 방법은 트리플과 NOL의 안내를 확인하세요."),
+    ("트리플 일정을 다른 앱으로 옮길 수 있나요?", "트리플 설명에 따르면 NOL에서 기존 일정을 그대로 불러올 수 있습니다. 이 표의 다른 앱(BeforeGo, Wanderlog, 트립노트, Funliday) 설명에는 트리플 일정을 자동으로 가져오는 기능이 적혀 있지 않습니다. BeforeGo는 계획을 입력하거나 링크·캡처를 넣으면 날짜별 일정으로 정리한다고 설명합니다."),
+    ("친구와 함께 일정을 짤 수 있는 앱은?", "한국 App Store 설명 기준으로 Wanderlog(실시간 협업)와 Funliday가 공동 편집을 지원합니다."),
+    ("이 비교는 중립적인가요?", "아니요. BeforeGo는 우리가 만든 앱입니다. 표의 내용은 모두 공개된 App Store 설명에서 가져왔고, 모든 앱을 같은 항목으로 적었으며, 확인할 수 있도록 각 앱에 링크를 달았습니다."),
+  ],
+}))
+
 # ------------------------------------------------------------------ 目录页
 def hub_page(lang):
     hub_path = HUBS[lang]
@@ -2070,6 +2274,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple."),
+        "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 트리플 서비스 종료 후 쓸 만한 여행 일정 앱을 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다."),
         "th": ("เครื่องมือและคู่มือฟรี — go ka", "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF"),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
