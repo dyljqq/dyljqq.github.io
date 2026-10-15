@@ -32,7 +32,9 @@
   "hubTitle": "Days until calculator",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/days-until-christmas/",
@@ -47,7 +49,7 @@
    },
    {
     "q": "How many weeks until Christmas 2026?",
-    "a": "Divide the days by seven: on 13 October 2026 there were 73 days, which is about 10 weeks. The counter at the top of this page recalculates it on the day you visit."
+    "a": "Divide the days by seven: on 15 October 2026 there were 71 days, which is about 10 weeks. The counter at the top of this page recalculates it on the day you visit."
    },
    {
     "q": "How many days between Halloween and Christmas?",
@@ -67,7 +69,9 @@
   "hubTitle": "How many days until Christmas 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/days-until-halloween/",
@@ -82,7 +86,7 @@
    },
    {
     "q": "How many weeks until Halloween 2026?",
-    "a": "On 13 October 2026 there were 18 days, about 2 weeks. The counter on this page recalculates when you open it."
+    "a": "On 15 October 2026 there were 16 days, about 2 weeks. The counter on this page recalculates when you open it."
    },
    {
     "q": "When is Halloween 2027?",
@@ -98,7 +102,9 @@
   "hubTitle": "How many days until Halloween 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/days-until-diwali/",
@@ -113,7 +119,7 @@
    },
    {
     "q": "How many weeks until Diwali 2026?",
-    "a": "On 13 October 2026 there were 26 days, about 3 weeks. The counter on this page recalculates when you open it."
+    "a": "On 15 October 2026 there were 24 days, about 3 weeks. The counter on this page recalculates when you open it."
    },
    {
     "q": "Why does the date of Diwali change every year?",
@@ -129,7 +135,9 @@
   "hubTitle": "How many days until Diwali 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/days-until-new-year/",
@@ -144,7 +152,7 @@
    },
    {
     "q": "How many days are left in 2026?",
-    "a": "As of 13 October 2026 there were 80 days left in 2026, counting today. The counter on this page recalculates when you open it."
+    "a": "As of 15 October 2026 there were 78 days left in 2026, counting today. The counter on this page recalculates when you open it."
    },
    {
     "q": "When is Lunar New Year 2027?",
@@ -160,7 +168,9 @@
   "hubTitle": "How many days until New Year 2027?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/pt-br/quantos-dias-faltam/",
@@ -195,7 +205,9 @@
   "hubTitle": "Quantos dias faltam? (contador de dias)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/",
@@ -230,7 +242,9 @@
   "hubTitle": "Quantos dias faltam para o meu aniversário?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
@@ -265,7 +279,9 @@
   "hubTitle": "Quantos dias faltam para as férias?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/ferias-escolares-sao-paulo-2026/",
@@ -292,7 +308,9 @@
   "hubTitle": "Férias escolares em São Paulo (2026)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/ferias-escolares-minas-gerais-2026/",
@@ -319,7 +337,9 @@
   "hubTitle": "Férias escolares em Minas Gerais (2026)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/ferias-escolares-parana-2026/",
@@ -346,7 +366,9 @@
   "hubTitle": "Férias escolares no Paraná (2026)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/ferias-escolares-rio-grande-do-sul-2026/",
@@ -377,7 +399,9 @@
   "hubTitle": "Férias escolares no Rio Grande do Sul (2026)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/ferias-escolares-pernambuco-2026/",
@@ -404,7 +428,9 @@
   "hubTitle": "Férias escolares em Pernambuco (2026)",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/quinto-dia-util/",
@@ -439,7 +465,9 @@
   "hubTitle": "Quando é o quinto dia útil do mês?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/contador-de-dias-de-namoro/",
@@ -474,7 +502,9 @@
   "hubTitle": "Contador de dias de namoro",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/melhores-apps-contagem-regressiva/",
@@ -538,7 +568,9 @@
    }
   ],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
@@ -577,7 +609,10 @@
   "hubTitle": "Como colocar contagem regressiva na tela de bloqueio do iPhone",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas",
+  "iphoneOnly": true
  },
  {
   "path": "/tools/pt-br/dias-para-o-enem-2026/",
@@ -612,7 +647,9 @@
   "hubTitle": "Quantos dias faltam para o ENEM 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/contagem-regressiva-reveillon-2027/",
@@ -631,7 +668,7 @@
    },
    {
     "q": "Quantos dias faltam para o Ano-Novo?",
-    "a": "Em 13/10/2026 faltavam 80 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 15/10/2026 faltavam 78 dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Como coloco a contagem do Réveillon na Tela Bloqueada?",
@@ -643,7 +680,9 @@
   "hubTitle": "Quantos dias faltam para o Réveillon 2027?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/",
@@ -658,7 +697,7 @@
    },
    {
     "q": "Quantos dias faltam para o Carnaval 2027?",
-    "a": "Em 13/10/2026 faltavam 116 dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 15/10/2026 faltavam 114 dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "O Carnaval é feriado nacional?",
@@ -678,7 +717,9 @@
   "hubTitle": "Quantos dias faltam para o Carnaval 2027?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/contagem-regressiva-black-friday-2026/",
@@ -697,7 +738,7 @@
    },
    {
     "q": "Quantos dias faltam para a Black Friday?",
-    "a": "Em 13/10/2026 faltavam 45 dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 15/10/2026 faltavam 43 dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Até quando sai a 1ª parcela do 13º salário?",
@@ -713,7 +754,9 @@
   "hubTitle": "Quantos dias faltam para a Black Friday 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/",
@@ -728,7 +771,7 @@
    },
    {
     "q": "Quantas semanas faltam para o Natal?",
-    "a": "Em 13/10/2026 faltavam 73 dias, cerca de 10 semanas. O contador desta página recalcula no dia em que você abre."
+    "a": "Em 15/10/2026 faltavam 71 dias, cerca de 10 semanas. O contador desta página recalcula no dia em que você abre."
    },
    {
     "q": "Até quando sai a 2ª parcela do 13º salário?",
@@ -748,7 +791,9 @@
   "hubTitle": "Quantos dias faltam para o Natal 2026?",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/invoice-template/",
@@ -783,7 +828,9 @@
   "hubTitle": "Free invoice template",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/es-mx/formato-de-cotizacion/",
@@ -822,7 +869,9 @@
   "hubTitle": "Formato de cotización gratis",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Inicio",
+  "crumbHub": "Herramientas"
  },
  {
   "path": "/tools/es-mx/nota-de-venta/",
@@ -857,7 +906,9 @@
   "hubTitle": "Formato de nota de venta gratis",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Inicio",
+  "crumbHub": "Herramientas"
  },
  {
   "path": "/tools/es-mx/app-para-hacer-cotizaciones-iphone/",
@@ -892,7 +943,9 @@
   "hubTitle": "App para hacer cotizaciones en el iPhone",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Inicio",
+  "crumbHub": "Herramientas"
  },
  {
   "path": "/tools/es-mx/alternativa-a-invoice-simple/",
@@ -923,7 +976,9 @@
   "hubTitle": "Alternativa a Invoice Simple en México",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Inicio",
+  "crumbHub": "Herramientas"
  },
  {
   "path": "/tools/th/bai-sanoe-rakha/",
@@ -962,7 +1017,9 @@
   "hubTitle": "ใบเสนอราคา ฟรี",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "หน้าแรก",
+  "crumbHub": "เครื่องมือ"
  },
  {
   "path": "/tools/th/bai-set-rap-ngoen/",
@@ -997,7 +1054,9 @@
   "hubTitle": "ใบเสร็จรับเงิน ฟรี",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "หน้าแรก",
+  "crumbHub": "เครื่องมือ"
  },
  {
   "path": "/tools/zh-hant/bao-jia-dan-fan-ben/",
@@ -1040,7 +1099,9 @@
   "hubTitle": "報價單範本",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/shou-ju-fan-ben/",
@@ -1056,6 +1117,10 @@
    {
     "q": "收據金額為什麼要寫大寫？",
     "a": "大寫數字筆畫多、不容易被塗改，例如「壹萬貳仟參佰元整」；最後的「整」表示沒有零頭。在範本裡輸入數字，大寫會自動寫出來。"
+   },
+   {
+    "q": "「茲收到」是什麼意思？",
+    "a": "「茲」是「此、現在」的意思，「茲收到」就是「現在確實收到」。這是收據開頭的固定用語，表示收款人確認已經收到這筆錢。"
    },
    {
     "q": "「茲收到」後面要寫什麼？",
@@ -1079,7 +1144,9 @@
   "hubTitle": "收據範本",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/nong-li-xin-nian-2027/",
@@ -1106,7 +1173,7 @@
    },
    {
     "q": "過年還有幾天？",
-    "a": "在2026年10月13日，離大年初一還有 116 天，約 16 週。本頁的倒數會在你打開當天重新計算。"
+    "a": "在2026年10月15日，離大年初一還有 114 天，約 16 週。本頁的倒數會在你打開當天重新計算。"
    },
    {
     "q": "怎麼把過年倒數放在 iPhone 鎖定畫面？",
@@ -1118,7 +1185,9 @@
   "hubTitle": "2027 農曆新年倒數",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/2027-lian-jia-xing-shi-li/",
@@ -1153,7 +1222,9 @@
   "hubTitle": "2027 連假行事曆：下一個連假還有幾天？",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/116-xue-ce-dao-shu/",
@@ -1180,7 +1251,7 @@
    },
    {
     "q": "學測還有幾天？",
-    "a": "在2026年10月13日，離學測第一天還有 101 天，約 14 週。本頁的倒數會在你打開當天重新計算。"
+    "a": "在2026年10月15日，離學測第一天還有 99 天，約 14 週。本頁的倒數會在你打開當天重新計算。"
    },
    {
     "q": "怎麼把學測倒數放在 iPhone 鎖定畫面？",
@@ -1192,7 +1263,9 @@
   "hubTitle": "116 學測倒數",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/116-hui-kao-dao-shu/",
@@ -1219,7 +1292,7 @@
    },
    {
     "q": "會考還有幾天？",
-    "a": "在2026年10月13日，離會考第一天還有 214 天，約 30 週。本頁的倒數會在你打開當天重新計算。"
+    "a": "在2026年10月15日，離會考第一天還有 212 天，約 30 週。本頁的倒數會在你打開當天重新計算。"
    },
    {
     "q": "怎麼把會考倒數放在 iPhone 鎖定畫面？",
@@ -1231,7 +1304,9 @@
   "hubTitle": "116 會考倒數",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/",
@@ -1266,7 +1341,10 @@
   "hubTitle": "iPhone 桌面倒數教學",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具",
+  "iphoneOnly": true
  },
  {
   "path": "/tools/ja/ato-nannichi/",
@@ -1301,13 +1379,15 @@
   "hubTitle": "あと何日？（日数計算）",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール"
  },
  {
   "path": "/tools/ja/kyotsu-test-2027/",
   "lang": "ja",
   "kind": "Article",
-  "title": "共通テスト2027まであと何日？カウントダウン（1月16日・17日）",
+  "title": "共通テスト2027 カウントダウン｜あと何日？待ち受けにも（1月16日・17日）",
   "description": "2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。",
   "faq": [
    {
@@ -1316,7 +1396,7 @@
    },
    {
     "q": "共通テストまであと何週間ですか？",
-    "a": "2026年10月13日の時点で本試験まで95日、約13週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
+    "a": "2026年10月15日の時点で本試験まで93日、約13週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
    },
    {
     "q": "共通テストの100日前はいつですか？",
@@ -1336,7 +1416,9 @@
   "hubTitle": "共通テスト2027まであと何日？",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール"
  },
  {
   "path": "/tools/ja/countdown-machiuke-iphone/",
@@ -1371,7 +1453,52 @@
   "hubTitle": "カウントダウンを待ち受けにする方法（iPhone）",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール",
+  "iphoneOnly": true
+ },
+ {
+  "path": "/tools/ko/iphone-didei-wijet/",
+  "lang": "ko",
+  "kind": "Article",
+  "title": "아이폰 디데이 위젯 설정 방법 (잠금 화면·홈 화면)",
+  "description": "아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.",
+  "faq": [
+   {
+    "q": "아이폰 디데이 위젯은 무료인가요?",
+    "a": "네. ‘카운트다운 위젯: 디데이’ 앱의 위젯은 잠금 화면용과 홈 화면용 모두 모든 크기가 무료이고, 이벤트 개수에도 제한이 없습니다."
+   },
+   {
+    "q": "배경화면에 디데이 숫자를 넣으면 안 되나요?",
+    "a": "배경화면은 이미지라서 넣은 숫자가 만든 날 그대로 멈춰 있습니다. 매일 바뀌는 디데이를 보려면 잠금 화면 위젯을 쓰세요."
+   },
+   {
+    "q": "수능 디데이는 며칠로 맞추면 되나요?",
+    "a": "2027학년도 수능은 2026년 11월 19일(목)입니다. 이벤트 날짜를 그날로 정하면 위젯이 매일 남은 날을 보여 줍니다. 성적 통지는 2026년 12월 11일(금)입니다(교육부 발표)."
+   },
+   {
+    "q": "지나간 날부터도 셀 수 있나요?",
+    "a": "네. 지나간 날짜를 넣으면 그날부터 며칠이 지났는지 세어 올라갑니다."
+   },
+   {
+    "q": "잠금 화면 실시간 현황과는 다른가요?",
+    "a": "다릅니다. 잠금 화면 위젯은 무료이고 시계 아래에 표시됩니다. 잠금 화면 실시간 현황은 Countdown Pro 기능입니다."
+   },
+   {
+    "q": "갤럭시(안드로이드)에서도 쓸 수 있나요?",
+    "a": "이 앱은 iPhone·iPad 전용입니다. 갤럭시에서는 Google Play에서 홈 화면 위젯을 지원하는 디데이 앱을 찾아보세요."
+   }
+  ],
+  "published": "2026-10-15",
+  "app": "countdown",
+  "hubTitle": "아이폰 디데이 위젯 설정 방법",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "홈",
+  "crumbHub": "도구",
+  "iphoneOnly": true
  },
  {
   "path": "/tools/how-to-write-an-invoice/",
@@ -1406,7 +1533,9 @@
   "hubTitle": "How to write an invoice",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/packing-list/",
@@ -1441,7 +1570,9 @@
   "hubTitle": "Packing list generator",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/best-countdown-widget-apps-iphone/",
@@ -1505,7 +1636,9 @@
    }
   ],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/zh-hant/xing-cheng-gui-hua-app/",
@@ -1569,7 +1702,9 @@
    }
   ],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/ja/ryoko-keikaku-app/",
@@ -1633,7 +1768,9 @@
    }
   ],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール"
  },
  {
   "path": "/tools/ko/yeohaeng-iljeong-aep/",
@@ -1689,7 +1826,9 @@
    }
   ],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "홈",
+  "crumbHub": "도구"
  },
  {
   "path": "/blog/countdown-widget-iphone-home-lock-screen/",
@@ -1720,7 +1859,9 @@
   "hubTitle": "How to Put a Countdown on Your iPhone Lock Screen",
   "items": [],
   "headline": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
-  "image": "https://beforego.art/assets/art/countdown/07-920.webp"
+  "image": "https://beforego.art/assets/art/countdown/07-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/blog/count-down-birthday-exam-trip-iphone/",
@@ -1751,7 +1892,9 @@
   "hubTitle": "Count Down to a Birthday, Exam or Trip on iPhone",
   "items": [],
   "headline": "How to Count Down to a Birthday, an Exam or a Trip on iPhone",
-  "image": "https://beforego.art/assets/art/countdown/09-920.webp"
+  "image": "https://beforego.art/assets/art/countdown/09-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/blog/payment-qr-code-on-invoice/",
@@ -1782,7 +1925,9 @@
   "hubTitle": "Add a Payment QR Code to an Invoice and Get Paid Faster",
   "items": [],
   "headline": "How to Add a Payment QR Code to an Invoice (and Get Paid Faster)",
-  "image": "https://beforego.art/assets/art/invoiceqr/08-920.webp"
+  "image": "https://beforego.art/assets/art/invoiceqr/08-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/blog/invoice-vs-estimate-vs-quote/",
@@ -1813,7 +1958,9 @@
   "hubTitle": "Invoice vs Estimate vs Quote: What's the Difference?",
   "items": [],
   "headline": "Invoice vs Estimate vs Quote: What's the Difference?",
-  "image": "https://beforego.art/assets/art/invoiceqr/05-920.webp"
+  "image": "https://beforego.art/assets/art/invoiceqr/05-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/blog/travel-post-screenshot-to-itinerary/",
@@ -1844,7 +1991,9 @@
   "hubTitle": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
   "items": [],
   "headline": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
-  "image": "https://beforego.art/assets/art/beforego/01-920.webp"
+  "image": "https://beforego.art/assets/art/beforego/01-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/blog/packing-list-by-destination/",
@@ -1875,7 +2024,9 @@
   "hubTitle": "A Packing List That Fits the Destination: Plugs, Currency, Rules",
   "items": [],
   "headline": "A Packing List That Fits the Destination: Plugs, Currency, Entry Rules",
-  "image": "https://beforego.art/assets/art/beforego/04-920.webp"
+  "image": "https://beforego.art/assets/art/beforego/04-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/",
@@ -1889,7 +2040,9 @@
   "hubTitle": "Free tools & guides — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  },
  {
   "path": "/tools/pt-br/",
@@ -1903,7 +2056,9 @@
   "hubTitle": "Ferramentas e guias grátis — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Início",
+  "crumbHub": "Ferramentas"
  },
  {
   "path": "/tools/es-mx/",
@@ -1917,7 +2072,9 @@
   "hubTitle": "Herramientas y guías gratis — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Inicio",
+  "crumbHub": "Herramientas"
  },
  {
   "path": "/tools/zh-hant/",
@@ -1931,7 +2088,9 @@
   "hubTitle": "免費工具與指南 — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "首頁",
+  "crumbHub": "工具"
  },
  {
   "path": "/tools/ja/",
@@ -1945,7 +2104,9 @@
   "hubTitle": "無料ツールとガイド — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール"
  },
  {
   "path": "/tools/th/",
@@ -1959,21 +2120,25 @@
   "hubTitle": "เครื่องมือและคู่มือฟรี — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "หน้าแรก",
+  "crumbHub": "เครื่องมือ"
  },
  {
   "path": "/tools/ko/",
   "lang": "ko",
   "kind": "CollectionPage",
   "title": "무료 도구와 가이드 — go ka",
-  "description": "go ka의 무료 가이드: 트리플 서비스 종료 후 쓸 만한 여행 일정 앱을 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.",
+  "description": "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.",
   "faq": [],
   "published": null,
   "app": null,
   "hubTitle": "무료 도구와 가이드 — go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "홈",
+  "crumbHub": "도구"
  },
  {
   "path": "/blog/",
@@ -1987,6 +2152,8 @@
   "hubTitle": "Blog — guides for countdowns, invoices and trips | go ka",
   "items": [],
   "headline": null,
-  "image": null
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
  }
 ]

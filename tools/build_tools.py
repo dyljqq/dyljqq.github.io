@@ -52,7 +52,7 @@ TS = {  # 工具页专用界面词
          "days": "วัน", "day": "วัน", "weeks": "สัปดาห์", "today": "วันนี้!", "passed": "วันที่แล้ว",
          "home": "หน้าแรก", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
   # 10-12：韩国线走 BeforeGo（트리플 11-03 停服，联想词有「트리플 대체 어플」「여행 일정 앱 추천」）
-  "ko": {"tools": "도구", "hub_title": "무료 도구와 가이드", "hub_lede": "가입 없이 무료로 쓰는 작은 도구와 가이드입니다. 우리 iPhone 앱이 하는 일을 브라우저에서도 할 수 있게 만들었습니다.",
+  "ko": {"tools": "도구", "hub_title": "무료 도구와 가이드", "hub_lede": "가입 없이 무료로 보는 가이드입니다. 우리 iPhone 앱으로 하는 일을 더 쉽게 하는 방법을 정리했습니다.",
          "faq": "자주 묻는 질문", "published": "게시", "updated": "업데이트", "get": "iPhone에서 계속하기", "ask": "이 페이지를 AI에게 요약 요청",
          "days": "일", "day": "일", "weeks": "주", "today": "오늘입니다!", "passed": "일 지남",
          "home": "홈", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
@@ -73,17 +73,19 @@ def fmt(d, lang):
         return f"{d.year}年{d.month}月{d.day}日（{'月火水木金土日'[d.weekday()]}）"
     if lang == "zh-Hant":
         return f"{d.year}年{d.month}月{d.day}日（星期{'一二三四五六日'[d.weekday()]}）"
+    if lang == "ko":
+        return f"{d.year}년 {d.month}월 {d.day}일({'월화수목금토일'[d.weekday()]})"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
 
 # 共用 JS：data-date 的元素按访问当天重算天数；data-until 的把整句里的数字替换
 COUNT_JS = """
-(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前']}[document.documentElement.lang]||['days','day','Today','days ago'];
+(function(){var T={en:['days','day','That\\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前'],ko:['일','일','오늘입니다!','일 지남']}[document.documentElement.lang]||['days','day','Today','days ago'];
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=n===-1?T[3].replace(/^(dias|days)/,function(m){return m.slice(0,-1)}):T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):L==='ko'?Math.floor(n/7)+'주'+(n%7?' '+(n%7)+'일':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 """
 CALC_JS = """
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
@@ -206,13 +208,15 @@ def counter(d, lang, label=""):
     w = f"{n // 7} {wk or ts(lang, 'weeks')}" + (f"{' e ' if lang == 'pt-BR' else ' + '}{n % 7} {ts(lang, 'days') if n % 7 != 1 else ts(lang, 'day')}" if n % 7 else "") if n >= 7 else ""
     if lang == "ja" and n >= 7: w = f"{n // 7}週と{n % 7}日" if n % 7 else f"{n // 7}週間"
     if lang == "zh-Hant" and n >= 7: w = f"{n // 7} 週又 {n % 7} 天" if n % 7 else f"{n // 7} 週"
+    if lang == "ko" and n >= 7: w = f"{n // 7}주 {n % 7}일" if n % 7 else f"{n // 7}주"
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
             f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
 
 # 首个倒数数字正下方的一行下载按钮：只对 iOS 访客显示（build_seo 的 DEVICE 给 <html> 打 is-ios）。
 # 10-10 复盘：下载按钮原来只在页面靠后的位置，搜进来的人看完数字就走。ct=web-countdown-top，和页尾卡片的 -tool 分开计。
 TOP_CTA = {"en": "Add it to your Home Screen — free", "pt-BR": "Colocar na Tela de Início — grátis",
-           "ja": "ホーム画面・ロック画面に置く（無料）", "zh-Hant": "放到主畫面（免費）"}   # 短到 375 宽一行放得下
+           "ja": "ホーム画面・ロック画面に置く（無料）", "zh-Hant": "放到主畫面（免費）",
+           "ko": "잠금 화면·홈 화면에 두기 (무료)"}   # 短到 375 宽一行放得下
 def top_cta(app_key, lang, label=None):   # label：锁屏教程页说「放到锁屏」，其余页默认说主屏
     p = BY_KEY[app_key]; a = {"variantOf": app_key, "lang": lang} if lang != "en" else p
     return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(label or TOP_CTA[lang])}</a></p>'
@@ -227,7 +231,8 @@ def live(d, lang="pt-BR"):
     """正文里的一小段实时天数（COUNT_JS 在访问当天重算）。"""
     n = days_to(d); u = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
     if n == -1: u = u.replace("dias", "dia").replace("days", "day")
-    return f'<span data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span> <span data-unit>{esc(u)}</span></span>'
+    sep = "" if lang == "ko" else " "
+    return f'<span data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span>{sep}<span data-unit>{esc(u)}</span></span>'
 
 def wrap_tables(body):
     """表格外包 .tbl（overflow-x:auto），手机上表格自己滚，不把页面撑宽。"""
@@ -846,7 +851,7 @@ SCENES = [
  # 「contagem regressiva iphone foto」「contador de dias widget iphone」「como colocar contagem regressiva no calendário do celular」。
  # app 说法只用 pt-BR 商店 1.4.16 描述：widgets 全尺寸免费（Tela de Início / Tela Bloqueada）、eventos ilimitados、repetição、importar de calendário；
  # fotos próprias como fundo、Atividade ao Vivo na Tela Bloqueada 属于 Pro；「Suas contagens, lembretes e widgets funcionam igual, assinando ou não」。
- {"path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/", "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+ {"path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/", "iphone_only": True, "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-12",
   "title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "crumb": "Na tela de bloqueio",
   "description": "Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.",
   "hub_title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "hub_desc": "Widget grátis na Tela Bloqueada e na Tela de Início: o número de dias muda sozinho, sem refazer papel de parede.",
@@ -1446,12 +1451,18 @@ PAGES.append({"path": "/tools/zh-hant/bao-jia-dan-fan-ben/", "lang": "zh-Hant", 
 {ZH_NOTE}"""})
 
 PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-29",
+  # 10-15：GSC「茲收到 / 茲收到收款證明 / 茲收到範本」等約 30 次曝光、排名 6.5–12；Google TW 联想词「茲收到意思 / 用法 / 現金範本 / 手寫收據範本 / 英文」
+  "more": [
+    ("茲收到的英文怎麼說？", "英文收據常寫「Received from（付款人）the sum of（金額）for（事由）」，例如 Received from Wang Xiao-Ming the sum of NT$15,000 for October rent."),
+    ("手寫收據也可以用這個格式嗎？", "可以。照「茲收到、付款人、事由、大寫金額」的順序寫，最後簽名或蓋章。寫錯了不要塗改，重開一張比較保險。"),
+  ],
   "title": "收據範本（免費）— 茲收到格式，金額自動轉大寫", "crumb": "收據範本",
   "description": "免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。",
   "hub_title": "收據範本", "hub_desc": "「茲收到」格式，輸入金額自動寫出大寫；列印或存成 PDF。",
   "js": [RECEIPT_JS], "faq": [
     ("這個收據範本免費嗎？", "是。整份在你的瀏覽器裡填寫，不會上傳，不用帳號，也沒有浮水印。填好後列印或存成 PDF。"),
     ("收據金額為什麼要寫大寫？", "大寫數字筆畫多、不容易被塗改，例如「壹萬貳仟參佰元整」；最後的「整」表示沒有零頭。在範本裡輸入數字，大寫會自動寫出來。"),
+    ("「茲收到」是什麼意思？", "「茲」是「此、現在」的意思，「茲收到」就是「現在確實收到」。這是收據開頭的固定用語，表示收款人確認已經收到這筆錢。"),
     ("「茲收到」後面要寫什麼？", "寫付款人的姓名或公司名稱，接著寫「繳付」與款項的事由，例如「茲收到 王小明 繳付 十月份房租 款項」。"),
     ("金額有小數怎麼辦？", "範本的大寫以整數元計算，小數會捨去；金額有角或分的話，請在大寫欄自己補上。"),
     ("收據可以當發票用嗎？", "不行。收據證明你收到了款項；在台灣，營業人依法要開的是統一發票。在香港，「發票」通常指請款用的單據（invoice），不是稅務憑證。這個範本和我們的 App 都不開立稅務發票。"),
@@ -1473,6 +1484,15 @@ PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kin
 </div></div>
 <h2>收據要寫什麼</h2>
 <ul><li><strong>「收據」字樣</strong>與收據編號。</li><li><strong>日期</strong>：收到款項的那一天。</li><li><strong>「茲收到 某某 繳付 某某款項」</strong>：付款人與事由。</li><li><strong>金額</strong>：中文大寫加阿拉伯數字，大寫最後寫「元整」，不容易被塗改。香港填港幣時，把「新台幣」和「NT$」改成「港幣」和「HK$」。</li><li><strong>付款方式</strong>：現金、轉帳、支票。</li><li><strong>收款人簽名或蓋章</strong>。</li></ul>
+<h2>「茲收到」的寫法</h2>
+<p>「茲」是「此、現在」，「茲收到」就是「現在確實收到」。後面依序寫付款人、事由和金額，最後寫「此據」。</p>
+<table><thead><tr><th>情況</th><th>寫法</th></tr></thead><tbody>
+<tr><td>現金</td><td>茲收到 王小明 交來 現金 新台幣參仟元整</td></tr>
+<tr><td>房租</td><td>茲收到 王小明 繳付 十月份房租 新台幣壹萬伍仟元整</td></tr>
+<tr><td>訂金</td><td>茲收到 陳大華 繳付 婚禮攝影訂金 新台幣伍仟元整</td></tr>
+<tr><td>英文收據</td><td>Received from Wang Xiao-Ming the sum of NT$15,000 for October rent.</td></tr>
+</tbody></table>
+<p>手寫收據也照這個順序寫。寫錯了不要塗改，重開一張比較保險；大寫金額和阿拉伯數字要一致。</p>
 <h2>金額大寫對照</h2>
 <table><thead><tr><th>數字</th><th>大寫</th></tr></thead><tbody>
 <tr><td>1 2 3 4 5</td><td>壹 貳 參 肆 伍</td></tr><tr><td>6 7 8 9 0</td><td>陸 柒 捌 玖 零</td></tr><tr><td>十、百、千</td><td>拾、佰、仟</td></tr><tr><td>萬、億</td><td>萬、億</td></tr>
@@ -1699,7 +1719,7 @@ PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", 
 <table><thead><tr><th>節點</th><th>日期</th></tr></thead><tbody>{zh_nodes(HK1)}</tbody></table>
 <p>大學學測的倒數，見 <a href="/tools/zh-hant/116-xue-ce-dao-shu/">116 學測倒數</a>。</p>"""})
 
-PAGES.append({"path": ZH_LOCK_PATH, "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
+PAGES.append({"path": ZH_LOCK_PATH, "iphone_only": True, "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
   "title": "iPhone 桌面倒數怎麼放？主畫面、鎖定畫面倒數小工具教學", "crumb": "iPhone 桌面倒數",
   "description": "把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。",
   "hub_title": "iPhone 桌面倒數教學", "hub_desc": "在主畫面和鎖定畫面放「還有幾天」的步驟，學測、會考、過年都適用。",
@@ -1774,7 +1794,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
     ("共通テスト2027の追・再試験はいつですか？", f"{fmt(KTM1, 'ja')}・{KTM2.day}日（{'月火水木金土日'[KTM2.weekday()]}）です。"),
     ("共通テストまであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2026, 12, 16), 'ja')}、30日前は{fmt(KT1 - dt.timedelta(days=30), 'ja')}です。"),
   ],
-  "title": "共通テスト2027まであと何日？カウントダウン（1月16日・17日）", "crumb": "共通テスト2027",
+  "title": "共通テスト2027 カウントダウン｜あと何日？待ち受けにも（1月16日・17日）", "crumb": "共通テスト2027",
   "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。",
   "hub_title": "共通テスト2027まであと何日？", "hub_desc": "本試験（1月16日・17日）までのカウントダウンと、100日前・30日前・1週間前の日付。",
   "js": [COUNT_JS], "faq": [
@@ -1808,7 +1828,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 # 依据：GSC 10-06 前「共通テストカウントダウン 待ち受け」16 次曝光排名 8.8、「…待ち受け iphone」排名 13；
 # Google JP 联想词「カウントダウン 待ち受け iphone / アプリ / にする方法 / android」「受験 カウントダウン ロック画面」。
 # app 说法只用 ja 商店 1.4.16 描述：ウィジェットは全サイズ無料（ホーム画面・ロック画面）、イベント無制限；ロック画面のライブアクティビティは Pro。
-PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-10-10",
+PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "iphone_only": True, "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-10-10",
   "title": "カウントダウンを待ち受け（ロック画面）にする方法｜iPhone", "crumb": "待ち受けにカウントダウン",
   "description": "iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。",
   "hub_title": "カウントダウンを待ち受けにする方法（iPhone）", "hub_desc": "ロック画面とホーム画面に「あと何日」を出す手順。受験・ライブ・記念日に。",
@@ -1842,6 +1862,51 @@ PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "lang": "ja", "kin
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
 <h2>節目を迎えたとき</h2>
 <p>カウントダウンが100日、1週間、当日の朝といった節目を迎えると、アプリが数字を全画面で表示し、共有できるカードを用意します。</p>"""})
+
+# 7f. 韩国：아이폰 디데이 위젯 설정 방법（ko，Countdown）——10-15
+# 依据：Google KR 联想词「디데이 위젯 아이폰 / 잠금 화면 / 추천 / 설정」「수능 디데이 2027」；ja / zh-Hant / pt-BR 同主题教程页上线后
+# 有搜索点击和商店点击（Vercel 10-10~15：待ち受け页 3 次 ~out）。
+# 수능：교육부 2024-08-16 발표、평가원 2026-03-31 시행 기본계획——2026-11-19(목) 시행、12-11(금) 성적 통지。설날 = 农历初一 2027-02-06（同 CNY）。
+# app 说法只用 ko 商店 1.4.18 描述：모든 위젯 무료（홈 화면과 잠금 화면의 모든 크기）、이벤트 개수 무제한、세어 올라가기；잠금 화면 실시간 현황은 Pro。
+# 小组件列表里 app 名是 Countdown（ko.lproj 的 CFBundleDisplayName）。
+SUNEUNG, SUNEUNG_SCORE = dt.date(2026, 11, 19), dt.date(2026, 12, 11)
+KO_DAYS = [("2027학년도 수능", SUNEUNG), ("크리스마스", XMAS), ("2027년 새해", NYE), ("2027년 설날", CNY)]
+PAGES.append({"path": "/tools/ko/iphone-didei-wijet/", "iphone_only": True, "lang": "ko", "kind": "Article", "app": "countdown", "published": "2026-10-15",
+  "title": "아이폰 디데이 위젯 설정 방법 (잠금 화면·홈 화면)", "crumb": "아이폰 디데이 위젯",
+  "description": "아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.",
+  "hub_title": "아이폰 디데이 위젯 설정 방법", "hub_desc": "잠금 화면과 홈 화면에 D-day를 띄우는 순서. 수능·전역·기념일에.",
+  "more": [
+    ("수능 D-30, D-7은 언제인가요?", f"D-30은 {fmt(SUNEUNG - dt.timedelta(days=30), 'ko')}, D-7은 {fmt(SUNEUNG - dt.timedelta(days=7), 'ko')}, D-1은 {fmt(SUNEUNG - dt.timedelta(days=1), 'ko')}입니다."),
+    ("위젯 목록에 Countdown이 안 보여요.", "앱을 한 번 열어 이벤트를 하나 만든 뒤 다시 ‘위젯 추가’를 눌러 보세요. Countdown은 iOS 17 이상에서 쓸 수 있습니다."),
+  ],
+  "js": [COUNT_JS], "faq": [
+    ("아이폰 디데이 위젯은 무료인가요?", "네. ‘카운트다운 위젯: 디데이’ 앱의 위젯은 잠금 화면용과 홈 화면용 모두 모든 크기가 무료이고, 이벤트 개수에도 제한이 없습니다."),
+    ("배경화면에 디데이 숫자를 넣으면 안 되나요?", "배경화면은 이미지라서 넣은 숫자가 만든 날 그대로 멈춰 있습니다. 매일 바뀌는 디데이를 보려면 잠금 화면 위젯을 쓰세요."),
+    ("수능 디데이는 며칠로 맞추면 되나요?", f"2027학년도 수능은 {fmt(SUNEUNG, 'ko')}입니다. 이벤트 날짜를 그날로 정하면 위젯이 매일 남은 날을 보여 줍니다. 성적 통지는 {fmt(SUNEUNG_SCORE, 'ko')}입니다(교육부 발표)."),
+    ("지나간 날부터도 셀 수 있나요?", "네. 지나간 날짜를 넣으면 그날부터 며칠이 지났는지 세어 올라갑니다."),
+    ("잠금 화면 실시간 현황과는 다른가요?", "다릅니다. 잠금 화면 위젯은 무료이고 시계 아래에 표시됩니다. 잠금 화면 실시간 현황은 Countdown Pro 기능입니다."),
+    ("갤럭시(안드로이드)에서도 쓸 수 있나요?", "이 앱은 iPhone·iPad 전용입니다. 갤럭시에서는 Google Play에서 홈 화면 위젯을 지원하는 디데이 앱을 찾아보세요."),
+  ],
+  "body": f"""<h1>아이폰 디데이 위젯 설정 방법</h1>
+<p class="lede">수능, 전역, 기념일까지 남은 날을 아이폰 잠금 화면에 띄워 두는 방법입니다. 숫자를 써 넣은 배경화면은 매일 새로 만들어야 하지만, 위젯은 날짜를 한 번만 넣으면 남은 날이 매일 자동으로 줄어듭니다.</p>
+{top_cta("countdown", "ko")}
+<h2>배경화면과 위젯의 차이</h2>
+<table><thead><tr><th></th><th>숫자를 넣은 배경화면</th><th>위젯</th></tr></thead><tbody>
+<tr><th>숫자</th><td>만든 날 그대로</td><td>매일 자동으로 바뀜</td></tr>
+<tr><th>번거로움</th><td>매일 새로 만들기</td><td>날짜를 한 번만 입력</td></tr>
+<tr><th style="white-space:nowrap">위치</th><td>잠금 화면·홈 화면 배경</td><td>잠금 화면 시계 아래, 홈 화면</td></tr>
+</tbody></table>
+<h2>잠금 화면에 두는 방법</h2>
+<ol><li>App Store에서 <a href="/countdown/ko/">카운트다운 위젯: 디데이</a>를 설치하고, <strong>+</strong>를 눌러 이벤트 이름(예: 수능)과 날짜를 입력합니다.</li><li>잠금 화면을 길게 누른 뒤 ‘사용자화’를 누르고 잠금 화면을 고릅니다.</li><li>‘위젯 추가’에서 Countdown을 고르고, 넣고 싶은 위젯을 누릅니다.</li><li>오른쪽 위의 ‘완료’를 누릅니다.</li></ol>
+<p>위젯은 모든 크기가 무료이고, 이벤트는 몇 개든 만들 수 있습니다.</p>
+<h2>홈 화면에 두는 방법</h2>
+<ol><li>홈 화면의 빈 곳을 길게 누릅니다.</li><li>왼쪽 위의 ‘편집’ → ‘위젯 추가’를 누릅니다(iOS 17에서는 왼쪽 위의 ‘+’).</li><li>Countdown을 고르고 크기를 정한 뒤 ‘위젯 추가’를 누릅니다.</li></ol>
+<h2>많이 찾는 디데이</h2>
+<table><thead><tr><th>날</th><th>날짜</th><th>남은 날</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(d, 'ko')}</td><td>{live(d, 'ko')}</td></tr>" for k, d in KO_DAYS)}</tbody></table>
+<p class="meta">남은 날은 {TODAY.year}년 {TODAY.month}월 {TODAY.day}일 기준으로 계산했고, 페이지를 열 때 다시 계산됩니다. 수능 날짜는 교육부 발표 기준입니다.</p>
+<h2>이정표에 닿았을 때</h2>
+<p>디데이가 100일, 일주일, 당일 아침 같은 이정표에 닿으면 앱이 숫자를 전체 화면으로 보여 주고, 공유할 만한 카드를 만들어 줍니다. 지나간 날도 지워지지 않고 되돌아볼 수 있는 타임라인으로 남습니다.</p>
+<p>여행을 준비하고 있다면 <a href="/tools/ko/yeohaeng-iljeong-aep/">여행 일정 앱 추천</a>도 참고하세요.</p>"""})
 
 
 # 8. 如何写发票（指南）
@@ -2274,7 +2339,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple."),
-        "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 트리플 서비스 종료 후 쓸 만한 여행 일정 앱을 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다."),
+        "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교."),
         "th": ("เครื่องมือและคู่มือฟรี — go ka", "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF"),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
@@ -2344,7 +2409,9 @@ def main():
         manifest.append({"path": pg["path"], "lang": pg["lang"], "kind": pg["kind"], "title": pg["title"], "description": pg["description"],
                          "faq": [{"q": q, "a": a} for q, a in pg.get("faq", [])], "published": pg.get("published"), "app": pg.get("app"),
                          "hubTitle": pg.get("hub_title", pg["title"]), "items": pg.get("items", []),
-                         "headline": pg.get("headline"), "image": pg.get("image")})
+                         "headline": pg.get("headline"), "image": pg.get("image"),
+                         "crumbHome": ts(pg["lang"], "home"), "crumbHub": ts(pg["lang"], "tools")})
+        if pg.get("iphone_only"): manifest[-1]["iphoneOnly"] = True
         print(f"  {pg['path']}")
     (ROOT / "tools/tools.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"工具页 {len(manifest)} 页；接着跑 tools/build_seo.py")

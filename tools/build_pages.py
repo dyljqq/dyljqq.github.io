@@ -188,7 +188,7 @@ def web_tool(p, lang):
         items = json.loads(TOOLS_MANIFEST.read_text(encoding="utf-8"))
     except OSError:
         return None
-    mine = [x for x in items if x.get("app") == p["key"] and x["path"].startswith("/tools/")]
+    mine = [x for x in items if x.get("app") == p["key"] and x["path"].startswith("/tools/") and not x.get("iphoneOnly")]   # 锁屏教程不算网页工具（10-15 评审）
     want = "en" if lang == "en-GB" else lang
     is_lang = lambda x, l: (x.get("lang") or "en") == l
     return (next((x for x in mine if is_lang(x, want) and x.get("kind") == "WebApplication"), None)

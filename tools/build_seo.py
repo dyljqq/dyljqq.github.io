@@ -549,7 +549,7 @@ TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-f
               {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"},
               # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题
               {"ja": "/tools/ja/countdown-machiuke-iphone/", "pt-BR": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
-               "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/"},
+               "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/", "ko": "/tools/ko/iphone-didei-wijet/"},
               # 10-12：BeforeGo「行程规划 App 推荐」三语榜单，各按本国商店选 app，主题相同
               {"zh-Hant": "/tools/zh-hant/xing-cheng-gui-hua-app/", "ja": "/tools/ja/ryoko-keikaku-app/", "ko": "/tools/ko/yeohaeng-iljeong-aep/"}]
 def tool_pair(url):
@@ -907,8 +907,8 @@ def tool_head(tp):
     if tp.get("app"):
         page["about"] = {"@id": f"{ORIGIN}{next(a['path'] for a in APPS if a['key'] == tp['app'])}#app"}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home" if lang == "en" else "Início", "item": f"{ORIGIN}{home_path(lang)}"},
-        {"@type": "ListItem", "position": 2, "name": "Blog" if hub == "/blog/" else ("Tools" if lang == "en" else "Ferramentas"), "item": f"{ORIGIN}{hub}"}]}
+        {"@type": "ListItem", "position": 1, "name": tp.get("crumbHome") or "Home", "item": f"{ORIGIN}{home_path(lang)}"},
+        {"@type": "ListItem", "position": 2, "name": "Blog" if hub == "/blog/" else (tp.get("crumbHub") or "Tools"), "item": f"{ORIGIN}{hub}"}]}
     if url != hub:
         crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
     blobs = [page, crumbs]

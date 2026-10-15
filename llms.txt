@@ -180,6 +180,7 @@ A gym workout log for iPhone.
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
 - [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
+- [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.
@@ -198,7 +199,7 @@ A gym workout log for iPhone.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
 - [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
-- [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 트리플 서비스 종료 후 쓸 만한 여행 일정 앱을 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.
+- [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ

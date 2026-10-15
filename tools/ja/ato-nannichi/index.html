@@ -163,7 +163,7 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
   "isAccessibleForFree": true,
   "image": "https://beforego.art/assets/brand/og-home.png",
   "datePublished": "2026-09-29",
-  "dateModified": "2026-10-13",
+  "dateModified": "2026-10-15",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any (web browser)",
   "browserRequirements": "Requires JavaScript",
@@ -185,13 +185,13 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Início",
+      "name": "ホーム",
       "item": "https://beforego.art/ja/"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Ferramentas",
+      "name": "ツール",
       "item": "https://beforego.art/tools/ja/"
     },
     {
@@ -282,14 +282,14 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>よく数える日</h2>
 <div class="pop">
-<a href="/tools/ja/kyotsu-test-2027/" data-date="2027-01-16"><b data-n>95</b><span><span data-unit>日</span>（共通テスト2027まで）</span></a>
-<a href="/tools/days-until-new-year/" hreflang="en" data-date="2027-01-01"><b data-n>80</b><span><span data-unit>日</span>（2027年のお正月まで）</span></a>
+<a href="/tools/ja/kyotsu-test-2027/" data-date="2027-01-16"><b data-n>93</b><span><span data-unit>日</span>（共通テスト2027まで）</span></a>
+<a href="/tools/days-until-new-year/" hreflang="en" data-date="2027-01-01"><b data-n>78</b><span><span data-unit>日</span>（2027年のお正月まで）</span></a>
 </div>
-<p class="meta">上の数字は 2026年10月13日に計算したもので、ページを開いたときに更新されます。お正月のページは英語です。</p>
+<p class="meta">上の数字は 2026年10月15日に計算したもので、ページを開いたときに更新されます。お正月のページは英語です。</p>
 <h2>数え方</h2>
 <p>今日を0日として、指定した日までに日付が何回変わるかを数えます。時刻はあなたの端末のタイムゾーンで数えます。指定した日が今日なら0日、過去の日付なら「何日たったか」になるので、記念日や禁煙の日数にも使えます。</p>
 <p>サイトを開かなくても残り日数が見えるように、下のアプリで iPhone のホーム画面やロック画面に置くこともできます。</p>
-<p class="meta">公開 2026-09-29 · 更新 2026-10-13 · go ka</p>
+<p class="meta">公開 2026-09-29 · 更新 2026-10-15 · go ka</p>
 </article>
 <section class="sec" id="faq-section"><h2 id="faq">よくある質問</h2><div class="grid">
     <div class="card"><h3>今日は日数に入れますか？</h3><p>入れません。今日は0日、明日が1日です。指定した日そのものも足しません。「あと3日」なら、3回寝るとその日が来るという数え方です。</p></div>
@@ -332,12 +332,12 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 </footer>
 <!-- sitefooter:end -->
 <script>
-(function(){var T={en:['days','day','That\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前']}[document.documentElement.lang]||['days','day','Today','days ago'];
+(function(){var T={en:['days','day','That\'s today!','days ago'],'pt-BR':['dias','dia','É hoje!','dias atrás'],ja:['日','日','今日です！','日前'],'zh-Hant':['天','天','就是今天！','天前'],ko:['일','일','오늘입니다!','일 지남']}[document.documentElement.lang]||['days','day','Today','days ago'];
 var now=new Date();now=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 document.querySelectorAll('[data-date]').forEach(function(el){var p=el.getAttribute('data-date').split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var n=Math.round((d-now)/864e5);
 var num=el.querySelector('[data-n]'),unit=el.querySelector('[data-unit]');if(!num)return;
 if(n===0){num.textContent='';unit.textContent=T[2];}else if(n<0){num.textContent=-n;unit.textContent=n===-1?T[3].replace(/^(dias|days)/,function(m){return m.slice(0,-1)}):T[3];}else{num.textContent=n;unit.textContent=n===1?T[1]:T[0];}
-var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
+var w=el.querySelector('[data-weeks]')||(el.nextElementSibling&&el.nextElementSibling.querySelector('[data-weeks]')),L=document.documentElement.lang;if(w&&n<7)w.textContent='';if(w&&n>=7){w.textContent=L==='ja'?Math.floor(n/7)+(n%7?'週と'+(n%7)+'日':'週間'):L==='zh-Hant'?Math.floor(n/7)+' 週'+(n%7?'又 '+(n%7)+' 天':''):L==='ko'?Math.floor(n/7)+'주'+(n%7?' '+(n%7)+'일':''):Math.floor(n/7)+' '+(L==='pt-BR'?(n<14?'semana':'semanas'):(n<14?'week':'weeks'))+(n%7?(L==='pt-BR'?' e ':' + ')+(n%7)+' '+(n%7===1?T[1]:T[0]):'');}});})();
 </script><script>
 (function(){var f=document.getElementById('calc');if(!f)return;var out=document.getElementById('calc-out');var name=f.querySelector('[name=name]'),date=f.querySelector('[name=date]');
 var q=new URLSearchParams(location.search);if(q.get('date'))date.value=q.get('date');if(q.get('name'))name.value=q.get('name');
