@@ -576,8 +576,8 @@
   "path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
   "lang": "pt-BR",
   "kind": "Article",
-  "title": "Como colocar contagem regressiva na tela de bloqueio do iPhone",
-  "description": "Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.",
+  "title": "Contagem regressiva na tela de bloqueio do iPhone: widget gratuito",
+  "description": "Como colocar a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com um widget gratuito, passo a passo. O número de dias diminui sozinho.",
   "faq": [
    {
     "q": "O widget de contagem regressiva é grátis?",
@@ -1230,8 +1230,8 @@
   "path": "/tools/zh-hant/116-xue-ce-dao-shu/",
   "lang": "zh-Hant",
   "kind": "Article",
-  "title": "116 學測倒數還有幾天？2027/1/22–1/24 考試，倒數放 iPhone 桌面",
-  "description": "116 學年度學科能力測驗在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。每天更新的學測倒數、報名與分科測驗日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "title": "116 學測倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/1/22–1/24）",
+  "description": "116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。",
   "faq": [
    {
     "q": "116 學測是哪幾天？",
@@ -1271,8 +1271,8 @@
   "path": "/tools/zh-hant/116-hui-kao-dao-shu/",
   "lang": "zh-Hant",
   "kind": "Article",
-  "title": "116 會考倒數還有幾天？2027/5/15–5/16 考試，倒數放 iPhone 桌面",
-  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。每天更新的會考倒數、報名與准考證日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "title": "116 會考倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/5/15–5/16）",
+  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。",
   "faq": [
    {
     "q": "116 會考是哪幾天？",
@@ -1414,6 +1414,47 @@
   "published": "2026-09-29",
   "app": "countdown",
   "hubTitle": "共通テスト2027まであと何日？",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "ホーム",
+  "crumbHub": "ツール"
+ },
+ {
+  "path": "/tools/ja/toritsu-nyushi-2027/",
+  "lang": "ja",
+  "kind": "Article",
+  "title": "都立入試2027 カウントダウン｜あと何日？待ち受けにも（学力検査2月21日）",
+  "description": "令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。",
+  "faq": [
+   {
+    "q": "都立入試2027の学力検査はいつですか？",
+    "a": "学力検査に基づく選抜（第一次募集）の学力検査は2027年2月21日（日）です。出願は2027年1月29日（金）から2月4日（木）まで、合格発表は2027年3月1日（月）です（東京都教育委員会「令和9年度東京都立高等学校入学者選抜実施要綱・同細目について」）。"
+   },
+   {
+    "q": "都立高校の推薦入試はいつですか？",
+    "a": "推薦に基づく選抜の検査日は2027年1月26日（火）・1月27日（水）、合格発表は2027年2月2日（火）です。出願は2027年1月8日（金）から1月18日（月）までです。"
+   },
+   {
+    "q": "都立入試まであと何日ですか？",
+    "a": "2026年10月15日の時点で学力検査まで129日、約18週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
+   },
+   {
+    "q": "都立入試の100日前はいつですか？",
+    "a": "学力検査の100日前は2026年11月13日（金）です。50日前は2027年1月2日（土）、1週間前は2027年2月14日（日）です。"
+   },
+   {
+    "q": "インフルエンザなどで学力検査を受けられなかったときは？",
+    "a": "インフルエンザ等追検査は第二次募集と同じ日程で、出願は3月4日（木）、検査は3月9日（火）、合格発表は3月12日（金）です。追検査の対象や手続きは、東京都教育委員会の実施要綱で確認してください。"
+   },
+   {
+    "q": "iPhone の待ち受け（ロック画面）に都立入試のカウントダウンを置くには？",
+    "a": "カウントダウン ウィジェット: 記念日で「都立入試」を2027年2月21日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。ウィジェットはすべて無料です。"
+   }
+  ],
+  "published": "2026-10-15",
+  "app": "countdown",
+  "hubTitle": "都立入試2027まであと何日？",
   "items": [],
   "headline": null,
   "image": null,

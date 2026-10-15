@@ -852,8 +852,8 @@ SCENES = [
  # app 说法只用 pt-BR 商店 1.4.16 描述：widgets 全尺寸免费（Tela de Início / Tela Bloqueada）、eventos ilimitados、repetição、importar de calendário；
  # fotos próprias como fundo、Atividade ao Vivo na Tela Bloqueada 属于 Pro；「Suas contagens, lembretes e widgets funcionam igual, assinando ou não」。
  {"path": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/", "iphone_only": True, "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-12",
-  "title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "crumb": "Na tela de bloqueio",
-  "description": "Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.",
+  "title": "Contagem regressiva na tela de bloqueio do iPhone: widget gratuito", "crumb": "Na tela de bloqueio",
+  "description": "Como colocar a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com um widget gratuito, passo a passo. O número de dias diminui sozinho.",
   "hub_title": "Como colocar contagem regressiva na tela de bloqueio do iPhone", "hub_desc": "Widget grátis na Tela Bloqueada e na Tela de Início: o número de dias muda sozinho, sem refazer papel de parede.",
   "more": [
     ("Como colocar contagem regressiva na tela do celular?", "No iPhone, com um widget: crie o evento no app e adicione o widget na Tela Bloqueada ou na Tela de Início, como nos passos acima. No Android, o caminho depende do aparelho e do app que você usar."),
@@ -1645,11 +1645,11 @@ def zh_nodes(d):
                    for k, n in (("100 天前", 100), ("50 天前", 50), ("30 天前", 30), ("1 週前", 7), ("前一天", 1)))
 
 PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
-  "title": "116 學測倒數還有幾天？2027/1/22–1/24 考試，倒數放 iPhone 桌面", "crumb": "116 學測倒數",
-  "description": "116 學年度學科能力測驗在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。每天更新的學測倒數、報名與分科測驗日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "title": "116 學測倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/1/22–1/24）", "crumb": "116 學測倒數",
+  "description": "116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。",
   "hub_title": "116 學測倒數", "hub_desc": "1 月 22 日到 24 日考試，報名、成績公布與分科測驗日期，每天更新的倒數。",
   "more": [
-    ("有學測倒數桌布嗎？", f'桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 1 月 22 日，數字每天自動減一。步驟在下方「把學測倒數放到 iPhone 桌面」。'),
+    ("有學測倒數桌布嗎？", f'桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 1 月 22 日，數字每天自動減一。步驟見本頁「學測倒數桌布？改用 iPhone 鎖定畫面小工具」一節。'),
     ("學測還有幾週？", "頁面最上方的數字下面，會寫還有幾週又幾天，打開當天重新計算。"),
     ("學測倒數 100 天是哪一天？", f"{fmt(XC1 - dt.timedelta(days=100), 'zh-Hant')}。其他節點見「倒數的節點」表。"),
   ],
@@ -1675,7 +1675,7 @@ PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "
 <tr><td>分科測驗公布成績</td><td>{fmt(FK_SCORE, "zh-Hant")}</td></tr>
 </tbody></table>
 <p class="meta">資料來源：<a href="https://www.ceec.edu.tw/" rel="noopener">大學入學考試中心</a>「116學年度考試重要試務日期」（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。各科的考試時間與應考規定，以大考中心公告的簡章為準。</p>
-<h2>把學測倒數放到 iPhone 桌面</h2>
+<h2>學測倒數桌布？改用 iPhone 鎖定畫面小工具</h2>
 <p>很多人會找「學測倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
 <ol><li>點 <strong>+</strong>，輸入「學測」，日期設為 2027 年 1 月 22 日。想一起倒數分科測驗，就再加一個 7 月 10 日的事件。</li>{ZH_LOCK_STEPS}</ol>
 <p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
@@ -1684,11 +1684,11 @@ PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "
 <p>國中教育會考的倒數，見 <a href="/tools/zh-hant/116-hui-kao-dao-shu/">116 會考倒數</a>。</p>"""})
 
 PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
-  "title": "116 會考倒數還有幾天？2027/5/15–5/16 考試，倒數放 iPhone 桌面", "crumb": "116 會考倒數",
-  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。每天更新的會考倒數、報名與准考證日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。",
+  "title": "116 會考倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/5/15–5/16）", "crumb": "116 會考倒數",
+  "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。",
   "hub_title": "116 會考倒數", "hub_desc": "5 月 15 日、16 日考試，報名、准考證與成績日期，每天更新的倒數。",
   "more": [
-    ("有會考倒數桌布嗎？", '桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 5 月 15 日，數字每天自動減一。步驟在下方「把會考倒數放到 iPhone 桌面」。'),
+    ("有會考倒數桌布嗎？", '桌布是一張圖片，上面的數字會停在做圖那一天。想讓桌面上的「還有幾天」每天自己變，就用鎖定畫面或主畫面的小工具：日期設 2027 年 5 月 15 日，數字每天自動減一。步驟見本頁「會考倒數桌布？改用 iPhone 鎖定畫面小工具」一節。'),
     ("會考還有幾週？", "頁面最上方的數字下面，會寫還有幾週又幾天，打開當天重新計算。"),
     ("會考倒數 100 天是哪一天？", f"{fmt(HK1 - dt.timedelta(days=100), 'zh-Hant')}。其他節點見「倒數的節點」表。"),
   ],
@@ -1711,7 +1711,7 @@ PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", 
 <tr><td>寄發成績通知單、開放網路查詢</td><td>{fmt(HK_SCORE, "zh-Hant")}</td></tr>
 </tbody></table>
 <p class="meta">資料來源：教育部 115 年 9 月 11 日臺教授國部字第 1155404304 號函「116學年度國中教育會考及全國高級中等學校與專科學校五年制適性入學重要日程表」，刊於<a href="https://cap.rcpet.edu.tw/" rel="noopener">國中教育會考網站</a>（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。報名方式和考試時間表，以會考簡章為準。</p>
-<h2>把會考倒數放到 iPhone 桌面</h2>
+<h2>會考倒數桌布？改用 iPhone 鎖定畫面小工具</h2>
 <p>很多人會找「會考倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
 <ol><li>點 <strong>+</strong>，輸入「會考」，日期設為 2027 年 5 月 15 日。</li>{ZH_LOCK_STEPS}</ol>
 <p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
@@ -1824,6 +1824,62 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
 <p>ロック画面に置く手順は<a href="/tools/ja/countdown-machiuke-iphone/">カウントダウンを待ち受けにする方法（iPhone）</a>にくわしくまとめました。</p>"""})
 
+# 7d2. 日本：都立入試2027 カウントダウン（ja，Countdown）——10-15
+# 依据：Google JP 联想词「都立入試 2027 / 2027 日程 / 2027年度 都立入試」「都立入試 カウントダウン」「都立入試 あと何日」「2027 都立 入試 カウントダウン」；
+# 全站点击最多的是共通テスト页（「共通テストカウントダウン 待ち受け」），本页照它的结构做（首屏答案 + 待ち受け）。
+# 日期只用 10-15 读过的官方原文：東京都教育委員会「令和９年度東京都立高等学校入学者選抜実施要綱・同細目について」（2026-09-17 更新）「1 主な日程」。
+# app 说法同共通テスト页（ja 商店描述：ウィジェットは全サイズ無料、イベント無制限；ロック画面のライブアクティビティは Pro）。
+TOKYO_CHECKED = dt.date(2026, 10, 15)
+TR_S_APP1, TR_S_APP2, TR_S1, TR_S2, TR_S_RES = dt.date(2027, 1, 8), dt.date(2027, 1, 18), dt.date(2027, 1, 26), dt.date(2027, 1, 27), dt.date(2027, 2, 2)
+TR_APP1, TR_APP2, TR1, TR_RES = dt.date(2027, 1, 29), dt.date(2027, 2, 4), dt.date(2027, 2, 21), dt.date(2027, 3, 1)
+TR2_APP, TR2, TR2_RES, TR_NET = dt.date(2027, 3, 4), dt.date(2027, 3, 9), dt.date(2027, 3, 12), dt.date(2026, 12, 18)
+TOKYO_SRC = "https://www.kyoiku.metro.tokyo.lg.jp/admission/high_school/exam/release20260917_r9yoko"
+def md_ja(d): return f"{d.month}月{d.day}日（{'月火水木金土日'[d.weekday()]}）"
+def nw_ja(d): return f'<span style="white-space:nowrap">{md_ja(d)}</span>'   # 日期和曜日不拆行
+PAGES.append({"path": "/tools/ja/toritsu-nyushi-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-10-15",
+  "title": "都立入試2027 カウントダウン｜あと何日？待ち受けにも（学力検査2月21日）", "crumb": "都立入試2027",
+  "description": "令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。",
+  "hub_title": "都立入試2027まであと何日？", "hub_desc": "学力検査（2月21日）と推薦入試（1月26日・27日）までのカウントダウン、出願期間と合格発表日。",
+  "more": [
+    ("都立高校の推薦入試まであと何日ですか？", f"推薦に基づく選抜の検査日は{fmt(TR_S1, 'ja')}・{md_ja(TR_S2)}です。{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で{days_to(TR_S1)}日です。"),
+    ("都立入試の合格発表はいつですか？", f"推薦に基づく選抜は{fmt(TR_S_RES, 'ja')}、学力検査に基づく選抜（第一次募集）は{fmt(TR_RES, 'ja')}です。"),
+    ("都立入試まであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2027, 1, 21), 'ja')}、30日前は{fmt(TR1 - dt.timedelta(days=30), 'ja')}です。"),
+  ],
+  "js": [COUNT_JS], "faq": [
+    ("都立入試2027の学力検査はいつですか？", f"学力検査に基づく選抜（第一次募集）の学力検査は{fmt(TR1, 'ja')}です。出願は{fmt(TR_APP1, 'ja')}から{md_ja(TR_APP2)}まで、合格発表は{fmt(TR_RES, 'ja')}です（東京都教育委員会「令和9年度東京都立高等学校入学者選抜実施要綱・同細目について」）。"),
+    ("都立高校の推薦入試はいつですか？", f"推薦に基づく選抜の検査日は{fmt(TR_S1, 'ja')}・{md_ja(TR_S2)}、合格発表は{fmt(TR_S_RES, 'ja')}です。出願は{fmt(TR_S_APP1, 'ja')}から{md_ja(TR_S_APP2)}までです。"),
+    ("都立入試まであと何日ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で学力検査まで{days_to(TR1)}日、約{days_to(TR1) // 7}週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
+    ("都立入試の100日前はいつですか？", f"学力検査の100日前は{fmt(TR1 - dt.timedelta(days=100), 'ja')}です。50日前は{fmt(TR1 - dt.timedelta(days=50), 'ja')}、1週間前は{fmt(TR1 - dt.timedelta(days=7), 'ja')}です。"),
+    ("インフルエンザなどで学力検査を受けられなかったときは？", f"インフルエンザ等追検査は第二次募集と同じ日程で、出願は{md_ja(TR2_APP)}、検査は{md_ja(TR2)}、合格発表は{md_ja(TR2_RES)}です。追検査の対象や手続きは、東京都教育委員会の実施要綱で確認してください。"),
+    ("iPhone の待ち受け（ロック画面）に都立入試のカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「都立入試」を2027年2月21日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。ウィジェットはすべて無料です。"),
+  ],
+  "body": f"""<h1>都立入試2027まであと何日？</h1>
+<p class="lede">令和9年度（2027年）の東京都立高校入試は、学力検査に基づく選抜（第一次募集）の学力検査が<strong>{fmt(TR1, "ja")}</strong>、推薦に基づく選抜の検査が<strong>{md_ja(TR_S1)}・{md_ja(TR_S2)}</strong>です。下のカウントダウンは毎日更新されます。</p>
+{counter(TR1, "ja", "学力検査")}
+<p>推薦入試の検査日、{md_ja(TR_S1)}まではあと {live(TR_S1, "ja")}です。</p>
+<h2>日程（いずれも2027年）</h2>
+<table><thead><tr><th>選抜</th><th>項目</th><th>日付</th></tr></thead><tbody>
+<tr><th rowspan="3" style="min-width:7em">推薦に基づく選抜</th><td>出願</td><td>{nw_ja(TR_S_APP1)}～{nw_ja(TR_S_APP2)}</td></tr>
+<tr><td>検査</td><td>{nw_ja(TR_S1)}・{nw_ja(TR_S2)}</td></tr>
+<tr><td style="white-space:nowrap">合格発表</td><td>{nw_ja(TR_S_RES)}</td></tr>
+<tr><th rowspan="3">学力検査に基づく選抜（第一次募集）</th><td>出願</td><td>{nw_ja(TR_APP1)}～{nw_ja(TR_APP2)}</td></tr>
+<tr><td>学力検査</td><td>{nw_ja(TR1)}</td></tr>
+<tr><td style="white-space:nowrap">合格発表</td><td>{nw_ja(TR_RES)}</td></tr>
+<tr><th rowspan="3">第二次募集（インフルエンザ等追検査）</th><td>出願</td><td>{nw_ja(TR2_APP)}</td></tr>
+<tr><td>検査</td><td>{nw_ja(TR2)}</td></tr>
+<tr><td style="white-space:nowrap">合格発表</td><td>{nw_ja(TR2_RES)}</td></tr>
+</tbody></table>
+<p>推薦と第一次募集は、{TR_NET.year}年{md_ja(TR_NET)}から各選抜の願書受付期間の最終日までに、インターネット上の専用サイトに必要事項を入力します。そのほかの出願書類は、受付期間内に届くよう志望する都立高校に郵送します。</p>
+<p class="meta">出典：<a href="{TOKYO_SRC}" rel="noopener">東京都教育委員会「令和９年度東京都立高等学校入学者選抜実施要綱・同細目について」</a>（2026年9月17日更新、{TOKYO_CHECKED.year}年{TOKYO_CHECKED.month}月{TOKYO_CHECKED.day}日に確認）。分割募集やチャレンジスクールなどの日程、出願の細かな手続きは、同ページの実施要綱で確認してください。</p>
+<h2>節目の日付</h2>
+<table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(TR1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
+<h2>ロック画面・待ち受けに置く</h2>
+<p>毎回サイトを開かなくても残り日数が見えるように、iPhone のロック画面やホーム画面にウィジェットとして置けます。<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>なら、すべてのサイズのウィジェットが無料です。100日前・1週間前・当日の朝といった節目に達すると、アプリが全画面の数字で開き、共有できるカードを用意します。</p>
+<ol><li>アプリで <strong>+</strong> をタップし、「都立入試」と入力します。</li><li>日付を{fmt(TR1, "ja")}に設定します。推薦入試を受ける人は、{md_ja(TR_S1)}のイベントも作っておくと便利です。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
+<h2>カウントダウンの使い方</h2>
+<ul><li>イベントの裏面に、教科ごとの目標や模試の結果を書いておく。</li><li>推薦入試、学力検査、合格発表、私立高校の入試日を別々のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
+<p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。ロック画面に置く手順は<a href="/tools/ja/countdown-machiuke-iphone/">カウントダウンを待ち受けにする方法（iPhone）</a>にくわしくまとめました。大学入学共通テストのカウントダウンは<a href="/tools/ja/kyotsu-test-2027/">共通テスト2027まであと何日？</a>へ。</p>"""})
+
 # 7e. 日本：カウントダウンを待ち受けにする方法（ja，Countdown）——10-10
 # 依据：GSC 10-06 前「共通テストカウントダウン 待ち受け」16 次曝光排名 8.8、「…待ち受け iphone」排名 13；
 # Google JP 联想词「カウントダウン 待ち受け iphone / アプリ / にする方法 / android」「受験 カウントダウン ロック画面」。
@@ -1856,8 +1912,8 @@ PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "iphone_only": Tru
 <h2>よくカウントダウンされる日</h2>
 <div class="pop">
 <a href="/tools/ja/kyotsu-test-2027/" data-date="{KT1.isoformat()}"><b data-n>{days_to(KT1)}</b><span><span data-unit>日</span>（共通テスト2027まで）</span></a>
+<a href="/tools/ja/toritsu-nyushi-2027/" data-date="{TR1.isoformat()}"><b data-n>{days_to(TR1)}</b><span><span data-unit>日</span>（都立入試2027まで）</span></a>
 <a href="/tools/ja/ato-nannichi/?date={XMAS.isoformat()}&amp;name=%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%9E%E3%82%B9" data-date="{XMAS.isoformat()}"><b data-n>{days_to(XMAS)}</b><span><span data-unit>日</span>（クリスマスまで）</span></a>
-<a href="/tools/ja/ato-nannichi/?date={NYE.isoformat()}&amp;name=%E5%85%83%E6%97%A5" data-date="{NYE.isoformat()}"><b data-n>{days_to(NYE)}</b><span><span data-unit>日</span>（2027年の元日まで）</span></a>
 </div>
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
 <h2>節目を迎えたとき</h2>

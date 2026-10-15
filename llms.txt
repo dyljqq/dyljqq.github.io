@@ -157,7 +157,7 @@ A gym workout log for iPhone.
 - [Quando é o quinto dia útil do mês?](https://beforego.art/tools/pt-br/quinto-dia-util/) — O quinto dia útil de novembro de 2026 é sábado, 7; o de dezembro, sábado, 5. Veja todos os meses até dezembro de 2027 e como contar: o sábado entra.
 - [Contador de dias de namoro](https://beforego.art/tools/pt-br/contador-de-dias-de-namoro/) — Digite a data em que começaram a namorar e veja há quantos dias, meses e anos estão juntos, o próximo mesversário, os 100 dias e o aniversário de namoro.
 - [Melhores apps de contagem regressiva para iPhone (2026)](https://beforego.art/tools/pt-br/melhores-apps-contagem-regressiva/) — Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.
-- [Como colocar contagem regressiva na tela de bloqueio do iPhone](https://beforego.art/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/) — Passo a passo para pôr a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com widget grátis. O número diminui sozinho.
+- [Como colocar contagem regressiva na tela de bloqueio do iPhone](https://beforego.art/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/) — Como colocar a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com um widget gratuito, passo a passo. O número de dias diminui sozinho.
 - [Quantos dias faltam para o ENEM 2026?](https://beforego.art/tools/pt-br/dias-para-o-enem-2026/) — As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.
 - [Quantos dias faltam para o Réveillon 2027?](https://beforego.art/tools/pt-br/contagem-regressiva-reveillon-2027/) — Réveillon: quinta-feira, 31/12/2026. Carnaval 2027: sábado, 6, a terça, 9 de fevereiro. Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.
 - [Quantos dias faltam para o Carnaval 2027?](https://beforego.art/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/) — Carnaval 2027: de sábado, 6, a terça-feira, 9 de fevereiro (Cinzas, dia 10). Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.
@@ -174,11 +174,12 @@ A gym workout log for iPhone.
 - [收據範本](https://beforego.art/tools/zh-hant/shou-ju-fan-ben/) — 免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。
 - [2027 農曆新年倒數](https://beforego.art/tools/zh-hant/nong-li-xin-nian-2027/) — 2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。
 - [2027 連假行事曆：下一個連假還有幾天？](https://beforego.art/tools/zh-hant/2027-lian-jia-xing-shi-li/) — 2027 年（民國 116 年）3 天以上的連假有 9 個：元旦 1/1–1/3、春節 2/4–2/10 共 7 天，還有 228、清明、勞動節、國慶、光復節、行憲紀念日。每個連假還有幾天，每天更新。
-- [116 學測倒數](https://beforego.art/tools/zh-hant/116-xue-ce-dao-shu/) — 116 學年度學科能力測驗在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。每天更新的學測倒數、報名與分科測驗日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。
-- [116 會考倒數](https://beforego.art/tools/zh-hant/116-hui-kao-dao-shu/) — 116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。每天更新的會考倒數、報名與准考證日期，以及把倒數放到 iPhone 主畫面和鎖定畫面的方法。
+- [116 學測倒數](https://beforego.art/tools/zh-hant/116-xue-ce-dao-shu/) — 116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。
+- [116 會考倒數](https://beforego.art/tools/zh-hant/116-hui-kao-dao-shu/) — 116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。
 - [iPhone 桌面倒數教學](https://beforego.art/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/) — 把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
 - [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。
+- [都立入試2027まであと何日？](https://beforego.art/tools/ja/toritsu-nyushi-2027/) — 令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
