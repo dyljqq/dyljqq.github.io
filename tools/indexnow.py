@@ -32,8 +32,9 @@ DRY, RECORD = "--dry-run" in sys.argv, "--record" in sys.argv
 COUNTER = re.compile(r"(<[a-z]+\b[^>]*\sdata-(?:n|unit|weeks|days)\b[^>]*>)[^<]*")
 DESC = re.compile(r'<meta name="description" content="([^"]*)"')
 TODAY = date.today()
-# build_tools.py 写「截至今天」那句用到的日期写法：ISO、英文 %-d %B %Y、葡语 %d/%m/%Y、中日 年月日、韩 년월일
-TODAY_FORMS = (TODAY.isoformat(), TODAY.strftime("%-d %B %Y"), TODAY.strftime("%d/%m/%Y"),
+# build_tools.py 写「截至今天」那句用到的日期写法：ISO、英文 %-d %B %Y 和美式 %B %-d, %Y、葡语 %d/%m/%Y、中日 年月日、韩 년월일。
+# build_tools.py 换了新写法要加到这里，否则那几页每天都会被当成修改（--check 的 dry-run 会一下子列出一串倒数页）。
+TODAY_FORMS = (TODAY.isoformat(), TODAY.strftime("%-d %B %Y"), TODAY.strftime("%B %-d, %Y"), TODAY.strftime("%d/%m/%Y"),
                f"{TODAY.year}年{TODAY.month}月{TODAY.day}日", f"{TODAY.year}년 {TODAY.month}월 {TODAY.day}일")
 TODAY_RE = re.compile("|".join(r"(?<!\d)" + re.escape(f) for f in TODAY_FORMS))   # 前面不能是数字：「1 November」别命中「11 November」
 
