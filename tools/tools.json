@@ -1974,6 +1974,10 @@
     "a": "No. The Lock Screen widget refreshes like any other widget, while Live Activity is a separate, real-time display on the Lock Screen and Dynamic Island, and it is part of Countdown Pro."
    },
    {
+    "q": "Why is my countdown widget stuck on the wrong number of days?",
+    "a": "Check whether Low Power Mode is on, whether Background App Refresh is off for Countdown, and whether the iPhone's date and time are set automatically. A day count in Countdown changes on its own around midnight, and any edit in the app redraws the widget right away."
+   },
+   {
     "q": "Do I need an account to sync my countdowns between devices?",
     "a": "No. Countdown syncs privately through iCloud with no account or sign-up required."
    },
