@@ -309,7 +309,8 @@ DIWALI = dt.date(2026, 11, 8)   # Lakshmi Puja；11-06 Dhanteras、11-07 Choti D
 ENEM1, ENEM2 = dt.date(2026, 11, 8), dt.date(2026, 11, 15)
 CARN_SAT, CARN_TUE, ASH = dt.date(2027, 2, 6), dt.date(2027, 2, 9), dt.date(2027, 2, 10)
 
-def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates, moving=False, published="2026-09-26", extra="", repeat_note=None, us=False):
+def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates, moving=False, published="2026-09-26", extra="", repeat_note=None, us=False, lock_anchor="how to put a countdown on your iPhone Lock Screen", tail=""):
+    # 10-16：步骤原来只讲主屏，加第 4 步锁屏并链到锁屏教程（锚文本按页换，别 7 页一个样）；tail 放在页尾，避免和「Still choosing」连成一串链接（评审 92）
     F = fmt_us if us else (lambda x: fmt(x, lang))
     # moving：按阴历 / 印度历定日子的节日（排灯节等）每年公历日期不同，「每年重复」会数错，改成提示明年另加
     repeat = repeat_note or ("The date moves every year, so add next year's date as a new event instead of turning on <strong>Repeat yearly</strong>."
@@ -321,12 +322,13 @@ def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq
 <table><tbody>{"".join(f"<tr><th>{esc(k)}</th><td>{v}</td></tr>" for k, v in glance)}</tbody></table>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
-<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>{'Set the date to' if repeat_note else 'If you typed the name yourself, set the date to'} {esc(F(d))}. {repeat}</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
+<ol><li>Install the app and tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events). Pick the template or type the name.</li><li>{'Set the date to' if repeat_note else 'If you typed the name yourself, set the date to'} {esc(F(d))}. {repeat}</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li><li>For the Lock Screen, touch and hold it → <strong>Customize</strong> → <strong>Add Widgets</strong> → Countdown. The full steps are in <a href="/blog/countdown-widget-iphone-home-lock-screen/">{esc(lock_anchor)}</a>.</li></ol>
 {extra}<p>Still choosing an app? See <a href="/tools/best-countdown-widget-apps-iphone/">which countdown widget apps are free</a> — seven compared.</p>
 <h2>Countdown ideas</h2>
 <ul>{"".join(f"<li>{i}</li>" for i in ideas)}</ul>
 <h2>{esc(re.sub(r'\s\d{4}$', '', name))} in the next few years</h2>
-<table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(F(dd))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>"""
+<table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(F(dd))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>
+{tail}"""
     return {"path": f"/tools/{slug}/", "lang": lang, "title": title, "description": desc, "crumb": name, "kind": "Article",
             "app": "countdown", "faq": faq, "published": published, "js": [COUNT_JS], "body": body, "hub_title": h1, "hub_desc": desc}
 
@@ -358,7 +360,7 @@ PAGES.append({"path": "/tools/days-until/", "lang": "en", "kind": "WebApplicatio
 <p class="meta">Numbers above were computed on {TODAY.isoformat()} and update live when the page loads.</p>
 <h2>How the count works</h2>
 <p>The result is the number of midnights between today and your date, in your own time zone — the same way people usually say "12 days to go". If your date is today, the answer is 0. A date in the past gives you the days since, which is handy for anniversaries and streaks.</p>
-<p>For a countdown you can see without opening anything, put it on your iPhone Home Screen with the app below.</p>"""})
+<p>For a countdown you can see without opening anything, put it on your iPhone Home Screen or Lock Screen with the app below; the steps are in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>"""})
 
 # 2–4. 节日页
 PAGES.append(holiday_page("days-until-christmas", "Christmas 2026", XMAS, "en",
@@ -373,7 +375,8 @@ PAGES.append(holiday_page("days-until-christmas", "Christmas 2026", XMAS, "en",
    ("When is Christmas 2027?", "Saturday, December 25, 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."),
    ("How do I put a Christmas countdown on my iPhone Home Screen?", "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +), and choose Countdown. The widgets are free in every size, and the event can repeat every year.")],
   [(2026, XMAS), (2027, dt.date(2027, 12, 25)), (2028, dt.date(2028, 12, 25)), (2029, dt.date(2029, 12, 25))],
-  extra='<p>Lock Screen steps, the extra large size in iOS 27 and a few Christmas setups: <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a>.</p>\n', us=True))
+  tail='<p>The <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a> guide covers the extra large size in iOS 27 and a few Christmas setups.</p>\n', us=True,
+  lock_anchor="how to add a Lock Screen countdown widget"))
 
 PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "en",
   "How many days until Halloween 2026? Live countdown", "Halloween 2026 is on Saturday, October 31, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
@@ -385,7 +388,9 @@ PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "
    ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(HALLOWEEN)} days, about {days_to(HALLOWEEN)//7} weeks. The counter on this page recalculates when you open it."),
    ("When is Halloween 2027?", "Sunday, October 31, 2027. Halloween 2028 falls on a Tuesday."),
    ("How do I get a Halloween countdown widget on iPhone?", "Add October 31 as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
-  [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))], us=True))
+  [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))], us=True,
+  lock_anchor="the Lock Screen widget guide",
+  tail='<p>After Halloween comes <a href="/tools/days-until-thanksgiving/">Thanksgiving</a> on November 26, and Christmas is 55 days after October 31. The <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a> walks through the holiday setup.</p>\n'))
 
 # 09-28 借势：排灯节搜索高峰在节前 4–6 周（现在），Countdown 有印度真实用户；首页被几个小倒数站占着，没有一家给 app / 小组件入口
 PAGES.append(holiday_page("days-until-diwali", "Diwali 2026", DIWALI, "en",
@@ -412,7 +417,9 @@ PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
    ("How many days are left in 2026?", f"As of {TODAY.strftime('%-d %B %Y')} there were {days_to(REV) + 1} days left in 2026, counting today. The counter on this page recalculates when you open it."),
    ("When is Lunar New Year 2027?", "Saturday, February 6, 2027. It begins the Year of the Goat."),
    ("How do I keep a New Year countdown on my Lock Screen?", "Add January 1, 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.")],
-  [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))], us=True))
+  [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))], us=True,
+  lock_anchor="our guide to Lock Screen countdown widgets",
+  tail='<p>New Year\'s Day is a week after Christmas, so you can keep both in one list widget: see the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a>.</p>\n'))
 
 # 10-16：美区。用户 10-16「关注美国的内容，广告中心和用户重心在美国」。
 # 感恩节：美国 = 11 月第四个星期四（2026-11-26）；Google US 联想词「thanksgiving countdown 2026 / clock / calendar / app」。商店描述的模板里有 Thanksgiving。
@@ -430,8 +437,10 @@ PAGES.append(holiday_page("days-until-thanksgiving", "Thanksgiving 2026", THANKS
    ("How many weeks until Thanksgiving 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(THANKS)} days: {days_to(THANKS)//7} weeks and {days_to(THANKS)%7} days. The counter on this page recalculates when you open it."),
    ("When is Thanksgiving 2027?", "Thursday, November 25, 2027. Thanksgiving 2028 is on November 23 and Thanksgiving 2029 on November 22."),
    ("How many days are there between Thanksgiving and Christmas 2026?", "29 days, from Thursday, November 26 to Friday, December 25, 2026."),
-   ("How do I get a Thanksgiving countdown widget on iPhone?", "In Countdown Widget: Any Event, tap + and pick Thanksgiving from the ready-made events: it lands on the fourth Thursday of November and comes back on the right Thursday every year. Then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +) and choose Countdown. Every widget size is free.")],
+   ("How do I get a Thanksgiving countdown widget on iPhone?", "In Countdown Widget: Any Event, tap Add Event (or the + button once you already have events) and pick Thanksgiving from the ready-made events: it lands on the fourth Thursday of November and comes back on the right Thursday every year. Then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap the + in the top-left corner) and choose Countdown. Every widget size is free.")],
   [(2026, THANKS), (2027, dt.date(2027, 11, 25)), (2028, dt.date(2028, 11, 23)), (2029, dt.date(2029, 11, 22))], published="2026-10-16", us=True,
+  lock_anchor="the Lock Screen guide",
+  tail='<p>Christmas is 29 days after Thanksgiving this year, and the same app can count down to it: see the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a>.</p>\n',
   repeat_note="Picked from the ready-made events, Thanksgiving already repeats on the fourth Thursday of November every year. If you typed the name yourself, add next year's date as a new event instead, because a plain yearly repeat keeps the same day of the month."))
 
 # 10-16：美区「想把倒数放到手机上」——Google US 联想词「christmas countdown widget iphone」「countdown widget iphone free / lock screen free」
@@ -515,7 +524,7 @@ PAGES.append({"path": "/tools/pt-br/dias-para-o-enem-2026/", "lang": "pt-BR", "k
 <p>Confira sempre as datas na página oficial do Inep (gov.br/inep); o cronograma acima segue o edital publicado.</p>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Uma contagem regressiva que você precisa abrir para ver é uma contagem que você esquece. Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Instale o app e toque em <strong>+</strong>. Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Instale o app e toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos). Dê o nome "ENEM — 1º dia".</li><li>Coloque a data <strong>8 de novembro de 2026</strong>. Crie outro evento para o dia 15.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>Ideias para a reta final</h2>
 <ul><li>Um evento por simulado, com lembrete na véspera.</li><li>Uma contagem progressiva desde o primeiro dia de estudo — o widget mostra a sequência em dias.</li><li>Depois da prova, uma contagem para a divulgação do resultado.</li></ul>"""})
@@ -556,7 +565,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
 </tbody></table>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Réveillon volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Réveillon”.</li><li>Data: 31 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>Ideias</h2>
 <ul><li>Uma contagem para a viagem de Carnaval, com o endereço no verso do evento.</li><li>Uma contagem progressiva desde 1º de janeiro para a meta do ano — o widget mostra os dias de sequência.</li><li>Um evento para o primeiro dia de trabalho depois das festas, para o feriado ter começo e fim.</li></ul>"""})
@@ -600,7 +609,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/", 
 <p>O Carnaval não está entre os feriados nacionais. Nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura antes de marcar a viagem.</p>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Carnaval”.</li><li>Data: 6 de fevereiro de 2027. A data muda todo ano, então para 2028 crie um evento novo em vez de repetir.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Carnaval”.</li><li>Data: 6 de fevereiro de 2027. A data muda todo ano, então para 2028 crie um evento novo em vez de repetir.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>O Carnaval nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Sábado de Carnaval</th><th>Terça-feira de Carnaval</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{PT_DM(t - dt.timedelta(days=3))}</td><td>{PT_DM(t)}</td></tr>" for y, t in CARN_NEXT)}</tbody></table>
@@ -645,7 +654,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
 </tbody></table>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — todos os tamanhos são grátis, os eventos são ilimitados e o app avisa no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Black Friday”.</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Black Friday”.</li><li>Data: 27 de novembro de 2026. Como a data muda todo ano, não marque repetir — em 2027 crie um evento novo para 26 de novembro.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>A Black Friday nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Data</th></tr></thead><tbody>
@@ -685,7 +694,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
 </tbody></table>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> você cria o evento uma vez e ele fica na Tela de Início ou na Tela Bloqueada como widget — grátis em todos os tamanhos, eventos ilimitados, com lembrete no dia. Marque <strong>repetir todo ano</strong> e o Natal volta sozinho em 2027.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Natal”.</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Natal”.</li><li>Data: 25 de dezembro de 2026, repetir todo ano.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>O Natal nos próximos anos</h2>
 <table><thead><tr><th>Ano</th><th>Dia da semana</th></tr></thead><tbody>
@@ -844,7 +853,7 @@ SCENES = [
 <div id="bday-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> o aniversário fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos. O app tem modelos prontos, entre eles o de aniversário, que já vêm com a repetição e os lembretes certos. Os eventos são ilimitados: cabem o seu, o dos filhos e o de quem mais você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e escolha o modelo de aniversário.</li><li>Informe a data de nascimento.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e escolha o modelo de aniversário.</li><li>Informe a data de nascimento.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <p>Quando a contagem chega a um marco — cem dias, uma semana, a manhã do dia —, o app abre o número em tela cheia e prepara um cartão para compartilhar.</p>
 <h2>Frases para a contagem regressiva</h2>
@@ -886,7 +895,7 @@ SCENES = [
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <h2>Férias do trabalho (CLT)</h2>
 <ul><li>São 30 dias corridos a cada 12 meses de trabalho para quem teve até 5 faltas injustificadas no período (art. 130).</li><li>Com a sua concordância, podem ser divididas em até três períodos: um de pelo menos 14 dias e os outros de pelo menos 5 dias cada (art. 134, § 1º).</li><li>A empresa comunica as férias por escrito com pelo menos 30 dias de antecedência (art. 135), e o pagamento sai até 2 dias antes do início (art. 145).</li></ul>
@@ -915,7 +924,7 @@ SCENES = [
 <ul><li><strong>Mesversário</strong>: todo mês, no mesmo dia em que começaram; quando o mês não tem esse dia, no último dia do mês.</li><li><strong>100 dias</strong>: dá 3 meses e mais {M3_LO} a {M3_HI} dias, conforme o mês de início. Depois vêm os 200, os 500 e os 1.000 dias.</li><li><strong>Aniversário de namoro</strong>: 365 dias, ou 366 quando o ano passa por um 29 de fevereiro.</li></ul>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>No <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> um evento pode contar a partir de uma data: crie o dia em que vocês começaram e ele mostra há quantos dias estão juntos num widget grátis da Tela Bloqueada ou da Tela de Início. No verso do evento dá para escrever algumas linhas, guardar fotos e gravar uma voz — a história do dia fica junto com o dia.</p>
-<ol><li>Toque em <strong>+</strong>, dê um nome e escolha a data em que começaram.</li><li>Escolha contar a partir dessa data.</li><li>Para o mesversário, crie outro evento que se repete todo mês.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos), dê um nome e escolha a data em que começaram.</li><li>Escolha contar a partir dessa data.</li><li>Para o mesversário, crie outro evento que se repete todo mês.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <p>Quer dar a contagem de presente em QR code? Copie o link gerado acima e transforme em QR code com qualquer gerador — o nosso é o <a href="/qrcodestudio/" hreflang="en">QR Studio</a>, para iPhone (página em inglês).</p>"""},
  # 10-12：锁屏教程页（pt-BR，Countdown）。依据 10-12 GSC：「quantos dias faltam…」这类词被 Google AI 概览直接答掉，排第 8 也 0 点击；
@@ -951,7 +960,7 @@ SCENES = [
 <tr><th style="white-space:nowrap">Onde fica</th><td>no fundo da Tela Bloqueada e da Tela de Início</td><td>abaixo do relógio, na Tela Bloqueada, e na Tela de Início</td></tr>
 </tbody></table>
 <h2>Na tela de bloqueio, passo a passo</h2>
-<ol><li>Instale o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a>, toque em <strong>+</strong> e informe o nome (por exemplo, “Férias”) e a data.</li><li>Na Tela Bloqueada, toque e segure até aparecer <strong>Personalizar</strong>, e toque nele.</li><li>Escolha a Tela Bloqueada e toque em <strong>Adicionar widgets</strong>.</li><li>Escolha Countdown e toque no widget que você quer. A contagem passa a aparecer abaixo do relógio.</li></ol>
+<ol><li>Instale o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a>, toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e informe o nome (por exemplo, “Férias”) e a data.</li><li>Na Tela Bloqueada, toque e segure até aparecer <strong>Personalizar</strong>, e toque nele.</li><li>Escolha a Tela Bloqueada e toque em <strong>Adicionar widgets</strong>.</li><li>Escolha Countdown e toque no widget que você quer. A contagem passa a aparecer abaixo do relógio.</li></ol>
 <p>Todos os widgets são grátis, em todos os tamanhos, e os eventos são ilimitados: dá para ter as férias, o aniversário e o Natal ao mesmo tempo.</p>
 <h2>Na Tela de Início</h2>
 <ol><li>Toque e segure um espaço vazio da Tela de Início.</li><li>Toque em <strong>Editar</strong> → <strong>Adicionar widget</strong> (no iOS 17, toque em <strong>+</strong> no canto superior esquerdo).</li><li>Escolha Countdown e o tamanho, e toque em <strong>Adicionar widget</strong>.</li></ol>
@@ -1073,7 +1082,7 @@ def escola_page(e):
 <p>Veja também o calendário {outros}. A página <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a> compara as redes lado a lado e tem um contador com dias úteis para as férias do trabalho.</p>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Férias”.</li><li>Data: {PT_DM(fim)} de 2026, o último dia de aula. Adicione um lembrete uma semana antes.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Férias”.</li><li>Data: {PT_DM(fim)} de 2026, o último dia de aula. Adicione um lembrete uma semana antes.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}"""
     return {"path": path, "lang": "pt-BR", "kind": "Article", "app": "countdown", "published": "2026-10-10",
             "title": title, "crumb": f"Férias escolares: {e['nome']}", "description": desc,
@@ -1163,7 +1172,7 @@ PAGES.insert(_fi + 1 + len(ESCOLAS), {"path": "/tools/pt-br/quinto-dia-util/", "
 <p>Para o trabalho de segunda a sexta, a conta é outra: os dias de segunda a sexta do mês, menos os feriados nacionais que caem nesses dias. É a terceira coluna da tabela. Os feriados nacionais considerados são 1º de janeiro, Paixão de Cristo, 21 de abril, 1º de maio, 7 de setembro, 12 de outubro, 2, 15 e 20 de novembro e 25 de dezembro. Carnaval e Corpus Christi não são feriados nacionais — são ponto facultativo ou feriado local —, por isso não foram descontados.</p>
 <h2>O dia do pagamento na tela de bloqueio e na Tela de Início</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem até o pagamento fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembrete no dia.</p>
-<ol><li>Toque em <strong>+</strong> e dê o nome “Pagamento”.</li><li>Data: o quinto dia útil deste mês. Como ele muda de mês para mês, atualize a data no mês seguinte; se a empresa paga sempre no mesmo dia, ligue a repetição mensal.</li>{PT_WIDGET_STEP}</ol>
+<ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Pagamento”.</li><li>Data: o quinto dia útil deste mês. Como ele muda de mês para mês, atualize a data no mês seguinte; se a empresa paga sempre no mesmo dia, ligue a repetição mensal.</li>{PT_WIDGET_STEP}</ol>
 {PT_LOCK_LINK}
 <p>Para contar até qualquer outra data, use o <a href="/tools/pt-br/quantos-dias-faltam/">contador de dias</a>; para as férias, veja <a href="/tools/pt-br/quantos-dias-faltam-para-as-ferias/">quantos dias faltam para as férias</a>.</p>"""})
 
@@ -1620,7 +1629,7 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
 <p class="meta">資料來源：行政院人事行政總處新聞稿、香港政府一站通「2027 年公眾假期」（{SOURCES_CHECKED.year}年{SOURCES_CHECKED.month}月{SOURCES_CHECKED.day}日確認）。公司與學校的假期可能不同。</p>
 <h2>把過年倒數放在鎖定畫面</h2>
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具全部尺寸都免費，事件數量不限；倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。</p>
-<ol><li>點 <strong>+</strong>，輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
+<ol><li>點「新增事件」（已經有事件時點「＋」），輸入「過年」。</li><li>日期設為2027年2月6日。農曆新年的國曆日期每年都不同，所以不要開「每年重複」；明年再另外加一個新日期。</li><li>長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → Countdown。主畫面則是長按 →「編輯」→「加入小工具」（iOS 17 是長按後點左上角的「＋」）。</li></ol>
 <p>點一下事件，它會翻到自己的背面：可以寫下年貨清單、放幾張照片，這一天的故事就留在這一天裡。桌布和小工具差在哪裡，見 <a href="/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>"""})
 
 # 7c2. 台灣：2027 連假行事曆（zh-Hant，Countdown）——10-10
@@ -1664,7 +1673,7 @@ PAGES.append({"path": "/tools/zh-hant/2027-lian-jia-xing-shi-li/", "lang": "zh-H
     ("2027 年春節放幾天？", "從 2 月 4 日（四）放到 2 月 10 日（三），共 7 天。初一、初二（2 月 6 日、7 日）是週六、週日，所以在 2 月 9 日、10 日補假。"),
     ("2027 年有補班日嗎？", "沒有。現行的補假規定已經刪除「調整放假、補行上班」的做法：放假日遇到星期六，在前一個上班日補假；遇到星期日，在後一個上班日補假。"),
     ("民間企業也照這份行事曆放假嗎？", "這份日曆表適用於政府行政機關，公營事業原則上比照辦理；學校和警察、消防、軍事等機關另有規定。民間企業的放假依勞動基準法和勞動部的規定辦理。"),
-    ("怎麼把連假倒數放在 iPhone 主畫面？", "在「倒數計時 Widget：紀念日提醒」裡點 +，輸入連假名稱和第一天的日期，再長按主畫面 → 編輯 → 加入小工具 → Countdown。小工具全部尺寸都免費，事件數量不限。"),
+    ("怎麼把連假倒數放在 iPhone 主畫面？", "在「倒數計時 Widget：紀念日提醒」裡點「新增事件」（已經有事件時點「＋」），輸入連假名稱和第一天的日期，再長按主畫面 → 編輯 → 加入小工具 → Countdown。小工具全部尺寸都免費，事件數量不限。"),
   ],
   "more": [
     ("2027 過年連假是哪幾天？", "2 月 4 日（四）到 2 月 10 日（三），共 7 天；除夕是 2 月 5 日，初一是 2 月 6 日。"),
@@ -1694,7 +1703,7 @@ PAGES.append({"path": "/tools/zh-hant/2027-lian-jia-xing-shi-li/", "lang": "zh-H
 <p class="meta">資料來源：<a href="https://www.dgpa.gov.tw/information?pid=12983&amp;uid=82" rel="noopener">行政院人事行政總處新聞稿</a>（115 年 5 月 21 日、114 年 6 月 13 日）與 116 年政府行政機關辦公日曆表（{TW_CHECKED.year} 年 {TW_CHECKED.month} 月 {TW_CHECKED.day} 日確認）。公司與學校的假期可能不同。</p>
 <h2>把連假倒數放在主畫面</h2>
 <p>不想每次打開網頁，可以把倒數放在 iPhone 的主畫面或鎖定畫面。「<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>」的小工具全部尺寸都免費，事件數量不限。</p>
-<ol><li>點 <strong>+</strong>，輸入連假的名稱，例如「春節連假」。</li><li>日期設為連假的第一天，例如 2027 年 2 月 4 日。</li><li>長按主畫面 →「編輯」→「加入小工具」→ Countdown。</li></ol>
+<ol><li>點「新增事件」（已經有事件時點「＋」），輸入連假的名稱，例如「春節連假」。</li><li>日期設為連假的第一天，例如 2027 年 2 月 4 日。</li><li>長按主畫面 →「編輯」→「加入小工具」→ Countdown。</li></ol>
 <p>農曆新年的日期和香港的公眾假期，見 <a href="/tools/zh-hant/nong-li-xin-nian-2027/">2027 農曆新年倒數</a>；放到鎖定畫面的完整步驟，見 <a href="/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>"""})
 
 # 7c3. 台灣：116 學測 / 116 會考倒數 + iPhone 主畫面倒數教學（zh-Hant，Countdown）——10-12
@@ -1750,7 +1759,7 @@ PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "
 <p class="meta">資料來源：<a href="https://www.ceec.edu.tw/" rel="noopener">大學入學考試中心</a>「116學年度考試重要試務日期」（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。各科的考試時間與應考規定，以大考中心公告的簡章為準。</p>
 <h2>學測倒數桌布？改用 iPhone 鎖定畫面小工具</h2>
 <p>很多人會找「學測倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
-<ol><li>點 <strong>+</strong>，輸入「學測」，日期設為 2027 年 1 月 22 日。想一起倒數分科測驗，就再加一個 7 月 10 日的事件。</li>{ZH_LOCK_STEPS}</ol>
+<ol><li>點「新增事件」（已經有事件時點「＋」），輸入「學測」，日期設為 2027 年 1 月 22 日。想一起倒數分科測驗，就再加一個 7 月 10 日的事件。</li>{ZH_LOCK_STEPS}</ol>
 <p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
 <h2>倒數的節點</h2>
 <table><thead><tr><th>節點</th><th>日期</th></tr></thead><tbody>{zh_nodes(XC1)}</tbody></table>
@@ -1786,7 +1795,7 @@ PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", 
 <p class="meta">資料來源：教育部 115 年 9 月 11 日臺教授國部字第 1155404304 號函「116學年度國中教育會考及全國高級中等學校與專科學校五年制適性入學重要日程表」，刊於<a href="https://cap.rcpet.edu.tw/" rel="noopener">國中教育會考網站</a>（{EXAMS_CHECKED.year}年{EXAMS_CHECKED.month}月{EXAMS_CHECKED.day}日確認）。報名方式和考試時間表，以會考簡章為準。</p>
 <h2>會考倒數桌布？改用 iPhone 鎖定畫面小工具</h2>
 <p>很多人會找「會考倒數桌布」，但桌布是一張圖片，數字停在做圖那一天。<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>的小工具會每天自己把數字減一；主畫面和鎖定畫面的小工具全部尺寸都免費，事件數量也沒有上限。</p>
-<ol><li>點 <strong>+</strong>，輸入「會考」，日期設為 2027 年 5 月 15 日。</li>{ZH_LOCK_STEPS}</ol>
+<ol><li>點「新增事件」（已經有事件時點「＋」），輸入「會考」，日期設為 2027 年 5 月 15 日。</li>{ZH_LOCK_STEPS}</ol>
 <p>倒數走到一百天、一週、當天早上這些節點時，App 會以整螢幕的數字打開，並給你一張可以分享的卡片。桌布和小工具差在哪裡、還有更完整的步驟，見 <a href="{ZH_LOCK_PATH}">iPhone 主畫面與鎖定畫面倒數教學</a>。</p>
 <h2>倒數的節點</h2>
 <table><thead><tr><th>節點</th><th>日期</th></tr></thead><tbody>{zh_nodes(HK1)}</tbody></table>
@@ -1813,7 +1822,7 @@ PAGES.append({"path": ZH_LOCK_PATH, "iphone_only": True, "lang": "zh-Hant", "kin
 <tr><th style="white-space:nowrap">位置</th><td>鎖定畫面、主畫面的背景</td><td>鎖定畫面的時間下方、主畫面</td></tr>
 </tbody></table>
 <h2>放到鎖定畫面</h2>
-<ol><li>安裝<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>，點 <strong>+</strong>，輸入名稱（例如「學測」）和日期。</li><li>長按鎖定畫面，等「自訂」出現後點一下，選擇鎖定畫面。</li><li>點「加入小工具」，選 Countdown，再點想用的小工具。倒數就會出現在時間下方。</li></ol>
+<ol><li>安裝<a href="/countdown/zh-hant/">倒數計時 Widget：紀念日提醒</a>，點「新增事件」（已經有事件時點「＋」），輸入名稱（例如「學測」）和日期。</li><li>長按鎖定畫面，等「自訂」出現後點一下，選擇鎖定畫面。</li><li>點「加入小工具」，選 Countdown，再點想用的小工具。倒數就會出現在時間下方。</li></ol>
 <p>小工具全部尺寸都免費，事件數量沒有上限：學測、分科測驗和過年可以同時倒數。</p>
 <h2>放到主畫面</h2>
 <ol><li>長按主畫面的空白處。</li><li>點左上角的「編輯」→「加入小工具」（iOS 17 是點左上角的「＋」）。</li><li>選 Countdown 和尺寸，再點「加入小工具」。</li></ol>
@@ -1891,7 +1900,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
 <h2>ロック画面・待ち受けに置く</h2>
 <p>毎回サイトを開かなくても残り日数が見えるように、iPhone のロック画面やホーム画面にウィジェットとして置けます。<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>なら、すべてのサイズのウィジェットが無料です。100日前・1週間前・当日の朝といった節目に達すると、アプリが全画面の数字で開き、共有できるカードを用意します。</p>
-<ol><li>アプリで <strong>+</strong> をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
+<ol><li>アプリで「イベントを追加」（すでにイベントがある場合は「＋」）をタップし、「共通テスト」と入力します。</li><li>日付を{fmt(KT1, "ja")}に設定します。通知は当日のほか、何日前でも好きなだけ追加できます。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
 <h2>カウントダウンの使い方</h2>
 <ul><li>イベントの裏面に、科目ごとの目標や模試の結果を書いておく。</li><li>追・再試験や二次試験、私立大学の入試日も別のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。</p>
@@ -1948,7 +1957,7 @@ PAGES.append({"path": "/tools/ja/toritsu-nyushi-2027/", "lang": "ja", "kind": "A
 <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(TR1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
 <h2>ロック画面・待ち受けに置く</h2>
 <p>毎回サイトを開かなくても残り日数が見えるように、iPhone のロック画面やホーム画面にウィジェットとして置けます。<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>なら、すべてのサイズのウィジェットが無料です。100日前・1週間前・当日の朝といった節目に達すると、アプリが全画面の数字で開き、共有できるカードを用意します。</p>
-<ol><li>アプリで <strong>+</strong> をタップし、「都立入試」と入力します。</li><li>日付を{fmt(TR1, "ja")}に設定します。推薦入試を受ける人は、{md_ja(TR_S1)}のイベントも作っておくと便利です。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
+<ol><li>アプリで「イベントを追加」（すでにイベントがある場合は「＋」）をタップし、「都立入試」と入力します。</li><li>日付を{fmt(TR1, "ja")}に設定します。推薦入試を受ける人は、{md_ja(TR_S1)}のイベントも作っておくと便利です。</li><li>ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown。ホーム画面なら、長押し →「編集」→「ウィジェットを追加」です（iOS 17 では長押しして左上の「＋」）。</li></ol>
 <h2>カウントダウンの使い方</h2>
 <ul><li>イベントの裏面に、教科ごとの目標や模試の結果を書いておく。</li><li>推薦入試、学力検査、合格発表、私立高校の入試日を別々のイベントにして、「次の予定リスト」のウィジェットで並べる。</li><li>過ぎた日は削除されず、振り返れるタイムラインとして残ります。</li></ul>
 <p>ほかの日付は<a href="/tools/ja/ato-nannichi/">あと何日？（日数計算）</a>で数えられます。ロック画面に置く手順は<a href="/tools/ja/countdown-machiuke-iphone/">カウントダウンを待ち受けにする方法（iPhone）</a>にくわしくまとめました。大学入学共通テストのカウントダウンは<a href="/tools/ja/kyotsu-test-2027/">共通テスト2027まであと何日？</a>へ。</p>"""})
@@ -1978,7 +1987,7 @@ PAGES.append({"path": "/tools/ja/countdown-machiuke-iphone/", "iphone_only": Tru
 <tr><th style="white-space:nowrap">場所</th><td>ロック画面・ホーム画面の背景</td><td>ロック画面の時計の下、ホーム画面</td></tr>
 </tbody></table>
 <h2>ロック画面に置く手順</h2>
-<ol><li>App Store で<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>を入れ、<strong>+</strong> をタップしてイベント名（例：共通テスト）と日付を入れます。</li><li>ロック画面を長押しして「カスタマイズ」をタップし、ロック画面を選びます。</li><li>「ウィジェットを追加」から Countdown を選び、置きたいウィジェットをタップします。</li><li>右上の「完了」をタップします。</li></ol>
+<ol><li>App Store で<a href="/countdown/ja/">カウントダウン ウィジェット: 記念日</a>を入れ、「イベントを追加」（すでにイベントがある場合は「＋」）をタップしてイベント名（例：共通テスト）と日付を入れます。</li><li>ロック画面を長押しして「カスタマイズ」をタップし、ロック画面を選びます。</li><li>「ウィジェットを追加」から Countdown を選び、置きたいウィジェットをタップします。</li><li>右上の「完了」をタップします。</li></ol>
 <p>ウィジェットはすべてのサイズが無料で、イベントはいくつでも作れます。</p>
 <h2>ホーム画面に置く手順</h2>
 <ol><li>ホーム画面を長押しします。</li><li>左上の「編集」→「ウィジェットを追加」をタップします（iOS 17 では左上の「＋」）。</li><li>Countdown を選び、サイズを決めて「ウィジェットを追加」をタップします。</li></ol>
@@ -2026,7 +2035,7 @@ PAGES.append({"path": "/tools/ko/iphone-didei-wijet/", "iphone_only": True, "lan
 <tr><th style="white-space:nowrap">위치</th><td>잠금 화면·홈 화면 배경</td><td>잠금 화면 시계 아래, 홈 화면</td></tr>
 </tbody></table>
 <h2>잠금 화면에 두는 방법</h2>
-<ol><li>App Store에서 <a href="/countdown/ko/">카운트다운 위젯: 디데이</a>를 설치하고, <strong>+</strong>를 눌러 이벤트 이름(예: 수능)과 날짜를 입력합니다.</li><li>잠금 화면을 길게 누른 뒤 ‘사용자화’를 누르고 잠금 화면을 고릅니다.</li><li>‘위젯 추가’에서 Countdown을 고르고, 넣고 싶은 위젯을 누릅니다.</li><li>오른쪽 위의 ‘완료’를 누릅니다.</li></ol>
+<ol><li>App Store에서 <a href="/countdown/ko/">카운트다운 위젯: 디데이</a>를 설치하고, ‘이벤트 추가’(이미 이벤트가 있으면 ‘+’)를 눌러 이벤트 이름(예: 수능)과 날짜를 입력합니다.</li><li>잠금 화면을 길게 누른 뒤 ‘사용자화’를 누르고 잠금 화면을 고릅니다.</li><li>‘위젯 추가’에서 Countdown을 고르고, 넣고 싶은 위젯을 누릅니다.</li><li>오른쪽 위의 ‘완료’를 누릅니다.</li></ol>
 <p>위젯은 모든 크기가 무료이고, 이벤트는 몇 개든 만들 수 있습니다.</p>
 <h2>홈 화면에 두는 방법</h2>
 <ol><li>홈 화면의 빈 곳을 길게 누릅니다.</li><li>왼쪽 위의 ‘편집’ → ‘위젯 추가’를 누릅니다(iOS 17에서는 왼쪽 위의 ‘+’).</li><li>Countdown을 고르고 크기를 정한 뒤 ‘위젯 추가’를 누릅니다.</li></ol>
@@ -2166,6 +2175,7 @@ def best_page():
 <li><strong>You only need one widget and want to design it:</strong> Countdown Buddy — 11 widget styles, one free.</li>
 <li><strong>You want full-screen photos:</strong> Days • Countdown & Widgets.</li>
 </ul>
+<p>If you go with ours, the Home Screen and Lock Screen steps are in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>, and the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget guide</a> covers a holiday setup.</p>
 <h2>The seven apps</h2>
 {entries}
 <h2>How we chose</h2>
