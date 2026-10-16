@@ -361,6 +361,8 @@ def head_block(url, app, kind):
         if app.get("lang", "en").lower().startswith("zh"):
             desc = (f"{app['name']}的{label}：App 会处理哪些信息、数据存在哪里、用到哪些联网服务，以及如何联系我们。" if privacy else
                     f"{app['name']}的{label}：服务内容、付费订阅与免费版范围、你的内容，以及责任限制。")
+        elif "/support/" in url:      # Pagewren 起有独立支持页（App Store 的 Support URL），不是条款
+            desc = f"{label} for {app['name']}. Answers about storing, moving and backing up your data, purchases and subscriptions, and how to contact us."
         else:
             desc = (f"{label} for {app['name']}. What information the app uses, where it is stored, which services process it, and how to contact us." if privacy else
                     f"{label} for {app['name']}. How the service works, paid features, your content, availability and limits of liability.")
@@ -774,7 +776,7 @@ def home_legal_html(lang="en"):
     for a in HOME_APPS:
         target = a["home"].get("hreflang") or "en"          # 法务页本身的语言
         attr = f' hreflang="{target}"' if target != lang else ""
-        cells = {("privacy" if "privacy" in href else "terms"): href for href, _ in a.get("legal", [])}
+        cells = {("privacy" if "privacy" in href else "terms"): href for href, _ in a.get("legal", []) if "/support/" not in href}
         links = "".join('<a href="%s"%s>%s</a>' % (cells[k], attr, esc_text(short.get(k) or bp.t(lang, k)))
                         if k in cells else "<span></span>" for k in ("privacy", "terms"))
         rows.append('          <li><a class="gk-foot-app" href="%s">%s</a>%s</li>'

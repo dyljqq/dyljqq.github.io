@@ -1910,6 +1910,35 @@
       "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg"
     },
     {
+      "key": "pagewren",
+      "path": "/pagewren/",
+      "live": false,
+      "appId": "6823661619",
+      "name": "Pagewren: Baby Memory Book",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Baby Memory Book for iPhone",
+      "oneLiner": "A baby memory book for iPhone where every photo and note becomes a page.",
+      "description": "A baby memory book for iPhone: photos and a few words become the pages of a book, kept on your device with no account.",
+      "audience": "Parents keeping a record of their child's first years.",
+      "noPage": true,
+      "legal": [
+        [
+          "/pagewren/privacy-policy/",
+          "Privacy Policy"
+        ],
+        [
+          "/pagewren/terms-of-use/",
+          "Terms of Use"
+        ],
+        [
+          "/pagewren/support/",
+          "Support"
+        ]
+      ]
+    },
+    {
       "key": "diary",
       "path": "/diary/",
       "live": false,
