@@ -208,6 +208,22 @@ Ahrefs：外链 33 条里 31 条是 SPAM 自动站，真实第三方外链 0；�
 
 **10-29 回看**：學測 / 會考页「倒數桌布」类查询的点击；都立页收录与「都立入試 カウントダウン / 2027 日程」排名；pt-BR 锁屏页曝光。
 
+## 10-16：美区内容（用户「广告中心和用户重心在美国」）
+
+**依据**
+- Google US 联想词：「countdown widget iphone free / lock screen free / without app / reddit」「free countdown widget iphone」「best countdown app for iphone free / with widget」「christmas countdown widget iphone」「birthday countdown widget for iphone」「thanksgiving countdown 2026」——和 CD-US 广告出过订阅的 widget 族词同一意图。
+- Bing US「best countdown app for iphone free」：AI 摘要引用 iGeeksBlog / MUO，自然结果里有竞品自写博客（countdowncalendarapp.com、DayDrop、outside.so）；我们的对比页 Google「已发现未编入」、Bing 未发现，首页不链它。
+- 热点：iPhone Duo 10-16 预购、10-23 发货（Countdown 1.4.18 已适配）；iOS 27 新增 extra large 小组件（Apple 支持页原文，Countdown 代码 `WidgetFamily+ExtraLarge` 支持）。
+- 10-16 Countdown 美区 lookup 已是 1.4.19（10-15 上线，8 张圣诞插画），但 `fetch_store.py` 带 lang 的 lookup 仍回 1.4.18——缓存没跟上前，页面不写 1.4.19 的内容和背景张数。
+
+**改动**
+- 新页 `/tools/christmas-countdown-widget-iphone/`（锁屏 / 主屏 / iOS 27 extra large / 壁纸 vs 小组件 / 圣诞组合）；新页 `/tools/days-until-thanksgiving/`（11-26，moving=True）。
+- 对比页 title「…(2026): Which Ones Are Free」，评分与 DayCount（现写明跨设备同步、日历导入）刷新到 10-16，我们那行显示 13 评分。
+- 英文锁屏教程按 Apple iOS 27 原文更新步骤，加 extra large / iPhone Duo 一节和两条 FAQ。
+- 英文节日页、计算器、博客都链到对比页（首页 12 语模板改动成本高，没加）。
+
+**11-06 回看**：对比页 Google / Bing 收录与「best countdown app for iphone free」曝光；圣诞小组件页收录与「christmas countdown widget iphone」曝光；Vercel 美国真人搜索访客与 `~out-` 点击。
+
 ## 持续基建（穿插在各版本里）
 
 | 项 | 做什么 | 时机 |

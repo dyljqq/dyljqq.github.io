@@ -4,17 +4,21 @@
    "slug": "countdown-widget-iphone-home-lock-screen",
    "app": "countdown",
    "title": "How to Put a Countdown on Your iPhone Lock Screen",
-   "description": "Here is how to add a countdown widget to your iPhone Home Screen and Lock Screen, plus what Live Activity adds on top of it.",
+   "description": "How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.",
    "h1": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
    "intro": "You add a countdown to your iPhone Home Screen by touching and holding an empty area until the icons jiggle, tapping Edit and then Add Widget (the + button on iOS 17), and choosing a countdown widget; the Lock Screen works the same way through Customize. Once it is placed you can move it, add another size next to it, and point it at any event you have set up in a countdown app such as Countdown Widget: Any Event (Countdown).",
    "sections": [
     {
      "h2": "Add a widget to your Home Screen",
-     "html": "<p>The steps are the same for any app with widgets; only the second step differs between iOS versions:</p><ol><li>Touch and hold an empty area of the Home Screen until the apps start to jiggle.</li><li>On iOS 18, tap <strong>Edit</strong> in the top-left corner, then <strong>Add Widget</strong>. On iOS 17, tap the <strong>+</strong> button in the top-left corner.</li><li>Search for Countdown, then swipe to pick a widget and size.</li><li>Tap <strong>Add Widget</strong>, then drag it to where you want it.</li><li>Tap <strong>Done</strong> to lock the layout back in.</li></ol><p>If you change your mind about placement later, touch and hold the widget itself and choose <strong>Edit Home Screen</strong>, or drag it to a different spot while the icons are still jiggling. Removing a widget works the same way any app icon does — touch and hold, then tap <strong>Remove Widget</strong> — and it never deletes the event behind it, only the widget showing it.</p>"
+     "html": "<p>The steps are the same for any app with widgets; only the second step differs between iOS versions:</p><ol><li>Touch and hold an empty area of the Home Screen until the apps start to jiggle.</li><li>On iOS 18 and later, tap <strong>Edit</strong> in the top-left corner, then <strong>Add Widget</strong>. On iOS 17, tap the <strong>+</strong> button in the top-left corner.</li><li>Search for Countdown, tap it, then swipe through the size and style options.</li><li>When you see the size you want, tap <strong>Add Widget</strong>, then drag it to where you want it.</li><li>Tap <strong>Done</strong> to lock the layout back in.</li></ol><p>If you change your mind about placement later, touch and hold the widget itself and choose <strong>Edit Home Screen</strong>, or drag it to a different spot while the icons are still jiggling. Removing a widget works the same way any app icon does — touch and hold, then tap <strong>Remove Widget</strong> — and it never deletes the event behind it, only the widget showing it.</p>"
     },
     {
      "h2": "Add a widget to your Lock Screen",
-     "html": "<p>Lock Screen widgets go on the same way, from the Lock Screen itself, and iOS treats them as a separate layout from your Home Screen:</p><ol><li>Touch and hold the Lock Screen until <strong>Customize</strong> appears, then tap it (or tap the pencil icon).</li><li>Tap the widget area under the clock, or below your existing widgets.</li><li>Find Countdown in the list and choose a widget.</li><li>Tap the checkmark or outside the editor to save.</li></ol><p>The same event can sit on both screens at once — they are independent widgets, not one shared placement, so you could keep a small tile on the Lock Screen for a glance and a larger one on the Home Screen for more detail.</p>"
+     "html": "<p>Lock Screen widgets go on from the Lock Screen itself, and iOS treats them as a separate layout from your Home Screen:</p><ol><li>Touch and hold the Lock Screen until the <strong>Customize</strong> button appears at the bottom, then tap it.</li><li>Tap <strong>Add Widgets</strong> under the clock, or tap the widgets that are already there.</li><li>Find Countdown in the list and choose a widget.</li><li>Tap <strong>Done</strong> to save.</li></ol><p>The same event can sit on both screens at once — they are independent widgets, not one shared placement, so you could keep a small tile on the Lock Screen for a glance and a larger one on the Home Screen for more detail.</p>"
+    },
+    {
+     "h2": "Make it bigger: the extra large widget in iOS 27",
+     "html": "<p>iOS 27 adds a new widget size above large. Apple's own summary is that extra-large widgets “let you see more information from your favorite apps right on the Home Screen”.</p><p>You don't have to go through the widget gallery to get it. Touch and hold the Countdown app icon, or a Countdown widget you already placed, and choose a size from the icons at the bottom of the menu; touch and hold again and tap the app icon button to turn it back into an icon. Not every app offers every size — Apple notes that some stop at small and medium — but Countdown offers all of them on iOS 27, extra large included, and none of them cost anything.</p><p>On iPhone Duo, Countdown is also laid out for the unfolded screen: your list and the event you're looking at sit side by side, and tapping a countdown on the left opens it on the right.</p>"
     },
     {
      "h2": "Which Countdown widget to choose",
@@ -26,10 +30,18 @@
     },
     {
      "h2": "Set a reminder so the date doesn't sneak up on you",
-     "html": "<p>Widgets are easy to glance at, but a reminder makes sure you don't have to remember to look. Countdown lets you set a reminder for the day of the event itself, and as far ahead of it as you want — useful for a deadline you need to prepare for rather than just notice.</p><p>Events sync through iCloud with no account to create, so a widget you set up on one iPhone shows the same countdown on another, and there are no ads sitting alongside any of it. See the <a href=\"/countdown/\">Countdown app page</a> for the full feature list, or try the <a href=\"/tools/days-until/\">days-until calculator</a> if you just want a quick number without adding a widget yet.</p>"
+     "html": "<p>Widgets are easy to glance at, but a reminder makes sure you don't have to remember to look. Countdown lets you set a reminder for the day of the event itself, and as far ahead of it as you want — useful for a deadline you need to prepare for rather than just notice.</p><p>Events sync through iCloud with no account to create, so a widget you set up on one iPhone shows the same countdown on another, and there are no ads sitting alongside any of it. See the <a href=\"/countdown/\">Countdown app page</a> for the full feature list, or try the <a href=\"/tools/days-until/\">days-until calculator</a> if you just want a quick number without adding a widget yet.</p><p>Still choosing an app? The <a href=\"/tools/best-countdown-widget-apps-iphone/\">countdown widget app comparison</a> lays out which widgets are free in seven of them, ours included.</p>"
     }
    ],
    "faq": [
+    {
+     "q": "Is there a free countdown widget for iPhone?",
+     "a": "Yes. In Countdown Widget: Any Event every widget size is free on both the Home Screen and the Lock Screen, with unlimited events and no account. Pro unlocks the Pro backdrops, your own photos, the Pro typefaces and the Live Activity, but the widgets themselves are not part of it."
+    },
+    {
+     "q": "Can I make a countdown widget extra large?",
+     "a": "On iOS 27, yes: touch and hold the Countdown app icon or widget on the Home Screen and pick the extra large size. Earlier versions of iOS stop at large."
+    },
     {
      "q": "Can I add more than one countdown widget?",
      "a": "Yes. There is no limit on how many events Countdown can track, and you can place as many widgets as iOS allows on your Home Screen and Lock Screen."

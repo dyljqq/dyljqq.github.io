@@ -77,6 +77,7 @@ def fmt(d, lang):
         return f"{d.year}년 {d.month}월 {d.day}일({'월화수목금토일'[d.weekday()]})"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
+def fmt_us(d): return d.strftime("%A, %B %-d, %Y")   # 美区页用 November 26, 2026 写法
 
 # 共用 JS：data-date 的元素按访问当天重算天数；data-until 的把整句里的数字替换
 COUNT_JS = """
@@ -201,7 +202,7 @@ def faq_html(faq, lang):
     rows = "\n".join(f'    <div class="card"><h3>{esc(q)}</h3><p>{esc(a)}</p></div>' for q, a in faq)
     return f'<section class="sec" id="faq-section"><h2 id="faq">{esc(ts(lang, "faq"))}</h2><div class="grid">\n{rows}\n</div></section>'
 
-def counter(d, lang, label=""):
+def counter(d, lang, label="", us=False):
     n = days_to(d); unit = ts(lang, "today") if n == 0 else (ts(lang, "passed") if n < 0 else (ts(lang, "day") if n == 1 else ts(lang, "days")))
     if n == -1: unit = unit.replace("dias", "dia").replace("days", "day")
     wk = {"pt-BR": "semana", "en": "week"}.get(lang) if n // 7 == 1 else None
@@ -210,7 +211,7 @@ def counter(d, lang, label=""):
     if lang == "zh-Hant" and n >= 7: w = f"{n // 7} 週又 {n % 7} 天" if n % 7 else f"{n // 7} 週"
     if lang == "ko" and n >= 7: w = f"{n // 7}주 {n % 7}일" if n % 7 else f"{n // 7}주"
     return (f'<div class="count" data-date="{d.isoformat()}"><span data-n>{abs(n) if n else ""}</span><small data-unit>{esc(unit)}</small></div>'
-            f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
+            f'<p class="count-sub">{esc(label + " · " if label else "")}{esc(fmt_us(d) if us else fmt(d, lang))}{f" · <span data-weeks>{esc(w)}</span>" if w else ""}</p>')
 
 # 首个倒数数字正下方的一行下载按钮：只对 iOS 访客显示（build_seo 的 DEVICE 给 <html> 打 is-ios）。
 # 10-10 复盘：下载按钮原来只在页面靠后的位置，搜进来的人看完数字就走。ct=web-countdown-top，和页尾卡片的 -tool 分开计。
@@ -304,22 +305,24 @@ DIWALI = dt.date(2026, 11, 8)   # Lakshmi Puja；11-06 Dhanteras、11-07 Choti D
 ENEM1, ENEM2 = dt.date(2026, 11, 8), dt.date(2026, 11, 15)
 CARN_SAT, CARN_TUE, ASH = dt.date(2027, 2, 6), dt.date(2027, 2, 9), dt.date(2027, 2, 10)
 
-def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates, moving=False, published="2026-09-26"):
+def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq, next_dates, moving=False, published="2026-09-26", extra="", repeat_note=None, us=False):
+    F = fmt_us if us else (lambda x: fmt(x, lang))
     # moving：按阴历 / 印度历定日子的节日（排灯节等）每年公历日期不同，「每年重复」会数错，改成提示明年另加
-    repeat = ("The date moves every year, so add next year's date as a new event instead of turning on <strong>Repeat yearly</strong>."
+    repeat = repeat_note or ("The date moves every year, so add next year's date as a new event instead of turning on <strong>Repeat yearly</strong>."
               if moving else "Turn on <strong>Repeat yearly</strong> if you want it back next year.")
     body = f"""<h1>{esc(h1)}</h1>
 <p class="lede">{intro}</p>
-{counter(d, lang, name)}
+{counter(d, lang, name, us)}
 <h2>{esc(name)} at a glance</h2>
 <table><tbody>{"".join(f"<tr><th>{esc(k)}</th><td>{v}</td></tr>" for k, v in glance)}</tbody></table>
 <h2>Put the countdown on your Home Screen</h2>
 <p>A countdown you have to open an app to see is a countdown you forget. With <a href="/countdown/">Countdown Widget: Any Event</a> you add the date once and it sits on the Home Screen or Lock Screen as a widget — every widget size is free, events are unlimited, and it can remind you on the day and as far ahead as you like.</p>
-<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>Set the date to {esc(fmt(d, lang))}. {repeat}</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
+<ol><li>Install the app and tap <strong>+</strong>. Pick the template or type the name.</li><li>{'Set the date to' if repeat_note else 'If you typed the name yourself, set the date to'} {esc(F(d))}. {repeat}</li><li>Long-press the Home Screen → <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>) → Countdown. Choose the size you like.</li></ol>
+{extra}<p>Still choosing an app? See <a href="/tools/best-countdown-widget-apps-iphone/">which countdown widget apps are free</a> — seven compared.</p>
 <h2>Countdown ideas</h2>
 <ul>{"".join(f"<li>{i}</li>" for i in ideas)}</ul>
 <h2>{esc(re.sub(r'\s\d{4}$', '', name))} in the next few years</h2>
-<table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(fmt(dd, lang))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>"""
+<table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(F(dd))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>"""
     return {"path": f"/tools/{slug}/", "lang": lang, "title": title, "description": desc, "crumb": name, "kind": "Article",
             "app": "countdown", "faq": faq, "published": published, "js": [COUNT_JS], "body": body, "hub_title": h1, "hub_desc": desc}
 
@@ -355,29 +358,30 @@ PAGES.append({"path": "/tools/days-until/", "lang": "en", "kind": "WebApplicatio
 
 # 2–4. 节日页
 PAGES.append(holiday_page("days-until-christmas", "Christmas 2026", XMAS, "en",
-  "How many days until Christmas 2026? Live countdown", "Christmas Day 2026 is on Friday, 25 December 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
+  "How many days until Christmas 2026? Live countdown", "Christmas Day 2026 is on Friday, December 25, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
   "How many days until Christmas 2026?",
-  f"Christmas Day 2026 falls on <strong>Friday, 25 December 2026</strong>. Christmas Eve is Thursday the 24th and Boxing Day is Saturday the 26th. The counter below updates every day.",
-  [("Christmas Day", "Friday, 25 December 2026"), ("Christmas Eve", "Thursday, 24 December 2026"), ("Boxing Day / St Stephen's Day", "Saturday, 26 December 2026"), ("First Sunday of Advent", "Sunday, 29 November 2026"), ("Twelve days of Christmas end", "Wednesday, 6 January 2027 (Epiphany)")],
+  f"Christmas Day 2026 falls on <strong>Friday, December 25, 2026</strong>. Christmas Eve is Thursday the 24th and Boxing Day is Saturday the 26th. The counter below updates every day.",
+  [("Christmas Day", "Friday, December 25, 2026"), ("Christmas Eve", "Thursday, December 24, 2026"), ("Boxing Day / St Stephen's Day", "Saturday, December 26, 2026"), ("First Sunday of Advent", "Sunday, November 29, 2026"), ("Twelve days of Christmas end", "Wednesday, January 6, 2027 (Epiphany)")],
   ["A countdown to Christmas Eve for the kids, with a reminder the morning before.", "One countdown per December event: the school play, the last working day, the flight home.", "A count-up from last Christmas to see how fast the year went."],
-  [("What day of the week is Christmas 2026?", "Christmas Day 2026 is a Friday. That gives most people a long weekend from Friday 25 December to Sunday 27 December, and many workplaces add Christmas Eve, Thursday 24 December."),
-   ("How many weeks until Christmas 2026?", f"Divide the days by seven: on {TODAY.strftime('%-d %B %Y')} there were {days_to(XMAS)} days, which is about {days_to(XMAS)//7} weeks. The counter at the top of this page recalculates it on the day you visit."),
-   ("How many days between Halloween and Christmas?", "55 days. Halloween is 31 October and Christmas Day is 25 December, so there are 55 days from one to the other in any year."),
-   ("When is Christmas 2027?", "Saturday, 25 December 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."),
+  [("What day of the week is Christmas 2026?", "Christmas Day 2026 is a Friday. That gives most people a long weekend from Friday, December 25 to Sunday, December 27, and many workplaces add Christmas Eve, Thursday, December 24."),
+   ("How many weeks until Christmas 2026?", f"Divide the days by seven: on {TODAY.strftime('%B %-d, %Y')} there were {days_to(XMAS)} days, which is about {days_to(XMAS)//7} weeks. The counter at the top of this page recalculates it on the day you visit."),
+   ("How many days between Halloween and Christmas?", "55 days. Halloween is October 31 and Christmas Day is December 25, so there are 55 days from one to the other in any year."),
+   ("When is Christmas 2027?", "Saturday, December 25, 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."),
    ("How do I put a Christmas countdown on my iPhone Home Screen?", "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +), and choose Countdown. The widgets are free in every size, and the event can repeat every year.")],
-  [(2026, XMAS), (2027, dt.date(2027, 12, 25)), (2028, dt.date(2028, 12, 25)), (2029, dt.date(2029, 12, 25))]))
+  [(2026, XMAS), (2027, dt.date(2027, 12, 25)), (2028, dt.date(2028, 12, 25)), (2029, dt.date(2029, 12, 25))],
+  extra='<p>Lock Screen steps, the extra large size in iOS 27 and a few Christmas setups: <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget for iPhone</a>.</p>\n', us=True))
 
 PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "en",
-  "How many days until Halloween 2026? Live countdown", "Halloween 2026 is on Saturday, 31 October 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
+  "How many days until Halloween 2026? Live countdown", "Halloween 2026 is on Saturday, October 31, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
   "How many days until Halloween 2026?",
-  "Halloween 2026 falls on <strong>Saturday, 31 October 2026</strong> — a weekend Halloween, which last happened in 2021. The counter below updates every day.",
-  [("Halloween", "Saturday, 31 October 2026"), ("All Saints' Day", "Sunday, 1 November 2026"), ("Día de los Muertos", "Monday, 2 November 2026"), ("Days from Halloween to Christmas", "55")],
+  "Halloween 2026 falls on <strong>Saturday, October 31, 2026</strong> — a weekend Halloween, which last happened in 2021. The counter below updates every day.",
+  [("Halloween", "Saturday, October 31, 2026"), ("All Saints' Day", "Sunday, November 1, 2026"), ("Día de los Muertos", "Monday, November 2, 2026"), ("Days from Halloween to Christmas", "55")],
   ["A countdown to the party with a reminder a week before, so the costume gets ordered in time.", "A trick-or-treat countdown on the kids' shared iPad.", "A Home Screen widget counting down the days to October 31."],
-  [("What day of the week is Halloween 2026?", "Saturday. Halloween 2026 is on Saturday, 31 October 2026, so parties and trick-or-treating fall on a weekend."),
-   ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%-d %B %Y')} there were {days_to(HALLOWEEN)} days, about {days_to(HALLOWEEN)//7} weeks. The counter on this page recalculates when you open it."),
-   ("When is Halloween 2027?", "Sunday, 31 October 2027. Halloween 2028 falls on a Tuesday."),
-   ("How do I get a Halloween countdown widget on iPhone?", "Add 31 October as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
-  [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))]))
+  [("What day of the week is Halloween 2026?", "Saturday. Halloween 2026 is on Saturday, October 31, 2026, so parties and trick-or-treating fall on a weekend."),
+   ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(HALLOWEEN)} days, about {days_to(HALLOWEEN)//7} weeks. The counter on this page recalculates when you open it."),
+   ("When is Halloween 2027?", "Sunday, October 31, 2027. Halloween 2028 falls on a Tuesday."),
+   ("How do I get a Halloween countdown widget on iPhone?", "Add October 31 as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
+  [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))], us=True))
 
 # 09-28 借势：排灯节搜索高峰在节前 4–6 周（现在），Countdown 有印度真实用户；首页被几个小倒数站占着，没有一家给 app / 小组件入口
 PAGES.append(holiday_page("days-until-diwali", "Diwali 2026", DIWALI, "en",
@@ -395,16 +399,81 @@ PAGES.append(holiday_page("days-until-diwali", "Diwali 2026", DIWALI, "en",
   [(2026, DIWALI), (2027, dt.date(2027, 10, 29)), (2028, dt.date(2028, 10, 17))], moving=True, published="2026-09-28"))
 
 PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
-  "How many days until New Year 2027? Live countdown", "New Year's Day 2027 is on Friday, 1 January 2027; New Year's Eve is Thursday, 31 December 2026. Live countdown plus a free iPhone widget.",
+  "How many days until New Year 2027? Live countdown", "New Year's Day 2027 is on Friday, January 1, 2027; New Year's Eve is Thursday, December 31, 2026. Live countdown plus a free iPhone widget.",
   "How many days until New Year 2027?",
-  "New Year's Day 2027 falls on <strong>Friday, 1 January 2027</strong>, so New Year's Eve is Thursday, 31 December 2026. The counter below updates every day.",
-  [("New Year's Eve", "Thursday, 31 December 2026"), ("New Year's Day", "Friday, 1 January 2027"), ("Lunar New Year 2027", "Saturday, 6 February 2027 (Year of the Goat)"), ("Days left in 2026", f"{days_to(REV) + 1} (as of {TODAY.isoformat()})")],
-  ["A countdown to midnight with the party address in the notes on the back of the event.", "A count-up from 1 January for a new habit — the widget shows the streak in days.", "One countdown for the first working day, so the holiday has a shape."],
-  [("What day of the week is New Year's Day 2027?", "Friday. New Year's Eve 2026 is a Thursday and 1 January 2027 is a Friday, which makes a three-day weekend for many people."),
+  "New Year's Day 2027 falls on <strong>Friday, January 1, 2027</strong>, so New Year's Eve is Thursday, December 31, 2026. The counter below updates every day.",
+  [("New Year's Eve", "Thursday, December 31, 2026"), ("New Year's Day", "Friday, January 1, 2027"), ("Lunar New Year 2027", "Saturday, February 6, 2027 (Year of the Goat)"), ("Days left in 2026", f"{days_to(REV) + 1} (as of {TODAY.isoformat()})")],
+  ["A countdown to midnight with the party address in the notes on the back of the event.", "A count-up from January 1 for a new habit — the widget shows the streak in days.", "One countdown for the first working day, so the holiday has a shape."],
+  [("What day of the week is New Year's Day 2027?", "Friday. New Year's Eve 2026 is a Thursday and January 1, 2027 is a Friday, which makes a three-day weekend for many people."),
    ("How many days are left in 2026?", f"As of {TODAY.strftime('%-d %B %Y')} there were {days_to(REV) + 1} days left in 2026, counting today. The counter on this page recalculates when you open it."),
-   ("When is Lunar New Year 2027?", "Saturday, 6 February 2027. It begins the Year of the Goat."),
-   ("How do I keep a New Year countdown on my Lock Screen?", "Add 1 January 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.")],
-  [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))]))
+   ("When is Lunar New Year 2027?", "Saturday, February 6, 2027. It begins the Year of the Goat."),
+   ("How do I keep a New Year countdown on my Lock Screen?", "Add January 1, 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.")],
+  [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))], us=True))
+
+# 10-16：美区。用户 10-16「关注美国的内容，广告中心和用户重心在美国」。
+# 感恩节：美国 = 11 月第四个星期四（2026-11-26）；Google US 联想词「thanksgiving countdown 2026 / clock / calendar / app」。商店描述的模板里有 Thanksgiving。
+# 日期每年变（第四个星期四）：App 现成事件 thanksgiving = .yearly + nextNthWeekday(11,5,4)，每年自动落在第四个星期四（EventTemplate.swift）；手打名字的普通每年重复会固定月日 → repeat_note 分开说（10-16 评审）。
+THANKS = dt.date(2026, 11, 26)
+PAGES.append(holiday_page("days-until-thanksgiving", "Thanksgiving 2026", THANKS, "en",
+  "How many days until Thanksgiving 2026? Live countdown (Nov 26)", "Thanksgiving 2026 in the US is on Thursday, November 26, 2026, with Black Friday on the 27th. Live countdown in days and weeks, plus a free iPhone widget.",
+  "How many days until Thanksgiving 2026?",
+  "Thanksgiving 2026 in the United States falls on <strong>Thursday, November 26, 2026</strong> — the fourth Thursday of November. Black Friday is the next day, November 27. The counter below updates every day.",
+  [("Thanksgiving Day (US)", "Thursday, November 26, 2026"), ("Black Friday", "Friday, November 27, 2026"), ("Cyber Monday", "Monday, November 30, 2026"),
+   ("Days from Thanksgiving to Christmas", "29"), ("Thanksgiving in Canada", "Monday, October 12, 2026 (second Monday of October)")],
+  ["A countdown to the trip home, with the flight or the drive written on the back of the event.", "A countdown to Black Friday with a reminder the night before.",
+   "A list widget with Thanksgiving, the first Sunday of Advent and Christmas Day, so the whole season sits on one screen."],
+  [("What date is Thanksgiving 2026?", "Thursday, November 26, 2026. In the US, Thanksgiving is always the fourth Thursday of November, so the date moves between November 22 and 28."),
+   ("How many weeks until Thanksgiving 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(THANKS)} days: {days_to(THANKS)//7} weeks and {days_to(THANKS)%7} days. The counter on this page recalculates when you open it."),
+   ("When is Thanksgiving 2027?", "Thursday, November 25, 2027. Thanksgiving 2028 is on November 23 and Thanksgiving 2029 on November 22."),
+   ("How many days are there between Thanksgiving and Christmas 2026?", "29 days, from Thursday, November 26 to Friday, December 25, 2026."),
+   ("How do I get a Thanksgiving countdown widget on iPhone?", "In Countdown Widget: Any Event, tap + and pick Thanksgiving from the ready-made events: it lands on the fourth Thursday of November and comes back on the right Thursday every year. Then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +) and choose Countdown. Every widget size is free.")],
+  [(2026, THANKS), (2027, dt.date(2027, 11, 25)), (2028, dt.date(2028, 11, 23)), (2029, dt.date(2029, 11, 22))], published="2026-10-16", us=True,
+  repeat_note="Picked from the ready-made events, Thanksgiving already repeats on the fourth Thursday of November every year. If you typed the name yourself, add next year's date as a new event instead, because a plain yearly repeat keeps the same day of the month."))
+
+# 10-16：美区「想把倒数放到手机上」——Google US 联想词「christmas countdown widget iphone」「countdown widget iphone free / lock screen free」
+# 「free countdown widget iphone」。GSC 10-12 起有点击的全是这类词（待ち受け / 桌布 / tela de bloqueio）。
+# 步骤依据 Apple 支持 iOS 27：Add, edit, and remove widgets（Add Widget、长按图标选尺寸）、Customize apps and widgets（sizes up to extra large）、
+# Create a custom Lock Screen（Customize → Add Widgets → Done）、What's new in iOS 27（Extra-large widgets）。10-16 curl 读原文。
+# app 说法只用 en-US 商店描述：EVERY WIDGET, FREE / Every widget size, Home + Lock / Unlimited / Recurring yearly / Reminders / 模板含 Christmas；
+# 自己的照片、Lock Screen Live Activity 属于 Pro。超大尺寸：「Every widget size」+ App 代码 WidgetFamily+ExtraLarge（iOS 27 起）。
+ADVENT1, XEVE = dt.date(2026, 11, 29), dt.date(2026, 12, 24)
+PAGES.append({"path": "/tools/christmas-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-16",
+  "title": "Christmas Countdown Widget for iPhone (Free): Lock & Home Screen", "crumb": "Christmas countdown widget",
+  "description": "A free Christmas countdown widget for your iPhone Lock Screen or Home Screen, step by step, with the iOS 27 extra large size. Christmas 2026 is December 25.",
+  "hub_title": "Christmas countdown widget for iPhone", "hub_desc": "Lock Screen and Home Screen steps, the iOS 27 extra large size, and a few Christmas setups.",
+  "js": [COUNT_JS], "faq": [
+    ("Is there a free Christmas countdown widget for iPhone?", "Yes. In Countdown Widget: Any Event every widget size is free, on the Home Screen and the Lock Screen, and you can keep as many countdowns as you like. Pro unlocks the Pro backdrops, your own photos, the Pro typefaces and the Lock Screen Live Activity; the widgets are not part of it."),
+    ("Will the Christmas countdown come back next year?", "Yes. Christmas is always December 25, so with Repeat yearly on — the ready-made Christmas event already has it — the countdown starts toward Christmas 2027 the day after Christmas 2026."),
+    ("Can I put a Christmas photo behind the countdown?", "Using your own photo behind a countdown is part of Countdown Pro. The free version has its own backdrops, and the widget works the same either way."),
+    ("Is the Lock Screen widget the same as a Live Activity?", "No. The Lock Screen widget sits under the clock and is free. The Lock Screen Live Activity is a separate, Pro feature."),
+    ("Can I make the widget bigger than large?", "On iOS 27, yes: touch and hold the Countdown app icon or widget on the Home Screen and choose the extra large size. Earlier versions of iOS stop at large."),
+    ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad. On Android, look on Google Play for a countdown app with a Home Screen widget."),
+  ],
+  "body": f"""<h1>Christmas countdown widget for iPhone</h1>
+<p class="lede">Christmas 2026 is on <strong>Friday, December 25</strong>. Here is how to keep the countdown on your iPhone Lock Screen or Home Screen so you see it every time you pick up the phone. A number on a wallpaper image stays the same until you make a new one; a widget goes down by one every day on its own.</p>
+{counter(XMAS, "en", "Christmas Day", us=True)}
+<h2>On the Lock Screen</h2>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a>, tap <strong>+</strong> and pick Christmas from the ready-made events, or type a name and set the date to December 25, 2026.</li>
+<li>Touch and hold the Lock Screen until the <strong>Customize</strong> button appears at the bottom, then tap it.</li>
+<li>Tap <strong>Add Widgets</strong> under the clock, or tap the widgets that are already there.</li>
+<li>Choose Countdown, then tap <strong>Done</strong>.</li></ol>
+<h2>On the Home Screen</h2>
+<ol><li>Touch and hold an empty area until the apps jiggle.</li>
+<li>Tap <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>), search for Countdown and swipe through the sizes.</li>
+<li>Tap <strong>Add Widget</strong>, drag it into place, then tap <strong>Done</strong>.</li></ol>
+<p>You can also touch and hold the Countdown app icon and pick a size at the bottom of the menu. iOS 27 adds a bigger size: Apple says extra-large widgets “let you see more information from your favorite apps right on the Home Screen” (<a href="https://support.apple.com/guide/iphone/whats-new-in-ios-27-iphfed2c4091/ios" rel="noopener">What’s new in iOS 27</a>). Countdown offers that size too, and every size is free.</p>
+<h2>Wallpaper or widget?</h2>
+<table><thead><tr><th></th><th>Number on a wallpaper</th><th>Widget</th></tr></thead><tbody>
+<tr><th>The number</th><td>Stays as you made it</td><td>Goes down by one every day</td></tr>
+<tr><th>Work</th><td>Make a new image each day</td><td>Set the date once</td></tr>
+<tr><th style="white-space:nowrap">Where</th><td>Behind everything</td><td>Under the Lock Screen clock, or anywhere on the Home Screen</td></tr>
+</tbody></table>
+<h2>Christmas setups that work well</h2>
+<ul><li><strong>One big number:</strong> a single countdown to Christmas Day on the Lock Screen, set to repeat yearly so it is back on December 26.</li>
+<li><strong>The whole season in a list:</strong> the first Sunday of Advent ({fmt_us(ADVENT1)}), Christmas Eve ({fmt_us(XEVE)}), Christmas Day and New Year's Eve, shown together in the list widget.</li>
+<li><strong>The trip home:</strong> a countdown to the flight, with a reminder a week before and the booking written on the back of the event.</li>
+<li><strong>For the kids:</strong> a countdown to Christmas Eve on a shared iPad, with a reminder the morning before.</li></ul>
+<p>Just want the number? <a href="/tools/days-until-christmas/">How many days until Christmas 2026</a> has the live count and the dates for the next few years. Full Lock Screen and Home Screen steps for any event are in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>, and if you are still choosing an app, see <a href="/tools/best-countdown-widget-apps-iphone/">which countdown widget apps are free</a>.</p>"""})
 
 # 10-12：GSC 显示有点击的是「想把倒数放到手机上」的词（锁屏 / 待ち受け），所以每页的手机一节先讲 Tela Bloqueada，再讲 Tela de Início，
 # 并链到锁屏教程页。原来这里只写了 Tela de Início 的步骤。
@@ -2044,31 +2113,31 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 
 # 10. 榜单：iPhone 倒数日 app（含竞品；数据来自 09-26 美区 App Store 查询，只写商店描述里写明的事）
 BEST = [
-  {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "rating": None, "since": 2026, "ours": True,
-   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds backdrops, your own photos, typefaces, the Live Activity and counting down with someone you invite.",
+  {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "rating": (4.8, 13), "since": 2026, "ours": True,
+   "free": "Unlimited events, every widget size on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds the Pro backdrops, your own photos, typefaces, the Live Activity and counting down with someone you invite.",
    "widgets": "Home Screen + Lock Screen, all sizes, free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
-  {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "rating": (4.8, 215672), "since": 2012,
-   "free": "Add as many events as you like; iCloud sync, repeating events and Home Screen widgets are listed as features (the listing does not spell out what is paid).",
-   "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "Not stated",
+   "take": "Here the widgets are not the paid feature: every widget size, unlimited events, recurring dates, reminders and iCloud sync are free; the subscription adds the Pro backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. It also keeps a daily on-device snapshot so an update or reinstall never loses the events. New in 2026, so it has few ratings yet — judge it by what the free tier covers."},
+  {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "rating": (4.8, 216173), "since": 2012,
+   "free": "Free version with ads and an optional Remove Ads purchase (there is also a paid ad-free version); add as many events as you like, with iCloud sync, repeating events and Home Screen widgets listed as features.",
+   "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "In the free version",
    "take": "The veteran: on the App Store since 2012 with over 200,000 ratings. Strong on the countdown itself — time-zone support, a slider that flips between seconds and years, celebration animations at zero, and an Apple Watch app. The listing does not describe Lock Screen widgets."},
-  {"name": "Countdown", "by": "Find Appiness LLC", "id": 1403367428, "rating": (4.8, 186570), "since": 2018,
+  {"name": "Countdown", "by": "Find Appiness LLC", "id": 1403367428, "rating": (4.8, 188720), "since": 2018,
    "free": "Unlimited events, count-up, iCloud sync and reminders 1 day / 1 week before. Home Screen widget, Lock Screen widget, StandBy and calendar auto-import are Premium.",
    "widgets": "Home Screen, Lock Screen, StandBy — Premium", "recur": "Yearly, monthly, weekly, daily", "sync": "iCloud", "ads": "Not stated",
    "take": "Very popular and easy to use, with sharing and a StandBy widget. The catch for widget fans: the listing marks the Home Screen widget, the Lock Screen widget and calendar auto-import as Premium features, so the free version is mostly the in-app list."},
-  {"name": "Countdown: Event Countdown", "by": "ROOT38 LIMITED", "id": 983258067, "rating": (4.7, 23840), "since": 2015,
-   "free": "Unlimited countdowns and a Next Event Home Screen widget are free; the ticking, multi-event, Lock Screen and StandBy widgets are part of the paid tier.",
-   "widgets": "Next Event widget free; live, multi-event, Lock Screen, StandBy paid", "recur": "Repeats, shows ages on birthdays", "sync": "Not stated", "ads": "Not stated",
-   "take": "The prettiest calendar view of the group: every event on a month grid, colour-coded, with Live Activities in the Dynamic Island as the moment approaches and countdowns you can export as a video. Unlimited events are free; most widget sizes are not."},
-  {"name": "DayCount", "by": "Zaminiti Pty Ltd", "id": 1121088244, "rating": (4.7, 26260), "since": 2016,
+  {"name": "Countdown: Event Countdown", "by": "ROOT38 LIMITED", "id": 983258067, "rating": (4.7, 23889), "since": 2015,
+   "free": "Unlimited countdowns, counting up or down, and a Next Event Home Screen widget are free; the ticking, multi-event, Lock Screen and StandBy widgets, repeats and sync are Premium.",
+   "widgets": "Next Event widget free; live, multi-event, Lock Screen, StandBy paid", "recur": "Premium (shows ages on birthdays)", "sync": "Premium, across Apple devices", "ads": "Ad-free is Premium",
+   "take": "The prettiest calendar view of the group: every event on a month grid, color-coded, with Live Activities in the Dynamic Island as the moment approaches and countdowns you can export as a video — the listing puts the calendar view and Live Activities under Premium. Unlimited events are free; most widget sizes are not."},
+  {"name": "DayCount", "by": "Zaminiti Pty Ltd", "id": 1121088244, "rating": (4.7, 26263), "since": 2016,
    "free": "Event counters, categories, notes, streaks; reminders before or after events; widgets with custom fonts and textures (the listing does not state a free limit).",
-   "widgets": "Home Screen + Lock Screen, custom filters and textures", "recur": "Daily, weekly, fortnightly, monthly, yearly, custom", "sync": "Not stated", "ads": "Not stated",
-   "take": "For people who count in both directions: counters track time before and after the date, streaks sit next to events, and reminders can fire minutes to years before or after. Widgets are unusually configurable — filters, fonts, textures, borders — on both Home and Lock Screen."},
-  {"name": "Countdown Buddy", "by": "Taptics Ltd.", "id": 1534850579, "rating": (4.6, 25893), "since": 2020,
+   "widgets": "Home Screen + Lock Screen, custom filters and textures", "recur": "Daily, weekly, fortnightly, monthly, yearly, custom", "sync": "Backup and sync across iPhone, iPad and Mac", "ads": "Not stated",
+   "take": "For people who count in both directions: counters track time before and after the date, streaks sit next to events, and reminders can fire minutes to years before or after. Widgets are unusually configurable — filters, fonts, textures, borders — on both Home and Lock Screen, and events can be imported from your calendar."},
+  {"name": "Countdown Buddy", "by": "Taptics Ltd.", "id": 1534850579, "rating": (4.6, 26138), "since": 2020,
    "free": "One countdown widget with the basic design; 11 widget styles and more widgets are paid.",
    "widgets": "Home Screen + Lock Screen, small and medium, 11 styles", "recur": "Not stated; weekend exclusion for deadlines", "sync": "Not stated", "ads": "Not stated",
    "take": "A widget designer more than an event list: you build a countdown or count-up widget from 11 styles and drop it on the Home or Lock Screen, and work deadlines can skip weekends. The free version is one basic widget, so it is best if you only ever need one countdown."},
-  {"name": "Days • Countdown & Widgets", "by": "MD Apps LTD", "id": 939368917, "rating": (4.8, 12517), "since": 2015,
+  {"name": "Days • Countdown & Widgets", "by": "MD Apps LTD", "id": 939368917, "rating": (4.8, 12658), "since": 2015,
    "free": "Countdown and count-up with full-screen photos, Home Screen and Lock Screen widgets, recurring events (the listing does not state a free limit).",
    "widgets": "Home Screen + Lock Screen", "recur": "Yearly, monthly, weekly", "sync": "Not stated", "ads": "Not stated",
    "take": "The photo-first option: each event is a full-screen picture you swipe through, with subtle animations. Recurring birthdays and anniversaries, count-up for past events, and widgets on both screens."},
@@ -2080,16 +2149,16 @@ def best_page():
 <p><strong>Free tier:</strong> {esc(b['free'])}<br><strong>Widgets:</strong> {esc(b['widgets'])} · <strong>Repeats:</strong> {esc(b['recur'])} · <strong>Sync:</strong> {esc(b['sync'])}</p>
 <p><a href="{'/countdown/' if b.get('ours') else 'https://apps.apple.com/us/app/id%d' % b['id']}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'Our product page' if b.get('ours') else 'View on the App Store'} →</a></p>""" for i, b in enumerate(BEST, 1))
     body = f"""<h1>Best countdown widget apps for iPhone (2026)</h1>
-<p class="lede">Seven countdown apps that put a widget on your Home Screen or Lock Screen, compared on the things that actually differ: what the free tier includes, which widgets cost money, repeats, reminders and sync. Data comes from each app's US App Store listing on 26 September 2026. One of the seven is ours; it is marked, and it is judged by the same table as the rest.</p>
+<p class="lede">Seven countdown apps that put a widget on your Home Screen or Lock Screen, compared on the things that actually differ: what the free tier includes, which widgets cost money, repeats, reminders and sync. Data comes from each app's US App Store listing, first read on September 26, 2026 and checked again on October 16, 2026. One of the seven is ours; it is marked, and it is judged by the same table as the rest.</p>
 <h2>The comparison</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Free tier</th><th>Widgets</th><th>Repeats</th><th>Sync</th><th>US rating</th></tr></thead><tbody>{rows}</tbody></table>
-<p class="meta">"Not stated" means the App Store description does not say. Ratings are the US storefront on 26 September 2026 and change daily.</p>
+<p class="meta">"Not stated" means the App Store description does not say. Ratings are the US storefront on October 16, 2026 and change daily.</p>
 <h2>Which one to pick</h2>
 <ul>
 <li><strong>You want widgets without paying:</strong> Countdown Widget: Any Event (ours) — every widget size is free, and so are unlimited events, repeats, reminders and iCloud sync. Countdown: Event Countdown gives you one free Next Event widget.</li>
 <li><strong>You want the longest track record:</strong> Countdown Star — on the App Store since 2012, with over 200,000 ratings, with an Apple Watch app and time zones per event.</li>
 <li><strong>You count streaks and time since:</strong> DayCount — counters run before and after the date, with reminders on either side.</li>
-<li><strong>You want the prettiest calendar:</strong> Countdown: Event Countdown — month grid, Live Activities, countdown videos.</li>
+<li><strong>You want the prettiest calendar:</strong> Countdown: Event Countdown — month grid, Live Activities, countdown videos (the calendar view and Live Activities are Premium).</li>
 <li><strong>You only need one widget and want to design it:</strong> Countdown Buddy — 11 widget styles, one free.</li>
 <li><strong>You want full-screen photos:</strong> Days • Countdown & Widgets.</li>
 </ul>
@@ -2098,15 +2167,15 @@ def best_page():
 <h2>How we chose</h2>
 <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>"""
     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
-            "title": "Best Countdown Widget Apps for iPhone (2026) — free tiers compared", "crumb": "Best countdown widget apps",
-            "description": "Seven iPhone countdown widget apps compared on free tier, which widgets cost money, repeats, reminders and sync — from their App Store listings, Sept 2026.",
+            "title": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free", "crumb": "Best countdown widget apps",
+            "description": "Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, October 2026.",
             "hub_title": "Best countdown widget apps for iPhone (2026)", "hub_desc": "Seven apps compared on free tier, widgets, repeats, reminders and sync.",
             "items": [{"name": b["name"], "url": ("https://apps.apple.com/us/app/id%d" % b["id"])} for b in BEST],
             "faq": [
               ("Which countdown app has free Lock Screen widgets on iPhone?", "Countdown Widget: Any Event (ours) makes every widget size free, on both the Home Screen and the Lock Screen. In Countdown by Find Appiness and Countdown: Event Countdown, the Lock Screen widget is part of the paid tier according to their listings; DayCount and Days list Lock Screen widgets without stating a limit."),
               ("Which countdown apps allow unlimited events for free?", "Countdown Widget: Any Event, Countdown Star ('add as many events as you like'), Countdown by Find Appiness ('create as many events as you'd like') and Countdown: Event Countdown ('unlimited countdowns') all state unlimited events in their free version."),
-              ("Do these apps sync between iPhone and iPad?", "Countdown Widget: Any Event, Countdown Star and Countdown by Find Appiness list iCloud sync. The other listings do not state it."),
-              ("Can I count up from a past date?", "Yes in Countdown Widget: Any Event, Countdown Star, Countdown by Find Appiness, DayCount, Countdown Buddy and Days — all list count-up from a past date."),
+              ("Do these apps sync between iPhone and iPad?", "Countdown Widget: Any Event, Countdown Star and Countdown by Find Appiness list iCloud sync, and DayCount lists backup and sync across iPhone, iPad and Mac. Countdown: Event Countdown lists sync across Apple devices as a Premium feature. Countdown Buddy and Days do not state it."),
+              ("Can I count up from a past date?", "Yes in Countdown Widget: Any Event, Countdown Star, Countdown by Find Appiness, Countdown: Event Countdown, DayCount, Countdown Buddy and Days — all list count-up from a past date."),
               ("Is this list independent?", "We make Countdown Widget: Any Event, so no. Everything in the table comes from the public App Store listings, the fields are the same for every app, and each competitor is linked so you can check. We did not test paid tiers."),
             ], "js": [], "body": body}
 PAGES.append(best_page())

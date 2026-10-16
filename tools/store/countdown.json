@@ -43,7 +43,7 @@
   ],
   "rating": 4.76923,
   "ratingCount": 13,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "en-GB": {
   "storefront": "gb",
@@ -89,7 +89,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "de-DE": {
   "storefront": "de",
@@ -135,7 +135,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "fr-FR": {
   "storefront": "fr",
@@ -181,7 +181,7 @@
   ],
   "rating": 3,
   "ratingCount": 1,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "it": {
   "storefront": "it",
@@ -227,7 +227,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "es-ES": {
   "storefront": "es",
@@ -273,7 +273,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "es-MX": {
   "storefront": "mx",
@@ -319,7 +319,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "pt-BR": {
   "storefront": "br",
@@ -365,7 +365,7 @@
   ],
   "rating": 5,
   "ratingCount": 1,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "ja": {
   "storefront": "jp",
@@ -411,7 +411,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "ko": {
   "storefront": "kr",
@@ -457,7 +457,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "zh-Hans": {
   "storefront": "sg",
@@ -503,7 +503,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "zh-Hant": {
   "storefront": "tw",
@@ -549,7 +549,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  },
  "th": {
   "storefront": "th",
@@ -595,6 +595,6 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-15"
+  "fetched": "2026-10-16"
  }
 }
