@@ -657,6 +657,10 @@ def localize_illus(svg, lang):
         svg = re.sub(r"<text([^>]*)>" + re.escape(en) + "</text>", sub, svg)
     return svg
 
+# 卡片介绍下面的一条站内链接，只加在列出的 (app, 语言) 上。
+# 10-16：英文首页链到美区对比页——那页从首页点不到，Google 一直「已发现未编入」；其它语言首页不加。
+HOME_CARD_LINKS = {("countdown", "en"): ("/tools/best-countdown-widget-apps-iphone/", "Compare the best countdown widget apps for iPhone")}
+
 def home_apps_html(lang="en"):
     cards = []
     for a in HOME_APPS:
@@ -671,6 +675,8 @@ def home_apps_html(lang="en"):
         btn = esc_text(H(lang, "get_on_store").replace("{label}", h["label"]))
         get = f'\n      <a class="get" href="{su}">{btn} ↗</a>' if su else ""
         tag = f'\n      <p class="tagline">{esc_text(c["tagline"])}</p>' if c["tagline"] else ""
+        more = HOME_CARD_LINKS.get((key, lang))
+        also = f'\n      <p class="also"><a href="{esc(more[0])}">{esc_text(more[1])} →</a></p>' if more else ""
         cards.append(f"""    <article class="app" id="app-{key}">
       <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
         <svg class="illus" viewBox="0 0 240 180" focusable="false">
@@ -682,7 +688,7 @@ def home_apps_html(lang="en"):
         <span class="arrow" aria-hidden="true">↗</span>
       </div>
       <p class="store-name">{esc_text(c["name"])}</p>{tag}
-      <p class="blurb">{esc_text(c["blurb"])}</p>{get}
+      <p class="blurb">{esc_text(c["blurb"])}</p>{also}{get}
     </article>""")
     return ('<!-- apps:start -->\n  <div class="apps">\n' + "\n".join(cards)
             + "\n  </div>\n  <!-- apps:end -->")
@@ -1060,4 +1066,5 @@ def main():
     if CHECK and changed:
         sys.exit(1)
 
-main()
+if __name__ == "__main__":
+    main()
