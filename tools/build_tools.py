@@ -158,7 +158,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
 .appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
 .ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
-.meta{font-size:13px;color:var(--soft);margin:16px 0 0}
+.meta{font-size:13px;color:var(--soft);margin:16px 0 0}.meta.meta-top{margin:-4px 0 14px}
 .hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0 0}.hub a{text-decoration:none;border:1px solid var(--rule);border-radius:20px;padding:22px;display:block;transition:background .2s}.hub a:hover{background:var(--cream)}
 .hub b{display:block;font:500 22px/1.25 var(--display);letter-spacing:-.02em}.hub span{display:block;color:var(--muted);font-size:14.5px;margin-top:8px}.hub small{display:block;margin-top:12px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
 .inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
@@ -253,6 +253,10 @@ def shell(pg, body):
     meta = ""
     if pg.get("published"):
         meta = f'<p class="meta">{esc(ts(lang, "published"))} {pg["published"]} · {esc(ts(lang, "updated"))} {pg.get("updated", pg["published"])} · go ka</p>'
+        # 10-16 GEO 实测：AI 要找「新鲜」的来源，日期放在标题下面比放在文末更容易被读到。先只开在两页教程上（meta_top）。
+        if pg.get("meta_top") and "</h1>" in body:
+            body = body.replace("</h1>", "</h1>\n" + meta.replace('class="meta"', 'class="meta meta-top"'), 1)
+            meta = ""
     scripts = "".join(f"<script>{js}</script>" for js in pg.get("js", []))
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -438,7 +442,7 @@ PAGES.append(holiday_page("days-until-thanksgiving", "Thanksgiving 2026", THANKS
 # 自己的照片、Lock Screen Live Activity 属于 Pro。超大尺寸：「Every widget size」+ App 代码 WidgetFamily+ExtraLarge（iOS 27 起）。
 ADVENT1, XEVE = dt.date(2026, 11, 29), dt.date(2026, 12, 24)
 PAGES.append({"path": "/tools/christmas-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-16",
-  "title": "Christmas Countdown Widget for iPhone (Free): Lock & Home Screen", "crumb": "Christmas countdown widget",
+  "meta_top": True, "title": "Free Christmas 2026 Countdown Widget for iPhone: Lock & Home", "crumb": "Christmas countdown widget",
   "description": "A free Christmas countdown widget for your iPhone Lock Screen or Home Screen, step by step, with the iOS 27 extra large size. Christmas 2026 is December 25.",
   "hub_title": "Christmas countdown widget for iPhone", "hub_desc": "Lock Screen and Home Screen steps, the iOS 27 extra large size, and a few Christmas setups.",
   "js": [COUNT_JS], "faq": [
@@ -450,10 +454,10 @@ PAGES.append({"path": "/tools/christmas-countdown-widget-iphone/", "iphone_only"
     ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad. On Android, look on Google Play for a countdown app with a Home Screen widget."),
   ],
   "body": f"""<h1>Christmas countdown widget for iPhone</h1>
-<p class="lede">Christmas 2026 is on <strong>Friday, December 25</strong>. Here is how to keep the countdown on your iPhone Lock Screen or Home Screen so you see it every time you pick up the phone. A number on a wallpaper image stays the same until you make a new one; a widget goes down by one every day on its own.</p>
+<p class="lede">Add Christmas — <strong>Friday, December 25, 2026</strong> — as an event in a countdown app, then put its widget on the Lock Screen (<strong>Customize</strong> → <strong>Add Widgets</strong>) or the Home Screen (<strong>Edit</strong> → <strong>Add Widget</strong>). In Countdown Widget: Any Event every widget size is free, and the widget counts down by itself every day.</p>
 {counter(XMAS, "en", "Christmas Day", us=True)}
 <h2>On the Lock Screen</h2>
-<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a>, tap <strong>+</strong> and pick Christmas from the ready-made events, or type a name and set the date to December 25, 2026.</li>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a>, tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events) and pick Christmas from the ready-made events, or type a name and set the date to December 25, 2026.</li>
 <li>Touch and hold the Lock Screen until the <strong>Customize</strong> button appears at the bottom, then tap it.</li>
 <li>Tap <strong>Add Widgets</strong> under the clock, or tap the widgets that are already there.</li>
 <li>Choose Countdown, then tap <strong>Done</strong>.</li></ol>
@@ -2509,7 +2513,7 @@ def blog_page(post):
     return {"path": f"/blog/{post['slug']}/", "lang": "en", "kind": "Article", "app": post["app"], "published": post.get("published", "2026-09-26"),
             "title": post["title"], "description": post["description"], "crumb": post["h1"] if len(post["h1"]) <= 60 else post["title"],
             "body": body, "faq": [(f["q"], f["a"]) for f in post.get("faq", [])], "js": [],
-            "hub_title": post["title"], "hub_desc": post["description"], "headline": post["h1"], "image": post_image(post["slug"])}
+            "hub_title": post["title"], "hub_desc": post["description"], "headline": post["h1"], "image": post_image(post["slug"]), "meta_top": post.get("meta_top", False)}
 
 def blog_hub():
     groups = []

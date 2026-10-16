@@ -3,18 +3,18 @@
   {
    "slug": "countdown-widget-iphone-home-lock-screen",
    "app": "countdown",
-   "title": "How to Put a Countdown on Your iPhone Lock Screen",
+   "title": "How to Put a Countdown on Your iPhone Lock Screen (iOS 27)",
    "description": "How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.",
-   "h1": "How to Put a Countdown on Your iPhone Home Screen and Lock Screen",
-   "intro": "You add a countdown to your iPhone Home Screen by touching and holding an empty area until the icons jiggle, tapping Edit and then Add Widget (the + button on iOS 17), and choosing a countdown widget; the Lock Screen works the same way through Customize. Once it is placed you can move it, add another size next to it, and point it at any event you have set up in a countdown app such as Countdown Widget: Any Event (Countdown).",
+   "h1": "How to Put a Countdown on Your iPhone Lock Screen and Home Screen",
+   "intro": "To put a countdown on your iPhone Lock Screen, set up the event in a countdown app that has widgets, then touch and hold the Lock Screen, tap Customize, tap Add Widgets under the clock, choose the countdown widget and tap Done. For the Home Screen, touch and hold an empty area, tap Edit and then Add Widget (the + button on iOS 17). In Countdown Widget: Any Event (Countdown) every widget size is free on both screens, with no limit on events.",
    "sections": [
+    {
+     "h2": "Add a widget to your Lock Screen",
+     "html": "<p>Set up the event in the app first; the widget itself goes on from the Lock Screen, which iOS treats as a separate layout from your Home Screen:</p><ol><li>In Countdown, tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events) and set the date you want to count down to.</li><li>Touch and hold the Lock Screen until the <strong>Customize</strong> button appears at the bottom, then tap it.</li><li>Tap <strong>Add Widgets</strong> under the clock, or tap the widgets that are already there.</li><li>Find Countdown in the list and choose a widget.</li><li>Tap <strong>Done</strong> to save.</li></ol><p>The same event can sit on both screens at once — they are independent widgets, not one shared placement, so you could keep a small tile on the Lock Screen for a glance and a larger one on the Home Screen for more detail.</p>"
+    },
     {
      "h2": "Add a widget to your Home Screen",
      "html": "<p>The steps are the same for any app with widgets; only the second step differs between iOS versions:</p><ol><li>Touch and hold an empty area of the Home Screen until the apps start to jiggle.</li><li>On iOS 18 and later, tap <strong>Edit</strong> in the top-left corner, then <strong>Add Widget</strong>. On iOS 17, tap the <strong>+</strong> button in the top-left corner.</li><li>Search for Countdown, tap it, then swipe through the size and style options.</li><li>When you see the size you want, tap <strong>Add Widget</strong>, then drag it to where you want it.</li><li>Tap <strong>Done</strong> to lock the layout back in.</li></ol><p>If you change your mind about placement later, touch and hold the widget itself and choose <strong>Edit Home Screen</strong>, or drag it to a different spot while the icons are still jiggling. Removing a widget works the same way any app icon does — touch and hold, then tap <strong>Remove Widget</strong> — and it never deletes the event behind it, only the widget showing it.</p>"
-    },
-    {
-     "h2": "Add a widget to your Lock Screen",
-     "html": "<p>Lock Screen widgets go on from the Lock Screen itself, and iOS treats them as a separate layout from your Home Screen:</p><ol><li>Touch and hold the Lock Screen until the <strong>Customize</strong> button appears at the bottom, then tap it.</li><li>Tap <strong>Add Widgets</strong> under the clock, or tap the widgets that are already there.</li><li>Find Countdown in the list and choose a widget.</li><li>Tap <strong>Done</strong> to save.</li></ol><p>The same event can sit on both screens at once — they are independent widgets, not one shared placement, so you could keep a small tile on the Lock Screen for a glance and a larger one on the Home Screen for more detail.</p>"
     },
     {
      "h2": "Make it bigger: the extra large widget in iOS 27",
@@ -65,7 +65,8 @@
     "iphone countdown app",
     "live activity countdown",
     "home screen widget ios"
-   ]
+   ],
+   "meta_top": true
   },
   {
    "slug": "count-down-birthday-exam-trip-iphone",

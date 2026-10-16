@@ -947,7 +947,7 @@ def patch_tool(path: Path, tp):
         # 再把 JSON-LD 和页面上的「Updated」统一成同一个日期，和 sitemap 同口径（09-27 评审）
         d = git_lastmod(path, out)
         out = re.sub(r'("dateModified": ")\d{4}-\d{2}-\d{2}"', rf'\g<1>{d}"', out)
-        out = re.sub(r'(<p class="meta">[^<]*?\d{4}-\d{2}-\d{2} · [^<]*?)\d{4}-\d{2}-\d{2}( · go ka</p>)', rf'\g<1>{d}\g<2>', out)
+        out = re.sub(r'(<p class="meta[^"]*">[^<]*?\d{4}-\d{2}-\d{2} · [^<]*?)\d{4}-\d{2}-\d{2}( · go ka</p>)', rf'\g<1>{d}\g<2>', out)
     return out
 
 def patch_home(path: Path, lang="en"):
