@@ -136,6 +136,67 @@
    ]
   },
   {
+   "slug": "venmo-cash-app-paypal-zelle-qr-code-on-invoice",
+   "app": "invoiceqr",
+   "title": "Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice",
+   "description": "Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.",
+   "h1": "How to Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice",
+   "intro": "To put a payment QR code on an invoice, get your payment link from the app you want to be paid through — your Venmo profile link, your Cash App $Cashtag link or your PayPal.Me link — turn it into a QR code, and place it next to the total with a line like “Scan to pay with Venmo” and the invoice number. In Smart Invoice & Estimate Maker (Invoice Maker) you add the link once and every invoice can carry the code. Zelle is the exception: it doesn't give you a link to paste, so use the code from your bank's app or write your Zelle email or phone number on the invoice.",
+   "sections": [
+    {
+     "h2": "Where to find your payment link or code",
+     "html": "<p>Each app keeps it in a different place. The link is more useful than the picture: a link can become a QR code anywhere, and a client reading the invoice on their phone can tap it.</p><ul><li><strong>Venmo.</strong> Open the <strong>Me</strong> tab, tap the QR code button on your profile picture, then <strong>Venmo me</strong> — that is the code people scan to pay you. Your profile link is venmo.com/u/ followed by your username. Payments for goods and services, whether to a business profile or to a personal one, carry a seller fee; Venmo's fees page lists the current rate.</li><li><strong>Cash App.</strong> Your link is cash.app/$ followed by your $Cashtag, and you'll find your QR code by tapping your profile icon. Payments for work belong on a Cash App business account, which charges a fee on what you receive.</li><li><strong>PayPal.</strong> Create a PayPal.Me link (paypal.me/YourName) in your PayPal account. Clients paying for work should send it as <strong>Goods and Services</strong>: you pay a fee, and they get PayPal's buyer protection.</li><li><strong>Zelle.</strong> Zelle now lives only inside bank and credit union apps; its own app was retired in 2025. Open Zelle in your bank's app and look for <strong>QR code</strong> or <strong>My Code</strong> — the menu differs from bank to bank. There is no Zelle link to paste. A payment to an enrolled account can't be reversed, which spares you chargebacks but leaves a client no way to undo a mistake, so write the name you enrolled with Zelle — the one your client sees before confirming — next to your Zelle email or phone number.</li></ul>"
+    },
+    {
+     "h2": "Put the code on the invoice",
+     "html": "<p>Whatever you write invoices in, the steps are the same:</p><ol><li>Copy your payment link, or save the code image from the app.</li><li>Turn the link into a QR code, or use the saved code as it is.</li><li>Place it next to or just below the total, at least ¾ inch (2 cm) across, so a phone camera picks it up from a printed page.</li><li>Write one line beside it — “Scan to pay with Venmo, @yourname” — with the amount and the invoice number.</li><li>Add the link as text too, for clients who open the invoice on the phone they would pay with.</li></ol><p>In Smart Invoice & Estimate Maker you add the link once. Go to <strong>Settings → Payment methods</strong> and add a payment link — a Venmo, Cash App or PayPal.Me link, a Stripe payment link or any HTTPS payment page. That link powers the QR code on your invoices, and every new invoice carries the code; estimates and quotes leave it off. In the invoice designer, <strong>Payment QR</strong> under Elements hides it on one invoice, and <strong>QR placement</strong> can move it to <strong>Center</strong> or <strong>Below total</strong> on templates that offer it.</p>"
+    },
+    {
+     "h2": "When the client opens the invoice on their phone",
+     "html": "<p>Plenty of clients open an emailed invoice on the same phone they would pay with, and a phone camera can't scan its own screen. Those clients need a link to tap, so put it in the message you send with the PDF. When you share an invoice from Invoice Maker, that message already includes a “Pay online” line with your payment link. Writing the link in the invoice notes as well (<strong>Terms & notes</strong>) helps clients who only keep the PDF, though whether it can be tapped there depends on their PDF reader. The QR code is for printed invoices and for clients who read email on a computer.</p><p>Jobs paid on the spot are the opposite case. Invoice Maker's payment QR widget keeps your code on the Home Screen, drawn large enough to hold up to a client's camera without opening the app.</p>"
+    },
+    {
+     "h2": "What the code fills in, and what it doesn't",
+     "html": "<p>A profile code opens your profile, not a finished payment: the client still types the amount. That is why the amount and the invoice number belong right beside the code. Ask clients to put the invoice number in the payment note — each of these apps lets the payer add one — so you can match every payment to its invoice later. Venmo business profiles can also make a code with the amount already set, which suits a fixed price better than an invoice that changes every time.</p>"
+    },
+    {
+     "h2": "Mark it paid when the money arrives",
+     "html": "<p>When the money lands, record the payment on the invoice so it moves from unpaid to paid — or to partial, if the client paid some of it — and your outstanding balance stays right. A paid invoice can go back to the client as a receipt: the same document, marked paid, with the date it was settled.</p><p>For payment codes in other markets, Pix included, see <a href=\"/blog/payment-qr-code-on-invoice/\">how to add a payment QR code to an invoice</a>. Starting from a blank page? The <a href=\"/tools/invoice-template/\">free invoice template</a> and <a href=\"/tools/how-to-write-an-invoice/\">how to write an invoice</a> cover the rest of it.</p>"
+    }
+   ],
+   "faq": [
+    {
+     "q": "Can I put a Venmo QR code on an invoice?",
+     "a": "Yes. In Venmo, open the Me tab, tap the QR code button on your profile picture and choose Venmo me to get your code, or turn your venmo.com profile link into a QR code. Place it next to the total with a line such as “Scan to pay with Venmo” and the invoice number."
+    },
+    {
+     "q": "Is there a Zelle payment link I can put on an invoice?",
+     "a": "Zelle doesn't give you a link to paste. It works inside bank and credit union apps, and the QR code you find there is the scannable option. If your invoice tool can't place that image, write the email address or phone number you enrolled with Zelle on the invoice."
+    },
+    {
+     "q": "Does a Venmo or Cash App QR code fill in the amount?",
+     "a": "Usually not. A profile code opens your profile and the client types the amount, so print the amount and the invoice number right beside the code. Venmo business profiles can also create a code with a set amount."
+    },
+    {
+     "q": "What if my client reads the invoice on their phone?",
+     "a": "They can't scan their own screen, so send the payment link as text in the message that goes with the invoice. Invoice Maker adds a “Pay online” line with your link when you share an invoice."
+    },
+    {
+     "q": "Which payment links can Invoice Maker turn into a QR code?",
+     "a": "Any HTTPS payment link: a Venmo, Cash App or PayPal.Me link, a Stripe payment link or your own payment page. Add it once under Settings → Payment methods."
+    }
+   ],
+   "keywords": [
+    "venmo qr code on invoice",
+    "cash app qr code invoice",
+    "zelle qr code invoice",
+    "paypal qr code invoice",
+    "scan to pay invoice"
+   ],
+   "meta_top": true,
+   "published": "2026-10-16"
+  },
+  {
    "slug": "payment-qr-code-on-invoice",
    "app": "invoiceqr",
    "title": "Add a Payment QR Code to an Invoice and Get Paid Faster",
@@ -256,40 +317,48 @@
   {
    "slug": "travel-post-screenshot-to-itinerary",
    "app": "beforego",
-   "title": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
-   "description": "How to turn a screenshot, a link or a typed plan into a day-by-day itinerary, plus scanning tickets and bookings straight into it.",
-   "h1": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
-   "intro": "Screenshot the travel post, paste the link, or just type out the plans, and BeforeGo: AI Itinerary Planner (BeforeGo) files it into a day-by-day trip plan on its own — the places worth seeing, the to-dos before you go, and each day the post lays out. You don't need to retype anything the post already spelled out.",
+   "title": "Turn TikTok and Instagram Travel Posts into an Itinerary",
+   "description": "Turn the travel posts you saved on TikTok and Instagram into a day-by-day itinerary, by hand or from screenshots, and check what a post won't tell you.",
+   "h1": "How to Turn Saved TikTok and Instagram Travel Posts into a Day-by-Day Itinerary",
+   "intro": "To turn saved TikTok or Instagram travel posts into an itinerary, pull the place names out of each post, group them by city and then by neighborhood, and give each group its own day, with anything booked for a set time on a day of its own. You can do it by hand on a map, or screenshot the posts into BeforeGo: AI Itinerary Planner (BeforeGo), which files the places, the to-dos and each day a post lays out into a day-by-day plan.",
    "sections": [
     {
-     "h2": "Three ways to hand BeforeGo your plans",
-     "html": "<p>BeforeGo accepts a travel post in whatever form you have it in:</p><ul><li>A screenshot of the post itself.</li><li>A pasted link to the original page.</li><li>Plans you just type out yourself.</li></ul><p>Any of the three gets filed the same way, so you're not stuck retyping a plan someone else already wrote out for you, whether it came from a friend's message, a saved post, or a page you found while researching the trip. That matters most for the kind of post that's really a loose list — a string of restaurant names, a couple of neighborhoods worth a walk, a museum someone mentioned in passing — the sort of thing that's easy to save and easy to forget you saved.</p>"
+     "h2": "Step by step, by hand",
+     "html": "<ol><li>Gather the posts for one trip in one place: a Saved collection on Instagram, a Favorites collection on TikTok.</li><li>Write down every place each post names. Check the caption, the pinned comment and the text on screen — videos often show a place without saying its name out loud.</li><li>Pin them all on one map, for example a Google My Maps map with a layer for each city.</li><li>Group nearby pins into clusters. Each cluster is roughly one day.</li><li>Put anything with a fixed time — a tour, a reservation, a show — on its own day first, then fill the other days around it.</li><li>Add opening hours and closing days to every stop, and leave room each day for what you find on the way.</li></ol>"
     },
     {
-     "h2": "What BeforeGo pulls out of a guide",
-     "html": "<p>Hand it a travel guide — screenshots, pasted text, or a link — and BeforeGo files what it finds: to-dos join the packing list, places join the trip checklist, and each day the guide describes joins the plan. The packing list also writes itself from the trip's destination and dates, so it doesn't need a separate step once the trip itself is set up. A single guide post often mixes all three kinds of information in one block of text — a thing to do, a place to see, and a suggestion for which day to do it on — and sorting that out by hand is exactly the kind of small, repetitive work that's easy to put off.</p>"
+     "h2": "From screenshots with BeforeGo",
+     "html": "<p>BeforeGo takes a travel post in whatever form you have it:</p><ul><li>A screenshot of the post — from TikTok, Instagram or anywhere else, as long as the places are written in it.</li><li>A pasted link to a travel guide or article.</li><li>Plans you type out yourself.</li></ul><p>It files what it finds: places join the trip checklist, to-dos join the packing list, and each day the post lays out joins the plan. Every import is listed under its trip, so you can see where each line came from and remove any line you don't want. When a day has several stops, BeforeGo sorts them into the shortest walking route.</p><p>Screenshot the caption as well as the video. A clip that shows a café without naming it gives BeforeGo, or anyone else, nothing to look up.</p>"
+    },
+    {
+     "h2": "What a post won't tell you",
+     "html": "<ul><li><strong>Whether the place is still open.</strong> Posts stay up for years while places close, move or change their hours. Check each stop's current hours before you settle a day.</li><li><strong>How far apart things are.</strong> A video cuts from one spot to the next in a second; getting between them can take an hour. Map the stops before you decide what fits in a day.</li><li><strong>Whether you need to book.</strong> The places that go viral are often the ones that need a reservation or a timed ticket. Mark those and book them first.</li><li><strong>Which location the post meant.</strong> A place tag can point to the wrong branch of a chain, or to the whole city rather than the spot. Check the name against the map.</li><li><strong>The season.</strong> Blossoms, night markets and beach clubs come and go with the season, so a post filmed in another month can show something that won't be there when you are.</li></ul>"
     },
     {
      "h2": "Scan tickets and bookings into the same plan",
-     "html": "<p>A ticket or booking confirmation lands on the plan the same way. Scan several at once and every flight, train and bus lands on the route in order, each with its own days — airports are placed using the code printed on the ticket rather than guessed, and a red-eye flight home ends the trip on the day it takes off rather than the day it lands. The editor for a new trip opens straight on its own fields, with the ticket scanner sitting right beside the trip's name, so scanning the first booking can be the very first thing you do — before you've even settled on which screenshots or links you want to add to the rest of the plan.</p>"
+     "html": "<p>A ticket or booking confirmation lands on the plan the same way. Scan several at once and every flight, train and bus goes onto the route in order, each with its own days — airports are placed using the code printed on the ticket rather than guessed, and a red-eye flight home ends the trip on the day it takes off rather than the day it lands.</p>"
     },
     {
-     "h2": "Every import stays organized and removable",
-     "html": "<p>Every import is listed under its trip, so you can see where a place, to-do or day came from — whether it was pulled from a screenshot, a link, or a scanned ticket. If something got pulled in that you don't actually want, any line it added can be removed, rather than having to redo the whole import or start the trip over.</p>"
+     "h2": "Other ways to do it",
+     "html": "<ul><li><strong>A map on its own.</strong> Google My Maps, with a layer per city or per day, works for a short trip and costs nothing but time.</li><li><strong>Apps built around video links.</strong> Some newer apps, Roamy (now called Rhyme) among them, say in their App Store listings that they pull the places out of a shared video and lay them out by day.</li><li><strong>Apps built around bookings.</strong> TripIt turns forwarded confirmation emails into an itinerary, which suits a trip that is mostly flights and hotels rather than places to see.</li></ul><p>BeforeGo covers both: posts and guides for the places, scanned tickets and bookings for the route, in one plan.</p>"
     },
     {
-     "h2": "Editing the trip after you've filed everything in",
-     "html": "<p>Plans change after the itinerary is already built, and Edit Trip covers more than the dates — it can also change the trip type and who's travelling. The checklist follows along automatically: rows the new answers need are added, and untouched rows the trip no longer needs are removed, so adding a travel companion or switching from a business trip to a family one doesn't mean rebuilding the checklist from scratch, or manually hunting down which rows are now out of date.</p>"
-    },
-    {
-     "h2": "What the plan turns into once you're there",
-     "html": "<p>The places you saved become a trip checklist you check off as you go — spots, food and experiences — and a day of stops sorts itself into the shortest walking route. Voice notes transcribe themselves while you walk, so a thought doesn't have to wait until you're back at the hotel to be written down.</p><p>After the trip, the photos, notes and voice memos you added stay attached to it, and can become a printable memories album alongside keepsakes like luggage tags, tickets and trip receipts. BeforeGo is free to start, with no ads and no account required, and a one-time lifetime purchase is available if you'd rather not subscribe for the rest. It is made for personal travel organization, though: it does not replace official visa, safety, health, airline, or government guidance, so always verify important requirements with official sources before you travel. See the <a href=\"/beforego/\">BeforeGo app page</a> for the rest of what it does.</p>"
+     "h2": "What the plan turns into during and after the trip",
+     "html": "<p>The places you saved become a trip checklist you check off as you go — spots, food and experiences. Voice notes transcribe themselves while you walk, so a thought doesn't have to wait until you're back at the hotel to be written down.</p><p>After the trip, the photos, notes and voice memos you added stay with it, and can become a printable memories album alongside luggage tags, tickets and trip receipts. BeforeGo is free to start, with no ads and no account needed; Premium unlocks everything, as a subscription or a one-time lifetime purchase. See the <a href=\"/beforego/\">BeforeGo app page</a> for the rest of what it does.</p>"
     }
    ],
    "faq": [
     {
+     "q": "How do I turn a TikTok travel video into an itinerary?",
+     "a": "Write down every place the video names — from the caption, the pinned comment and the text on screen — pin them on a map, group nearby places into days, and put anything booked for a set time on its own day. In BeforeGo you can screenshot the caption instead, and it files the places into a day-by-day plan."
+    },
+    {
+     "q": "Can I make an itinerary from my Instagram saved posts?",
+     "a": "Yes. Put the posts for one trip into their own Saved collection, then screenshot each one into BeforeGo, or list the places by hand and group them by neighborhood into days."
+    },
+    {
      "q": "How do I add a travel post I saw on social media to my trip?",
-     "a": "Screenshot the post, paste a link, or just type out the plans, and BeforeGo files it into a day-by-day plan."
+     "a": "Screenshot the post, caption included, and BeforeGo files the places into a day-by-day plan. For a guide or article on the web, paste its link, or type the plans out yourself."
     },
     {
      "q": "Can I import an already-booked flight or hotel?",
@@ -305,12 +374,13 @@
     }
    ],
    "keywords": [
+    "tiktok travel itinerary",
+    "instagram saved posts to itinerary",
     "screenshot to itinerary app",
     "travel post to itinerary",
-    "ai trip planner app",
-    "day by day itinerary from screenshot",
-    "import flight ticket into itinerary"
-   ]
+    "day by day itinerary from screenshots"
+   ],
+   "meta_top": true
   },
   {
    "slug": "packing-list-by-destination",

@@ -2029,6 +2029,43 @@
   "crumbHub": "Tools"
  },
  {
+  "path": "/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice",
+  "description": "Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.",
+  "faq": [
+   {
+    "q": "Can I put a Venmo QR code on an invoice?",
+    "a": "Yes. In Venmo, open the Me tab, tap the QR code button on your profile picture and choose Venmo me to get your code, or turn your venmo.com profile link into a QR code. Place it next to the total with a line such as “Scan to pay with Venmo” and the invoice number."
+   },
+   {
+    "q": "Is there a Zelle payment link I can put on an invoice?",
+    "a": "Zelle doesn't give you a link to paste. It works inside bank and credit union apps, and the QR code you find there is the scannable option. If your invoice tool can't place that image, write the email address or phone number you enrolled with Zelle on the invoice."
+   },
+   {
+    "q": "Does a Venmo or Cash App QR code fill in the amount?",
+    "a": "Usually not. A profile code opens your profile and the client types the amount, so print the amount and the invoice number right beside the code. Venmo business profiles can also create a code with a set amount."
+   },
+   {
+    "q": "What if my client reads the invoice on their phone?",
+    "a": "They can't scan their own screen, so send the payment link as text in the message that goes with the invoice. Invoice Maker adds a “Pay online” line with your link when you share an invoice."
+   },
+   {
+    "q": "Which payment links can Invoice Maker turn into a QR code?",
+    "a": "Any HTTPS payment link: a Venmo, Cash App or PayPal.Me link, a Stripe payment link or your own payment page. Add it once under Settings → Payment methods."
+   }
+  ],
+  "published": "2026-10-16",
+  "app": "invoiceqr",
+  "hubTitle": "Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice",
+  "items": [],
+  "headline": "How to Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice",
+  "image": "https://beforego.art/assets/art/invoiceqr/08-920.webp",
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
+ },
+ {
   "path": "/blog/payment-qr-code-on-invoice/",
   "lang": "en",
   "kind": "Article",
@@ -2098,12 +2135,20 @@
   "path": "/blog/travel-post-screenshot-to-itinerary/",
   "lang": "en",
   "kind": "Article",
-  "title": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
-  "description": "How to turn a screenshot, a link or a typed plan into a day-by-day itinerary, plus scanning tickets and bookings straight into it.",
+  "title": "Turn TikTok and Instagram Travel Posts into an Itinerary",
+  "description": "Turn the travel posts you saved on TikTok and Instagram into a day-by-day itinerary, by hand or from screenshots, and check what a post won't tell you.",
   "faq": [
    {
+    "q": "How do I turn a TikTok travel video into an itinerary?",
+    "a": "Write down every place the video names — from the caption, the pinned comment and the text on screen — pin them on a map, group nearby places into days, and put anything booked for a set time on its own day. In BeforeGo you can screenshot the caption instead, and it files the places into a day-by-day plan."
+   },
+   {
+    "q": "Can I make an itinerary from my Instagram saved posts?",
+    "a": "Yes. Put the posts for one trip into their own Saved collection, then screenshot each one into BeforeGo, or list the places by hand and group them by neighborhood into days."
+   },
+   {
     "q": "How do I add a travel post I saw on social media to my trip?",
-    "a": "Screenshot the post, paste a link, or just type out the plans, and BeforeGo files it into a day-by-day plan."
+    "a": "Screenshot the post, caption included, and BeforeGo files the places into a day-by-day plan. For a guide or article on the web, paste its link, or type the plans out yourself."
    },
    {
     "q": "Can I import an already-booked flight or hotel?",
@@ -2120,9 +2165,9 @@
   ],
   "published": "2026-09-26",
   "app": "beforego",
-  "hubTitle": "Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+  "hubTitle": "Turn TikTok and Instagram Travel Posts into an Itinerary",
   "items": [],
-  "headline": "How to Turn a Travel Post Screenshot into a Day-by-Day Itinerary",
+  "headline": "How to Turn Saved TikTok and Instagram Travel Posts into a Day-by-Day Itinerary",
   "image": "https://beforego.art/assets/art/beforego/01-920.webp",
   "crumbHome": "Home",
   "crumbHub": "Tools"

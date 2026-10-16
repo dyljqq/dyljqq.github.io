@@ -2483,7 +2483,7 @@ BLOG = json.loads(BLOG_SRC.read_text(encoding="utf-8"))["posts"] if BLOG_SRC.exi
 APP_ORDER = {"countdown": 0, "invoiceqr": 1, "beforego": 2}
 POST_SHOT = {  # 每篇配一张对应功能的插画（assets/art，编号同 features.en.json；09-28 起不用商店截图）
     "countdown-widget-iphone-home-lock-screen": ("countdown", "07"), "count-down-birthday-exam-trip-iphone": ("countdown", "09"),
-    "payment-qr-code-on-invoice": ("invoiceqr", "08"), "invoice-vs-estimate-vs-quote": ("invoiceqr", "05", "Invoice, estimate and quote side by side"),
+    "payment-qr-code-on-invoice": ("invoiceqr", "08"), "venmo-cash-app-paypal-zelle-qr-code-on-invoice": ("invoiceqr", "08", "Clients scan the code on the invoice to pay"), "invoice-vs-estimate-vs-quote": ("invoiceqr", "05", "Invoice, estimate and quote side by side"),
     "travel-post-screenshot-to-itinerary": ("beforego", "01"), "packing-list-by-destination": ("beforego", "04"),
 }
 
