@@ -1951,6 +1951,161 @@
   "crumbHub": "도구"
  },
  {
+  "path": "/tools/shared-countdown-app-couples/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Shared Countdown App for Couples: Same Countdown on Both iPhones",
+  "description": "Count down to your next visit together: one of you sends an invite, the other taps the link, and the same countdown and widget show up on both iPhones.",
+  "faq": [
+   {
+    "q": "Is there a free shared countdown app?",
+    "a": "In Countdown Widget: Any Event, joining a countdown someone shares with you is free, and so is every widget. Sending the invitation is part of Countdown Pro, so one of you needs Pro and the other doesn't."
+   },
+   {
+    "q": "Can both of us change the date?",
+    "a": "No. Only the person who created the countdown can change it. When they move the date, the countdown and its widget change on the other iPhone too."
+   },
+   {
+    "q": "Do we need the same Apple ID?",
+    "a": "No. Each of you uses your own iPhone with your own iCloud account."
+   },
+   {
+    "q": "Does it work with Android?",
+    "a": "No. Countdown is an app for iPhone and iPad, so both of you need one of those."
+   },
+   {
+    "q": "How do I stop sharing a countdown?",
+    "a": "Touch and hold the countdown in your list and tap Manage Sharing. If someone shared it with you, deleting it from your list takes you out of the share without touching their copy."
+   }
+  ],
+  "published": "2026-10-17",
+  "app": "countdown",
+  "hubTitle": "Shared countdown for couples",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools",
+  "iphoneOnly": true
+ },
+ {
+  "path": "/tools/birthday-countdown-widget-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Birthday Countdown Widget for iPhone: Free, Repeats Every Year",
+  "description": "Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.",
+  "faq": [
+   {
+    "q": "Is there a free birthday countdown widget for iPhone?",
+    "a": "Yes. In Countdown Widget: Any Event every widget size is free, on the Home Screen and the Lock Screen, with no limit on how many birthdays you add and no ads."
+   },
+   {
+    "q": "Does the birthday countdown start again next year?",
+    "a": "Yes. The ready-made Birthday event repeats every year, so the day after the birthday it counts down to the next one."
+   },
+   {
+    "q": "Will it remind me before the birthday?",
+    "a": "Yes. The Birthday event comes with reminders a week before, the day before and on the morning itself. You can change them or add more."
+   },
+   {
+    "q": "Can I see several birthdays in one widget?",
+    "a": "Yes. One of the four widgets shows the next few countdowns in a list, so the closest birthdays sit together."
+   },
+   {
+    "q": "Can I put the birthday person's photo behind the countdown?",
+    "a": "Using your own photo behind a countdown is part of Countdown Pro. The free version has its own backdrops, and the widget works the same either way."
+   },
+   {
+    "q": "Does it work on Android?",
+    "a": "No. Countdown is an app for iPhone and iPad."
+   }
+  ],
+  "published": "2026-10-17",
+  "app": "countdown",
+  "hubTitle": "Birthday countdown widget for iPhone",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools",
+  "iphoneOnly": true
+ },
+ {
+  "path": "/tools/disney-countdown-widget-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Disney Trip Countdown Widget for iPhone: On Your Lock Screen",
+  "description": "Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.",
+  "faq": [
+   {
+    "q": "Is there a free Disney countdown widget for iPhone?",
+    "a": "Countdown Widget: Any Event is not a Disney app, but it counts down to any trip, and every widget size is free on the Home Screen and the Lock Screen, with no limit on countdowns."
+   },
+   {
+    "q": "Can I put a photo from my last trip behind the countdown?",
+    "a": "Using your own photo behind a countdown is part of Countdown Pro. The free version has its own backdrops, with no Disney characters."
+   },
+   {
+    "q": "When can I book dining at Walt Disney World?",
+    "a": "Disney’s resort dining pages say Disney Resort hotel guests can make reservations for their whole stay, up to 10 nights, up to 60 days before arrival, and all other guests up to 60 days in advance."
+   },
+   {
+    "q": "When can I buy Lightning Lane passes?",
+    "a": "Disney says guests of Disney Resort hotels and other select hotels can buy them up to 7 days before their stay, and other guests up to 3 days before their park visit."
+   },
+   {
+    "q": "Does this work for Disneyland too?",
+    "a": "The countdown works for any date. The booking windows on this page are the ones Walt Disney World publishes; Disneyland has its own rules."
+   }
+  ],
+  "published": "2026-10-17",
+  "app": "countdown",
+  "hubTitle": "Disney trip countdown widget",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools",
+  "iphoneOnly": true
+ },
+ {
+  "path": "/tools/disney-world-itinerary-template/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Disney World Itinerary Template: Free, Fill In Online, Save as PDF",
+  "description": "A free Disney World itinerary template you fill in on the page: one block per day with park, morning, afternoon, evening and dining. Print it or save as PDF.",
+  "faq": [
+   {
+    "q": "Is this Disney itinerary template free?",
+    "a": "Yes. You fill it in right on the page; nothing is uploaded and there is no sign-up or watermark. Print it or save it as a PDF when you are done."
+   },
+   {
+    "q": "How do I add more days?",
+    "a": "Tap “+ Add a day” under the title. A new empty day appears at the end, numbered for you."
+   },
+   {
+    "q": "How do I save it as a PDF?",
+    "a": "Tap “Print / Save as PDF” and choose Save as PDF in the print window. Only the itinerary is printed; the rest of the page is hidden."
+   },
+   {
+    "q": "When do dining and Lightning Lane open?",
+    "a": "Disney’s resort dining pages say Disney Resort hotel guests can book dining for their whole stay, up to 10 nights, up to 60 days before arrival, and all other guests up to 60 days in advance. Lightning Lane passes open 7 days before the stay for guests of Disney Resort hotels and other select hotels, and 3 days before the park visit for everyone else."
+   },
+   {
+    "q": "Is there an app for planning a Disney trip on iPhone?",
+    "a": "BeforeGo, our iPhone app, turns a screenshot of a guide, a pasted link or your own notes into a day-by-day plan, adds a scanned ticket or booking confirmation to it, and writes a packing list from your destination and dates. It is a general trip planner, not a Disney app."
+   }
+  ],
+  "published": "2026-10-17",
+  "app": "beforego",
+  "hubTitle": "Disney World itinerary template",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
+ },
+ {
   "path": "/tools/de/rechnungsvorlage-kleinunternehmer/",
   "lang": "de",
   "kind": "WebApplication",
@@ -2128,6 +2283,10 @@
    {
     "q": "Is there a free countdown widget for iPhone?",
     "a": "Yes. In Countdown Widget: Any Event every widget size is free on both the Home Screen and the Lock Screen, with unlimited events and no account. Pro unlocks the Pro backdrops, your own photos, the Pro typefaces and the Live Activity, but the widgets themselves are not part of it."
+   },
+   {
+    "q": "Can I put a countdown on my iPhone without an app?",
+    "a": "Not one that counts down days. iOS has no built-in widget that shows the days left until a date you choose, so you need an app with a countdown widget. In Countdown every widget size is free."
    },
    {
     "q": "Can I make a countdown widget extra large?",

@@ -178,6 +178,7 @@ html[lang^=th] *{letter-spacing:0!important}
 .inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
 .inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
 .inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.itin .days{display:grid;gap:14px;margin-top:18px}.itin .day{border-top:1.5px solid var(--ink);padding-top:10px;break-inside:avoid}.itin .day h3{margin:0 0 6px;font:600 17px/1.4 var(--text)}.itin .day h3 [contenteditable]{display:inline-block;min-width:8em}.itin .slot{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;border-bottom:1px solid var(--rule)}.itin .slot b{font:700 11px/1.9 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--soft)}
 .rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
 html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
@@ -2475,6 +2476,175 @@ PAGES.append(bg_list_page({
     ("이 비교는 중립적인가요?", "아니요. BeforeGo는 우리가 만든 앱입니다. 표의 내용은 모두 공개된 App Store 설명에서 가져왔고, 모든 앱을 같은 항목으로 적었으며, 확인할 수 있도록 각 앱에 링크를 달았습니다."),
   ],
 }))
+
+# 7d. 美区：Countdown 三页 + BeforeGo 一页——10-17（用户：「Countdown 跟 BeforeGo 瞄准美国」，选题与证据见 App 数据仓库 reports/aso/site-us-topics-2026-10-17.md）
+# 证据：Google 美国联想词（shared countdown app for couples / long distance relationship countdown widget / birthday countdown app / disney countdown app (widget, for iphone)
+# / disney itinerary template）；App Store 美区广告：birthday countdown 780 展示 / 54 安装、shared countdown widget 点击率 24%。
+# App 说法只用 tools/store/countdown.json en-US（1.4.20）与 beforego.json en-US（1.2.6），外加 Countdown 源码核实的：
+# 列表长按菜单 / 详情页邀请按钮叫「Invite Someone」（共享后变「Manage Sharing」）；对方只读、改日期两边同步、对方删除只是退出共享；
+# 发起邀请是 Pro、接受免费（SPEC-共享倒计时 09-29）；Birthday 模板：每年重复，提前一周 / 前一天 / 当天早上提醒；Vacation 模板：30 / 7 / 1 天和当天的里程碑。
+# Disney：只作描述性使用、写明非官方、不放 logo / 角色图。订餐与 Lightning Lane 的开放时间 10-17 在 disneyworld.disney.go.com 读过原文：
+# 「Make reservations for your entire length of stay (for up to a 10-night stay) up to 60 days in advance of your arrival」（各度假酒店的 dining 页），
+# 「Guests of Disney Resort hotels and other select hotels can purchase passes up to 7 days in advance of their stay—and other Guests … up to 3 days in advance of their park visit」。
+DISNEY_NOTE = ('<p class="meta" style="margin-top:18px">go ka is not affiliated with, endorsed by or sponsored by Disney. Disney, Walt Disney World, Magic Kingdom, EPCOT, '
+               'Disney’s Hollywood Studios, Disney’s Animal Kingdom, Disney Springs, Lightning Lane, Disneyland and related names are trademarks of Disney. The booking windows above were checked on disneyworld.disney.go.com on October 17, 2026; '
+               'Disney can change them, so check there before you plan around them.</p>')
+EN_WIDGET_STEPS = ('<li>Lock Screen: touch and hold the Lock Screen, tap <strong>Customize</strong>, tap <strong>Add Widgets</strong> under the clock, choose Countdown and tap <strong>Done</strong>.</li>'
+                   '<li>Home Screen: touch and hold an empty area, tap <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>), search for Countdown, pick a size and tap <strong>Add Widget</strong>.</li>')
+LL_URL = "https://disneyworld.disney.go.com/lightning-lane-passes/"
+DINE_URL = "https://disneyworld.disney.go.com/resorts/contemporary-resort/dining/"   # 10-17 评审读过原文：「Guests with a Valid Disney Resort Hotel Reservation … up to 60 days in advance of your arrival」「All Other Guests: Make reservations up to 60 days in advance.」
+
+PAGES.append({"path": "/tools/shared-countdown-app-couples/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
+  "meta_top": True, "title": "Shared Countdown App for Couples: Same Countdown on Both iPhones", "crumb": "Shared countdown for couples",
+  "description": "Count down to your next visit together: one of you sends an invite, the other taps the link, and the same countdown and widget show up on both iPhones.",
+  "hub_title": "Shared countdown for couples", "hub_desc": "One countdown on both iPhones: invite, tap the link, and the date and widget stay in sync.",
+  "faq": [
+    ("Is there a free shared countdown app?", "In Countdown Widget: Any Event, joining a countdown someone shares with you is free, and so is every widget. Sending the invitation is part of Countdown Pro, so one of you needs Pro and the other doesn't."),
+    ("Can both of us change the date?", "No. Only the person who created the countdown can change it. When they move the date, the countdown and its widget change on the other iPhone too."),
+    ("Do we need the same Apple ID?", "No. Each of you uses your own iPhone with your own iCloud account."),
+    ("Does it work with Android?", "No. Countdown is an app for iPhone and iPad, so both of you need one of those."),
+    ("How do I stop sharing a countdown?", "Touch and hold the countdown in your list and tap Manage Sharing. If someone shared it with you, deleting it from your list takes you out of the share without touching their copy."),
+  ],
+  "body": f"""<h1>A shared countdown for couples</h1>
+<p class="lede">Whether you live apart or are just counting the days to a trip, one of you sets up the countdown and taps <strong>Invite Someone</strong>, the other taps the link, and the same countdown appears on both iPhones, widget and all. Move the date and it moves on both.</p>
+{top_cta("countdown", "en", "Get Countdown — joining is free")}
+<h2>How to share a countdown</h2>
+<ol><li>Both of you install <a href="/countdown/">Countdown Widget: Any Event</a>.</li>
+<li>One of you taps <strong>Add Event</strong> (or <strong>+</strong> once you already have events), names it — “Next visit”, “Moving day” — and sets the date.</li>
+<li>Touch and hold the countdown in your list and tap <strong>Invite Someone</strong> (the countdown’s own page has the same invite button). Send the link the way you send any link, for example in Messages.</li>
+<li>The other person taps the link, and the countdown is in their list.</li>
+<li>Each of you puts it on your own screen:<ul>{EN_WIDGET_STEPS}</ul></li></ol>
+<h2>Who can do what</h2>
+<table><thead><tr><th></th><th>The one who invites</th><th>The one who joins</th></tr></thead><tbody>
+<tr><th>Needs</th><td>Countdown Pro</td><td>Nothing: joining is free</td></tr>
+<tr><th>Changes the date or name</th><td>Yes, and it updates on both phones</td><td>No, it’s view-only</td></tr>
+<tr><th>Widgets</th><td>Free, every size</td><td>Free, every size</td></tr>
+<tr><th>Stops sharing</th><td>Manage Sharing</td><td>Deletes it from their own list</td></tr>
+</tbody></table>
+<h2>Countdowns worth sharing</h2>
+<ul><li><strong>The next visit.</strong> The one long-distance couples check most. Change it once when the flight moves, and the other phone follows.</li>
+<li><strong>Moving to the same city.</strong> The big one, on both Lock Screens.</li>
+<li><strong>Your anniversary.</strong> Set it to repeat yearly and it starts again the day after.</li>
+<li><strong>A trip together.</strong> The <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown</a> shows how to add the booking dates as countdowns too.</li></ul>
+<p>Counting up rather than down? Countdown also counts up from a date, like the day you met. For a birthday, see the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown widget</a>.</p>"""})
+
+PAGES.append({"path": "/tools/birthday-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
+  "meta_top": True, "title": "Birthday Countdown Widget for iPhone: Free, Repeats Every Year", "crumb": "Birthday countdown widget",
+  "description": "Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.",
+  "hub_title": "Birthday countdown widget for iPhone", "hub_desc": "Set it once: it repeats every year, reminds you a week before, and sits on the Lock Screen.",
+  "faq": [
+    ("Is there a free birthday countdown widget for iPhone?", "Yes. In Countdown Widget: Any Event every widget size is free, on the Home Screen and the Lock Screen, with no limit on how many birthdays you add and no ads."),
+    ("Does the birthday countdown start again next year?", "Yes. The ready-made Birthday event repeats every year, so the day after the birthday it counts down to the next one."),
+    ("Will it remind me before the birthday?", "Yes. The Birthday event comes with reminders a week before, the day before and on the morning itself. You can change them or add more."),
+    ("Can I see several birthdays in one widget?", "Yes. One of the four widgets shows the next few countdowns in a list, so the closest birthdays sit together."),
+    ("Can I put the birthday person's photo behind the countdown?", "Using your own photo behind a countdown is part of Countdown Pro. The free version has its own backdrops, and the widget works the same either way."),
+    ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad."),
+  ],
+  "body": f"""<h1>Birthday countdown widget for iPhone</h1>
+<p class="lede">Add the birthday once with the ready-made <strong>Birthday</strong> event: it repeats every year by itself and reminds you a week before, the day before and that morning. Then put its widget on your Lock Screen or Home Screen. In Countdown Widget: Any Event every widget size is free.</p>
+{top_cta("countdown", "en", "Add a birthday countdown — free")}
+<h2>Step by step</h2>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a> and tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events).</li>
+<li>Pick <strong>Birthday</strong> from the ready-made events. It is already set to repeat yearly, with the three reminders.</li>
+<li>Type the name and the date of the next birthday.</li>
+<li>Put it on your screen:<ul>{EN_WIDGET_STEPS}</ul></li></ol>
+<p>More detail on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
+<h2>Keeping track of several birthdays</h2>
+<ul><li><strong>No limit.</strong> Add every birthday you want to remember; each one repeats on its own.</li>
+<li><strong>The next few in one widget.</strong> The list widget shows the closest countdowns together, so you see whose birthday is coming up first.</li>
+<li><strong>One big number.</strong> The single-countdown widget on the Lock Screen keeps your own birthday, or a big one like a 30th, in view.</li></ul>
+<h2>When the day comes</h2>
+<p>A week out, the day before and on the morning itself, the app opens on the number, full screen, with a card worth sharing. Tap an event and it turns over to a page of its own, where you can write a few lines and add photos.</p>
+<p>Planning a surprise with someone? One of you can invite the other, and the countdown shows up on both iPhones; see the <a href="/tools/shared-countdown-app-couples/">shared countdown</a> page. Just want the number of days? Use the <a href="/tools/days-until/">days until calculator</a>.</p>"""})
+
+PAGES.append({"path": "/tools/disney-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
+  "meta_top": True, "title": "Disney Trip Countdown Widget for iPhone: On Your Lock Screen", "crumb": "Disney trip countdown",
+  "description": "Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.",
+  "hub_title": "Disney trip countdown widget", "hub_desc": "The days until your trip on the Lock Screen, plus the dates dining and Lightning Lane open.",
+  "faq": [
+    ("Is there a free Disney countdown widget for iPhone?", "Countdown Widget: Any Event is not a Disney app, but it counts down to any trip, and every widget size is free on the Home Screen and the Lock Screen, with no limit on countdowns."),
+    ("Can I put a photo from my last trip behind the countdown?", "Using your own photo behind a countdown is part of Countdown Pro. The free version has its own backdrops, with no Disney characters."),
+    ("When can I book dining at Walt Disney World?", "Disney’s resort dining pages say Disney Resort hotel guests can make reservations for their whole stay, up to 10 nights, up to 60 days before arrival, and all other guests up to 60 days in advance."),
+    ("When can I buy Lightning Lane passes?", "Disney says guests of Disney Resort hotels and other select hotels can buy them up to 7 days before their stay, and other guests up to 3 days before their park visit."),
+    ("Does this work for Disneyland too?", "The countdown works for any date. The booking windows on this page are the ones Walt Disney World publishes; Disneyland has its own rules."),
+  ],
+  "body": f"""<h1>Disney trip countdown widget for iPhone</h1>
+<p class="lede">Add your arrival day as a countdown and put its widget on your Lock Screen or Home Screen; the number goes down by itself every day. Then add the dates that matter before you go — when dining opens, when Lightning Lane opens — so none of them sneaks up on you. In Countdown Widget: Any Event every widget size is free.</p>
+{top_cta("countdown", "en", "Start your trip countdown — free")}
+<h2>Step by step</h2>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a> and tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events).</li>
+<li>Pick <strong>Vacation</strong> from the ready-made events, name it “Disney World” and set the arrival date. It marks 30 days, a week, the day before and the morning itself.</li>
+<li>Choose a backdrop, or your own photo with Pro.</li>
+<li>Put it on your screen:<ul>{EN_WIDGET_STEPS}</ul></li></ol>
+<h2>Dates worth their own countdown</h2>
+<table><thead><tr><th>Countdown</th><th>When it opens</th><th>Who</th></tr></thead><tbody>
+<tr><td>Dining reservations</td><td>60 days before arrival, for the whole stay (up to 10 nights)</td><td>Disney Resort hotel guests</td></tr>
+<tr><td>Dining reservations</td><td>60 days before the meal</td><td>Everyone else</td></tr>
+<tr><td>Lightning Lane passes</td><td>7 days before the first day of your stay</td><td>Guests of Disney Resort hotels and other select hotels</td></tr>
+<tr><td>Lightning Lane passes</td><td>3 days before your park visit</td><td>Everyone else</td></tr>
+</tbody></table>
+<p>Work out each date from your arrival or park day, add it as its own countdown, and the list widget shows them in order: dining first, then Lightning Lane, then the trip. Disney’s own wording is on its <a href="{LL_URL}" rel="noopener">Lightning Lane passes</a> page and on each resort’s <a href="{DINE_URL}" rel="noopener">dining page</a>.</p>
+<h2>Counting down as a family</h2>
+<p>With Pro you can invite someone to the countdown, and it shows up on their iPhone too; joining is free. Change the date once and it changes on every phone. See the <a href="/tools/shared-countdown-app-couples/">shared countdown</a> page for how it works.</p>
+<p>Planning the days themselves? Fill in the <a href="/tools/disney-world-itinerary-template/">Disney World itinerary template</a>, and make a <a href="/tools/packing-list/">packing list</a> for the trip.</p>
+{DISNEY_NOTE}"""})
+
+ITIN_JS = """
+(function(){var d=document.getElementById('days');if(!d)return;
+function renum(){d.querySelectorAll('.day .dn').forEach(function(e,i){e.textContent='Day '+(i+1);});}
+document.getElementById('addday').addEventListener('click',function(){var s=d.lastElementChild.cloneNode(true);s.querySelectorAll('[contenteditable]').forEach(function(e){e.textContent='';});d.appendChild(s);renum();var f=s.querySelector('[contenteditable]');if(f)f.focus();});
+document.getElementById('print').addEventListener('click',function(){window.print();});renum();})();
+"""
+def itin_day(title, slots):
+    rows = "".join(f'<div class="slot"><b>{k}</b><span contenteditable="true">{v}</span></div>' for k, v in slots)
+    return f'<section class="day"><h3><span class="dn"></span> · <span contenteditable="true">{title}</span></h3>{rows}</section>'
+DISNEY_DAYS = "\n".join([
+    itin_day("Arrive · Disney Springs", [("Morning", "Fly in, check in, drop the bags"), ("Afternoon", "Pool"), ("Evening", "Disney Springs"), ("Dining", "Dinner at Disney Springs")]),
+    itin_day("Magic Kingdom", [("Morning", "At the gate before opening"), ("Afternoon", "Back to the hotel for a break"), ("Evening", "Fireworks"), ("Dining", "Quick-service lunch; dinner booked for 5:30")]),
+    itin_day("EPCOT", [("Morning", "Rides first, while lines are short"), ("Afternoon", "World Showcase"), ("Evening", "Nighttime show"), ("Dining", "Snacks around the World Showcase")]),
+    itin_day("Animal Kingdom", [("Morning", "Safari first thing"), ("Afternoon", "Break: hotel pool"), ("Evening", "Early night"), ("Dining", "Character breakfast")]),
+    itin_day("Hollywood Studios", [("Morning", "At the gate before opening"), ("Afternoon", "Shows"), ("Evening", "Pack for tomorrow"), ("Dining", "Dinner reservation")]),
+])
+PAGES.append({"path": "/tools/disney-world-itinerary-template/", "lang": "en", "kind": "WebApplication", "app": "beforego", "published": "2026-10-17",
+  "title": "Disney World Itinerary Template: Free, Fill In Online, Save as PDF", "crumb": "Disney World itinerary template",
+  "description": "A free Disney World itinerary template you fill in on the page: one block per day with park, morning, afternoon, evening and dining. Print it or save as PDF.",
+  "hub_title": "Disney World itinerary template", "hub_desc": "One block per park day, filled in on the page. Print it or save as PDF; no sign-up.",
+  "js": [ITIN_JS], "faq": [
+    ("Is this Disney itinerary template free?", "Yes. You fill it in right on the page; nothing is uploaded and there is no sign-up or watermark. Print it or save it as a PDF when you are done."),
+    ("How do I add more days?", "Tap “+ Add a day” under the title. A new empty day appears at the end, numbered for you."),
+    ("How do I save it as a PDF?", "Tap “Print / Save as PDF” and choose Save as PDF in the print window. Only the itinerary is printed; the rest of the page is hidden."),
+    ("When do dining and Lightning Lane open?", "Disney’s resort dining pages say Disney Resort hotel guests can book dining for their whole stay, up to 10 nights, up to 60 days before arrival, and all other guests up to 60 days in advance. Lightning Lane passes open 7 days before the stay for guests of Disney Resort hotels and other select hotels, and 3 days before the park visit for everyone else."),
+    ("Is there an app for planning a Disney trip on iPhone?", "BeforeGo, our iPhone app, turns a screenshot of a guide, a pasted link or your own notes into a day-by-day plan, adds a scanned ticket or booking confirmation to it, and writes a packing list from your destination and dates. It is a general trip planner, not a Disney app."),
+  ],
+  "body": f"""<h1>Disney World itinerary template</h1>
+<p class="lede">Fill in your trip right here: tap any dotted line to type, one block per day for the park, the morning, the afternoon, the evening and where you eat. Add days as you need them, then print the itinerary or save it as a PDF. Nothing leaves your browser.</p>
+<div class="inv-wrap">
+<div class="inv-tools"><button class="btn" id="print" type="button">Print / Save as PDF</button><button class="btn ghost" id="addday" type="button">+ Add a day</button></div>
+<div class="inv itin" id="itin">
+<div class="inv-head"><div><div class="inv-title">OUR DISNEY WORLD TRIP</div><p style="margin:6px 0 0"><span contenteditable="true">The Rivera family · 4 guests</span><br><span contenteditable="true">Hotel: your resort or hotel</span><br><span contenteditable="true">Tickets: 4 days, one park per day</span></p></div>
+<div class="inv-meta"><div class="k">Arrive</div><p style="margin:0 0 10px"><span contenteditable="true">Sat, Mar 13, 2027</span></p><div class="k">Fly home</div><p style="margin:0"><span contenteditable="true">Thu, Mar 18, 2027</span></p></div></div>
+<div class="days" id="days">
+{DISNEY_DAYS}
+</div>
+<p class="notes" contenteditable="true">Book by: dining, 60 days ahead (Disney Resort hotel guests: the whole stay, 60 days before arrival) · Lightning Lane, 7 days before the stay (Disney Resort and select hotels) or 3 days before the park day</p>
+</div></div>
+<h2>How to plan the days</h2>
+<ul><li><strong>Start with the parks.</strong> Write one park per day first; everything else fits around them.</li>
+<li><strong>Give long trips a rest day.</strong> A pool morning in the middle keeps the last park days fun, especially with kids.</li>
+<li><strong>Write down the booking dates.</strong> Dining and Lightning Lane open on set days before the trip; the note at the bottom of the template has them.</li>
+<li><strong>Keep confirmation numbers on the plan.</strong> Type them next to the meal or the hotel, so they print with the day.</li></ul>
+<h2>Dates to put on the calendar</h2>
+<table><thead><tr><th>What</th><th>Opens</th><th>Who</th></tr></thead><tbody>
+<tr><td>Dining reservations</td><td>60 days before arrival, for the whole stay (up to 10 nights)</td><td>Disney Resort hotel guests</td></tr>
+<tr><td>Dining reservations</td><td>60 days before the meal</td><td>Everyone else</td></tr>
+<tr><td>Lightning Lane passes</td><td>7 days before the first day of the stay</td><td>Guests of Disney Resort hotels and other select hotels</td></tr>
+<tr><td>Lightning Lane passes</td><td>3 days before the park visit</td><td>Everyone else</td></tr>
+</tbody></table>
+<p>Disney’s own wording is on its <a href="{LL_URL}" rel="noopener">Lightning Lane passes</a> page and on each resort’s <a href="{DINE_URL}" rel="noopener">dining page</a>. To keep these dates in front of you, put them on your Lock Screen with the <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown widget</a>.</p>
+<h2>On your iPhone</h2>
+<p><a href="/beforego/">BeforeGo</a>, our trip planner app, turns a screenshot of a guide, a pasted link or your own notes into a day-by-day plan, and a scanned ticket or booking confirmation lands on the plan too. It writes the <a href="/tools/packing-list/">packing list</a> from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave. Free to start, no account.</p>
+{DISNEY_NOTE.replace("The booking windows above", "The booking windows on this page")}"""})
+
 
 # 7e. 德国：InvoiceQR 的德语模板页（de）——10-17（用户：「invoice 的优化方向可以是德国」）
 # 依据：10-17 Google 德国联想词「rechnungsvorlage kleinunternehmer / kostenlos / ohne anmeldung」「rechnung kleinunternehmer muster / pflichtangaben /

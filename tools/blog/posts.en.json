@@ -17,6 +17,10 @@
      "html": "<p>The steps are the same for any app with widgets; only the second step differs between iOS versions:</p><ol><li>Touch and hold an empty area of the Home Screen until the apps start to jiggle.</li><li>On iOS 18 and later, tap <strong>Edit</strong> in the top-left corner, then <strong>Add Widget</strong>. On iOS 17, tap the <strong>+</strong> button in the top-left corner.</li><li>Search for Countdown, tap it, then swipe through the size and style options.</li><li>When you see the size you want, tap <strong>Add Widget</strong>, then drag it to where you want it.</li><li>Tap <strong>Done</strong> to lock the layout back in.</li></ol><p>If you change your mind about placement later, touch and hold the widget itself and choose <strong>Edit Home Screen</strong>, or drag it to a different spot while the icons are still jiggling. Removing a widget works the same way any app icon does — touch and hold, then tap <strong>Remove Widget</strong> — and it never deletes the event behind it, only the widget showing it.</p>"
     },
     {
+     "h2": "Can you add a countdown widget without an app?",
+     "html": "<p>Not one that counts down days. iOS doesn’t come with a widget that shows how many days are left until a date you pick: the Calendar widget lists what’s coming up but not the days remaining, and the Clock app’s timer stops at 23 hours, 59 minutes and 59 seconds. A shortcut in the Shortcuts app can work out the days when you run it, and a daily automation can even redraw your wallpaper with a new number, but none of that puts the count in a widget.</p><p>So a number that updates by itself in a widget has to come from an app with a countdown widget. In Countdown every widget size is free and there is no limit on events, so it costs nothing to do this.</p>"
+    },
+    {
      "h2": "Make it bigger: the extra large widget in iOS 27",
      "html": "<p>iOS 27 adds a new widget size above large. Apple's own summary is that extra-large widgets “let you see more information from your favorite apps right on the Home Screen”.</p><p>You don't have to go through the widget gallery to get it. Touch and hold the Countdown app icon, or a Countdown widget you already placed, and choose a size from the icons at the bottom of the menu; touch and hold again and tap the app icon button to turn it back into an icon. Not every app offers every size — Apple notes that some stop at small and medium — but Countdown offers all of them on iOS 27, extra large included, and none of them cost anything.</p><p>On iPhone Duo, Countdown is also laid out for the unfolded screen: your list and the event you're looking at sit side by side, and tapping a countdown on the left opens it on the right.</p>"
     },
@@ -41,6 +45,10 @@
     {
      "q": "Is there a free countdown widget for iPhone?",
      "a": "Yes. In Countdown Widget: Any Event every widget size is free on both the Home Screen and the Lock Screen, with unlimited events and no account. Pro unlocks the Pro backdrops, your own photos, the Pro typefaces and the Live Activity, but the widgets themselves are not part of it."
+    },
+    {
+     "q": "Can I put a countdown on my iPhone without an app?",
+     "a": "Not one that counts down days. iOS has no built-in widget that shows the days left until a date you choose, so you need an app with a countdown widget. In Countdown every widget size is free."
     },
     {
      "q": "Can I make a countdown widget extra large?",
@@ -90,7 +98,7 @@
     },
     {
      "h2": "Choose how the date repeats",
-     "html": "<p>An exam or a trip is usually a one-off, but plenty of events come back on a schedule. Countdown supports:</p><ul><li><strong>Yearly</strong> repeats, for birthdays and anniversaries.</li><li><strong>Monthly</strong> or <strong>weekly</strong> repeats, for recurring check-ins.</li><li><strong>Every few days</strong>, for anything on its own cycle.</li></ul><p>You can also flip the direction and count <em>up</em> from a date instead of down to one — handy for tracking how long ago a trip happened, how many days into a routine you are, or how long since a milestone, rather than how long until it starts.</p>"
+     "html": "<p>An exam or a trip is usually a one-off, but plenty of events come back on a schedule. Countdown supports:</p><ul><li><strong>Yearly</strong> repeats, for birthdays and anniversaries.</li><li><strong>Monthly</strong> or <strong>weekly</strong> repeats, for recurring check-ins.</li><li><strong>Every few days</strong>, for anything on its own cycle.</li></ul><p>You can also flip the direction and count <em>up</em> from a date instead of down to one — handy for tracking how long ago a trip happened, how many days into a routine you are, or how long since a milestone, rather than how long until it starts.</p><p>Setting one up for a birthday? The <a href=\"/tools/birthday-countdown-widget-iphone/\">birthday countdown widget</a> page has the steps. Counting down to a trip to Disney World? See the <a href=\"/tools/disney-countdown-widget-iphone/\">Disney trip countdown</a>.</p>"
     },
     {
      "h2": "Set reminders before the day, not just on it",
@@ -98,7 +106,7 @@
     },
     {
      "h2": "Make it look like the event, not a spreadsheet row",
-     "html": "<p>Countdown gives each event 200 drawn icons and the whole emoji keyboard to choose from, plus a hundred and fifty-one full-screen backdrops — twenty-two of them photographs, and ninety-nine of the 151 in Countdown Pro. A birthday can carry its own icon and backdrop, an exam a different one, and a trip another, so the countdown for each one is easy to tell apart at a glance rather than reading the label every time — useful once you have more than one or two events on the same list widget and need to recognize them without stopping to read.</p>"
+     "html": "<p>Countdown gives each event 200 drawn icons and the whole emoji keyboard to choose from, plus a hundred and fifty-nine full-screen backdrops — twenty-two of them photographs, and a hundred and seven of the 159 in Countdown Pro. A birthday can carry its own icon and backdrop, an exam a different one, and a trip another, so the countdown for each one is easy to tell apart at a glance rather than reading the label every time — useful once you have more than one or two events on the same list widget and need to recognize them without stopping to read.</p>"
     },
     {
      "h2": "Get a card worth sharing when the day arrives",

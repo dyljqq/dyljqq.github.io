@@ -46,7 +46,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "en-GB": {
   "storefront": "gb",
@@ -95,7 +95,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "de-DE": {
   "storefront": "de",
@@ -144,7 +144,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "fr-FR": {
   "storefront": "fr",
@@ -193,7 +193,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "it": {
   "storefront": "it",
@@ -242,7 +242,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "es-ES": {
   "storefront": "es",
@@ -291,7 +291,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "es-MX": {
   "storefront": "mx",
@@ -340,7 +340,7 @@
   ],
   "rating": 5,
   "ratingCount": 3,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "pt-BR": {
   "storefront": "br",
@@ -389,7 +389,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "ja": {
   "storefront": "jp",
@@ -438,7 +438,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "ko": {
   "storefront": "kr",
@@ -487,7 +487,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "zh-Hans": {
   "storefront": "sg",
@@ -536,7 +536,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16",
+  "fetched": "2026-10-17",
   "note": "国区（cn）查不到这个 app；简中取新加坡区的简中本地化"
  },
  "zh-Hant": {
@@ -586,7 +586,7 @@
   ],
   "rating": 0,
   "ratingCount": 0,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  },
  "th": {
   "storefront": "th",
@@ -635,6 +635,6 @@
   ],
   "rating": 5,
   "ratingCount": 1,
-  "fetched": "2026-10-16"
+  "fetched": "2026-10-17"
  }
 }
