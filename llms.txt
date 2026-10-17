@@ -190,6 +190,10 @@ A gym workout log for iPhone.
 - [行程規劃 App 推薦（2026）](https://beforego.art/tools/zh-hant/xing-cheng-gui-hua-app/) — 7 款 iPhone 行程規劃 App 比較：行程怎麼排、能不能共同編輯、離線、行前清單。資料取自台灣 App Store 頁面（2026 年 10 月 12 日）。
 - [旅行計画アプリおすすめ7選（2026）](https://beforego.art/tools/ja/ryoko-keikaku-app/) — iPhoneの旅行計画アプリ7つを、プランの作り方・共同編集・オフライン・持ち物リスト・有料機能で比較。日本のApp Storeの掲載内容（2026年10月12日）から。
 - [여행 일정 앱 추천 (2026)](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.
+- [Rechnungsvorlage für Kleinunternehmer](https://beforego.art/tools/de/rechnungsvorlage-kleinunternehmer/) — Kostenlose Rechnungsvorlage für Kleinunternehmer: online ausfüllen, als PDF speichern. Mit Hinweis nach § 19 UStG und allen Pflichtangaben nach § 34a UStDV.
+- [Rechnungsvorlage mit MwSt.](https://beforego.art/tools/de/rechnungsvorlage/) — Kostenlose Rechnungsvorlage ohne Anmeldung: Umsatzsteuer und Summe rechnen sich selbst, PDF speichern. Mit Pflichtangaben nach § 14 UStG und E-Rechnung-Fristen.
+- [Angebotsvorlage](https://beforego.art/tools/de/angebot-vorlage/) — Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.
+- [Rechnung schreiben mit dem iPhone](https://beforego.art/tools/de/rechnung-schreiben-app-iphone/) — So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.
 - [How to Put a Countdown on Your iPhone Lock Screen (iOS 27)](https://beforego.art/blog/countdown-widget-iphone-home-lock-screen/) — How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.
 - [Count Down to a Birthday, Exam or Trip on iPhone](https://beforego.art/blog/count-down-birthday-exam-trip-iphone/) — How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.
 - [Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice](https://beforego.art/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/) — Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.
@@ -204,6 +208,7 @@ A gym workout log for iPhone.
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
 - [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
 - [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.
+- [Kostenlose Vorlagen und Anleitungen — go ka](https://beforego.art/tools/de/) — Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern.
 - [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
 
 ## FAQ

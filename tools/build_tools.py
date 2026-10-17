@@ -56,9 +56,14 @@ TS = {  # 工具页专用界面词
          "faq": "자주 묻는 질문", "published": "게시", "updated": "업데이트", "get": "iPhone에서 계속하기", "ask": "이 페이지를 AI에게 요약 요청",
          "days": "일", "day": "일", "weeks": "주", "today": "오늘입니다!", "passed": "일 지남",
          "home": "홈", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
+  # 10-17：德国线走 InvoiceQR（用户定：IQ 瞄德国；10-16 首笔月付 7 天试用就是德国自然量）
+  "de": {"tools": "Tools", "hub_title": "Kostenlose Vorlagen und Anleitungen", "hub_lede": "Kostenlos und ohne Anmeldung: Vorlagen, die du direkt im Browser ausfüllst und als PDF speicherst, und Anleitungen für unsere iPhone-App.",
+         "faq": "Häufige Fragen", "published": "Veröffentlicht", "updated": "Aktualisiert", "get": "Auf dem iPhone weitermachen", "ask": "Diese Seite von einer KI zusammenfassen lassen",
+         "days": "Tage", "day": "Tag", "weeks": "Wochen", "today": "Heute ist es so weit!", "passed": "Tage her",
+         "home": "Startseite", "other_lang": "Free tools & guides in English", "other_lang_href": "/tools/"},
 }
-HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/", "ko": "/tools/ko/"}
-HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/", "th": "/th/", "ko": "/ko/"}
+HUBS = {"en": "/tools/", "pt-BR": "/tools/pt-br/", "es-MX": "/tools/es-mx/", "zh-Hant": "/tools/zh-hant/", "ja": "/tools/ja/", "th": "/tools/th/", "ko": "/tools/ko/", "de": "/tools/de/"}
+HOMES = {"en": "/", "pt-BR": "/pt-br/", "es-MX": "/es-mx/", "zh-Hant": "/zh-hant/", "ja": "/ja/", "th": "/th/", "ko": "/ko/", "de": "/de/"}
 def ts(lang, k): return TS.get(lang, TS["en"])[k]
 def fmt(d, lang):
     if lang == "pt-BR":
@@ -107,13 +112,16 @@ f.addEventListener('submit',run);if(date.value)run();})();
 """
 INVOICE_JS = """
 (function(){var t=document.getElementById('inv');if(!t)return;var body=t.querySelector('tbody');
-function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
-function calc(){var sub=0;body.querySelectorAll('tr').forEach(function(tr){var q=parseFloat(tr.children[1].textContent)||0,p=parseFloat(tr.children[2].textContent.replace(/[^0-9.\\-]/g,''))||0;var a=q*p;tr.children[3].textContent=money(a);sub+=a;});
-var rate=parseFloat(document.getElementById('taxrate').textContent)||0;var tax=sub*rate/100;document.getElementById('sub').textContent=money(sub);document.getElementById('tax').textContent=money(tax);document.getElementById('total').textContent=money(sub+tax);}
-document.getElementById('addrow').addEventListener('click',function(){var tr=body.rows[0].cloneNode(true);tr.children[0].textContent=t.getAttribute('data-newitem')||'Item';tr.children[1].textContent='1';tr.children[2].textContent='0.00';body.appendChild(tr);calc();});
-document.getElementById('print').addEventListener('click',function(){window.print();});
-t.addEventListener('input',calc);document.getElementById('taxrate').addEventListener('input',calc);var L=document.documentElement.lang,loc=L==='en'?undefined:L;document.getElementById('today').textContent=new Date().toLocaleDateString(loc);
-var dd=document.getElementById('due');if(dd){var due=new Date();due.setDate(due.getDate()+(+t.getAttribute('data-days')||30));dd.textContent=due.toLocaleDateString(loc);}calc();})();
+var L=document.documentElement.lang,loc=L==='en'?undefined:L,de=/^de/.test(L);function $(i){return document.getElementById(i);}
+function num(x){x=x.replace(/[^0-9.,\\-]/g,'');x=de?(x.indexOf(',')<0&&/\\.\\d{1,2}$/.test(x)?x:x.replace(/\\./g,'').replace(',','.')):x.replace(/,/g,'');return parseFloat(x)||0;}
+function money(n){return n.toLocaleString(de?'de-DE':undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+function put(i,v){var e=$(i);if(e)e.textContent=money(v);}
+function calc(){var sub=0;body.querySelectorAll('tr').forEach(function(tr){var a=num(tr.children[1].textContent)*num(tr.children[2].textContent);tr.children[3].textContent=money(a);sub+=a;});
+var r=$('taxrate'),tax=r?sub*num(r.textContent)/100:0;put('sub',sub);put('tax',tax);put('total',sub+tax);}
+$('addrow').addEventListener('click',function(){var tr=body.rows[0].cloneNode(true);tr.children[0].textContent=t.getAttribute('data-newitem')||'Item';tr.children[1].textContent='1';tr.children[2].textContent=money(0);body.appendChild(tr);calc();});
+$('print').addEventListener('click',function(){window.print();});
+t.addEventListener('input',calc);if($('taxrate'))$('taxrate').addEventListener('input',calc);$('today').textContent=new Date().toLocaleDateString(loc);
+var dd=$('due');if(dd){var due=new Date();due.setDate(due.getDate()+(+t.getAttribute('data-days')||30));dd.textContent=due.toLocaleDateString(loc);}calc();})();
 """
 PACK_JS = """
 (function(){var f=document.getElementById('pack');if(!f)return;var out=document.getElementById('pack-out');var L=JSON.parse(document.getElementById('pack-data').textContent);
@@ -173,18 +181,23 @@ html[lang^=th] *{letter-spacing:0!important}
 .rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
 html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
-@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv th{letter-spacing:.4px}.inv td,.inv th{padding:8px 4px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
 @media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 """
 
+def clip(t, n):   # 10-17 评审：商店描述按字符硬截会断在词中间；有空格就退到词边界，再加省略号
+    if len(t) <= n: return t
+    cut = t[:n - 1]; sp = cut.rfind(" ")
+    return (cut[:sp] if sp > n * .6 else cut).rstrip(" ,;:–-") + "…"
+APP_LINK = {"de": "Mehr zur App"}   # 卡片里去产品页的链接文字；其余语言沿用 app 短名
 def app_card(app_key, lang):
     """页尾「去 iPhone 上做这件事」卡片：图标 + 商店名 + 一句话 + 商店按钮。"""
     p = BY_KEY[app_key]; s = bp.store_of({"variantOf": app_key, "lang": lang} if lang != "en" else p)
     page = bp.sibling_path(p, lang) if lang != "en" else p["path"]
     icon = bp.cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else p["icon"]
     return (f'<aside class="appcard"><img src="{icon}" width="72" height="72" alt="" loading="lazy"><div>'
-            f'<p class="label" style="margin:0 0 6px">{esc(ts(lang, "get"))}</p><b>{esc(s["name"])}</b><p>{esc(p["home"]["blurb"] if lang == "en" else s["description"].split(chr(10))[0][:160])}</p>'
-            f'<a class="btn" href="{esc(bp.store_link({"variantOf": app_key, "lang": lang} if lang != "en" else p, s, "tool"))}">{bp.APPLE}{esc(bp.t(lang, "cta_store"))}</a> &nbsp; <a href="{page}" style="font-size:14px">{esc(p["home"]["label"])} →</a></div></aside>')
+            f'<p class="label" style="margin:0 0 6px">{esc(ts(lang, "get"))}</p><b>{esc(s["name"])}</b><p>{esc(p["home"]["blurb"] if lang == "en" else clip(s["description"].split(chr(10))[0], 160))}</p>'
+            f'<a class="btn" href="{esc(bp.store_link({"variantOf": app_key, "lang": lang} if lang != "en" else p, s, "tool"))}">{bp.APPLE}{esc(bp.t(lang, "cta_store"))}</a> &nbsp; <a href="{page}" style="font-size:14px">{esc(APP_LINK.get(lang, p["home"]["label"]))} →</a></div></aside>')
 
 def ask_ai(url, lang):
     q = {"pt-BR": f"Leia {url} e resuma os pontos principais em poucas frases.",
@@ -192,7 +205,8 @@ def ask_ai(url, lang):
          "zh-Hant": f"請閱讀 {url}，用幾句話摘要重點。",
          "ja": f"{url} を読んで、要点を数文でまとめてください。",
          "th": f"อ่าน {url} แล้วสรุปประเด็นสำคัญเป็นไม่กี่ประโยค",
-         "ko": f"{url} 을(를) 읽고 핵심을 몇 문장으로 요약해 주세요."}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
+         "ko": f"{url} 을(를) 읽고 핵심을 몇 문장으로 요약해 주세요.",
+         "de": f"Lies {url} und fasse die wichtigsten Punkte in wenigen Sätzen zusammen."}.get(lang, f"Read {url} and summarise its key points in a few sentences.")
     from urllib.parse import quote
     return (f'<p class="ask">{esc(ts(lang, "ask"))}: <a href="https://chatgpt.com/?q={quote(q)}" rel="nofollow noopener">ChatGPT</a>'
             f'<a href="https://www.perplexity.ai/search?q={quote(q)}" rel="nofollow noopener">Perplexity</a>'
@@ -223,7 +237,7 @@ def top_cta(app_key, lang, label=None):   # label：锁屏教程页说「放到�
     return f'<p class="ios-cta"><a class="btn" href="{esc(bp.store_link(a, bp.store_of(a), "top"))}">{bp.APPLE}{esc(label or TOP_CTA[lang])}</a></p>'
 
 # 「更多问题」：搜索词的其它问法（GSC 查询词 / 联想词），默认折叠、点开可见，正文真实存在——不做隐藏文字。不进 FAQPage 结构化数据。
-MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題", "es-MX": "Más preguntas", "th": "คำถามเพิ่มเติม", "ko": "더 궁금한 점"}
+MORE_H = {"en": "More questions", "pt-BR": "Mais perguntas", "ja": "そのほかの質問", "zh-Hant": "更多問題", "es-MX": "Más preguntas", "th": "คำถามเพิ่มเติม", "ko": "더 궁금한 점", "de": "Weitere Fragen"}
 def more_html(items, lang):
     rows = "".join(f"<details><summary>{esc(q)}</summary><p>{a}</p></details>" for q, a in items)
     return f'<section class="sec more"><h2>{esc(MORE_H[lang])}</h2>{rows}</section>'
@@ -2462,7 +2476,204 @@ PAGES.append(bg_list_page({
   ],
 }))
 
+# 7e. 德国：InvoiceQR 的德语模板页（de）——10-17（用户：「invoice 的优化方向可以是德国」）
+# 依据：10-17 Google 德国联想词「rechnungsvorlage kleinunternehmer / kostenlos / ohne anmeldung」「rechnung kleinunternehmer muster / pflichtangaben /
+# ohne umsatzsteuer / ohne steuernummer」「e-rechnung kleinunternehmer」「angebot vorlage (pdf / kostenlos / dienstleistung)」「rechnung schreiben app iphone」。
+# 法条全部逐条读过 gesetze-im-internet.de 原文（10-17）：§ 19 Abs. 1 UStG（25 000 / 100 000 €）、§ 14 Abs. 1/2/4 UStG（Pflichtangaben、E-Rechnung、
+# Zustimmung）、§ 14b（8 年）、§ 27 Abs. 38 UStG（2025–26 / 2027 ≤ 800 000 € 过渡）、§ 33 / § 34a UStDV（Kleinbetrag 250 €、Kleinunternehmer 6 项、
+# 两者都可永远发 sonstige Rechnung）、BGB § 145 / § 148 / § 632 Abs. 3 / § 649。BMF 的 E-Rechnung FAQ 有验证码打不开，没引用。
+# App 说法只用 tools/store/invoiceqr.json de-DE 描述（1.1.24），外加 App 代码里核实过的：「Keine Steuer」、Steuernummer 印在单据上、
+# 「Bedingungen & Notizen」印在单据底部、编号自动连号（手写 2026-001 后接 2026-002）。App 只出 PDF，不出 XRechnung / ZUGFeRD。
+DE_NOTE = ('<p class="meta" style="margin-top:18px"><strong>Hinweis:</strong> Diese Seite fasst die gesetzlichen Angaben zusammen und ersetzt keine Steuerberatung. '
+           'Die Vorlage erzeugt ein PDF, keine E-Rechnung in einem strukturierten Format wie XRechnung oder ZUGFeRD. Stand: Oktober 2026.</p>')
+DE_APP = ('Ja: Smart Rechnung & Angebot, unsere App für iPhone und iPad. Sie merkt sich Kunden, Artikel und Steuersätze, nummeriert Rechnungen fortlaufend '
+          'und wandelt ein Angebot nach der Zusage mit einem Tipp in eine Rechnung um. Als Kleinunternehmer wählst du „Keine Steuer“ und speicherst den Hinweis '
+          'nach § 19 UStG als Klausel. Dein erstes Dokument ist kostenlos, ohne Konto.')
+DE_TOOLS = ('<div class="inv-tools"><button class="btn" id="print" type="button">Drucken / als PDF speichern</button>'
+            '<button class="btn ghost" id="addrow" type="button">+ Position hinzufügen</button></div>')
+
+PAGES.append({"path": "/tools/de/rechnungsvorlage-kleinunternehmer/", "lang": "de", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-17",
+  "title": "Rechnungsvorlage Kleinunternehmer kostenlos: Muster nach § 19 UStG", "crumb": "Rechnung Kleinunternehmer",
+  "description": "Kostenlose Rechnungsvorlage für Kleinunternehmer: online ausfüllen, als PDF speichern. Mit Hinweis nach § 19 UStG und allen Pflichtangaben nach § 34a UStDV.",
+  "hub_title": "Rechnungsvorlage für Kleinunternehmer", "hub_desc": "Ohne Umsatzsteuer, mit dem Hinweis nach § 19 UStG – im Browser ausfüllen und als PDF speichern.",
+  "js": [INVOICE_JS], "faq": [
+    ("Ist die Vorlage kostenlos?", "Ja. Alles läuft in deinem Browser: kein Konto, kein Wasserzeichen, es wird nichts hochgeladen. Ausfüllen, dann drucken oder als PDF speichern."),
+    ("Welcher Satz muss auf die Rechnung?", "Ein Hinweis darauf, dass für die Leistung die Steuerbefreiung für Kleinunternehmer gilt (§ 34a Nr. 5 UStDV). Einen festen Wortlaut schreibt das Gesetz nicht vor; üblich ist „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“"),
+    ("Brauche ich eine Steuernummer auf der Rechnung?", "In der Regel ja. § 34a UStDV verlangt die Steuernummer vom Finanzamt oder die Umsatzsteuer-Identifikationsnummer bzw. Kleinunternehmer-Identifikationsnummer vom Bundeszentralamt für Steuern. Ausnahme: Bei Rechnungen bis 250 € brutto reichen die Angaben einer Kleinbetragsrechnung (§ 33 UStDV), da ist keine Steuernummer nötig."),
+    ("Darf ich als Kleinunternehmer Umsatzsteuer ausweisen?", "Nein. Wer Umsatzsteuer auf die Rechnung schreibt, obwohl er dazu nicht berechtigt ist, schuldet den ausgewiesenen Betrag (§ 14c UStG). Die Vorlage hat deshalb keine Steuerzeile."),
+    ("Muss ich als Kleinunternehmer E-Rechnungen schreiben?", "Nein. Eine Kleinunternehmer-Rechnung darf immer als sonstige Rechnung übermittelt werden, also auf Papier oder, wenn der Kunde zustimmt, als PDF (§ 34a Satz 4 UStDV, § 14 Abs. 1 UStG). Empfangen musst du E-Rechnungen anderer Unternehmen trotzdem können."),
+    ("Wie speichere ich die Rechnung als PDF?", "Klicke auf „Drucken / als PDF speichern“ und wähle im Druckfenster „Als PDF speichern“. Gedruckt wird nur die Rechnung, der Rest der Seite wird ausgeblendet."),
+    ("Gibt es eine App für Kleinunternehmer-Rechnungen auf dem iPhone?", DE_APP),
+  ],
+  "more": [
+    ("Rechnung als Kleinunternehmer ohne Steuernummer – geht das?", "Nur bei Rechnungen bis 250 € brutto: Für diese Kleinbetragsrechnungen genügen nach § 33 UStDV dein Name und deine Anschrift, das Datum, die Leistung und der Betrag mit dem Hinweis auf die Steuerbefreiung. Darüber gehört die Steuernummer oder eine der beiden Identifikationsnummern zu den Pflichtangaben nach § 34a UStDV."),
+    ("Rechnung an eine Privatperson als Kleinunternehmer?", "Es gelten dieselben Angaben wie bei Firmenkunden: dein Name und deine Anschrift, Name und Anschrift des Kunden, Steuernummer, Datum, Leistung, Betrag und der Hinweis nach § 19 UStG; bis 250 € reicht eine Kleinbetragsrechnung. Die Vorlage oben passt für beides."),
+    ("Was hat sich 2025 für Kleinunternehmer geändert?", "Seit dem 1. Januar 2025 gelten die Grenzen von 25.000 € im Vorjahr und 100.000 € im laufenden Jahr (§ 19 Abs. 1 UStG), und die Pflichtangaben für Kleinunternehmer-Rechnungen stehen in einer eigenen Vorschrift, § 34a UStDV."),
+    ("Wie lange muss ich die Rechnungen aufbewahren?", "Acht Jahre, gerechnet ab dem Ende des Jahres, in dem die Rechnung ausgestellt wurde (§ 14b Abs. 1 UStG)."),
+  ],
+  "body": f"""<h1>Rechnungsvorlage für Kleinunternehmer (§ 19 UStG)</h1>
+<p class="lede">Als Kleinunternehmer weist du keine Umsatzsteuer aus. Stattdessen steht auf der Rechnung ein Hinweis auf die Steuerbefreiung, zum Beispiel: <strong>„Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“</strong> Die Vorlage unten hat diesen Satz schon drin. Klicke in ein gestricheltes Feld, um es zu ändern, und speichere die Rechnung danach als PDF. Es wird nichts hochgeladen.</p>
+<div class="inv-wrap">
+{DE_TOOLS}
+<div class="inv" id="inv" data-newitem="Leistung" data-days="14">
+<div class="inv-head"><div><div class="inv-title">RECHNUNG</div><p style="margin:6px 0 0"><span contenteditable="true">Dein Name / Firmenname</span><br><span contenteditable="true">Musterstraße 1, 12345 Musterstadt</span><br><span contenteditable="true">Steuernummer: 12/345/67890</span></p></div>
+<div class="inv-meta"><div class="k">Rechnungsnummer</div><p style="margin:0 0 10px"><span contenteditable="true">2026-001</span></p><div class="k">Rechnungsdatum</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Leistungsdatum</div><p style="margin:0"><span contenteditable="true">wie Rechnungsdatum</span></p></div></div>
+<div class="inv-parties"><div><div class="k">Rechnung an</div><p style="margin:0"><span contenteditable="true">Name des Kunden</span><br><span contenteditable="true">Straße und Hausnummer</span><br><span contenteditable="true">PLZ Ort</span></p></div>
+<div><div class="k">Zahlung</div><p style="margin:0"><span contenteditable="true">Zahlbar innerhalb von 14 Tagen ohne Abzug</span><br><span contenteditable="true">IBAN DE00 0000 0000 0000 0000 00</span></p></div></div>
+<table><thead><tr><th>Leistung</th><th>Menge</th><th>Einzelpreis</th><th>Betrag</th></tr></thead>
+<tbody><tr><td contenteditable="true">Gestaltung Website-Startseite</td><td contenteditable="true">1</td><td contenteditable="true">850,00</td><td>850,00</td></tr>
+<tr><td contenteditable="true">Fotos bearbeiten (Stunden)</td><td contenteditable="true">3</td><td contenteditable="true">45,00</td><td>135,00</td></tr></tbody></table>
+<div class="totals"><div class="grand"><span>Gesamtbetrag</span><span><span id="total">985,00</span> €</span></div></div>
+<p class="notes" contenteditable="true">Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.</p>
+</div></div>
+<h2>Was muss auf eine Kleinunternehmer-Rechnung?</h2>
+<p>§ 34a UStDV nennt sechs Angaben:</p>
+<ol><li><strong>Name und Anschrift</strong> von dir und von deinem Kunden, jeweils vollständig.</li><li>Deine <strong>Steuernummer</strong> vom Finanzamt oder deine Umsatzsteuer-Identifikationsnummer bzw. Kleinunternehmer-Identifikationsnummer.</li><li>Das <strong>Ausstellungsdatum</strong>.</li><li><strong>Menge und Art</strong> der gelieferten Waren oder <strong>Umfang und Art</strong> der Leistung.</li><li>Den <strong>Betrag in einer Summe</strong> mit dem <strong>Hinweis auf die Steuerbefreiung</strong> für Kleinunternehmer.</li><li>Das Wort <strong>„Gutschrift“</strong>, aber nur, wenn dein Kunde die Rechnung für dich ausstellt.</li></ol>
+<p>Rechnungsnummer und Leistungsdatum verlangt § 34a nicht. Die Vorlage hat trotzdem beides, weil Kunden und Buchhaltung sie oft erwarten; du kannst die Felder auch leer lassen. Bei Rechnungen bis 250 € brutto genügen sogar weniger Angaben, dann ohne Steuernummer und ohne Kundenadresse (§ 33 UStDV).</p>
+<h2>Wer ist Kleinunternehmer?</h2>
+<p>Kleinunternehmer bist du, wenn dein Gesamtumsatz <strong>im Vorjahr höchstens 25.000 €</strong> betragen hat und <strong>im laufenden Jahr 100.000 € nicht überschreitet</strong> (§ 19 Abs. 1 UStG). Überschreitest du die 100.000 € im laufenden Jahr, fällt die Befreiung noch im selben Jahr weg. Kläre dann mit deinem Steuerberater, ab welcher Rechnung du Umsatzsteuer ausweisen musst.</p>
+<p>Du kannst auf die Regelung auch verzichten und ganz normal mit Umsatzsteuer abrechnen; daran bist du dann mindestens fünf Jahre gebunden (§ 19 Abs. 3 UStG). Für Rechnungen mit Umsatzsteuer nimm die <a href="/tools/de/rechnungsvorlage/">Rechnungsvorlage mit 19 % MwSt.</a></p>
+<h2>Kleinunternehmer und E-Rechnung</h2>
+<table><thead><tr><th></th><th>Was gilt</th><th>Grundlage</th></tr></thead><tbody>
+<tr><td>Rechnungen schreiben</td><td>Papier bleibt erlaubt, ein PDF mit Zustimmung des Kunden, auch nach 2027. Eine E-Rechnung musst du nicht ausstellen.</td><td>§ 34a Satz 4 UStDV</td></tr>
+<tr><td>Rechnungen empfangen</td><td>Seit 2025 brauchen andere Unternehmen deine Zustimmung nicht mehr, um dir eine E-Rechnung zu schicken. Du musst sie also annehmen können.</td><td>§ 14 Abs. 1 und 2 UStG</td></tr>
+</tbody></table>
+<p>Du schreibst deine Rechnungen lieber auf dem iPhone? <a href="/tools/de/rechnung-schreiben-app-iphone/">So geht es Schritt für Schritt</a>, auch mit dem Hinweis nach § 19 UStG.</p>
+{DE_NOTE}"""})
+
+PAGES.append({"path": "/tools/de/rechnungsvorlage/", "lang": "de", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-17",
+  "title": "Rechnungsvorlage kostenlos ohne Anmeldung: ausfüllen, PDF speichern", "crumb": "Rechnungsvorlage",
+  "description": "Kostenlose Rechnungsvorlage ohne Anmeldung: Umsatzsteuer und Summe rechnen sich selbst, PDF speichern. Mit Pflichtangaben nach § 14 UStG und E-Rechnung-Fristen.",
+  "hub_title": "Rechnungsvorlage mit MwSt.", "hub_desc": "Netto, 19 % Umsatzsteuer und Gesamtbetrag rechnen sich selbst. Drucken oder als PDF speichern.",
+  "js": [INVOICE_JS], "faq": [
+    ("Ist die Rechnungsvorlage kostenlos?", "Ja, und ohne Anmeldung. Alles läuft in deinem Browser: kein Konto, kein Wasserzeichen, es wird nichts hochgeladen."),
+    ("Welchen Steuersatz trage ich ein?", "Der Regelsteuersatz ist 19 %. Für bestimmte Waren und Leistungen gilt der ermäßigte Satz von 7 %. Den Satz in der Vorlage kannst du anklicken und ändern; Steuer und Gesamtbetrag rechnen sich neu."),
+    ("Wie muss die Rechnungsnummer aussehen?", "Fortlaufend und einmalig (§ 14 Abs. 4 Nr. 4 UStG). Sie darf aus einer oder mehreren Zahlenreihen bestehen, zum Beispiel 2026-001, 2026-002 und so weiter."),
+    ("Ist eine Rechnung als PDF noch erlaubt?", "Ja, wenn der Empfänger zustimmt (§ 14 Abs. 1 UStG). An Privatkunden ohne Frist. An andere Unternehmen im Inland für Leistungen bis Ende 2026; für Leistungen im Jahr 2027 nur, wenn dein Gesamtumsatz im Vorjahr höchstens 800.000 € betrug. Ab 2028 ist dort die E-Rechnung Pflicht. Kleinunternehmer und Rechnungen bis 250 € dürfen weiter Papier oder PDF verwenden."),
+    ("Wie lange muss ich Rechnungen aufbewahren?", "Acht Jahre, gerechnet ab dem Ende des Jahres, in dem die Rechnung ausgestellt wurde (§ 14b Abs. 1 UStG)."),
+    ("Wie speichere ich die Rechnung als PDF?", "Klicke auf „Drucken / als PDF speichern“ und wähle im Druckfenster „Als PDF speichern“. Gedruckt wird nur die Rechnung."),
+    ("Gibt es eine App zum Rechnungen schreiben auf dem iPhone?", DE_APP),
+  ],
+  "more": [
+    ("Rechnung ohne MwSt. schreiben – wann geht das?", "Wenn keine Umsatzsteuer anfällt oder dein Kunde sie schuldet: als Kleinunternehmer (§ 19 UStG), bei steuerfreien Leistungen oder wenn die Steuerschuld auf den Kunden übergeht (§ 13b UStG). Statt Steuersatz und Steuerbetrag steht dann ein Hinweis auf der Rechnung. Für Kleinunternehmer gibt es eine eigene <a href=\"/tools/de/rechnungsvorlage-kleinunternehmer/\">Rechnungsvorlage nach § 19 UStG</a>."),
+    ("Was ist eine Kleinbetragsrechnung?", "Eine Rechnung bis 250 € brutto. Sie braucht weniger Angaben (§ 33 UStDV): Name und Anschrift des Leistenden, Datum, Menge und Art der Leistung sowie den Bruttobetrag mit Steuersatz."),
+    ("Was ist der Unterschied zwischen Rechnungsdatum und Leistungsdatum?", "Das Rechnungsdatum ist der Tag, an dem du die Rechnung ausstellst. Das Leistungsdatum ist der Tag oder Zeitraum, in dem du geliefert oder gearbeitet hast. Beides gehört auf die Rechnung (§ 14 Abs. 4 Nr. 3 und 6 UStG); ist es derselbe Tag, reicht ein Vermerk wie „Leistungsdatum entspricht Rechnungsdatum“."),
+  ],
+  "body": f"""<h1>Rechnungsvorlage kostenlos</h1>
+<p class="lede">Füll die Rechnung direkt hier aus: Klicke in ein gestricheltes Feld, um es zu ändern. Beträge, 19 % Umsatzsteuer und Gesamtbetrag rechnen sich selbst. Danach druckst du sie oder speicherst sie als PDF. Es wird nichts hochgeladen.</p>
+<div class="inv-wrap">
+{DE_TOOLS}
+<div class="inv" id="inv" data-newitem="Leistung" data-days="14">
+<div class="inv-head"><div><div class="inv-title">RECHNUNG</div><p style="margin:6px 0 0"><span contenteditable="true">Dein Firmenname</span><br><span contenteditable="true">Musterstraße 1, 12345 Musterstadt</span><br><span contenteditable="true">Steuernummer: 12/345/67890</span></p></div>
+<div class="inv-meta"><div class="k">Rechnungsnummer</div><p style="margin:0 0 10px"><span contenteditable="true">2026-001</span></p><div class="k">Rechnungsdatum</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Leistungsdatum</div><p style="margin:0 0 10px"><span contenteditable="true">wie Rechnungsdatum</span></p><div class="k">Fällig am</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">Rechnung an</div><p style="margin:0"><span contenteditable="true">Firma oder Name des Kunden</span><br><span contenteditable="true">Straße und Hausnummer</span><br><span contenteditable="true">PLZ Ort</span></p></div>
+<div><div class="k">Bankverbindung</div><p style="margin:0"><span contenteditable="true">Musterbank</span><br><span contenteditable="true">IBAN DE00 0000 0000 0000 0000 00</span></p></div></div>
+<table><thead><tr><th>Leistung</th><th>Menge</th><th>Einzelpreis</th><th>Betrag</th></tr></thead>
+<tbody><tr><td contenteditable="true">Beratung (Stunden)</td><td contenteditable="true">6</td><td contenteditable="true">80,00</td><td>480,00</td></tr>
+<tr><td contenteditable="true">Fahrtkosten pauschal</td><td contenteditable="true">1</td><td contenteditable="true">35,00</td><td>35,00</td></tr></tbody></table>
+<div class="totals"><div><span>Nettobetrag</span><span><span id="sub">515,00</span> €</span></div><div><span>Umsatzsteuer <span contenteditable="true" id="taxrate">19</span> %</span><span><span id="tax">97,85</span> €</span></div><div class="grand"><span>Gesamtbetrag</span><span><span id="total">612,85</span> €</span></div></div>
+<p class="notes" contenteditable="true">Vielen Dank für Ihren Auftrag. Bitte überweisen Sie den Gesamtbetrag bis zum Fälligkeitsdatum ohne Abzug.</p>
+</div></div>
+<h2>Pflichtangaben einer Rechnung (§ 14 Abs. 4 UStG)</h2>
+<ol><li><strong>Name und Anschrift</strong> von dir und von deinem Kunden, jeweils vollständig.</li><li>Deine <strong>Steuernummer</strong> oder deine <strong>Umsatzsteuer-Identifikationsnummer</strong>.</li><li>Das <strong>Ausstellungsdatum</strong>.</li><li>Eine <strong>fortlaufende Rechnungsnummer</strong>, die du nur einmal vergibst.</li><li><strong>Menge und Art</strong> der gelieferten Waren oder <strong>Umfang und Art</strong> der Leistung.</li><li>Den <strong>Zeitpunkt der Lieferung oder Leistung</strong>.</li><li>Das <strong>Entgelt</strong>, also den Nettobetrag, aufgeteilt nach Steuersätzen, und jede vorher vereinbarte Minderung wie Skonto oder Rabatt.</li><li>Den <strong>Steuersatz und den Steuerbetrag</strong>, oder bei einer Steuerbefreiung einen Hinweis darauf.</li></ol>
+<p>Zwei weitere Angaben brauchst du nur in Sonderfällen: einen Hinweis auf die Aufbewahrungspflicht des Kunden bei bestimmten Leistungen rund um ein Grundstück an Privatpersonen, und das Wort „Gutschrift“, wenn der Kunde die Rechnung ausstellt.</p>
+<h2>Kleinbetragsrechnung bis 250 €</h2>
+<p>Bei einem Gesamtbetrag bis 250 € reichen weniger Angaben (§ 33 UStDV): dein Name und deine Anschrift, das Datum, Menge und Art der Leistung und der Bruttobetrag mit dem Steuersatz. Name des Kunden, Steuernummer und Rechnungsnummer sind dann nicht nötig.</p>
+<h2>Ab wann ist die E-Rechnung Pflicht?</h2>
+<p>Die Pflicht betrifft nur Rechnungen an andere Unternehmen in Deutschland. Gemeint ist ein strukturiertes Format nach der europäischen Norm, zum Beispiel XRechnung oder ZUGFeRD; ein PDF zählt nicht dazu.</p>
+<table><thead><tr><th>Leistung erbracht</th><th>Papier oder PDF an Unternehmen</th><th>Grundlage</th></tr></thead><tbody>
+<tr><td>2025 und 2026</td><td>Erlaubt, wenn die Rechnung bis 31. Dezember 2026 übermittelt wird; ein PDF nur mit Zustimmung des Kunden.</td><td>§ 27 Abs. 38 Nr. 1 UStG</td></tr>
+<tr><td>2027</td><td>Nur noch, wenn dein Gesamtumsatz im Vorjahr höchstens 800.000 € betrug und die Rechnung bis 31. Dezember 2027 übermittelt wird; ein PDF weiterhin nur mit Zustimmung.</td><td>§ 27 Abs. 38 Nr. 2 UStG</td></tr>
+<tr><td>ab 2028</td><td>Nicht mehr: Es muss eine E-Rechnung sein.</td><td>§ 14 Abs. 2 UStG</td></tr>
+</tbody></table>
+<p>Ausgenommen bleiben Rechnungen an Privatpersonen, Kleinbetragsrechnungen bis 250 € (§ 33 UStDV) und Rechnungen von Kleinunternehmern (§ 34a UStDV), dafür gibt es die <a href="/tools/de/rechnungsvorlage-kleinunternehmer/">Rechnungsvorlage für Kleinunternehmer</a>. Noch kein Auftrag? Dann schick zuerst ein <a href="/tools/de/angebot-vorlage/">Angebot</a>.</p>
+{DE_NOTE}"""})
+
+PAGES.append({"path": "/tools/de/angebot-vorlage/", "lang": "de", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-17",
+  "title": "Angebotsvorlage kostenlos: Angebot online ausfüllen, als PDF speichern", "crumb": "Angebotsvorlage",
+  "description": "Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.",
+  "hub_title": "Angebotsvorlage", "hub_desc": "Mit Gültigkeitsdatum, Positionen und 19 % MwSt. Ausfüllen, als PDF schicken, nach der Zusage abrechnen.",
+  "js": [INVOICE_JS], "faq": [
+    ("Ist die Angebotsvorlage kostenlos?", "Ja, und ohne Anmeldung. Alles läuft in deinem Browser: kein Konto, kein Wasserzeichen, es wird nichts hochgeladen."),
+    ("Wie lange ist ein Angebot gültig?", "So lange, wie du es hineinschreibst: Setzt du eine Frist, kann der Kunde nur innerhalb dieser Frist annehmen (§ 148 BGB). In der Vorlage steht automatisch ein Datum 30 Tage nach heute; klicke darauf, um es zu ändern."),
+    ("Ist ein Angebot verbindlich?", "Ja. Wer ein Angebot macht, ist daran gebunden, es sei denn, er schließt das aus (§ 145 BGB), zum Beispiel mit dem Zusatz „freibleibend“."),
+    ("Was ist der Unterschied zwischen Angebot und Kostenvoranschlag?", "Ein Angebot nennt einen Preis, an den du gebunden bist. Ein Kostenvoranschlag ist eine Schätzung. Zeichnet sich bei einem Werkvertrag eine wesentliche Überschreitung ab, musst du das dem Kunden unverzüglich anzeigen; kündigt er deshalb, steht dir nur die Vergütung für die bereits geleistete Arbeit samt Auslagen zu (§ 649 BGB). Bezahlt wird ein Kostenvoranschlag im Zweifel nicht (§ 632 Abs. 3 BGB)."),
+    ("Ist ein Angebot eine Rechnung?", "Nein. Das Angebot kommt vor dem Auftrag, die Rechnung danach. Wenn der Kunde zusagt, übernimm die Positionen in die Rechnungsvorlage."),
+    ("Gibt es eine App für Angebote auf dem iPhone?", DE_APP),
+  ],
+  "more": [
+    ("Angebotsvorlage für Dienstleistung oder Handwerk?", "Die Vorlage passt für beides: Jede Position hat eine Menge, du kannst Stunden, Quadratmeter oder Pauschalen eintragen. Mit „+ Position hinzufügen“ kommen weitere Zeilen dazu."),
+    ("Angebot als Kleinunternehmer ohne Umsatzsteuer?", "Setze den Steuersatz in der Vorlage auf 0 und schreib den Hinweis „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ in die Notiz. Die passende Rechnung danach gibt es als <a href=\"/tools/de/rechnungsvorlage-kleinunternehmer/\">Rechnungsvorlage für Kleinunternehmer</a>."),
+  ],
+  "body": f"""<h1>Angebotsvorlage kostenlos</h1>
+<p class="lede">Füll das Angebot direkt hier aus: Klicke in ein gestricheltes Feld, um es zu ändern. Beträge, 19 % Umsatzsteuer und Gesamtbetrag rechnen sich selbst, und als Gültigkeit sind schon 30 Tage eingetragen. Danach druckst du es oder speicherst es als PDF. Es wird nichts hochgeladen.</p>
+<div class="inv-wrap">
+{DE_TOOLS}
+<div class="inv" id="inv" data-newitem="Position" data-days="30">
+<div class="inv-head"><div><div class="inv-title">ANGEBOT</div><p style="margin:6px 0 0"><span contenteditable="true">Dein Firmenname</span><br><span contenteditable="true">Musterstraße 1, 12345 Musterstadt</span><br><span contenteditable="true">info@beispiel.de · 0170 0000000</span></p></div>
+<div class="inv-meta"><div class="k">Angebotsnummer</div><p style="margin:0 0 10px"><span contenteditable="true">AN-2026-001</span></p><div class="k">Datum</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">Gültig bis</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
+<div class="inv-parties"><div><div class="k">Angebot für</div><p style="margin:0"><span contenteditable="true">Name des Kunden</span><br><span contenteditable="true">Straße und Hausnummer</span><br><span contenteditable="true">PLZ Ort</span></p></div>
+<div><div class="k">Ausführung</div><p style="margin:0"><span contenteditable="true">Beginn nach Auftragserteilung</span><br><span contenteditable="true">Dauer etwa 3 Arbeitstage</span></p></div></div>
+<table><thead><tr><th>Position</th><th>Menge</th><th>Einzelpreis</th><th>Betrag</th></tr></thead>
+<tbody><tr><td contenteditable="true">Malerarbeiten Wohnzimmer (m²)</td><td contenteditable="true">42</td><td contenteditable="true">12,50</td><td>525,00</td></tr>
+<tr><td contenteditable="true">Material: Farbe und Abdeckung</td><td contenteditable="true">1</td><td contenteditable="true">140,00</td><td>140,00</td></tr></tbody></table>
+<div class="totals"><div><span>Nettobetrag</span><span><span id="sub">665,00</span> €</span></div><div><span>Umsatzsteuer <span contenteditable="true" id="taxrate">19</span> %</span><span><span id="tax">126,35</span> €</span></div><div class="grand"><span>Gesamtbetrag</span><span><span id="total">791,35</span> €</span></div></div>
+<p class="notes" contenteditable="true">Dieses Angebot ist bis zum oben genannten Datum gültig. Wir freuen uns auf Ihren Auftrag.</p>
+</div></div>
+<h2>Was gehört in ein Angebot?</h2>
+<ul><li><strong>Das Wort „Angebot“</strong> und eine Angebotsnummer, damit du es später wiederfindest.</li><li><strong>Datum</strong> und <strong>Gültigkeit</strong>: bis wann der Kunde annehmen kann.</li><li><strong>Deine Daten</strong> und die Daten des Kunden.</li><li><strong>Positionen</strong> mit Beschreibung, Menge, Einzelpreis und Betrag.</li><li><strong>Nettobetrag, Umsatzsteuer</strong> mit Steuersatz und <strong>Gesamtbetrag</strong>.</li><li><strong>Bedingungen</strong>: Ausführungszeitraum, Zahlungsziel und eine Anzahlung, wenn du eine willst.</li></ul>
+<h2>Angebot, Kostenvoranschlag oder Rechnung</h2>
+<table><thead><tr><th>Dokument</th><th>Wann</th><th>Was es bedeutet</th></tr></thead><tbody>
+<tr><td>Angebot</td><td>Vor dem Auftrag</td><td>Fester Preis. Du bist daran gebunden, bis die Frist abläuft (§§ 145, 148 BGB).</td></tr>
+<tr><td>Kostenvoranschlag</td><td>Vor dem Auftrag</td><td>Schätzung. Eine wesentliche Überschreitung musst du unverzüglich anzeigen; kündigt der Kunde deshalb, bekommst du nur die geleistete Arbeit bezahlt (§ 649 BGB).</td></tr>
+<tr><td>Rechnung</td><td>Nach der Leistung</td><td>Rechnet ab, mit allen Pflichtangaben nach § 14 UStG.</td></tr>
+</tbody></table>
+<p>Der Kunde hat zugesagt? Übertrag die Positionen in die <a href="/tools/de/rechnungsvorlage/">Rechnungsvorlage</a>. Wenn du öfter Angebote schreibst: In <a href="/invoiceqr/de/">Smart Rechnung &amp; Angebot</a> auf dem iPhone wird aus dem Angebot nach der Zusage mit einem Tipp eine Rechnung. <a href="/tools/de/rechnung-schreiben-app-iphone/">So funktioniert es</a>.</p>
+{DE_NOTE}"""})
+
+PAGES.append({"path": "/tools/de/rechnung-schreiben-app-iphone/", "lang": "de", "kind": "Article", "app": "invoiceqr", "published": "2026-10-17",
+  "title": "Rechnung schreiben mit der iPhone-App: Schritt für Schritt erklärt", "crumb": "Rechnung mit dem iPhone",
+  "description": "So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.",
+  "hub_title": "Rechnung schreiben mit dem iPhone", "hub_desc": "Schritt für Schritt: vom Angebot zur Rechnung als PDF, mit 19 % USt. oder als Kleinunternehmer.",
+  "faq": [
+    ("Was kostet die App?", "Dein erstes Dokument ist kostenlos, ohne Konto und ohne Anmeldung: eines insgesamt, nicht eines pro Monat, egal ob Rechnung, Kostenvoranschlag oder Angebot. Gezählt wird einmal beim Erstellen; späteres Bearbeiten oder erneutes Senden kostet nichts. Mit Pro sind Rechnungen unbegrenzt; den Preis siehst du im App Store vor dem Kauf."),
+    ("Kann ich als Kleinunternehmer Rechnungen ohne Umsatzsteuer schreiben?", "Ja. Wähle beim Steuersatz „Keine Steuer“ und trag den Hinweis nach § 19 UStG unter „Bedingungen & Notizen“ ein. Er wird unten auf die Rechnung gedruckt und lässt sich für die nächste Rechnung wiederverwenden."),
+    ("Kann die App E-Rechnungen im Format XRechnung oder ZUGFeRD erstellen?", "Nein. Die App erstellt PDF-Rechnungen. Das reicht für Rechnungen an Privatkunden, für Kleinunternehmer, für Rechnungen bis 250 € und für Rechnungen an Unternehmen während der Übergangszeit: bis Ende 2026, bei höchstens 800.000 € Vorjahresumsatz bis Ende 2027. Ein PDF braucht jeweils die Zustimmung des Empfängers."),
+    ("Brauche ich Internet oder ein Konto?", "Nein. Die App funktioniert offline und ohne Konto. Rechnungen und Kunden synchronisieren privat über deine eigene iCloud."),
+    ("Gibt es die App für Android?", "Nein, sie ist für iPhone und iPad. Auf einem Android-Handy kannst du die Rechnungsvorlage im Browser ausfüllen und als PDF speichern."),
+  ],
+  "more": [
+    ("Gibt es eine kostenlose App zum Rechnungen schreiben?", "Smart Rechnung & Angebot lässt dich dein erstes Dokument kostenlos schreiben, ohne Konto. Für einzelne Rechnungen zwischendurch ist die <a href=\"/tools/de/rechnungsvorlage/\">Rechnungsvorlage im Browser</a> kostenlos und ohne Anmeldung."),
+    ("Rechnung schreiben als Kleingewerbe per App?", "Kleingewerbe heißt nicht automatisch Kleinunternehmer. Ob du Umsatzsteuer ausweist, hängt von § 19 UStG ab: höchstens 25.000 € Umsatz im Vorjahr und nicht mehr als 100.000 € im laufenden Jahr. Ist das so, wählst du in der App „Keine Steuer“; sonst den Steuersatz."),
+  ],
+  "body": f"""<h1>Rechnung schreiben mit dem iPhone</h1>
+<p class="lede">Wenn du beim Kunden bist oder unterwegs abrechnest, schreib die Rechnung gleich auf dem iPhone: Vorlage wählen, Kunde und Positionen eintragen, als PDF per E-Mail oder WhatsApp schicken. Ein Angebot wird nach der Zusage mit einem Tipp zur Rechnung.</p>
+{top_cta("invoiceqr", "de", "Im App Store laden – erstes Dokument gratis")}
+<h2>Schritt für Schritt</h2>
+<p>Mit <a href="/invoiceqr/de/">Smart Rechnung &amp; Angebot</a>, unserer App:</p>
+<ol><li>Tippe auf <strong>„Neue Rechnung“</strong> und wähle eine Vorlage (mit Pro über 100). Logo, Markenfarbe und Schrift legst du einmal fest.</li><li>Trag im <strong>„Firmenprofil“</strong> einmalig Name und Adresse ein, und im Feld „Steuer-ID“ deine Steuernummer vom Finanzamt oder deine USt-IdNr. (nicht die persönliche Steuer-Identifikationsnummer). Sie steht danach auf jeder Rechnung.</li><li><strong>„Kunde hinzufügen“</strong>: Der Kunde bleibt gespeichert, genauso wie deine Artikel und Steuersätze.</li><li><strong>„Artikel hinzufügen“</strong> mit Menge und Preis. Rabatt und Versand gehen auch. Als Steuersatz trägst du 19 % ein, bei ermäßigten Leistungen 7 %; als Kleinunternehmer wählst du <strong>„Keine Steuer“</strong>.</li><li>Unter <strong>„Bedingungen &amp; Notizen“</strong> steht, was unten auf die Rechnung gedruckt wird: zum Beispiel „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ oder „Leistungsdatum entspricht Rechnungsdatum“. Als eigene Klausel gespeichert, ist der Satz beim nächsten Mal mit einem Tipp drin.</li><li>Wähle die Zahlungsart: <strong>„Banküberweisung“</strong> mit deiner Bankverbindung oder einen Zahlungslink, aus dem ein Bezahl-QR-Code auf der Rechnung wird.</li><li><strong>„Teilen“</strong>: als PDF per E-Mail, WhatsApp oder ausgedruckt.</li></ol>
+<p>Die Rechnungsnummern zählt die App selbst hoch. Trägst du einmal eine eigene Nummer wie 2026-001 ein, geht es mit 2026-002 weiter.</p>
+<h2>Vom Angebot zur Rechnung</h2>
+<p>Mit <strong>„Neues Angebot“</strong> oder <strong>„Neuer Kostenvoranschlag“</strong> schreibst du zuerst das Angebot. Sagt der Kunde zu, tippst du auf <strong>„In Rechnung umwandeln“</strong>; Kunde und Positionen sind schon drin.</p>
+<h2>Nach dem Versand</h2>
+<ul><li>Du siehst auf einen Blick, was bezahlt, offen, teilweise bezahlt oder überfällig ist.</li><li>Mit „Zahlung erfassen“ trägst du Zahlungseingänge ein; der offene Betrag stimmt immer.</li><li>Ist alles bezahlt, teilst du dieselbe Rechnung als Beleg, als bezahlt markiert und mit dem Datum des Zahlungseingangs.</li><li>Ein Widget auf dem Home-Bildschirm zeigt dir offene Beträge.</li></ul>
+<h2>Was kostenlos ist und was Pro</h2>
+<table><thead><tr><th>Kostenlos</th><th>Pro</th></tr></thead><tbody>
+<tr><td>Dein erstes Dokument, ohne Konto (eines insgesamt, nicht pro Monat)</td><td>Unbegrenzte Rechnungen und QR-Exporte</td></tr>
+<tr><td>4 der 16 fertigen QR-Designs</td><td>100+ Rechnungsvorlagen, alle QR-Stile und Designs</td></tr>
+<tr><td>Exporte tragen unten eine kleine Zeile mit dem App-Namen</td><td>Komplettes Marken-Kit, ohne die Zeile mit dem App-Namen</td></tr>
+</tbody></table>
+<h2>Was die App nicht macht</h2>
+<p>Sie erstellt PDF-Rechnungen, keine E-Rechnungen im Format XRechnung oder ZUGFeRD. Ab 2028 müssen Rechnungen an andere Unternehmen in Deutschland E-Rechnungen sein; Rechnungen an Privatkunden, Kleinbetragsrechnungen bis 250 € und Rechnungen von Kleinunternehmern sind davon ausgenommen. Die Fristen stehen bei der <a href="/tools/de/rechnungsvorlage/">Rechnungsvorlage</a>.</p>
+<h2>Kein iPhone zur Hand?</h2>
+<p>Füll die <a href="/tools/de/rechnungsvorlage/">Rechnungsvorlage</a> oder die <a href="/tools/de/rechnungsvorlage-kleinunternehmer/">Vorlage für Kleinunternehmer</a> im Browser aus und speichere sie als PDF. Vor dem Auftrag gibt es die <a href="/tools/de/angebot-vorlage/">Angebotsvorlage</a>.</p>
+{DE_NOTE.replace("Die Vorlage erzeugt ein PDF, keine E-Rechnung", "Die App und die Vorlagen erzeugen PDFs, keine E-Rechnungen")}"""})
+
+
 # ------------------------------------------------------------------ 目录页
+HUB_EN_EXTRA = {"de": ("Weitere kostenlose Tools (auf Englisch)", [
+    ("/tools/days-until/", "Datum eingeben, verbleibende Tage und Wochen sehen."),
+    ("/tools/packing-list/", "Eine Checkliste passend zu Reiseart und ‑dauer.")])}
 def hub_page(lang):
     hub_path = HUBS[lang]
     items = sorted([p for p in PAGES if p["lang"] == lang], key=lambda p: "/ferias-escolares-" in p["path"])   # 分州校历页排在其它工具后面（稳定排序）
@@ -2474,6 +2685,10 @@ def hub_page(lang):
 <div class="hub">
 {cards}
 </div>"""
+    if lang in HUB_EN_EXTRA:   # 10-17 评审：Countdown / BeforeGo 的德语页「Tools」也指到这里，不能只剩发票模板——补上英文的倒数和打包工具
+        h2, extra = HUB_EN_EXTRA[lang]; by = {p["path"]: p for p in PAGES}
+        body += f'\n<h2>{esc(h2)}</h2>\n<div class="hub">\n' + "\n".join(
+            f'  <a href="{u}" hreflang="en"><b lang="en">{esc(by[u]["hub_title"])}</b><span>{esc(d)}</span><small>{esc(BY_KEY[by[u]["app"]]["home"]["label"])}</small></a>' for u, d in extra) + "\n</div>"
     title, desc = {
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
@@ -2481,6 +2696,7 @@ def hub_page(lang):
         "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교."),
         "th": ("เครื่องมือและคู่มือฟรี — go ka", "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF"),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
+        "de": ("Kostenlose Vorlagen und Anleitungen — go ka", "Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern."),
         "zh-Hant": ("免費工具與指南 — go ka", "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。"),
     }[lang]
     return {"path": hub_path, "lang": lang, "kind": "CollectionPage", "title": title,

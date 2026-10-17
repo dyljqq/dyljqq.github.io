@@ -90,8 +90,9 @@ for path in pages:
         d = json.loads(raw)
         if d.get("@type") == "FAQPage":
             for q in d["mainEntity"]:
-                if q["name"] not in text: bad(f"FAQ 问题不可见：{q['name'][:40]}")
-                if q["acceptedAnswer"]["text"] not in text: bad(f"FAQ 答案不可见：{q['name'][:40]}")
+                ws = lambda x: re.sub(r"\s+", " ", x)   # 10-17：德语页 § / % / € 前是不换行空格，正文按 \s 归一，这里也要
+                if ws(q["name"]) not in text: bad(f"FAQ 问题不可见：{q['name'][:40]}")
+                if ws(q["acceptedAnswer"]["text"]) not in text: bad(f"FAQ 答案不可见：{q['name'][:40]}")
         if d.get("@type") == "CollectionPage" and "mainEntity" in d:
             for it in d["mainEntity"]["itemListElement"]:
                 if it["item"]["name"] not in text: bad(f"ItemList 名称不可见：{it['item']['name']}")
