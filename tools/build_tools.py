@@ -87,6 +87,14 @@ def en_weeks(n):   # 节日页 FAQ 的周数：13 → "1 week and 6 days"，不�
     if n < 7: return "less than a week"
     w, r = divmod(n, 7)
     return f"{w} week{'' if w == 1 else 's'}" + (f" and {en_days(r)}" if r else "")
+def pt_days(n): return f"{n} dia{'' if n == 1 else 's'}"
+def pt_weeks(n):   # 葡语 FAQ 周数：13 → "1 semana e 6 dias"，不满一周 → "menos de uma semana"（原来 n//7 + 固定 semanas）
+    if n < 7: return "menos de uma semana"
+    w, r = divmod(n, 7)
+    return f"{w} semana{'' if w == 1 else 's'}" + (f" e {pt_days(r)}" if r else "")
+def pt_left(n, alvo, nome, com_artigo):   # 葡语 FAQ「Em <日期>, …」后半句；前 1 天 / 当天 / 过后不能写 "faltavam 1 dias" / 负数
+    if n >= 2: return f"faltavam {n} dias para {alvo}"
+    return f"faltava 1 dia para {alvo}" if n == 1 else f"já era {nome}" if n == 0 else f"{com_artigo} já tinha passado"
 def en_weeks_left(n, name, sep):   # FAQ「On <日期> …」后半句；前 1 天 / 当天 / 过后不能写 "there were 1 day, or less than a week"
     if n >= 2: return f"there were {en_days(n)}{sep}{en_weeks(n)}"
     return f"{name} was the next day" if n == 1 else f"it was {name} itself" if n == 0 else f"{name} had already passed"
@@ -437,7 +445,7 @@ PAGES.append(holiday_page("days-until-new-year", "New Year 2027", NYE, "en",
   [("New Year's Eve", "Thursday, December 31, 2026"), ("New Year's Day", "Friday, January 1, 2027"), ("Lunar New Year 2027", "Saturday, February 6, 2027 (Year of the Goat)"), ("Days left in 2026", f"{days_to(REV) + 1} (as of {TODAY.isoformat()})")],
   ["A countdown to midnight with the party address in the notes on the back of the event.", "A count-up from January 1 for a new habit — the widget shows the streak in days.", "One countdown for the first working day, so the holiday has a shape."],
   [("What day of the week is New Year's Day 2027?", "Friday. New Year's Eve 2026 is a Thursday and January 1, 2027 is a Friday, which makes a three-day weekend for many people."),
-   ("How many days are left in 2026?", f"As of {TODAY.strftime('%-d %B %Y')} there were {days_to(REV) + 1} days left in 2026, counting today. The counter on this page recalculates when you open it."),
+   ("How many days are left in 2026?", (f"As of {TODAY.strftime('%B %-d, %Y')}, there were {days_to(REV) + 1} days left in 2026, counting today." if days_to(REV) >= 1 else f"On {TODAY.strftime('%B %-d, %Y')}, there was 1 day left in 2026: today, New Year's Eve." if days_to(REV) == 0 else f"As of {TODAY.strftime('%B %-d, %Y')}, the year 2026 had already ended.") + " The counter on this page recalculates when you open it."),
    ("When is Lunar New Year 2027?", "Saturday, February 6, 2027. It begins the Year of the Goat."),
    ("How do I keep a New Year countdown on my Lock Screen?", "Add January 1, 2027 in Countdown Widget: Any Event, then on the Lock Screen long-press → Customize → add the Countdown widget. Lock Screen widgets are free, like every other size.")],
   [(2027, NYE), (2028, dt.date(2028, 1, 1)), (2029, dt.date(2029, 1, 1)), (2030, dt.date(2030, 1, 1))], us=True,
@@ -566,7 +574,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-reveillon-2027/", "lang"
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Réveillon 2026/2027?", "A virada é na quinta-feira, 31 de dezembro de 2026, e o Ano-Novo, 1º de janeiro de 2027, cai numa sexta-feira — emenda com o fim de semana."),
     ("Quando é o Carnaval 2027?", "A terça-feira de Carnaval é 9 de fevereiro de 2027; os desfiles e blocos vão do sábado 6 à terça 9, e a Quarta-feira de Cinzas é 10 de fevereiro. A data vem da Páscoa (28 de março de 2027): o Carnaval é sempre 47 dias antes."),
-    ("Quantos dias faltam para o Ano-Novo?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(NYE)} dias para 1º de janeiro de 2027. O contador desta página recalcula no dia em que você abre."),
+    ("Quantos dias faltam para o Ano-Novo?", (f"Em {TODAY.strftime('%d/%m/%Y')}, faltavam {days_to(NYE)} dias para 1º de janeiro de 2027." if days_to(NYE) >= 2 else f"Em {TODAY.strftime('%d/%m/%Y')}, véspera de Ano-Novo, faltava 1 dia para 1º de janeiro de 2027." if days_to(NYE) == 1 else f"Em {TODAY.strftime('%d/%m/%Y')}, já era Ano-Novo de 2027." if days_to(NYE) == 0 else f"Em {TODAY.strftime('%d/%m/%Y')}, o Ano-Novo de 2027 já tinha passado.") + " O contador desta página recalcula no dia em que você abre."),
     ("Como coloco a contagem do Réveillon na Tela Bloqueada?", "Crie o evento 31 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano, e na Tela Bloqueada toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."),
   ],
   "body": f"""<h1>Quantos dias faltam para o Réveillon 2027?</h1>
@@ -610,7 +618,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/", 
   "hub_title": "Quantos dias faltam para o Carnaval 2027?", "hub_desc": "De sábado, 6, a terça-feira, 9 de fevereiro de 2027, com contagem ao vivo e as datas dos próximos anos.",
   "js": [COUNT_JS], "faq": [
     ("Quando é o Carnaval 2027?", "De sábado, 6 de fevereiro, a terça-feira, 9 de fevereiro de 2027. A Quarta-feira de Cinzas é 10 de fevereiro."),
-    ("Quantos dias faltam para o Carnaval 2027?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(CARN_SAT)} dias para o sábado de Carnaval, 6 de fevereiro de 2027. O contador desta página recalcula no dia em que você abre."),
+    ("Quantos dias faltam para o Carnaval 2027?", f"Em {TODAY.strftime('%d/%m/%Y')}, {pt_left(days_to(CARN_SAT), 'o sábado de Carnaval, 6 de fevereiro de 2027', 'sábado de Carnaval', 'o sábado de Carnaval de 2027')}. O contador desta página recalcula no dia em que você abre."),
     ("O Carnaval é feriado nacional?", "Não. O Carnaval não está entre os feriados nacionais: nos órgãos federais, a segunda e a terça-feira costumam ser ponto facultativo, e o dia só é feriado onde uma lei estadual ou municipal determina. Vale conferir com a empresa ou a prefeitura."),
     ("Quando é o Carnaval 2028?", f"A terça-feira de Carnaval de 2028 é {PT_DM(CARN_NEXT[1][1])}, e o sábado de Carnaval é {PT_DM(CARN_NEXT[1][1] - dt.timedelta(days=3))}."),
     ("Como coloco a contagem do Carnaval na tela de bloqueio do iPhone?", "Crie o evento 6 de fevereiro de 2027 no Countdown: Contagem regressiva e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. A data do Carnaval muda todo ano, então para 2028 crie um evento novo em vez de repetir. Os widgets são grátis em todos os tamanhos."),
@@ -656,7 +664,7 @@ PAGES.append({"path": "/tools/pt-br/contagem-regressiva-black-friday-2026/", "la
   "js": [COUNT_JS], "faq": [
     ("Quando é a Black Friday 2026?", "Na sexta-feira, 27 de novembro de 2026. A Black Friday é sempre a sexta-feira depois do Dia de Ação de Graças dos Estados Unidos, que em 2026 cai na quinta-feira, 26 de novembro."),
     ("Quando é a Cyber Monday 2026?", "Na segunda-feira, 30 de novembro de 2026 — a segunda-feira logo depois da Black Friday."),
-    ("Quantos dias faltam para a Black Friday?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(BF26)} dias para 27 de novembro de 2026. O contador desta página recalcula no dia em que você abre."),
+    ("Quantos dias faltam para a Black Friday?", f"Em {TODAY.strftime('%d/%m/%Y')}, {pt_left(days_to(BF26), '27 de novembro de 2026', 'Black Friday', 'a Black Friday de 2026')}. O contador desta página recalcula no dia em que você abre."),
     ("Até quando sai a 1ª parcela do 13º salário?", "Pela Lei 4.749/1965, a primeira parcela do 13º deve ser paga até 30 de novembro — em 2026, uma segunda-feira, três dias depois da Black Friday. A segunda parcela tem prazo legal em 20 de dezembro; como em 2026 esse dia é um domingo, o pagamento vai para o dia útil anterior, sexta-feira, 18 de dezembro."),
     ("Como coloco a contagem da Black Friday na tela de bloqueio do iPhone?", "Com o widget do Countdown: Contagem regressiva — o passo a passo está na seção sobre a tela de bloqueio, logo acima. Os widgets são grátis em todos os tamanhos."),
   ],
@@ -699,7 +707,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "la
   ],
   "js": [COUNT_JS], "faq": [
     ("Em que dia da semana cai o Natal 2026?", "Numa sexta-feira: 25 de dezembro de 2026. A véspera, 24 de dezembro, é uma quinta-feira, e o Natal emenda com o fim de semana."),
-    ("Quantas semanas faltam para o Natal?", f"Em {TODAY.strftime('%d/%m/%Y')} faltavam {days_to(XMAS)} dias, cerca de {days_to(XMAS) // 7} semanas. O contador desta página recalcula no dia em que você abre."),
+    ("Quantas semanas faltam para o Natal?", f"Em {TODAY.strftime('%d/%m/%Y')}, " + (f"faltavam {days_to(XMAS)} dias, ou {pt_weeks(days_to(XMAS))}." if days_to(XMAS) >= 2 else f"{pt_left(days_to(XMAS), 'o Natal', 'Natal', 'o Natal de 2026')}.") + f" O contador desta página recalcula no dia em que você abre."),
     ("Até quando sai a 2ª parcela do 13º salário?", "Pela Lei 4.749/1965, o prazo legal da segunda parcela do 13º é 20 de dezembro. Em 2026 esse dia cai num domingo, então o pagamento vai para o dia útil anterior: sexta-feira, 18 de dezembro, uma semana antes do Natal. A primeira parcela vai até 30 de novembro."),
     ("Quando é o Natal 2027?", "Num sábado, 25 de dezembro de 2027. Em 2028, o Natal cai numa segunda-feira."),
     ("Como coloco a contagem do Natal na Tela Bloqueada?", "Crie o evento 25 de dezembro de 2026 no Countdown: Contagem regressiva, marque repetir todo ano e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. Os widgets são grátis em todos os tamanhos."),
