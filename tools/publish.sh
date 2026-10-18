@@ -29,11 +29,13 @@ if [ -n "$(git status --porcelain -- . ':!tools/gsc-indexing-log.json' ':!tools/
   echo "✗ 有未提交的改动，先提交再发布（发布的内容必须能在 git 里找到）。"; git status --short | head; exit 1
 fi
 DEPLOY_LOG=$(mktemp)
+# 成功判定：整词 ready（JSON 的 "… ready." 或文本的「✓ Ready in 7s」），排除 already / not ready / error 这类失败输出
+deploy_ok() { grep -Eqi '(^|[^a-z])ready([^a-z]|$)' "$1" && ! grep -Eqi 'not ready|error' "$1"; }
 $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true
 # Vercel 偶发失败（09-26 遇到过一次，输出里只有 "retry deploy"）：自动再试一次
-if ! grep -q 'ready\|READY' "$DEPLOY_LOG"; then echo "Vercel 首次部署未就绪，重试一次…"; $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true; fi
+if ! deploy_ok "$DEPLOY_LOG"; then echo "Vercel 首次部署未就绪，重试一次…"; $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true; fi
 # 新版 CLI 输出 JSON（"message": "Deployment … ready."）；没有 ready 就是没部署上，停下别推 git、别报 IndexNow
-if ! grep -q 'ready\|READY' "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
+if ! deploy_ok "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
 grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1
 
 # IndexNow 只推和上次推送时比内容变了的页（新增 / 修改 / 删除，见 tools/indexnow.py）。
