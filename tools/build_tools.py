@@ -95,6 +95,14 @@ def pt_weeks(n):   # 葡语 FAQ 周数：13 → "1 semana e 6 dias"，不满一�
 def pt_left(n, alvo, nome, com_artigo):   # 葡语 FAQ「Em <日期>, …」后半句；前 1 天 / 当天 / 过后不能写 "faltavam 1 dias" / 负数
     if n >= 2: return f"faltavam {n} dias para {alvo}"
     return f"faltava 1 dia para {alvo}" if n == 1 else f"já era {nome}" if n == 0 else f"{com_artigo} já tinha passado"
+def zh_left(n, target):   # 繁中 FAQ「在<日期>，…」：原来「約 n//7 週」，前一週內會寫成「約 0 週」
+    if n >= 7: return f"離{target}還有 {n} 天，也就是 {n // 7} 週" + (f"又 {n % 7} 天" if n % 7 else "")
+    if n >= 2: return f"離{target}還有 {n} 天"
+    return f"離{target}只剩 1 天，就是隔天" if n == 1 else f"這天就是{target}" if n == 0 else f"{target}已經過了"
+def ja_left(n, target, past=None):   # 日文 FAQ「<日期>の時点で…」：同上，原来「約 n//7 週間」；past＝多日程考试过了第一天的说法
+    if n >= 7: return f"{target}まで{n}日、" + (f"{n // 7}週と{n % 7}日です" if n % 7 else f"ちょうど{n // 7}週間です")
+    if n >= 2: return f"{target}まで{n}日です"
+    return f"{target}は翌日です" if n == 1 else f"{target}当日を迎えています" if n == 0 else past or f"{target}はすでに終わっています"
 def en_weeks_left(n, name, sep):   # FAQ「On <日期> …」后半句；前 1 天 / 当天 / 过后不能写 "there were 1 day, or less than a week"
     if n >= 2: return f"there were {en_days(n)}{sep}{en_weeks(n)}"
     return f"{name} was the next day" if n == 1 else f"it was {name} itself" if n == 0 else f"{name} had already passed"
@@ -1638,7 +1646,7 @@ PAGES.append({"path": "/tools/zh-hant/nong-li-xin-nian-2027/", "lang": "zh-Hant"
     ("2027 年台灣過年放幾天？", f"依行政院人事行政總處公布的 116 年辦公日曆表，春節假期共 7 天，從{fmt(dt.date(2027, 2, 4), 'zh-Hant')}放到{fmt(dt.date(2027, 2, 10), 'zh-Hant')}；初一、初二逢週末，於2月9日、10日補假。"),
     ("2027 年香港農曆新年有哪幾天公眾假期？", f"年初一是{CNY_MD(CNY)}、年初三是{CNY_MD(dt.date(2027, 2, 8))}、年初四是{CNY_MD(dt.date(2027, 2, 9))}。年初二是星期日，所以年初四定為補假。"),
     ("2027 年是什麼生肖？", "羊年，天干地支是丁未。"),
-    ("過年還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離大年初一還有 {days_to(CNY)} 天，約 {days_to(CNY) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("過年還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，{zh_left(days_to(CNY), '大年初一')}。本頁的倒數會在你打開當天重新計算。"),
     ("怎麼把過年倒數放在 iPhone 鎖定畫面？", "在倒數計時 Widget：紀念日提醒 建立2027年2月6日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
   ],
   "body": f"""<h1>2027 農曆新年倒數</h1>
@@ -1771,7 +1779,7 @@ PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "
     ("116 學測什麼時候報名？", f"{fmt(XC_REG1, 'zh-Hant')}到{fmt(XC_REG2, 'zh-Hant')}。"),
     ("學測成績什麼時候公布？", f"{fmt(XC_SCORE, 'zh-Hant')}公布成績並開放查詢，隔天寄發成績通知單。"),
     ("116 分科測驗是哪一天？", f"{fmt(FK1, 'zh-Hant')}和{fmt(FK2, 'zh-Hant')}，成績在{fmt(FK_SCORE, 'zh-Hant')}公布。"),
-    ("學測還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離學測第一天還有 {days_to(XC1)} 天，約 {days_to(XC1) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("學測還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，{zh_left(days_to(XC1), '學測第一天')}。本頁的倒數會在你打開當天重新計算。"),
     ("怎麼把學測倒數放在 iPhone 鎖定畫面？", "在「倒數計時 Widget：紀念日提醒」建立 2027 年 1 月 22 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
   ],
   "body": f"""<h1>116 學測倒數</h1>
@@ -1810,7 +1818,7 @@ PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", 
     ("116 會考什麼時候報名？", f"{fmt(HK_REG1, 'zh-Hant')}到{fmt(HK_REG2, 'zh-Hant')}。"),
     ("會考准考證什麼時候寄？", f"{fmt(HK_TICKET, 'zh-Hant')}寄發准考證。"),
     ("會考成績什麼時候公布？", f"{fmt(HK_SCORE, 'zh-Hant')}寄發成績通知單，並開放網路查詢。"),
-    ("會考還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，離會考第一天還有 {days_to(HK1)} 天，約 {days_to(HK1) // 7} 週。本頁的倒數會在你打開當天重新計算。"),
+    ("會考還有幾天？", f"在{TODAY.year}年{TODAY.month}月{TODAY.day}日，{zh_left(days_to(HK1), '會考第一天')}。本頁的倒數會在你打開當天重新計算。"),
     ("怎麼把會考倒數放在 iPhone 鎖定畫面？", "在「倒數計時 Widget：紀念日提醒」建立 2027 年 5 月 15 日的事件，然後長按鎖定畫面 →「自訂」→ 鎖定畫面 → 加入小工具 → 選 Countdown。小工具全部尺寸都免費。"),
   ],
   "body": f"""<h1>116 會考倒數</h1>
@@ -1912,7 +1920,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
   "hub_title": "共通テスト2027まであと何日？", "hub_desc": "本試験（1月16日・17日）までのカウントダウンと、100日前・30日前・1週間前の日付。",
   "js": [COUNT_JS], "faq": [
     ("共通テスト2027はいつですか？", f"本試験は{fmt(KT1, 'ja')}と{fmt(KT2, 'ja')}です。追・再試験は{fmt(KTM1, 'ja')}と{fmt(KTM2, 'ja')}です（大学入試センター「令和9年度試験」）。"),
-    ("共通テストまであと何週間ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で本試験まで{days_to(KT1)}日、約{days_to(KT1) // 7}週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
+    ("共通テストまであと何週間ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で{ja_left(days_to(KT1), '本試験', '本試験の初日はすでに過ぎています')}。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
     ("共通テストの100日前はいつですか？", f"{fmt(KT1 - dt.timedelta(days=100), 'ja')}です。50日前は{fmt(KT1 - dt.timedelta(days=50), 'ja')}、1週間前は{fmt(KT1 - dt.timedelta(days=7), 'ja')}です。"),
     ("2028年の共通テストはいつですか？", f"令和10年度の本試験は{fmt(KT28A, 'ja')}と{fmt(KT28B, 'ja')}です（大学入試センター「令和10年度試験」）。"),
     ("iPhone の待ち受け（ロック画面）にカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「共通テスト」を2027年1月16日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。ウィジェットはすべて無料です。"),
@@ -1961,7 +1969,7 @@ PAGES.append({"path": "/tools/ja/toritsu-nyushi-2027/", "lang": "ja", "kind": "A
   "js": [COUNT_JS], "faq": [
     ("都立入試2027の学力検査はいつですか？", f"学力検査に基づく選抜（第一次募集）の学力検査は{fmt(TR1, 'ja')}です。出願は{fmt(TR_APP1, 'ja')}から{md_ja(TR_APP2)}まで、合格発表は{fmt(TR_RES, 'ja')}です（東京都教育委員会「令和9年度東京都立高等学校入学者選抜実施要綱・同細目について」）。"),
     ("都立高校の推薦入試はいつですか？", f"推薦に基づく選抜の検査日は{fmt(TR_S1, 'ja')}・{md_ja(TR_S2)}、合格発表は{fmt(TR_S_RES, 'ja')}です。出願は{fmt(TR_S_APP1, 'ja')}から{md_ja(TR_S_APP2)}までです。"),
-    ("都立入試まであと何日ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で学力検査まで{days_to(TR1)}日、約{days_to(TR1) // 7}週間です。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
+    ("都立入試まであと何日ですか？", f"{TODAY.year}年{TODAY.month}月{TODAY.day}日の時点で{ja_left(days_to(TR1), '学力検査')}。このページのカウントダウンは、開いた日に合わせて再計算されます。"),
     ("都立入試の100日前はいつですか？", f"学力検査の100日前は{fmt(TR1 - dt.timedelta(days=100), 'ja')}です。50日前は{fmt(TR1 - dt.timedelta(days=50), 'ja')}、1週間前は{fmt(TR1 - dt.timedelta(days=7), 'ja')}です。"),
     ("インフルエンザなどで学力検査を受けられなかったときは？", f"インフルエンザ等追検査は第二次募集と同じ日程で、出願は{md_ja(TR2_APP)}、検査は{md_ja(TR2)}、合格発表は{md_ja(TR2_RES)}です。追検査の対象や手続きは、東京都教育委員会の実施要綱で確認してください。"),
     ("iPhone の待ち受け（ロック画面）に都立入試のカウントダウンを置くには？", "カウントダウン ウィジェット: 記念日で「都立入試」を2027年2月21日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。ウィジェットはすべて無料です。"),
