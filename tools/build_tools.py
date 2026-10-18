@@ -82,6 +82,11 @@ def fmt(d, lang):
         return f"{d.year}년 {d.month}월 {d.day}일({'월화수목금토일'[d.weekday()]})"
     return d.strftime("%A, %-d %B %Y")
 def days_to(d): return (d - TODAY).days
+def en_days(n): return f"{n} day{'' if n == 1 else 's'}"
+def en_weeks(n):   # 节日页 FAQ 的周数：13 → "1 week and 6 days"，不满一周 → "less than a week"（原来 n//7 + 固定 weeks，13 天写成 "about 1 weeks"）
+    if n < 7: return "less than a week"
+    w, r = divmod(n, 7)
+    return f"{w} week{'' if w == 1 else 's'}" + (f" and {en_days(r)}" if r else "")
 def fmt_us(d): return d.strftime("%A, %B %-d, %Y")   # 美区页用 November 26, 2026 写法
 
 # 共用 JS：data-date 的元素按访问当天重算天数；data-until 的把整句里的数字替换
@@ -385,7 +390,7 @@ PAGES.append(holiday_page("days-until-christmas", "Christmas 2026", XMAS, "en",
   [("Christmas Day", "Friday, December 25, 2026"), ("Christmas Eve", "Thursday, December 24, 2026"), ("Boxing Day / St Stephen's Day", "Saturday, December 26, 2026"), ("First Sunday of Advent", "Sunday, November 29, 2026"), ("Twelve days of Christmas end", "Wednesday, January 6, 2027 (Epiphany)")],
   ["A countdown to Christmas Eve for the kids, with a reminder the morning before.", "One countdown per December event: the school play, the last working day, the flight home.", "A count-up from last Christmas to see how fast the year went."],
   [("What day of the week is Christmas 2026?", "Christmas Day 2026 is a Friday. That gives most people a long weekend from Friday, December 25 to Sunday, December 27, and many workplaces add Christmas Eve, Thursday, December 24."),
-   ("How many weeks until Christmas 2026?", f"Divide the days by seven: on {TODAY.strftime('%B %-d, %Y')} there were {days_to(XMAS)} days, which is about {days_to(XMAS)//7} weeks. The counter at the top of this page recalculates it on the day you visit."),
+   ("How many weeks until Christmas 2026?", f"Divide the days by seven: on {TODAY.strftime('%B %-d, %Y')} there were {en_days(days_to(XMAS))}, which is {en_weeks(days_to(XMAS))}. The counter at the top of this page recalculates it on the day you visit."),
    ("How many days between Halloween and Christmas?", "55 days. Halloween is October 31 and Christmas Day is December 25, so there are 55 days from one to the other in any year."),
    ("When is Christmas 2027?", "Saturday, December 25, 2027. Christmas 2028 is on a Monday, and Christmas 2029 on a Tuesday."),
    ("How do I put a Christmas countdown on my iPhone Home Screen?", "Add the date in Countdown Widget: Any Event, then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap +), and choose Countdown. The widgets are free in every size, and the event can repeat every year.")],
@@ -400,7 +405,7 @@ PAGES.append(holiday_page("days-until-halloween", "Halloween 2026", HALLOWEEN, "
   [("Halloween", "Saturday, October 31, 2026"), ("All Saints' Day", "Sunday, November 1, 2026"), ("Día de los Muertos", "Monday, November 2, 2026"), ("Days from Halloween to Christmas", "55")],
   ["A countdown to the party with a reminder a week before, so the costume gets ordered in time.", "A trick-or-treat countdown on the kids' shared iPad.", "A Home Screen widget counting down the days to October 31."],
   [("What day of the week is Halloween 2026?", "Saturday. Halloween 2026 is on Saturday, October 31, 2026, so parties and trick-or-treating fall on a weekend."),
-   ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(HALLOWEEN)} days, about {days_to(HALLOWEEN)//7} weeks. The counter on this page recalculates when you open it."),
+   ("How many weeks until Halloween 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {en_days(days_to(HALLOWEEN))}, or {en_weeks(days_to(HALLOWEEN))}. The counter on this page recalculates when you open it."),
    ("When is Halloween 2027?", "Sunday, October 31, 2027. Halloween 2028 falls on a Tuesday."),
    ("How do I get a Halloween countdown widget on iPhone?", "Add October 31 as an event in Countdown Widget: Any Event and set it to repeat yearly, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Every widget size is free.")],
   [(2026, HALLOWEEN), (2027, dt.date(2027, 10, 31)), (2028, dt.date(2028, 10, 31)), (2029, dt.date(2029, 10, 31))], us=True,
@@ -417,7 +422,7 @@ PAGES.append(holiday_page("days-until-diwali", "Diwali 2026", DIWALI, "en",
   ["A countdown to Lakshmi Puja with a reminder a week before, for the shopping and the cleaning.", "A countdown to the trip home for the festival, with the train or flight details written on the back of the event.",
    "A second countdown for Dhanteras on 6 November, so the shopping day does not sneak up on you."],
   [("What date is Diwali in 2026?", "Sunday, 8 November 2026. That is the day of Lakshmi Puja, the main day of the festival. Dhanteras is on 6 November and Choti Diwali on 7 November; the dates given for Govardhan Puja and Bhai Dooj differ by a day between panchangs, somewhere from 9 to 11 November."),
-   ("How many weeks until Diwali 2026?", f"On {TODAY.strftime('%-d %B %Y')} there were {days_to(DIWALI)} days, about {days_to(DIWALI)//7} weeks. The counter on this page recalculates when you open it."),
+   ("How many weeks until Diwali 2026?", f"On {TODAY.strftime('%-d %B %Y')} there were {en_days(days_to(DIWALI))}, or {en_weeks(days_to(DIWALI))}. The counter on this page recalculates when you open it."),
    ("Why does the date of Diwali change every year?", "Diwali follows the Hindu lunisolar calendar: it falls on the new-moon night (Amavasya) of the month of Kartik, so its date in the Gregorian calendar moves between mid-October and mid-November."),
    ("How do I get a Diwali countdown widget on iPhone?", "Add 8 November 2026 as an event in Countdown Widget: Any Event, then add the widget from the Home Screen's Edit → Add Widget (on iOS 17, tap +) menu. Because the date moves, add next year's Diwali as a new event rather than repeating it yearly. Every widget size is free.")],
   [(2026, DIWALI), (2027, dt.date(2027, 10, 29)), (2028, dt.date(2028, 10, 17))], moving=True, published="2026-09-28"))
@@ -449,7 +454,7 @@ PAGES.append(holiday_page("days-until-thanksgiving", "Thanksgiving 2026", THANKS
   ["A countdown to the trip home, with the flight or the drive written on the back of the event.", "A countdown to Black Friday with a reminder the night before.",
    "A list widget with Thanksgiving, the first Sunday of Advent and Christmas Day, so the whole season sits on one screen."],
   [("What date is Thanksgiving 2026?", "Thursday, November 26, 2026. In the US, Thanksgiving is always the fourth Thursday of November, so the date moves between November 22 and 28."),
-   ("How many weeks until Thanksgiving 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {days_to(THANKS)} days: {days_to(THANKS)//7} weeks and {days_to(THANKS)%7} days. The counter on this page recalculates when you open it."),
+   ("How many weeks until Thanksgiving 2026?", f"On {TODAY.strftime('%B %-d, %Y')} there were {en_days(days_to(THANKS))}: {en_weeks(days_to(THANKS))}. The counter on this page recalculates when you open it."),
    ("When is Thanksgiving 2027?", "Thursday, November 25, 2027. Thanksgiving 2028 is on November 23 and Thanksgiving 2029 on November 22."),
    ("How many days are there between Thanksgiving and Christmas 2026?", "29 days, from Thursday, November 26 to Friday, December 25, 2026."),
    ("How do I get a Thanksgiving countdown widget on iPhone?", "In Countdown Widget: Any Event, tap Add Event (or the + button once you already have events) and pick Thanksgiving from the ready-made events: it lands on the fourth Thursday of November and comes back on the right Thursday every year. Then long-press the Home Screen, tap Edit → Add Widget (on iOS 17, tap the + in the top-left corner) and choose Countdown. Every widget size is free.")],
