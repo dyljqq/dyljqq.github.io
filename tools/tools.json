@@ -2069,6 +2069,90 @@
   "iphoneOnly": true
  },
  {
+  "path": "/tools/countdown-widget-with-your-own-photo-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Countdown Widget With Your Own Photo on iPhone: Home Screen Setup",
+  "description": "Put your own photo behind a countdown widget on your iPhone Home Screen, framed for each widget size. Lock Screen widgets can't show photos; use your wallpaper.",
+  "faq": [
+   {
+    "q": "Can I use my own photo as a countdown widget background on iPhone?",
+    "a": "Yes. In Countdown Widget: Any Event you can put your own photo behind any countdown, and it shows on its Home Screen widgets in every size when the Home Screen uses the Default or Dark look. Using your own photo is part of Countdown Pro."
+   },
+   {
+    "q": "Why doesn't my photo show in the Lock Screen widget?",
+    "a": "iOS draws Lock Screen widgets in a single tint over your wallpaper, so a photo can’t appear inside them. Set the photo as your Lock Screen wallpaper and put the countdown widget over it."
+   },
+   {
+    "q": "Is the countdown widget free?",
+    "a": "Yes. Every widget size on the Home Screen and the Lock Screen is free, with unlimited events and no ads. Of the 159 built-in backdrops, 52 are free; your own photo, the other 107 backdrops and the Pro typefaces are part of Countdown Pro."
+   },
+   {
+    "q": "Can each widget size show a different part of the photo?",
+    "a": "Yes. You frame the photo separately for the countdown's page and for the small, medium and large widgets, so a face isn't cut in half in the wide one."
+   },
+   {
+    "q": "What if the number is hard to read on my photo?",
+    "a": "Photo adjustments has three sliders: Opacity fades the photo, Blur softens the detail behind the digits, and Text Contrast adds a shade behind the number."
+   },
+   {
+    "q": "Does it work on Android?",
+    "a": "No. Countdown is an app for iPhone and iPad."
+   }
+  ],
+  "published": "2026-10-18",
+  "app": "countdown",
+  "hubTitle": "Countdown widget with your own photo",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools",
+  "iphoneOnly": true
+ },
+ {
+  "path": "/tools/vacation-countdown-widget-iphone/",
+  "lang": "en",
+  "kind": "Article",
+  "title": "Vacation Countdown Widget for iPhone: Free, on Your Lock Screen",
+  "description": "Put the days until your vacation on your iPhone Lock Screen or Home Screen with a free widget. The Vacation event reminds you 30 days, a week and a day before.",
+  "faq": [
+   {
+    "q": "Is there a free vacation countdown widget for iPhone?",
+    "a": "Yes. In Countdown Widget: Any Event the ready-made Vacation event is free, and so is every widget size on the Home Screen and the Lock Screen, with unlimited countdowns and no ads."
+   },
+   {
+    "q": "Can it count down to the hour for my flight?",
+    "a": "Yes. The Flight event is timed rather than all-day: set the departure time and it counts down to the hour, with a reminder the day before and on the day."
+   },
+   {
+    "q": "Will it remind me before the trip?",
+    "a": "The Vacation event reminds you 30 days out, a week out, the day before and on the morning itself. You can change those reminders or add your own."
+   },
+   {
+    "q": "Can I put a photo of the beach behind the countdown?",
+    "a": "The Vacation event starts on a free beach backdrop. Using your own photo, say from last year’s trip, is part of Countdown Pro."
+   },
+   {
+    "q": "Can my travel partner see the same countdown?",
+    "a": "Yes. With Pro you can invite them and the countdown shows up on their iPhone too; joining is free. When you change the date, it changes on both phones."
+   },
+   {
+    "q": "Does it work on Android?",
+    "a": "No. Countdown is an app for iPhone and iPad."
+   }
+  ],
+  "published": "2026-10-18",
+  "app": "countdown",
+  "hubTitle": "Vacation countdown widget for iPhone",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools",
+  "iphoneOnly": true
+ },
+ {
   "path": "/tools/disney-world-itinerary-template/",
   "lang": "en",
   "kind": "WebApplication",

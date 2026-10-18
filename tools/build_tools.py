@@ -2513,7 +2513,7 @@ PAGES.append(bg_list_page({
 DISNEY_NOTE = ('<p class="meta" style="margin-top:18px">go ka is not affiliated with, endorsed by or sponsored by Disney. Disney, Walt Disney World, Magic Kingdom, EPCOT, '
                'Disney’s Hollywood Studios, Disney’s Animal Kingdom, Disney Springs, Lightning Lane, Disneyland and related names are trademarks of Disney. The booking windows above were checked on disneyworld.disney.go.com on October 17, 2026; '
                'Disney can change them, so check there before you plan around them.</p>')
-EN_WIDGET_STEPS = ('<li>Lock Screen: touch and hold the Lock Screen, tap <strong>Customize</strong>, tap <strong>Add Widgets</strong> under the clock, choose Countdown and tap <strong>Done</strong>.</li>'
+EN_WIDGET_STEPS = ('<li>Lock Screen: touch and hold the Lock Screen, tap <strong>Customize</strong>, choose the Lock Screen, tap <strong>Add Widgets</strong> under the clock, choose Countdown and tap <strong>Done</strong>.</li>'
                    '<li>Home Screen: touch and hold an empty area, tap <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>), search for Countdown, pick a size and tap <strong>Add Widget</strong>.</li>')
 LL_URL = "https://disneyworld.disney.go.com/lightning-lane-passes/"
 DINE_URL = "https://disneyworld.disney.go.com/resorts/contemporary-resort/dining/"   # 10-17 评审读过原文：「Guests with a Valid Disney Resort Hotel Reservation … up to 60 days in advance of your arrival」「All Other Guests: Make reservations up to 60 days in advance.」
@@ -2549,7 +2549,7 @@ PAGES.append({"path": "/tools/shared-countdown-app-couples/", "iphone_only": Tru
 <ul><li><strong>The next visit.</strong> The one long-distance couples check most. Change it once when the flight moves, and the other phone follows.</li>
 <li><strong>Moving to the same city.</strong> The big one, on both Lock Screens.</li>
 <li><strong>Your anniversary.</strong> Set it to repeat yearly and it starts again the day after.</li>
-<li><strong>A trip together.</strong> The <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown</a> shows how to add the booking dates as countdowns too.</li></ul>
+<li><strong>A trip together.</strong> Start from the <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a>; the <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown</a> shows how to add the booking dates as countdowns too.</li></ul>
 <p>Counting up rather than down? Countdown also counts up from a date, like the day you met. For a birthday, see the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown widget</a>.</p>"""})
 
 PAGES.append({"path": "/tools/birthday-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
@@ -2598,7 +2598,7 @@ PAGES.append({"path": "/tools/disney-countdown-widget-iphone/", "iphone_only": T
 <h2>Step by step</h2>
 <ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a> and tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events).</li>
 <li>Pick <strong>Vacation</strong> from the ready-made events, name it “Disney World” and set the arrival date. It marks 30 days, a week, the day before and the morning itself.</li>
-<li>Choose a backdrop, or your own photo with Pro.</li>
+<li>Choose a backdrop, or <a href="/tools/countdown-widget-with-your-own-photo-iphone/">your own photo</a> with Pro.</li>
 <li>Put it on your screen:<ul>{EN_WIDGET_STEPS}</ul></li></ol>
 <h2>Dates worth their own countdown</h2>
 <table><thead><tr><th>Countdown</th><th>When it opens</th><th>Who</th></tr></thead><tbody>
@@ -2612,6 +2612,86 @@ PAGES.append({"path": "/tools/disney-countdown-widget-iphone/", "iphone_only": T
 <p>With Pro you can invite someone to the countdown, and it shows up on their iPhone too; joining is free. Change the date once and it changes on every phone. See the <a href="/tools/shared-countdown-app-couples/">shared countdown</a> page for how it works.</p>
 <p>Planning the days themselves? Fill in the <a href="/tools/disney-world-itinerary-template/">Disney World itinerary template</a>, and make a <a href="/tools/packing-list/">packing list</a> for the trip.</p>
 {DISNEY_NOTE}"""})
+
+# 7d3. 美区 GEO：自己的照片当背景 + 度假倒数——10-18（App 数据仓库 reports/aso/geo-baseline-2026-10-18-countdown-us.md：
+# ChatGPT 未登录 8 题 ×2，这两题官网没有对应页；赢家是名字带场景的小 App 或开发者自己域名上的专题页）。
+# 照片：源码核实——编辑页 Backdrop → Custom → Add Photo → Photo adjustments（Detail / Small / Medium / Large 四个预览各自取景，只能拖动；
+# Opacity / Blur / Text Contrast 三个滑块）→ Done；自己的照片属于 Pro（商店 1.4.21 原文）。锁屏三种小组件按系统单色渲染，不画背景（CountdownWidgetView isAccessory）。
+# 背景 159 张、Pro 107 张 → 免费 52 张（商店原文）。度假：EventTemplate vacation 全天、提醒 30 / 7 / 1 天和当天（milestoneTiers 就是提醒通知），默认背景 Beach Pup 免费；
+# Road trip 全天 7 / 1 / 当天；Flight 定时（默认 9:00，改成起飞时间），提醒前一天和当天。
+PAGES.append({"path": "/tools/countdown-widget-with-your-own-photo-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-18",
+  "meta_top": True, "title": "Countdown Widget With Your Own Photo on iPhone: Home Screen Setup", "crumb": "Countdown widget with your photo",
+  "description": "Put your own photo behind a countdown widget on your iPhone Home Screen, framed for each widget size. Lock Screen widgets can't show photos; use your wallpaper.",
+  "hub_title": "Countdown widget with your own photo", "hub_desc": "Your photo behind the number, framed for each Home Screen size, and how to get it on the Lock Screen.",
+  "faq": [
+    ("Can I use my own photo as a countdown widget background on iPhone?", "Yes. In Countdown Widget: Any Event you can put your own photo behind any countdown, and it shows on its Home Screen widgets in every size when the Home Screen uses the Default or Dark look. Using your own photo is part of Countdown Pro."),
+    ("Why doesn't my photo show in the Lock Screen widget?", "iOS draws Lock Screen widgets in a single tint over your wallpaper, so a photo can’t appear inside them. Set the photo as your Lock Screen wallpaper and put the countdown widget over it."),
+    ("Is the countdown widget free?", "Yes. Every widget size on the Home Screen and the Lock Screen is free, with unlimited events and no ads. Of the 159 built-in backdrops, 52 are free; your own photo, the other 107 backdrops and the Pro typefaces are part of Countdown Pro."),
+    ("Can each widget size show a different part of the photo?", "Yes. You frame the photo separately for the countdown's page and for the small, medium and large widgets, so a face isn't cut in half in the wide one."),
+    ("What if the number is hard to read on my photo?", "Photo adjustments has three sliders: Opacity fades the photo, Blur softens the detail behind the digits, and Text Contrast adds a shade behind the number."),
+    ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad."),
+  ],
+  "body": f"""<h1>Your own photo behind a countdown widget</h1>
+<p class="lede">In Countdown Widget: Any Event you can put your own photo behind any countdown and frame it separately for the small, medium and large Home Screen widgets. Opacity, Blur and Text Contrast keep the number readable. The widgets are free; using your own photo is part of Countdown Pro. Lock Screen widgets are drawn in a single tint, so a photo can’t appear inside them; the workaround is below.</p>
+{top_cta("countdown", "en", "Get Countdown — every widget is free")}
+<h2>Step by step</h2>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a>, tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events) and pick a ready-made event or <strong>Blank Event</strong>. For a countdown you already have, open it and tap the pencil to edit it.</li>
+<li>Tap <strong>Backdrop</strong>, choose <strong>Custom</strong>, then <strong>Add Photo</strong>, and pick the photo.</li>
+<li>In <strong>Photo adjustments</strong>, switch between the <strong>Detail</strong>, <strong>Small</strong>, <strong>Medium</strong> and <strong>Large</strong> previews and drag the frame in each one until it sits right; drag its corners to make it bigger or smaller.</li>
+<li>Move the <strong>Opacity</strong>, <strong>Blur</strong> and <strong>Text Contrast</strong> sliders until the number stands out, then tap <strong>Done</strong>.</li>
+<li>Home Screen: touch and hold an empty area, tap <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>), search for Countdown, pick a size and tap <strong>Add Widget</strong>.</li></ol>
+<h2>Where the photo shows</h2>
+<table><thead><tr><th>Place</th><th>Your photo</th></tr></thead><tbody>
+<tr><td>The countdown’s own page in the app</td><td>Yes, framed in the Detail preview</td></tr>
+<tr><td>Home Screen widgets</td><td>Yes, every size, each framed on its own, with the Home Screen set to the Default or Dark look</td></tr>
+<tr><td>Home Screen widgets on a Tinted or Clear Home Screen</td><td>No. iOS removes widget backgrounds in those looks</td></tr>
+<tr><td>Lock Screen widgets</td><td>No. iOS draws them in one tint over the wallpaper, for every app</td></tr>
+</tbody></table>
+<h2>Want the photo on the Lock Screen too?</h2>
+<p>Use the photo as the wallpaper and put the number on top of it:</p>
+<ol><li>Touch and hold the Lock Screen, tap <strong>+</strong>, choose <strong>Photos</strong> and pick the photo.</li>
+<li>Tap <strong>Add Widgets</strong> under the clock, choose Countdown and close the widget panel.</li>
+<li>Tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
+<p>More on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
+<h2>Photos that work well</h2>
+<ul><li><strong>A trip.</strong> Last year’s beach behind this year’s <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a>.</li>
+<li><strong>The two of you.</strong> Behind the next visit, on a countdown you <a href="/tools/shared-countdown-app-couples/">share with your partner</a>.</li>
+<li><strong>The birthday person.</strong> Behind a <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown</a> that repeats every year.</li></ul>
+<p>Rather not use a photo? The 52 free backdrops include drawn scenes and patterns, and they work in every widget the same way.</p>"""})
+
+PAGES.append({"path": "/tools/vacation-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-18",
+  "meta_top": True, "title": "Vacation Countdown Widget for iPhone: Free, on Your Lock Screen", "crumb": "Vacation countdown widget",
+  "description": "Put the days until your vacation on your iPhone Lock Screen or Home Screen with a free widget. The Vacation event reminds you 30 days, a week and a day before.",
+  "hub_title": "Vacation countdown widget for iPhone", "hub_desc": "The days until your trip on the Lock Screen, with reminders 30 days, a week and a day before.",
+  "faq": [
+    ("Is there a free vacation countdown widget for iPhone?", "Yes. In Countdown Widget: Any Event the ready-made Vacation event is free, and so is every widget size on the Home Screen and the Lock Screen, with unlimited countdowns and no ads."),
+    ("Can it count down to the hour for my flight?", "Yes. The Flight event is timed rather than all-day: set the departure time and it counts down to the hour, with a reminder the day before and on the day."),
+    ("Will it remind me before the trip?", "The Vacation event reminds you 30 days out, a week out, the day before and on the morning itself. You can change those reminders or add your own."),
+    ("Can I put a photo of the beach behind the countdown?", "The Vacation event starts on a free beach backdrop. Using your own photo, say from last year’s trip, is part of Countdown Pro."),
+    ("Can my travel partner see the same countdown?", "Yes. With Pro you can invite them and the countdown shows up on their iPhone too; joining is free. When you change the date, it changes on both phones."),
+    ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad."),
+  ],
+  "body": f"""<h1>Vacation countdown widget for iPhone</h1>
+<p class="lede">Add your trip with the ready-made <strong>Vacation</strong> event, then put its widget on your Lock Screen or Home Screen; the number goes down by itself every day. The Vacation event reminds you 30 days out, a week out, the day before and that morning. In Countdown Widget: Any Event every widget size is free, with unlimited countdowns and no ads.</p>
+{top_cta("countdown", "en", "Start your vacation countdown — free")}
+<h2>Step by step</h2>
+<ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a> and tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events).</li>
+<li>Pick <strong>Vacation</strong> from the ready-made events, name it after the place and set the first day of the trip.</li>
+<li>Keep the beach backdrop it starts with, pick another, or use <a href="/tools/countdown-widget-with-your-own-photo-iphone/">your own photo</a> with Pro.</li>
+<li>Put it on your screen:<ul>{EN_WIDGET_STEPS}</ul></li></ol>
+<h2>Pick the right ready-made event</h2>
+<table><thead><tr><th>Event</th><th>Counts</th><th>Reminds you</th></tr></thead><tbody>
+<tr><td>Vacation</td><td>Days (all-day)</td><td>30 days, a week and a day before, and that morning</td></tr>
+<tr><td>Road trip</td><td>Days (all-day)</td><td>A week and a day before, and that morning</td></tr>
+<tr><td>Flight</td><td>Down to the hour (set the departure time)</td><td>The day before and on the day</td></tr>
+</tbody></table>
+<h2>One widget for the whole trip</h2>
+<p>Most trips come with more than one date: when you need to book something, the flight, then the first day away. Add each as its own countdown, and the list widget shows the next few in order, so the closest one is always on top. The <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown</a> shows this with dining and Lightning Lane dates.</p>
+<h2>Counting down with someone</h2>
+<p>With Pro you can invite your travel partner to the countdown, and it shows up on their iPhone too; joining is free. See the <a href="/tools/shared-countdown-app-couples/">shared countdown</a> page for how it works.</p>
+<h2>After the trip</h2>
+<p>Days that have passed aren’t deleted. They collect into a timeline you can look back through. Tap an event and it turns over to a page of its own, where you can write a few lines and add photos from the trip.</p>
+<p>Getting ready to go? Make a <a href="/tools/packing-list/">packing list</a> for the trip.</p>"""})
 
 ITIN_JS = """
 (function(){var d=document.getElementById('days');if(!d)return;
