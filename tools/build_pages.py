@@ -47,6 +47,14 @@ ASC_LOC = {"en": "en-US", "en-GB": "en-GB", "de": "de-DE", "fr": "fr-FR", "es": 
 SUBS_PATH = ROOT / "tools/store/subtitles.json"
 SUBS = json.loads(SUBS_PATH.read_text(encoding="utf-8")) if SUBS_PATH.exists() else {}
 order_key = lambda lang: ORDER.index(lang) if lang in ORDER else 99
+# 商店描述里已经不成立、要等下一版才能从 ASC 改掉的句子：生成时先删掉（10-18 起 BeforeGo 年付试用下线）
+RETRACT_PATH = ROOT / "tools/store/retracted.json"
+RETRACT = json.loads(RETRACT_PATH.read_text(encoding="utf-8")) if RETRACT_PATH.exists() else {}
+RETRACT_HIT = set()
+def retract(key, text):
+    for x in RETRACT.get(key, {}).get("sentences", []):
+        if x in text: RETRACT_HIT.add((key, x)); text = text.replace(x, "")
+    return text
 
 FALLBACK_PATH = ROOT / "tools/i18n/fallback.json"
 FALLBACK = json.loads(FALLBACK_PATH.read_text(encoding="utf-8")) if FALLBACK_PATH.exists() else {}
@@ -400,7 +408,7 @@ APPLE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2
 def render(a):
     p, lang, s = parent_of(a), lang_of(a), store_of(a)
     name = s["name"]
-    lede, sections, fine = parse_desc(s["description"])
+    lede, sections, fine = parse_desc(retract(p["key"], s["description"]))
     video, poster = video_of(a)
     icon = cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else (p.get("icon") or "")
     fam = family(a)
@@ -530,7 +538,10 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(render(a), encoding="utf-8"); n += 1
         print(f"  {a['path']}  ← {LANG2STORE[lang_of(a)]}")
-    print(f"生成 {n} 页；接着跑 tools/build_seo.py")
+    stale = [k for k, v in RETRACT.items() if not k.startswith("_") and (not only or k == only)
+             and any((k, x) not in RETRACT_HIT for x in v.get("sentences", []))]
+    note = f"；retracted.json 里 {'、'.join(stale)} 有句子商店里已经没有了，可以删" if stale else ""
+    print(f"生成 {n} 页；接着跑 tools/build_seo.py{note}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,19 @@
+{
+ "_comment": "商店描述里已经不成立、但要等下一版才能从 App Store Connect 改掉的句子，build_pages.py 生成时先删掉。商店改好后 build_pages.py 会提示哪项可以删。",
+ "beforego": {
+  "_why": "10-18 年付 7 天免费试用已在 ASC 下线；1.2.8 草稿版本的描述已删掉这句，1.2.8 上架、重抓缓存后删掉本项。",
+  "sentences": [
+   "The yearly plan includes a 7-day free trial for new subscribers. ",
+   "El plan anual incluye 7 días de prueba gratis para nuevos suscriptores. ",
+   "O plano anual inclui 7 dias de teste grátis para novos assinantes. ",
+   "Das Jahresabo enthält eine 7-tägige kostenlose Testphase für neue Abonnenten. ",
+   "L'abonnement annuel inclut un essai gratuit de 7 jours pour les nouveaux abonnés. ",
+   "Il piano annuale include una prova gratuita di 7 giorni per i nuovi abbonati. ",
+   "年間プランには新規のお客様向けの7日間無料トライアルが付いています。",
+   "연간 플랜에는 신규 사용자를 위한 7일 무료 체험이 포함되어 있습니다. ",
+   "年度订阅为新用户提供 7 天免费试用。",
+   "年度訂閱為新用戶提供 7 天免費試用。",
+   "แผนรายปีมีช่วงทดลองใช้ฟรี 7 วันสำหรับผู้สมัครใหม่ "
+  ]
+ }
+}
