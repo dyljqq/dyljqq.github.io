@@ -21,6 +21,8 @@ ea = lambda s: html.escape(s, quote=True)
 
 def localize(tpl, lang):
     t = I18N[lang]
+    # 全站页脚由 build_seo.py 按语言整块重写；先清空，免得页脚里的「Blog」「Apps」之类撞上正文的替换断言（10-19 页脚加了站内链接）
+    tpl = re.sub(r"<!-- sitefooter:start -->.*?<!-- sitefooter:end -->", "<!-- sitefooter:start -->\n<!-- sitefooter:end -->", tpl, flags=re.S)
     hub = TOOLS_HUB.get(lang, "/tools/")
     pairs = [
         ('<html lang="en">', f'<html lang="{lang}">'),

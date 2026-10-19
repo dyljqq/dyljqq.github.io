@@ -17,7 +17,7 @@
 - BeforeGo 1.2.0 已于 09-26 上线（09-28 iTunes lookup 核实），「功能图文」文案依据 `tools/store/beforego-1.2.0.json` 与线上商店一致。商店缓存用 `python3 tools/fetch_store.py` 重抓，评审发现版本落后就报。
 - **配图（用户 09-28 定）**：产品页和博客的配图一律是 Codex 重画的插画（`assets/art/<app>/`，prompt 在 `tools/art/prompts.json`），**页面上不再出现商店截图**；插画里不画文字——**数字不算文字**（不分语言，如 Countdown 的「12」、BeforeGo 的日程序号 1/2/3 和小组件「7」），所有语言共用一套。JSON-LD 的 `screenshot` 字段仍指向商店截图（给搜索引擎的元数据，页面不显示），不算违规。
 - 页面结构（参照 EasyNotes 官网与 11 个同类 app 官网调研）：产品页 = 首屏（右侧 4:5 浅底圆角面板放该 app 的首屏插画）→ 功能图文（浅底圆角卡片：4:5 插画 + 标题 + 两三句，参照 EasyNotes）→ 有预览视频的 app 另有「See it in action」一节放视频 → 商店原文细节 → 当前版本更新内容 → FAQ → 指南与免费工具 → 其他 app；截图画廊已取消。语言切换只在页头（参照 GoFasting 的「EN ⌄」菜单），页面底部不再列语言；另有 `/blog/`（英文指南）与 `/tools/`。
-- 全站页脚（09-28 用户嫌乱后重做）：左边品牌 + 社媒胶囊按钮，右边「隐私与条款」三列对齐表（app 名｜隐私｜条款，标签按页面语言统一），底栏是版权 + 邮箱 + 工具 + llms.txt；链接平时不带下划线，悬停才有。
+- 全站页脚（10-19 按用户给的参考图重做）：纸色底（#F1E8D9）；左边品牌 + 本语言标语（about_sign）+ 社媒图标（`/assets/social.svg`，小红书是横排字标所以更宽）；右边两栏：「go ka」（关于 / 博客 / 免费工具 / 联系）和「Apps」三列对齐表（app 名｜隐私｜条款）；分隔线下是版权 + 邮箱 + llms.txt；最底下一整幅 Codex 版画风全景插画（`assets/art/footer-*.webp`，prompt 在 `tools/art/prompts.json` 的 site-footer），上方空天空垫在版权行下面。只有 DailyCalorie 三页有深色模式：插画反相、底色 #18140d。链接平时不带下划线，悬停才有。
 
 ## 评分（满分 100）
 

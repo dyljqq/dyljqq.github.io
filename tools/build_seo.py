@@ -806,8 +806,13 @@ def home_webtools_html(lang="en"):
             f'    <p>{esc_text(H(lang, "web_p"))}</p>\n    <ul class="web-list">\n' + "\n".join(items)
             + f'\n    </ul>\n    <a class="web-all" href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))} →</a>\n  </div>\n</section>\n<!-- webtools:end -->')
 
-FOOT_SHORT = {"en": {"privacy": "Privacy", "terms": "Terms"},   # 标题已写「Privacy & terms」，列里用短词
-              "de": {"privacy": "Datenschutz", "terms": "Bedingungen"}}   # 09-28 手机 375 宽下全称三列放不下（溢出 26px）
+FOOT_SHORT = {"en": {"privacy": "Privacy", "terms": "Terms"},   # 每行「app 名 | 隐私 | 条款」，列里用短词就够（10-19 起列标题是「Apps」）
+              "de": {"privacy": "Datenschutz", "terms": "Bedingungen"},   # 09-28 手机 375 宽下全称三列放不下（溢出 26px）
+              # 10-19：下面几种语言的全称在 375 宽下每行折成两行
+              "fr": {"privacy": "Confidentialité", "terms": "Conditions"},
+              "es": {"privacy": "Privacidad", "terms": "Términos"}, "es-MX": {"privacy": "Privacidad", "terms": "Términos"},
+              "it": {"privacy": "Privacy", "terms": "Termini"}, "pt-BR": {"privacy": "Privacidade", "terms": "Termos"},
+              "th": {"privacy": "ความเป็นส่วนตัว", "terms": "เงื่อนไข"}}
 
 def home_legal_html(lang="en"):
     """09-28 用户嫌页脚乱：以前每行「App — Privacy Policy · Terms of Service」连成一串、全带下划线、英文页上单词兽还是中文标题。
@@ -820,8 +825,11 @@ def home_legal_html(lang="en"):
         cells = {("privacy" if "privacy" in href else "terms"): href for href, _ in a.get("legal", []) if "/support/" not in href}
         links = "".join('<a href="%s"%s>%s</a>' % (cells[k], attr, esc_text(short.get(k) or bp.t(lang, k)))
                         if k in cells else "<span></span>" for k in ("privacy", "terms"))
-        rows.append('          <li><a class="gk-foot-app" href="%s">%s</a>%s</li>'
-                    % (bp.page_for(a, lang, "footer"), esc_text(a["home"]["label"]), links))
+        href = bp.page_for(a, lang, "footer")
+        page_lang = lang if href != a["path"] else (a.get("lang") or "en")   # 有本语言版本就是同语言，否则落到主条目那一页
+        app_attr = f' hreflang="{page_lang}"' if href.startswith("/") and page_lang != lang else ""
+        rows.append('          <li><a class="gk-foot-app" href="%s"%s>%s</a>%s</li>'
+                    % (href, app_attr, esc_text(a["home"]["label"]), links))
     return '<ul class="gk-foot-legal">\n' + "\n".join(rows) + "\n        </ul>"
 
 # ---------------------------------------------------------------- 全站页脚
@@ -837,41 +845,61 @@ FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"
 # 字体 / 颜色一律写死，不借页面变量：DailyCalorie 的 --text 是颜色，借来当字体整条 font 声明失效。
 # 宽度和边距借 --wrap / --gutter（生成页是 1080 / 1120，手写页没有就回落 1120），让页脚和正文左右对齐。
 FOOT_FONT = '"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif'
+# 10-19 用户给了参考图（左：品牌 + 标语 + 社媒图标；右：几列带标题的链接；分隔线 + 版权行；底部压一整幅版画风全景插画）→ 照这个布局重做。
+# 底色 = 插画的纸色，插画上方 45% 是空天空，用负边距垫到版权行下面；顶边用遮罩淡入，纸色差一点也看不出接缝。
+FOOT_PAPER, FOOT_INK, FOOT_MUTED, FOOT_RULE = "#F1E8D9", "#22324F", "#4F5B72", "rgba(34,50,79,.16)"
+FOOT_ART = {"src": "/assets/art/footer-1440.webp", "w": 1919, "h": 820,   # Codex 出图 1919×820，prompt 在 tools/art/prompts.json 的 site-footer
+            "srcset": "/assets/art/footer-960.webp 960w, /assets/art/footer-1440.webp 1440w, /assets/art/footer-1920.webp 1919w"}
 FOOT_CSS = ('<style id="gk-foot-css">'
-    'footer.gk-foot{border-top:1px solid #e7e5df;padding:48px 0 36px;margin:0;background:none;text-align:left;'
-    f'font:400 13px/1.6 {FOOT_FONT};letter-spacing:.1px;color:#6b6760}}'
-    '.gk-foot-in{box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}'
+    f'footer.gk-foot{{position:relative;display:block;margin:0;padding:72px 0 0;border:0;background:{FOOT_PAPER};text-align:left;overflow:hidden;'
+    f'font:400 14px/1.6 {FOOT_FONT};letter-spacing:.1px;color:{FOOT_MUTED}}}'
+    '.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}'
     '.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}'
-    '.gk-foot-id{display:flex;flex-direction:column;gap:22px}'
-    '.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#141414;text-decoration:none;border:0}'
+    '.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}'
+    f'.gk-foot a.gk-foot-brand{{display:flex;align-items:center;gap:10px;color:{FOOT_INK};text-decoration:none;border:0}}'
     '.gk-foot-brand svg{width:34px;height:34px;flex:none}'
-    '.gk-foot-brand b{font:600 22px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}'
-    f'.gk-foot h2{{margin:0 0 16px;padding:0;border:0;font:700 11px/1 {FOOT_FONT};letter-spacing:2px;text-transform:uppercase;color:#141414}}'
-    '.gk-foot h2:is(:lang(ja),:lang(zh),:lang(ko)){letter-spacing:.12em}'   # 大写字距套在汉字 / 假名上会拉散（09-28 评审）
+    '.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}'
+    f'.gk-foot p.gk-foot-tag{{margin:2px 0 0;font-size:16px;line-height:1.5;color:{FOOT_INK}}}'
     '.gk-foot ul{margin:0;padding:0;list-style:none}'
-    '.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:13px;line-height:1.6;font-weight:400;color:#6b6760}'
-    '.gk-foot a{color:#6b6760;font-weight:400;text-decoration:none;border:0}'
-    '.gk-foot a:hover{color:#141414;text-decoration:underline;text-underline-offset:3px}'
-    '.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:28px;row-gap:8px}'
+    f'.gk-foot li,.gk-foot p{{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:{FOOT_MUTED}}}'
+    f'.gk-foot a{{color:{FOOT_MUTED};font-weight:400;text-decoration:none;border:0;background:none}}'
+    f'.gk-foot a:hover{{color:{FOOT_INK};text-decoration:underline;text-underline-offset:3px}}'
+    '.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}'
+    f'.gk-foot-social a{{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:{FOOT_INK}}}'
+    '.gk-foot-social a:hover{background:rgba(34,50,79,.08)}'
+    '.gk-foot-social svg{display:block;flex:none}'
+    '.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}'
+    f'.gk-foot h2{{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 {FOOT_FONT};letter-spacing:0;text-transform:none;color:{FOOT_INK}}}'
+    '.gk-foot-col ul{display:grid;row-gap:8px}'
+    '.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}'
     '.gk-foot-legal li{display:contents}'
-    '.gk-foot a.gk-foot-app{color:#141414}'
-    '.gk-foot-social{display:flex;flex-wrap:wrap;gap:8px}'
-    '.gk-foot-social a{display:inline-block;padding:5px 12px;border:1px solid #dedad2;border-radius:999px;font-size:12.5px;line-height:1.4;color:#3d3a35}'
-    '.gk-foot-social a:hover{border-color:#141414;text-decoration:none}'
-    '.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:40px;padding-top:18px;border-top:1px solid #eeebe5;font-size:12.5px}'
-    '.gk-foot-bar p{font-size:12.5px}'
+    f'.gk-foot a.gk-foot-app{{color:{FOOT_INK}}}'
+    f'.gk-foot-bar{{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid {FOOT_RULE}}}'
+    '.gk-foot-bar p{font-size:13px}'
     '.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}'
-    '@media (max-width:760px){.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top{flex-direction:column}'
-    '.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column}}'
+    # 插画：按原比例（1919×820）铺满，最宽 2000px；更宽的屏居中、两侧淡进纸色——别限高从底部裁，裁掉的天空正是垫在版权行下面的那块（10-19 评审：2560 宽山顶进版权行）。
+    # 图的上 33% 是空天空；上移量 min(12vw,200px) 在任何宽度都不到显示高度的 30%。手机给 200px 高、往左偏一点保住左边的树。
+    '.gk-foot-art{position:relative;z-index:0;max-width:2000px;margin:calc(-1 * min(12vw,200px)) auto 0;line-height:0;pointer-events:none}'
+    '.gk-foot-art img{display:block;width:100%;max-width:none;height:auto;aspect-ratio:1919/820;min-height:200px;margin:0;border:0;border-radius:0;'
+    'object-fit:cover;object-position:40% 100%;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%);mask-image:linear-gradient(to bottom,transparent,#000 24%)}'
+    '@media (min-width:2000px){.gk-foot-art img{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);'
+    '-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}}'
+    '@media (max-width:760px){footer.gk-foot{padding-top:48px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}'
+    '.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}'
+    '.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}'
+    '.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}'
+    '.gk-foot-bar{flex-direction:column;margin-top:40px}}'
     '</style>')
 # 只给自己有深色模式的页面（DailyCalorie 三页）配深色页脚；其它页面深色模式下背景仍是白的，不能跟着变。
-FOOT_CSS_DARK = ('@media (prefers-color-scheme:dark){footer.gk-foot{border-top-color:#3a332c;color:#b3a898}'
-    '.gk-foot h2,.gk-foot a.gk-foot-brand,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}'
-    '.gk-foot-social a{border-color:#4a4239;color:#e2dbd0}.gk-foot-social a:hover{border-color:#f2ede5}.gk-foot-bar{border-top-color:#3a332c}}')
+# 深色下插画反相（纸变深、墨线变浅）再转回原色相、降饱和；底色 #18140d = 纸色 (241,232,217) 过同一串滤镜的结果（canvas 实测），接缝看不出。
+FOOT_CSS_DARK = ('@media (prefers-color-scheme:dark){footer.gk-foot{background:#18140d;color:#b3a898}'
+    '.gk-foot a.gk-foot-brand,.gk-foot p.gk-foot-tag,.gk-foot h2,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}'
+    '.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}.gk-foot .gk-foot-social a{color:#f2ede5}.gk-foot-social a:hover{background:rgba(255,255,255,.08)}'
+    '.gk-foot-bar{border-top-color:#3a332c}.gk-foot-art img{filter:invert(1) hue-rotate(180deg) saturate(.5) brightness(.95)}}')
 
 # 手写页 / 法务页没有 --wrap：页脚按各自正文列对齐（宽度＝正文列 + 两侧 20px 边距，09-28 实测），并补站点字体。
-# DailyCalorie 的 body 有左右 20px padding，页脚用负边距拉通栏。
-HAND_LAYOUT = [(r"^dailycalorie/", "760px", "margin-left:-20px;margin-right:-20px"),
+# DailyCalorie 的 body 有左右 20px、底部 80px padding，页脚用负边距拉通栏、贴到页底。
+HAND_LAYOUT = [(r"^dailycalorie/", "760px", "margin-left:-20px;margin-right:-20px;margin-bottom:-80px"),   # body 底部 padding 80px：插画要贴到页底
                (r"^(qrcodestudio|citu)/index\.html$", "800px", ""),
                (r"", "820px", "")]                    # 法务页模板和 repdex：main max-width 780
 FOOT_FONTS = ('@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}'
@@ -891,31 +919,57 @@ def foot_lang(page):
     lang = FOOT_LANG.get(m.group(1), m.group(1)) if m else "en"
     return lang if lang in HOME_LANGS else "en"
 
+SOCIAL_ICON_SIZE = {"xhs": (40, 15)}   # 小红书的图标是「小红书」三个字的横排字标，按 18px 方块画就糊成一条
+
 def site_footer_html(lang="en"):
     def social_name(x):
         if x.get("key") == "xhs":
             return "小紅書" if lang == "zh-Hant" else ("小红书" if lang.startswith("zh") else x.get("nameIntl", x["name"]))
         return x["name"]
-    social = "".join('<li><a href="%s" rel="me noopener" target="_blank">%s</a></li>' % (esc_text(x["url"]), esc_text(social_name(x)))
-                     for x in bp.SOCIAL)
-    follow = (f'\n      <ul class="gk-foot-social" aria-label="{esc_text(H(lang, "follow"))}">{social}</ul>') if social else ""
+    # 图标在 /assets/social.svg（键 = site.social[].key）；没有图标的账号退回文字，免得新加的账号变成空按钮。
+    icons = set(re.findall(r'<symbol id="([^"]+)"', (ROOT / "assets/social.svg").read_text()))
+    def social_item(x):
+        name = esc_text(social_name(x))
+        w, h = SOCIAL_ICON_SIZE.get(x.get("key"), (18, 18))
+        inner = (f'<svg width="{w}" height="{h}" aria-hidden="true"><use href="/assets/social.svg#{x["key"]}"/></svg>'
+                 if x.get("key") in icons else name)
+        return f'<li><a href="{esc_text(x["url"])}" rel="me noopener" target="_blank" aria-label="{name}" title="{name}">{inner}</a></li>'
+    social = "".join(social_item(x) for x in bp.SOCIAL)
+    follow = (f'\n        <ul class="gk-foot-social" aria-label="{esc_text(H(lang, "follow"))}">{social}</ul>') if social else ""
+    home = home_path(lang)
+    en_only = ' hreflang="en"' if lang != "en" else ""                 # 博客只有英文
+    hub = TOOLS_HUB.get(lang, "/tools/")
+    hub_attr = en_only if hub == "/tools/" else ""
+    site_links = (f'<li><a href="{home}#about">{esc_text(H(lang, "nav_about"))}</a></li>'
+                  f'<li><a href="/blog/"{en_only}>{esc_text(H(lang, "nav_blog"))}</a></li>'
+                  f'<li><a href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))}</a></li>'
+                  f'<li><a href="{home}#contact">{esc_text(H(lang, "nav_contact"))}</a></li>')
+    art = FOOT_ART
     return f"""{FOOT_START}
 <footer class="gk-foot">
   <div class="gk-foot-in">
     <div class="gk-foot-top">
       <div class="gk-foot-id">
-      <a class="gk-foot-brand" href="{home_path(lang)}">{FOOT_LOGO}<b>go ka</b></a>{follow}
+        <a class="gk-foot-brand" href="{home}">{FOOT_LOGO}<b>go ka</b></a>
+        <p class="gk-foot-tag">{esc_text(H(lang, "about_sign"))}</p>{follow}
       </div>
-      <div>
-        <h2>{esc_text(H(lang, "legal_h"))}</h2>
-        {home_legal_html(lang)}
+      <div class="gk-foot-cols">
+        <div class="gk-foot-col gk-foot-col-site">
+          <h2>go ka</h2>
+          <ul>{site_links}</ul>
+        </div>
+        <div class="gk-foot-col">
+          <h2>{esc_text(H(lang, "nav_apps"))}</h2>
+          {home_legal_html(lang)}
+        </div>
       </div>
     </div>
     <div class="gk-foot-bar">
       <p>© {date.today().year} go ka</p>
-      <p class="gk-foot-links"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="{TOOLS_HUB.get(lang, "/tools/")}">{esc_text(H(lang, "tools_link"))}</a><a href="/llms.txt">llms.txt</a></p>
+      <p class="gk-foot-links"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="/llms.txt">llms.txt</a></p>
     </div>
   </div>
+  <div class="gk-foot-art" aria-hidden="true"><img src="{art["src"]}" srcset="{art["srcset"]}" sizes="100vw" width="{art["w"]}" height="{art["h"]}" alt="" loading="lazy" decoding="async"></div>
 </footer>
 {FOOT_END}"""
 
