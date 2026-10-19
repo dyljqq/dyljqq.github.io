@@ -2190,6 +2190,88 @@
   "crumbHub": "Tools"
  },
  {
+  "path": "/tools/japan-travel-checklist/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Japan Travel Checklist 2026: What to Do Before You Fly From the US",
+  "description": "A Japan travel checklist to tick off and print: the 90-day visa-free stay, medicines Japan bans, Visit Japan Web, plugs, Suica, and the 2026 tax changes.",
+  "faq": [
+   {
+    "q": "Do US citizens need a visa for Japan?",
+    "a": "Not for a tourist stay. Japan’s Ministry of Foreign Affairs lists the United States among the visa-exempt countries, with a 90-day period of stay granted on arrival."
+   },
+   {
+    "q": "Can I bring Adderall to Japan?",
+    "a": "No. Japan’s Narcotics Control Department says amphetamine, the active ingredient in Adderall, cannot be brought into Japan even for treatment. Lisdexamfetamine (Vyvanse) is allowed only with advance permission, applied for at least 14 days before you travel."
+   },
+   {
+    "q": "Can I bring Sudafed to Japan?",
+    "a": "Pseudoephedrine, the decongestant in Sudafed, is on Japan’s list of stimulants’ raw materials, which need advance permission. Check your product with the Narcotics Control Department before you pack it."
+   },
+   {
+    "q": "Do I need Visit Japan Web?",
+    "a": "For customs you don’t have to: Japan’s tourism board says the paper customs declaration form is available on the plane and at the airport. It saves time, though: you register your immigration and customs details before the flight, and one QR code covers both at the airport. Every traveler needs their own code. The service is free; Japan Customs warns about look-alike sites that charge a fee."
+   },
+   {
+    "q": "What plug does Japan use?",
+    "a": "Type A, the two flat pins also used in the US, at 100 volts. Eastern Japan runs at 50 Hz and western Japan, including Nagoya, Kyoto and Osaka, at 60 Hz. A plug with a third, round grounding pin needs an adapter; if one pin of your plug is wider than the other, bring an adapter to be safe."
+   },
+   {
+    "q": "Is there an app that makes a packing list for Japan?",
+    "a": "BeforeGo, our iPhone app, writes the packing list from your destination and dates, including the plugs, currency, entry rules and transit apps for where you are going, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave. It does not check medicines for you; use Japan’s official pages for that."
+   }
+  ],
+  "published": "2026-10-19",
+  "app": "beforego",
+  "hubTitle": "Japan travel checklist",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
+ },
+ {
+  "path": "/tools/disney-world-packing-list/",
+  "lang": "en",
+  "kind": "WebApplication",
+  "title": "Disney World Packing List (Printable) + What the Parks Don’t Allow",
+  "description": "A free Disney World packing list to tick off, print or copy, for adults, kids or a toddler in a stroller, plus Disney’s rules on strollers, coolers and food.",
+  "faq": [
+   {
+    "q": "Can you bring food into Disney World?",
+    "a": "Yes. Disney lets you bring your own food and non-alcoholic drinks into the parks if they aren’t in glass, don’t need heating, reheating or refrigeration and don’t have a strong smell. Tell the security cast member about them at the entrance."
+   },
+   {
+    "q": "What size stroller is allowed at Disney World?",
+    "a": "No wider than 31 inches (79 cm) and no longer than 52 inches (132 cm). Wagons and stroller wagons are not allowed in the theme parks or water parks."
+   },
+   {
+    "q": "Can you bring a cooler into Disney World?",
+    "a": "Yes, if it is no larger than 24 inches long, 15 inches wide and 18 inches high, with or without wheels. Loose or dry ice is not allowed; Disney recommends reusable ice packs."
+   },
+   {
+    "q": "Are selfie sticks allowed at Disney World?",
+    "a": "No. Selfie sticks and other hand-held extension poles are not allowed in the theme parks or water parks. Tripods are allowed only if they fit inside a standard backpack and don’t extend over 6 feet."
+   },
+   {
+    "q": "Can adults wear costumes at Disney World?",
+    "a": "Not in the theme parks or water parks: guests 14 and older can’t wear costumes, and masks only for medical reasons. Special events such as the Halloween parties have their own costume rules."
+   },
+   {
+    "q": "Is there an app that makes a packing list for a Disney trip?",
+    "a": "BeforeGo, our iPhone app, writes a packing list from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave, and turns a screenshot of a guide into a day-by-day plan. It is a general trip planner, not a Disney app."
+   }
+  ],
+  "published": "2026-10-19",
+  "app": "beforego",
+  "hubTitle": "Disney World packing list",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
+ },
+ {
   "path": "/tools/de/rechnungsvorlage-kleinunternehmer/",
   "lang": "de",
   "kind": "WebApplication",

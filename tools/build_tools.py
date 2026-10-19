@@ -152,7 +152,7 @@ PACK_JS = """
 var KEY='goka-packlist';var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 function build(){var type=f.querySelector('[name=type]').value,days=+f.querySelector('[name=days]').value;var groups=[];
 Object.keys(L.base).forEach(function(g){groups.push([g,L.base[g].slice()]);});(L.types[type]||[]).forEach(function(x){var g=groups.find(function(y){return y[0]===x[0]});if(g)g[1]=g[1].concat(x[1]);else groups.push([x[0],x[1].slice()]);});
-var h='';groups.forEach(function(g){h+='<h3>'+g[0]+'</h3><ul class="check">';g[1].forEach(function(item){var it=item.replace(/\\{n\\}/g,String(Math.max(1,Math.ceil(days*(item.indexOf('socks')>-1||item.indexOf('underwear')>-1?1:0.5)))));var id=type+'|'+it;
+var h='';groups.forEach(function(g){h+='<h3>'+g[0]+'</h3><ul class="check">';g[1].forEach(function(item){var it=item.replace(/\\{d\\}/g,String(days)).replace(/\\{n\\}/g,String(Math.max(1,Math.ceil(days*(/socks|underwear/i.test(item)?1:0.5)))));var id=type+'|'+it;
 h+='<li><label><input type="checkbox" data-id="'+id.replace(/"/g,'&quot;')+'"'+(saved[id]?' checked':'')+'> '+it+'</label></li>';});h+='</ul>';});
 out.innerHTML=h;out.hidden=false;document.getElementById('pack-actions').hidden=false;}
 f.addEventListener('change',build);f.addEventListener('submit',function(e){e.preventDefault();build();});
@@ -207,7 +207,8 @@ html[lang^=th] *{letter-spacing:0!important}
 .check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
 html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
 @media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv th{letter-spacing:.4px}.inv td,.inv th{padding:8px 4px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
-@media print{header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+.print-title{display:none}
+@media print{.print-title{display:block!important;font:600 22px/1.3 var(--display);margin:0 0 12px}.inv-wrap h3,#pack-out h3{break-after:avoid}header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 """
 
 def clip(t, n):   # 10-17 评审：商店描述按字符硬截会断在词中间；有空格就退到词边界，再加省略号
@@ -2153,14 +2154,15 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 <p class="lede">Pick the kind of trip and how long you're going. You get a checklist you can tick off, print, or copy into your notes. Ticks are saved on this device.</p>
 <form class="calc pack-head" id="pack"><label>Trip type<select name="type"><option value="beach">Beach</option><option value="city" selected>City break</option><option value="winter">Winter / ski</option><option value="business">Business</option><option value="backpacking">Backpacking</option></select></label>
 <label>Length<select name="days"><option value="3">Weekend (3 days)</option><option value="7" selected>One week</option><option value="14">Two weeks</option></select></label><button type="submit">Make my list</button></form>
-<div id="pack-out" hidden></div>
+<div class="inv-wrap"><p class="print-title">Packing list</p><div id="pack-out" hidden></div></div>
 <p id="pack-actions" hidden><button class="btn ghost" id="pack-print" type="button">Print</button> <button class="btn ghost" id="pack-copy" type="button">Copy as text</button></p>
 <script type="application/json" id="pack-data">{json.dumps(PACK)}</script>
 <h2>The three-day rule</h2>
 <p>Documents and bookings a week before. Clothes and toiletries three days before, so there is time to buy what's missing. The night before, only the six things that cannot be replaced at the destination: passport, tickets, wallet, phone, charger, keys.</p>
 <h2>What people forget</h2>
 <ul><li>The <strong>power adapter</strong> for the destination's sockets — the plug type matters more than the voltage.</li><li><strong>Medication</strong> for the whole trip plus a couple of days.</li><li>A <strong>photo of the passport</strong> on the phone.</li><li><strong>Sunscreen</strong> — pricey at resorts, hard to find in cities.</li><li>The thing you forgot last time. That is the one to write down now.</li></ul>
-<p>For a list built for your actual destination and dates — plugs, currency, entry rules, transit apps, and reminders before departure — that is what <a href="/beforego/">BeforeGo</a> does on iPhone, and it carries the forgotten items over to the next trip.</p>"""})
+<p>For a list built for your actual destination and dates — plugs, currency, entry rules, transit apps, and reminders before departure — that is what <a href="/beforego/">BeforeGo</a> does on iPhone, and it carries the forgotten items over to the next trip.</p>
+<p>Packing for a particular trip? There is a <a href="/tools/japan-travel-checklist/">Japan travel checklist</a> and a <a href="/tools/disney-world-packing-list/">Disney World packing list</a>.</p>"""})
 
 
 # 10. 榜单：iPhone 倒数日 app（含竞品；数据来自 09-26 美区 App Store 查询，只写商店描述里写明的事）
@@ -2610,7 +2612,7 @@ PAGES.append({"path": "/tools/disney-countdown-widget-iphone/", "iphone_only": T
 <p>Work out each date from your arrival or park day, add it as its own countdown, and the list widget shows them in order: dining first, then Lightning Lane, then the trip. Disney’s own wording is on its <a href="{LL_URL}" rel="noopener">Lightning Lane passes</a> page and on each resort’s <a href="{DINE_URL}" rel="noopener">dining page</a>.</p>
 <h2>Counting down as a family</h2>
 <p>With Pro you can invite someone to the countdown, and it shows up on their iPhone too; joining is free. Change the date once and it changes on every phone. See the <a href="/tools/shared-countdown-app-couples/">shared countdown</a> page for how it works.</p>
-<p>Planning the days themselves? Fill in the <a href="/tools/disney-world-itinerary-template/">Disney World itinerary template</a>, and make a <a href="/tools/packing-list/">packing list</a> for the trip.</p>
+<p>Planning the days themselves? Fill in the <a href="/tools/disney-world-itinerary-template/">Disney World itinerary template</a>, and pack with the <a href="/tools/disney-world-packing-list/">Disney World packing list</a>.</p>
 {DISNEY_NOTE}"""})
 
 # 7d3. 美区 GEO：自己的照片当背景 + 度假倒数——10-18（App 数据仓库 reports/aso/geo-baseline-2026-10-18-countdown-us.md：
@@ -2737,6 +2739,7 @@ PAGES.append({"path": "/tools/disney-world-itinerary-template/", "lang": "en", "
 <li><strong>Give long trips a rest day.</strong> A pool morning in the middle keeps the last park days fun, especially with kids.</li>
 <li><strong>Write down the booking dates.</strong> Dining and Lightning Lane open on set days before the trip; the note at the bottom of the template has them.</li>
 <li><strong>Keep confirmation numbers on the plan.</strong> Type them next to the meal or the hotel, so they print with the day.</li></ul>
+<p>Packing next? The <a href="/tools/disney-world-packing-list/">Disney World packing list</a> has the park rules on strollers, coolers and food.</p>
 <h2>Dates to put on the calendar</h2>
 <table><thead><tr><th>What</th><th>Opens</th><th>Who</th></tr></thead><tbody>
 <tr><td>Dining reservations</td><td>60 days before arrival, for the whole stay (up to 10 nights)</td><td>Disney Resort hotel guests</td></tr>
@@ -2748,6 +2751,169 @@ PAGES.append({"path": "/tools/disney-world-itinerary-template/", "lang": "en", "
 <h2>On your iPhone</h2>
 <p><a href="/beforego/">BeforeGo</a>, our trip planner app, turns a screenshot of a guide, a pasted link or your own notes into a day-by-day plan, and a scanned ticket or booking confirmation lands on the plan too. It writes the <a href="/tools/packing-list/">packing list</a> from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave. Free to start, no account.</p>
 {DISNEY_NOTE.replace("The booking windows above", "The booking windows on this page")}"""})
+
+
+# 7d2. 美区 BeforeGo 第一批内容页——10-19（用户批「日本出发前清单 + Disney 打包清单」，选题与证据见 App 数据仓库
+# reports/aso/beforego-us-content-topics-2026-10-19.md）。依据：Google 美国联想词 japan trip / travel checklist（pdf / 2026 / reddit）、
+# things to do before traveling to japan（from usa）、medications banned in japan、can i bring sudafed to japan；disney packing list
+# （printable / with kids / with toddlers / 2026）、disney prohibited items。
+# 页面上的每条规定都在 10-19 读过官方原文：外务省免签国名单（美国、90 天）；厚生劳动省麻药取缔部 application2.html（安非他命 / Adderall 禁止、
+# lisdexamfetamine 与 pseudoephedrine 属兴奋剂原料要事先许可、至少提前 14 天申请、精神药品按限量）；厚生劳动省药品进口 Q&A（一个月内的
+# 普通处方药不用手续，超过要先办 Import Confirmation，几个工作日）；数字厅 Visit Japan Web 说明页 + 海关 2026-05-28 假网站警告（不收费）；
+# 日本国家旅游局插头页（100 V、东 50 / 西 60 Hz）与 FAQ（Type A）、海关页（肉制品禁止）、免税改退税新闻（2026-11-01 起、出境前在海关办、
+# 90 天内带出）；观光厅传单（2026-07-01 起出境税 ¥3,000，06-30 前出票按 ¥1,000，2 岁以下免）；JR 东日本 Welcome Suica Mobile 页（iOS、
+# App 里开卡充值、部分国家入境后才能开）。Disney：disneyworld.disney.go.com/park-rules/（Prohibited Items、Attire）与 outside-food-and-drink FAQ。
+# App 说法只用商店描述里的：按目的地生成打包清单（插头、货币、入境规定、交通 App）、7 天 / 3 天 / 24 小时 / 3 小时提醒。
+CHECK_JS = """
+(function(){var box=document.getElementById('chk');if(!box)return;var KEY=box.getAttribute('data-key');var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+box.querySelectorAll('input[type=checkbox]').forEach(function(c){if(saved[c.getAttribute('data-id')])c.checked=true;});
+box.addEventListener('change',function(e){if(e.target.type==='checkbox'){saved[e.target.getAttribute('data-id')]=e.target.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(x){}}});
+var p=document.getElementById('chk-print');if(p)p.addEventListener('click',function(){window.print();});
+var c=document.getElementById('chk-copy');if(c)c.addEventListener('click',function(){var s='';box.querySelectorAll('h3,li').forEach(function(el){s+=(el.tagName==='H3'?'\\n'+el.textContent.toUpperCase()+'\\n':'- '+el.textContent.trim()+'\\n');});if(navigator.clipboard)navigator.clipboard.writeText(s.trim()).then(function(){c.textContent='Copied';});});})();
+"""
+def chk_groups(key, groups):
+    out = ""
+    for g, items in groups:
+        lis = "".join(f'<li><label><input type="checkbox" data-id="{esc(key + "|" + re.sub(r"<[^>]+>", "", it)[:60])}"> <span>{it}</span></label></li>' for it in items)
+        out += f'<h3>{g}</h3><ul class="check" style="columns:1">{lis}</ul>'
+    return out
+NCD_URL = "https://www.ncd.mhlw.go.jp/en/application2.html"
+MHLW_QA_URL = "https://www.mhlw.go.jp/content/001686827.pdf"
+MOFA_URL = "https://www.mofa.go.jp/j_info/visit/visa/short/novisa.html"
+VJW_URL = "https://services.digital.go.jp/en/visit-japan-web/"
+VJW_FAKE_URL = "https://www.customs.go.jp/english/news/20260528e.html"
+JNTO_PLUG_URL = "https://www.japan.travel/en/plan/plug-and-electricity/"
+JNTO_FAQ_URL = "https://www.japan.travel/en/faq/"
+VJW_MANUAL_URL = "https://www.vjw.digital.go.jp/manual/main/visitjapanweb_manual_en.html"   # 1-3 Offline Usage：「Visit Japan Web can be used offline」（10-19 读原文；数字厅说明页写的「screenshots cannot be used」只指免税二维码）
+JNTO_CUSTOMS_URL = "https://www.japan.travel/en/plan/customs-and-duty/"
+SUICA_URL = "https://www.jreast.co.jp/en/multi/welcomesuicamobile/"
+TAXFREE_URL = "https://www.japan.travel/en/ca/news/changes-are-coming-to-japans-tax-free-shopping/"
+DEPTAX_URL = "https://www.mlit.go.jp/kankocho/content/001996466.pdf"
+JAPAN_CHECK = chk_groups("jp", [
+    ("When you book", ["Passport that stays valid for the whole trip. US citizens need no visa for a tourist stay of up to 90 days.",
+                       "Check every medicine you take against the table below. Some common US prescriptions are banned in Japan.",
+                       "If a medicine needs permission, apply at least 14 days before you fly.",
+                       "More than a month's supply of an ordinary prescription medicine? Apply for Import Confirmation before you enter Japan.",
+                       "Travel insurance that covers medical care abroad."]),
+    ("Two weeks before", ["Set up Welcome Suica Mobile on your iPhone, or plan to buy an IC card at the station.",
+                          "Mobile data for the trip: an eSIM or pocket Wi-Fi.",
+                          "A credit card that works abroad, and your bank told you're traveling."]),
+    ("One week before", ["Register on Visit Japan Web for immigration and customs. Every traveler, kids included, gets their own QR code.",
+                         "Book anything that sells out: popular restaurants, museums, timed-entry sights."]),
+    ("Three days before", ["Check the charger labels say 100–240 V. Japan runs at 100 V.",
+                           "Plug adapter for any plug with a third, round pin. Japanese outlets take two flat pins (Type A); if one pin on your plug is wider than the other, pack an adapter to be safe.",
+                           "Leave jerky and other meat snacks at home; Japan doesn't let meat products in.",
+                           "Medicines in your carry-on, in their original packaging, with the permission or doctor’s certificate if the table below says you need one."]),
+    ("The day before", ["Set up Visit Japan Web for offline use, so your QR code opens without a signal.",
+                        "Some yen in cash.",
+                        "Passport, phone, charger, cards, keys."]),
+    ("In Japan", ["Tax-free shopping from November 1, 2026: you pay the price with tax and claim it back at customs when you leave.",
+                  "Keep tax-free purchases where you can show them at the airport."]),
+    ("Flying home", ["At the airport, file the tax-free refund at customs before you check in.",
+                     "The departure tax is ¥3,000 from July 1, 2026, normally already in your ticket."]),
+])
+PAGES.append({"path": "/tools/japan-travel-checklist/", "lang": "en", "kind": "WebApplication", "app": "beforego", "published": "2026-10-19", "meta_top": True,
+  "title": "Japan Travel Checklist 2026: What to Do Before You Fly From the US", "crumb": "Japan travel checklist",
+  "description": "A Japan travel checklist to tick off and print: the 90-day visa-free stay, medicines Japan bans, Visit Japan Web, plugs, Suica, and the 2026 tax changes.",
+  "hub_title": "Japan travel checklist", "hub_desc": "What to do before you fly, week by week: entry, medicines, Visit Japan Web, plugs, Suica.",
+  "js": [CHECK_JS], "faq": [
+    ("Do US citizens need a visa for Japan?", "Not for a tourist stay. Japan’s Ministry of Foreign Affairs lists the United States among the visa-exempt countries, with a 90-day period of stay granted on arrival."),
+    ("Can I bring Adderall to Japan?", "No. Japan’s Narcotics Control Department says amphetamine, the active ingredient in Adderall, cannot be brought into Japan even for treatment. Lisdexamfetamine (Vyvanse) is allowed only with advance permission, applied for at least 14 days before you travel."),
+    ("Can I bring Sudafed to Japan?", "Pseudoephedrine, the decongestant in Sudafed, is on Japan’s list of stimulants’ raw materials, which need advance permission. Check your product with the Narcotics Control Department before you pack it."),
+    ("Do I need Visit Japan Web?", "For customs you don’t have to: Japan’s tourism board says the paper customs declaration form is available on the plane and at the airport. It saves time, though: you register your immigration and customs details before the flight, and one QR code covers both at the airport. Every traveler needs their own code. The service is free; Japan Customs warns about look-alike sites that charge a fee."),
+    ("What plug does Japan use?", "Type A, the two flat pins also used in the US, at 100 volts. Eastern Japan runs at 50 Hz and western Japan, including Nagoya, Kyoto and Osaka, at 60 Hz. A plug with a third, round grounding pin needs an adapter; if one pin of your plug is wider than the other, bring an adapter to be safe."),
+    ("Is there an app that makes a packing list for Japan?", "BeforeGo, our iPhone app, writes the packing list from your destination and dates, including the plugs, currency, entry rules and transit apps for where you are going, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave. It does not check medicines for you; use Japan’s official pages for that."),
+  ],
+  "body": f"""<h1>Japan travel checklist: what to do before you fly</h1>
+<p class="lede">A checklist for a trip to Japan from the US, in the order you need it, from the day you book to the flight home. Tick items off as you go; the ticks stay in this browser, and you can print the list. Every rule on this page links to the official page we checked it against.</p>
+<div class="inv-wrap" id="chk" data-key="goka-japan-checklist">
+<p class="print-title">Japan travel checklist</p>
+<div class="inv-tools"><button class="btn" id="chk-print" type="button">Print / Save as PDF</button><button class="btn ghost" id="chk-copy" type="button">Copy as text</button></div>
+{JAPAN_CHECK}
+</div>
+<h2>Medicines: what Japan bans and what needs permission</h2>
+<p>This is where a trip to Japan can go wrong. Several medicines that are routine in the US are restricted in Japan, and one common ADHD medicine is banned outright.</p>
+<table><thead><tr><th>Medicine</th><th>In Japan</th><th>What to do</th></tr></thead><tbody>
+<tr><td>Adderall (amphetamine)</td><td>Banned, even with a prescription</td><td>Talk to your doctor about the trip well before you go</td></tr>
+<tr><td>Vyvanse (lisdexamfetamine)</td><td>Stimulants’ raw material</td><td>Advance permission, applied for at least 14 days before you fly</td></tr>
+<tr><td>Sudafed and other pseudoephedrine decongestants</td><td>Listed as a stimulants’ raw material</td><td>Check the product with the Narcotics Control Department before you pack it</td></tr>
+<tr><td>Codeine, oxycodone, morphine and other narcotics</td><td>Narcotics</td><td>Advance permission, applied for at least 14 days before you fly</td></tr>
+<tr><td>Zolpidem, alprazolam, diazepam and other psychotropics</td><td>Allowed up to a set amount</td><td>Check the amount on the Narcotics Control Department page; above it you need a doctor’s certificate</td></tr>
+<tr><td>Other prescription medicines</td><td>Up to one month’s supply with no procedure</td><td>More than a month: apply online for Import Confirmation before you enter Japan</td></tr>
+</tbody></table>
+<p>Sources: the <a href="{NCD_URL}" rel="noopener">Narcotics Control Department</a> (banned substances, permission, the 14-day lead time) and the Ministry of Health’s <a href="{MHLW_QA_URL}" rel="noopener">Q&amp;A on bringing medicines into Japan</a> (the one-month rule and Import Confirmation). This is not medical or legal advice, and the rules can change: those two pages decide, and both list an email address for questions.</p>
+<h2>Entry and arrival</h2>
+<p>US citizens don’t need a visa for a tourist stay: Japan’s Ministry of Foreign Affairs lists the United States among the <a href="{MOFA_URL}" rel="noopener">visa-exempt countries</a>, with 90 days granted on arrival.</p>
+<p>Register your immigration and customs details on <a href="{VJW_URL}" rel="noopener">Visit Japan Web</a> before the flight and you get one QR code that covers both at the airport. Every traveler needs their own, children included. Visit Japan Web also works offline; its <a href="{VJW_MANUAL_URL}" rel="noopener">official manual</a> shows how to set that up before you fly. The service is free, and Japan Customs <a href="{VJW_FAKE_URL}" rel="noopener">warns about look-alike sites</a> that charge for it. For customs it isn’t the only way: Japan’s tourism board says the paper <a href="{JNTO_CUSTOMS_URL}" rel="noopener">customs declaration form</a> is available on the plane and at the airport.</p>
+<h2>Plugs, power and getting around</h2>
+<ul><li><strong>Plugs.</strong> Japanese outlets take <a href="{JNTO_FAQ_URL}" rel="noopener">Type A plugs</a>, two flat pins like most US plugs, and the power is <a href="{JNTO_PLUG_URL}" rel="noopener">100 volts</a> everywhere: 50 Hz in eastern Japan and 60 Hz in the west, including Nagoya, Kyoto and Osaka. A plug with a third, round pin needs an adapter; if one pin of your plug is wider than the other, bring an adapter to be safe. Phone and laptop chargers labeled 100–240 V work anywhere.</li>
+<li><strong>Suica on your iPhone.</strong> JR East’s <a href="{SUICA_URL}" rel="noopener">Welcome Suica Mobile</a> app issues a Suica and tops it up with a card in Apple Pay. Use it on trains, buses and in shops that show the IC logo. Some countries don’t allow issuing it before arrival; then set it up once you land.</li>
+<li><strong>Food in your bag.</strong> Japan’s tourism board says <a href="{JNTO_CUSTOMS_URL}" rel="noopener">meat and meat products</a>, plants and plant products can’t be brought in. That includes jerky.</li></ul>
+<h2>What changes in 2026</h2>
+<table><thead><tr><th>Change</th><th>From</th><th>What it means for you</th></tr></thead><tbody>
+<tr><td>Departure tax rises to ¥3,000</td><td>July 1, 2026</td><td>Usually already in the ticket price. Tickets issued by June 30, 2026 keep the old ¥1,000; children under 2 pay nothing.</td></tr>
+<tr><td>Tax-free shopping becomes a refund</td><td>November 1, 2026</td><td>You pay the price with tax. At departure, file the refund at customs before you check in; goods must leave Japan within 90 days.</td></tr>
+</tbody></table>
+<p>Sources: the Japan Tourism Agency’s <a href="{DEPTAX_URL}" rel="noopener">International Tourist Tax notice</a> and Japan’s tourism board on the <a href="{TAXFREE_URL}" rel="noopener">tax-free shopping change</a>. Airport steps for the refund may still change; check your departure airport’s site before you fly.</p>
+<h2>On your iPhone</h2>
+<p><a href="/beforego/">BeforeGo</a>, our trip planner app, writes the packing list from your destination and dates: the plugs, currency, entry rules and transit apps for where you are going, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave. Hand it a screenshot of a Japan guide and it files the places and days into your plan. It does not check medicines for you; the official pages above do that. For a general list, there is also the <a href="/tools/packing-list/">packing list generator</a>.</p>
+<p class="meta" style="margin-top:18px">go ka is not a government site. The rules on this page were checked on the official pages linked above on October 19, 2026; check them again before you fly.</p>"""})
+
+DISNEY_PACK = {"base": {   # {d} = 天数，{n} = 袜子 / 内衣按天、其余按半（PACK_JS）
+  "Park bag": ["Phone with your tickets in the My Disney Experience app", "Refillable water bottle (not glass)", "Sunscreen", "Poncho", "Snacks that don’t need heating or a fridge", "Zip-top bag to keep the phone dry on water rides", "Hand sanitizer"],
+  "Clothes": ["Underwear × {d}", "Socks × {d}", "T-shirts × {d}", "Shorts or light trousers × {n}", "A light layer for air-conditioned shows and restaurants", "Two pairs of broken-in walking shoes", "Hat and sunglasses", "Swimwear for the hotel pool", "Sleepwear"],
+  "Toiletries & health": ["Toothbrush and toothpaste", "Travel-size shampoo and body wash", "Deodorant", "Any medication you take, plus a few days spare", "Blister plasters and pain relief", "After-sun lotion", "Insect repellent"],
+  "Tech": ["Phone charger and a long cable", "Power bank, charged every night", "Headphones for the flight"],
+  "Documents & money": ["Photo ID", "Hotel confirmation", "Dining reservation times", "Credit card and a little cash"]},
+ "types": {
+  "adults": [["Park bag", ["A small bag, well under the 24 × 15 × 18 in limit", "Handheld fan"]], ["Clothes", ["One nicer outfit for a sit-down dinner"]]],
+  "kids": [["Park bag", ["Autograph book and a thick marker", "A change of clothes for each child", "Ear defenders for the fireworks", "Reusable ice packs for a cooler bag (no loose or dry ice)"]], ["Clothes", ["Kids’ outfits × {d}", "Kids’ pajamas", "Costume for kids under 14 (guests 14 and older can’t wear costumes)"]], ["Toiletries & health", ["Kids’ sunscreen", "Children’s pain and fever medicine"]]],
+  "toddler": [["Park bag", ["Stroller no wider than 31 in and no longer than 52 in (no wagons)", "Stroller rain cover", "Diapers and wipes for the whole day", "Baby food (small glass baby-food jars are allowed)", "A change of clothes", "Clip-on stroller fan", "Ear defenders for the fireworks", "Reusable ice packs for milk or medicine (no loose or dry ice)"]], ["Clothes", ["Toddler outfits × {d}", "Toddler pajamas", "Swim diapers for the pool"]], ["Toiletries & health", ["Diapers for the whole trip", "Baby sunscreen", "Children’s pain and fever medicine"]]]}}
+PARK_RULES_URL = "https://disneyworld.disney.go.com/park-rules/"
+DISNEY_FOOD_URL = "https://disneyworld.disney.go.com/faq/parks/outside-food-and-drink/"
+PAGES.append({"path": "/tools/disney-world-packing-list/", "lang": "en", "kind": "WebApplication", "app": "beforego", "published": "2026-10-19", "meta_top": True,
+  "title": "Disney World Packing List (Printable) + What the Parks Don’t Allow", "crumb": "Disney World packing list",
+  "description": "A free Disney World packing list to tick off, print or copy, for adults, kids or a toddler in a stroller, plus Disney’s rules on strollers, coolers and food.",
+  "hub_title": "Disney World packing list", "hub_desc": "For adults, kids or a stroller; tick, print or copy. Plus the park rules on bags and food.",
+  "js": [PACK_JS], "faq": [
+    ("Can you bring food into Disney World?", "Yes. Disney lets you bring your own food and non-alcoholic drinks into the parks if they aren’t in glass, don’t need heating, reheating or refrigeration and don’t have a strong smell. Tell the security cast member about them at the entrance."),
+    ("What size stroller is allowed at Disney World?", "No wider than 31 inches (79 cm) and no longer than 52 inches (132 cm). Wagons and stroller wagons are not allowed in the theme parks or water parks."),
+    ("Can you bring a cooler into Disney World?", "Yes, if it is no larger than 24 inches long, 15 inches wide and 18 inches high, with or without wheels. Loose or dry ice is not allowed; Disney recommends reusable ice packs."),
+    ("Are selfie sticks allowed at Disney World?", "No. Selfie sticks and other hand-held extension poles are not allowed in the theme parks or water parks. Tripods are allowed only if they fit inside a standard backpack and don’t extend over 6 feet."),
+    ("Can adults wear costumes at Disney World?", "Not in the theme parks or water parks: guests 14 and older can’t wear costumes, and masks only for medical reasons. Special events such as the Halloween parties have their own costume rules."),
+    ("Is there an app that makes a packing list for a Disney trip?", "BeforeGo, our iPhone app, writes a packing list from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave, and turns a screenshot of a guide into a day-by-day plan. It is a general trip planner, not a Disney app."),
+  ],
+  "body": f"""<h1>Disney World packing list</h1>
+<p class="lede">Pick who’s coming and how long you’re staying, and you get a Walt Disney World packing list to tick off, print or copy. Ticks are saved on this device. Under it: what the parks don’t let you bring, from Disney’s own rules.</p>
+<form class="calc pack-head" id="pack"><label>Who’s coming<select name="type"><option value="adults">Adults only</option><option value="kids" selected>With kids</option><option value="toddler">With a toddler (stroller)</option></select></label>
+<label>Length<select name="days"><option value="4">4 days</option><option value="6" selected>6 days</option><option value="8">8 days</option></select></label><button type="submit">Make my list</button></form>
+<div class="inv-wrap"><p class="print-title">Disney World packing list</p><div id="pack-out" hidden></div></div>
+<p id="pack-actions" hidden><button class="btn ghost" id="pack-print" type="button">Print</button> <button class="btn ghost" id="pack-copy" type="button">Copy as text</button></p>
+<script type="application/json" id="pack-data">{json.dumps(DISNEY_PACK)}</script>
+<h2>What you can’t bring into the parks</h2>
+<table><thead><tr><th>Item</th><th>Disney’s rule</th></tr></thead><tbody>
+<tr><td>Strollers</td><td>No wider than 31 in (79 cm) and no longer than 52 in (132 cm). Wagons and stroller wagons are not allowed.</td></tr>
+<tr><td>Bags and coolers</td><td>Nothing larger than 24 in long × 15 in wide × 18 in high (61 × 38 × 46 cm), with or without wheels. No loose or dry ice; reusable ice packs are recommended.</td></tr>
+<tr><td>Glass</td><td>No glass containers, except small ones such as baby-food jars.</td></tr>
+<tr><td>Alcohol</td><td>Not allowed, except at the Disney Resort hotels.</td></tr>
+<tr><td>Selfie sticks and tripods</td><td>No selfie sticks or extension poles in the theme parks or water parks. Tripods only if they fit inside a standard backpack and don’t extend over 6 ft.</td></tr>
+<tr><td>Folding chairs</td><td>Not allowed in the theme parks, the water parks or Disney Springs.</td></tr>
+<tr><td>Recreational devices</td><td>No drones, remote-control toys, skateboards, scooters, inline skates or shoes with built-in wheels. Mobility devices are a separate rule: they need at least three wheels.</td></tr>
+<tr><td>Costumes and masks</td><td>Not for guests 14 and older (masks only for medical reasons). Clothing that drags on the ground isn’t allowed either.</td></tr>
+<tr><td>Balloons and plastic straws</td><td>Not allowed at Disney’s Animal Kingdom or the water parks.</td></tr>
+</tbody></table>
+<p>All from the Walt Disney World <a href="{PARK_RULES_URL}" rel="noopener">Property Rules</a>, which also list weapons, fireworks and other obvious ones. Disney can refuse any bag or item at security.</p>
+<h2>Food and drinks</h2>
+<p>You can bring your own food and non-alcoholic drinks into the parks, as long as they aren’t in glass, don’t need heating, reheating or refrigeration and don’t have a strong smell. Tell the security cast member about them when you go in (<a href="{DISNEY_FOOD_URL}" rel="noopener">Disney’s food and drink FAQ</a>).</p>
+<h2>Three packing habits that pay off</h2>
+<ul><li><strong>Two pairs of shoes.</strong> Swap them every day, so a soaked pair from a water ride or a downpour has a day to dry.</li>
+<li><strong>Pack the park bag the night before.</strong> Charged power bank, sunscreen, poncho, snacks, the day’s reservation times.</li>
+<li><strong>Write down what you forgot.</strong> It is the first line of the next trip’s list.</li></ul>
+<h2>Plan the days too</h2>
+<p>Put the parks and dining times in the <a href="/tools/disney-world-itinerary-template/">Disney World itinerary template</a>, and count down to the trip on your Lock Screen with the <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown widget</a>. For other trips there is the general <a href="/tools/packing-list/">packing list generator</a>.</p>
+<h2>On your iPhone</h2>
+<p><a href="/beforego/">BeforeGo</a>, our trip planner app, writes the packing list from your destination and dates, with reminders 7 days, 3 days, 24 hours and 3 hours before you leave, and turns a screenshot of a guide or a pasted link into a day-by-day plan. Free to start, no account.</p>
+{DISNEY_NOTE.replace("The booking windows above were checked on disneyworld.disney.go.com on October 17, 2026", "The park rules above were checked on disneyworld.disney.go.com on October 19, 2026")}"""})
 
 
 # 7e. 德国：InvoiceQR 的德语模板页（de）——10-17（用户：「invoice 的优化方向可以是德国」）
