@@ -10,9 +10,8 @@
 换个 worktree 发布也接得上。没有记录文件（第一次跑）：只记录、不推送。推送失败不写记录，下次发布连同新变化一起再推。
 
 「内容」= meta description + sitemap lastmod 口径的正文（build_seo._lastmod_norm：<title> 和 <body>，去掉样式、
-YYYY-MM-DD、全站页脚、空白），再去掉倒数页每天重建都会变的两样——10-16 一次重建就让 30 页变了，天天推等于又回到全量推：
-  - 计数器（data-n / data-unit / data-weeks / data-days）里的文字，浏览器打开时本来就会重算；
-  - 写着构建当天日期的那段文字里的数字（build_tools.py 的「On 16 October 2026 there were 70 days…」「2026年10月16日の時点で…」）。
+YYYY-MM-DD、全站页脚、空白，再用 build_seo.mask_daily 去掉倒数页每天重建都会变的计数器和「截至今天」那句）——
+10-16 一次重建就让 30 页变了，天天推等于又回到全量推。10-19 起 sitemap lastmod / dateModified 也用同一套规则。
 别处的数字照比：假期页、考试页改了日期会推。构建和本脚本要在同一天（越南时间）跑，publish.sh 是连着跑的。
 会多推、无害的情况：跨零点发布时倒数页（约 30 页）那次和下一次各推一遍；正文里写死的日期恰好是发布当天
 （如「2026年10月15日に確認」、韩语教程里「D-30은 2026년 10월 20일」），那段当天被当成每日文字，当天和下一次各推一遍，之后稳定。
@@ -29,26 +28,12 @@ KEY = "6bc0c7e758182078db2f4e3107b328d5"     # 站根的 <KEY>.txt 就是验证�
 STATE = ROOT / "tools/indexnow-state.json"
 DRY, RECORD = "--dry-run" in sys.argv, "--record" in sys.argv
 
-COUNTER = re.compile(r"(<[a-z]+\b[^>]*\sdata-(?:n|unit|weeks|days)\b[^>]*>)[^<]*")
 DESC = re.compile(r'<meta name="description" content="([^"]*)"')
 TODAY = date.today()
-# build_tools.py 写「截至今天」那句用到的日期写法：ISO、英文 %-d %B %Y 和美式 %B %-d, %Y、葡语 %d/%m/%Y、中日 年月日、韩 년월일。
-# build_tools.py 换了新写法要加到这里，否则那几页每天都会被当成修改（--check 的 dry-run 会一下子列出一串倒数页）。
-TODAY_FORMS = (TODAY.isoformat(), TODAY.strftime("%-d %B %Y"), TODAY.strftime("%B %-d, %Y"), TODAY.strftime("%d/%m/%Y"),
-               f"{TODAY.year}年{TODAY.month}月{TODAY.day}日", f"{TODAY.year}년 {TODAY.month}월 {TODAY.day}일")
-TODAY_RE = re.compile("|".join(r"(?<!\d)" + re.escape(f) for f in TODAY_FORMS))   # 前面不能是数字：「1 November」别命中「11 November」
-
-def mask_today(m):
-    t = m.group(1)
-    if TODAY_RE.search(t):
-        # 先去掉 YYYY-MM-DD 再抹数字：「更新 2026-10-16」今天会命中、明天不会，两天都要归一成同一个样子，否则当天改过的页第二天又被推一次
-        t = re.sub(r"\d+", "#", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
-    return ">" + t + "<"
 
 def norm(html):
-    html = re.sub(r">([^<]*)<", mask_today, COUNTER.sub(r"\1", html))
     desc = DESC.search(html)
-    return (desc.group(1) if desc else "") + "\n" + _lastmod_norm(html)
+    return (desc.group(1) if desc else "") + "\n" + _lastmod_norm(html, TODAY)
 
 def current():
     """sitemap 里每个 URL 路径 → 内容 hash。读的是本地文件，所以要在构建之后、和刚部署的内容一致时跑。"""

@@ -71,10 +71,45 @@ def campaign_url(app_id, ct, cc=None):
 def store_url(app):
     return f"https://apps.apple.com/app/id{app['appId']}" if app.get("live") and app.get("appId") else None
 
-def _lastmod_norm(t: str) -> str:
+# 倒数页每天重建都会变、但不算内容修改的两样（10-16 先用在 indexnow.py，10-19 挪到这里，lastmod / dateModified / 页面上的「更新」同口径）：
+#   - 计数器（data-n / data-unit / data-weeks / data-days）里的文字，浏览器打开时本来就会重算；
+#   - 写着构建当天日期的那段文字（build_tools.py 的「On 16 October 2026 there were 70 days…」「2026年10月16日の時点で…」）。
+# 10-19 之前只有 IndexNow 忽略它们：31 个倒数页每天重建，dateModified、页面上的「更新」、sitemap lastmod 都被刷成当天（只有天数变）——
+# 等于天天对 Google 说全站改过了。别处的数字照比：假期页、考试页改了日期照样算修改。
+DAILY_COUNTER = re.compile(r"(<[a-z]+\b[^>]*\sdata-(?:n|unit|weeks|days)\b[^>]*>)[^<]*")
+
+def _day_re(*forms):
+    return re.compile("|".join(r"(?<!\d)" + re.escape(f) for f in forms))   # 前面不能是数字：「1 November」别命中「11 November」
+
+def mask_daily(html: str, day: date) -> str:
+    """把 day 那天构建时会变的部分抹成固定样子。day＝那一版的构建日：这次构建用今天，git 里的旧版用它的提交日。
+    build_tools.py 写「截至今天」那句用到的日期写法：英文 %-d %B %Y 和美式 %B %-d, %Y、葡语 %d/%m/%Y、中日 年月日、韩 년월일，另有 ISO。
+    build_tools.py 换了新写法要加到这里，否则那几页每天都会被当成修改（--check 的 IndexNow dry-run 会一下子列出一串倒数页）。
+    - 没有计数器的页面不抹：法务页的「Last updated: October 10, 2026」碰巧等于那版的提交日，抹了就和前后版本对不上（10-19 实测）；
+    - 带那天日期（非 ISO 写法）的一整段文字整段抹掉，不只抹数字：句子本身会随天数换说法（「# weeks」↔「# weeks and # days」、「ちょうど#週間」↔「#週と#日」）；
+    - ISO 写法只去日期再抹数字（「Days left in 2026: 74 (as of 2026-10-19)」）：页面上「Updated 2026-10-18」那行也是 ISO，
+      整行抹会让它今天命中、明天不命中，两天对不上；去日期后它本来就没剩数字，命中不命中都是同一个样子。"""
+    if not DAILY_COUNTER.search(html):
+        return html
+    long_re = _day_re(day.strftime("%-d %B %Y"), day.strftime("%B %-d, %Y"), day.strftime("%d/%m/%Y"),
+                      f"{day.year}年{day.month}月{day.day}日", f"{day.year}년 {day.month}월 {day.day}일")
+    iso_re = _day_re(day.isoformat())
+    def mask(m):
+        t = m.group(1)
+        if long_re.search(t):
+            return ">#<"
+        if iso_re.search(t):
+            t = re.sub(r"\d+", "#", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
+        return ">" + t + "<"
+    return re.sub(r">([^<]*)<", mask, DAILY_COUNTER.sub(r"\1", html))
+
+def _lastmod_norm(t: str, day: date | None = None) -> str:
     """只比 <title> 和 <body>，去掉 <style> 和日期串：head 里的 SEO 块是本脚本后补的，
     只改样式或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）；
-    全站页脚也不算（09-28 统一页脚时 82 页的页脚都换了位置和内容，正文没变）；空白差异一并忽略。"""
+    全站页脚也不算（09-28 统一页脚时 82 页的页脚都换了位置和内容，正文没变）；空白差异一并忽略。
+    给了 day 就再抹掉那天构建的每日部分（mask_daily）。"""
+    if day is not None:
+        t = mask_daily(t, day)
     parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
     t = re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S)
     t = re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), "", t, flags=re.S)
@@ -92,13 +127,14 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
             last = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
                                   capture_output=True, text=True, timeout=10).stdout.strip()
             return datetime.fromisoformat(last).astimezone().date().isoformat() if last else today
-        cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"))
+        cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"), date.today())
         revs = [l.split(" ", 1) for l in subprocess.run(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
                 capture_output=True, text=True, timeout=10).stdout.split("\n") if l.strip()]
         newer = cur
         for i, (h, when) in enumerate(revs):
             v = subprocess.run(["git", "show", f"{h}:{rel}"], cwd=ROOT, capture_output=True, text=True, timeout=10)
-            v = _lastmod_norm(v.stdout) if v.returncode == 0 else None
+            # 旧版按它的提交日抹每日部分（构建→评审→提交在同一天做完，提交日就是构建日；跨零点提交的那版会多算一次修改，无害）
+            v = _lastmod_norm(v.stdout, datetime.fromisoformat(when).astimezone().date()) if v.returncode == 0 else None
             if v != newer:                       # 比它新的那一版（或这次构建）正文变了
                 return today if i == 0 else datetime.fromisoformat(revs[i - 1][1]).astimezone().date().isoformat()
             newer = v
