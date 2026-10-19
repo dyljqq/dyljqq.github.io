@@ -237,6 +237,13 @@ Ahrefs：外链 33 条里 31 条是 SPAM 自动站，真实第三方外链 0；�
 - **10-21 回看**：GSC 补出 10-17 / 10-18 日数后按网页 × 查询对比排名，决定要不要合并 / noindex 相似页（巴西 5 个分州假期页、各语言「还有几天」页）。
 - **例外（10-19 下午，用户知悉暂停后仍要求上线）**：BeforeGo 美区两页 `/tools/japan-travel-checklist/`、`/tools/disney-world-packing-list/` 已上线（da984ff，评审 94→99），当天请求了 Google / Bing 收录；同批修了 `/tools/packing-list/` 袜子按天数的 bug。10-21 回看时把这两页单独算，别混进掉量原因的分析。
 
+## 10-19：Bing 收录——把内容从旧域名收回到 beforego.art（用户「按你的建议，帮我完成」）
+
+- **原因**：Bing 只认识 beforego.art 28 个网址（收录 16），Countdown 页的原标题在 Bing 搜出来是 `dyljqq.github.io/countdown` 和 `goka-xi.vercel.app/countdown`；`beforego.art/countdown/` 10-13 发现后一直「Discovered but not crawled」，Live URL 测试可编入索引（技术没问题）。WMT 里 dyljqq.github.io 收录 13 页；Bing 看到的外链 0。镜像页 canonical 指回来，但 Bing 只当建议。
+- **已做**：① 仓库加 `CNAME`（beforego.art），GitHub 把 dyljqq.github.io 全站 301 到 beforego.art 同路径（再由 Vercel 跳 https），140 个镜像网址实测全部 301；App Store 里指 github.io 的链接照常落到新站。代价：dyljqq.github.io/Person-detect/ 也跳走（→ 404，用户同意）。`CNAME` 在 .vercelignore 里，不上 Vercel。② WMT 新版已没有 Site Move 工具；改为在 goka-xi.vercel.app 名下提交 64 个旧网址（全是 308）、dyljqq.github.io 名下提交 100 个（全是 301），让 Bingbot 回去看到跳转。③ `tools/LINKS.md` 加规矩：站外链接只写 beforego.art 的具体页。
+- **别做**：重复手动提交 beforego.art 同一批网址（10-14、10-18 已交）；调高 Crawl Control（只是上限）；为收录加新页。
+- **11-02 回看**：WMT Site Explorer 里 beforego.art 已知 / 收录网址数（10-19：28 / 16）；Bing 搜 Countdown 页原标题时出来的是不是 beforego.art；dyljqq.github.io 的收录数是否下降。
+
 ## 持续基建（穿插在各版本里）
 
 | 项 | 做什么 | 时机 |
@@ -244,7 +251,7 @@ Ahrefs：外链 33 条里 31 条是 SPAM 自动站，真实第三方外链 0；�
 | 发布前检查进仓库 | `tools/check.py`：结构审计 + 手机宽度溢出（真实 375 视口量 scrollWidth）+ 关键模板截图巡检；发布脚本不过检不发 | v1.1 一起做（09-26 那个按钮事故就是缺这一步） |
 | 商店文案自动同步 | 每周重抓商店缓存，有变化就重建 + 发布，网站永远和商店一致 | v1.2 |
 | 自有域名 | ✅ 09-26 已切到 beforego.art；jiqinqiang.com 主域有备案永远不动 | 已完成 |
-| ASC 链接 | 各 app 下个版本把营销 / 支持链接改成新站；隐私链接可随时改 | 随版本 |
+| ASC 链接 | 各 app 下个版本把营销 / 支持链接改成新站（Countdown、BeforeGo 的营销链接现在是 github.io，10-19 起已 301 到新站，不急）；隐私链接可随时改 | 随版本 |
 | 外链 | 免费目录 / 榜单收录申请（不买付费位） | v1.2 起每版 2–3 个 |
 
 不做：其余 4 个 app（DailyCalorie / QR Studio / 单词兽 / Repdex）的新版页面 —— 冻结项目，不投入。
