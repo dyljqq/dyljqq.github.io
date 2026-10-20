@@ -268,7 +268,7 @@ def build_llms():
             out.append(f"- Page ({v['lang']}): {ORIGIN}{v['path']}")
         if su:
             out.append(f"- App Store: {su}")
-        out.append(f"- Platform: iOS (iPhone, iPad)")
+        out.append("- Platform: iOS (iPhone)" if a.get("iphoneOnly") else "- Platform: iOS (iPhone, iPad)")
         out.append(f"- Category: {a['genre']}")
         if a.get("audience"):
             out.append(f"- For: {a['audience']}")

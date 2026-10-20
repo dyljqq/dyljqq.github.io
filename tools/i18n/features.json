@@ -93,7 +93,29 @@
   "ui": {
    "h_highlights": "Das kann die App",
    "h_details": "Die Details, wie im App Store beschrieben"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Ein Buch, kein Feed",
+    "text": "Die Geschichte deines Kindes öffnet sich wie ein echtes Buch, mit Kapiteln nach Alter: Neugeboren, 1 Monat, 2 Monate und so weiter. In der Zeitleiste scrollst du durch jeden Monat zurück, und für ein Geschwisterchen oder eine Reise legst du einfach ein weiteres Buch an."
+   },
+   {
+    "title": "Dreißig Sekunden am Tag",
+    "text": "Ein Foto, mehrere oder nur ein paar Worte – Pagewren gestaltet die Seite für dich. Kein Designtalent nötig, kein tägliches Pflichtprogramm. Frühere Fotos importierst du auf einmal und holst so schnell auf."
+   },
+   {
+    "title": "Jedes erste Mal festgehalten",
+    "text": "Markiere Meilensteine wie das erste Lächeln und die ersten Schritte oder lege eigene an, damit du die großen Momente später schnell wiederfindest."
+   },
+   {
+    "title": "Heute vor einem Jahr, auf dem Home-Bildschirm",
+    "text": "Widgets zeigen dein Buch und holen eine Seite von diesem Tag aus einem früheren Jahr zurück. Ein Widget auf dem Sperrbildschirm öffnet mit einem Tippen eine neue Seite."
+   },
+   {
+    "title": "Privat und nur deins",
+    "text": "Keine Werbung, kein Social Feed, keine öffentlichen Profile. Fotos und Texte bleiben auf deinem iPhone und, mit iCloud-Sync in Pro, in deiner eigenen iCloud. Die Datenschutz-Sperre (Pro) schützt die App, ein Buch oder eine einzelne Erinnerung."
+   }
+  ]
  },
  "fr": {
   "countdown": [
@@ -189,7 +211,29 @@
   "ui": {
    "h_highlights": "Ce que fait l'app",
    "h_details": "Les détails, tels qu'écrits dans l'App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Un livre, pas un fil d’actualité",
+    "text": "L'histoire de votre enfant s'ouvre comme un vrai livre, avec des chapitres par âge : Naissance, 1 mois, 2 mois et ainsi de suite. La chronologie vous fait remonter mois par mois, et vous pouvez créer un autre livre pour un petit frère, une petite sœur ou un voyage."
+   },
+   {
+    "title": "Trente secondes aujourd'hui",
+    "text": "Une photo, plusieurs, ou juste quelques mots : Pagewren met la page en forme pour vous. Pas besoin d'être doué en design, pas de série à tenir. Rattrapez le retard en important d'un coup vos anciennes photos."
+   },
+   {
+    "title": "Chaque première fois, notée",
+    "text": "Marquez les étapes comme le premier sourire ou les premiers pas, ou ajoutez les vôtres, pour retrouver facilement les grands moments plus tard."
+   },
+   {
+    "title": "Ce jour-là, sur votre écran d'accueil",
+    "text": "Les widgets affichent votre livre et font ressurgir une page du même jour d'une année précédente. Un widget sur l'écran verrouillé ouvre une nouvelle page d'un geste."
+   },
+   {
+    "title": "Privé, et à vous",
+    "text": "Ni publicité, ni fil d’actualité, ni profil public. Photos et textes restent sur votre iPhone, et dans votre propre iCloud si vous activez la synchronisation iCloud avec Pro. Le verrou de confidentialité (Pro) protège l'app, un livre ou un seul souvenir."
+   }
+  ]
  },
  "it": {
   "countdown": [
@@ -285,7 +329,29 @@
   "ui": {
    "h_highlights": "Cosa fa l'app",
    "h_details": "I dettagli, come scritti sull'App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Un libro, non un feed",
+    "text": "La storia del tuo bambino si apre come un libro vero, con capitoli per età: Neonato, 1 mese, 2 mesi e così via. Con la timeline torni indietro mese per mese, e puoi tenere un altro libro per un fratellino o un viaggio."
+   },
+   {
+    "title": "Trenta secondi oggi",
+    "text": "Una foto, più foto o solo due parole: Pagewren compone la pagina per te. Nessuna abilità grafica, nessuna serie da mantenere. Recuperi in fretta importando in una volta le foto passate."
+   },
+   {
+    "title": "Ogni prima volta, segnata",
+    "text": "Segna traguardi come il primo sorriso e i primi passi, o aggiungine di tuoi, per ritrovare facilmente i grandi momenti."
+   },
+   {
+    "title": "Accadde oggi, nella schermata Home",
+    "text": "I widget mostrano il tuo libro e riportano una pagina dello stesso giorno di un anno passato. Un widget nella schermata di blocco apre una nuova pagina con un tocco."
+   },
+   {
+    "title": "Privato, e tuo",
+    "text": "Niente pubblicità, niente feed social, niente profili pubblici. Foto e testi restano sul tuo iPhone e, con la sincronizzazione iCloud di Pro, nel tuo iCloud. Il blocco privacy (Pro) protegge l'app, un libro o un singolo ricordo."
+   }
+  ]
  },
  "es": {
   "invoiceqr": [
@@ -351,7 +417,29 @@
   "ui": {
    "h_highlights": "Qué hace la app",
    "h_details": "Los detalles, tal como aparecen en la App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Un libro, no un feed",
+    "text": "La historia de tu hijo se abre como un libro de verdad, con capítulos por edad: Recién nacido, 1 mes, 2 meses y más. En la línea de tiempo recorres cada mes hacia atrás, y puedes tener otro libro para un hermanito o un viaje."
+   },
+   {
+    "title": "Treinta segundos hoy",
+    "text": "Una foto, varias o solo unas palabras: Pagewren maqueta la página por ti. Sin saber de diseño y sin rachas diarias. Ponte al día importando de una vez tus fotos pasadas."
+   },
+   {
+    "title": "Cada primera vez, marcada",
+    "text": "Marca hitos como la primera sonrisa o los primeros pasos, o añade los tuyos, para encontrar fácilmente los grandes momentos más adelante."
+   },
+   {
+    "title": "Un día como hoy, en tu pantalla de inicio",
+    "text": "Los widgets muestran tu libro y recuperan una página de este mismo día de un año anterior. Un widget en la pantalla de bloqueo abre una página nueva con un toque."
+   },
+   {
+    "title": "Privado y tuyo",
+    "text": "Sin anuncios, sin feed social, sin perfiles públicos. Fotos y textos se quedan en tu iPhone, y en tu propio iCloud si activas la sincronización con iCloud de Pro. El bloqueo de privacidad (Pro) protege la app, un libro o un solo recuerdo."
+   }
+  ]
  },
  "es-MX": {
   "invoiceqr": [
@@ -417,7 +505,29 @@
   "ui": {
    "h_highlights": "Qué hace la app",
    "h_details": "Los detalles, tal como aparecen en la App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Un libro, no un feed",
+    "text": "La historia de tu bebé se abre como un libro de verdad, con capítulos por edad: Recién nacido, 1 mes, 2 meses y más. En la línea de tiempo recorres cada mes hacia atrás, y puedes tener otro libro para un hermanito o un viaje."
+   },
+   {
+    "title": "Treinta segundos hoy",
+    "text": "Una foto, varias o solo unas palabras: Pagewren arma la página por ti. Sin saber de diseño y sin rachas diarias. Ponte al día importando de una vez tus fotos pasadas."
+   },
+   {
+    "title": "Cada primera vez, marcada",
+    "text": "Marca hitos como la primera sonrisa o los primeros pasos, o agrega los tuyos, para encontrar fácilmente los grandes momentos más adelante."
+   },
+   {
+    "title": "Un día como hoy, en tu pantalla de inicio",
+    "text": "Los widgets muestran tu libro y te traen una página de este mismo día de un año anterior. Un widget en la pantalla de bloqueo abre una página nueva con un toque."
+   },
+   {
+    "title": "Privado y tuyo",
+    "text": "Sin anuncios, sin feed social, sin perfiles públicos. Fotos y textos se quedan en tu iPhone, y en tu propio iCloud si activas la sincronización con iCloud de Pro. El bloqueo de privacidad (Pro) protege la app, un libro o un solo recuerdo."
+   }
+  ]
  },
  "pt-BR": {
   "countdown": [
@@ -513,7 +623,29 @@
   "ui": {
    "h_highlights": "O que o app faz",
    "h_details": "Os detalhes, tal como estão na App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "Um livro, não um feed",
+    "text": "A história do seu filho abre como um livro de verdade, com capítulos por idade: Recém-nascido, 1 mês, 2 meses e assim por diante. Na linha do tempo você volta mês a mês, e pode ter outro livro para um irmãozinho ou uma viagem."
+   },
+   {
+    "title": "Trinta segundos hoje",
+    "text": "Uma foto, várias ou só algumas palavras: o Pagewren monta a página para você. Sem precisar saber design, sem sequências diárias. Coloque tudo em dia importando de uma vez as fotos antigas."
+   },
+   {
+    "title": "Cada primeira vez, marcada",
+    "text": "Registre marcos como o primeiro sorriso e os primeiros passos, ou crie os seus, para achar os grandes momentos com facilidade depois."
+   },
+   {
+    "title": "Neste dia, na sua tela inicial",
+    "text": "Os widgets mostram seu livro e trazem de volta uma página deste mesmo dia em um ano anterior. Um widget na tela bloqueada abre uma página nova com um toque."
+   },
+   {
+    "title": "Privado e seu",
+    "text": "Sem anúncios, sem feed social, sem perfis públicos. Fotos e textos ficam no seu iPhone, e no seu próprio iCloud se você ativar a sincronização com iCloud do Pro. O bloqueio de privacidade (Pro) protege o app, um livro ou uma única lembrança."
+   }
+  ]
  },
  "ja": {
   "countdown": [
@@ -609,7 +741,29 @@
   "ui": {
    "h_highlights": "主な機能",
    "h_details": "詳細 – App Storeに書かれている通り"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "フィードではなく、1冊の本",
+    "text": "子どもの物語が本物の本のように開きます。章は月齢ごと（新生児、1か月、2か月…）。タイムラインに切り替えれば月ごとにさかのぼれて、きょうだいや旅行のために本を何冊でも作れます。"
+   },
+   {
+    "title": "きょうの30秒",
+    "text": "写真を1枚、何枚か、またはひとことだけ。レイアウトは Pagewren におまかせ。デザインのセンスも毎日の連続記録もいりません。過去の写真もまとめて読み込んで、すぐに追いつけます。"
+   },
+   {
+    "title": "「はじめて」を残す",
+    "text": "「はじめての笑顔」「はじめての一歩」などの成長の記録を付けたり、自分で作ったりして、大切な瞬間をあとからすぐ見つけられます。"
+   },
+   {
+    "title": "あの日のページを、ホーム画面に",
+    "text": "ウィジェットが本を表示し、前の年の同じ日のページを届けます。ロック画面のウィジェットからは、ワンタップで新しいページを開けます。"
+   },
+   {
+    "title": "プライベートで、あなただけのもの",
+    "text": "広告も SNS フィードも公開プロフィールもありません。写真と文章は iPhone に、Pro の iCloud 同期をオンにすればあなた自身の iCloud にも保存されます。プライバシーロック（Pro）でアプリ、本、1つの思い出をロックできます。"
+   }
+  ]
  },
  "ko": {
   "countdown": [
@@ -705,7 +859,29 @@
   "ui": {
    "h_highlights": "주요 기능",
    "h_details": "세부 사항 – App Store에 쓰인 대로"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "피드가 아닌 한 권의 책",
+    "text": "아이의 이야기가 진짜 책처럼 펼쳐집니다. 챕터는 월령별(신생아, 1개월, 2개월…)이고, 타임라인으로 바꾸면 달마다 거슬러 볼 수 있습니다. 동생이 생기거나 여행을 가면 책을 한 권 더 만들면 됩니다."
+   },
+   {
+    "title": "오늘의 30초",
+    "text": "사진 한 장, 여러 장, 또는 한마디만. 레이아웃은 Pagewren이 알아서 합니다. 디자인 감각도, 매일 이어 쓰기도 필요 없습니다. 지난 사진을 한 번에 가져와 금방 따라잡을 수 있어요."
+   },
+   {
+    "title": "모든 첫 순간을 표시",
+    "text": "첫 미소, 첫걸음 같은 성장 순간을 표시하거나 직접 만들어, 소중한 순간을 나중에도 쉽게 찾을 수 있습니다."
+   },
+   {
+    "title": "그날의 페이지를 홈 화면에",
+    "text": "위젯이 내 책을 보여 주고, 지난해 같은 날의 페이지를 다시 꺼내 줍니다. 잠금 화면 위젯은 한 번 탭으로 새 페이지를 엽니다."
+   },
+   {
+    "title": "프라이빗하게, 온전히 내 것",
+    "text": "광고도, 소셜 피드도, 공개 프로필도 없습니다. 사진과 글은 iPhone에, Pro의 iCloud 동기화를 켜면 내 iCloud에도 저장됩니다. 프라이버시 잠금(Pro)으로 앱, 책 한 권, 추억 하나를 잠글 수 있습니다."
+   }
+  ]
  },
  "zh-Hans": {
   "countdown": [
@@ -771,7 +947,29 @@
   "ui": {
    "h_highlights": "功能特色",
    "h_details": "详情——App Store 原文"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "一本书，不是信息流",
+    "text": "孩子的故事像真书一样翻开，按月龄分章：新生儿、1 个月、2 个月……切换到时间线可以按月往回翻；有了二宝或去旅行，就再建一本书。"
+   },
+   {
+    "title": "今天花 30 秒",
+    "text": "加一张照片、几张照片，或者只写几句话，Pagewren 帮你排好版。不需要会设计，也不用每天打卡。过去的照片可以一次批量导入，很快就能补齐。"
+   },
+   {
+    "title": "每个第一次，都有记号",
+    "text": "标记第一次笑、第一次走路这样的里程碑，也可以自己添加，以后想找重要时刻一下就能找到。"
+   },
+   {
+    "title": "往年今日，就在主屏幕",
+    "text": "小组件展示你的书，并把往年同一天的那一页带回来。锁屏小组件一点就能开一页新的。"
+   },
+   {
+    "title": "私密，只属于你",
+    "text": "没有广告、没有社交信息流、没有公开主页。照片和文字保存在你的 iPhone 上，用 Pro 开启 iCloud 同步后也会存在你自己的 iCloud 里。隐私锁（Pro）可以锁住整个 App、一本书或单条回忆。"
+   }
+  ]
  },
  "zh-Hant": {
   "countdown": [
@@ -867,7 +1065,29 @@
   "ui": {
    "h_highlights": "功能特色",
    "h_details": "詳情——App Store 原文"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "一本書，不是動態牆",
+    "text": "孩子的故事像真的書一樣翻開，按月齡分章：新生兒、1 個月、2 個月……切換到時間軸可以按月往回看；有了老二或去旅行，就再建一本書。"
+   },
+   {
+    "title": "今天花 30 秒",
+    "text": "加一張照片、幾張照片，或只寫幾句話，Pagewren 幫你排好版。不需要會設計，也不用每天打卡。過去的照片可以一次批次匯入，很快就能補齊。"
+   },
+   {
+    "title": "每個第一次，都有記號",
+    "text": "標記第一次笑、第一次走路這樣的里程碑，也可以自己新增，以後想找重要時刻一下就找得到。"
+   },
+   {
+    "title": "往年今日，就在主畫面",
+    "text": "小工具展示你的書，並把往年同一天的那一頁帶回來。鎖定畫面小工具一點就能開一頁新的。"
+   },
+   {
+    "title": "私密，只屬於你",
+    "text": "沒有廣告、沒有社群動態、沒有公開個人頁面。照片和文字儲存在你的 iPhone 上，用 Pro 開啟 iCloud 同步後也會存在你自己的 iCloud 裡。隱私鎖（Pro）可以鎖住整個 App、一本書或單則回憶。"
+   }
+  ]
  },
  "th": {
   "countdown": [
@@ -963,6 +1183,28 @@
   "ui": {
    "h_highlights": "ฟีเจอร์เด่น",
    "h_details": "รายละเอียด ตามที่เขียนไว้ใน App Store"
-  }
+  },
+  "pagewren": [
+   {
+    "title": "หนังสือ ไม่ใช่ฟีด",
+    "text": "เรื่องราวของลูกเปิดอ่านได้เหมือนหนังสือจริง แบ่งบทตามอายุ: แรกเกิด 1 เดือน 2 เดือน และต่อไปเรื่อย ๆ สลับเป็นไทม์ไลน์เพื่อย้อนดูทีละเดือน และสร้างหนังสือเพิ่มอีกเล่มเมื่อมีน้องใหม่หรือไปเที่ยว"
+   },
+   {
+    "title": "วันละ 30 วินาที",
+    "text": "เพิ่มรูปเดียว หลายรูป หรือแค่ข้อความสั้น ๆ แล้ว Pagewren จัดหน้าให้เอง ไม่ต้องมีทักษะออกแบบ ไม่ต้องบันทึกทุกวันต่อเนื่อง นำเข้ารูปเก่าทีละหลายรูปพร้อมกันเพื่อเก็บย้อนหลังได้เร็ว"
+   },
+   {
+    "title": "บันทึกทุกครั้งแรกของลูก",
+    "text": "บันทึกพัฒนาการอย่างยิ้มครั้งแรกและก้าวแรก หรือเพิ่มเองได้ เพื่อหาช่วงเวลาสำคัญได้ง่ายในภายหลัง"
+   },
+   {
+    "title": "วันนี้ในปีก่อน บนหน้าจอโฮม",
+    "text": "วิดเจ็ตแสดงหนังสือของคุณและนำหน้าของวันเดียวกันในปีก่อนกลับมา วิดเจ็ตบนหน้าจอล็อกเปิดหน้าใหม่ได้ในแตะเดียว"
+   },
+   {
+    "title": "เป็นส่วนตัว และเป็นของคุณ",
+    "text": "ไม่มีโฆษณา ไม่มีฟีดโซเชียล ไม่มีโปรไฟล์สาธารณะ รูปและข้อความอยู่ใน iPhone ของคุณ และใน iCloud ของคุณเองหากเปิดการซิงค์ iCloud ด้วย Pro ล็อกความเป็นส่วนตัว (Pro) ล็อกได้ทั้งแอป ทั้งเล่ม หรือแค่ความทรงจำเดียว"
+   }
+  ]
  }
 }

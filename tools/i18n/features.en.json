@@ -127,5 +127,32 @@
  "ui": {
   "h_highlights": "What it does",
   "h_details": "The details, as written in the App Store"
- }
+ },
+ "pagewren": [
+  {
+   "shot": "01",
+   "title": "A book, not a feed",
+   "text": "Your child's story opens like a real book, with chapters by age: Newborn, 1 Month, 2 Months and beyond. Switch to the timeline to scroll back through every month, and keep more than one book for a new sibling or a trip."
+  },
+  {
+   "shot": "02",
+   "title": "Thirty seconds today",
+   "text": "Add one photo, several, or just a few words, and Pagewren lays out the page for you. No design skills, no daily streaks. Catch up fast by importing a batch of past photos at once."
+  },
+  {
+   "shot": "03",
+   "title": "Every first, marked",
+   "text": "Mark milestones like First Smile and First Steps, or add your own, so the big moments are easy to find again later."
+  },
+  {
+   "shot": "04",
+   "title": "On this day, on your Home Screen",
+   "text": "Widgets show your book and bring back a page from this day in an earlier year. A Lock Screen widget opens a new page in one tap."
+  },
+  {
+   "shot": "05",
+   "title": "Private, and yours",
+   "text": "No ads, no social feed, no public profiles. Photos and words stay on your iPhone, and in your own iCloud if you turn on iCloud Sync with Pro. Privacy Lock (Pro) can lock the app, a book or a single memory."
+  }
+ ]
 }

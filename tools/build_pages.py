@@ -418,7 +418,8 @@ def render(a):
     home = "/" if lang in ("en", "en-GB") or not (ROOT / lang.lower() / "index.html").exists() else f"/{lang.lower()}/"
     hl_html, details_h = hl if hl else ("", None)
 
-    chips = [T("meta_free"), T("meta_devices"), T("meta_ios", v=(s.get("minOS") or "17.0").split(".")[0])]
+    # iphoneOnly（10-20 Pagewren：TARGETED_DEVICE_FAMILY 1，iPad 上只是兼容模式）：标签只写 iPhone，各语言同一个词
+    chips = [T("meta_free"), "iPhone" if p.get("iphoneOnly") else T("meta_devices"), T("meta_ios", v=(s.get("minOS") or "17.0").split(".")[0])]
     if p.get("noAccount"): chips.append(T("meta_no_account"))
 
     # 首屏只放插画（没有插画就不放图，不拿截图顶）；App 预览视频挪到功能图文后面单独一节

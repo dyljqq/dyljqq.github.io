@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagewren — Baby Memory Book &amp; Photo Journal for iPhone</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
+<link rel="preload" as="image" fetchpriority="high" href="/assets/art/pagewren/hero-460.webp" imagesrcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" imagesizes="(max-width:760px) 86vw, 420px">
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Pagewren is a baby memory book for iPhone: add a photo or a few words and each moment becomes a page, with chapters by age and milestones. No account.">
+<link rel="canonical" href="https://beforego.art/pagewren/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/pagewren/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/pagewren/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/pagewren/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/pagewren/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/pagewren/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/pagewren/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/pagewren/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/pagewren/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/pagewren/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/pagewren/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/pagewren/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/pagewren/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/pagewren/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Pagewren — Baby Memory Book &amp; Photo Journal for iPhone">
+<meta property="og:description" content="Pagewren is a baby memory book for iPhone: add a photo or a few words and each moment becomes a page, with chapters by age and milestones. No account.">
+<meta property="og:url" content="https://beforego.art/pagewren/">
+<meta property="og:image" content="https://beforego.art/assets/art/pagewren/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://beforego.art/assets/art/pagewren/og.jpg">
+<meta name="twitter:title" content="Pagewren — Baby Memory Book &amp; Photo Journal for iPhone">
+<meta name="twitter:description" content="Pagewren is a baby memory book for iPhone: add a photo or a few words and each moment becomes a page, with chapters by age and milestones. No account.">
+<meta name="apple-itunes-app" content="app-id=6823661619, affiliate-data=ct=web-pagewren-app&amp;pt=128309253">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beforego.art/pagewren/#app",
+  "name": "Pagewren: Baby Memory Book",
+  "alternateName": "Pagewren",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Pagewren is a baby memory book for iPhone: add a photo or a few words and each moment becomes a page, with chapters by age and milestones. No account.",
+  "url": "https://beforego.art/pagewren/",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://beforego.art/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://beforego.art/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6823661619",
+  "installUrl": "https://apps.apple.com/app/id6823661619",
+  "sameAs": [
+    "https://apps.apple.com/app/id6823661619"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/39/b6/e939b66c-24c6-5a09-bf6f-e00a4600e1e4/01-your-babys-story.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/57/ba/7257ba66-4e35-0b3f-dde7-cacf8e5fd37d/02-a-page-in-seconds.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/69/fd/98/69fd98c9-a022-3117-b6be-80bc984729f9/03-every-first.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/89/59/0d895947-719a-8c5e-2f45-90d44beecccf/04-every-month.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/12/81/4c/12814cec-363e-5194-f982-4281f10dd1b6/05-only-you-can-open-it.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/5b/f4/60/5bf460f6-c819-85c6-4cc1-9aea0da87c94/06-lock-a-memory.png/920x0w.webp"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://beforego.art/pagewren/#faq",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Pagewren free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Pagewren is free to download, and the Classic theme and three page backgrounds are free for everyone. Pagewren Pro — monthly, yearly or a one-time Lifetime purchase — adds the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock. The price is shown in the app before you pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account, and where are my photos kept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account or sign-up. Your photos and words stay on your iPhone, and in your own private iCloud if you turn on iCloud Sync with Pro. Pagewren has no ads, no social feed and no public profiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Pagewren organize my baby's memories?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As a book with chapters by age: Newborn, 1 Month, 2 Months and beyond. You flip through it like a real book, switch to the timeline to scroll back through every month, and mark milestones like First Smile and First Steps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add photos from before I started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Import a batch of past photos at once to catch up, then add a few words to any page whenever you like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I share the book with family?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Export the whole book as a PDF, or share any page as an image with family through the iOS share sheet."
+      }
+    }
+  ]
+}
+</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
+<!-- seo:end -->
+<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">All apps</a>
+    <a href="/tools/">Tools</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Pagewren">Support</a>
+  </nav>
+  <!-- lang:start -->
+  <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="English"><span>EN</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/pagewren/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/pagewren/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/pagewren/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/pagewren/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/pagewren/es/" hreflang="es" lang="es">Español</a></li><li><a href="/pagewren/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/pagewren/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/pagewren/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/pagewren/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/pagewren/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pagewren/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/pagewren/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><a class="header-download" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-header&amp;mt=8" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Pagewren: Baby Memory Book</h1>
+    <div class="lede"><p>Pagewren turns your baby&#x27;s everyday moments into a beautiful memory book, one page at a time.</p><p>Add a photo or a single sentence, and Pagewren lays out the page for you. No design skills, no daily streaks. Thirty seconds today becomes a keepsake for years.</p></div>
+    <a class="cta" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Download on the App Store</a>
+    <ul class="chips"><li>Free to download</li><li>iPhone</li><li>iOS 17 or later</li><li>No account needed</li></ul>
+    <div class="alt qr-only"><img class="alt-qr" src="/assets/qr/pagewren.svg" width="96" height="96" alt="" loading="lazy"><div class="alt-txt"><p class="alt-scan">On a computer? Scan this with your iPhone camera to download the app.</p></div></div>
+  </div>
+  <div class="hero-media"><img src="/assets/art/pagewren/hero-460.webp" srcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" sizes="(max-width:760px) 86vw, 420px" width="460" height="575" alt="Pagewren: Baby Memory Book" fetchpriority="high"></div>
+</section>
+
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">What it does</h2>
+  <div class="hls">
+    <div class="hl"><figure><img src="/assets/art/pagewren/01-460.webp" srcset="/assets/art/pagewren/01-460.webp 460w, /assets/art/pagewren/01-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="A book, not a feed" loading="lazy" decoding="async"></figure><div><h3>A book, not a feed</h3><p>Your child&#x27;s story opens like a real book, with chapters by age: Newborn, 1 Month, 2 Months and beyond. Switch to the timeline to scroll back through every month, and keep more than one book for a new sibling or a trip.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/02-460.webp" srcset="/assets/art/pagewren/02-460.webp 460w, /assets/art/pagewren/02-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="Thirty seconds today" loading="lazy" decoding="async"></figure><div><h3>Thirty seconds today</h3><p>Add one photo, several, or just a few words, and Pagewren lays out the page for you. No design skills, no daily streaks. Catch up fast by importing a batch of past photos at once.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/03-460.webp" srcset="/assets/art/pagewren/03-460.webp 460w, /assets/art/pagewren/03-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="Every first, marked" loading="lazy" decoding="async"></figure><div><h3>Every first, marked</h3><p>Mark milestones like First Smile and First Steps, or add your own, so the big moments are easy to find again later.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/04-460.webp" srcset="/assets/art/pagewren/04-460.webp 460w, /assets/art/pagewren/04-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="On this day, on your Home Screen" loading="lazy" decoding="async"></figure><div><h3>On this day, on your Home Screen</h3><p>Widgets show your book and bring back a page from this day in an earlier year. A Lock Screen widget opens a new page in one tap.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/05-460.webp" srcset="/assets/art/pagewren/05-460.webp 460w, /assets/art/pagewren/05-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="Private, and yours" loading="lazy" decoding="async"></figure><div><h3>Private, and yours</h3><p>No ads, no social feed, no public profiles. Photos and words stay on your iPhone, and in your own iCloud if you turn on iCloud Sync with Pro. Privacy Lock (Pro) can lock the app, a book or a single memory.</p></div></div>
+  </div>
+</section>
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">The details, as written in the App Store</h2>
+  <div class="feats">
+    <div class="feat"><h3>Your book is the home screen</h3><ul><li>Flip through your child&#x27;s story like a real book</li><li>Chapters by age: Newborn, 1 Month, 2 Months and beyond</li><li>Switch to the timeline to scroll back through every month</li><li>Keep more than one book: a new sibling, a trip, a new chapter</li></ul></div>
+    <div class="feat"><h3>Capture in seconds</h3><ul><li>One photo, several photos, or just a few words</li><li>Bold, highlights, lists and checklists, and where it happened</li><li>Catch up fast: import a batch of past photos at once</li><li>Mark milestones like First Smile and First Steps, or add your own</li></ul></div>
+    <div class="feat"><h3>Make it beautiful</h3><ul><li>The Classic theme and three page backgrounds are free for everyone</li><li>Pagewren Pro unlocks the Linen and Scrapbook themes, every page background (or your own photo behind a page), collage layouts and new Pro themes every season</li></ul></div>
+    <div class="feat"><h3>On your home screen</h3><ul><li>Widgets show your book and bring back a page from this day in an earlier year</li><li>A Lock Screen widget opens a new page in one tap</li></ul></div>
+    <div class="feat"><h3>Keep it safe and share it</h3><ul><li>iCloud Sync with Pagewren Pro keeps your books on all your devices</li><li>Archive pages you&#x27;d rather keep out of the book, and restore anything from Recently Deleted for 30 days</li><li>Export your book as a PDF and share any page as an image with family</li><li>Back up and restore your photos and words anytime</li></ul></div>
+    <div class="feat"><h3>Private by design</h3><ul><li>Privacy Lock (Pro): lock Pagewren, a whole book or a single memory with a pattern or 4-digit code, and open it with Face ID</li><li>Your photos and words stay on your iPhone, and in your own iCloud if you turn on sync</li><li>No ads, no social feed, no public profiles</li></ul></div>
+    <div class="feat"><h3>Pagewren Pro</h3></div>
+  </div>
+  <details class="fine"><summary>Pricing and subscription terms</summary><p>Choose a one-time Lifetime purchase, or a yearly or monthly subscription. The yearly plan includes a free trial for eligible new subscribers. Payment is charged to your Apple ID. Subscriptions renew automatically unless canceled at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID settings. Your memories are always yours, with or without Pro.</p></details>
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">Questions people ask</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Is Pagewren free?</h3>
+      <p>Yes. Pagewren is free to download, and the Classic theme and three page backgrounds are free for everyone. Pagewren Pro — monthly, yearly or a one-time Lifetime purchase — adds the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock. The price is shown in the app before you pay.</p>
+    </div>
+    <div class="card">
+      <h3>Do I need an account, and where are my photos kept?</h3>
+      <p>No account or sign-up. Your photos and words stay on your iPhone, and in your own private iCloud if you turn on iCloud Sync with Pro. Pagewren has no ads, no social feed and no public profiles.</p>
+    </div>
+    <div class="card">
+      <h3>How does Pagewren organize my baby's memories?</h3>
+      <p>As a book with chapters by age: Newborn, 1 Month, 2 Months and beyond. You flip through it like a real book, switch to the timeline to scroll back through every month, and mark milestones like First Smile and First Steps.</p>
+    </div>
+    <div class="card">
+      <h3>Can I add photos from before I started?</h3>
+      <p>Yes. Import a batch of past photos at once to catch up, then add a few words to any page whenever you like.</p>
+    </div>
+    <div class="card">
+      <h3>Can I share the book with family?</h3>
+      <p>Export the whole book as a PDF, or share any page as an image with family through the iOS share sheet.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">More from go ka</h2>
+  <div class="others">
+      <a href="/countdown/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/7f/c4/7f7fc450-a50c-1b82-f330-bfc32d88f72f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>Days to Go &amp; Memories to Keep</small></span></a>
+      <a href="/beforego/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/1f/c7/651fc778-642f-37a9-b3c5-9e245d9f3df1/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>Trip plans from screenshots</small></span></a>
+      <a href="/invoiceqr/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>Quote, receipt &amp; PDF generator</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>Calorie Budget &amp; AI Food Scan</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>QR scanner, generator &amp; design</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>Snap it. Learn it. Say it.</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>Lifting Log &amp; Exercise Library</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Get Pagewren: Baby Memory Book</a>
+</div>
+</main>
+
+<!-- sitefooter:start -->
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+        <a class="gk-foot-brand" href="/"><svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/><path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+        <p class="gk-foot-tag">Small apps. Everyday things.</p>
+        <ul class="gk-foot-social" aria-label="Follow go ka"><li><a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank" aria-label="TikTok" title="TikTok"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#tiktok"/></svg></a></li><li><a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank" aria-label="Instagram" title="Instagram"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#instagram"/></svg></a></li><li><a href="https://x.com/dyljqq21" rel="me noopener" target="_blank" aria-label="X" title="X"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#x"/></svg></a></li><li><a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank" aria-label="Reddit" title="Reddit"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#reddit"/></svg></a></li><li><a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank" aria-label="RedNote (小红书)" title="RedNote (小红书)"><svg width="40" height="15" aria-hidden="true"><use href="/assets/social.svg#xhs"/></svg></a></li></ul>
+      </div>
+      <div class="gk-foot-cols">
+        <div class="gk-foot-col gk-foot-col-site">
+          <h2>go ka</h2>
+          <ul><li><a href="/#about">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/tools/">Free tools &amp; guides</a></li><li><a href="/#contact">Contact</a></li></ul>
+        </div>
+        <div class="gk-foot-col">
+          <h2>Apps</h2>
+          <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="/pagewren/">Pagewren</a><a href="/pagewren/privacy-policy/">Privacy</a><a href="/pagewren/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/countdown/">Countdown</a><a href="/countdown/privacy-policy/">Privacy</a><a href="/countdown/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/beforego/">BeforeGo</a><a href="/privacy-policy/">Privacy</a><a href="/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/invoiceqr/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/">Privacy</a><a href="/invoiceqr/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/dailycalorie/">DailyCalorie</a><a href="/dailycalorie/privacy-policy/">Privacy</a><a href="/dailycalorie/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/qrcodestudio/">QR Studio</a><a href="/qrcodestudio/privacy-policy/">Privacy</a><a href="/qrcodestudio/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-footer&mt=8">Word Beast</a><a href="/citu/privacy-policy/" hreflang="zh-CN">Privacy</a><a href="/citu/terms-of-use/" hreflang="zh-CN">Terms</a></li>
+          <li><a class="gk-foot-app" href="/repdex/">Repdex</a><a href="/repdex/privacy-policy/">Privacy</a><a href="/repdex/terms-of-use/">Terms</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© 2026 go ka</p>
+      <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
+  </div>
+</footer>
+<!-- sitefooter:end -->
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagewren — 아기 성장 앨범·육아일기 앱</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
+<link rel="preload" as="image" fetchpriority="high" href="/assets/art/pagewren/hero-460.webp" imagesrcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" imagesizes="(max-width:760px) 86vw, 420px">
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.">
+<link rel="canonical" href="https://beforego.art/pagewren/ko/">
+<link rel="alternate" hreflang="en" href="https://beforego.art/pagewren/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/pagewren/de/">
+<link rel="alternate" hreflang="fr" href="https://beforego.art/pagewren/fr/">
+<link rel="alternate" hreflang="it" href="https://beforego.art/pagewren/it/">
+<link rel="alternate" hreflang="es" href="https://beforego.art/pagewren/es/">
+<link rel="alternate" hreflang="es-MX" href="https://beforego.art/pagewren/es-mx/">
+<link rel="alternate" hreflang="pt-BR" href="https://beforego.art/pagewren/pt-br/">
+<link rel="alternate" hreflang="ja" href="https://beforego.art/pagewren/ja/">
+<link rel="alternate" hreflang="ko" href="https://beforego.art/pagewren/ko/">
+<link rel="alternate" hreflang="zh-Hans" href="https://beforego.art/pagewren/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://beforego.art/pagewren/zh-hant/">
+<link rel="alternate" hreflang="th" href="https://beforego.art/pagewren/th/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/pagewren/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Pagewren — 아기 성장 앨범·육아일기 앱">
+<meta property="og:description" content="Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.">
+<meta property="og:url" content="https://beforego.art/pagewren/ko/">
+<meta property="og:image" content="https://beforego.art/assets/art/pagewren/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://beforego.art/assets/art/pagewren/og.jpg">
+<meta name="twitter:title" content="Pagewren — 아기 성장 앨범·육아일기 앱">
+<meta name="twitter:description" content="Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.">
+<meta name="apple-itunes-app" content="app-id=6823661619, affiliate-data=ct=web-pagewren-app&amp;pt=128309253">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://beforego.art/pagewren/ko/#app",
+  "name": "Pagewren: 아기 성장 앨범",
+  "alternateName": "Pagewren",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "iOS 17.0 or later",
+  "description": "Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.",
+  "url": "https://beforego.art/pagewren/ko/",
+  "inLanguage": "ko",
+  "author": {
+    "@type": "Organization",
+    "@id": "https://beforego.art/#org",
+    "name": "go ka"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://beforego.art/#org",
+    "name": "go ka"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "downloadUrl": "https://apps.apple.com/app/id6823661619",
+  "installUrl": "https://apps.apple.com/app/id6823661619",
+  "sameAs": [
+    "https://apps.apple.com/app/id6823661619"
+  ],
+  "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+  "screenshot": [
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/b8/b0/d2b8b053-e033-5a18-52a2-48b9b985d5d8/01-your-babys-story.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b8/a9/c9/b8a9c9ec-913e-b8e7-f141-832d7b19fb2d/02-a-page-in-seconds.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/a2/23/e9a22339-0924-a72e-54a8-e8097b0f69e0/03-every-first.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/68/50/f0/6850f0fb-667d-94fe-fc38-0af1d3333932/04-every-month.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/18/3d/ef/183def6d-d9be-5474-1c81-0f9344fc4d4d/05-only-you-can-open-it.png/920x0w.webp",
+    "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/cf/78/c9cf7827-50bb-c0f6-58e7-c178493d257d/06-lock-a-memory.png/920x0w.webp"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://beforego.art/pagewren/ko/#faq",
+  "inLanguage": "ko",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pagewren은 무료인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. Pagewren은 무료로 다운로드할 수 있고, Classic 테마와 페이지 배경 3가지는 누구나 무료로 쓸 수 있습니다. Pagewren Pro(월간·연간 구독 또는 평생 이용권)에서는 Linen·Scrapbook 테마, 모든 페이지 배경, 콜라주 레이아웃, iCloud 동기화, 프라이버시 잠금을 이용할 수 있습니다. 가격은 결제 전에 앱에서 표시됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "계정이 필요한가요? 사진은 어디에 저장되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "계정이나 가입은 필요 없습니다. 사진과 글은 내 iPhone에 저장되고, Pro로 iCloud 동기화를 켜면 내 개인 iCloud에도 저장됩니다. 광고, 소셜 피드, 공개 프로필은 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아기 추억은 어떻게 정리되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "월령별 챕터가 있는 한 권의 책으로 정리됩니다(신생아, 1개월, 2개월…). 진짜 책처럼 넘겨 보고, 타임라인으로 바꾸면 달마다 거슬러 볼 수 있으며, 첫 미소·첫걸음 같은 첫 순간도 표시할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "예전에 찍은 사진도 넣을 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 지난 사진을 한 번에 여러 장 가져와 밀린 기록을 채우고, 언제든 원하는 페이지에 한마디를 덧붙일 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "가족과 공유할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "책 전체를 PDF로 내보내거나, 어떤 페이지든 이미지로 만들어 iOS 공유 시트로 가족에게 보낼 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
+<!-- seo:end -->
+<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/ko/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/ko/">모든 앱</a>
+    <a href="/tools/ko/">도구</a>
+    <a href="/blog/">블로그</a>
+    <a href="mailto:qinqiangji@gmail.com?subject=Pagewren">지원</a>
+  </nav>
+  <!-- lang:start -->
+  <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="한국어"><span>KO</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/pagewren/" hreflang="en" lang="en">English</a></li><li><a href="/pagewren/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/pagewren/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/pagewren/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/pagewren/es/" hreflang="es" lang="es">Español</a></li><li><a href="/pagewren/es-mx/" hreflang="es-MX" lang="es-MX">Español (México)</a></li><li><a href="/pagewren/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/pagewren/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/pagewren/ko/" hreflang="ko" lang="ko" aria-current="true">한국어</a></li><li><a href="/pagewren/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/pagewren/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li><li><a href="/pagewren/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><a class="header-download" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-header&amp;mt=8" aria-label="App Store에서 다운로드"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
+</header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
+    <h1>Pagewren: 아기 성장 앨범</h1>
+    <div class="lede"><p>Pagewren은 아기의 평범한 하루하루를 한 페이지씩 아름다운 추억의 책으로 만들어 줍니다.</p><p>사진 한 장이나 한 문장만 추가하면 Pagewren이 페이지를 꾸며 드려요. 디자인 실력도, 매일 기록해야 한다는 부담도 필요 없어요. 오늘의 30초가 오래도록 남을 추억이 됩니다.</p></div>
+    <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store에서 다운로드</a>
+    <ul class="chips"><li>무료로 다운로드</li><li>iPhone</li><li>iOS 17 이상</li><li>계정 불필요</li></ul>
+    <div class="alt qr-only"><img class="alt-qr" src="/assets/qr/pagewren.svg" width="96" height="96" alt="" loading="lazy"><div class="alt-txt"><p class="alt-scan">컴퓨터로 보고 계신가요? iPhone 카메라로 이 코드를 스캔하면 앱을 받을 수 있어요.</p></div></div>
+  </div>
+  <div class="hero-media"><img src="/assets/art/pagewren/hero-460.webp" srcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" sizes="(max-width:760px) 86vw, 420px" width="460" height="575" alt="Pagewren: 아기 성장 앨범" fetchpriority="high"></div>
+</section>
+
+<section class="sec" id="highlights" aria-labelledby="h-highlights">
+  <h2 id="h-highlights">주요 기능</h2>
+  <div class="hls">
+    <div class="hl"><figure><img src="/assets/art/pagewren/01-460.webp" srcset="/assets/art/pagewren/01-460.webp 460w, /assets/art/pagewren/01-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="피드가 아닌 한 권의 책" loading="lazy" decoding="async"></figure><div><h3>피드가 아닌 한 권의 책</h3><p>아이의 이야기가 진짜 책처럼 펼쳐집니다. 챕터는 월령별(신생아, 1개월, 2개월…)이고, 타임라인으로 바꾸면 달마다 거슬러 볼 수 있습니다. 동생이 생기거나 여행을 가면 책을 한 권 더 만들면 됩니다.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/02-460.webp" srcset="/assets/art/pagewren/02-460.webp 460w, /assets/art/pagewren/02-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="오늘의 30초" loading="lazy" decoding="async"></figure><div><h3>오늘의 30초</h3><p>사진 한 장, 여러 장, 또는 한마디만. 레이아웃은 Pagewren이 알아서 합니다. 디자인 감각도, 매일 이어 쓰기도 필요 없습니다. 지난 사진을 한 번에 가져와 금방 따라잡을 수 있어요.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/03-460.webp" srcset="/assets/art/pagewren/03-460.webp 460w, /assets/art/pagewren/03-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="모든 첫 순간을 표시" loading="lazy" decoding="async"></figure><div><h3>모든 첫 순간을 표시</h3><p>첫 미소, 첫걸음 같은 성장 순간을 표시하거나 직접 만들어, 소중한 순간을 나중에도 쉽게 찾을 수 있습니다.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/04-460.webp" srcset="/assets/art/pagewren/04-460.webp 460w, /assets/art/pagewren/04-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="그날의 페이지를 홈 화면에" loading="lazy" decoding="async"></figure><div><h3>그날의 페이지를 홈 화면에</h3><p>위젯이 내 책을 보여 주고, 지난해 같은 날의 페이지를 다시 꺼내 줍니다. 잠금 화면 위젯은 한 번 탭으로 새 페이지를 엽니다.</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/pagewren/05-460.webp" srcset="/assets/art/pagewren/05-460.webp 460w, /assets/art/pagewren/05-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="프라이빗하게, 온전히 내 것" loading="lazy" decoding="async"></figure><div><h3>프라이빗하게, 온전히 내 것</h3><p>광고도, 소셜 피드도, 공개 프로필도 없습니다. 사진과 글은 iPhone에, Pro의 iCloud 동기화를 켜면 내 iCloud에도 저장됩니다. 프라이버시 잠금(Pro)으로 앱, 책 한 권, 추억 하나를 잠글 수 있습니다.</p></div></div>
+  </div>
+</section>
+<section class="sec" id="features" aria-labelledby="h-features">
+  <h2 id="h-features">세부 사항 – App Store에 쓰인 대로</h2>
+  <div class="feats">
+    <div class="feat"><h3>책이 곧 홈 화면</h3><ul><li>진짜 책처럼 아이의 이야기를 넘겨 보세요</li><li>개월 수별 챕터: 신생아, 1개월, 2개월, 그 이후까지</li><li>타임라인으로 전환해 모든 달을 거슬러 올라가며 훑어보세요</li><li>책은 여러 권도 OK: 동생이 생겼을 때, 여행, 새로운 챕터를 위해</li></ul></div>
+    <div class="feat"><h3>몇 초 만에 기록</h3><ul><li>사진 한 장, 여러 장, 또는 몇 마디 글만으로도</li><li>굵은 글씨, 형광펜, 목록과 체크리스트, 그리고 일어난 장소까지</li><li>지난 사진도 한 번에 가져와 빠르게 채울 수 있어요</li><li>첫 미소, 첫걸음 같은 마일스톤을 기록하거나 직접 추가하세요</li></ul></div>
+    <div class="feat"><h3>아름답게 완성</h3><ul><li>Classic 테마와 페이지 배경 3종은 모두에게 무료</li><li>Pagewren Pro로 Linen, Scrapbook 테마와 모든 페이지 배경(또는 페이지 뒤에 내 사진), 콜라주 레이아웃, 시즌마다 추가되는 새 Pro 테마를 이용하세요</li></ul></div>
+    <div class="feat"><h3>홈 화면에서도</h3><ul><li>위젯으로 내 책을 보고, 이전 해 오늘의 페이지를 다시 만나 보세요</li><li>잠금 화면 위젯으로 한 번에 새 페이지를 열 수 있어요</li></ul></div>
+    <div class="feat"><h3>안전하게 간직하고 공유하기</h3><ul><li>Pagewren Pro의 iCloud 동기화로 모든 기기에서 내 책을 이용하세요</li><li>책에 넣고 싶지 않은 페이지는 보관하고, &#x27;최근 삭제된 항목&#x27;에서 30일 동안 무엇이든 복원할 수 있어요</li><li>책을 PDF로 내보내고, 어떤 페이지든 이미지로 가족과 공유</li><li>사진과 글은 언제든 백업하고 복원할 수 있어요</li></ul></div>
+    <div class="feat"><h3>프라이버시 우선</h3><ul><li>프라이버시 잠금(Pro): 앱 전체, 책 한 권, 추억 하나를 패턴이나 4자리 코드로 잠그고 Face ID로 열기</li><li>사진과 글은 내 iPhone에 저장되며, 동기화를 켜면 내 iCloud에도 저장됩니다</li><li>광고 없음, 소셜 피드 없음, 공개 프로필 없음</li></ul></div>
+    <div class="feat"><h3>Pagewren Pro</h3></div>
+  </div>
+  <details class="fine"><summary>가격 및 구독 약관</summary><p>한 번 결제하는 평생 이용권 또는 연간·월간 구독 중에서 선택하세요. 연간 플랜에는 자격이 되는 신규 구독자를 위한 무료 체험이 포함됩니다. 결제 금액은 Apple 계정으로 청구됩니다. 구독은 현재 기간이 끝나기 최소 24시간 전에 해지하지 않으면 자동으로 갱신됩니다. Apple 계정 설정에서 언제든지 관리하거나 해지할 수 있습니다. Pro 여부와 관계없이 추억은 언제나 당신의 것입니다.</p></details>
+</section>
+
+<section class="sec" id="faq-section">
+  <!-- faq:start -->
+  <h2 id="faq">자주 묻는 질문</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Pagewren은 무료인가요?</h3>
+      <p>네. Pagewren은 무료로 다운로드할 수 있고, Classic 테마와 페이지 배경 3가지는 누구나 무료로 쓸 수 있습니다. Pagewren Pro(월간·연간 구독 또는 평생 이용권)에서는 Linen·Scrapbook 테마, 모든 페이지 배경, 콜라주 레이아웃, iCloud 동기화, 프라이버시 잠금을 이용할 수 있습니다. 가격은 결제 전에 앱에서 표시됩니다.</p>
+    </div>
+    <div class="card">
+      <h3>계정이 필요한가요? 사진은 어디에 저장되나요?</h3>
+      <p>계정이나 가입은 필요 없습니다. 사진과 글은 내 iPhone에 저장되고, Pro로 iCloud 동기화를 켜면 내 개인 iCloud에도 저장됩니다. 광고, 소셜 피드, 공개 프로필은 없습니다.</p>
+    </div>
+    <div class="card">
+      <h3>아기 추억은 어떻게 정리되나요?</h3>
+      <p>월령별 챕터가 있는 한 권의 책으로 정리됩니다(신생아, 1개월, 2개월…). 진짜 책처럼 넘겨 보고, 타임라인으로 바꾸면 달마다 거슬러 볼 수 있으며, 첫 미소·첫걸음 같은 첫 순간도 표시할 수 있습니다.</p>
+    </div>
+    <div class="card">
+      <h3>예전에 찍은 사진도 넣을 수 있나요?</h3>
+      <p>네. 지난 사진을 한 번에 여러 장 가져와 밀린 기록을 채우고, 언제든 원하는 페이지에 한마디를 덧붙일 수 있습니다.</p>
+    </div>
+    <div class="card">
+      <h3>가족과 공유할 수 있나요?</h3>
+      <p>책 전체를 PDF로 내보내거나, 어떤 페이지든 이미지로 만들어 iOS 공유 시트로 가족에게 보낼 수 있습니다.</p>
+    </div>
+  </div>
+  <!-- faq:end -->
+</section>
+
+
+<section class="sec" id="more" aria-labelledby="h-more">
+  <h2 id="h-more">go ka의 다른 앱</h2>
+  <div class="others">
+      <a href="/countdown/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/7f/c4/7f7fc450-a50c-1b82-f330-bfc32d88f72f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Countdown</b><small>여행·수능·생일까지 남은 날과 추억</small></span></a>
+      <a href="/beforego/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/65/1f/c7/651fc778-642f-37a9-b3c5-9e245d9f3df1/AppIcon-0-0-1x_U007epad-0-4-0-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>BeforeGo</b><small>캡처 한 장으로 여행 일정 완성</small></span></a>
+      <a href="/invoiceqr/ko/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Invoice Maker</b><small>인보이스 템플릿, 결제와 수금 관리</small></span></a>
+      <a href="/dailycalorie/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/ea/61/c0ea6160-94dd-288f-6e58-8e835aedce94/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>DailyCalorie</b><small>AI 사진 칼로리 계산·식단 기록</small></span></a>
+      <a href="/qrcodestudio/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/2a/52/482a5214-40a3-c4aa-e95a-5fb99123c5e2/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>QR Studio</b><small>디자인 QR 생성기 · 스캔 · 명함</small></span></a>
+      <a href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&amp;ct=web-citu-more&amp;mt=8"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fd/ce/75/fdce753c-f2f5-daac-71d0-841be4e53a8d/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Word Beast</b><small>초1~중3 단어 게임</small></span></a>
+      <a href="/repdex/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0f/68/77/0f687797-ca57-a903-d566-bfd6e9185b9a/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/128x0w.webp" width="44" height="44" alt="" loading="lazy"><span><b>Repdex</b><small>1,324개 운동 · 오프라인 기록</small></span></a>
+  </div>
+</section>
+
+<div class="end">
+  <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Pagewren: 아기 성장 앨범 다운로드</a>
+</div>
+</main>
+
+<!-- sitefooter:start -->
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+        <a class="gk-foot-brand" href="/ko/"><svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/><path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+        <p class="gk-foot-tag">작은 앱들. 매일의 동반자.</p>
+        <ul class="gk-foot-social" aria-label="go ka 팔로우"><li><a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank" aria-label="TikTok" title="TikTok"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#tiktok"/></svg></a></li><li><a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank" aria-label="Instagram" title="Instagram"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#instagram"/></svg></a></li><li><a href="https://x.com/dyljqq21" rel="me noopener" target="_blank" aria-label="X" title="X"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#x"/></svg></a></li><li><a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank" aria-label="Reddit" title="Reddit"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#reddit"/></svg></a></li><li><a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank" aria-label="RedNote (小红书)" title="RedNote (小红书)"><svg width="40" height="15" aria-hidden="true"><use href="/assets/social.svg#xhs"/></svg></a></li></ul>
+      </div>
+      <div class="gk-foot-cols">
+        <div class="gk-foot-col gk-foot-col-site">
+          <h2>go ka</h2>
+          <ul><li><a href="/ko/#about">소개</a></li><li><a href="/blog/" hreflang="en">블로그</a></li><li><a href="/tools/ko/">무료 도구 &amp; 가이드</a></li><li><a href="/ko/#contact">연락처</a></li></ul>
+        </div>
+        <div class="gk-foot-col">
+          <h2>앱</h2>
+          <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="/pagewren/ko/">Pagewren</a><a href="/pagewren/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/pagewren/terms-of-use/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/countdown/ko/">Countdown</a><a href="/countdown/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/countdown/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/beforego/ko/">BeforeGo</a><a href="/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/terms-of-use/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/invoiceqr/ko/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/invoiceqr/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/dailycalorie/" hreflang="en">DailyCalorie</a><a href="/dailycalorie/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/dailycalorie/terms-of-use/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/qrcodestudio/" hreflang="en">QR Studio</a><a href="/qrcodestudio/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/qrcodestudio/terms-of-service/" hreflang="en">이용약관</a></li>
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-footer&mt=8">Word Beast</a><a href="/citu/privacy-policy/" hreflang="zh-CN">개인정보 보호정책</a><a href="/citu/terms-of-use/" hreflang="zh-CN">이용약관</a></li>
+          <li><a class="gk-foot-app" href="/repdex/" hreflang="en">Repdex</a><a href="/repdex/privacy-policy/" hreflang="en">개인정보 보호정책</a><a href="/repdex/terms-of-use/" hreflang="en">이용약관</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© 2026 go ka</p>
+      <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
+  </div>
+</footer>
+<!-- sitefooter:end -->
+<script>document.querySelectorAll(".hero-media").forEach(function(m){var v=m.querySelector("video"),b=m.querySelector(".play");if(!v||!b)return;b.addEventListener("click",function(){v.controls=true;v.play();b.remove()})});</script>
+</body>
+</html>

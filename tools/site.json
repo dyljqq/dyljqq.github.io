@@ -1912,17 +1912,17 @@
     {
       "key": "pagewren",
       "path": "/pagewren/",
+      "iphoneOnly": true,
       "live": true,
       "appId": "6823661619",
       "name": "Pagewren: Baby Memory Book",
       "shortName": "Pagewren",
       "category": "LifestyleApplication",
       "genre": "Lifestyle",
-      "title": "Pagewren — Baby Memory Book for iPhone",
+      "title": "Pagewren — Baby Memory Book & Photo Journal for iPhone",
       "oneLiner": "A baby memory book for iPhone where every photo and note becomes a page.",
-      "description": "A baby memory book for iPhone: photos and a few words become the pages of a book, kept on your device with no account.",
+      "description": "Pagewren is a baby memory book for iPhone: add a photo or a few words and each moment becomes a page, with chapters by age and milestones. No account.",
       "audience": "Parents keeping a record of their child's first years.",
-      "noPage": true,
       "legal": [
         [
           "/pagewren/privacy-policy/",
@@ -1946,7 +1946,505 @@
         "label": "Pagewren",
         "tagline": "Photo Journal & Milestones",
         "blurb": "Pagewren turns your baby's everyday moments into a beautiful memory book, one page at a time. Add a photo or a single sentence, and Pagewren lays out the page for you. No design skills, no daily streaks."
-      }
+      },
+      "generated": true,
+      "noAccount": true,
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "faq": [
+        {
+          "q": "Is Pagewren free?",
+          "a": "Yes. Pagewren is free to download, and the Classic theme and three page backgrounds are free for everyone. Pagewren Pro — monthly, yearly or a one-time Lifetime purchase — adds the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock. The price is shown in the app before you pay."
+        },
+        {
+          "q": "Do I need an account, and where are my photos kept?",
+          "a": "No account or sign-up. Your photos and words stay on your iPhone, and in your own private iCloud if you turn on iCloud Sync with Pro. Pagewren has no ads, no social feed and no public profiles."
+        },
+        {
+          "q": "How does Pagewren organize my baby's memories?",
+          "a": "As a book with chapters by age: Newborn, 1 Month, 2 Months and beyond. You flip through it like a real book, switch to the timeline to scroll back through every month, and mark milestones like First Smile and First Steps."
+        },
+        {
+          "q": "Can I add photos from before I started?",
+          "a": "Yes. Import a batch of past photos at once to catch up, then add a few words to any page whenever you like."
+        },
+        {
+          "q": "Can I share the book with family?",
+          "a": "Export the whole book as a PDF, or share any page as an image with family through the iOS share sheet."
+        }
+      ]
+    },
+    {
+      "key": "pagewren-de",
+      "path": "/pagewren/de/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: Babytagebuch",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Babytagebuch & Babyalbum fürs iPhone",
+      "oneLiner": "Ein Babytagebuch fürs iPhone, in dem jedes Foto und jede Notiz zur Seite eines Buchs wird.",
+      "description": "Pagewren ist ein Babytagebuch fürs iPhone: Aus einem Foto oder einem Satz wird eine fertige Seite, mit Kapiteln nach Alter und Meilensteinen. Ohne Konto.",
+      "audience": "Eltern, die die ersten Jahre ihres Kindes festhalten möchten.",
+      "free": "Das Design Classic und drei Seitenhintergründe sind für alle kostenlos; deine Erinnerungen gehören dir, mit oder ohne Pro.",
+      "paid": "Pagewren Pro, monatlich, jährlich oder als einmaliger Lifetime-Kauf: die Designs Linen und Scrapbook, alle Seitenhintergründe, Collage-Layouts, iCloud-Sync und Datenschutz-Sperre.",
+      "faq": [
+        {
+          "q": "Ist Pagewren kostenlos?",
+          "a": "Ja. Pagewren kannst du kostenlos laden, und das Design Classic sowie drei Seitenhintergründe sind für alle kostenlos. Pagewren Pro – monatlich, jährlich oder als einmaliger Lifetime-Kauf – bringt die Designs Linen und Scrapbook, alle Seitenhintergründe, Collage-Layouts, iCloud-Sync und die Datenschutz-Sperre. Der Preis steht in der App, bevor du bezahlst."
+        },
+        {
+          "q": "Brauche ich ein Konto, und wo liegen meine Fotos?",
+          "a": "Kein Konto, keine Anmeldung. Deine Fotos und Texte bleiben auf deinem iPhone und, wenn du mit Pro die iCloud-Synchronisierung einschaltest, in deiner eigenen privaten iCloud. Pagewren hat keine Werbung, keinen Social Feed und keine öffentlichen Profile."
+        },
+        {
+          "q": "Wie ordnet Pagewren die Erinnerungen an mein Baby?",
+          "a": "Als Buch mit Kapiteln nach Alter: Neugeboren, 1 Monat, 2 Monate und so weiter. Du blätterst darin wie in einem echten Buch, wechselst in die Zeitleiste, um durch jeden Monat zurückzuscrollen, und markierst Meilensteine wie das erste Lächeln oder die ersten Schritte."
+        },
+        {
+          "q": "Kann ich auch ältere Fotos hinzufügen?",
+          "a": "Ja. Importiere einen ganzen Stapel früherer Fotos auf einmal, um aufzuholen, und ergänze die Texte zu jeder Seite, wann du willst."
+        },
+        {
+          "q": "Kann ich das Buch mit der Familie teilen?",
+          "a": "Exportiere das ganze Buch als PDF oder teile jede Seite als Bild über das Teilen-Menü von iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "de",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-fr",
+      "path": "/pagewren/fr/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren : Journal de bébé",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Journal de bébé et album photo sur iPhone",
+      "oneLiner": "Un journal de bébé sur iPhone où chaque photo et chaque note devient la page d'un livre.",
+      "description": "Pagewren est un journal de bébé sur iPhone : une photo ou une phrase devient une page, avec des chapitres par âge et les premières fois. Sans compte.",
+      "audience": "Les parents qui veulent garder une trace des premières années de leur enfant.",
+      "free": "Le thème Classic et trois arrière-plans de page sont gratuits pour tous ; vos souvenirs restent à vous, avec ou sans Pro.",
+      "paid": "Pagewren Pro, mensuel, annuel ou en achat unique à vie : les thèmes Linen et Scrapbook, tous les arrière-plans de page, les mises en page en collage, la synchronisation iCloud et le verrou de confidentialité.",
+      "faq": [
+        {
+          "q": "Pagewren est-il gratuit ?",
+          "a": "Oui. Pagewren se télécharge gratuitement, et le thème Classic ainsi que trois arrière-plans de page sont gratuits pour tous. Pagewren Pro — mensuel, annuel ou en achat unique à vie — ajoute les thèmes Linen et Scrapbook, tous les arrière-plans de page, les mises en page en collage, la synchronisation iCloud et le verrou de confidentialité. Le prix est affiché dans l'app avant de payer."
+        },
+        {
+          "q": "Faut-il un compte, et où sont gardées mes photos ?",
+          "a": "Aucun compte ni inscription. Vos photos et vos textes restent sur votre iPhone, et dans votre propre iCloud privé si vous activez la synchronisation iCloud avec Pro. Pagewren n'a ni publicité, ni fil d’actualité, ni profil public."
+        },
+        {
+          "q": "Comment Pagewren organise-t-il les souvenirs de mon bébé ?",
+          "a": "Comme un livre avec des chapitres par âge : Naissance, 1 mois, 2 mois et ainsi de suite. Vous le feuilletez comme un vrai livre, passez à la chronologie pour remonter mois par mois, et marquez les premières fois comme le premier sourire ou les premiers pas."
+        },
+        {
+          "q": "Puis-je ajouter des photos plus anciennes ?",
+          "a": "Oui. Importez d'un coup une série de photos passées pour rattraper le retard, puis ajoutez quelques mots à n'importe quelle page quand vous voulez."
+        },
+        {
+          "q": "Puis-je partager le livre avec la famille ?",
+          "a": "Exportez le livre entier en PDF, ou partagez n'importe quelle page en image avec la feuille de partage d'iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "fr",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-it",
+      "path": "/pagewren/it/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: Diario del bebè",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Diario del bebè e album foto per iPhone",
+      "oneLiner": "Un diario del bebè per iPhone in cui ogni foto e ogni nota diventa la pagina di un libro.",
+      "description": "Pagewren è un diario del bebè per iPhone: una foto o una frase diventa una pagina, con capitoli per età e prime volte. Nessun account.",
+      "audience": "I genitori che vogliono conservare i primi anni del loro bambino.",
+      "free": "Il tema Classic e tre sfondi di pagina sono gratis per tutti; i tuoi ricordi restano tuoi, con o senza Pro.",
+      "paid": "Pagewren Pro, mensile, annuale o con acquisto unico a vita: i temi Linen e Scrapbook, tutti gli sfondi di pagina, i layout a collage, la sincronizzazione iCloud e il blocco privacy.",
+      "faq": [
+        {
+          "q": "Pagewren è gratis?",
+          "a": "Sì. Pagewren si scarica gratis, e il tema Classic e tre sfondi di pagina sono gratis per tutti. Pagewren Pro — mensile, annuale o con acquisto unico a vita — aggiunge i temi Linen e Scrapbook, tutti gli sfondi di pagina, i layout a collage, la sincronizzazione iCloud e il blocco privacy. Il prezzo è mostrato nell'app prima di pagare."
+        },
+        {
+          "q": "Serve un account, e dove restano le mie foto?",
+          "a": "Nessun account né registrazione. Foto e testi restano sul tuo iPhone e, se attivi la sincronizzazione iCloud con Pro, nel tuo iCloud privato. Pagewren non ha pubblicità, feed social o profili pubblici."
+        },
+        {
+          "q": "Come organizza Pagewren i ricordi del mio bambino?",
+          "a": "Come un libro con capitoli per età: Neonato, 1 mese, 2 mesi e così via. Lo sfogli come un libro vero, passi alla timeline per scorrere mese per mese e segni le prime volte come il primo sorriso o i primi passi."
+        },
+        {
+          "q": "Posso aggiungere foto di prima?",
+          "a": "Sì. Importa in una volta sola un gruppo di foto passate per metterti in pari, poi aggiungi due parole a qualsiasi pagina quando vuoi."
+        },
+        {
+          "q": "Posso condividere il libro con la famiglia?",
+          "a": "Esporta l'intero libro in PDF oppure condividi qualsiasi pagina come immagine dal menu di condivisione di iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "it",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-es",
+      "path": "/pagewren/es/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: Diario del bebé",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Diario del bebé y álbum de fotos para iPhone",
+      "oneLiner": "Un diario del bebé para iPhone donde cada foto y cada nota se convierte en la página de un libro.",
+      "description": "Pagewren es un diario del bebé para iPhone: una foto o una frase se convierte en una página, con capítulos por edad e hitos. Sin cuenta.",
+      "audience": "Padres y madres que quieren guardar los primeros años de su hijo.",
+      "free": "El tema Classic y tres fondos de página son gratis para todos; tus recuerdos son tuyos, con o sin Pro.",
+      "paid": "Pagewren Pro, mensual, anual o con una compra única de por vida: los temas Linen y Scrapbook, todos los fondos de página, diseños tipo collage, sincronización con iCloud y bloqueo de privacidad.",
+      "faq": [
+        {
+          "q": "¿Pagewren es gratis?",
+          "a": "Sí. Pagewren se descarga gratis, y el tema Classic y tres fondos de página son gratis para todos. Pagewren Pro —mensual, anual o con una compra única de por vida— añade los temas Linen y Scrapbook, todos los fondos de página, diseños tipo collage, sincronización con iCloud y bloqueo de privacidad. El precio se muestra en la app antes de pagar."
+        },
+        {
+          "q": "¿Necesito una cuenta? ¿Dónde se guardan mis fotos?",
+          "a": "No hace falta cuenta ni registro. Tus fotos y textos se quedan en tu iPhone, y en tu propio iCloud privado si activas la sincronización con iCloud de Pro. Pagewren no tiene anuncios, ni feed social, ni perfiles públicos."
+        },
+        {
+          "q": "¿Cómo organiza Pagewren los recuerdos de mi bebé?",
+          "a": "Como un libro con capítulos por edad: Recién nacido, 1 mes, 2 meses y así sucesivamente. Lo hojeas como un libro de verdad, cambias a la línea de tiempo para recorrer cada mes y marcas hitos como la primera sonrisa o los primeros pasos."
+        },
+        {
+          "q": "¿Puedo añadir fotos de antes?",
+          "a": "Sí. Importa de una vez un lote de fotos pasadas para ponerte al día y añade unas palabras a cualquier página cuando quieras."
+        },
+        {
+          "q": "¿Puedo compartir el libro con la familia?",
+          "a": "Exporta el libro entero en PDF o comparte cualquier página como imagen desde el menú de compartir de iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "es",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-es-mx",
+      "path": "/pagewren/es-mx/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: Diario de mi bebé",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Diario de tu bebé con fotos e hitos en iPhone",
+      "oneLiner": "Un diario de tu bebé para iPhone donde cada foto y cada nota se vuelve la página de un libro.",
+      "description": "Pagewren es un diario de tu bebé para iPhone: una foto o una frase se vuelve una página, con capítulos por edad e hitos. Sin cuenta.",
+      "audience": "Mamás y papás que quieren guardar los primeros años de su bebé.",
+      "free": "El tema Classic y tres fondos de página son gratis para todos; tus recuerdos son tuyos, con o sin Pro.",
+      "paid": "Pagewren Pro, mensual, anual o con un pago único de por vida: los temas Linen y Scrapbook, todos los fondos de página, diseños tipo collage, sincronización con iCloud y bloqueo de privacidad.",
+      "faq": [
+        {
+          "q": "¿Pagewren es gratis?",
+          "a": "Sí. Pagewren se descarga gratis, y el tema Classic y tres fondos de página son gratis para todos. Pagewren Pro —mensual, anual o con un pago único de por vida— agrega los temas Linen y Scrapbook, todos los fondos de página, diseños tipo collage, sincronización con iCloud y bloqueo de privacidad. El precio aparece en la app antes de pagar."
+        },
+        {
+          "q": "¿Necesito una cuenta? ¿Dónde se guardan mis fotos?",
+          "a": "No necesitas cuenta ni registro. Tus fotos y textos se quedan en tu iPhone, y en tu propio iCloud privado si activas la sincronización con iCloud de Pro. Pagewren no tiene anuncios, ni feed social, ni perfiles públicos."
+        },
+        {
+          "q": "¿Cómo organiza Pagewren los recuerdos de mi bebé?",
+          "a": "Como un libro con capítulos por edad: Recién nacido, 1 mes, 2 meses y así. Lo hojeas como un libro de verdad, cambias a la línea de tiempo para recorrer cada mes y marcas hitos como la primera sonrisa o los primeros pasos."
+        },
+        {
+          "q": "¿Puedo agregar fotos de antes?",
+          "a": "Sí. Importa de una vez un montón de fotos pasadas para ponerte al día y agrega unas palabras a cualquier página cuando quieras."
+        },
+        {
+          "q": "¿Puedo compartir el libro con la familia?",
+          "a": "Exporta el libro completo en PDF o comparte cualquier página como imagen desde el menú de compartir de iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "es-MX",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-pt-br",
+      "path": "/pagewren/pt-br/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: Diário do Bebê",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — Diário do bebê e álbum de fotos no iPhone",
+      "oneLiner": "Um diário do bebê para iPhone em que cada foto e cada nota vira a página de um livro.",
+      "description": "Pagewren é um diário do bebê para iPhone: uma foto ou uma frase vira uma página, com capítulos por idade e marcos. Sem conta.",
+      "audience": "Mães e pais que querem guardar os primeiros anos do filho.",
+      "free": "O tema Classic e três fundos de página são grátis para todos; suas lembranças são suas, com ou sem Pro.",
+      "paid": "Pagewren Pro, mensal, anual ou compra vitalícia única: os temas Linen e Scrapbook, todos os fundos de página, layouts em colagem, sincronização com iCloud e bloqueio de privacidade.",
+      "faq": [
+        {
+          "q": "O Pagewren é grátis?",
+          "a": "Sim. O Pagewren é grátis para baixar, e o tema Classic e três fundos de página são grátis para todos. O Pagewren Pro — mensal, anual ou compra vitalícia única — adiciona os temas Linen e Scrapbook, todos os fundos de página, layouts em colagem, sincronização com iCloud e bloqueio de privacidade. O preço aparece no app antes de pagar."
+        },
+        {
+          "q": "Preciso de conta? Onde ficam minhas fotos?",
+          "a": "Sem conta e sem cadastro. Suas fotos e textos ficam no seu iPhone, e no seu próprio iCloud privado se você ativar a sincronização com iCloud do Pro. O Pagewren não tem anúncios, feed social nem perfis públicos."
+        },
+        {
+          "q": "Como o Pagewren organiza as lembranças do meu bebê?",
+          "a": "Como um livro com capítulos por idade: Recém-nascido, 1 mês, 2 meses e assim por diante. Você folheia como um livro de verdade, muda para a linha do tempo para voltar mês a mês e registra marcos como o primeiro sorriso e os primeiros passos."
+        },
+        {
+          "q": "Posso adicionar fotos antigas?",
+          "a": "Sim. Importe de uma vez um lote de fotos antigas para colocar tudo em dia e escreva algumas palavras em qualquer página quando quiser."
+        },
+        {
+          "q": "Posso compartilhar o livro com a família?",
+          "a": "Exporte o livro inteiro em PDF ou compartilhe qualquer página como imagem pelo menu de compartilhamento do iOS."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "pt-BR",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-ja",
+      "path": "/pagewren/ja/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: 赤ちゃんの成長アルバム",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — 赤ちゃんの成長アルバム・育児日記アプリ",
+      "oneLiner": "写真もひとことも、1ページずつ本になる iPhone の赤ちゃん成長アルバム。",
+      "description": "Pagewren は iPhone の赤ちゃん成長アルバム。写真1枚かひとことで1ページが完成し、月齢ごとの章と「はじめて」の記録で残せます。アカウント不要。",
+      "audience": "子どもの最初の数年を記録しておきたいパパ・ママ。",
+      "free": "Classic テーマと3種類のページ背景は誰でも無料。Pro があってもなくても、思い出はあなたのものです。",
+      "paid": "Pagewren Pro（月額・年額・買い切りの Lifetime）：Linen・Scrapbook テーマ、すべてのページ背景、コラージュレイアウト、iCloud 同期、プライバシーロック。",
+      "faq": [
+        {
+          "q": "Pagewren は無料ですか？",
+          "a": "はい。Pagewren は無料でダウンロードでき、Classic テーマと3種類のページ背景は誰でも無料で使えます。Pagewren Pro（月額・年額・買い切りの Lifetime）では、Linen・Scrapbook テーマ、すべてのページ背景、コラージュレイアウト、iCloud 同期、プライバシーロックが使えます。価格は支払いの前にアプリ内に表示されます。"
+        },
+        {
+          "q": "アカウントは必要？写真はどこに保存されますか？",
+          "a": "アカウント登録は不要です。写真と文章はあなたの iPhone に保存され、Pro で iCloud 同期をオンにした場合はあなた自身のプライベートな iCloud にも保存されます。広告、SNS フィード、公開プロフィールはありません。"
+        },
+        {
+          "q": "思い出はどのように整理されますか？",
+          "a": "月齢ごとの章がある1冊の本として整理されます（新生児、1か月、2か月…）。本物の本のようにめくれて、タイムラインに切り替えれば月ごとにさかのぼれます。「はじめての笑顔」「はじめての一歩」などの成長の記録も付けられます。"
+        },
+        {
+          "q": "使い始める前の写真も追加できますか？",
+          "a": "できます。過去の写真をまとめて読み込んで追いつき、あとから好きなページにひとこと添えられます。"
+        },
+        {
+          "q": "家族と共有できますか？",
+          "a": "本全体を PDF で書き出したり、どのページも画像にして iOS の共有シートから家族に送ったりできます。"
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "ja",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-ko",
+      "path": "/pagewren/ko/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: 아기 성장 앨범",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — 아기 성장 앨범·육아일기 앱",
+      "oneLiner": "사진 한 장, 한 문장이 한 페이지씩 책이 되는 iPhone 아기 성장 앨범.",
+      "description": "Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.",
+      "audience": "아이의 첫 몇 해를 기록해 두고 싶은 엄마 아빠.",
+      "free": "Classic 테마와 페이지 배경 3가지는 누구나 무료입니다. Pro가 있든 없든 추억은 언제나 내 것입니다.",
+      "paid": "Pagewren Pro(월간·연간 구독 또는 평생 이용권): Linen·Scrapbook 테마, 모든 페이지 배경, 콜라주 레이아웃, iCloud 동기화, 프라이버시 잠금.",
+      "faq": [
+        {
+          "q": "Pagewren은 무료인가요?",
+          "a": "네. Pagewren은 무료로 다운로드할 수 있고, Classic 테마와 페이지 배경 3가지는 누구나 무료로 쓸 수 있습니다. Pagewren Pro(월간·연간 구독 또는 평생 이용권)에서는 Linen·Scrapbook 테마, 모든 페이지 배경, 콜라주 레이아웃, iCloud 동기화, 프라이버시 잠금을 이용할 수 있습니다. 가격은 결제 전에 앱에서 표시됩니다."
+        },
+        {
+          "q": "계정이 필요한가요? 사진은 어디에 저장되나요?",
+          "a": "계정이나 가입은 필요 없습니다. 사진과 글은 내 iPhone에 저장되고, Pro로 iCloud 동기화를 켜면 내 개인 iCloud에도 저장됩니다. 광고, 소셜 피드, 공개 프로필은 없습니다."
+        },
+        {
+          "q": "아기 추억은 어떻게 정리되나요?",
+          "a": "월령별 챕터가 있는 한 권의 책으로 정리됩니다(신생아, 1개월, 2개월…). 진짜 책처럼 넘겨 보고, 타임라인으로 바꾸면 달마다 거슬러 볼 수 있으며, 첫 미소·첫걸음 같은 첫 순간도 표시할 수 있습니다."
+        },
+        {
+          "q": "예전에 찍은 사진도 넣을 수 있나요?",
+          "a": "네. 지난 사진을 한 번에 여러 장 가져와 밀린 기록을 채우고, 언제든 원하는 페이지에 한마디를 덧붙일 수 있습니다."
+        },
+        {
+          "q": "가족과 공유할 수 있나요?",
+          "a": "책 전체를 PDF로 내보내거나, 어떤 페이지든 이미지로 만들어 iOS 공유 시트로 가족에게 보낼 수 있습니다."
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "ko",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-zh-hans",
+      "path": "/pagewren/zh-hans/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: 宝宝成长纪念册",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — 宝宝成长纪念册·宝宝日记 App",
+      "oneLiner": "一张照片、一句话，一页一页做成书的 iPhone 宝宝成长纪念册。",
+      "description": "Pagewren 是 iPhone 上的宝宝成长纪念册：一张照片或一句话就是一页，按月龄分章，记下每个第一次。不用注册账号。",
+      "audience": "想把孩子头几年记录下来的爸爸妈妈。",
+      "free": "Classic 主题和三种页面背景人人免费；无论是否使用 Pro，回忆永远属于你。",
+      "paid": "Pagewren Pro（按月、按年订阅或一次性买断）：Linen 和 Scrapbook 主题、全部页面背景、拼贴版式、iCloud 同步和隐私锁。",
+      "faq": [
+        {
+          "q": "Pagewren 免费吗？",
+          "a": "免费。Pagewren 可以免费下载，Classic 主题和三种页面背景人人都能免费使用。Pagewren Pro（按月、按年订阅或一次性买断）解锁 Linen 和 Scrapbook 主题、全部页面背景、拼贴版式、iCloud 同步和隐私锁。付款前应用里会显示价格。"
+        },
+        {
+          "q": "需要注册账号吗？照片存在哪里？",
+          "a": "不需要账号，也不用注册。照片和文字保存在你的 iPhone 上；用 Pro 开启 iCloud 同步后，也会保存在你自己的私有 iCloud 里。没有广告、没有社交信息流、没有公开主页。"
+        },
+        {
+          "q": "宝宝的回忆怎么整理？",
+          "a": "整理成一本按月龄分章的书：新生儿、1 个月、2 个月……可以像真书一样翻看，切换到时间线按月往回翻，还能标记第一次笑、第一次走路这样的里程碑。"
+        },
+        {
+          "q": "以前拍的照片能补进去吗？",
+          "a": "能。可以一次批量导入过去的照片把进度补上，之后随时给任意一页补几句话。"
+        },
+        {
+          "q": "能分享给家人吗？",
+          "a": "可以把整本书导出成 PDF，也可以把任意一页存成图片，用 iOS 的分享菜单发给家人。"
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "zh-Hans",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-zh-hant",
+      "path": "/pagewren/zh-hant/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: 寶寶成長紀念冊",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — 寶寶成長紀念冊・寶寶日記 App",
+      "oneLiner": "一張照片、一句話，一頁一頁做成書的 iPhone 寶寶成長紀念冊。",
+      "description": "Pagewren 是 iPhone 上的寶寶成長紀念冊：一張照片或一句話就是一頁，按月齡分章，記下每個第一次。不用註冊帳號。",
+      "audience": "想把孩子頭幾年記錄下來的爸爸媽媽。",
+      "free": "Classic 主題和三種頁面背景人人免費；無論是否使用 Pro，回憶永遠屬於你。",
+      "paid": "Pagewren Pro（按月、按年訂閱或一次性買斷）：Linen 和 Scrapbook 主題、全部頁面背景、拼貼版面、iCloud 同步和隱私鎖。",
+      "faq": [
+        {
+          "q": "Pagewren 免費嗎？",
+          "a": "免費。Pagewren 可以免費下載，Classic 主題和三種頁面背景人人都能免費使用。Pagewren Pro（按月、按年訂閱或一次性買斷）解鎖 Linen 和 Scrapbook 主題、全部頁面背景、拼貼版面、iCloud 同步和隱私鎖。付款前 App 內會顯示價格。"
+        },
+        {
+          "q": "需要註冊帳號嗎？照片存在哪裡？",
+          "a": "不需要帳號，也不用註冊。照片和文字儲存在你的 iPhone 上；用 Pro 開啟 iCloud 同步後，也會儲存在你自己的私人 iCloud 裡。沒有廣告、沒有社群動態、沒有公開個人頁面。"
+        },
+        {
+          "q": "寶寶的回憶怎麼整理？",
+          "a": "整理成一本按月齡分章的書：新生兒、1 個月、2 個月……可以像真的書一樣翻閱，切換到時間軸按月往回看，還能標記第一次笑、第一次走路這樣的里程碑。"
+        },
+        {
+          "q": "以前拍的照片能補進去嗎？",
+          "a": "可以。能一次批次匯入過去的照片把進度補上，之後隨時替任何一頁補幾句話。"
+        },
+        {
+          "q": "能分享給家人嗎？",
+          "a": "可以把整本書匯出成 PDF，也可以把任何一頁存成圖片，用 iOS 的分享選單傳給家人。"
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "zh-Hant",
+      "variantOf": "pagewren"
+    },
+    {
+      "key": "pagewren-th",
+      "path": "/pagewren/th/",
+      "live": true,
+      "appId": "6823661619",
+      "name": "Pagewren: สมุดบันทึกลูกน้อย",
+      "shortName": "Pagewren",
+      "category": "LifestyleApplication",
+      "genre": "Lifestyle",
+      "title": "Pagewren — สมุดบันทึกลูกน้อย อัลบั้มรูปพัฒนาการ",
+      "oneLiner": "สมุดบันทึกลูกน้อยบน iPhone ที่ทุกรูปและทุกข้อความกลายเป็นหน้าหนังสือ",
+      "description": "Pagewren สมุดบันทึกลูกน้อยบน iPhone เพิ่มรูปหรือข้อความสั้น ๆ ก็กลายเป็นหนึ่งหน้า แบ่งบทตามอายุ และบันทึกครั้งแรกของลูก ไม่ต้องสมัครบัญชี",
+      "audience": "พ่อแม่ที่อยากเก็บช่วงปีแรก ๆ ของลูกไว้",
+      "free": "ธีม Classic และพื้นหลังหน้า 3 แบบใช้ฟรีสำหรับทุกคน ความทรงจำเป็นของคุณเสมอ ไม่ว่าจะมี Pro หรือไม่",
+      "paid": "Pagewren Pro (รายเดือน รายปี หรือซื้อครั้งเดียวตลอดชีพ): ธีม Linen และ Scrapbook พื้นหลังหน้าทุกแบบ เลย์เอาต์คอลลาจ การซิงค์ iCloud และล็อกความเป็นส่วนตัว",
+      "faq": [
+        {
+          "q": "Pagewren ใช้ฟรีไหม?",
+          "a": "ฟรี Pagewren ดาวน์โหลดได้ฟรี และธีม Classic กับพื้นหลังหน้า 3 แบบใช้ฟรีสำหรับทุกคน Pagewren Pro (รายเดือน รายปี หรือซื้อครั้งเดียวตลอดชีพ) เพิ่มธีม Linen และ Scrapbook พื้นหลังหน้าทุกแบบ เลย์เอาต์คอลลาจ การซิงค์ iCloud และล็อกความเป็นส่วนตัว ราคาจะแสดงในแอปก่อนชำระเงิน"
+        },
+        {
+          "q": "ต้องมีบัญชีไหม และรูปเก็บไว้ที่ไหน?",
+          "a": "ไม่ต้องมีบัญชีหรือสมัครใช้งาน รูปและข้อความเก็บอยู่ใน iPhone ของคุณ และใน iCloud ส่วนตัวของคุณเองหากเปิดการซิงค์ iCloud ด้วย Pro ไม่มีโฆษณา ไม่มีฟีดโซเชียล และไม่มีโปรไฟล์สาธารณะ"
+        },
+        {
+          "q": "Pagewren จัดเก็บความทรงจำของลูกอย่างไร?",
+          "a": "จัดเป็นหนังสือหนึ่งเล่มที่แบ่งบทตามอายุ: แรกเกิด 1 เดือน 2 เดือน และต่อไปเรื่อย ๆ พลิกอ่านได้เหมือนหนังสือจริง สลับเป็นไทม์ไลน์เพื่อย้อนดูทีละเดือน และบันทึกพัฒนาการอย่างยิ้มครั้งแรกหรือก้าวแรกได้"
+        },
+        {
+          "q": "เพิ่มรูปเก่าได้ไหม?",
+          "a": "ได้ นำเข้ารูปเก่าทีละหลายรูปพร้อมกันเพื่อเก็บย้อนหลังให้ครบ แล้วค่อยเติมข้อความในหน้าไหนก็ได้ตามสะดวก"
+        },
+        {
+          "q": "แชร์ให้ครอบครัวได้ไหม?",
+          "a": "ส่งออกทั้งเล่มเป็น PDF หรือแชร์หน้าไหนก็ได้เป็นรูปภาพผ่านเมนูแชร์ของ iOS"
+        }
+      ],
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "legal": [],
+      "ogImage": "/assets/art/pagewren/og.jpg",
+      "lang": "th",
+      "variantOf": "pagewren"
     },
     {
       "key": "diary",

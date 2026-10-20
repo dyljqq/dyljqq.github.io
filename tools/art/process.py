@@ -6,7 +6,7 @@ import sys, pathlib
 from PIL import Image
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 src = pathlib.Path(sys.argv[1])
-FIT = {"countdown-04", "countdown-06", "countdown-10", "invoiceqr-07", "invoiceqr-05"}   # 09-28 评审：边上的道具（画笔、明信片、色卡）被居中裁 4:5 切掉；这几张背景是纯色，整张缩进去看不出接缝
+FIT = {"countdown-04", "countdown-06", "countdown-10", "invoiceqr-07", "invoiceqr-05", "pagewren-02", "pagewren-04", "pagewren-05", "pagewren-hero"}   # 10-20 Pagewren：手机 / 云朵 / 日历贴边   # 09-28 评审：边上的道具（画笔、明信片、色卡）被居中裁 4:5 切掉；这几张背景是纯色，整张缩进去看不出接缝
 for f in sorted(src.glob("*.png")):
     app, key = f.stem.split("-", 1)
     im = Image.open(f).convert("RGB"); w, h = im.size
@@ -25,7 +25,8 @@ for f in sorted(src.glob("*.png")):
 import urllib.request, io
 from PIL import ImageDraw, ImageFilter
 ICONS = {"countdown": ROOT / "assets/countdown/icon.png", "beforego": ROOT / "assets/beforego/icon.png",
-         "invoiceqr": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.png"}
+         "invoiceqr": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/35/13/55/35135590-cfaf-d2fb-2390-3d7bbb02f42c/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.png",
+         "pagewren": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.png"}
 def rounded(im, r):
     m = Image.new("L", im.size, 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, *im.size), r, fill=255); im.putalpha(m); return im
 for app, icon in ICONS.items():
