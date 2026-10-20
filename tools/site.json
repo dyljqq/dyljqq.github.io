@@ -1912,7 +1912,7 @@
     {
       "key": "pagewren",
       "path": "/pagewren/",
-      "live": false,
+      "live": true,
       "appId": "6823661619",
       "name": "Pagewren: Baby Memory Book",
       "shortName": "Pagewren",
@@ -1936,7 +1936,17 @@
           "/pagewren/support/",
           "Support"
         ]
-      ]
+      ],
+      "free": "The Classic theme and three page backgrounds are free for everyone, and your memories stay yours with or without Pro.",
+      "paid": "Pagewren Pro, monthly, yearly or a one-time Lifetime purchase: the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock.",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "home": {
+        "order": 0,
+        "isNew": true,
+        "label": "Pagewren",
+        "tagline": "Photo Journal & Milestones",
+        "blurb": "Pagewren turns your baby's everyday moments into a beautiful memory book, one page at a time. Add a photo or a single sentence, and Pagewren lays out the page for you. No design skills, no daily streaks."
+      }
     },
     {
       "key": "diary",
@@ -1966,17 +1976,17 @@
   ],
   "home": {
     "title": "go ka — Small iPhone apps for everyday things",
-    "description": "Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.",
+    "description": "Eight small iPhone apps by go ka: baby memory book, countdown widget, AI trip planner, invoice maker, calorie counter, QR maker, kids' vocabulary and gym log.",
     "ogImage": "/assets/brand/og-home.png",
     "logo": "/assets/brand/logo-512.png",
     "faq": [
       {
         "q": "What is go ka?",
-        "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account."
+        "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids, a gym workout tracker and a baby memory book. All eight are published on the App Store under one developer account."
       },
       {
         "q": "Are the apps free?",
-        "a": "All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
+        "a": "All eight apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
       },
       {
         "q": "Do I need to create an account?",
@@ -1984,11 +1994,11 @@
       },
       {
         "q": "Which devices do the apps run on?",
-        "a": "iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
+        "a": "iPhone and iPad. Seven of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
       },
       {
         "q": "Which languages are the apps available in?",
-        "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
+        "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast and Pagewren are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
       },
       {
         "q": "How do I get help with one of the apps?",

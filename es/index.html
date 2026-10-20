@@ -117,6 +117,18 @@ section{scroll-margin-top:24px}
 .also a{text-underline-offset:4px}
 .get{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;padding:12px 16px;border:1.4px solid var(--ink);border-radius:999px;transition:background .2s}
 .get:hover{background:var(--yellow)}
+/* 上新（10-20 用户：新 app 在列表上面单独一张横卡；site.json 的 home.isNew） */
+.app-new{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,5vw,72px);align-items:center;margin:0 0 clamp(80px,10vw,128px);padding:clamp(28px,4.5vw,56px);background:var(--cream);border:1px solid var(--rule);border-radius:28px}
+.new-flag{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:0}
+.new-badge{display:inline-flex;align-items:center;padding:7px 12px 6px;border:1.4px solid var(--ink);border-radius:999px;background:var(--yellow);font:800 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--ink)}
+.new-note{font:600 11px/1.5 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft)}
+.app-new .app-head{margin-top:18px}
+.app-new h3{margin:0;font:500 clamp(34px,4vw,44px)/1.05 var(--display);letter-spacing:-.6px}
+.app-new h3 a{text-decoration:none}
+.app-new h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.app-new:hover .arrow{transform:translate(3px,-3px)}
+.app-new:hover .illus .float{transform:translateY(-6px)}
+.app-new .blurb{max-width:34em}
 .all{text-align:center;margin-top:clamp(64px,9vw,110px)}
 .all a{font:500 15px/1 var(--text);text-underline-offset:6px}
 
@@ -167,13 +179,14 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   .brand small{display:none}
   .apps,.faq-list{grid-template-columns:1fr}
   .app:nth-child(even){margin-top:0}
+  .app-new{grid-template-columns:1fr;gap:8px;padding:24px 20px 28px;border-radius:22px}
   .scene-bar .hint{display:none}
   .scene{margin-left:calc(-1 * var(--gutter));margin-right:calc(-1 * var(--gutter));overflow:hidden}
   .scene svg{height:190px}
 }
 </style>
 <!-- seo:start -->
-<meta name="description" content="Siete pequeñas apps para iPhone de go ka: cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y entrenamiento.">
+<meta name="description" content="Ocho pequeñas apps para iPhone de go ka: diario del bebé, cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y gimnasio.">
 <link rel="canonical" href="https://beforego.art/es/">
 <link rel="alternate" hreflang="en" href="https://beforego.art/">
 <link rel="alternate" hreflang="de" href="https://beforego.art/de/">
@@ -191,7 +204,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="go ka">
 <meta property="og:title" content="go ka — pequeñas apps para iPhone, para el día a día">
-<meta property="og:description" content="Siete pequeñas apps para iPhone de go ka: cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y entrenamiento.">
+<meta property="og:description" content="Ocho pequeñas apps para iPhone de go ka: diario del bebé, cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y gimnasio.">
 <meta property="og:url" content="https://beforego.art/es/">
 <meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
 <meta property="og:image:width" content="1200">
@@ -199,7 +212,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
 <meta property="og:image:alt" content="go ka — pequeñas apps para iPhone, para el día a día">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="go ka — pequeñas apps para iPhone, para el día a día">
-<meta name="twitter:description" content="Siete pequeñas apps para iPhone de go ka: cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y entrenamiento.">
+<meta name="twitter:description" content="Ocho pequeñas apps para iPhone de go ka: diario del bebé, cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y gimnasio.">
 <meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
 <script type="application/ld+json">
 {
@@ -209,7 +222,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   "name": "go ka",
   "url": "https://beforego.art/",
   "email": "qinqiangji@gmail.com",
-  "description": "Independent iOS developer. 7 apps on the App Store.",
+  "description": "Independent iOS developer. 8 apps on the App Store.",
   "logo": "https://beforego.art/assets/brand/logo-512.png",
   "sameAs": [
     "https://apps.apple.com/developer/id1854274317",
@@ -224,7 +237,8 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
     "https://apps.apple.com/app/id6798095407",
     "https://apps.apple.com/app/id6799589471",
     "https://apps.apple.com/app/id6796596826",
-    "https://apps.apple.com/app/id6803828068"
+    "https://apps.apple.com/app/id6803828068",
+    "https://apps.apple.com/app/id6823661619"
   ]
 }
 </script>
@@ -235,7 +249,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   "@id": "https://beforego.art/#website",
   "url": "https://beforego.art/",
   "name": "go ka",
-  "description": "Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.",
+  "description": "Eight small iPhone apps by go ka: baby memory book, countdown widget, AI trip planner, invoice maker, calorie counter, QR maker, kids' vocabulary and gym log.",
   "inLanguage": [
     "en",
     "de",
@@ -262,7 +276,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   "@id": "https://beforego.art/es/#webpage",
   "url": "https://beforego.art/es/",
   "name": "go ka — pequeñas apps para iPhone, para el día a día",
-  "description": "Siete pequeñas apps para iPhone de go ka: cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y entrenamiento.",
+  "description": "Ocho pequeñas apps para iPhone de go ka: diario del bebé, cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y gimnasio.",
   "inLanguage": "es",
   "isPartOf": {
     "@id": "https://beforego.art/#website"
@@ -280,11 +294,38 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
     "@type": "ItemList",
     "@id": "https://beforego.art/es/#apps",
     "name": "Apps by go ka",
-    "numberOfItems": 7,
+    "numberOfItems": 8,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "@id": "https://beforego.art/pagewren/#app",
+          "name": "Pagewren: Diario del bebé",
+          "alternateName": "Pagewren",
+          "url": "https://apps.apple.com/app/id6823661619",
+          "description": "Pagewren convierte los momentos de cada día de tu bebé en un precioso libro de recuerdos, página a página. Añade una foto o una sola frase y Pagewren maqueta la página por ti. Sin saber de diseño y sin rachas diarias. Treinta segundos hoy se convierten en un recuerdo para toda la vida.",
+          "applicationCategory": "LifestyleApplication",
+          "operatingSystem": "iOS 17.0 or later",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "publisher": {
+            "@id": "https://beforego.art/#org"
+          },
+          "image": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+          "downloadUrl": "https://apps.apple.com/app/id6823661619",
+          "sameAs": [
+            "https://apps.apple.com/app/id6823661619"
+          ]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/countdown/#app",
@@ -311,7 +352,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/beforego/es/#app",
@@ -338,7 +379,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 4,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/invoiceqr/es/#app",
@@ -365,7 +406,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 5,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/dailycalorie/#app",
@@ -392,7 +433,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/qrcodestudio/#app",
@@ -419,7 +460,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/citu/#app",
@@ -446,7 +487,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       },
       {
         "@type": "ListItem",
-        "position": 7,
+        "position": 8,
         "item": {
           "@type": "SoftwareApplication",
           "@id": "https://beforego.art/repdex/#app",
@@ -487,7 +528,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       "name": "¿Qué es go ka?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "go ka es un desarrollador independiente que crea pequeñas apps para iPhone para el día a día: un widget de cuenta atrás, un planificador de viajes con IA, un gestor de facturas, un contador de calorías, un generador de códigos QR, una app de vocabulario inglés para niños y un registro de entrenamientos. Las siete apps se publican en la App Store bajo una misma cuenta de desarrollador."
+        "text": "go ka es un desarrollador independiente que crea pequeñas apps para iPhone para el día a día: un widget de cuenta atrás, un planificador de viajes con IA, un gestor de facturas, un contador de calorías, un generador de códigos QR, una app de vocabulario inglés para niños, un registro de entrenamientos y un diario del bebé. Las ocho apps se publican en la App Store bajo una misma cuenta de desarrollador."
       }
     },
     {
@@ -495,7 +536,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       "name": "¿Las apps son gratis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Las siete apps se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen una compra única. El precio siempre se muestra en la app antes de confirmar."
+        "text": "Las ocho apps se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen una compra única. El precio siempre se muestra en la app antes de confirmar."
       }
     },
     {
@@ -511,7 +552,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       "name": "¿En qué dispositivos funcionan las apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "iPhone e iPad. Seis apps necesitan iOS 17 o posterior; DailyCalorie necesita iOS 18 o posterior."
+        "text": "iPhone e iPad. Siete apps necesitan iOS 17 o posterior; DailyCalorie necesita iOS 18 o posterior."
       }
     },
     {
@@ -519,7 +560,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       "name": "¿En cuántos idiomas están disponibles las apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Countdown, BeforeGo, Invoice Maker, DailyCalorie y Word Beast están disponibles en 10 o más idiomas, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. QR Studio y Repdex están solo en inglés."
+        "text": "Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast y Pagewren están disponibles en 10 o más idiomas, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. QR Studio y Repdex están solo en inglés."
       }
     },
     {
@@ -538,7 +579,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
 <script defer src="/_vercel/insights/script.js"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
 <!-- seo:end -->
-<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 0;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}.gk-foot-art{position:relative;z-index:0;max-width:2000px;margin:calc(-1 * min(12vw,200px)) auto 0;line-height:0;pointer-events:none}.gk-foot-art img{display:block;width:100%;max-width:none;height:auto;aspect-ratio:1919/820;min-height:200px;margin:0;border:0;border-radius:0;object-fit:cover;object-position:40% 100%;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%);mask-image:linear-gradient(to bottom,transparent,#000 24%)}@media (min-width:2000px){.gk-foot-art img{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}}@media (max-width:760px){footer.gk-foot{padding-top:48px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
+<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
 </head>
 <body>
 <a class="skip" href="#apps">Ir a las apps</a>
@@ -573,8 +614,8 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
 <main>
 <section class="wrap hero" aria-labelledby="hero-title">
   <h1 id="hero-title">Apps pequeñas<br>para cada día</h1>
-  <p><span class="hl">Siete pequeñas apps para iPhone, cada una hecha para una cosa del día a día.</span>
-     <span class="hl">Cuenta atrás, viajes, facturas, calorías, códigos QR, vocabulario, gimnasio.</span></p>
+  <p><span class="hl">Ocho pequeñas apps para iPhone, cada una hecha para una cosa del día a día.</span>
+     <span class="hl">Cuenta atrás, viajes, facturas, calorías, códigos QR, vocabulario, gimnasio, recuerdos.</span></p>
 
   <div class="scene draw" id="scene" role="img" aria-label="Un dibujo de colinas, un sol naciente y un pequeño pájaro. Toca para saludar.">
     <svg viewBox="0 0 1200 250" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
@@ -623,9 +664,46 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
 <section class="wrap" id="apps" aria-labelledby="apps-title">
   <div class="sec-head">
     <h2 class="outline" id="apps-title">Apps</h2>
-    <p>Siete apps. Cada una para una cosa del día a día.</p>
+    <p>Ocho apps. Cada una para una cosa del día a día.</p>
   </div>
   <!-- apps:start -->
+  <article class="app-new" id="app-pagewren" aria-labelledby="new-pagewren">
+    <a class="art" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-home&amp;mt=8" tabindex="-1" aria-hidden="true">
+      <svg class="illus" viewBox="0 0 240 180" focusable="false">
+        <path d="M24 158H216"/>
+        <path class="y" d="M62 68V154c26-6 52-4 72 4 20-8 46-10 72-4V68z"/>
+        <path class="w" d="M134 66c-20-10-46-10-64-4v86c18-6 44-5 64 4z"/>
+        <path class="w" d="M134 66c20-10 46-10 64-4v86c-18-6-44-5-64 4z"/>
+        <path d="M134 66v86"/>
+        <rect class="w" x="80" y="74" width="44" height="40" rx="4"/>
+        <circle class="y" cx="102" cy="96" r="10"/>
+        <path d="M100 86c0-4 5-5 7-2"/>
+        <circle class="k" cx="98.5" cy="95" r="1.4"/>
+        <circle class="k" cx="105.5" cy="95" r="1.4"/>
+        <path d="M99 100c2 2 4 2 6 0"/>
+        <path d="M82 125h38M82 134h26"/>
+        <path d="M146 77h38M146 87h28"/>
+        <path class="y" d="M165 125c-9-6-13-10-13-15a6.5 6.5 0 0 1 13-2a6.5 6.5 0 0 1 13 2c0 5-4 9-13 15z"/>
+        <path d="M146 139h38"/>
+        <g class="float">
+          <path class="y" d="M214 24a15 15 0 1 0 9 27a12 12 0 0 1-9-27z"/>
+          <path d="M190 22v9M185.5 26.5h9"/>
+        </g>
+        <use href="#bird" x="14" y="121" width="44" height="37"/>
+      </svg>
+    </a>
+    <div class="new-body">
+      <p class="new-flag"><span class="new-badge">Nueva</span><span class="new-note">Recién lanzada</span></p>
+      <div class="app-head">
+        <h3 id="new-pagewren"><a href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-home&amp;mt=8">Pagewren.</a></h3>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </div>
+      <p class="store-name">Pagewren: Diario del bebé</p>
+      <p class="tagline">Álbum de fotos e hitos</p>
+      <p class="blurb">Pagewren convierte los momentos de cada día de tu bebé en un precioso libro de recuerdos, página a página. Añade una foto o una sola frase y Pagewren maqueta la página por ti. Sin saber de diseño y sin rachas diarias. Treinta segundos hoy se convierten en un recuerdo para toda la vida.</p>
+      <a class="get" href="https://apps.apple.com/es/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-home&amp;mt=8">Pagewren en la App Store ↗</a>
+    </div>
+  </article>
   <div class="apps">
     <article class="app" id="app-countdown">
       <a class="art" href="/countdown/" tabindex="-1" aria-hidden="true">
@@ -867,7 +945,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
     </article>
   </div>
   <!-- apps:end -->
-  <p class="all"><a href="https://apps.apple.com/developer/id1854274317?pt=128309253&amp;ct=web-home-all&amp;mt=8">Ver las siete apps en la App Store ↗</a></p>
+  <p class="all"><a href="https://apps.apple.com/developer/id1854274317?pt=128309253&amp;ct=web-home-all&amp;mt=8">Ver las ocho apps en la App Store ↗</a></p>
 </section>
 
 <section class="wrap about" id="about" aria-labelledby="about-title">
@@ -891,11 +969,11 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
   <div class="faq-list">
     <div class="qa">
       <h3>¿Qué es go ka?</h3>
-      <p>go ka es un desarrollador independiente que crea pequeñas apps para iPhone para el día a día: un widget de cuenta atrás, un planificador de viajes con IA, un gestor de facturas, un contador de calorías, un generador de códigos QR, una app de vocabulario inglés para niños y un registro de entrenamientos. Las siete apps se publican en la App Store bajo una misma cuenta de desarrollador.</p>
+      <p>go ka es un desarrollador independiente que crea pequeñas apps para iPhone para el día a día: un widget de cuenta atrás, un planificador de viajes con IA, un gestor de facturas, un contador de calorías, un generador de códigos QR, una app de vocabulario inglés para niños, un registro de entrenamientos y un diario del bebé. Las ocho apps se publican en la App Store bajo una misma cuenta de desarrollador.</p>
     </div>
     <div class="qa">
       <h3>¿Las apps son gratis?</h3>
-      <p>Las siete apps se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen una compra única. El precio siempre se muestra en la app antes de confirmar.</p>
+      <p>Las ocho apps se descargan gratis y se pueden usar sin pagar. Las funciones extra vienen con una suscripción opcional, y algunas apps también ofrecen una compra única. El precio siempre se muestra en la app antes de confirmar.</p>
     </div>
     <div class="qa">
       <h3>¿Tengo que crear una cuenta?</h3>
@@ -903,11 +981,11 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
     </div>
     <div class="qa">
       <h3>¿En qué dispositivos funcionan las apps?</h3>
-      <p>iPhone e iPad. Seis apps necesitan iOS 17 o posterior; DailyCalorie necesita iOS 18 o posterior.</p>
+      <p>iPhone e iPad. Siete apps necesitan iOS 17 o posterior; DailyCalorie necesita iOS 18 o posterior.</p>
     </div>
     <div class="qa">
       <h3>¿En cuántos idiomas están disponibles las apps?</h3>
-      <p>Countdown, BeforeGo, Invoice Maker, DailyCalorie y Word Beast están disponibles en 10 o más idiomas, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. QR Studio y Repdex están solo en inglés.</p>
+      <p>Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast y Pagewren están disponibles en 10 o más idiomas, entre ellos inglés, chino, japonés, coreano, francés, alemán, italiano, portugués y tailandés. QR Studio y Repdex están solo en inglés.</p>
     </div>
     <div class="qa">
       <h3>¿Cómo obtengo ayuda con una app?</h3>
@@ -974,6 +1052,7 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
         <div class="gk-foot-col">
           <h2>Apps</h2>
           <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&ct=web-pagewren-footer&mt=8">Pagewren</a><a href="/pagewren/privacy-policy/" hreflang="en">Privacidad</a><a href="/pagewren/terms-of-use/" hreflang="en">Términos</a></li>
           <li><a class="gk-foot-app" href="/countdown/" hreflang="en">Countdown</a><a href="/countdown/privacy-policy/" hreflang="en">Privacidad</a><a href="/countdown/terms-of-service/" hreflang="en">Términos</a></li>
           <li><a class="gk-foot-app" href="/beforego/es/">BeforeGo</a><a href="/privacy-policy/" hreflang="en">Privacidad</a><a href="/terms-of-use/" hreflang="en">Términos</a></li>
           <li><a class="gk-foot-app" href="/invoiceqr/es/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/" hreflang="en">Privacidad</a><a href="/invoiceqr/terms-of-service/" hreflang="en">Términos</a></li>
@@ -990,7 +1069,6 @@ html:is([lang^=ja],[lang^=zh],[lang^=ko]) .web-box h2{letter-spacing:0;font-weig
       <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/llms.txt">llms.txt</a></p>
     </div>
   </div>
-  <div class="gk-foot-art" aria-hidden="true"><img src="/assets/art/footer-1440.webp" srcset="/assets/art/footer-960.webp 960w, /assets/art/footer-1440.webp 1440w, /assets/art/footer-1920.webp 1919w" sizes="100vw" width="1919" height="820" alt="" loading="lazy" decoding="async"></div>
 </footer>
 <!-- sitefooter:end -->
 </body>

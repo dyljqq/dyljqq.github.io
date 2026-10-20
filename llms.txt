@@ -1,7 +1,7 @@
 # go ka
 
-> Seven small iPhone apps by go ka: countdown widget, AI trip planner, invoice maker, calorie counter, QR code maker, kids' vocabulary app and gym workout log.
-> Every app has its own page here; the features, free parts and prices written on it
+> Eight small iPhone apps by go ka: baby memory book, countdown widget, AI trip planner, invoice maker, calorie counter, QR maker, kids' vocabulary and gym log.
+> The features, free parts and prices written on each app page here
 > are what the app actually does.
 
 - Home: https://beforego.art/
@@ -139,6 +139,18 @@ A gym workout log for iPhone.
 - Free: All 1,324 exercises, all 10 instruction languages and unlimited workout logging; your history is never locked.
 - Paid: Repdex Pro, monthly, yearly (7-day free trial for new subscribers) or a one-time Lifetime purchase: unlimited routines, advanced stats, CSV export and home-screen widgets.
 
+### Pagewren: Baby Memory Book
+
+A baby memory book for iPhone where every photo and note becomes a page.
+
+- Support: https://beforego.art/pagewren/support/
+- App Store: https://apps.apple.com/app/id6823661619
+- Platform: iOS (iPhone, iPad)
+- Category: Lifestyle
+- For: Parents keeping a record of their child's first years.
+- Free: The Classic theme and three page backgrounds are free for everyone, and your memories stay yours with or without Pro.
+- Paid: Pagewren Pro, monthly, yearly or a one-time Lifetime purchase: the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock.
+
 ## Free tools & guides
 
 - [Days until calculator](https://beforego.art/tools/days-until/) — Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.
@@ -223,11 +235,11 @@ A gym workout log for iPhone.
 
 ### What is go ka?
 
-go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account.
+go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids, a gym workout tracker and a baby memory book. All eight are published on the App Store under one developer account.
 
 ### Are the apps free?
 
-All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm.
+All eight apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm.
 
 ### Do I need to create an account?
 
@@ -235,11 +247,11 @@ No. None of the apps asks you to sign up or create an account. Where an app sync
 
 ### Which devices do the apps run on?
 
-iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later.
+iPhone and iPad. Seven of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later.
 
 ### Which languages are the apps available in?
 
-Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English.
+Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast and Pagewren are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English.
 
 ### How do I get help with one of the apps?
 

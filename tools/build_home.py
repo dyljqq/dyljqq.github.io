@@ -40,8 +40,8 @@ def localize(tpl, lang):
         ('↻ Draw again', f'↻ {e(t["redraw"])}'),
         ('aria-label="Scroll to the apps"', f'aria-label="{ea(t["scroll_label"])}"'),
         ('<h2 class="outline" id="apps-title">Apps</h2>', f'<h2 class="outline" id="apps-title">{e(t["nav_apps"])}</h2>'),
-        ('<p>Seven apps. One everyday thing each.</p>', f'<p>{e(t["apps_sub"])}</p>'),
-        ('See all seven apps on the App Store ↗', f'{e(t["see_all"])} ↗'),
+        ('<p>Eight apps. One everyday thing each.</p>', f'<p>{e(t["apps_sub"])}</p>'),
+        ('See all eight apps on the App Store ↗', f'{e(t["see_all"])} ↗'),
         ('<p class="label" style="margin:0">About go ka</p>', f'<p class="label" style="margin:0">{e(t["about_label"])}</p>'),
         (f'>{EN["quote"]}</h2>', f'>{e(t["quote"])}</h2>'),
         (f'<p>{EN["about_p1"]}</p>', f'<p>{e(t["about_p1"])}</p>'),
@@ -60,8 +60,8 @@ def localize(tpl, lang):
             raise SystemExit(f"[{lang}] 模板里「{old[:50]}」命中 {n} 次（应为 1），模板措辞变了要同步本文件")
         out = out.replace(old, new)
     # 首屏副标题跨两行，按正则换
-    out, n = re.subn(r'<p><span class="hl">Seven small iPhone apps, each made for one everyday thing\.</span>\s*'
-                     r'<span class="hl">Counting down, travelling, invoicing, eating, scanning, learning, lifting\.</span></p>',
+    out, n = re.subn(r'<p><span class="hl">Eight small iPhone apps, each made for one everyday thing\.</span>\s*'
+                     r'<span class="hl">Counting down, travelling, invoicing, eating, scanning, learning, lifting, remembering\.</span></p>',
                      lambda m: f'<p><span class="hl">{e(t["hero_p1"])}</span>\n     <span class="hl">{e(t["hero_p2"])}</span></p>', out)
     if n != 1:
         raise SystemExit(f"[{lang}] 首屏副标题没命中")

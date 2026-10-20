@@ -1,6 +1,6 @@
 {
  "title": "go ka — Small iPhone apps for everyday things",
- "description": "Seven small iPhone apps by go ka: a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker, a vocabulary app and a workout tracker.",
+ "description": "Eight small iPhone apps by go ka: a baby memory book, a countdown widget, an AI trip planner, an invoice maker, a calorie counter, a QR code maker and more.",
  "skip": "Skip to the apps",
  "brand_small": "IPHONE APPS",
  "nav_apps": "Apps",
@@ -10,17 +10,17 @@
  "language": "Language",
  "h1_line1": "Small apps for",
  "h1_line2": "everyday things.",
- "hero_p1": "Seven small iPhone apps, each made for one everyday thing.",
- "hero_p2": "Counting down, travelling, invoicing, eating, scanning, learning, lifting.",
+ "hero_p1": "Eight small iPhone apps, each made for one everyday thing.",
+ "hero_p2": "Counting down, travelling, invoicing, eating, scanning, learning, lifting, remembering.",
  "scene_label": "A line drawing of rolling hills, a rising sun and a small bird. Tap it to say hello.",
  "scene_hint": "Tap the hills to say hello",
  "redraw": "Draw again",
  "pause_label": "Pause the animation",
  "play_label": "Play the animation",
  "scroll_label": "Scroll to the apps",
- "apps_sub": "Seven apps. One everyday thing each.",
+ "apps_sub": "Eight apps. One everyday thing each.",
  "get_on_store": "{label} on the App Store",
- "see_all": "See all seven apps on the App Store",
+ "see_all": "See all eight apps on the App Store",
  "about_label": "About go ka",
  "quote": "“What if an app did just one thing, and did it well?”",
  "about_p1": "Most apps try to do everything. Ours start from one small, everyday moment — the day you are waiting for, the charger you always forget to pack, the invoice that has to go out tonight — and try to get that one moment right.",
@@ -36,11 +36,11 @@
  "faq": [
   {
    "q": "What is go ka?",
-   "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids and a gym workout tracker. All seven are published on the App Store under one developer account."
+   "a": "go ka is an independent developer making small iPhone apps for everyday things: a countdown widget, an AI trip planner, an invoice maker, a photo calorie counter, a QR code maker, an English vocabulary app for kids, a gym workout tracker and a baby memory book. All eight are published on the App Store under one developer account."
   },
   {
    "q": "Are the apps free?",
-   "a": "All seven apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
+   "a": "All eight apps are free to download and can be used without paying. Extra features come with an optional subscription, and some apps also offer a one-time purchase. The price is always shown in the app before you confirm."
   },
   {
    "q": "Do I need to create an account?",
@@ -48,11 +48,11 @@
   },
   {
    "q": "Which devices do the apps run on?",
-   "a": "iPhone and iPad. Six of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
+   "a": "iPhone and iPad. Seven of the apps need iOS 17 or later; DailyCalorie needs iOS 18 or later."
   },
   {
    "q": "Which languages are the apps available in?",
-   "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie and Word Beast are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
+   "a": "Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast and Pagewren are available in 10 or more languages, including English, Chinese, Japanese, Korean, French, German, Italian, Portuguese and Thai. QR Studio and Repdex are in English."
   },
   {
    "q": "How do I get help with one of the apps?",
@@ -62,5 +62,7 @@
  "nav_blog": "Blog",
  "follow": "Follow go ka",
  "web_h": "Not on an iPhone?",
- "web_p": "These free tools work in any browser, on any phone or computer. No sign-up."
+ "web_p": "These free tools work in any browser, on any phone or computer. No sign-up.",
+ "new_badge": "New",
+ "new_note": "Just launched"
 }

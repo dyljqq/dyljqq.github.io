@@ -504,5 +504,67 @@
    "name": "Repdex: Diario Palestra",
    "subtitle": "Libreria esercizi offline"
   }
+ },
+ "pagewren": {
+  "en-US": {
+   "name": "Pagewren: Baby Memory Book",
+   "subtitle": "Photo Journal & Milestones"
+  },
+  "en-GB": {
+   "name": "Pagewren: Baby Memory Book",
+   "subtitle": "Photo Journal & Milestones"
+  },
+  "en-AU": {
+   "name": "Pagewren: Baby Memory Book",
+   "subtitle": "Photo Journal & Milestones"
+  },
+  "en-CA": {
+   "name": "Pagewren: Baby Memory Book",
+   "subtitle": "Photo Journal & Milestones"
+  },
+  "es-MX": {
+   "name": "Pagewren: Diario de mi bebé",
+   "subtitle": "Fotos, hitos y primeras veces"
+  },
+  "es-ES": {
+   "name": "Pagewren: Diario del bebé",
+   "subtitle": "Álbum de fotos e hitos"
+  },
+  "pt-BR": {
+   "name": "Pagewren: Diário do Bebê",
+   "subtitle": "Álbum de fotos e marcos"
+  },
+  "fr-FR": {
+   "name": "Pagewren : Journal de bébé",
+   "subtitle": "Album photo & premières fois"
+  },
+  "de-DE": {
+   "name": "Pagewren: Babytagebuch",
+   "subtitle": "Babyalbum & Meilensteine"
+  },
+  "it": {
+   "name": "Pagewren: Diario del bebè",
+   "subtitle": "Album foto e prime volte"
+  },
+  "ja": {
+   "name": "Pagewren: 赤ちゃんの成長アルバム",
+   "subtitle": "写真日記で思い出の成長記録ブックに"
+  },
+  "ko": {
+   "name": "Pagewren: 아기 성장 앨범",
+   "subtitle": "육아일기, 사진 기록, 첫 순간들"
+  },
+  "th": {
+   "name": "Pagewren: สมุดบันทึกลูกน้อย",
+   "subtitle": "อัลบั้มรูปและพัฒนาการของลูก"
+  },
+  "zh-Hans": {
+   "name": "Pagewren: 宝宝成长纪念册",
+   "subtitle": "宝宝日记·成长相册·里程碑"
+  },
+  "zh-Hant": {
+   "name": "Pagewren: 寶寶成長紀念冊",
+   "subtitle": "寶寶日記・成長相簿・里程碑"
+  }
  }
 }

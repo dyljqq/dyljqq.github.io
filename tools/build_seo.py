@@ -245,7 +245,7 @@ def build_llms():
     live = [a for a in APPS if a.get("live") and not a.get("variantOf")]
     out = [f"# {BRAND}", "",
            f"> {HOME['description']}" if HOME else f"> {len(live)} iPhone apps.",
-           "> Every app has its own page here; the features, free parts and prices written on it",
+           "> The features, free parts and prices written on each app page here",
            "> are what the app actually does.",
            "",
            f"- Home: {ORIGIN}/",
@@ -260,7 +260,10 @@ def build_llms():
         out.append("")
         out.append(a["oneLiner"])
         out.append("")
-        out.append(f"- Page: {ORIGIN}{a['path']}")
+        if a.get("noPage"):          # 没有产品页（Pagewren）：给支持页，别写 404 的 Page
+            out += [f"- Support: {ORIGIN}{h}" for h, _ in a.get("legal", []) if "/support/" in h]
+        else:
+            out.append(f"- Page: {ORIGIN}{a['path']}")
         for v in variants_of(a):
             out.append(f"- Page ({v['lang']}): {ORIGIN}{v['path']}")
         if su:
@@ -307,6 +310,8 @@ def software_jsonld(app, kind="product"):
         d["downloadUrl"] = su
         d["installUrl"] = su
         d["sameAs"] = [su]
+        if app.get("noPage"):            # 没有产品页（Pagewren）：url 别指 404 的 /pagewren/，指商店（10-20 评审）
+            d["url"] = su
     if app.get("icon"):
         d["image"] = asset(app["icon"])
     # 生成页：截图和预览视频来自商店缓存 / assets/<key>/preview（与页面上展示的一致）
@@ -640,7 +645,7 @@ def home_head(lang="en"):
         item = {"@type": "SoftwareApplication",
                 "@id": f"{ORIGIN}{target}#app",
                 "name": c["name"], "alternateName": a["home"]["label"],
-                "url": f"{ORIGIN}{target}", "description": c["blurb"],
+                "url": su if a.get("noPage") and su else f"{ORIGIN}{target}", "description": c["blurb"],
                 "applicationCategory": a["category"],
                 "operatingSystem": f"iOS {a.get('minOS', '17.0')} or later",
                 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
@@ -702,7 +707,7 @@ def localize_illus(svg, lang):
 HOME_CARD_LINKS = {("countdown", "en"): ("/tools/best-countdown-widget-apps-iphone/", "Compare the best countdown widget apps for iPhone")}
 
 def home_apps_html(lang="en"):
-    cards = []
+    cards, featured = [], []
     for a in HOME_APPS:
         h, key = a["home"], a["key"]; c = home_card(a, lang); page = c["page"]
         svg = (ROOT / "tools" / "home" / "illus" / f"{key}.svg").read_text(encoding="utf-8").strip()
@@ -717,6 +722,24 @@ def home_apps_html(lang="en"):
         tag = f'\n      <p class="tagline">{esc_text(c["tagline"])}</p>' if c["tagline"] else ""
         more = HOME_CARD_LINKS.get((key, lang))
         also = f'\n      <p class="also"><a href="{esc(more[0])}">{esc_text(more[1])} →</a></p>' if more else ""
+        if h.get("isNew"):
+            featured.append(f"""  <article class="app-new" id="app-{key}" aria-labelledby="new-{key}">
+    <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
+      <svg class="illus" viewBox="0 0 240 180" focusable="false">
+{svg}
+      </svg>
+    </a>
+    <div class="new-body">
+      <p class="new-flag"><span class="new-badge">{esc_text(H(lang, "new_badge"))}</span><span class="new-note">{esc_text(H(lang, "new_note"))}</span></p>
+      <div class="app-head">
+        <h3 id="new-{key}"><a href="{page}"{hl}>{label}.</a></h3>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </div>
+      <p class="store-name">{esc_text(c["name"])}</p>{tag}
+      <p class="blurb">{esc_text(c["blurb"])}</p>{also}{get}
+    </div>
+  </article>""")
+            continue
         cards.append(f"""    <article class="app" id="app-{key}">
       <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">
         <svg class="illus" viewBox="0 0 240 180" focusable="false">
@@ -730,7 +753,8 @@ def home_apps_html(lang="en"):
       <p class="store-name">{esc_text(c["name"])}</p>{tag}
       <p class="blurb">{esc_text(c["blurb"])}</p>{also}{get}
     </article>""")
-    return ('<!-- apps:start -->\n  <div class="apps">\n' + "\n".join(cards)
+    # 10-20 用户：新 app 在列表上面做一个「上新」样式（site.json 的 home.isNew），网格里不再重复
+    return ('<!-- apps:start -->\n' + "".join(f + "\n" for f in featured) + '  <div class="apps">\n' + "\n".join(cards)
             + "\n  </div>\n  <!-- apps:end -->")
 
 def home_faq_html(lang="en"):
@@ -845,13 +869,11 @@ FOOT_LOGO = ('<svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"
 # 字体 / 颜色一律写死，不借页面变量：DailyCalorie 的 --text 是颜色，借来当字体整条 font 声明失效。
 # 宽度和边距借 --wrap / --gutter（生成页是 1080 / 1120，手写页没有就回落 1120），让页脚和正文左右对齐。
 FOOT_FONT = '"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif'
-# 10-19 用户给了参考图（左：品牌 + 标语 + 社媒图标；右：几列带标题的链接；分隔线 + 版权行；底部压一整幅版画风全景插画）→ 照这个布局重做。
-# 底色 = 插画的纸色，插画上方 45% 是空天空，用负边距垫到版权行下面；顶边用遮罩淡入，纸色差一点也看不出接缝。
+# 10-19 用户给了参考图（左：品牌 + 标语 + 社媒图标；右：几列带标题的链接；分隔线 + 版权行）→ 照这个布局重做。
+# 10-20 用户：底部那幅全景插画「影响美观，很奇怪」→ 去掉，页脚到版权行为止；纸色底保留。
 FOOT_PAPER, FOOT_INK, FOOT_MUTED, FOOT_RULE = "#F1E8D9", "#22324F", "#4F5B72", "rgba(34,50,79,.16)"
-FOOT_ART = {"src": "/assets/art/footer-1440.webp", "w": 1919, "h": 820,   # Codex 出图 1919×820，prompt 在 tools/art/prompts.json 的 site-footer
-            "srcset": "/assets/art/footer-960.webp 960w, /assets/art/footer-1440.webp 1440w, /assets/art/footer-1920.webp 1919w"}
 FOOT_CSS = ('<style id="gk-foot-css">'
-    f'footer.gk-foot{{position:relative;display:block;margin:0;padding:72px 0 0;border:0;background:{FOOT_PAPER};text-align:left;overflow:hidden;'
+    f'footer.gk-foot{{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:{FOOT_PAPER};text-align:left;overflow:hidden;'
     f'font:400 14px/1.6 {FOOT_FONT};letter-spacing:.1px;color:{FOOT_MUTED}}}'
     '.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}'
     '.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}'
@@ -877,29 +899,21 @@ FOOT_CSS = ('<style id="gk-foot-css">'
     f'.gk-foot-bar{{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid {FOOT_RULE}}}'
     '.gk-foot-bar p{font-size:13px}'
     '.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}'
-    # 插画：按原比例（1919×820）铺满，最宽 2000px；更宽的屏居中、两侧淡进纸色——别限高从底部裁，裁掉的天空正是垫在版权行下面的那块（10-19 评审：2560 宽山顶进版权行）。
-    # 图的上 33% 是空天空；上移量 min(12vw,200px) 在任何宽度都不到显示高度的 30%。手机给 200px 高、往左偏一点保住左边的树。
-    '.gk-foot-art{position:relative;z-index:0;max-width:2000px;margin:calc(-1 * min(12vw,200px)) auto 0;line-height:0;pointer-events:none}'
-    '.gk-foot-art img{display:block;width:100%;max-width:none;height:auto;aspect-ratio:1919/820;min-height:200px;margin:0;border:0;border-radius:0;'
-    'object-fit:cover;object-position:40% 100%;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%);mask-image:linear-gradient(to bottom,transparent,#000 24%)}'
-    '@media (min-width:2000px){.gk-foot-art img{-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);'
-    '-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}}'
-    '@media (max-width:760px){footer.gk-foot{padding-top:48px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}'
+    '@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}'
     '.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}'
     '.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}'
     '.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}'
     '.gk-foot-bar{flex-direction:column;margin-top:40px}}'
     '</style>')
 # 只给自己有深色模式的页面（DailyCalorie 三页）配深色页脚；其它页面深色模式下背景仍是白的，不能跟着变。
-# 深色下插画反相（纸变深、墨线变浅）再转回原色相、降饱和；底色 #18140d = 纸色 (241,232,217) 过同一串滤镜的结果（canvas 实测），接缝看不出。
 FOOT_CSS_DARK = ('@media (prefers-color-scheme:dark){footer.gk-foot{background:#18140d;color:#b3a898}'
     '.gk-foot a.gk-foot-brand,.gk-foot p.gk-foot-tag,.gk-foot h2,.gk-foot a:hover,.gk-foot a.gk-foot-app{color:#f2ede5}'
     '.gk-foot a,.gk-foot li,.gk-foot p{color:#b3a898}.gk-foot .gk-foot-social a{color:#f2ede5}.gk-foot-social a:hover{background:rgba(255,255,255,.08)}'
-    '.gk-foot-bar{border-top-color:#3a332c}.gk-foot-art img{filter:invert(1) hue-rotate(180deg) saturate(.5) brightness(.95)}}')
+    '.gk-foot-bar{border-top-color:#3a332c}}')
 
 # 手写页 / 法务页没有 --wrap：页脚按各自正文列对齐（宽度＝正文列 + 两侧 20px 边距，09-28 实测），并补站点字体。
-# DailyCalorie 的 body 有左右 20px、底部 80px padding，页脚用负边距拉通栏、贴到页底。
-HAND_LAYOUT = [(r"^dailycalorie/", "760px", "margin-left:-20px;margin-right:-20px;margin-bottom:-80px"),   # body 底部 padding 80px：插画要贴到页底
+# DailyCalorie 的 body 有左右 20px、底部 80px padding，页脚用负边距拉通栏、纸色底贴到页底。
+HAND_LAYOUT = [(r"^dailycalorie/", "760px", "margin-left:-20px;margin-right:-20px;margin-bottom:-80px"),   # body 底部 padding 80px：纸色底要贴到页底
                (r"^(qrcodestudio|citu)/index\.html$", "800px", ""),
                (r"", "820px", "")]                    # 法务页模板和 repdex：main max-width 780
 FOOT_FONTS = ('@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}'
@@ -944,7 +958,6 @@ def site_footer_html(lang="en"):
                   f'<li><a href="/blog/"{en_only}>{esc_text(H(lang, "nav_blog"))}</a></li>'
                   f'<li><a href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))}</a></li>'
                   f'<li><a href="{home}#contact">{esc_text(H(lang, "nav_contact"))}</a></li>')
-    art = FOOT_ART
     return f"""{FOOT_START}
 <footer class="gk-foot">
   <div class="gk-foot-in">
@@ -969,7 +982,6 @@ def site_footer_html(lang="en"):
       <p class="gk-foot-links"><a href="mailto:{EMAIL}">{EMAIL}</a><a href="/llms.txt">llms.txt</a></p>
     </div>
   </div>
-  <div class="gk-foot-art" aria-hidden="true"><img src="{art["src"]}" srcset="{art["srcset"]}" sizes="100vw" width="{art["w"]}" height="{art["h"]}" alt="" loading="lazy" decoding="async"></div>
 </footer>
 {FOOT_END}"""
 

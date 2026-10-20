@@ -88,7 +88,8 @@ def icon_of(app, w=128):
 def page_for(app, lang, where="more"):
     """站内对应语言的页面；页面只有中文（单词兽）而读者不是中文时，直接去商店，别把人送到看不懂的页面。"""
     page_lang = app.get("lang") or "en"
-    if page_lang.startswith("zh") and not lang.startswith("zh"):
+    # noPage（10-20 Pagewren）：站内只有隐私 / 条款 / 支持页、没有产品页，卡片和页脚直接去商店，别链到 404 的 /pagewren/
+    if app.get("noPage") or (page_lang.startswith("zh") and not lang.startswith("zh")):
         return f"https://apps.apple.com/app/apple-store/id{app['appId']}?pt={PT}&ct=web-{app['key']}-{where}&mt=8"
     return sibling_path(app, lang)
 
