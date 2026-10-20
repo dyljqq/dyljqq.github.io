@@ -1766,8 +1766,9 @@ def zh_nodes(d):
     return "".join(f"<tr><td>{k}</td><td>{fmt(d - dt.timedelta(days=n), 'zh-Hant')}</td></tr>"
                    for k, n in (("100 天前", 100), ("50 天前", 50), ("30 天前", 30), ("1 週前", 7), ("前一天", 1)))
 
+# 10-20 用户：学测 / 会考 / 共通テスト / 都立入試 / 旅行計画アプリ 5 页标题按 Google 桌面标题 20px Arial 实测缩到 580px 内，搜索词留在开头
 PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
-  "title": "116 學測倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/1/22–1/24）", "crumb": "116 學測倒數",
+  "title": "116 學測倒數桌布？iPhone 鎖定畫面小工具（1/22–24）", "crumb": "116 學測倒數",
   "description": "116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。",
   "hub_title": "116 學測倒數", "hub_desc": "1 月 22 日到 24 日考試，報名、成績公布與分科測驗日期，每天更新的倒數。",
   "more": [
@@ -1806,7 +1807,7 @@ PAGES.append({"path": "/tools/zh-hant/116-xue-ce-dao-shu/", "lang": "zh-Hant", "
 <p>國中教育會考的倒數，見 <a href="/tools/zh-hant/116-hui-kao-dao-shu/">116 會考倒數</a>。</p>"""})
 
 PAGES.append({"path": "/tools/zh-hant/116-hui-kao-dao-shu/", "lang": "zh-Hant", "kind": "Article", "app": "countdown", "published": "2026-10-12",
-  "title": "116 會考倒數桌布？改用 iPhone 鎖定畫面小工具，天數每天自動更新（2027/5/15–5/16）", "crumb": "116 會考倒數",
+  "title": "116 會考倒數桌布？iPhone 鎖定畫面小工具（5/15–16）", "crumb": "116 會考倒數",
   "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。",
   "hub_title": "116 會考倒數", "hub_desc": "5 月 15 日、16 日考試，報名、准考證與成績日期，每天更新的倒數。",
   "more": [
@@ -1916,7 +1917,7 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
     ("共通テスト2027の追・再試験はいつですか？", f"{fmt(KTM1, 'ja')}・{KTM2.day}日（{'月火水木金土日'[KTM2.weekday()]}）です。"),
     ("共通テストまであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2026, 12, 16), 'ja')}、30日前は{fmt(KT1 - dt.timedelta(days=30), 'ja')}です。"),
   ],
-  "title": "共通テスト2027 カウントダウン｜あと何日？待ち受けにも（1月16日・17日）", "crumb": "共通テスト2027",
+  "title": "共通テスト2027 カウントダウン・待ち受け（1/16・17）", "crumb": "共通テスト2027",
   "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。",
   "hub_title": "共通テスト2027まであと何日？", "hub_desc": "本試験（1月16日・17日）までのカウントダウンと、100日前・30日前・1週間前の日付。",
   "js": [COUNT_JS], "faq": [
@@ -1959,7 +1960,7 @@ TOKYO_SRC = "https://www.kyoiku.metro.tokyo.lg.jp/admission/high_school/exam/rel
 def md_ja(d): return f"{d.month}月{d.day}日（{'月火水木金土日'[d.weekday()]}）"
 def nw_ja(d): return f'<span style="white-space:nowrap">{md_ja(d)}</span>'   # 日期和曜日不拆行
 PAGES.append({"path": "/tools/ja/toritsu-nyushi-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-10-15",
-  "title": "都立入試2027 カウントダウン｜あと何日？待ち受けにも（学力検査2月21日）", "crumb": "都立入試2027",
+  "title": "都立入試2027 カウントダウン・待ち受け（2月21日）", "crumb": "都立入試2027",
   "description": "令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。",
   "hub_title": "都立入試2027まであと何日？", "hub_desc": "学力検査（2月21日）と推薦入試（1月26日・27日）までのカウントダウン、出願期間と合格発表日。",
   "more": [
@@ -2401,7 +2402,7 @@ PAGES.append(bg_list_page({
 
 PAGES.append(bg_list_page({
   "lang": "ja", "path": "/tools/ja/ryoko-keikaku-app/",
-  "title": "旅行計画アプリおすすめ7選（2026）旅のしおり・共同編集・持ち物リストを比較", "crumb": "旅行計画アプリ",
+  "title": "旅行計画アプリおすすめ7選（2026）旅のしおり・共同編集", "crumb": "旅行計画アプリ",
   "description": "iPhoneの旅行計画アプリ7つを、プランの作り方・共同編集・オフライン・持ち物リスト・有料機能で比較。日本のApp Storeの掲載内容（2026年10月12日）から。",
   "hub_title": "旅行計画アプリおすすめ7選（2026）", "hub_desc": "旅のしおり・共同編集・オフライン・持ち物リストを比べました。",
   "h1": "旅行計画アプリおすすめ7選（2026）",
