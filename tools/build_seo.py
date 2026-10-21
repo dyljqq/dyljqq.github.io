@@ -77,6 +77,9 @@ def store_url(app):
 # 10-19 之前只有 IndexNow 忽略它们：31 个倒数页每天重建，dateModified、页面上的「更新」、sitemap lastmod 都被刷成当天（只有天数变）——
 # 等于天天对 Google 说全站改过了。别处的数字照比：假期页、考试页改了日期照样算修改。
 DAILY_COUNTER = re.compile(r"(<[a-z]+\b[^>]*\sdata-(?:n|unit|weeks|days)\b[^>]*>)[^<]*")
+# 日期恰好等于构建日不代表每日文字：考试日、D-30 等固定事实必须保留。
+# 这些提示语对应 build_tools.py 的每日重算说明；新增写法时同步补充。
+DAILY_COPY = re.compile(r"recalcula|contando hoje|números acima foram calculados|本頁的倒數|上面的數字|上の数字|の時点で|남은 날은")
 
 def _day_re(*forms):
     return re.compile("|".join(r"(?<!\d)" + re.escape(f) for f in forms))   # 前面不能是数字：「1 November」别命中「11 November」
@@ -86,7 +89,7 @@ def mask_daily(html: str, day: date) -> str:
     build_tools.py 写「截至今天」那句用到的日期写法：英文 %-d %B %Y 和美式 %B %-d, %Y、葡语 %d/%m/%Y、中日 年月日、韩 년월일，另有 ISO。
     build_tools.py 换了新写法要加到这里，否则那几页每天都会被当成修改（--check 的 IndexNow dry-run 会一下子列出一串倒数页）。
     - 没有计数器的页面不抹：法务页的「Last updated: October 10, 2026」碰巧等于那版的提交日，抹了就和前后版本对不上（10-19 实测）；
-    - 带那天日期（非 ISO 写法）的一整段文字整段抹掉，不只抹数字：句子本身会随天数换说法（「# weeks」↔「# weeks and # days」、「ちょうど#週間」↔「#週と#日」）；
+    - 带那天日期（非 ISO 写法）且含每日重算提示语的文字整段抹掉，不只抹数字：句子本身会随天数换说法（「# weeks」↔「# weeks and # days」、「ちょうど#週間」↔「#週と#日」）；
     - ISO 写法只去日期再抹数字（「Days left in 2026: 74 (as of 2026-10-19)」）：页面上「Updated 2026-10-18」那行也是 ISO，
       整行抹会让它今天命中、明天不命中，两天对不上；去日期后它本来就没剩数字，命中不命中都是同一个样子。"""
     if not DAILY_COUNTER.search(html):
@@ -96,7 +99,7 @@ def mask_daily(html: str, day: date) -> str:
     iso_re = _day_re(day.isoformat())
     def mask(m):
         t = m.group(1)
-        if long_re.search(t):
+        if long_re.search(t) and DAILY_COPY.search(t):
             return ">#<"
         if iso_re.search(t):
             t = re.sub(r"\d+", "#", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
