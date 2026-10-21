@@ -1516,18 +1516,28 @@ ZH_APP = ('「開單、報價單、收據、送貨單產生器」是我們的 iP
           '每份帳單都可以附上收款 QR Code，簽名直接在 iPhone 上手寫；收款結清後，同一份帳單可以直接當作收據分享。第一份免費，免註冊帳號。')
 RECEIPT_JS = r"""
 (function(){var r=document.getElementById('rcpt');if(!r)return;
-function cnUpper(n){if(!(n>=0)||n>=1e12)return '';n=Math.floor(n);if(n===0)return '零元整';
- var D='零壹貳參肆伍陸柒捌玖',U=['','拾','佰','仟'],S=['','萬','億'],s=String(n),L=s.length,out='',zero=false;
+function amount(){var m=(a.textContent||'').trim().match(/^((?:\d+|\d{1,3}(?:,\d{3})+))(?:\.(\d{1,2}))?$/);
+ if(!m)return null;var yuan=Number(m[1].replace(/,/g,''));if(yuan>=1e12)return null;
+ return yuan*100+Number((m[2]||'').padEnd(2,'0'));}
+function cnUpper(cents){var n=Math.floor(cents/100),part=cents%100;
+ var D='零壹貳參肆伍陸柒捌玖',U=['','拾','佰','仟'],S=['','萬','億'],s=String(n),L=s.length,out=n===0?'零':'',zero=false;
  for(var i=0;i<L;i++){var d=+s[i],p=L-1-i,u=p%4,g=Math.floor(p/4);
   if(d===0)zero=true;else{if(zero){out+='零';zero=false;}out+=D[d]+U[u];}
   if(u===0&&g>0&&+s.substring(Math.max(0,i-3),i+1)>0){out+=S[g];zero=false;}}
- return out+'元整';}
-var a=document.getElementById('amt'),o=document.getElementById('amt-cn');
-function upd(){var v=parseFloat((a.textContent||'').replace(/[^0-9.]/g,''));o.textContent=isNaN(v)?'（請輸入數字）':(cnUpper(v)||'（金額太大）');}
+ var jiao=Math.floor(part/10),fen=part%10;
+ return out+'元'+(!part?'整':(jiao?D[jiao]+'角':(n?'零':''))+(fen?D[fen]+'分':'整'));}
+var a=document.getElementById('amt'),o=document.getElementById('amt-cn'),error=document.getElementById('amount-error');
+function upd(){var cents=amount(),valid=cents!==null;
+ a.setAttribute('aria-invalid',String(!valid));error.hidden=valid;
+ if(valid)r.removeAttribute('data-invalid');else r.setAttribute('data-invalid','true');
+ o.textContent=valid?cnUpper(cents):'（金額格式有誤）';return valid;}
+function format(){if(!upd())return false;var cents=amount(),part=cents%100;
+ a.textContent=Math.floor(cents/100).toLocaleString('en-US')+(part?'.'+String(part).padStart(2,'0'):'');return true;}
 a.addEventListener('input',upd);upd();
-a.addEventListener('blur',function(){var v=parseFloat((a.textContent||'').replace(/[^0-9.]/g,''));if(!isNaN(v))a.textContent=Math.floor(v).toLocaleString('en-US');});
+a.addEventListener('blur',format);
 var t=document.getElementById('today');if(t)t.textContent=new Date().toLocaleDateString('zh-Hant');
-document.getElementById('print').addEventListener('click',function(){window.print();});})();
+window.addEventListener('beforeprint',format);
+document.getElementById('print').addEventListener('click',function(){if(format())window.print();else a.focus();});})();
 """
 
 PAGES.append({"path": "/tools/zh-hant/bao-jia-dan-fan-ben/", "lang": "zh-Hant", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-29",
@@ -1586,26 +1596,28 @@ PAGES.append({"path": "/tools/zh-hant/shou-ju-fan-ben/", "lang": "zh-Hant", "kin
     ("收據金額為什麼要寫大寫？", "大寫數字筆畫多、不容易被塗改，例如「壹萬貳仟參佰元整」；最後的「整」表示沒有零頭。在範本裡輸入數字，大寫會自動寫出來。"),
     ("「茲收到」是什麼意思？", "「茲」是「此、現在」的意思，「茲收到」就是「現在確實收到」。這是收據開頭的固定用語，表示收款人確認已經收到這筆錢。"),
     ("「茲收到」後面要寫什麼？", "寫付款人的姓名或公司名稱，接著寫「繳付」與款項的事由，例如「茲收到 王小明 繳付 十月份房租 款項」。"),
-    ("金額有小數怎麼辦？", "範本的大寫以整數元計算，小數會捨去；金額有角或分的話，請在大寫欄自己補上。"),
+    ("金額有小數怎麼辦？", "支援最多兩位小數，數字與中文大寫會一起保留角、分，例如 123.45 會寫成「壹佰貳拾參元肆角伍分」。超過兩位小數、負數、空白或一兆元以上的金額會提示修正，不會自動捨去或列印。"),
     ("收據可以當發票用嗎？", "不行。收據證明你收到了款項；在台灣，營業人依法要開的是統一發票。在香港，「發票」通常指請款用的單據（invoice），不是稅務憑證。這個範本和我們的 App 都不開立稅務發票。"),
     ("有 App 可以在 iPhone 上開收據嗎？", "有。在我們的「開單、報價單、收據、送貨單產生器」裡，收款結清後，同一份帳單可以直接當作收據分享：標記為已付，並附上結清日期。帳單可以附收款 QR Code，也能在 iPhone 上手寫簽名。第一份免費，免註冊帳號。"),
   ],
-  "body": f"""<h1>收據範本</h1>
+  "body": f"""<style>@media print{{#rcpt[data-invalid="true"]{{display:none!important}}}}</style>
+<h1>收據範本</h1>
 <p class="lede">直接在這裡填：點任何虛線欄位就能修改。輸入金額，下面會自動寫出中文大寫；填好後列印或存成 PDF。資料不會離開你的瀏覽器。</p>
 <div class="inv-wrap">
 <div class="inv-tools"><button class="btn" id="print" type="button">列印／存成 PDF</button></div>
+<p id="amount-error" role="alert" hidden>請輸入 0 至未滿一兆元的金額，最多兩位小數，例如 123.45；修正前無法列印有效收據。</p>
 <div class="inv" id="rcpt">
 <div class="inv-head"><div><div class="inv-title">收據</div><p style="margin:6px 0 0"><span contenteditable="true">收款人或公司名稱</span><br><span contenteditable="true">地址 · 電話</span></p></div>
 <div class="inv-meta"><div class="k">收據編號</div><p style="margin:0 0 10px"><span contenteditable="true">R-0001</span></p><div class="k">日期</div><p style="margin:0"><span contenteditable="true" id="today"></span></p></div></div>
 <p class="rcpt-line">茲收到 <span contenteditable="true">付款人姓名／公司</span> 繳付 <span contenteditable="true">網站設計費用</span> 款項</p>
 <p class="rcpt-line">金額：<span contenteditable="true">新台幣</span> <strong id="amt-cn">參萬元整</strong></p>
-<p class="rcpt-line">（<span contenteditable="true">NT$</span> <span contenteditable="true" id="amt">30,000</span>）</p>
+<p class="rcpt-line">（<span contenteditable="true">NT$</span> <span contenteditable="true" id="amt" role="textbox" aria-label="收據金額" aria-describedby="amount-error" inputmode="decimal">30,000</span>）</p>
 <p class="rcpt-line">付款方式：<span contenteditable="true">銀行轉帳</span></p>
 <div class="rcpt-sign"><div>收款人簽名：＿＿＿＿＿＿</div><div>蓋章：</div></div>
 <p class="notes" contenteditable="true">此據。</p>
 </div></div>
 <h2>收據要寫什麼</h2>
-<ul><li><strong>「收據」字樣</strong>與收據編號。</li><li><strong>日期</strong>：收到款項的那一天。</li><li><strong>「茲收到 某某 繳付 某某款項」</strong>：付款人與事由。</li><li><strong>金額</strong>：中文大寫加阿拉伯數字，大寫最後寫「元整」，不容易被塗改。香港填港幣時，把「新台幣」和「NT$」改成「港幣」和「HK$」。</li><li><strong>付款方式</strong>：現金、轉帳、支票。</li><li><strong>收款人簽名或蓋章</strong>。</li></ul>
+<ul><li><strong>「收據」字樣</strong>與收據編號。</li><li><strong>日期</strong>：收到款項的那一天。</li><li><strong>「茲收到 某某 繳付 某某款項」</strong>：付款人與事由。</li><li><strong>金額</strong>：中文大寫加阿拉伯數字，整數元以「元整」結尾，有小數則寫出角、分。香港填港幣時，把「新台幣」和「NT$」改成「港幣」和「HK$」。</li><li><strong>付款方式</strong>：現金、轉帳、支票。</li><li><strong>收款人簽名或蓋章</strong>。</li></ul>
 <h2>「茲收到」的寫法</h2>
 <p>「茲」是「此、現在」，「茲收到」就是「現在確實收到」。後面依序寫付款人、事由和金額，最後寫「此據」。</p>
 <table><thead><tr><th>情況</th><th>寫法</th></tr></thead><tbody>
