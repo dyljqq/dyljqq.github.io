@@ -80,6 +80,29 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 @media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+
+.pagewren .hero .label{letter-spacing:1px;line-height:1.5;margin-bottom:14px}
+.pagewren .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:22px}
+.pagewren .hero-actions .cta{margin:0}.pagewren .pw-example-link{font-weight:600;text-underline-offset:5px}
+.pagewren .pw-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,72px);align-items:center}
+.pagewren .pw-story-copy p,.pagewren .pw-start p,.pagewren .pw-pricing>p{color:var(--muted);max-width:48em}
+.pagewren .pw-example{margin:0;padding:clamp(22px,4vw,40px);background:#f5efe6;border-radius:22px}
+.pagewren .pw-example figcaption{font-size:11px;letter-spacing:1px;line-height:1.5}
+.pagewren .pw-paper{padding:clamp(24px,4vw,40px);background:#fbf6ee;box-shadow:0 12px 24px -18px #68534460;border:1px solid #e5dbce;color:#2a2520}
+.pagewren .pw-book-title{margin:0 0 32px;font-size:13px;letter-spacing:.5px}
+.pagewren .pw-age{margin:0 0 8px;font-size:12px;color:#6a5c50}
+.pagewren .pw-paper h3{margin:0 0 20px;font:500 24px/1.3 var(--display)}
+.pagewren .pw-paper blockquote{margin:0;font:400 clamp(20px,2.2vw,25px)/1.65 Georgia,"Songti SC","Hiragino Mincho ProN",serif}
+.pagewren .pw-caption{margin:16px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.pagewren .pw-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:steps}
+.pagewren .pw-steps li{border-top:1px solid var(--rule);padding-top:20px;counter-increment:steps}
+.pagewren .pw-steps li::before{content:"0" counter(steps);display:block;font:500 28px/1 var(--display);color:#9a4a26;margin-bottom:16px}
+.pagewren .pw-steps h3,.pagewren .pw-plan h3{margin:0 0 10px;font:600 18px/1.4 var(--text)}
+.pagewren .pw-steps p{margin:0;font-size:15px}
+.pagewren .pw-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;border-top:1px solid var(--rule);padding-top:24px}
+.pagewren .pw-plan ul{padding-left:20px;color:var(--muted)}.pagewren .pw-plan li{padding-left:4px;margin:8px 0}
+.pagewren .pw-family{font-size:14px}.pagewren .pw-pricing .cta{margin-top:8px}
+@media(max-width:760px){.pagewren .pw-story,.pagewren .pw-steps,.pagewren .pw-plans{grid-template-columns:1fr}.pagewren .pw-story{gap:24px}.pagewren .pw-steps{gap:24px}.pagewren .pw-plans{gap:20px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Pagewren은 iPhone용 아기 성장 앨범입니다. 사진 한 장이나 한 문장이 한 페이지가 되고, 월령별 챕터와 첫 순간 기록으로 남습니다. 계정이 필요 없어요.">
@@ -208,7 +231,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <!-- seo:end -->
 <style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
 </head>
-<body>
+<body class="pagewren">
 <header class="wrap top">
   <a class="brand" href="/ko/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
@@ -226,15 +249,27 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <section class="hero">
   <div>
     <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
-    <h1>Pagewren: 아기 성장 앨범</h1>
-    <div class="lede"><p>Pagewren은 아기의 평범한 하루하루를 한 페이지씩 아름다운 추억의 책으로 만들어 줍니다.</p><p>사진 한 장이나 한 문장만 추가하면 Pagewren이 페이지를 꾸며 드려요. 디자인 실력도, 매일 기록해야 한다는 부담도 필요 없어요. 오늘의 30초가 오래도록 남을 추억이 됩니다.</p></div>
-    <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>App Store에서 다운로드</a>
+    <p class="label">Pagewren · iPhone으로 만드는 아기 추억책</p><h1>우리 아기의 이야기를,<br>한 페이지씩.</h1>
+    <div class="lede"><p>사진 한 장과 짧은 글로 오늘의 작은 순간이 아기 책의 한 페이지가 돼요. 이미 찍어 둔 사진으로 시작하고, 잠깐 여유가 생길 때마다 이야기를 더해 보세요.</p></div>
+    <div class="hero-actions"><a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>아기 책 만들기</a><a class="pw-example-link" href="#example">기록 예시 보기</a></div>
     <ul class="chips"><li>무료로 다운로드</li><li>iPhone</li><li>iOS 17 이상</li><li>계정 불필요</li></ul>
     <div class="alt qr-only"><img class="alt-qr" src="/assets/qr/pagewren.svg" width="96" height="96" alt="" loading="lazy"><div class="alt-txt"><p class="alt-scan">컴퓨터로 보고 계신가요? iPhone 카메라로 이 코드를 스캔하면 앱을 받을 수 있어요.</p></div></div>
   </div>
   <div class="hero-media"><img src="/assets/art/pagewren/hero-460.webp" srcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" sizes="(max-width:760px) 86vw, 420px" width="460" height="575" alt="Pagewren: 아기 성장 앨범" fetchpriority="high"></div>
 </section>
 
+<section class="sec pw-story" id="example" aria-labelledby="h-example">
+  <div class="pw-story-copy"><h2 id="h-example">소소한 순간이 이야기가 돼요.</h2><p>함께 웃었던 오후, 첫 미소, 오래 기억하고 싶은 말 한마디. 모두 한 페이지에 남길 수 있어요.</p></div>
+  <figure class="pw-example">
+    <figcaption class="label">기록 예시</figcaption>
+    <div class="pw-paper"><p class="pw-book-title">미아의 이야기</p><p class="pw-age">생후 3개월</p>
+      <h3>평범한 어느 오후</h3><blockquote>강아지가 재채기하는 걸 보고 얼마나 웃었는지, 딸꾹질까지 했어.</blockquote>
+    </div><p class="pw-caption">이해를 돕기 위한 가상의 기록입니다. 직접 찍은 사진과 글로 우리 가족만의 책을 만들어 보세요.</p>
+  </figure>
+</section>
+<section class="sec pw-start" aria-labelledby="h-start"><h2 id="h-start">이미 간직하고 있는 순간부터 시작하세요.</h2>
+  <ol class="pw-steps"><li><h3>책 만들기</h3><p>아기 책에 이름을 지어 주세요. 아이마다 따로 책을 만들 수 있어요.</p></li><li><h3>사진이나 짧은 글 더하기</h3><p>사진을 고르거나 추억을 적어 보세요. 예전 사진을 한 번에 여러 장 가져와 지난 순간도 채울 수 있어요.</p></li><li><h3>이야기 다시 펼쳐 보기</h3><p>나이별로 추억을 살펴보고 우리만의 특별한 순간을 표시하세요. Classic 테마의 PDF로 내보내 공유하거나 인쇄할 수도 있어요.</p></li></ol>
+</section>
 <section class="sec" id="highlights" aria-labelledby="h-highlights">
   <h2 id="h-highlights">주요 기능</h2>
   <div class="hls">
@@ -244,6 +279,11 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     <div class="hl"><figure><img src="/assets/art/pagewren/04-460.webp" srcset="/assets/art/pagewren/04-460.webp 460w, /assets/art/pagewren/04-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="그날의 페이지를 홈 화면에" loading="lazy" decoding="async"></figure><div><h3>그날의 페이지를 홈 화면에</h3><p>위젯이 내 책을 보여 주고, 지난해 같은 날의 페이지를 다시 꺼내 줍니다. 잠금 화면 위젯은 한 번 탭으로 새 페이지를 엽니다.</p></div></div>
     <div class="hl"><figure><img src="/assets/art/pagewren/05-460.webp" srcset="/assets/art/pagewren/05-460.webp 460w, /assets/art/pagewren/05-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="프라이빗하게, 온전히 내 것" loading="lazy" decoding="async"></figure><div><h3>프라이빗하게, 온전히 내 것</h3><p>광고도, 소셜 피드도, 공개 프로필도 없습니다. 사진과 글은 iPhone에, Pro의 iCloud 동기화를 켜면 내 iCloud에도 저장됩니다. 프라이버시 잠금(Pro)으로 앱, 책 한 권, 추억 하나를 잠글 수 있습니다.</p></div></div>
   </div>
+</section>
+<section class="sec pw-pricing" id="pricing" aria-labelledby="h-pricing">
+  <h2 id="h-pricing">무료로도 한 권을 알차게 채울 수 있어요.</h2><div class="pw-plans"><div class="pw-plan"><h3>무료</h3><ul><li>사진과 글로 남기는 추억 무제한</li><li>나이별 챕터, 특별한 순간 기록, 위젯</li><li>Classic 테마와 페이지 배경 3종</li><li>Classic 테마 PDF 내보내기와 페이지 이미지 공유</li></ul></div><div class="pw-plan"><h3>Pagewren Pro</h3><ul><li>Linen 및 Scrapbook 테마</li><li>더 다양한 배경과 콜라주 레이아웃</li><li>모든 테마로 PDF 내보내기</li><li>내 기기 간 iCloud 동기화와 프라이버시 잠금</li></ul></div></div>
+  <p>무료로 계속 기록할 수 있어요. Pro는 선택 사항이며 월간, 연간, 평생 이용 옵션이 있어요. 결제 전에 앱에서 거주 지역의 가격을 확인할 수 있어요.</p><p class="pw-family">페이지는 이미지로, 책은 PDF로 공유하세요. iCloud 동기화는 본인의 Apple 계정을 사용해요. Pro의 가족 공유가 함께 편집하는 공용 계정을 제공하는 것은 아니에요.</p>
+  <a class="cta" href="https://apps.apple.com/kr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>아기 책 만들기</a>
 </section>
 <section class="sec" id="features" aria-labelledby="h-features">
   <h2 id="h-features">세부 사항 – App Store에 쓰인 대로</h2>

@@ -1,0 +1,674 @@
+{
+  "en": {
+    "eyebrow": "Pagewren · Baby memory book for iPhone",
+    "headline": [
+      "Your baby's story,",
+      "one page at a time."
+    ],
+    "intro": "One photo, a few words, and today's little moment becomes a page in your baby's book. Start with the photos you already have and add to it whenever life gives you a moment.",
+    "cta": "Start your baby's book",
+    "secondary": "See an example",
+    "example": {
+      "heading": "The little things are the story.",
+      "intro": "A funny afternoon, a first smile, or a sentence you want to remember. Each can become a page.",
+      "label": "Example entry",
+      "book": "Mia's Story",
+      "age": "3 months",
+      "milestone": "An ordinary afternoon",
+      "quote": "You laughed so hard at the dog sneezing that you got the hiccups.",
+      "caption": "Fictional entry for illustration. Your own photos and words make the book yours."
+    },
+    "steps": {
+      "heading": "Start with a moment you already have.",
+      "items": [
+        {
+          "title": "Make a book",
+          "text": "Give your baby's book a name. You can keep a separate book for each child."
+        },
+        {
+          "title": "Add a photo or a few words",
+          "text": "Pick a photo, write a memory, or import a batch of earlier photos to catch up."
+        },
+        {
+          "title": "Come back to the story",
+          "text": "Browse by age, mark your own milestones, and export a Classic PDF to share or print."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "A complete book, even for free.",
+      "freeLabel": "Free",
+      "freeItems": [
+        "Unlimited photo and text memories",
+        "Age chapters, milestones and widgets",
+        "Classic theme and three page backgrounds",
+        "Classic PDF export and page-image sharing"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Linen and Scrapbook themes",
+        "More backgrounds and collage layouts",
+        "PDF export in every theme",
+        "iCloud Sync across your own devices and Privacy Lock"
+      ],
+      "note": "Keep writing for free. Pro is optional, with monthly, yearly and Lifetime options. The app shows your local price before you pay.",
+      "family": "Share a page as an image or a book as a PDF. iCloud Sync uses your own Apple account; family sharing of Pro does not mean a shared editing account."
+    }
+  },
+  "de": {
+    "eyebrow": "Pagewren · Baby-Erinnerungsbuch fürs iPhone",
+    "headline": [
+      "Die Geschichte deines Babys,",
+      "Seite für Seite."
+    ],
+    "intro": "Ein Foto, ein paar Worte – und aus einem kleinen Moment von heute wird eine Seite im Buch deines Babys. Fang mit den Fotos an, die du schon hast, und ergänze das Buch, wann immer du einen Moment Zeit findest.",
+    "cta": "Das Buch deines Babys beginnen",
+    "secondary": "Beispiel ansehen",
+    "example": {
+      "heading": "Die kleinen Dinge erzählen die Geschichte.",
+      "intro": "Ein lustiger Nachmittag, ein erstes Lächeln oder ein Satz, den du nicht vergessen möchtest. All das kann eine Seite werden.",
+      "label": "Beispieleintrag",
+      "book": "Mias Geschichte",
+      "age": "3 Monate",
+      "milestone": "Ein ganz normaler Nachmittag",
+      "quote": "Du hast so sehr über den niesenden Hund gelacht, dass du Schluckauf bekommen hast.",
+      "caption": "Fiktiver Beispieleintrag. Deine eigenen Fotos und Worte machen das Buch zu eurem."
+    },
+    "steps": {
+      "heading": "Fang mit einem Moment an, den du schon festgehalten hast.",
+      "items": [
+        {
+          "title": "Ein Buch anlegen",
+          "text": "Gib dem Buch deines Babys einen Namen. Für jedes Kind kannst du ein eigenes Buch führen."
+        },
+        {
+          "title": "Ein Foto oder ein paar Worte hinzufügen",
+          "text": "Wähle ein Foto, schreibe eine Erinnerung auf oder importiere mehrere ältere Fotos auf einmal, um Vergangenes nachzutragen."
+        },
+        {
+          "title": "In Erinnerungen blättern",
+          "text": "Stöbere nach Alter, halte eure eigenen Meilensteine fest und exportiere ein PDF im Classic-Design zum Teilen oder Ausdrucken."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Ein vollständiges Buch – auch kostenlos.",
+      "freeLabel": "Kostenlos",
+      "freeItems": [
+        "Unbegrenzt Erinnerungen mit Fotos und Text",
+        "Alterskapitel, Meilensteine und Widgets",
+        "Classic-Design und drei Seitenhintergründe",
+        "PDF-Export im Classic-Design und Seiten als Bilder teilen"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Designs Linen und Scrapbook",
+        "Weitere Hintergründe und Collage-Layouts",
+        "PDF-Export mit jedem Design",
+        "iCloud-Synchronisierung zwischen deinen eigenen Geräten und Privatsphäre-Sperre"
+      ],
+      "note": "Schreibe kostenlos weiter. Pro ist optional: monatlich, jährlich oder als Lifetime-Kauf. Deinen lokalen Preis siehst du vor dem Kauf in der App.",
+      "family": "Teile eine Seite als Bild oder ein Buch als PDF. Die iCloud-Synchronisierung nutzt deinen eigenen Apple Account. Die Familienfreigabe von Pro bedeutet keinen gemeinsamen Zugang zum Bearbeiten."
+    }
+  },
+  "fr": {
+    "eyebrow": "Pagewren · Le livre de souvenirs de bébé sur iPhone",
+    "headline": [
+      "L'histoire de votre bébé,",
+      "une page à la fois."
+    ],
+    "intro": "Une photo, quelques mots, et un petit moment d'aujourd'hui devient une page du livre de votre bébé. Commencez avec les photos que vous avez déjà, puis ajoutez des souvenirs dès que vous trouvez un moment.",
+    "cta": "Commencer le livre de bébé",
+    "secondary": "Voir un exemple",
+    "example": {
+      "heading": "L'histoire se cache dans les petits moments.",
+      "intro": "Un après-midi plein de rires, un premier sourire ou une phrase à garder en mémoire. Chacun de ces moments peut devenir une page.",
+      "label": "Exemple de souvenir",
+      "book": "L'histoire de Mia",
+      "age": "3 mois",
+      "milestone": "Un après-midi comme les autres",
+      "quote": "Tu as tellement ri en voyant le chien éternuer que tu en as eu le hoquet.",
+      "caption": "Souvenir fictif présenté à titre d'exemple. Vos photos et vos mots donnent au livre toute sa personnalité."
+    },
+    "steps": {
+      "heading": "Commencez par un moment déjà capturé.",
+      "items": [
+        {
+          "title": "Créer un livre",
+          "text": "Donnez un nom au livre de votre bébé. Vous pouvez créer un livre distinct pour chaque enfant."
+        },
+        {
+          "title": "Ajouter une photo ou quelques mots",
+          "text": "Choisissez une photo, racontez un souvenir ou importez un lot de photos plus anciennes pour compléter le livre."
+        },
+        {
+          "title": "Retrouver son histoire",
+          "text": "Parcourez les souvenirs par âge, marquez les étapes qui comptent pour vous et exportez un PDF avec le thème Classic pour le partager ou l'imprimer."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Un livre complet, même en version gratuite.",
+      "freeLabel": "Gratuit",
+      "freeItems": [
+        "Souvenirs photo et texte illimités",
+        "Chapitres par âge, étapes marquantes et widgets",
+        "Thème Classic et trois fonds de page",
+        "Export PDF avec le thème Classic et partage de pages en images"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Thèmes Linen et Scrapbook",
+        "Plus de fonds et de mises en page pour les collages",
+        "Export PDF avec tous les thèmes",
+        "Synchronisation iCloud entre vos appareils et verrouillage de confidentialité"
+      ],
+      "note": "Continuez à écrire gratuitement. Pro est facultatif, avec des formules mensuelle, annuelle ou à vie. L'app affiche le prix dans votre devise avant l'achat.",
+      "family": "Partagez une page en image ou un livre en PDF. La synchronisation iCloud utilise votre propre compte Apple ; le partage familial de Pro ne donne pas accès à un compte de modification commun."
+    }
+  },
+  "it": {
+    "eyebrow": "Pagewren · Il libro dei ricordi del tuo bebè su iPhone",
+    "headline": [
+      "La storia del tuo bebè,",
+      "una pagina alla volta."
+    ],
+    "intro": "Una foto, poche parole, e un piccolo momento di oggi diventa una pagina nel libro del tuo bebè. Inizia con le foto che hai già e aggiungi nuovi ricordi ogni volta che trovi un momento.",
+    "cta": "Inizia il libro del tuo bebè",
+    "secondary": "Guarda un esempio",
+    "example": {
+      "heading": "La storia è fatta di piccole cose.",
+      "intro": "Un pomeriggio di risate, un primo sorriso o una frase che vuoi ricordare. Ognuno di questi momenti può diventare una pagina.",
+      "label": "Ricordo di esempio",
+      "book": "La storia di Mia",
+      "age": "3 mesi",
+      "milestone": "Un pomeriggio qualunque",
+      "quote": "Hai riso così tanto quando il cane ha starnutito che ti è venuto il singhiozzo.",
+      "caption": "Ricordo inventato a scopo illustrativo. Le tue foto e le tue parole rendono il libro davvero vostro."
+    },
+    "steps": {
+      "heading": "Inizia da un momento che hai già catturato.",
+      "items": [
+        {
+          "title": "Crea un libro",
+          "text": "Dai un nome al libro del tuo bebè. Puoi tenere un libro separato per ogni figlio."
+        },
+        {
+          "title": "Aggiungi una foto o poche parole",
+          "text": "Scegli una foto, scrivi un ricordo o importa un gruppo di foto meno recenti per recuperare i momenti passati."
+        },
+        {
+          "title": "Ritrova la sua storia",
+          "text": "Sfoglia i ricordi per età, segna i vostri traguardi e crea un PDF con il tema Classic da condividere o stampare."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Un libro completo, anche gratis.",
+      "freeLabel": "Gratis",
+      "freeItems": [
+        "Ricordi con foto e testo illimitati",
+        "Capitoli per età, traguardi e widget",
+        "Tema Classic e tre sfondi per le pagine",
+        "Esportazione PDF con il tema Classic e condivisione delle pagine come immagini"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Temi Linen e Scrapbook",
+        "Più sfondi e layout per i collage",
+        "Esportazione PDF con tutti i temi",
+        "Sincronizzazione iCloud tra i tuoi dispositivi e blocco per la privacy"
+      ],
+      "note": "Continua a scrivere gratis. Pro è facoltativo, con opzioni mensili, annuali e a vita. L'app mostra il prezzo nella tua valuta prima dell'acquisto.",
+      "family": "Condividi una pagina come immagine o un libro come PDF. La sincronizzazione iCloud usa il tuo account Apple personale; la condivisione di Pro in famiglia non crea un account comune per modificare i libri."
+    }
+  },
+  "es": {
+    "eyebrow": "Pagewren · El libro de recuerdos de tu bebé para iPhone",
+    "headline": [
+      "La historia de tu bebé,",
+      "página a página."
+    ],
+    "intro": "Una foto, unas palabras, y un pequeño momento de hoy se convierte en una página del libro de tu bebé. Empieza con las fotos que ya tienes y añade recuerdos cuando encuentres un rato.",
+    "cta": "Empieza el libro de tu bebé",
+    "secondary": "Ver un ejemplo",
+    "example": {
+      "heading": "Las pequeñas cosas cuentan la historia.",
+      "intro": "Una tarde de risas, una primera sonrisa o una frase que quieres recordar. Cada momento puede convertirse en una página.",
+      "label": "Entrada de ejemplo",
+      "book": "La historia de Mia",
+      "age": "3 meses",
+      "milestone": "Una tarde cualquiera",
+      "quote": "Te reíste tanto al ver estornudar al perro que te dio hipo.",
+      "caption": "Entrada ficticia a modo de ejemplo. Tus fotos y tus palabras hacen que el libro sea vuestro."
+    },
+    "steps": {
+      "heading": "Empieza con un momento que ya has guardado.",
+      "items": [
+        {
+          "title": "Crea un libro",
+          "text": "Ponle un nombre al libro de tu bebé. Puedes llevar un libro distinto para cada hijo."
+        },
+        {
+          "title": "Añade una foto o unas palabras",
+          "text": "Elige una foto, escribe un recuerdo o importa varias fotos antiguas de una vez para ponerte al día."
+        },
+        {
+          "title": "Vuelve a su historia",
+          "text": "Explora los recuerdos por edad, marca vuestros propios hitos y exporta un PDF con el tema Classic para compartirlo o imprimirlo."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Un libro completo, también gratis.",
+      "freeLabel": "Gratis",
+      "freeItems": [
+        "Recuerdos con fotos y texto sin límite",
+        "Capítulos por edad, hitos y widgets",
+        "Tema Classic y tres fondos de página",
+        "Exportación a PDF con el tema Classic y páginas para compartir como imágenes"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Temas Linen y Scrapbook",
+        "Más fondos y diseños de collage",
+        "Exportación a PDF con todos los temas",
+        "Sincronización con iCloud entre tus propios dispositivos y bloqueo de privacidad"
+      ],
+      "note": "Sigue escribiendo gratis. Pro es opcional y ofrece opciones mensuales, anuales y de por vida. La app muestra el precio en tu moneda antes de comprar.",
+      "family": "Comparte una página como imagen o un libro como PDF. La sincronización con iCloud utiliza tu propia cuenta de Apple; compartir Pro con En familia no crea una cuenta de edición conjunta."
+    }
+  },
+  "es-MX": {
+    "eyebrow": "Pagewren · El libro de recuerdos de tu bebé para iPhone",
+    "headline": [
+      "La historia de tu bebé,",
+      "una página a la vez."
+    ],
+    "intro": "Una foto y unas palabras bastan para convertir un pequeño momento de hoy en una página del libro de tu bebé. Empieza con las fotos que ya tienes y agrega recuerdos cada vez que tengas un ratito.",
+    "cta": "Empieza el libro de tu bebé",
+    "secondary": "Ver un ejemplo",
+    "example": {
+      "heading": "Las pequeñas cosas cuentan su historia.",
+      "intro": "Una tarde de risas, una primera sonrisa o una frase que quieres recordar. Cada momento puede convertirse en una página.",
+      "label": "Recuerdo de ejemplo",
+      "book": "La historia de Mia",
+      "age": "3 meses",
+      "milestone": "Una tarde cualquiera",
+      "quote": "Te reíste tanto cuando el perro estornudó que te dio hipo.",
+      "caption": "Recuerdo ficticio para mostrar cómo funciona. Tus fotos y tus palabras hacen que el libro sea de ustedes."
+    },
+    "steps": {
+      "heading": "Empieza con un momento que ya tienes guardado.",
+      "items": [
+        {
+          "title": "Crea un libro",
+          "text": "Ponle nombre al libro de tu bebé. Puedes tener un libro diferente para cada hijo."
+        },
+        {
+          "title": "Agrega una foto o unas palabras",
+          "text": "Elige una foto, escribe un recuerdo o importa varias fotos anteriores de una sola vez para ponerte al día."
+        },
+        {
+          "title": "Vuelve a su historia",
+          "text": "Explora los recuerdos por edad, marca los momentos importantes para ustedes y exporta un PDF con el tema Classic para compartirlo o imprimirlo."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Un libro completo, incluso gratis.",
+      "freeLabel": "Gratis",
+      "freeItems": [
+        "Recuerdos con fotos y texto sin límite",
+        "Capítulos por edad, momentos importantes y widgets",
+        "Tema Classic y tres fondos de página",
+        "Exportación a PDF con el tema Classic y páginas para compartir como imágenes"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Temas Linen y Scrapbook",
+        "Más fondos y diseños de collage",
+        "Exportación a PDF con todos los temas",
+        "Sincronización con iCloud entre tus propios dispositivos y bloqueo de privacidad"
+      ],
+      "note": "Sigue escribiendo gratis. Pro es opcional, con opciones mensuales, anuales y de por vida. La app te muestra el precio en tu moneda antes de comprar.",
+      "family": "Comparte una página como imagen o un libro como PDF. La sincronización con iCloud usa tu propia cuenta de Apple; compartir Pro con Compartir en familia no crea una cuenta de edición compartida."
+    }
+  },
+  "pt-BR": {
+    "eyebrow": "Pagewren · O livro de memórias do seu bebê no iPhone",
+    "headline": [
+      "A história do seu bebê,",
+      "uma página de cada vez."
+    ],
+    "intro": "Uma foto, algumas palavras, e um pequeno momento de hoje vira uma página no livro do seu bebê. Comece com as fotos que você já tem e acrescente novas lembranças sempre que sobrar um tempinho.",
+    "cta": "Comece o livro do seu bebê",
+    "secondary": "Veja um exemplo",
+    "example": {
+      "heading": "A história está nas pequenas coisas.",
+      "intro": "Uma tarde de risadas, um primeiro sorriso ou uma frase que você quer guardar. Cada momento pode virar uma página.",
+      "label": "Registro de exemplo",
+      "book": "A história de Mia",
+      "age": "3 meses",
+      "milestone": "Uma tarde qualquer",
+      "quote": "Você riu tanto quando o cachorro espirrou que acabou ficando com soluço.",
+      "caption": "Registro fictício para ilustrar. Suas fotos e suas palavras deixam o livro com a cara de vocês."
+    },
+    "steps": {
+      "heading": "Comece com um momento que você já guardou.",
+      "items": [
+        {
+          "title": "Crie um livro",
+          "text": "Dê um nome ao livro do seu bebê. Você pode manter um livro separado para cada filho."
+        },
+        {
+          "title": "Adicione uma foto ou algumas palavras",
+          "text": "Escolha uma foto, escreva uma lembrança ou importe várias fotos antigas de uma vez para colocar os registros em dia."
+        },
+        {
+          "title": "Revisite essa história",
+          "text": "Explore as lembranças por idade, marque os momentos importantes para vocês e exporte um PDF com o tema Classic para compartilhar ou imprimir."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "Um livro completo, mesmo na versão grátis.",
+      "freeLabel": "Grátis",
+      "freeItems": [
+        "Memórias com fotos e texto sem limite",
+        "Capítulos por idade, marcos e widgets",
+        "Tema Classic e três fundos de página",
+        "Exportação em PDF com o tema Classic e compartilhamento de páginas como imagens"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Temas Linen e Scrapbook",
+        "Mais fundos e layouts de colagem",
+        "Exportação em PDF com todos os temas",
+        "Sincronização pelo iCloud entre seus próprios dispositivos e bloqueio de privacidade"
+      ],
+      "note": "Continue escrevendo de graça. O Pro é opcional, com opções mensais, anuais e vitalícias. O app mostra o preço na sua moeda antes da compra.",
+      "family": "Compartilhe uma página como imagem ou um livro como PDF. A sincronização pelo iCloud usa sua própria Conta Apple; compartilhar o Pro pelo Compartilhamento Familiar não cria uma conta de edição conjunta."
+    }
+  },
+  "ja": {
+    "eyebrow": "Pagewren · iPhoneでつづる赤ちゃんの思い出ブック",
+    "headline": [
+      "赤ちゃんとの毎日を、",
+      "一ページずつ。"
+    ],
+    "intro": "写真一枚と、ひとこと。今日の小さな出来事が、赤ちゃんの本の一ページになります。まずは手元の写真から始めて、時間ができたときに少しずつ書き足していけます。",
+    "cta": "赤ちゃんの本をつくる",
+    "secondary": "記録の例を見る",
+    "example": {
+      "heading": "何気ないひとときが、大切な物語に。",
+      "intro": "笑い合った午後、初めての笑顔、忘れたくないひとこと。どれも一ページに残せます。",
+      "label": "記録のサンプル",
+      "book": "ミアの物語",
+      "age": "生後3か月",
+      "milestone": "いつもどおりの午後",
+      "quote": "犬がくしゃみをしたら、しゃっくりが出るほど笑っていたね。",
+      "caption": "これは架空の記録例です。ご自身の写真と言葉で、わが家だけの一冊をつくれます。"
+    },
+    "steps": {
+      "heading": "すでに手元にある思い出から、始められます。",
+      "items": [
+        {
+          "title": "本をつくる",
+          "text": "赤ちゃんの本に名前をつけましょう。お子さまごとに別の本をつくれます。"
+        },
+        {
+          "title": "写真やひとことを添える",
+          "text": "写真を選んだり、思い出を書いたり。以前の写真をまとめて読み込んで、過去の出来事を残すこともできます。"
+        },
+        {
+          "title": "物語を読み返す",
+          "text": "年齢ごとに振り返り、わが家の節目を記録。ClassicテーマのPDFに書き出して、共有や印刷もできます。"
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "無料でも、一冊をしっかりつづれます。",
+      "freeLabel": "無料",
+      "freeItems": [
+        "写真とテキストの記録を無制限に追加",
+        "年齢別の章、節目の記録、ウィジェット",
+        "Classicテーマと3種類のページ背景",
+        "ClassicテーマのPDF書き出しとページの画像共有"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Linen・Scrapbookテーマ",
+        "より多くの背景とコラージュレイアウト",
+        "すべてのテーマでPDF書き出し",
+        "自分のデバイス間でのiCloud同期とプライバシーロック"
+      ],
+      "note": "無料のまま記録を続けられます。Proは任意で、月額・年額・買い切りから選べます。購入前にアプリ内でお住まいの地域の価格を確認できます。",
+      "family": "ページは画像で、本はPDFで共有できます。iCloud同期にはご自身のApple Accountを使用します。Proのファミリー共有は、家族で同じ本を共同編集するためのアカウントを提供するものではありません。"
+    }
+  },
+  "ko": {
+    "eyebrow": "Pagewren · iPhone으로 만드는 아기 추억책",
+    "headline": [
+      "우리 아기의 이야기를,",
+      "한 페이지씩."
+    ],
+    "intro": "사진 한 장과 짧은 글로 오늘의 작은 순간이 아기 책의 한 페이지가 돼요. 이미 찍어 둔 사진으로 시작하고, 잠깐 여유가 생길 때마다 이야기를 더해 보세요.",
+    "cta": "아기 책 만들기",
+    "secondary": "기록 예시 보기",
+    "example": {
+      "heading": "소소한 순간이 이야기가 돼요.",
+      "intro": "함께 웃었던 오후, 첫 미소, 오래 기억하고 싶은 말 한마디. 모두 한 페이지에 남길 수 있어요.",
+      "label": "기록 예시",
+      "book": "미아의 이야기",
+      "age": "생후 3개월",
+      "milestone": "평범한 어느 오후",
+      "quote": "강아지가 재채기하는 걸 보고 얼마나 웃었는지, 딸꾹질까지 했어.",
+      "caption": "이해를 돕기 위한 가상의 기록입니다. 직접 찍은 사진과 글로 우리 가족만의 책을 만들어 보세요."
+    },
+    "steps": {
+      "heading": "이미 간직하고 있는 순간부터 시작하세요.",
+      "items": [
+        {
+          "title": "책 만들기",
+          "text": "아기 책에 이름을 지어 주세요. 아이마다 따로 책을 만들 수 있어요."
+        },
+        {
+          "title": "사진이나 짧은 글 더하기",
+          "text": "사진을 고르거나 추억을 적어 보세요. 예전 사진을 한 번에 여러 장 가져와 지난 순간도 채울 수 있어요."
+        },
+        {
+          "title": "이야기 다시 펼쳐 보기",
+          "text": "나이별로 추억을 살펴보고 우리만의 특별한 순간을 표시하세요. Classic 테마의 PDF로 내보내 공유하거나 인쇄할 수도 있어요."
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "무료로도 한 권을 알차게 채울 수 있어요.",
+      "freeLabel": "무료",
+      "freeItems": [
+        "사진과 글로 남기는 추억 무제한",
+        "나이별 챕터, 특별한 순간 기록, 위젯",
+        "Classic 테마와 페이지 배경 3종",
+        "Classic 테마 PDF 내보내기와 페이지 이미지 공유"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Linen 및 Scrapbook 테마",
+        "더 다양한 배경과 콜라주 레이아웃",
+        "모든 테마로 PDF 내보내기",
+        "내 기기 간 iCloud 동기화와 프라이버시 잠금"
+      ],
+      "note": "무료로 계속 기록할 수 있어요. Pro는 선택 사항이며 월간, 연간, 평생 이용 옵션이 있어요. 결제 전에 앱에서 거주 지역의 가격을 확인할 수 있어요.",
+      "family": "페이지는 이미지로, 책은 PDF로 공유하세요. iCloud 동기화는 본인의 Apple 계정을 사용해요. Pro의 가족 공유가 함께 편집하는 공용 계정을 제공하는 것은 아니에요."
+    }
+  },
+  "zh-Hans": {
+    "eyebrow": "Pagewren · 在 iPhone 上写下宝宝的成长故事",
+    "headline": [
+      "宝宝的故事，",
+      "一页页慢慢写。"
+    ],
+    "intro": "一张照片，几句文字，就能把今天的小事留成成长纪念册里的一页。从手机里已有的照片开始，有空再添几句，不用每天打卡。",
+    "cta": "创建宝宝纪念册",
+    "secondary": "看看记录示例",
+    "example": {
+      "heading": "小小的日常，就是故事。",
+      "intro": "一个笑个不停的下午，第一次微笑，或一句舍不得忘记的话，都可以留成一页。",
+      "label": "记录示例",
+      "book": "Mia 的故事",
+      "age": "3 个月",
+      "milestone": "一个平常的下午",
+      "quote": "看到小狗打喷嚏，你笑得停不下来，最后连嗝都打起来了。",
+      "caption": "这是用于展示的虚构记录。换上你自己的照片和文字，就是属于你们的一本书。"
+    },
+    "steps": {
+      "heading": "从已经留住的一个瞬间开始。",
+      "items": [
+        {
+          "title": "建一本书",
+          "text": "为宝宝的书取个名字。每个孩子都可以有自己单独的一本。"
+        },
+        {
+          "title": "放张照片，写上几句",
+          "text": "选一张照片，记一段回忆，也可以批量导入以前的照片，慢慢补上过去的故事。"
+        },
+        {
+          "title": "随时回来翻一翻",
+          "text": "按年龄浏览，标记你们自己的里程碑，还能导出 Classic 主题 PDF，用来分享或自行打印。"
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "免费，也能好好写完一本。",
+      "freeLabel": "免费版",
+      "freeItems": [
+        "不限数量的照片与文字记录",
+        "年龄章节、里程碑与小组件",
+        "Classic 主题与 3 款页面背景",
+        "Classic 主题 PDF 导出与页面图片分享"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Linen 与 Scrapbook 主题",
+        "更多背景与拼贴布局",
+        "所有主题的 PDF 导出",
+        "个人设备间的 iCloud 同步与隐私锁"
+      ],
+      "note": "可以一直免费记录。Pro 按需选择，提供月度、年度与终身方案。付款前，App 会显示你所在地区的价格。",
+      "family": "把完成的页面分享为图片，或将整本纪念册导出为 PDF 发给家人。iCloud 同步使用你自己的 Apple 账户，每个人分别保存自己的纪念册。"
+    }
+  },
+  "zh-Hant": {
+    "eyebrow": "Pagewren · 用 iPhone 寫下寶寶的成長故事",
+    "headline": [
+      "寶寶的故事，",
+      "一頁一頁慢慢寫。"
+    ],
+    "intro": "一張照片、幾句話，就能把今天的小事留成成長紀念冊裡的一頁。從手機裡已有的照片開始，有空再添幾句，不必每天打卡。",
+    "cta": "建立寶寶紀念冊",
+    "secondary": "看看紀錄範例",
+    "example": {
+      "heading": "小小的日常，就是故事。",
+      "intro": "一個笑個不停的午後、第一次微笑，或一句捨不得忘記的話，都可以留成一頁。",
+      "label": "紀錄範例",
+      "book": "Mia 的故事",
+      "age": "3 個月",
+      "milestone": "一個平凡的午後",
+      "quote": "看到小狗打噴嚏，你笑得停不下來，最後還打起嗝來了。",
+      "caption": "這是用來展示的虛構紀錄。放上自己的照片和文字，就是屬於你們的一本書。"
+    },
+    "steps": {
+      "heading": "從已經留下的一個瞬間開始。",
+      "items": [
+        {
+          "title": "建立一本書",
+          "text": "幫寶寶的書取個名字。每個孩子都可以有自己獨立的一本。"
+        },
+        {
+          "title": "放張照片，寫上幾句",
+          "text": "選一張照片、寫一段回憶，也可以一次匯入多張舊照片，慢慢補上過去的故事。"
+        },
+        {
+          "title": "隨時回來翻一翻",
+          "text": "依年齡瀏覽，標記你們自己的里程碑，還能匯出 Classic 主題 PDF，用來分享或自行列印。"
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "免費，也能好好寫完一本。",
+      "freeLabel": "免費版",
+      "freeItems": [
+        "不限數量的照片與文字紀錄",
+        "年齡章節、里程碑與小工具",
+        "Classic 主題與 3 款頁面背景",
+        "Classic 主題 PDF 匯出與頁面圖片分享"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "Linen 與 Scrapbook 主題",
+        "更多背景與拼貼版面",
+        "所有主題的 PDF 匯出",
+        "個人裝置間的 iCloud 同步與隱私鎖"
+      ],
+      "note": "可以一直免費記錄。Pro 依需求選用，提供月繳、年繳與終身方案。付款前，App 會顯示你所在地區的價格。",
+      "family": "將完成的頁面分享為圖片，或將整本紀念冊匯出為 PDF 傳給家人。iCloud 同步使用你自己的 Apple 帳號，每個人分別保存自己的紀念冊。"
+    }
+  },
+  "th": {
+    "eyebrow": "Pagewren · สมุดบันทึกความทรงจำของลูกบน iPhone",
+    "headline": [
+      "เรื่องราวของลูกน้อย",
+      "ค่อย ๆ เติมทีละหน้า"
+    ],
+    "intro": "รูปหนึ่งใบกับข้อความสั้น ๆ ก็เปลี่ยนช่วงเวลาเล็ก ๆ ของวันนี้ให้เป็นหน้าหนึ่งในสมุดของลูกได้ เริ่มจากรูปที่มีอยู่แล้ว แล้วค่อยเติมเรื่องราวเมื่อมีเวลาว่าง",
+    "cta": "เริ่มสมุดของลูกน้อย",
+    "secondary": "ดูตัวอย่างบันทึก",
+    "example": {
+      "heading": "เรื่องเล็ก ๆ คือเรื่องราวที่อยากเก็บไว้",
+      "intro": "บ่ายวันที่เต็มไปด้วยเสียงหัวเราะ รอยยิ้มแรก หรือคำพูดที่ไม่อยากลืม ทุกอย่างกลายเป็นหน้าหนึ่งในสมุดได้",
+      "label": "ตัวอย่างบันทึก",
+      "book": "เรื่องราวของมีอา",
+      "age": "อายุ 3 เดือน",
+      "milestone": "บ่ายวันธรรมดาวันหนึ่ง",
+      "quote": "หนูหัวเราะตอนเจ้าหมาจามจนหยุดไม่ได้ สุดท้ายก็สะอึกเลย",
+      "caption": "บันทึกสมมติเพื่อแสดงตัวอย่าง รูปและคำบอกเล่าของคุณจะทำให้สมุดเล่มนี้เป็นเรื่องราวของครอบครัวคุณ"
+    },
+    "steps": {
+      "heading": "เริ่มจากช่วงเวลาที่คุณเก็บไว้แล้ว",
+      "items": [
+        {
+          "title": "สร้างสมุด",
+          "text": "ตั้งชื่อให้สมุดของลูก คุณสามารถแยกสมุดสำหรับลูกแต่ละคนได้"
+        },
+        {
+          "title": "เพิ่มรูปหรือข้อความสั้น ๆ",
+          "text": "เลือกรูป เขียนความทรงจำ หรือนำเข้ารูปเก่าครั้งละหลายรูปเพื่อค่อย ๆ เติมเรื่องราวที่ผ่านมา"
+        },
+        {
+          "title": "กลับมาเปิดอ่านเรื่องราว",
+          "text": "ดูความทรงจำตามช่วงอายุ ทำเครื่องหมายช่วงเวลาสำคัญในแบบของคุณ และส่งออก PDF ในธีม Classic เพื่อแชร์หรือพิมพ์เอง"
+        }
+      ]
+    },
+    "pricing": {
+      "heading": "บันทึกได้ครบเล่ม แม้ใช้แบบฟรี",
+      "freeLabel": "ฟรี",
+      "freeItems": [
+        "บันทึกรูปและข้อความได้ไม่จำกัด",
+        "บทตามช่วงอายุ ช่วงเวลาสำคัญ และวิดเจ็ต",
+        "ธีม Classic และพื้นหลังหน้า 3 แบบ",
+        "ส่งออก PDF ในธีม Classic และแชร์หน้าเป็นรูปภาพ"
+      ],
+      "proLabel": "Pagewren Pro",
+      "proItems": [
+        "ธีม Linen และ Scrapbook",
+        "พื้นหลังและเลย์เอาต์คอลลาจเพิ่มเติม",
+        "ส่งออก PDF ได้ทุกธีม",
+        "ซิงค์ผ่าน iCloud ระหว่างอุปกรณ์ของคุณเอง พร้อมล็อกความเป็นส่วนตัว"
+      ],
+      "note": "เขียนต่อได้ฟรี Pro เป็นตัวเลือกเสริม มีทั้งแบบรายเดือน รายปี และตลอดชีพ แอปจะแสดงราคาในพื้นที่ของคุณก่อนชำระเงิน",
+      "family": "แชร์แต่ละหน้าเป็นรูปภาพ หรือแชร์ทั้งเล่มเป็น PDF การซิงค์ผ่าน iCloud ใช้บัญชี Apple ของคุณเอง การแชร์ Pro ผ่านการแชร์กันในครอบครัวไม่ได้หมายถึงการมีบัญชีกลางสำหรับแก้ไขสมุดร่วมกัน"
+    }
+  }
+}

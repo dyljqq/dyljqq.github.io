@@ -109,6 +109,8 @@ FEAT_EN_PATH = ROOT / "tools/i18n/features.en.json"
 FEAT_TR_PATH = ROOT / "tools/i18n/features.json"
 FEAT_EN = json.loads(FEAT_EN_PATH.read_text(encoding="utf-8")) if FEAT_EN_PATH.exists() else {}
 FEAT_TR = json.loads(FEAT_TR_PATH.read_text(encoding="utf-8")) if FEAT_TR_PATH.exists() else {}
+PAGEWREN_COPY_PATH = ROOT / "tools/i18n/pagewren-landing.json"
+PAGEWREN_COPY = json.loads(PAGEWREN_COPY_PATH.read_text(encoding="utf-8")) if PAGEWREN_COPY_PATH.exists() else {}
 
 def shot_num(url):
     """商店截图地址倒数第二段是上传时的文件名（01-guide.png）；取编号前缀，跨语言对得上同一张图。"""
@@ -332,6 +334,58 @@ def sibling_path(other_parent, lang):
             return v["path"]
     return other_parent["path"]
 
+def pagewren_sections(copy, app, store):
+    """A clearly labelled example and the free/Pro boundary, using the same copy in every locale."""
+    example, steps, pricing = (copy[k] for k in ("example", "steps", "pricing"))
+    story = f'''<section class="sec pw-story" id="example" aria-labelledby="h-example">
+  <div class="pw-story-copy"><h2 id="h-example">{esc(example["heading"])}</h2><p>{esc(example["intro"])}</p></div>
+  <figure class="pw-example">
+    <figcaption class="label">{esc(example["label"])}</figcaption>
+    <div class="pw-paper"><p class="pw-book-title">{esc(example["book"])}</p><p class="pw-age">{esc(example["age"])}</p>
+      <h3>{esc(example["milestone"])}</h3><blockquote>{esc(example["quote"])}</blockquote>
+    </div><p class="pw-caption">{esc(example["caption"])}</p>
+  </figure>
+</section>
+<section class="sec pw-start" aria-labelledby="h-start"><h2 id="h-start">{esc(steps["heading"])}</h2>
+  <ol class="pw-steps">{"".join(f'<li><h3>{esc(item["title"])}</h3><p>{esc(item["text"])}</p></li>' for item in steps["items"])}</ol>
+</section>
+'''
+    plans = "".join(f'<div class="pw-plan"><h3>{esc(pricing[f"{tier}Label"])}</h3><ul>'
+                    + "".join(f'<li>{esc(item)}</li>' for item in pricing[f"{tier}Items"]) + '</ul></div>'
+                    for tier in ("free", "pro"))
+    price = f'''<section class="sec pw-pricing" id="pricing" aria-labelledby="h-pricing">
+  <h2 id="h-pricing">{esc(pricing["heading"])}</h2><div class="pw-plans">{plans}</div>
+  <p>{esc(pricing["note"])}</p><p class="pw-family">{esc(pricing["family"])}</p>
+  <a class="cta" href="{esc(store_link(app, store))}">{APPLE}{esc(copy["cta"])}</a>
+</section>
+'''
+    return story, price
+
+PAGEWREN_CSS = """
+.pagewren .hero .label{letter-spacing:1px;line-height:1.5;margin-bottom:14px}
+.pagewren .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:22px}
+.pagewren .hero-actions .cta{margin:0}.pagewren .pw-example-link{font-weight:600;text-underline-offset:5px}
+.pagewren .pw-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,72px);align-items:center}
+.pagewren .pw-story-copy p,.pagewren .pw-start p,.pagewren .pw-pricing>p{color:var(--muted);max-width:48em}
+.pagewren .pw-example{margin:0;padding:clamp(22px,4vw,40px);background:#f5efe6;border-radius:22px}
+.pagewren .pw-example figcaption{font-size:11px;letter-spacing:1px;line-height:1.5}
+.pagewren .pw-paper{padding:clamp(24px,4vw,40px);background:#fbf6ee;box-shadow:0 12px 24px -18px #68534460;border:1px solid #e5dbce;color:#2a2520}
+.pagewren .pw-book-title{margin:0 0 32px;font-size:13px;letter-spacing:.5px}
+.pagewren .pw-age{margin:0 0 8px;font-size:12px;color:#6a5c50}
+.pagewren .pw-paper h3{margin:0 0 20px;font:500 24px/1.3 var(--display)}
+.pagewren .pw-paper blockquote{margin:0;font:400 clamp(20px,2.2vw,25px)/1.65 Georgia,"Songti SC","Hiragino Mincho ProN",serif}
+.pagewren .pw-caption{margin:16px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.pagewren .pw-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:steps}
+.pagewren .pw-steps li{border-top:1px solid var(--rule);padding-top:20px;counter-increment:steps}
+.pagewren .pw-steps li::before{content:"0" counter(steps);display:block;font:500 28px/1 var(--display);color:#9a4a26;margin-bottom:16px}
+.pagewren .pw-steps h3,.pagewren .pw-plan h3{margin:0 0 10px;font:600 18px/1.4 var(--text)}
+.pagewren .pw-steps p{margin:0;font-size:15px}
+.pagewren .pw-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;border-top:1px solid var(--rule);padding-top:24px}
+.pagewren .pw-plan ul{padding-left:20px;color:var(--muted)}.pagewren .pw-plan li{padding-left:4px;margin:8px 0}
+.pagewren .pw-family{font-size:14px}.pagewren .pw-pricing .cta{margin-top:8px}
+@media(max-width:760px){.pagewren .pw-story,.pagewren .pw-steps,.pagewren .pw-plans{grid-template-columns:1fr}.pagewren .pw-story{gap:24px}.pagewren .pw-steps{gap:24px}.pagewren .pw-plans{gap:20px}}
+"""
+
 CSS = """
 @font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
 @font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -417,6 +471,17 @@ def render(a):
     hl = highlights(a, s, lang)
     home = "/" if lang in ("en", "en-GB") or not (ROOT / lang.lower() / "index.html").exists() else f"/{lang.lower()}/"
     hl_html, details_h = hl if hl else ("", None)
+    copy = PAGEWREN_COPY[lang] if p["key"] == "pagewren" else None
+    story_html, pricing_html = pagewren_sections(copy, a, s) if copy else ("", "")
+    hero_heading = f'<h1>{title_html(name, lang)}</h1>'
+    lede_html = "".join(f"<p>{esc(x)}</p>" for x in lede)
+    hero_cta = f'<a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(T("cta_store"))}</a>'
+    if copy:
+        headline = "<br>".join(title_html(line, lang) for line in copy["headline"])
+        hero_heading = f'<p class="label">{esc(copy["eyebrow"])}</p><h1>{headline}</h1>'
+        lede_html = f'<p>{esc(copy["intro"])}</p>'
+        hero_cta = (f'<div class="hero-actions"><a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(copy["cta"])}</a>'
+                    f'<a class="pw-example-link" href="#example">{esc(copy["secondary"])}</a></div>')
 
     # iphoneOnly（10-20 Pagewren：TARGETED_DEVICE_FAMILY 1，iPad 上只是兼容模式）：标签只写 iPhone，各语言同一个词
     chips = [T("meta_free"), "iPhone" if p.get("iphoneOnly") else T("meta_devices"), T("meta_ios", v=(s.get("minOS") or "17.0").split(".")[0])]
@@ -470,9 +535,9 @@ def render(a):
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://is1-ssl.mzstatic.com" crossorigin>
 {f'<link rel="preload" as="image" fetchpriority="high" href="{hero_art[0]}" imagesrcset="{hero_art[0]} 460w, {hero_art[1]} 920w" imagesizes="(max-width:760px) 86vw, 420px">' if hero_art else ''}
-<style>{CSS}</style>
+<style>{CSS}{PAGEWREN_CSS if copy else ""}</style>
 </head>
-<body>
+<body{' class="pagewren"' if copy else ''}>
 <header class="wrap top">
   <a class="brand" href="{home}">{LOGO}<b>go ka</b></a>
   <nav class="nav" aria-label="Main">
@@ -489,15 +554,15 @@ def render(a):
 <section class="hero">
   <div>
     <img class="icon" src="{icon}" width="84" height="84" alt="">
-    <h1>{title_html(name, lang)}</h1>
-    <div class="lede">{"".join(f"<p>{esc(x)}</p>" for x in lede)}</div>
-    <a class="cta" href="{esc(store_link(a, s))}">{APPLE}{esc(T("cta_store"))}</a>
+    {hero_heading}
+    <div class="lede">{lede_html}</div>
+    {hero_cta}
     <ul class="chips">{"".join(f"<li>{esc(c)}</li>" for c in chips)}</ul>{device_alt(p, lang)}
   </div>
   {media}
 </section>
 
-{hl_html}{preview}<section class="sec" id="features" aria-labelledby="h-features">
+{story_html}{hl_html}{preview}{pricing_html}<section class="sec" id="features" aria-labelledby="h-features">
   <h2 id="h-features">{esc(details_h or T("h_features"))}</h2>
   <div class="feats">
 {chr(10).join(feats)}

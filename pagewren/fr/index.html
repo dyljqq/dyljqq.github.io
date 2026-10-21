@@ -80,6 +80,29 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 .end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
 @media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
 .nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+
+.pagewren .hero .label{letter-spacing:1px;line-height:1.5;margin-bottom:14px}
+.pagewren .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:22px}
+.pagewren .hero-actions .cta{margin:0}.pagewren .pw-example-link{font-weight:600;text-underline-offset:5px}
+.pagewren .pw-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,72px);align-items:center}
+.pagewren .pw-story-copy p,.pagewren .pw-start p,.pagewren .pw-pricing>p{color:var(--muted);max-width:48em}
+.pagewren .pw-example{margin:0;padding:clamp(22px,4vw,40px);background:#f5efe6;border-radius:22px}
+.pagewren .pw-example figcaption{font-size:11px;letter-spacing:1px;line-height:1.5}
+.pagewren .pw-paper{padding:clamp(24px,4vw,40px);background:#fbf6ee;box-shadow:0 12px 24px -18px #68534460;border:1px solid #e5dbce;color:#2a2520}
+.pagewren .pw-book-title{margin:0 0 32px;font-size:13px;letter-spacing:.5px}
+.pagewren .pw-age{margin:0 0 8px;font-size:12px;color:#6a5c50}
+.pagewren .pw-paper h3{margin:0 0 20px;font:500 24px/1.3 var(--display)}
+.pagewren .pw-paper blockquote{margin:0;font:400 clamp(20px,2.2vw,25px)/1.65 Georgia,"Songti SC","Hiragino Mincho ProN",serif}
+.pagewren .pw-caption{margin:16px 0 0;font-size:12px;line-height:1.6;color:var(--muted)}
+.pagewren .pw-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;margin:0;padding:0;counter-reset:steps}
+.pagewren .pw-steps li{border-top:1px solid var(--rule);padding-top:20px;counter-increment:steps}
+.pagewren .pw-steps li::before{content:"0" counter(steps);display:block;font:500 28px/1 var(--display);color:#9a4a26;margin-bottom:16px}
+.pagewren .pw-steps h3,.pagewren .pw-plan h3{margin:0 0 10px;font:600 18px/1.4 var(--text)}
+.pagewren .pw-steps p{margin:0;font-size:15px}
+.pagewren .pw-plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;border-top:1px solid var(--rule);padding-top:24px}
+.pagewren .pw-plan ul{padding-left:20px;color:var(--muted)}.pagewren .pw-plan li{padding-left:4px;margin:8px 0}
+.pagewren .pw-family{font-size:14px}.pagewren .pw-pricing .cta{margin-top:8px}
+@media(max-width:760px){.pagewren .pw-story,.pagewren .pw-steps,.pagewren .pw-plans{grid-template-columns:1fr}.pagewren .pw-story{gap:24px}.pagewren .pw-steps{gap:24px}.pagewren .pw-plans{gap:20px}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Pagewren est un journal de bébé sur iPhone : une photo ou une phrase devient une page, avec des chapitres par âge et les premières fois. Sans compte.">
@@ -208,7 +231,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <!-- seo:end -->
 <style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
 </head>
-<body>
+<body class="pagewren">
 <header class="wrap top">
   <a class="brand" href="/fr/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
   <nav class="nav" aria-label="Main">
@@ -226,15 +249,27 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 <section class="hero">
   <div>
     <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/81/5f/b4815f5d-696a-f3ed-fcfb-497d3cf7667e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x0w.webp" width="84" height="84" alt="">
-    <h1>Pagewren : Journal de bébé</h1>
-    <div class="lede"><p>Pagewren transforme les petits moments de votre bébé en un magnifique livre de souvenirs, page après page.</p><p>Ajoutez une photo ou une simple phrase, Pagewren s&#x27;occupe de la mise en page. Aucune compétence en design, aucune série quotidienne à tenir. Trente secondes aujourd&#x27;hui, un souvenir pour des années.</p></div>
-    <a class="cta" href="https://apps.apple.com/fr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Télécharger dans l&#x27;App Store</a>
+    <p class="label">Pagewren · Le livre de souvenirs de bébé sur iPhone</p><h1>L&#x27;histoire de votre bébé,<br>une page à la fois.</h1>
+    <div class="lede"><p>Une photo, quelques mots, et un petit moment d&#x27;aujourd&#x27;hui devient une page du livre de votre bébé. Commencez avec les photos que vous avez déjà, puis ajoutez des souvenirs dès que vous trouvez un moment.</p></div>
+    <div class="hero-actions"><a class="cta" href="https://apps.apple.com/fr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Commencer le livre de bébé</a><a class="pw-example-link" href="#example">Voir un exemple</a></div>
     <ul class="chips"><li>Téléchargement gratuit</li><li>iPhone</li><li>iOS 17 ou ultérieur</li><li>Aucun compte requis</li></ul>
     <div class="alt qr-only"><img class="alt-qr" src="/assets/qr/pagewren.svg" width="96" height="96" alt="" loading="lazy"><div class="alt-txt"><p class="alt-scan">Sur ordinateur ? Scannez ce code avec l’appareil photo de votre iPhone pour télécharger l’app.</p></div></div>
   </div>
   <div class="hero-media"><img src="/assets/art/pagewren/hero-460.webp" srcset="/assets/art/pagewren/hero-460.webp 460w, /assets/art/pagewren/hero-920.webp 920w" sizes="(max-width:760px) 86vw, 420px" width="460" height="575" alt="Pagewren : Journal de bébé" fetchpriority="high"></div>
 </section>
 
+<section class="sec pw-story" id="example" aria-labelledby="h-example">
+  <div class="pw-story-copy"><h2 id="h-example">L&#x27;histoire se cache dans les petits moments.</h2><p>Un après-midi plein de rires, un premier sourire ou une phrase à garder en mémoire. Chacun de ces moments peut devenir une page.</p></div>
+  <figure class="pw-example">
+    <figcaption class="label">Exemple de souvenir</figcaption>
+    <div class="pw-paper"><p class="pw-book-title">L&#x27;histoire de Mia</p><p class="pw-age">3 mois</p>
+      <h3>Un après-midi comme les autres</h3><blockquote>Tu as tellement ri en voyant le chien éternuer que tu en as eu le hoquet.</blockquote>
+    </div><p class="pw-caption">Souvenir fictif présenté à titre d&#x27;exemple. Vos photos et vos mots donnent au livre toute sa personnalité.</p>
+  </figure>
+</section>
+<section class="sec pw-start" aria-labelledby="h-start"><h2 id="h-start">Commencez par un moment déjà capturé.</h2>
+  <ol class="pw-steps"><li><h3>Créer un livre</h3><p>Donnez un nom au livre de votre bébé. Vous pouvez créer un livre distinct pour chaque enfant.</p></li><li><h3>Ajouter une photo ou quelques mots</h3><p>Choisissez une photo, racontez un souvenir ou importez un lot de photos plus anciennes pour compléter le livre.</p></li><li><h3>Retrouver son histoire</h3><p>Parcourez les souvenirs par âge, marquez les étapes qui comptent pour vous et exportez un PDF avec le thème Classic pour le partager ou l&#x27;imprimer.</p></li></ol>
+</section>
 <section class="sec" id="highlights" aria-labelledby="h-highlights">
   <h2 id="h-highlights">Ce que fait l&#x27;app</h2>
   <div class="hls">
@@ -244,6 +279,11 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     <div class="hl"><figure><img src="/assets/art/pagewren/04-460.webp" srcset="/assets/art/pagewren/04-460.webp 460w, /assets/art/pagewren/04-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="Ce jour-là, sur votre écran d&#x27;accueil" loading="lazy" decoding="async"></figure><div><h3>Ce jour-là, sur votre écran d&#x27;accueil</h3><p>Les widgets affichent votre livre et font ressurgir une page du même jour d&#x27;une année précédente. Un widget sur l&#x27;écran verrouillé ouvre une nouvelle page d&#x27;un geste.</p></div></div>
     <div class="hl"><figure><img src="/assets/art/pagewren/05-460.webp" srcset="/assets/art/pagewren/05-460.webp 460w, /assets/art/pagewren/05-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="Privé, et à vous" loading="lazy" decoding="async"></figure><div><h3>Privé, et à vous</h3><p>Ni publicité, ni fil d’actualité, ni profil public. Photos et textes restent sur votre iPhone, et dans votre propre iCloud si vous activez la synchronisation iCloud avec Pro. Le verrou de confidentialité (Pro) protège l&#x27;app, un livre ou un seul souvenir.</p></div></div>
   </div>
+</section>
+<section class="sec pw-pricing" id="pricing" aria-labelledby="h-pricing">
+  <h2 id="h-pricing">Un livre complet, même en version gratuite.</h2><div class="pw-plans"><div class="pw-plan"><h3>Gratuit</h3><ul><li>Souvenirs photo et texte illimités</li><li>Chapitres par âge, étapes marquantes et widgets</li><li>Thème Classic et trois fonds de page</li><li>Export PDF avec le thème Classic et partage de pages en images</li></ul></div><div class="pw-plan"><h3>Pagewren Pro</h3><ul><li>Thèmes Linen et Scrapbook</li><li>Plus de fonds et de mises en page pour les collages</li><li>Export PDF avec tous les thèmes</li><li>Synchronisation iCloud entre vos appareils et verrouillage de confidentialité</li></ul></div></div>
+  <p>Continuez à écrire gratuitement. Pro est facultatif, avec des formules mensuelle, annuelle ou à vie. L&#x27;app affiche le prix dans votre devise avant l&#x27;achat.</p><p class="pw-family">Partagez une page en image ou un livre en PDF. La synchronisation iCloud utilise votre propre compte Apple ; le partage familial de Pro ne donne pas accès à un compte de modification commun.</p>
+  <a class="cta" href="https://apps.apple.com/fr/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Commencer le livre de bébé</a>
 </section>
 <section class="sec" id="features" aria-labelledby="h-features">
   <h2 id="h-features">Les détails, tels qu&#x27;écrits dans l&#x27;App Store</h2>
