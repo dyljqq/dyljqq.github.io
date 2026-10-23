@@ -61,6 +61,13 @@ ANALYTICS = (DEVICE + '\n'
 if CFG["site"].get("ahrefsAnalyticsKey"):
     ANALYTICS += '\n<script src="https://analytics.ahrefs.com/analytics.js" data-key="%s" async></script>' % CFG["site"]["ahrefsAnalyticsKey"]
 
+def analytics_html(page_type, page_app="site"):
+    # Keep this in the shared head generator so rebuilt and new pages are covered.
+    meta = {"page_type": page_type, "page_app": page_app,
+            "apps": {str(a["appId"]): a.get("variantOf") or a["key"] for a in APPS if a.get("live") and a.get("appId")}}
+    return (ANALYTICS + '\n<meta name="gk-analytics" content="' + esc(json.dumps(meta, separators=(",", ":"))) + '">'
+            '\n<script defer src="/assets/analytics/firebase-web-v1.js"></script>')
+
 def root_key(app):
     return app.get("variantOf") or app["key"]
 
@@ -444,7 +451,7 @@ def head_block(url, app, kind):
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
                      % json.dumps(b, ensure_ascii=False, indent=2))
-    lines.append(ANALYTICS)
+    lines.append(analytics_html(kind, root_key(app)))
     lines.append(END)
     return "\n".join(lines) + "\n"
 
@@ -678,7 +685,7 @@ def home_head(lang="en"):
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>'
                      % json.dumps(b, ensure_ascii=False, indent=2))
-    lines.append(ANALYTICS)
+    lines.append(analytics_html("home"))
     lines.append(END)
     return "\n".join(lines) + "\n"
 
@@ -1039,7 +1046,7 @@ def tool_head(tp):
                       "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>' % json.dumps(b, ensure_ascii=False, indent=2))
-    lines.append(ANALYTICS)
+    lines.append(analytics_html("blog" if url.startswith("/blog/") else "tool", tp.get("app") or "site"))
     lines.append(END)
     return "\n".join(lines) + "\n"
 

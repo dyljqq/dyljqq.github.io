@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-10-23T20:47:02.408Z",
+  "transport": "real Firebase 12.4.0 modules + real Google gtag.js; GA collect intercepted and answered 204",
+  "interceptedCollectCount": 3,
+  "checks": {
+    "tid": "G-ZHCG565YKK",
+    "page_view_count": 1,
+    "page_location": "http://127.0.0.1:61319/beforego/",
+    "hero_click_count": 1,
+    "hero_section": "hero",
+    "hero_target_app": "beforego",
+    "private_query_absent_from_dl": true
+  },
+  "sitePagesCovered": 155,
+  "browserIntegrationChecksPassed": 28,
+  "existingRegressionTestsPassed": 8,
+  "ga4AdminVerified": {
+    "property": "560450579",
+    "dataStream": "16188106745",
+    "enhancedMeasurementEnabled": false,
+    "eventDimensionsRegistered": 12,
+    "keyEvent": "app_store_click"
+  },
+  "deployment": "not published"
+}
