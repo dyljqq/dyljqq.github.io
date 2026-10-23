@@ -2,7 +2,9 @@
 
 配置：Firebase 项目 `beforegoart`，Web App `1:448278310866:web:6ec382056194132bfa620b`，GA4 Measurement ID `G-ZHCG565YKK`。网站是多页静态站；统一从 `tools/build_seo.py` 注入客户端脚本，首页、产品、工具、文章、支持与法务页，以及全部语言版本共用一套规则。新增页面按现有构建流程生成即可覆盖。
 
-2026-10-24 后台配置已写入并读回确认：媒体资源 `560450579`，Web 数据流 `16188106745`；增强型衡量关闭，12 个事件范围自定义维度已注册，`app_store_click` 已设为关键事件。网站代码的发布状态须另行确认；后台配置完成不表示线上页面已经加载此脚本。
+2026-10-24 后台配置已写入并读回确认：媒体资源 `560450579`，Web 数据流 `16188106745`；增强型衡量关闭，12 个事件范围自定义维度已注册，`app_store_click` 已设为关键事件。网站代码已于同日发布到 https://beforego.art，生产部署 `goka-jgylkyxfy-qinqiangji-3410.vercel.app`，代码提交 `90dd46f`。155 页结构和手机端检查全部通过，生产浏览器已核验真实 Firebase 页面浏览、商店点击和资源 hash。详见 `tools/analytics-validation.json`。
+
+`dyljqq.github.io` 的发布源码与同次发布保持一致；仓库 `CNAME` 指向 `beforego.art`，旧域名按相同路径跳转到正式站。首页、`/beforego/`、`/countdown/zh-hant/` 已在生产浏览器验证，避免两套网站内容分叉。后续继续使用 `tools/publish.sh` 同步发布和 GitHub main。
 
 ## 要回答的问题
 

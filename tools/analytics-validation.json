@@ -21,5 +21,100 @@
     "eventDimensionsRegistered": 12,
     "keyEvent": "app_store_click"
   },
-  "deployment": "not published"
+  "deployment": {
+    "status": "published",
+    "origin": "https://beforego.art",
+    "url": "https://goka-jgylkyxfy-qinqiangji-3410.vercel.app",
+    "id": "dpl_DHBPA4br8UBWjd7AdeCJ8qyf4zWC",
+    "sourceCommit": "90dd46f",
+    "rollbackDeploymentId": "dpl_8GyNpJG4fJXyeZZNNTxQyhf4XNw5"
+  },
+  "mobilePagesChecked": 155,
+  "productionBrowserValidation": {
+    "captured_at": "2026-10-23T20:54:45.340Z",
+    "production_origin": "https://beforego.art",
+    "transport": "Chrome browser; real Firebase 12.4.0 modules and gtag.js; GA collect intercepted pre-send and answered 204",
+    "analytics_asset": {
+      "local_sha256": "52361d97be64e0a7fd85fa84b1a9e3ad38928541f13861563068488d0c1c1c97",
+      "production_sha256": "52361d97be64e0a7fd85fa84b1a9e3ad38928541f13861563068488d0c1c1c97",
+      "response_status": 200,
+      "identical": true
+    },
+    "primary_page": {
+      "metadata_present": true,
+      "metadata_page_type": "product",
+      "metadata_page_app": "beforego",
+      "analytics_script_present": true,
+      "gtag_script_element_present": false,
+      "firebase_analytics_module_loaded": true,
+      "gtag_loaded": true,
+      "gtag_resource_loaded": true,
+      "tid": "G-ZHCG565YKK",
+      "page_view_count": 1,
+      "page_location": "https://beforego.art/beforego/",
+      "page_location_excludes_private_test": true,
+      "hero_click_count": 1,
+      "hero_section": "hero",
+      "hero_target_app": "beforego"
+    },
+    "inspected_pages": [
+      {
+        "path": "/ja/",
+        "metadata_present": true,
+        "script_present": true,
+        "metadata_page_type": "home",
+        "metadata_page_app": "site",
+        "asset_response_seen": true
+      },
+      {
+        "path": "/countdown/zh-hant/",
+        "metadata_present": true,
+        "script_present": true,
+        "metadata_page_type": "product",
+        "metadata_page_app": "countdown",
+        "asset_response_seen": true
+      },
+      {
+        "path": "/tools/zh-hant/shou-ju-fan-ben/",
+        "metadata_present": true,
+        "script_present": true,
+        "metadata_page_type": "tool",
+        "metadata_page_app": "invoiceqr",
+        "asset_response_seen": true
+      },
+      {
+        "path": "/pagewren/privacy-policy/",
+        "metadata_present": true,
+        "script_present": true,
+        "metadata_page_type": "legal",
+        "metadata_page_app": "pagewren",
+        "asset_response_seen": true
+      }
+    ],
+    "legacy_redirects": [
+      {
+        "requested_path": "/",
+        "final_origin": "https://beforego.art",
+        "final_path": "/",
+        "same_path": true,
+        "redirected_to_production": true
+      },
+      {
+        "requested_path": "/beforego/",
+        "final_origin": "https://beforego.art",
+        "final_path": "/beforego/",
+        "same_path": true,
+        "redirected_to_production": true
+      },
+      {
+        "requested_path": "/countdown/zh-hant/",
+        "final_origin": "https://beforego.art",
+        "final_path": "/countdown/zh-hant/",
+        "same_path": true,
+        "redirected_to_production": true
+      }
+    ],
+    "intercepted_collect_count": 7,
+    "blocked_optional_analytics_scripts": 16
+  }
 }
