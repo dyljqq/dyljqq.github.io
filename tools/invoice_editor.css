@@ -74,6 +74,22 @@
 .invoice-preview .notes{font-size:11px;margin-top:24px;padding-top:14px;border-top:1px solid var(--editor-line)}
 .invoice-print-error{display:none}
 .invoice-workspace~h2,.invoice-workspace~p,.invoice-workspace~ul,.invoice-workspace~.tbl{max-width:720px}
+.invoice-app-dialog{box-sizing:border-box;width:calc(100% - 32px);max-width:440px;max-height:calc(100dvh - 32px);padding:36px 32px 20px;border:1px solid #e2e3dc;border-radius:16px;background:#fff;color:var(--ink);font-family:var(--text);text-align:center;overflow-y:auto;box-shadow:0 24px 80px #14141426}
+.invoice-app-dialog::backdrop{background:#14141480}
+html:has(.invoice-app-dialog[open]){overflow:hidden}
+.invoice-app-dialog #invoice-app-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--muted);font:400 28px/1 var(--text);cursor:pointer}
+.invoice-app-dialog #invoice-app-close:hover{background:#f0f1eb;color:var(--ink)}
+.invoice-app-dialog .invoice-app-eyebrow{margin:4px 20px 12px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.invoice-app-dialog h2{font:600 28px/1.2 var(--text);letter-spacing:-1px;margin:0 0 12px}
+.invoice-app-dialog #invoice-app-description{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.invoice-app-scan{margin:24px 0}
+.invoice-app-qr{display:block;box-sizing:content-box;width:148px;height:148px;margin:0 auto;padding:12px;border:1px solid #e2e3dc;border-radius:8px;background:#fff}
+.invoice-app-scan figcaption{font-size:11px;color:var(--muted);line-height:1.6;margin-top:10px}
+.invoice-app-dialog #invoice-app-download{box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:48px;padding:14px 16px;border-radius:8px;background:var(--ink);color:#fff;font-size:13px;text-decoration:none}
+.invoice-app-dialog #invoice-app-download:hover{background:#34372f}
+.invoice-app-dialog .invoice-app-free{margin:12px 0 4px;font-size:11px;line-height:1.6;color:var(--muted)}
+.invoice-app-dialog #invoice-app-later{min-height:44px;padding:8px 12px;border:0;background:transparent;color:var(--ink);font:500 12px/1.5 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.invoice-app-dialog :is(button,a):focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(max-width:900px){
   .invoice-workspace{grid-template-columns:minmax(0,1fr);max-width:640px;border-radius:12px}
   .invoice-workspace-bar{position:sticky;top:0;z-index:2;padding:16px}
@@ -92,6 +108,8 @@
   .invoice-preview{min-height:600px}
 }
 @media(max-width:480px){
+  .invoice-app-dialog{padding:36px 24px 16px}
+  .invoice-app-dialog h2{font-size:26px}
   .article:has(.invoice-workspace)>h1{font-size:32px;letter-spacing:-1.5px}
   .article:has(.invoice-workspace)>.lede{font-size:14px;margin-bottom:24px}
   .invoice-workspace-bar #print-invoice{padding:13px;font-size:12px}
@@ -107,6 +125,7 @@
   .invoice-preview .inv-title{font-size:24px}
 }
 @media print{
+  .invoice-app-dialog,.invoice-app-dialog::backdrop{display:none!important}
   .invoice-workspace{display:block;margin:0;max-width:none;border:0;border-radius:0;overflow:visible;background:#fff}
   .invoice-form,.invoice-workspace-bar,.invoice-preview-heading,.invoice-preview-help{display:none!important}
   .invoice-preview-panel{position:static;padding:0;border:0}

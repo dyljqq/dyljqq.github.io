@@ -47,7 +47,7 @@ try {
   await send("Page.enable"); await send("Runtime.enable"); await send("DOM.enable");
   await send("Fetch.enable",{patterns:[{urlPattern:"*",requestStage:"Request"}]});
   on("Fetch.requestPaused",({requestId,request})=>send(request.url.startsWith(base)?"Fetch.continueRequest":"Fetch.failRequest",request.url.startsWith(base)?{requestId}:{requestId,errorReason:"BlockedByClient"}).catch(()=>{}));
-  await send("Page.addScriptToEvaluateOnNewDocument",{source:"window.__invoicePrintCount=0; window.print=()=>{window.__invoicePrintCount++}"});
+  await send("Page.addScriptToEvaluateOnNewDocument",{source:"window.__invoicePrintCount=0; window.print=()=>{window.__invoicePrintCount++}; window.addEventListener('keydown',e=>{if(e.key==='F8'){e.preventDefault();window.dispatchEvent(new Event('beforeprint'))}if(e.key==='F9'){e.preventDefault();window.dispatchEvent(new Event('afterprint'))}})"});
   const evaluate=async(expression)=>{const r=await send("Runtime.evaluate",{expression,returnByValue:true,awaitPromise:true});if(r.result.exceptionDetails)throw new Error(r.result.exceptionDetails.text||"page exception");return r.result.result?.value;};
   const navigate=async(path)=>{const loaded=new Promise(resolve=>{const off=on("Page.loadEventFired",()=>{off();resolve();});setTimeout(()=>{off();resolve();},15000).unref();});await send("Page.navigate",{url:base+path});await loaded;await sleep(180);};
   const state=(expr)=>evaluate(expr);
@@ -90,6 +90,10 @@ try {
   assert(await state("['invoice-preview','invoice-subtotal','invoice-tax-total','invoice-total'].every(id=>document.getElementById(id))"),"live preview and subtotal/tax/total fields exist");
   assert(await state("!!document.querySelector('#print-invoice')"),"print control exists");
   assert(await state("document.querySelector('#print-invoice')?.form?.id==='invoice-form'"),"print control submits the invoice form even when placed outside it");
+  assert(await state("!!document.querySelector('#invoice-app-dialog')?.matches('dialog')"),"App Store prompt uses native dialog#invoice-app-dialog");
+  assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"App Store prompt starts closed");
+  assert(await state("document.querySelector('#invoice-app-dialog img.invoice-app-qr')?.getAttribute('src')==='/assets/qr/invoiceqr.svg'"),"App Store prompt includes the InvoiceQR QR code");
+  assert(await state("!!document.querySelector('#invoice-app-download')?.href.includes('ct=web-tool-invoiceqr-export')"),"App Store download link includes web invoice export attribution");
 
   if (initial.form) {
     const initialPreview=await state("document.querySelector('#invoice-preview').innerText");
@@ -123,11 +127,58 @@ try {
     assert(await state("document.querySelector('#invoice-amount-error')?.hidden===true"),"correcting the amount hides the limit error");
     await type('#invoice-items [data-item] [name="price"]',"-1");
     assert(await state("document.querySelector('#invoice-items [data-item] [name=price]').validity.valid===false"),"negative item price fails native validation");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"orphan afterprint does not open the App Store prompt");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F8",code:"F8"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F8",code:"F8"});
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"orphan beforeprint followed by afterprint does not open the App Store prompt");
     await click("#print-invoice");
     assert(await state("window.__invoicePrintCount===0"),"invalid form does not invoke print");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"afterprint following invalid submission does not open prompt");
     await type('#invoice-items [data-item] [name="price"]',"0.10");
     await click("#print-invoice");
     assert(await state("window.__invoicePrintCount===1"),"valid form invokes print exactly once");
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"valid submission keeps prompt closed until afterprint");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    await wait("document.querySelector('#invoice-app-dialog')?.open===true","App Store prompt after valid afterprint");
+    assert(await state("document.querySelector('#invoice-app-dialog')?.matches(':modal')"),"afterprint opens prompt with showModal semantics");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===true"),"duplicate afterprint does not break the open prompt");
+    for(const width of [320,375,768,1280]){
+      await send("Emulation.setDeviceMetricsOverride",{width,height:900,deviceScaleFactor:1,mobile:width<600});
+      const modalProbe=await state(`(()=>{const d=document.querySelector('#invoice-app-dialog'),r=d.getBoundingClientRect();return{scroll:document.documentElement.scrollWidth,dialog:r.width,buttons:[...d.querySelectorAll('button,a')].map(e=>{const b=e.getBoundingClientRect();return{w:b.width,h:b.height,disabled:e.matches(':disabled')}})}})()`);
+      assert(modalProbe.scroll<=width+1,`${width}px viewport has no overflow with App Store prompt open`);
+      assert(modalProbe.dialog>0&&modalProbe.buttons.length>=3&&modalProbe.buttons.every(b=>b.w>0&&b.h>0&&!b.disabled),`${width}px App Store prompt controls are visible and enabled`);
+    }
+    if(process.env.INVOICE_SCREENSHOT_DIR){
+      mkdirSync(process.env.INVOICE_SCREENSHOT_DIR,{recursive:true});
+      for(const [width,height,name] of [[1280,900,"desktop"],[375,812,"mobile"]]){await send("Emulation.setDeviceMetricsOverride",{width,height,deviceScaleFactor:1,mobile:width<600});const shot=await send("Page.captureScreenshot",{format:"png",captureBeyondViewport:false});writeFileSync(join(process.env.INVOICE_SCREENSHOT_DIR,`invoice-app-${name}.png`),Buffer.from(shot.result.data,"base64"));}
+    }
+    await send("Input.dispatchKeyEvent",{type:"rawKeyDown",key:"Escape",code:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"Escape",code:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"Escape closes the App Store prompt");
+    assert(await state("document.activeElement?.id==='print-invoice'"),"Escape returns focus to Print invoice");
+    await click("#print-invoice");
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"subsequent valid print keeps prompt closed until afterprint");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    await wait("document.querySelector('#invoice-app-dialog')?.open===true","reopened App Store prompt");
+    await click("#invoice-app-later");
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"Later closes the App Store prompt");
+    assert(await state("document.activeElement?.id==='print-invoice'"),"Later returns focus to Print invoice");
+    await click("#print-invoice");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    await wait("document.querySelector('#invoice-app-dialog')?.open===true","reopened prompt for close control");
+    await click("#invoice-app-close");
+    assert(await state("document.querySelector('#invoice-app-dialog')?.open===false"),"close control closes the App Store prompt");
+    assert(await state("document.activeElement?.id==='print-invoice'"),"close control returns focus to Print invoice");
+    await click("#print-invoice");
+    await send("Input.dispatchKeyEvent",{type:"keyDown",key:"F9",code:"F9"}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"F9",code:"F9"});
+    await wait("document.querySelector('#invoice-app-dialog')?.open===true","reopened prompt for download control");
+    assert(await state("!!document.querySelector('#invoice-app-download')?.href.includes('ct=web-tool-invoiceqr-export') && !!document.querySelector('#invoice-app-dialog img.invoice-app-qr')?.complete"),"download and QR assets are available while prompt is open");
+    await send("Emulation.setEmulatedMedia",{media:"print"});
+    assert(await state("(()=>{const d=document.querySelector('#invoice-app-dialog');return getComputedStyle(d).display==='none'||d.getClientRects().length===0})()"),"print media hides the App Store prompt even while open");
+    await send("Emulation.setEmulatedMedia",{media:"screen"});
+    await send("Input.dispatchKeyEvent",{type:"rawKeyDown",key:"Escape",code:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27}); await send("Input.dispatchKeyEvent",{type:"keyUp",key:"Escape",code:"Escape",windowsVirtualKeyCode:27,nativeVirtualKeyCode:27});
     await send("Emulation.setEmulatedMedia",{media:"print"});
     const printState=await state(`(()=>{const s=e=>getComputedStyle(document.querySelector(e)).display;return{form:s('#invoice-form'),buttonVisible:document.querySelector('#print-invoice').getClientRects().length>0,preview:s('#invoice-preview'),text:document.querySelector('#invoice-preview').innerText,total:document.querySelector('#invoice-total').innerText}})()`);
     assert(printState.form==="none"&&!printState.buttonVisible&&printState.preview!=="none",`print media hides form/button and shows preview (${printState.form}/button:${printState.buttonVisible}/${printState.preview})`);

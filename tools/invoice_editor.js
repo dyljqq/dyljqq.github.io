@@ -4,6 +4,8 @@
   const items = document.getElementById('invoice-items');
   const previewItems = document.getElementById('invoice-preview-items');
   const workspace = form.closest('.invoice-workspace');
+  const appDialog = document.getElementById('invoice-app-dialog');
+  let appPromptPending = false;
   const rowTemplate = items.firstElementChild.cloneNode(true);
   const maxCents = 99999999999;
   const field = id => document.getElementById(id);
@@ -82,9 +84,21 @@
   form.addEventListener('submit', event => {
     event.preventDefault();
     render();
-    if (form.reportValidity()) window.print();
+    if (form.reportValidity()) {
+      appPromptPending = true;
+      window.print();
+    }
   });
   window.addEventListener('beforeprint', render);
+  // Closing print preview also fires afterprint; the browser does not report whether a PDF was saved.
+  window.addEventListener('afterprint', () => {
+    if (!appPromptPending) return;
+    appPromptPending = false;
+    appDialog.showModal();
+  });
+  field('invoice-app-close').addEventListener('click', () => appDialog.close());
+  field('invoice-app-later').addEventListener('click', () => appDialog.close());
+  appDialog.addEventListener('close', () => field('print-invoice').focus());
   render();
   workspace.hidden = false;
   field('print-invoice').disabled = false;

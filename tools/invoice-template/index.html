@@ -201,6 +201,22 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 .invoice-preview .notes{font-size:11px;margin-top:24px;padding-top:14px;border-top:1px solid var(--editor-line)}
 .invoice-print-error{display:none}
 .invoice-workspace~h2,.invoice-workspace~p,.invoice-workspace~ul,.invoice-workspace~.tbl{max-width:720px}
+.invoice-app-dialog{box-sizing:border-box;width:calc(100% - 32px);max-width:440px;max-height:calc(100dvh - 32px);padding:36px 32px 20px;border:1px solid #e2e3dc;border-radius:16px;background:#fff;color:var(--ink);font-family:var(--text);text-align:center;overflow-y:auto;box-shadow:0 24px 80px #14141426}
+.invoice-app-dialog::backdrop{background:#14141480}
+html:has(.invoice-app-dialog[open]){overflow:hidden}
+.invoice-app-dialog #invoice-app-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--muted);font:400 28px/1 var(--text);cursor:pointer}
+.invoice-app-dialog #invoice-app-close:hover{background:#f0f1eb;color:var(--ink)}
+.invoice-app-dialog .invoice-app-eyebrow{margin:4px 20px 12px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.invoice-app-dialog h2{font:600 28px/1.2 var(--text);letter-spacing:-1px;margin:0 0 12px}
+.invoice-app-dialog #invoice-app-description{font-size:14px;line-height:1.7;color:var(--muted);margin:0}
+.invoice-app-scan{margin:24px 0}
+.invoice-app-qr{display:block;box-sizing:content-box;width:148px;height:148px;margin:0 auto;padding:12px;border:1px solid #e2e3dc;border-radius:8px;background:#fff}
+.invoice-app-scan figcaption{font-size:11px;color:var(--muted);line-height:1.6;margin-top:10px}
+.invoice-app-dialog #invoice-app-download{box-sizing:border-box;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:48px;padding:14px 16px;border-radius:8px;background:var(--ink);color:#fff;font-size:13px;text-decoration:none}
+.invoice-app-dialog #invoice-app-download:hover{background:#34372f}
+.invoice-app-dialog .invoice-app-free{margin:12px 0 4px;font-size:11px;line-height:1.6;color:var(--muted)}
+.invoice-app-dialog #invoice-app-later{min-height:44px;padding:8px 12px;border:0;background:transparent;color:var(--ink);font:500 12px/1.5 var(--text);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.invoice-app-dialog :is(button,a):focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(max-width:900px){
   .invoice-workspace{grid-template-columns:minmax(0,1fr);max-width:640px;border-radius:12px}
   .invoice-workspace-bar{position:sticky;top:0;z-index:2;padding:16px}
@@ -219,6 +235,8 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
   .invoice-preview{min-height:600px}
 }
 @media(max-width:480px){
+  .invoice-app-dialog{padding:36px 24px 16px}
+  .invoice-app-dialog h2{font-size:26px}
   .article:has(.invoice-workspace)>h1{font-size:32px;letter-spacing:-1.5px}
   .article:has(.invoice-workspace)>.lede{font-size:14px;margin-bottom:24px}
   .invoice-workspace-bar #print-invoice{padding:13px;font-size:12px}
@@ -234,6 +252,7 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
   .invoice-preview .inv-title{font-size:24px}
 }
 @media print{
+  .invoice-app-dialog,.invoice-app-dialog::backdrop{display:none!important}
   .invoice-workspace{display:block;margin:0;max-width:none;border:0;border-radius:0;overflow:visible;background:#fff}
   .invoice-form,.invoice-workspace-bar,.invoice-preview-heading,.invoice-preview-help{display:none!important}
   .invoice-preview-panel{position:static;padding:0;border:0}
@@ -489,6 +508,19 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 </aside>
 <p class="invoice-print-error" role="alert">Complete the required invoice fields before printing.</p>
 </div>
+<dialog id="invoice-app-dialog" class="invoice-app-dialog" aria-labelledby="invoice-app-heading" aria-describedby="invoice-app-description" data-track-section="invoice-app-prompt">
+  <button id="invoice-app-close" type="button" aria-label="Close app download prompt" autofocus><span aria-hidden="true">×</span></button>
+  <p class="invoice-app-eyebrow">For your next invoice</p>
+  <h2 id="invoice-app-heading">Invoice from your iPhone.</h2>
+  <p id="invoice-app-description">Save clients and items, track payments, and share PDFs with Smart Invoice &amp; Estimate Maker.</p>
+  <figure class="invoice-app-scan">
+    <img class="invoice-app-qr" src="/assets/qr/invoiceqr.svg" width="148" height="148" alt="QR code to download Smart Invoice &amp; Estimate Maker from the App Store">
+    <figcaption>Scan with your iPhone camera</figcaption>
+  </figure>
+  <a id="invoice-app-download" class="btn" href="https://apps.apple.com/app/apple-store/id6790383156?pt=128309253&amp;ct=web-tool-invoiceqr-export&amp;mt=8" target="_blank" rel="noopener">Download on the App Store <span aria-hidden="true">↗</span></a>
+  <p class="invoice-app-free">First document free. No account needed.</p>
+  <button id="invoice-app-later" type="button">Keep editing on the web</button>
+</dialog>
 <noscript class="inv-wrap"><p>This invoice editor needs JavaScript to calculate totals and prepare your PDF. Please enable JavaScript and reload this page.</p></noscript>
 
 <h2>What an invoice must include</h2>
@@ -556,6 +588,8 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
   const items = document.getElementById('invoice-items');
   const previewItems = document.getElementById('invoice-preview-items');
   const workspace = form.closest('.invoice-workspace');
+  const appDialog = document.getElementById('invoice-app-dialog');
+  let appPromptPending = false;
   const rowTemplate = items.firstElementChild.cloneNode(true);
   const maxCents = 99999999999;
   const field = id => document.getElementById(id);
@@ -634,9 +668,21 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
   form.addEventListener('submit', event => {
     event.preventDefault();
     render();
-    if (form.reportValidity()) window.print();
+    if (form.reportValidity()) {
+      appPromptPending = true;
+      window.print();
+    }
   });
   window.addEventListener('beforeprint', render);
+  // Closing print preview also fires afterprint; the browser does not report whether a PDF was saved.
+  window.addEventListener('afterprint', () => {
+    if (!appPromptPending) return;
+    appPromptPending = false;
+    appDialog.showModal();
+  });
+  field('invoice-app-close').addEventListener('click', () => appDialog.close());
+  field('invoice-app-later').addEventListener('click', () => appDialog.close());
+  appDialog.addEventListener('close', () => field('print-invoice').focus());
   render();
   workspace.hidden = false;
   field('print-invoice').disabled = false;

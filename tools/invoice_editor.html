@@ -82,4 +82,17 @@
 </aside>
 <p class="invoice-print-error" role="alert">Complete the required invoice fields before printing.</p>
 </div>
+<dialog id="invoice-app-dialog" class="invoice-app-dialog" aria-labelledby="invoice-app-heading" aria-describedby="invoice-app-description" data-track-section="invoice-app-prompt">
+  <button id="invoice-app-close" type="button" aria-label="Close app download prompt" autofocus><span aria-hidden="true">×</span></button>
+  <p class="invoice-app-eyebrow">For your next invoice</p>
+  <h2 id="invoice-app-heading">Invoice from your iPhone.</h2>
+  <p id="invoice-app-description">Save clients and items, track payments, and share PDFs with Smart Invoice &amp; Estimate Maker.</p>
+  <figure class="invoice-app-scan">
+    <img class="invoice-app-qr" src="/assets/qr/invoiceqr.svg" width="148" height="148" alt="QR code to download Smart Invoice &amp; Estimate Maker from the App Store">
+    <figcaption>Scan with your iPhone camera</figcaption>
+  </figure>
+  <a id="invoice-app-download" class="btn" href="https://apps.apple.com/app/apple-store/id6790383156?pt=128309253&amp;ct=web-tool-invoiceqr-export&amp;mt=8" target="_blank" rel="noopener">Download on the App Store <span aria-hidden="true">↗</span></a>
+  <p class="invoice-app-free">First document free. No account needed.</p>
+  <button id="invoice-app-later" type="button">Keep editing on the web</button>
+</dialog>
 <noscript class="inv-wrap"><p>This invoice editor needs JavaScript to calculate totals and prepare your PDF. Please enable JavaScript and reload this page.</p></noscript>
