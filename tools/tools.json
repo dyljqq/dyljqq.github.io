@@ -878,8 +878,8 @@
   "path": "/tools/invoice-template/",
   "lang": "en",
   "kind": "WebApplication",
-  "title": "Free Invoice Template — fill in, print or save as PDF (no sign-up)",
-  "description": "A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.",
+  "title": "Free Online Invoice Maker — No Sign-up, No Watermark",
+  "description": "Create an invoice online for free. No sign-up, watermark or credit card. Edit your details, calculate totals and tax, then print or save as PDF.",
   "faq": [
    {
     "q": "Is this invoice template really free?",
@@ -904,7 +904,7 @@
   ],
   "published": "2026-09-26",
   "app": "invoiceqr",
-  "hubTitle": "Create an invoice",
+  "hubTitle": "Free online invoice maker",
   "items": [],
   "headline": null,
   "image": null,

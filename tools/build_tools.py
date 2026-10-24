@@ -1218,9 +1218,9 @@ PAGES.insert(_fi + 1 + len(ESCOLAS), {"path": "/tools/pt-br/quinto-dia-util/", "
 
 # 7. 发票模板
 PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-09-26", "updated": "2026-10-24",
-  "title": "Free Invoice Template — fill in, print or save as PDF (no sign-up)", "crumb": "Invoice template",
-  "description": "A free invoice template you fill in on the page: your details, the client, line items with automatic totals and tax, then print or save as PDF. No sign-up.",
-  "hub_title": "Create an invoice", "hub_desc": "Fill in a simple form, see your invoice update, then print or save as PDF.",
+  "title": "Free Online Invoice Maker — No Sign-up, No Watermark", "crumb": "Invoice maker",
+  "description": "Create an invoice online for free. No sign-up, watermark or credit card. Edit your details, calculate totals and tax, then print or save as PDF.",
+  "hub_title": "Free online invoice maker", "hub_desc": "Create an invoice and save it as a PDF. No sign-up or watermark.",
   "css": (ROOT / "tools/invoice_editor.css").read_text(encoding="utf-8"),
   "js": [(ROOT / "tools/invoice_editor.js").read_text(encoding="utf-8")], "faq": [
     ("Is this invoice template really free?", "Yes. Your invoice details stay in your browser and are not sent to us. There is no account or watermark. Fill in the fields, then print or save as PDF."),
@@ -1229,8 +1229,9 @@ PAGES.append({"path": "/tools/invoice-template/", "lang": "en", "kind": "WebAppl
     ("Does it calculate tax?", "Yes. Type a tax rate in the Tax field and the tax amount and total update. Leave it at 0 if you do not charge tax."),
     ("Is there an app that keeps invoices, clients and payments?", "Smart Invoice & Estimate Maker is our iPhone app for exactly that: 100+ templates, estimates and quotes that turn into invoices, a payment QR code on every invoice, and paid / unpaid / overdue tracking. Your first document is free, with no account."),
   ],
-  "body": f"""<h1>Create an invoice.</h1>
-<p class="lede">Your details, a few line items, and you’re ready to send.<br>Fill in the form. We’ll handle the layout and totals.</p>
+  "body": f"""<h1>Free online invoice maker</h1>
+<p class="lede">Create, edit and save a PDF invoice. Your invoice details stay in your browser.</p>
+<p class="invoice-assurance">No sign-up · No watermark · No credit card</p>
 {(ROOT / "tools/invoice_editor.html").read_text(encoding="utf-8")}
 <h2>What an invoice must include</h2>
 <ul><li><strong>The word "Invoice"</strong> and a unique, sequential invoice number.</li><li><strong>Issue date</strong> and <strong>due date</strong> (or payment terms such as "Net 30").</li><li><strong>Your details</strong>: business name, address, email or phone, and tax ID where required.</li><li><strong>The client's details</strong>: name and address.</li><li><strong>Line items</strong>: description, quantity, unit price and amount.</li><li><strong>Subtotal, tax</strong> (with the rate) and the <strong>total due</strong>.</li><li><strong>How to pay</strong>: bank details, a payment link or a QR code.</li></ul>

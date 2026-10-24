@@ -1,6 +1,7 @@
 .article:has(.invoice-workspace){max-width:none}
 .article:has(.invoice-workspace)>h1{font:600 clamp(32px,4.4vw,48px)/1.12 var(--text);letter-spacing:-.055em;margin:0 0 16px}
 .article:has(.invoice-workspace)>.lede{font-size:16px;line-height:1.7;max-width:640px;color:var(--muted);margin-bottom:32px}
+.article>.invoice-assurance{font-size:12px;font-weight:600;line-height:1.7;color:var(--ink);margin:-16px 0 28px}
 .invoice-workspace{--editor-line:#e2e3dc;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:0;align-items:stretch;margin:0 0 56px;border:1px solid var(--editor-line);border-radius:16px;background:#f0f1eb;overflow:clip}
 .invoice-workspace[hidden]{display:none}
 .invoice-workspace-bar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;background:#fff;border-bottom:1px solid var(--editor-line)}
