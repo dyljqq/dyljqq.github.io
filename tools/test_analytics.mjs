@@ -278,8 +278,8 @@ try {
   await navigate("/tools/invoice-template/?analytics_debug=1&sdk_fail=1");
   await sleep(400);
   assert(!await evaluate("!!window.__analyticsInit"), "SDK import failure does not initialize analytics");
-  const stillUsable = await evaluate(`(() => { const before=document.querySelectorAll('#inv table tbody tr').length;
-    document.querySelector('#addrow').click(); return document.querySelectorAll('#inv table tbody tr').length === before+1; })()`);
+  const stillUsable = await evaluate(`(() => { const before=document.querySelectorAll('#invoice-items [data-item]').length;
+    document.querySelector('#add-invoice-item').click(); return document.querySelectorAll('#invoice-items [data-item]').length === before+1; })()`);
   assert(stillUsable, "tool remains interactive when the Firebase module import fails");
   failSdk = false;
 

@@ -1,0 +1,85 @@
+<div class="inv-wrap invoice-workspace" hidden>
+<div class="invoice-workspace-bar">
+  <div class="invoice-workspace-title"><strong>Your invoice</strong><span>Free to use. No account needed.</span><a class="invoice-mobile-preview" href="#invoice-preview-heading">Preview invoice <span aria-hidden="true">↓</span></a></div>
+  <button class="btn" id="print-invoice" type="submit" form="invoice-form" disabled>Save PDF / Print <span aria-hidden="true">↗</span></button>
+</div>
+<form id="invoice-form" class="invoice-form">
+  <div class="invoice-form-fields">
+  <fieldset>
+    <legend>Business &amp; client</legend>
+    <div class="invoice-fields">
+      <div class="invoice-party-fields">
+        <label for="business-name">Your business name <span class="invoice-required">(required)</span></label>
+        <input id="business-name" name="business-name" placeholder="e.g. Alex Morgan Design" required maxlength="120" autocomplete="organization">
+        <label for="business-details">Your address &amp; contact details</label>
+        <textarea id="business-details" name="business-details" rows="3" placeholder="Street, city, country&#10;Email or phone&#10;Tax ID, if needed" maxlength="600"></textarea>
+      </div>
+      <div class="invoice-party-fields">
+        <label for="client-name">Client name <span class="invoice-required">(required)</span></label>
+        <input id="client-name" name="client-name" placeholder="e.g. Oak Street Studio" required maxlength="120" autocomplete="off">
+        <label for="client-details">Client address &amp; contact details</label>
+        <textarea id="client-details" name="client-details" rows="3" placeholder="Street, city, country&#10;Email or phone" maxlength="600"></textarea>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Invoice details</legend>
+    <div class="invoice-fields">
+      <label for="invoice-number">Invoice number<input id="invoice-number" name="invoice-number" value="INV-0001" required maxlength="50"></label>
+      <label for="invoice-tax">Tax rate (%)<input id="invoice-tax" name="invoice-tax" type="number" min="0" max="100" step="0.01" value="0" required inputmode="decimal"></label>
+      <label for="issue-date">Issue date<input id="issue-date" name="issue-date" type="date" required></label>
+      <label for="due-date">Due date<input id="due-date" name="due-date" type="date" required></label>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Line items</legend>
+    <div id="invoice-items">
+      <div class="invoice-item" data-item>
+        <label>Description<input name="description" placeholder="e.g. Website design" required maxlength="200"></label>
+        <div class="invoice-item-numbers">
+          <label>Quantity<input name="quantity" type="number" min="0.01" max="1000000" step="0.01" value="1" required inputmode="decimal"></label>
+          <label>Unit price<input name="price" type="number" min="0" max="1000000000" step="0.01" value="0" required inputmode="decimal"></label>
+          <button type="button" data-remove-item disabled>Remove</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn ghost" id="add-invoice-item" type="button">+ Add item</button>
+    <p id="invoice-amount-error" role="alert" hidden>The invoice total must be below 1,000,000,000.00. Reduce the quantity or unit price.</p>
+  </fieldset>
+  <fieldset>
+    <legend>Payment &amp; notes</legend>
+    <label for="payment-details">How should your client pay? <span class="invoice-required">(optional)</span></label>
+    <textarea id="payment-details" name="payment-details" rows="2" placeholder="Bank name, account details or payment link" maxlength="600"></textarea>
+    <label for="invoice-notes">Notes <span class="invoice-required">(optional)</span></label>
+    <textarea id="invoice-notes" name="invoice-notes" rows="2" placeholder="Payment terms or a thank-you message" maxlength="1000"></textarea>
+  </fieldset>
+  </div>
+  <div class="invoice-form-footer">
+  <p class="invoice-form-total">Total due <output id="invoice-edit-total" aria-live="polite">0.00</output></p>
+  <div class="invoice-actions">
+    <a class="invoice-preview-link" href="#invoice-preview-heading">Preview invoice <span aria-hidden="true">↓</span></a>
+  </div>
+  <p class="invoice-help">Your entries stay in this tab. Save a PDF before closing it.</p>
+  </div>
+</form>
+<aside class="invoice-preview-panel" aria-labelledby="invoice-preview-heading">
+  <div class="invoice-preview-heading">
+    <h2 id="invoice-preview-heading" tabindex="-1">Invoice preview</h2>
+    <a href="#business-name">Back to editing</a>
+  </div>
+  <p class="invoice-preview-help"><span aria-hidden="true"></span>Updates as you type</p>
+  <div class="inv invoice-preview" id="invoice-preview">
+    <div class="inv-head">
+      <div><div class="inv-title">INVOICE</div><p class="invoice-business"><strong data-preview="business-name">Your business</strong><span data-preview="business-details"></span></p></div>
+      <dl class="invoice-dates"><div><dt>Invoice no.</dt><dd data-preview="invoice-number">INV-0001</dd></div><div><dt>Issue date</dt><dd data-preview="issue-date"></dd></div><div><dt>Due date</dt><dd data-preview="due-date"></dd></div></dl>
+    </div>
+    <div class="invoice-bill-to"><div class="invoice-caption">Bill to</div><strong data-preview="client-name">Your client</strong><span data-preview="client-details"></span></div>
+    <table><thead><tr><th scope="col">Description</th><th scope="col">Qty</th><th scope="col">Price</th><th scope="col">Amount</th></tr></thead><tbody id="invoice-preview-items"><tr><td>Your item</td><td>1</td><td>0.00</td><td>0.00</td></tr></tbody></table>
+    <div class="totals"><div><span>Subtotal</span><span id="invoice-subtotal">0.00</span></div><div><span>Tax (<span id="invoice-preview-tax-rate">0</span>%)</span><span id="invoice-tax-total">0.00</span></div><div class="grand"><span>Total due</span><span id="invoice-total">0.00</span></div></div>
+    <div class="invoice-payment" hidden><div class="invoice-caption">Payment details</div><p data-preview="payment-details"></p></div>
+    <p class="notes" data-preview="invoice-notes" hidden></p>
+  </div>
+</aside>
+<p class="invoice-print-error" role="alert">Complete the required invoice fields before printing.</p>
+</div>
+<noscript class="inv-wrap"><p>This invoice editor needs JavaScript to calculate totals and prepare your PDF. Please enable JavaScript and reload this page.</p></noscript>

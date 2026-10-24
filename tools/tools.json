@@ -883,7 +883,7 @@
   "faq": [
    {
     "q": "Is this invoice template really free?",
-    "a": "Yes. Everything happens in your browser: nothing is uploaded, there is no account and no watermark. Fill in the fields, then print or save as PDF."
+    "a": "Yes. Your invoice details stay in your browser and are not sent to us. There is no account or watermark. Fill in the fields, then print or save as PDF."
    },
    {
     "q": "What must an invoice include?",
@@ -891,7 +891,7 @@
    },
    {
     "q": "How do I save the invoice as a PDF?",
-    "a": "Click Print / Save as PDF. In the print dialog choose 'Save as PDF' as the destination. Only the invoice is printed — the rest of the page is hidden."
+    "a": "Click Save PDF / Print. In the print dialog choose 'Save as PDF' as the destination. Only the invoice is printed — the rest of the page is hidden."
    },
    {
     "q": "Does it calculate tax?",
@@ -904,7 +904,7 @@
   ],
   "published": "2026-09-26",
   "app": "invoiceqr",
-  "hubTitle": "Free invoice template",
+  "hubTitle": "Create an invoice",
   "items": [],
   "headline": null,
   "image": null,

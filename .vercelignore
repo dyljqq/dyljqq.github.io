@@ -8,6 +8,7 @@
 /tools/*.sh
 /tools/__pycache__/
 /tools/_style.html
+/tools/invoice_editor.*
 /tools/home/
 /tools/i18n/
 /tools/store/
