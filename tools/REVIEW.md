@@ -6,7 +6,7 @@
 ## 怎么看
 
 - 本地预览：`http://127.0.0.1:8765/`（仓库根目录的静态服务；没起来就 `python3 -m http.server 8765 --bind 127.0.0.1 --directory <仓库根>` 后台起）
-- 页面清单：`sitemap.xml`（`<loc>` 去掉域名即本地路径）
+- 页面清单：`sitemap.xml` 索引引用的四张分类子图；运行 `python3 tools/sitemap.py` 输出全部网页路径（不包含 XML 子图路径）。
 - 桌面截图：`"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --window-size=1280,<高> --virtual-time-budget=5000 --screenshot=<png> <url>`，然后 Read 图片
 - 手机：**不要**用 `--window-size=390` 截图判断布局（桌面 Chrome 最小窗口约 500px，会误判溢出）。
   手机布局用 `node tools/check_mobile.mjs http://127.0.0.1:8765 <路径...>`（CDP 真实 375 视口，量溢出、按钮尺寸）；

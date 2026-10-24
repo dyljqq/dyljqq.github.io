@@ -4,7 +4,7 @@
   python3 tools/build_seo.py          # 写文件
   python3 tools/build_seo.py --check  # 只报告差异，不落盘（CI / 提交前用）
 
-生成：robots.txt、sitemap.xml、llms.txt
+生成：robots.txt、sitemap.xml 索引及四个分类子图、llms.txt
 改写：每个 *.html 的 head——canonical / description / og / twitter /
       SoftwareApplication JSON-LD，全部放在 <!-- seo:start --> 标记块里，
       重跑先删旧块再写新块，所以脚本可以反复跑。
@@ -237,18 +237,30 @@ Sitemap: {ORIGIN}/sitemap.xml
 # ---------------------------------------------------------------- sitemap.xml
 def build_sitemap(final=None):
     final = final or {}
-    rows = []
+    groups = {name: [] for name in ("products", "tools", "blog", "pages")}
     for url, path, app, kind in pages():
         if kind in ("product", "legal") and not app.get("live"):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
-        rows.append((url, git_lastmod(path, final.get(path)), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
-    rows.sort(key=lambda r: (r[0] != "/", r[0]))
-    body = "\n".join(
-        f"  <url>\n    <loc>{ORIGIN}{u}</loc>\n    <lastmod>{m}</lastmod>\n"
-        f"    <priority>{p}</priority>\n  </url>" for u, m, p in rows)
-    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            f"{body}\n</urlset>\n"), len(rows)
+        if kind == "product":
+            group = "products"
+        elif kind == "tool":
+            group = "blog" if url.startswith("/blog/") else "tools"
+        else:
+            group = "pages"
+        groups[group].append((url, git_lastmod(path, final.get(path)), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
+    documents = {}
+    for name, rows in groups.items():
+        rows.sort(key=lambda r: (r[0] != "/", r[0]))
+        body = "\n".join(
+            f"  <url>\n    <loc>{esc(ORIGIN + u)}</loc>\n    <lastmod>{m}</lastmod>\n"
+            f"    <priority>{p}</priority>\n  </url>" for u, m, p in rows)
+        documents[f"sitemap-{name}.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '\n</urlset>\n')
+    body = "\n".join(f"  <sitemap><loc>{esc(ORIGIN + '/' + name)}</loc></sitemap>" for name in documents)
+    # Index dates are optional; each page keeps its own real lastmod in the child map.
+    documents["sitemap.xml"] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + '\n</sitemapindex>\n')
+    return documents, sum(len(rows) for rows in groups.values())
 
 # ---------------------------------------------------------------- llms.txt
 def build_llms():
@@ -1175,10 +1187,11 @@ def main():
         final[path] = out
         write(str(path.relative_to(ROOT)), out)
     # 页面写完再出 sitemap：lastmod 要拿最终内容去和上次提交比
-    sitemap, n = build_sitemap(final)
-    write("sitemap.xml", sitemap)
+    sitemaps, n = build_sitemap(final)
+    for name, xml in sitemaps.items():
+        write(name, xml)
 
-    print(f"sitemap: {n} 条 URL")
+    print(f"sitemap: {len(sitemaps) - 1} 个子图，共 {n} 条网页 URL")
     print(("需要更新" if CHECK else "已写入") + f" {len(changed)} 个文件")
     for c in changed:
         print("  -", c)

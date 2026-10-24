@@ -7,6 +7,7 @@
 import json, re, sys
 from html.parser import HTMLParser
 from pathlib import Path
+from sitemap import sitemap_urls
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
 ORIGIN = json.loads((ROOT / "tools/site.json").read_text())["site"]["origin"]
@@ -118,8 +119,7 @@ for path in pages:
 for t, tags in titles.items():
     if len(tags) > 1: issues.append(f"title 重复：{t!r} ← {tags}")
 
-sm = (ROOT / "sitemap.xml").read_text()
-locs = re.findall(r"<loc>(.*?)</loc>", sm)
+locs = sitemap_urls(ROOT, ORIGIN)
 for loc in locs:
     f = ROOT / loc[len(ORIGIN) + 1:] / "index.html" if loc != ORIGIN + "/" else ROOT / "index.html"
     if not f.exists(): issues.append(f"sitemap 指向不存在的页面 {loc}")

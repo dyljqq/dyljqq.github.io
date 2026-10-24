@@ -19,9 +19,7 @@ python3 -m http.server "$PORT" --bind 127.0.0.1 --directory . >/dev/null 2>&1 &
 SERVER=$!; trap 'kill $SERVER 2>/dev/null || true' EXIT
 sleep 1
 ORIGIN=$(python3 -c "import json;print(json.load(open('tools/site.json'))['site']['origin'])")
-python3 -c "
-import re;o='$ORIGIN'
-print('\n'.join(u[len(o):] for u in re.findall(r'<loc>(.*?)</loc>',open('sitemap.xml').read())))" | xargs node tools/check_mobile.mjs "http://127.0.0.1:$PORT"
+python3 tools/sitemap.py | xargs node tools/check_mobile.mjs "http://127.0.0.1:$PORT"
 
 [ "${1:-}" = "--check" ] && { python3 tools/indexnow.py --dry-run; echo "只检查，未发布。"; exit 0; }
 

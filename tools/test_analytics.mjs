@@ -4,7 +4,7 @@
 //   /Users/polarisdev/.nvm/versions/node/v22.23.1/bin/node tools/test_analytics.mjs
 import { createServer } from "node:http";
 import { readFileSync, statSync, mkdtempSync, rmSync } from "node:fs";
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { extname, join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -55,8 +55,7 @@ let ws;
 
 try {
   // Sitemap-wide metadata/script contract, checked against files served by this test server.
-  const sitemap = readFileSync(join(ROOT, "sitemap.xml"), "utf8");
-  const paths = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => new URL(m[1]).pathname);
+  const paths = execFileSync("python3", [join(ROOT, "tools/sitemap.py")], { encoding: "utf8" }).trim().split(/\r?\n/);
   const invalidPages = [];
   for (const path of paths) {
     const filePath = path.endsWith("/") ? `${path}index.html` : path;

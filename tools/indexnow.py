@@ -22,6 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_seo import ROOT, ORIGIN, _lastmod_norm     # import 时已把时区设成越南时间，date.today() 和构建同口径
+from sitemap import sitemap_urls
 
 KEY = "6bc0c7e758182078db2f4e3107b328d5"     # 站根的 <KEY>.txt 就是验证文件
 STATE = ROOT / "tools/indexnow-state.json"
@@ -37,7 +38,7 @@ def norm(html):
 def current():
     """sitemap 里每个 URL 路径 → 内容 hash。读的是本地文件，所以要在构建之后、和刚部署的内容一致时跑。"""
     out = {}
-    for loc in re.findall(r"<loc>(.*?)</loc>", (ROOT / "sitemap.xml").read_text(encoding="utf-8")):
+    for loc in sitemap_urls(ROOT, ORIGIN):
         assert loc.startswith(ORIGIN + "/"), loc
         path = loc[len(ORIGIN):]
         f = ROOT / path.strip("/") / "index.html" if path.endswith("/") else ROOT / path.lstrip("/")
