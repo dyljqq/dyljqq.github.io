@@ -3292,6 +3292,212 @@ PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind":
 <p>Need only the number? The <a href="/tools/days-until/">days until calculator</a> counts to any date.</p>"""})
 
 
+# 7d5. Pagewren：里程碑卡片 / Meilensteinkarten 生成器（de + en）——10-25
+# 起因：10-24 08:07 一位德国访客从 chatgpt.com 进 /pagewren/de/，同一分钟点了商店按钮（GA4 网站资源 560450579，web-pagewren-app），
+# 当天 Pagewren App 有 1 个德国首次打开。用户 10-25：「开始补充 pagewren 的内容」。
+# 选题证据（10-25 Google 联想词）：de「meilensteinkarten baby selbst gestalten / pdf kostenlos / zum ausdrucken / selber machen」
+# 「baby meilensteine app (kostenlos)」「baby monatsbilder app / ideen」「babytagebuch app iphone」「babyalbum digital gestalten」；
+# en「baby milestone cards printable / free download」「printable baby milestone cards pdf」「baby month photo app / editor」「best baby memory book app」。
+# App 说法只用 tools/store/pagewren.json（1.1，10-25 重抓）的描述和更新说明：Kapitel nach Alter / Chapters by age、Meilensteine markieren / Mark milestones、
+# 1.1「Monatsfotos: ein Foto für jeden Monat, direkt auf seiner Kapitelseite」、jede Seite als Bild teilen、Buch als PDF；Classic + 3 Hintergründe 免费，
+# Pro = Linen / Scrapbook、所有背景与自己的照片、iCloud-Sync、Datenschutz-Sperre。App 代码（宝宝日记 PaywallComparison）：页面 / 里程碑 / 小组件不限量免费。
+# 只做「纪念用」的里程碑，不写发育标准（几个月该会什么）——那是健康类内容，不碰。
+# 埋点：表单 id=milestone；mk-make / mk-download / mk-print / mk-photo-remove；结果区 milestone-result；生成后商店按钮 ct=web-pagewren-milestone（区块 milestone-next）。
+MK_JS = r"""
+(function(){var f=document.getElementById('milestone');if(!f)return;
+var DE=/^de/.test(document.documentElement.lang);
+var T=DE?{m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
+F:{smile:'Erstes Lächeln',tooth:'Erster Zahn',steps:'Erste Schritte',word:'Erstes Wort',food:'Erster Brei',night:'Durchgeschlafen',trip:'Erster Urlaub',xmas:'Erstes Weihnachten'}}
+:{m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
+F:{smile:'First smile',tooth:'First tooth',steps:'First steps',word:'First word',food:'First solid food',night:'Slept through the night',trip:'First trip',xmas:'First Christmas'}};
+var BG={cream:['#fffaf0','#141414','#e2cfa6'],sage:['#e3ebdf','#253528','#a9c0a2'],rose:['#f7e3e0','#46282a','#e1aea8'],sky:['#e1ebf5','#1f2f45','#a8c1de'],ink:['#1d1d1d','#fffaf0','#4a4a4a']};
+var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
+var cv=document.getElementById('mk-canvas'),out=document.getElementById('mk-out'),pic=document.getElementById('mk-img'),ctl=document.getElementById('mk-photo-ctl'),bgset=document.getElementById('mk-bgset'),msg=document.getElementById('mk-msg'),own=document.getElementById('mk-own');
+var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+function E(n){return f.elements[n]}
+function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
+function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
+function fmt(d){return d?d.toLocaleDateString(T.loc,{day:'numeric',month:'long',year:'numeric'}):''}
+function opts(k){var d=parse(E('date').value);return{key:k||E('key').value,own:(E('own').value||'').trim().slice(0,40),name:(E('name').value||'').trim().slice(0,30),date:k?null:d,note:k?'':(E('note').value||'').trim().slice(0,40),img:k?null:img,bg:bgKey()}}
+function head(o){var k=o.key,m=/^m(\d+)$/.exec(k);if(m)return{num:m[1],unit:(+m[1]===1?T.m[0]:T.m[1]).toUpperCase()};if(k==='y1')return{num:'1',unit:T.y[0].toUpperCase()};
+if(k==='birth')return{title:T.hello};if(k==='own')return{title:o.own||'…'};return{title:T.F[k]||k}}
+function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
+if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
+function star(x,cx,cy,r){x.beginPath();for(var i=0;i<8;i++){var a=i*Math.PI/4,rr=i%2?r*.32:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.fill()}
+function draw(c,W,H,o){c.width=W;c.height=H;var x=c.getContext('2d'),C=BG[o.bg],u=W/1080,ph=o.img?Math.round(H*.6):0,pad=Math.round(56*u);
+x.fillStyle=C[0];x.fillRect(0,0,W,H);
+if(o.img){var bw=W-2*pad,s=Math.max(bw/o.img.naturalWidth,ph/o.img.naturalHeight),dw=o.img.naturalWidth*s,dh=o.img.naturalHeight*s,p=+E('pos').value/100;
+x.save();x.beginPath();x.rect(pad,pad,bw,ph);x.clip();x.drawImage(o.img,dw>bw+1?pad+(bw-dw)*p:pad+(bw-dw)/2,dh>ph+1?pad+(ph-dh)*p:pad+(ph-dh)/2,dw,dh);x.restore()}
+else{x.strokeStyle=C[2];x.lineWidth=5*u;x.strokeRect(34*u,34*u,W-68*u,H-68*u);x.fillStyle=C[2];star(x,110*u,120*u,34*u);star(x,W-120*u,H-130*u,40*u);star(x,W-170*u,150*u,18*u);star(x,150*u,H-180*u,20*u)}
+x.fillStyle=C[1];x.textAlign='center';x.textBaseline='alphabetic';
+var h=head(o),top=o.img?pad+ph:0,area=H-top-(o.img?pad*.4:0),sc=o.img?.55:1,s2=o.img?.82:1,rows=[],maxW=W-(o.img?2*pad+40*u:220*u);
+if(h.num){var big=330*sc*u;x.font='600 '+Math.round(big)+'px '+DISP;rows.push([h.num,x.font,big*.72,0]);rows.push([h.unit,'700 '+Math.round(54*s2*u)+'px '+TXT,46*s2*u,28*sc*u,1])}
+else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=wrap(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=wrap(x,h.title,maxW,3)}
+tl.forEach(function(l,i){rows.push([l,x.font,tz*.74,i?tz*.28:0])})}
+var sub=o.key==='birth'&&o.date?T.born+fmt(o.date):(o.date?fmt(o.date):'');
+if(o.name)rows.push([o.name,'700 '+Math.round(72*s2*u)+'px '+TXT,60*s2*u,(h.num?44:52)*sc*u]);
+if(sub)rows.push([sub,'500 '+Math.round(46*s2*u)+'px '+TXT,37*s2*u,(o.name?22:44)*s2*u]);
+if(o.note)rows.push([o.note,'500 '+Math.round(40*s2*u)+'px '+TXT,32*s2*u,18*s2*u]);
+var tot=0;rows.forEach(function(r){tot+=r[2]+r[3]});var y=top+(area-tot)/2;
+rows.forEach(function(r){y+=r[3]+r[2];x.font=r[1];var ls=r[4]&&'letterSpacing' in x;if(ls)x.letterSpacing=Math.round(10*sc*u)+'px';x.fillText(r[0],W/2,y);if(ls)x.letterSpacing='0px'})}
+function preview(){pending=false;draw(cv,540,675,opts())}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true;own.hidden=E('key').value!=='own'}
+f.addEventListener('input',redraw);f.addEventListener('change',redraw);
+E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;ctl.hidden=false;bgset.hidden=true;redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent=T.bad;msg.hidden=false};im.src=src});
+document.getElementById('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';ctl.hidden=true;bgset.hidden=false;redraw()});
+f.addEventListener('submit',function(e){e.preventDefault();var c=document.createElement('canvas');draw(c,1080,1350,opts());
+c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.hidden=false;out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
+document.getElementById('mk-save').addEventListener('click',function(){if(!blob)return;var name=T.file+'-'+E('key').value+'.jpg',file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+var a=document.createElement('a');a.href=url;a.download=name;a.click()});
+document.getElementById('mk-print').addEventListener('click',function(){var sheet=document.getElementById('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
+sheet.textContent='';var keys=['birth','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','y1'],loads=[];
+keys.forEach(function(k){var c=document.createElement('canvas');draw(c,900,1125,opts(k));var im=new Image();im.alt='';im.src=c.toDataURL('image/jpeg',.9);sheet.appendChild(im);if(im.decode)loads.push(im.decode().catch(function(){}))});
+document.documentElement.classList.add('mk-printing');Promise.all(loads).then(function(){window.print()})});
+window.addEventListener('afterprint',function(){document.documentElement.classList.remove('mk-printing')});
+var t=new Date();E('date').value=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);
+preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
+"""
+MK_CSS = """
+.mk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.mk [hidden],#mk-out[hidden]{display:none!important}
+.mk-form{display:grid;gap:14px;min-width:0}.mk-form label,.mk-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.mk-form input[type=text],.mk-form input[type=date],.mk-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.mk-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.mk-form input[type=range]{width:100%;accent-color:var(--ink)}
+.mk-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mk-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.mk-bg legend{margin:0 0 8px;padding:0}
+.mk-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.mk-bg input{accent-color:var(--ink);margin:0}
+.mk-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.mk-photo-ctl{display:grid;gap:12px}.mk-photo-ctl .btn{justify-self:start;padding:11px 16px}.mk-form .btn{justify-self:start}
+.mk-msg{margin:0;color:#a3341f;font-size:14px}.mk-btns{display:flex;flex-wrap:wrap;gap:10px}
+.mk-preview{margin:0}.mk-preview canvas{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink),0 10px 24px rgba(0,0,0,.08);background:#fff}
+#mk-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
+.mk-result{display:flex;gap:22px;align-items:flex-start}.mk-result img{width:180px;height:auto;flex:none;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink)}
+.mk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.mk-hint{font-size:14px;margin:0!important}
+.mk-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.mk-next p{margin:0 0 14px}
+#mk-sheet{display:none}
+@media print{html.mk-printing main,html.mk-printing header,html.mk-printing footer{display:none!important}html.mk-printing #mk-sheet{display:grid!important;grid-template-columns:1fr 1fr;gap:6mm}html.mk-printing #mk-sheet img{width:100%;height:auto;break-inside:avoid;page-break-inside:avoid}}
+@media (max-width:760px){.mk{grid-template-columns:minmax(0,1fr);padding:18px}.mk-preview{order:-1;width:min(100%,220px);margin:0 auto}.mk-result{flex-direction:column}.mk-result img{width:min(100%,220px)}#mk-out{padding:18px}.mk-two{grid-template-columns:1fr}}
+"""
+MK = {
+ "en": {"path": "/tools/baby-milestone-cards/",
+  "title": "Free Baby Milestone Cards: Make Your Own Online, With Photo", "crumb": "Baby milestone cards",
+  "description": "Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.",
+  "hub_title": "Free baby milestone card maker", "hub_desc": "Monthly and first-time milestone cards with your photo, or a printable set of 13.",
+  "h1": "Free baby milestone cards, made online",
+  "lede": "Pick a milestone, add your baby’s name, the date and a photo if you like, and save the card as an image to send to family. Or print all 13 monthly cards at once. Free, no sign-up, no watermark, and your photo never leaves this page.",
+  "L": {"key": "Milestone", "own": "Your own text", "own_ph": "First swim", "name": "Baby’s name", "name_ph": "Emma", "date": "Date", "note": "Note (optional)", "note_ph": "24 in · 13 lb",
+        "photo": "Photo (optional)", "pos": "Photo position", "remove": "Remove photo", "bg": "Background", "make": "Make my card", "save": "Save card", "print": "Print all 13 monthly cards",
+        "cap": "Preview. The saved card is 1080 × 1350 pixels.", "alt": "Your milestone card",
+        "hint": "On iPhone, tap Save card and then Save Image, or touch and hold the card and tap Save to Photos. On a computer the card downloads as a JPEG.",
+        "next": "<strong>One card a month adds up.</strong> In Pagewren, each month’s photo sits on its own chapter page, so the first year turns into a book you can flip through.",
+        "cta": "Get Pagewren for iPhone", "birth": "Hello world (birth)", "m": ["month", "months"], "y1": "1 year", "first": "First moments",
+        "F": [("smile", "First smile"), ("tooth", "First tooth"), ("steps", "First steps"), ("word", "First word"), ("food", "First solid food"), ("night", "Slept through the night"), ("trip", "First trip"), ("xmas", "First Christmas"), ("own", "Your own text…")],
+        "bgs": [("cream", "Cream"), ("sage", "Sage"), ("rose", "Rose"), ("sky", "Sky"), ("ink", "Ink")], "group_m": "Months"},
+  "rest": """<h2>Month photos that look good together</h2>
+<ul><li><strong>Same place, same time of day.</strong> A blanket on the floor by the same window makes twelve photos look like one set.</li>
+<li><strong>Daylight, no flash.</strong> Soft window light is kinder to a baby’s skin and eyes than the flash.</li>
+<li><strong>Card next to the baby, not on top.</strong> Shoot from above so the card and the baby are both flat and sharp.</li>
+<li><strong>One thing that stays.</strong> The same soft toy in every photo shows how fast they grow.</li></ul>
+<h2>Print the whole set</h2>
+<p><strong>Print all 13 monthly cards</strong> puts Hello world, 1 to 11 months and 1 year on your paper, four cards to a page. To keep a file, choose <strong>Save as PDF</strong> as the printer (on a Mac, open the PDF menu in the print dialog and choose Save as PDF). Heavier paper or card stock holds up better next to a blanket. The printed set uses the name and background you picked; the photo stays only on the card you save.</p>
+<h2>From cards to a baby memory book</h2>
+<p><a href="/pagewren/">Pagewren: Baby Memory Book</a> is our iPhone app for exactly this. Since version 1.1 each month gets one photo right on its chapter page, and the chapters go by age: Newborn, 1 Month, 2 Months and beyond. You mark milestones like First Smile and First Steps, or add your own, share any page as an image with family and export the book as a PDF. The Classic theme and three page backgrounds are free for everyone; Pagewren Pro adds the Linen and Scrapbook themes, every page background, iCloud Sync and Privacy Lock. No ads, no social feed, and your photos and words stay on your iPhone, and in your own iCloud if you turn on sync.</p>""",
+  "faq": [
+    ("Are these baby milestone cards free?", "Yes. There is no sign-up, no watermark and no limit on how many cards you make or print."),
+    ("Is my baby’s photo uploaded anywhere?", "No. Your browser draws the card on this page, and the photo never leaves your device."),
+    ("What size are the cards?", "A saved card is 1080 × 1350 pixels (4:5), a shape that fits messages and Instagram posts. The printed set puts four cards on each page."),
+    ("How do I save the printable cards as a PDF?", "Click Print all 13 monthly cards and choose Save as PDF as the printer. On a Mac, open the PDF menu in the print dialog and choose Save as PDF."),
+    ("Which milestones can I make?", "Hello world for the birth, every month from 1 to 11, 1 year, and firsts: first smile, first tooth, first steps, first word, first solid food, slept through the night, first trip and first Christmas, or your own text."),
+    ("Is there an app for a baby’s monthly photos?", "Pagewren: Baby Memory Book is our iPhone app for it. Since version 1.1 each month gets one photo on its own chapter page, chapters go by age, and you can mark milestones like First Smile or add your own. The Classic theme and three page backgrounds are free, with no ads."),
+  ],
+  "more": [
+    ("Where can I get free printable baby milestone cards as a PDF?", "On this page: click Print all 13 monthly cards and save them as a PDF from the print dialog."),
+    ("Can I make milestone cards with my own photo?", "Yes. Add a photo and the card puts it in a frame above the milestone, name and date. Drag the Photo position slider to choose the part that shows."),
+    ("What are good ideas for baby monthly photos?", "Keep the place, the light and one toy the same every month, and lay the card next to the baby. The tips above go through each one."),
+  ]},
+ "de": {"path": "/tools/de/meilensteinkarten-baby/",
+  "title": "Meilensteinkarten Baby kostenlos online gestalten, mit Foto", "crumb": "Meilensteinkarten",
+  "description": "Meilensteinkarten fürs Baby kostenlos online gestalten: Monat, Name, Datum und eigenes Foto als Bild speichern oder alle 13 Karten ausdrucken. Ohne Anmeldung.",
+  "hub_title": "Meilensteinkarten kostenlos gestalten", "hub_desc": "Monats- und Meilensteinkarten mit eigenem Foto oder als Druckbogen mit 13 Karten.",
+  "h1": "Meilensteinkarten fürs Baby, kostenlos online gestalten",
+  "lede": "Wähle einen Meilenstein, trag Namen, Datum und auf Wunsch ein Foto ein und speichere die Karte als Bild für die Familie. Oder drucke alle 13 Monatskarten auf einmal. Kostenlos, ohne Anmeldung, ohne Wasserzeichen, und dein Foto verlässt diese Seite nicht.",
+  "L": {"key": "Meilenstein", "own": "Eigener Text", "own_ph": "Erstes Mal schwimmen", "name": "Name des Babys", "name_ph": "Emma", "date": "Datum", "note": "Notiz (optional)", "note_ph": "62 cm · 6,1 kg",
+        "photo": "Foto (optional)", "pos": "Fotoausschnitt", "remove": "Foto entfernen", "bg": "Hintergrund", "make": "Karte erstellen", "save": "Karte speichern", "print": "Alle 13 Monatskarten drucken",
+        "cap": "Vorschau. Die gespeicherte Karte hat 1080 × 1350 Pixel.", "alt": "Deine Meilensteinkarte",
+        "hint": "Auf dem iPhone: „Karte speichern“ tippen und „Bild sichern“ wählen, oder die Karte lange drücken und sie über das Menü in deinen Fotos sichern. Am Computer wird die Karte als JPEG heruntergeladen.",
+        "next": "<strong>Jeden Monat eine Karte, und daraus wird ein Buch.</strong> In Pagewren steht das Foto jedes Monats auf seiner eigenen Kapitelseite, und aus dem ersten Jahr wird ein Buch zum Durchblättern.",
+        "cta": "Pagewren fürs iPhone laden", "birth": "Hallo Welt (Geburt)", "m": ["Monat", "Monate"], "y1": "1 Jahr", "first": "Erste Male",
+        "F": [("smile", "Erstes Lächeln"), ("tooth", "Erster Zahn"), ("steps", "Erste Schritte"), ("word", "Erstes Wort"), ("food", "Erster Brei"), ("night", "Durchgeschlafen"), ("trip", "Erster Urlaub"), ("xmas", "Erstes Weihnachten"), ("own", "Eigener Text …")],
+        "bgs": [("cream", "Creme"), ("sage", "Salbei"), ("rose", "Rosé"), ("sky", "Himmelblau"), ("ink", "Tinte")], "group_m": "Monate"},
+  "rest": """<h2>Monatsbilder, die zusammenpassen</h2>
+<ul><li><strong>Gleicher Ort, gleiche Tageszeit.</strong> Eine Decke am Boden vor demselben Fenster macht aus zwölf Fotos eine Serie.</li>
+<li><strong>Tageslicht statt Blitz.</strong> Weiches Licht vom Fenster ist für Haut und Augen des Babys angenehmer als der Blitz.</li>
+<li><strong>Die Karte neben das Baby, nicht darauf.</strong> Von oben fotografiert sind Karte und Baby beide flach und scharf.</li>
+<li><strong>Etwas, das bleibt.</strong> Dasselbe Kuscheltier auf jedem Bild zeigt, wie schnell dein Kind wächst.</li></ul>
+<h2>Druckbogen: alle Karten auf einmal</h2>
+<p><strong>Alle 13 Monatskarten drucken</strong> legt Hallo Welt, 1 bis 11 Monate und 1 Jahr auf deine Seiten, vier Karten pro Seite. Für eine Datei wählst du als Drucker <strong>Als PDF speichern</strong> (auf dem Mac im Druckdialog unten das Menü „PDF“ öffnen und „Als PDF sichern“ wählen). Dickeres Papier oder Fotokarton hält neben der Decke länger. Der Druckbogen übernimmt Namen und Hintergrund; das Foto bleibt nur auf der Karte, die du speicherst.</p>
+<h2>Aus den Karten wird ein Babytagebuch</h2>
+<p><a href="/pagewren/de/">Pagewren: Babytagebuch</a> ist unsere iPhone-App genau dafür. Seit Version 1.1 bekommt jeder Monat ein Foto direkt auf seiner Kapitelseite, und die Kapitel gehen nach Alter: Neugeboren, 1 Monat, 2 Monate und mehr. Meilensteine wie das erste Lächeln oder die ersten Schritte markierst du oder legst eigene an, jede Seite teilst du als Bild mit der Familie, und das Buch exportierst du als PDF. Das Design Classic und drei Seitenhintergründe sind für alle kostenlos; Pagewren Pro schaltet die Designs Linen und Scrapbook, alle Seitenhintergründe, iCloud-Sync und die Datenschutz-Sperre frei. Keine Werbung, kein Social Feed, und deine Fotos und Texte bleiben auf deinem iPhone und, wenn du die Synchronisierung einschaltest, in deiner eigenen iCloud.</p>""",
+  "faq": [
+    ("Sind die Meilensteinkarten wirklich kostenlos?", "Ja. Ohne Anmeldung, ohne Wasserzeichen und ohne Grenze, wie viele Karten du gestaltest oder druckst."),
+    ("Wird das Foto meines Babys hochgeladen?", "Nein. Dein Browser zeichnet die Karte auf dieser Seite, und das Foto verlässt dein Gerät nicht."),
+    ("Welches Format haben die Karten?", "Eine gespeicherte Karte hat 1080 × 1350 Pixel (4:5), passend für Messenger und Instagram-Beiträge. Der Druckbogen legt vier Karten auf jede Seite."),
+    ("Wie speichere ich die Karten zum Ausdrucken als PDF?", "Auf „Alle 13 Monatskarten drucken“ klicken und als Drucker „Als PDF speichern“ wählen. Auf dem Mac im Druckdialog das Menü „PDF“ öffnen und „Als PDF sichern“ wählen."),
+    ("Welche Meilensteine gibt es?", "Hallo Welt zur Geburt, jeden Monat von 1 bis 11, 1 Jahr und erste Male: erstes Lächeln, erster Zahn, erste Schritte, erstes Wort, erster Brei, durchgeschlafen, erster Urlaub und erstes Weihnachten, oder dein eigener Text."),
+    ("Gibt es eine App für Monatsbilder vom Baby?", "Pagewren: Babytagebuch ist unsere iPhone-App dafür. Seit Version 1.1 bekommt jeder Monat ein Foto auf seiner eigenen Kapitelseite, die Kapitel gehen nach Alter, und Meilensteine wie das erste Lächeln markierst du oder legst eigene an. Das Design Classic und drei Seitenhintergründe sind kostenlos, ohne Werbung."),
+  ],
+  "more": [
+    ("Wo gibt es Meilensteinkarten fürs Baby als PDF kostenlos?", "Auf dieser Seite: „Alle 13 Monatskarten drucken“ klicken und im Druckdialog als PDF speichern."),
+    ("Kann ich Meilensteinkarten mit eigenem Foto gestalten?", "Ja. Mit Foto steht das Bild in einem Rahmen über Meilenstein, Name und Datum. Mit dem Regler „Fotoausschnitt“ wählst du, welcher Teil zu sehen ist."),
+    ("Welche Ideen gibt es für Baby-Monatsbilder?", "Ort, Licht und ein Kuscheltier jeden Monat gleich lassen und die Karte neben das Baby legen. Die Tipps oben gehen jeden Punkt durch."),
+  ]},
+}
+def mk_store(lang):
+    a = BY_KEY["pagewren"] if lang == "en" else {"variantOf": "pagewren", "lang": lang}
+    return bp.store_link(a, bp.store_of(a), "milestone")
+def mk_page(lang):
+    S = MK[lang]; L = S["L"]
+    months = "".join(f'<option value="m{n}">{n} {L["m"][0] if n == 1 else L["m"][1]}</option>' for n in range(1, 12))
+    firsts = "".join(f'<option value="{k}">{esc(v)}</option>' for k, v in L["F"])
+    bgs = "".join(f'<label><input type="radio" name="bg" value="{k}"{" checked" if k == "cream" else ""}><i style="background:{c}"></i>{esc(v)}</label>'
+                  for (k, v), c in zip(L["bgs"], ["#fffaf0", "#e3ebdf", "#f7e3e0", "#e1ebf5", "#1d1d1d"]))
+    body = f"""<h1>{esc(S["h1"])}</h1>
+<p class="lede">{esc(S["lede"])}</p>
+<div class="mk">
+<form class="mk-form" id="milestone">
+<label>{esc(L["key"])}<select name="key"><option value="birth">{esc(L["birth"])}</option><optgroup label="{esc(L["group_m"])}">{months}<option value="y1">{esc(L["y1"])}</option></optgroup><optgroup label="{esc(L["first"])}">{firsts}</optgroup></select></label>
+<label id="mk-own" hidden>{esc(L["own"])}<input type="text" name="own" maxlength="40" placeholder="{esc(L["own_ph"])}" autocomplete="off"></label>
+<div class="mk-two"><label>{esc(L["name"])}<input type="text" name="name" maxlength="30" placeholder="{esc(L["name_ph"])}" autocomplete="off"></label><label>{esc(L["date"])}<input type="date" name="date"></label></div>
+<label>{esc(L["note"])}<input type="text" name="note" maxlength="40" placeholder="{esc(L["note_ph"])}" autocomplete="off"></label>
+<label>{esc(L["photo"])}<input type="file" name="photo" accept="image/*"></label>
+<p class="mk-msg" id="mk-msg" role="alert" hidden></p>
+<div class="mk-photo-ctl" id="mk-photo-ctl" hidden><label>{esc(L["pos"])}<input type="range" name="pos" min="0" max="100" value="50"></label><button type="button" class="btn ghost" id="mk-clear" data-track-id="mk-photo-remove">{esc(L["remove"])}</button></div>
+<fieldset class="mk-bg" id="mk-bgset"><legend>{esc(L["bg"])}</legend>{bgs}</fieldset>
+<div class="mk-btns"><button type="submit" class="btn" data-track-id="mk-make">{esc(L["make"])}</button><button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print">{esc(L["print"])}</button></div>
+</form>
+<figure class="mk-preview"><canvas id="mk-canvas" width="540" height="675" aria-label="{esc(L["alt"])}"></canvas><figcaption class="meta" style="text-align:center">{esc(L["cap"])}</figcaption></figure>
+</div>
+<div id="mk-out" hidden aria-live="polite" data-track-section="milestone-result">
+<div class="mk-result"><img id="mk-img" alt="{esc(L["alt"])}" width="180" height="225"><div>
+<p class="mk-actions"><button class="btn" id="mk-save" type="button" data-track-id="mk-download">{esc(L["save"])}</button></p>
+<p class="mk-hint">{esc(L["hint"])}</p>
+</div></div>
+<div class="mk-next" data-track-section="milestone-next"><p>{L["next"]}</p>
+<a class="btn" href="{esc(mk_store(lang))}">{bp.APPLE}{esc(L["cta"])}</a></div>
+</div>
+{S["rest"]}"""
+    for k in ("title", "description"):
+        assert len(S[k]) <= {"title": 65, "description": 160}[k], (lang, k, len(S[k]))
+    return {"path": S["path"], "lang": lang, "kind": "WebApplication", "app": "pagewren", "published": "2026-10-25",
+            "title": S["title"], "crumb": S["crumb"], "description": S["description"], "hub_title": S["hub_title"], "hub_desc": S["hub_desc"],
+            "js": [MK_JS], "css": MK_CSS, "faq": S["faq"], "more": S["more"], "body": body}
+PAGES.append(mk_page("en"))
+PAGES.append(mk_page("de"))
+
+
 # ------------------------------------------------------------------ About（10-25）
 # claude-seo 的「谁写的 / 怎么做的 / 为什么写」三问：站内原来只有首页 #about 一小段，没有说明页面怎么核对事实。
 # 说法都按现状写：「independent developer」首页早就这么写；不写真人姓名（要不要加由用户定）；AI 协助起草和翻译是实情，照实写。
@@ -3327,7 +3533,7 @@ DE_BYLINE = ('<p class="meta" style="margin-top:12px"><strong>Über diese Seite:
              'Smart Rechnung &amp; Angebot. Die genannten Paragrafen haben wir am 17. Oktober 2026 im Wortlaut auf gesetze-im-internet.de nachgelesen. '
              'Fehler gefunden? Schreiben Sie an <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. <a href="/about/" hreflang="en">Wie wir Fakten prüfen</a> (Englisch).</p>')
 for _pg in PAGES:
-    if _pg["path"].startswith("/tools/de/") and _pg["path"] != "/tools/de/":
+    if _pg["path"].startswith("/tools/de/") and _pg.get("app") == "invoiceqr":   # 只给开票页；德语 Pagewren 卡片页不是法规内容
         _pg["body"] = _pg["body"] + "\n" + DE_BYLINE
 
 # ------------------------------------------------------------------ 目录页

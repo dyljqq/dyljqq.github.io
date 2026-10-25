@@ -160,7 +160,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - Category: Lifestyle
 - For: Parents keeping a record of their child's first years.
 - Free: The Classic theme and three page backgrounds are free for everyone, and your memories stay yours with or without Pro.
-- Paid: Pagewren Pro, monthly, yearly or a one-time Lifetime purchase: the Linen and Scrapbook themes, every page background, collage layouts, iCloud Sync and Privacy Lock.
+- Paid: Pagewren Pro, monthly, yearly or a one-time Lifetime purchase: the Linen and Scrapbook themes, every page background, iCloud Sync and Privacy Lock.
 
 ## Free tools & guides
 
@@ -220,6 +220,8 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [Angebotsvorlage](https://beforego.art/tools/de/angebot-vorlage/) — Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.
 - [Rechnung schreiben mit dem iPhone](https://beforego.art/tools/de/rechnung-schreiben-app-iphone/) — So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.
 - [Free online countdown wallpaper maker](https://beforego.art/tools/countdown-wallpaper-maker/) — Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.
+- [Free baby milestone card maker](https://beforego.art/tools/baby-milestone-cards/) — Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.
+- [Meilensteinkarten kostenlos gestalten](https://beforego.art/tools/de/meilensteinkarten-baby/) — Meilensteinkarten fürs Baby kostenlos online gestalten: Monat, Name, Datum und eigenes Foto als Bild speichern oder alle 13 Karten ausdrucken. Ohne Anmeldung.
 - [How to Put a Countdown on Your iPhone Lock Screen (iOS 27)](https://beforego.art/blog/countdown-widget-iphone-home-lock-screen/) — How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.
 - [Count Down to a Birthday, Exam or Trip on iPhone](https://beforego.art/blog/count-down-birthday-exam-trip-iphone/) — How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.
 - [Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice](https://beforego.art/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/) — Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.

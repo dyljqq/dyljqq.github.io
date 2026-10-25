@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Baby Milestone Cards: Make Your Own Online, With Photo</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+
+.crumbs{margin:24px 0 28px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 8px;font-size:13px;line-height:1.6;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
+.crumbs li+li::before{content:"›";margin-right:8px}
+html[lang^=th] *{letter-spacing:0!important}
+.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
+@media (max-width:760px){.crumbs{margin:20px 0 24px}.crumbs li:last-child{display:none}}
+.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px);line-height:1.15;margin:0 0 20px}.article .lede{font-size:18px;margin:0 0 28px}
+.article h2{font:500 clamp(24px,3vw,32px)/1.25 var(--display);margin:48px 0 18px}.article h3{font:600 18px/1.4 var(--text);margin:28px 0 12px}
+.article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
+.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
+.count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:0}.more summary{cursor:pointer;padding:14px 0;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:0 0 14px;color:var(--muted)}
+.countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
+@media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
+.calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.calc label{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
+.calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn svg{width:18px;height:18px;flex:none;fill:currentColor}.appcard .btn{white-space:nowrap}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+#calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
+.tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
+.pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
+.appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
+.ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
+.meta{font-size:13px;color:var(--soft);margin:16px 0 0}.meta.meta-top{margin:-4px 0 14px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0 0}.hub a{text-decoration:none;border:1px solid var(--rule);border-radius:20px;padding:22px;display:block;transition:background .2s}.hub a:hover{background:var(--cream)}
+.hub b{display:block;font:500 22px/1.25 var(--display);letter-spacing:-.02em}.hub span{display:block;color:var(--muted);font-size:14.5px;margin-top:8px}.hub small{display:block;margin-top:12px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.inv{border:1.5px solid var(--ink);border-radius:16px;padding:32px;background:#fff;font-size:15px;color:var(--ink)}
+.inv [contenteditable]{outline:none;border-bottom:1px dashed #cfcac0;min-width:2ch}.inv [contenteditable]:focus{background:var(--cream)}
+.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-title{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties .k,.inv-meta .k{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv table{width:100%;border-collapse:collapse;margin:8px 0}.inv th{font:700 11px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--ink)}
+.inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
+.inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
+.inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.itin .days{display:grid;gap:14px;margin-top:18px}.itin .day{border-top:1.5px solid var(--ink);padding-top:10px;break-inside:avoid}.itin .day h3{margin:0 0 6px;font:600 17px/1.4 var(--text)}.itin .day h3 [contenteditable]{display:inline-block;min-width:8em}.itin .slot{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;border-bottom:1px solid var(--rule)}.itin .slot b{font:700 11px/1.9 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--soft)}
+.rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
+.check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
+html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv th{letter-spacing:.4px}.inv td,.inv th{padding:8px 4px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+.print-title{display:none}
+@media print{.print-title{display:block!important;font:600 22px/1.3 var(--display);margin:0 0 12px}.inv-wrap h3,#pack-out h3{break-after:avoid}header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+
+.mk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.mk [hidden],#mk-out[hidden]{display:none!important}
+.mk-form{display:grid;gap:14px;min-width:0}.mk-form label,.mk-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.mk-form input[type=text],.mk-form input[type=date],.mk-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.mk-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.mk-form input[type=range]{width:100%;accent-color:var(--ink)}
+.mk-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mk-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.mk-bg legend{margin:0 0 8px;padding:0}
+.mk-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.mk-bg input{accent-color:var(--ink);margin:0}
+.mk-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.mk-photo-ctl{display:grid;gap:12px}.mk-photo-ctl .btn{justify-self:start;padding:11px 16px}.mk-form .btn{justify-self:start}
+.mk-msg{margin:0;color:#a3341f;font-size:14px}.mk-btns{display:flex;flex-wrap:wrap;gap:10px}
+.mk-preview{margin:0}.mk-preview canvas{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink),0 10px 24px rgba(0,0,0,.08);background:#fff}
+#mk-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
+.mk-result{display:flex;gap:22px;align-items:flex-start}.mk-result img{width:180px;height:auto;flex:none;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink)}
+.mk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.mk-hint{font-size:14px;margin:0!important}
+.mk-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.mk-next p{margin:0 0 14px}
+#mk-sheet{display:none}
+@media print{html.mk-printing main,html.mk-printing header,html.mk-printing footer{display:none!important}html.mk-printing #mk-sheet{display:grid!important;grid-template-columns:1fr 1fr;gap:6mm}html.mk-printing #mk-sheet img{width:100%;height:auto;break-inside:avoid;page-break-inside:avoid}}
+@media (max-width:760px){.mk{grid-template-columns:minmax(0,1fr);padding:18px}.mk-preview{order:-1;width:min(100%,220px);margin:0 auto}.mk-result{flex-direction:column}.mk-result img{width:min(100%,220px)}#mk-out{padding:18px}.mk-two{grid-template-columns:1fr}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.">
+<link rel="canonical" href="https://beforego.art/tools/baby-milestone-cards/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Free Baby Milestone Cards: Make Your Own Online, With Photo">
+<meta property="og:description" content="Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.">
+<meta property="og:url" content="https://beforego.art/tools/baby-milestone-cards/">
+<meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Baby Milestone Cards: Make Your Own Online, With Photo">
+<meta name="twitter:description" content="Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.">
+<meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
+<link rel="alternate" hreflang="en" href="https://beforego.art/tools/baby-milestone-cards/">
+<link rel="alternate" hreflang="de" href="https://beforego.art/tools/de/meilensteinkarten-baby/">
+<link rel="alternate" hreflang="x-default" href="https://beforego.art/tools/baby-milestone-cards/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://beforego.art/tools/baby-milestone-cards/#page",
+  "url": "https://beforego.art/tools/baby-milestone-cards/",
+  "name": "Free Baby Milestone Cards: Make Your Own Online, With Photo",
+  "headline": "Free Baby Milestone Cards: Make Your Own Online, With Photo",
+  "description": "Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://beforego.art/#website"
+  },
+  "publisher": {
+    "@id": "https://beforego.art/#org"
+  },
+  "author": {
+    "@id": "https://beforego.art/#org"
+  },
+  "isAccessibleForFree": true,
+  "image": "https://beforego.art/assets/brand/og-home.png",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "about": {
+    "@id": "https://beforego.art/pagewren/#app"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://beforego.art/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://beforego.art/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Free Baby Milestone Cards: Make Your Own Online, With Photo",
+      "item": "https://beforego.art/tools/baby-milestone-cards/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://beforego.art/tools/baby-milestone-cards/#faq",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are these baby milestone cards free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There is no sign-up, no watermark and no limit on how many cards you make or print."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my baby’s photo uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your browser draws the card on this page, and the photo never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size are the cards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A saved card is 1080 × 1350 pixels (4:5), a shape that fits messages and Instagram posts. The printed set puts four cards on each page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I save the printable cards as a PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click Print all 13 monthly cards and choose Save as PDF as the printer. On a Mac, open the PDF menu in the print dialog and choose Save as PDF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which milestones can I make?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hello world for the birth, every month from 1 to 11, 1 year, and firsts: first smile, first tooth, first steps, first word, first solid food, slept through the night, first trip and first Christmas, or your own text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an app for a baby’s monthly photos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pagewren: Baby Memory Book is our iPhone app for it. Since version 1.1 each month gets one photo on its own chapter page, chapters go by age, and you can mark milestones like First Smile or add your own. The Classic theme and three page backgrounds are free, with no ads."
+      }
+    }
+  ]
+}
+</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
+<meta name="gk-analytics" content="{&quot;page_type&quot;:&quot;tool&quot;,&quot;page_app&quot;:&quot;pagewren&quot;,&quot;apps&quot;:{&quot;6786561175&quot;:&quot;beforego&quot;,&quot;6799846628&quot;:&quot;countdown&quot;,&quot;6790383156&quot;:&quot;invoiceqr&quot;,&quot;6798095407&quot;:&quot;dailycalorie&quot;,&quot;6799589471&quot;:&quot;qrcodestudio&quot;,&quot;6796596826&quot;:&quot;citu&quot;,&quot;6803828068&quot;:&quot;repdex&quot;,&quot;6823661619&quot;:&quot;pagewren&quot;}}">
+<script defer src="/assets/analytics/firebase-web-v1.js"></script>
+<!-- seo:end -->
+<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">All apps</a>
+    <a href="/tools/">Tools</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com">Support</a>
+  </nav>
+  <!-- lang:start -->
+  <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="English"><span>EN</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/tools/baby-milestone-cards/" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="/tools/de/meilensteinkarten-baby/" hreflang="de" lang="de">Deutsch</a></li></ul></details><a class="header-download" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-header&amp;mt=8" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
+</header>
+<main class="wrap">
+<ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/tools/">Tools</a></li><li>Baby milestone cards</li></ol>
+<article class="article">
+<h1>Free baby milestone cards, made online</h1>
+<p class="lede">Pick a milestone, add your baby’s name, the date and a photo if you like, and save the card as an image to send to family. Or print all 13 monthly cards at once. Free, no sign-up, no watermark, and your photo never leaves this page.</p>
+<div class="mk">
+<form class="mk-form" id="milestone">
+<label>Milestone<select name="key"><option value="birth">Hello world (birth)</option><optgroup label="Months"><option value="m1">1 month</option><option value="m2">2 months</option><option value="m3">3 months</option><option value="m4">4 months</option><option value="m5">5 months</option><option value="m6">6 months</option><option value="m7">7 months</option><option value="m8">8 months</option><option value="m9">9 months</option><option value="m10">10 months</option><option value="m11">11 months</option><option value="y1">1 year</option></optgroup><optgroup label="First moments"><option value="smile">First smile</option><option value="tooth">First tooth</option><option value="steps">First steps</option><option value="word">First word</option><option value="food">First solid food</option><option value="night">Slept through the night</option><option value="trip">First trip</option><option value="xmas">First Christmas</option><option value="own">Your own text…</option></optgroup></select></label>
+<label id="mk-own" hidden>Your own text<input type="text" name="own" maxlength="40" placeholder="First swim" autocomplete="off"></label>
+<div class="mk-two"><label>Baby’s name<input type="text" name="name" maxlength="30" placeholder="Emma" autocomplete="off"></label><label>Date<input type="date" name="date"></label></div>
+<label>Note (optional)<input type="text" name="note" maxlength="40" placeholder="24 in · 13 lb" autocomplete="off"></label>
+<label>Photo (optional)<input type="file" name="photo" accept="image/*"></label>
+<p class="mk-msg" id="mk-msg" role="alert" hidden></p>
+<div class="mk-photo-ctl" id="mk-photo-ctl" hidden><label>Photo position<input type="range" name="pos" min="0" max="100" value="50"></label><button type="button" class="btn ghost" id="mk-clear" data-track-id="mk-photo-remove">Remove photo</button></div>
+<fieldset class="mk-bg" id="mk-bgset"><legend>Background</legend><label><input type="radio" name="bg" value="cream" checked><i style="background:#fffaf0"></i>Cream</label><label><input type="radio" name="bg" value="sage"><i style="background:#e3ebdf"></i>Sage</label><label><input type="radio" name="bg" value="rose"><i style="background:#f7e3e0"></i>Rose</label><label><input type="radio" name="bg" value="sky"><i style="background:#e1ebf5"></i>Sky</label><label><input type="radio" name="bg" value="ink"><i style="background:#1d1d1d"></i>Ink</label></fieldset>
+<div class="mk-btns"><button type="submit" class="btn" data-track-id="mk-make">Make my card</button><button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print">Print all 13 monthly cards</button></div>
+</form>
+<figure class="mk-preview"><canvas id="mk-canvas" width="540" height="675" aria-label="Your milestone card"></canvas><figcaption class="meta" style="text-align:center">Preview. The saved card is 1080 × 1350 pixels.</figcaption></figure>
+</div>
+<div id="mk-out" hidden aria-live="polite" data-track-section="milestone-result">
+<div class="mk-result"><img id="mk-img" alt="Your milestone card" width="180" height="225"><div>
+<p class="mk-actions"><button class="btn" id="mk-save" type="button" data-track-id="mk-download">Save card</button></p>
+<p class="mk-hint">On iPhone, tap Save card and then Save Image, or touch and hold the card and tap Save to Photos. On a computer the card downloads as a JPEG.</p>
+</div></div>
+<div class="mk-next" data-track-section="milestone-next"><p><strong>One card a month adds up.</strong> In Pagewren, each month’s photo sits on its own chapter page, so the first year turns into a book you can flip through.</p>
+<a class="btn" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-milestone&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Get Pagewren for iPhone</a></div>
+</div>
+<h2>Month photos that look good together</h2>
+<ul><li><strong>Same place, same time of day.</strong> A blanket on the floor by the same window makes twelve photos look like one set.</li>
+<li><strong>Daylight, no flash.</strong> Soft window light is kinder to a baby’s skin and eyes than the flash.</li>
+<li><strong>Card next to the baby, not on top.</strong> Shoot from above so the card and the baby are both flat and sharp.</li>
+<li><strong>One thing that stays.</strong> The same soft toy in every photo shows how fast they grow.</li></ul>
+<h2>Print the whole set</h2>
+<p><strong>Print all 13 monthly cards</strong> puts Hello world, 1 to 11 months and 1 year on your paper, four cards to a page. To keep a file, choose <strong>Save as PDF</strong> as the printer (on a Mac, open the PDF menu in the print dialog and choose Save as PDF). Heavier paper or card stock holds up better next to a blanket. The printed set uses the name and background you picked; the photo stays only on the card you save.</p>
+<h2>From cards to a baby memory book</h2>
+<p><a href="/pagewren/">Pagewren: Baby Memory Book</a> is our iPhone app for exactly this. Since version 1.1 each month gets one photo right on its chapter page, and the chapters go by age: Newborn, 1 Month, 2 Months and beyond. You mark milestones like First Smile and First Steps, or add your own, share any page as an image with family and export the book as a PDF. The Classic theme and three page backgrounds are free for everyone; Pagewren Pro adds the Linen and Scrapbook themes, every page background, iCloud Sync and Privacy Lock. No ads, no social feed, and your photos and words stay on your iPhone, and in your own iCloud if you turn on sync.</p>
+<p class="meta">Published 2026-10-25 · Updated 2026-10-25 · go ka</p>
+</article>
+<section class="sec" id="faq-section"><h2 id="faq">Questions people ask</h2><div class="grid">
+    <div class="card"><h3>Are these baby milestone cards free?</h3><p>Yes. There is no sign-up, no watermark and no limit on how many cards you make or print.</p></div>
+    <div class="card"><h3>Is my baby’s photo uploaded anywhere?</h3><p>No. Your browser draws the card on this page, and the photo never leaves your device.</p></div>
+    <div class="card"><h3>What size are the cards?</h3><p>A saved card is 1080 × 1350 pixels (4:5), a shape that fits messages and Instagram posts. The printed set puts four cards on each page.</p></div>
+    <div class="card"><h3>How do I save the printable cards as a PDF?</h3><p>Click Print all 13 monthly cards and choose Save as PDF as the printer. On a Mac, open the PDF menu in the print dialog and choose Save as PDF.</p></div>
+    <div class="card"><h3>Which milestones can I make?</h3><p>Hello world for the birth, every month from 1 to 11, 1 year, and firsts: first smile, first tooth, first steps, first word, first solid food, slept through the night, first trip and first Christmas, or your own text.</p></div>
+    <div class="card"><h3>Is there an app for a baby’s monthly photos?</h3><p>Pagewren: Baby Memory Book is our iPhone app for it. Since version 1.1 each month gets one photo on its own chapter page, chapters go by age, and you can mark milestones like First Smile or add your own. The Classic theme and three page backgrounds are free, with no ads.</p></div>
+</div></section>
+<section class="sec more"><h2>More questions</h2><details><summary>Where can I get free printable baby milestone cards as a PDF?</summary><p>On this page: click Print all 13 monthly cards and save them as a PDF from the print dialog.</p></details><details><summary>Can I make milestone cards with my own photo?</summary><p>Yes. Add a photo and the card puts it in a frame above the milestone, name and date. Drag the Photo position slider to choose the part that shows.</p></details><details><summary>What are good ideas for baby monthly photos?</summary><p>Keep the place, the light and one toy the same every month, and lay the card next to the baby. The tips above go through each one.</p></details></section>
+<aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/02/59/f8/0259f85a-9427-3865-cb73-79f17eac554b/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">Do this on your iPhone</p><b>Pagewren: Baby Memory Book</b><p>Pagewren turns your baby&#x27;s everyday moments into a beautiful memory book, one page at a time. Add a photo or a single sentence, and Pagewren lays out the page for you. No design skills, no daily streaks.</p><a class="btn" href="https://apps.apple.com/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Download on the App Store</a> &nbsp; <a href="/pagewren/" style="font-size:14px">Pagewren →</a></div></aside>
+<p class="ask">Ask an AI about this page: <a href="https://chatgpt.com/?q=Read%20https%3A//beforego.art/tools/baby-milestone-cards/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=Read%20https%3A//beforego.art/tools/baby-milestone-cards/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=Read%20https%3A//beforego.art/tools/baby-milestone-cards/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Claude</a></p>
+<div style="height:48px"></div>
+</main>
+<!-- sitefooter:start -->
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+        <a class="gk-foot-brand" href="/"><svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/><path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+        <p class="gk-foot-tag">Small apps. Everyday things.</p>
+        <ul class="gk-foot-social" aria-label="Follow go ka"><li><a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank" aria-label="TikTok" title="TikTok"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#tiktok"/></svg></a></li><li><a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank" aria-label="Instagram" title="Instagram"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#instagram"/></svg></a></li><li><a href="https://x.com/dyljqq21" rel="me noopener" target="_blank" aria-label="X" title="X"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#x"/></svg></a></li><li><a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank" aria-label="Reddit" title="Reddit"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#reddit"/></svg></a></li><li><a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank" aria-label="RedNote (小红书)" title="RedNote (小红书)"><svg width="40" height="15" aria-hidden="true"><use href="/assets/social.svg#xhs"/></svg></a></li></ul>
+      </div>
+      <div class="gk-foot-cols">
+        <div class="gk-foot-col gk-foot-col-site">
+          <h2>go ka</h2>
+          <ul><li><a href="/about/">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/tools/">Free tools &amp; guides</a></li><li><a href="/#contact">Contact</a></li></ul>
+        </div>
+        <div class="gk-foot-col">
+          <h2>Apps</h2>
+          <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="/pagewren/">Pagewren</a><a href="/pagewren/privacy-policy/">Privacy</a><a href="/pagewren/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/countdown/">Countdown</a><a href="/countdown/privacy-policy/">Privacy</a><a href="/countdown/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/beforego/">BeforeGo</a><a href="/privacy-policy/">Privacy</a><a href="/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/invoiceqr/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/">Privacy</a><a href="/invoiceqr/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/dailycalorie/">DailyCalorie</a><a href="/dailycalorie/privacy-policy/">Privacy</a><a href="/dailycalorie/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/qrcodestudio/">QR Studio</a><a href="/qrcodestudio/privacy-policy/">Privacy</a><a href="/qrcodestudio/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-footer&mt=8">Word Beast</a><a href="/citu/privacy-policy/" hreflang="zh-CN">Privacy</a><a href="/citu/terms-of-use/" hreflang="zh-CN">Terms</a></li>
+          <li><a class="gk-foot-app" href="/repdex/">Repdex</a><a href="/repdex/privacy-policy/">Privacy</a><a href="/repdex/terms-of-use/">Terms</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© 2026 go ka</p>
+      <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
+  </div>
+</footer>
+<!-- sitefooter:end -->
+<script>
+(function(){var f=document.getElementById('milestone');if(!f)return;
+var DE=/^de/.test(document.documentElement.lang);
+var T=DE?{m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
+F:{smile:'Erstes Lächeln',tooth:'Erster Zahn',steps:'Erste Schritte',word:'Erstes Wort',food:'Erster Brei',night:'Durchgeschlafen',trip:'Erster Urlaub',xmas:'Erstes Weihnachten'}}
+:{m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
+F:{smile:'First smile',tooth:'First tooth',steps:'First steps',word:'First word',food:'First solid food',night:'Slept through the night',trip:'First trip',xmas:'First Christmas'}};
+var BG={cream:['#fffaf0','#141414','#e2cfa6'],sage:['#e3ebdf','#253528','#a9c0a2'],rose:['#f7e3e0','#46282a','#e1aea8'],sky:['#e1ebf5','#1f2f45','#a8c1de'],ink:['#1d1d1d','#fffaf0','#4a4a4a']};
+var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
+var cv=document.getElementById('mk-canvas'),out=document.getElementById('mk-out'),pic=document.getElementById('mk-img'),ctl=document.getElementById('mk-photo-ctl'),bgset=document.getElementById('mk-bgset'),msg=document.getElementById('mk-msg'),own=document.getElementById('mk-own');
+var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+function E(n){return f.elements[n]}
+function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
+function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
+function fmt(d){return d?d.toLocaleDateString(T.loc,{day:'numeric',month:'long',year:'numeric'}):''}
+function opts(k){var d=parse(E('date').value);return{key:k||E('key').value,own:(E('own').value||'').trim().slice(0,40),name:(E('name').value||'').trim().slice(0,30),date:k?null:d,note:k?'':(E('note').value||'').trim().slice(0,40),img:k?null:img,bg:bgKey()}}
+function head(o){var k=o.key,m=/^m(\d+)$/.exec(k);if(m)return{num:m[1],unit:(+m[1]===1?T.m[0]:T.m[1]).toUpperCase()};if(k==='y1')return{num:'1',unit:T.y[0].toUpperCase()};
+if(k==='birth')return{title:T.hello};if(k==='own')return{title:o.own||'…'};return{title:T.F[k]||k}}
+function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
+if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
+function star(x,cx,cy,r){x.beginPath();for(var i=0;i<8;i++){var a=i*Math.PI/4,rr=i%2?r*.32:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.fill()}
+function draw(c,W,H,o){c.width=W;c.height=H;var x=c.getContext('2d'),C=BG[o.bg],u=W/1080,ph=o.img?Math.round(H*.6):0,pad=Math.round(56*u);
+x.fillStyle=C[0];x.fillRect(0,0,W,H);
+if(o.img){var bw=W-2*pad,s=Math.max(bw/o.img.naturalWidth,ph/o.img.naturalHeight),dw=o.img.naturalWidth*s,dh=o.img.naturalHeight*s,p=+E('pos').value/100;
+x.save();x.beginPath();x.rect(pad,pad,bw,ph);x.clip();x.drawImage(o.img,dw>bw+1?pad+(bw-dw)*p:pad+(bw-dw)/2,dh>ph+1?pad+(ph-dh)*p:pad+(ph-dh)/2,dw,dh);x.restore()}
+else{x.strokeStyle=C[2];x.lineWidth=5*u;x.strokeRect(34*u,34*u,W-68*u,H-68*u);x.fillStyle=C[2];star(x,110*u,120*u,34*u);star(x,W-120*u,H-130*u,40*u);star(x,W-170*u,150*u,18*u);star(x,150*u,H-180*u,20*u)}
+x.fillStyle=C[1];x.textAlign='center';x.textBaseline='alphabetic';
+var h=head(o),top=o.img?pad+ph:0,area=H-top-(o.img?pad*.4:0),sc=o.img?.55:1,s2=o.img?.82:1,rows=[],maxW=W-(o.img?2*pad+40*u:220*u);
+if(h.num){var big=330*sc*u;x.font='600 '+Math.round(big)+'px '+DISP;rows.push([h.num,x.font,big*.72,0]);rows.push([h.unit,'700 '+Math.round(54*s2*u)+'px '+TXT,46*s2*u,28*sc*u,1])}
+else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=wrap(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=wrap(x,h.title,maxW,3)}
+tl.forEach(function(l,i){rows.push([l,x.font,tz*.74,i?tz*.28:0])})}
+var sub=o.key==='birth'&&o.date?T.born+fmt(o.date):(o.date?fmt(o.date):'');
+if(o.name)rows.push([o.name,'700 '+Math.round(72*s2*u)+'px '+TXT,60*s2*u,(h.num?44:52)*sc*u]);
+if(sub)rows.push([sub,'500 '+Math.round(46*s2*u)+'px '+TXT,37*s2*u,(o.name?22:44)*s2*u]);
+if(o.note)rows.push([o.note,'500 '+Math.round(40*s2*u)+'px '+TXT,32*s2*u,18*s2*u]);
+var tot=0;rows.forEach(function(r){tot+=r[2]+r[3]});var y=top+(area-tot)/2;
+rows.forEach(function(r){y+=r[3]+r[2];x.font=r[1];var ls=r[4]&&'letterSpacing' in x;if(ls)x.letterSpacing=Math.round(10*sc*u)+'px';x.fillText(r[0],W/2,y);if(ls)x.letterSpacing='0px'})}
+function preview(){pending=false;draw(cv,540,675,opts())}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true;own.hidden=E('key').value!=='own'}
+f.addEventListener('input',redraw);f.addEventListener('change',redraw);
+E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;ctl.hidden=false;bgset.hidden=true;redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent=T.bad;msg.hidden=false};im.src=src});
+document.getElementById('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';ctl.hidden=true;bgset.hidden=false;redraw()});
+f.addEventListener('submit',function(e){e.preventDefault();var c=document.createElement('canvas');draw(c,1080,1350,opts());
+c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.hidden=false;out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
+document.getElementById('mk-save').addEventListener('click',function(){if(!blob)return;var name=T.file+'-'+E('key').value+'.jpg',file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+var a=document.createElement('a');a.href=url;a.download=name;a.click()});
+document.getElementById('mk-print').addEventListener('click',function(){var sheet=document.getElementById('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
+sheet.textContent='';var keys=['birth','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','y1'],loads=[];
+keys.forEach(function(k){var c=document.createElement('canvas');draw(c,900,1125,opts(k));var im=new Image();im.alt='';im.src=c.toDataURL('image/jpeg',.9);sheet.appendChild(im);if(im.decode)loads.push(im.decode().catch(function(){}))});
+document.documentElement.classList.add('mk-printing');Promise.all(loads).then(function(){window.print()})});
+window.addEventListener('afterprint',function(){document.documentElement.classList.remove('mk-printing')});
+var t=new Date();E('date').value=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);
+preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
+</script>
+</body>
+</html>

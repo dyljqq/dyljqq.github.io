@@ -64,6 +64,22 @@
 
 漏斗（同一会话、按时间顺序）：`page_view` → `form_submit(wallpaper)` → `button_click(wp-download)` → `app_store_click(web-countdown-wallpaper)`。下载量以 App Store Connect 的活动 `web-countdown-wallpaper` 为准。
 
+## 工具专项：Pagewren 里程碑卡片（2026-10-25 起）
+
+页面 `/tools/de/meilensteinkarten-baby/`（德）与 `/tools/baby-milestone-cards/`（英），同一套脚本。起因：10-24 有德国访客从 chatgpt.com 进 `/pagewren/de/` 点了商店按钮，当天 Pagewren 有 1 个德国首次打开。
+
+| 步骤 | 事件与筛选 |
+| --- | --- |
+| 落地 | `page_view`，按 `page_path` 分德 / 英 |
+| 开始填 | `form_start`，`form_id=milestone` |
+| 选里程碑 / 加照片 | `control_change`，`section=milestone`（`control_type=select-one` / `file`）|
+| 生成 | `form_submit`，`form_id=milestone`（按钮 `mk-make`）|
+| 保存卡片 | `button_click`，`control_id=mk-download`，`section=milestone-result` |
+| 打印 13 张 | `button_click`，`control_id=mk-print` |
+| 去商店 | `app_store_impression` / `app_store_click`，`section=milestone-next`，`store_campaign=web-pagewren-milestone` |
+
+漏斗：`page_view` → `form_submit(milestone)` → `mk-download` 或 `mk-print` → `app_store_click(web-pagewren-milestone)`。下载以 ASC 活动 `web-pagewren-milestone` 为准；Pagewren App 的 GA4 资源是 559322873。
+
 ## 各工具的固定控件 ID（2026-10-25 补齐）
 
 页面一改，没有 `id` / `data-track-id` 的按钮会退回「标签名 + DOM 序号」（如 `button_3`），前后版本对不上。10-25 全站审计后补齐，`lastmod` / IndexNow 比较时会忽略 `data-track-*` 属性，只补埋点不刷修改日期。
@@ -76,6 +92,7 @@
 | 单据模板（报价单、收据、发票、Angebot 等 contenteditable 页） | 打印 / 存 PDF、加一行 | `print`、`addrow`；英文发票表单 `print-invoice`、`add-invoice-item`、`inv-remove-item` |
 | 泰语报价单 / 收据 | 切换单据类型 | `th-doc-quote` / `th-doc-receipt` |
 | 倒数壁纸生成器 | 见上节 | `wp-*` |
+| Pagewren 里程碑卡片 | 见上节 | `mk-*` |
 | 产品页预览视频 | 播放 | `video-play` |
 
 已知盲区：contenteditable 单据页里的打字没有 `change` 事件，网页只知道打开了页面和点了打印，不知道用户填了多少；要量「开始填写」得给跟踪器加接口（换 `firebase-web-v2.js` 文件名、全站重建），这次没做。

@@ -616,6 +616,8 @@ HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grát
 TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/", "ja": "/tools/ja/ato-nannichi/"},
               # 10-17：通用发票模板，英 / 德同一主题
               {"en": "/tools/invoice-template/", "de": "/tools/de/rechnungsvorlage/"},
+              # 10-25：Pagewren 里程碑卡片，英 / 德同一个工具
+              {"en": "/tools/baby-milestone-cards/", "de": "/tools/de/meilensteinkarten-baby/"},
               # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
               {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"},
               # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题

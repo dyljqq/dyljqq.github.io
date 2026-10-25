@@ -254,6 +254,14 @@ Ahrefs：外链 33 条里 31 条是 SPAM 自动站，真实第三方外链 0；�
 - ⚠ App Store 上 8 个 App 的开发者名（artistName / sellerName）是「可 吴」，不是 go ka——site.json `brandNote` 那句写错了；About 只写「同一个开发者账号」，没写真名（要不要写由用户定）。
 - 回看（11-08）：壁纸页的 `form_submit(wallpaper)` / `wp-download` / `app_store_click(web-countdown-wallpaper)` 漏斗；ASC 活动 `web-countdown-wallpaper` 下载；合并后的假期页、报价单页收录状态；Google 曝光是否恢复。
 
+## 10-25 晚：Pagewren 里程碑卡片（用户「开始补充 pagewren 的内容，昨天真的有德国的用户通过我们网站进行下载」）
+
+- 证据：GA4 网站资源 10-24 08:07 德国访客 `sessionSource=chatgpt.com` 落 `/pagewren/de/`，同分钟 `app_store_click`（web-pagewren-app）；Pagewren App 同日 1 个德国 first_open。
+- 新页 `/tools/de/meilensteinkarten-baby/` + `/tools/baby-milestone-cards/`（互为 hreflang）：选里程碑、名字、日期、备注、可选照片 → 1080×1350 卡片；「打印 13 张」出 Hallo Welt / 1–11 Monate / 1 Jahr 打印套装。`ct=web-pagewren-milestone`。
+- Pagewren 商店缓存 1.0 → 1.1（pt-BR 商店仍是 1.0），产品页随之更新；1.1 的「Monatsfotos / Month photos」是这两页的交接点。
+- 未同步：Countdown 1.4.24、InvoiceQR 1.1.25、BeforeGo 1.2.9（描述有变）的商店缓存，下次单独一轮。
+- 回看（11-08）：两页漏斗与 ASC `web-pagewren-milestone`；ChatGPT 引荐到 /pagewren/* 的次数。
+
 ## 持续基建（穿插在各版本里）
 
 | 项 | 做什么 | 时机 |
