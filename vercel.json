@@ -26,6 +26,91 @@
   ],
   "redirects": [
     {
+      "source": "/pagewren/",
+      "destination": "https://pagewrenbaby.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/de/",
+      "destination": "https://pagewrenbaby.com/de/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/fr/",
+      "destination": "https://pagewrenbaby.com/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/it/",
+      "destination": "https://pagewrenbaby.com/it/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/es/",
+      "destination": "https://pagewrenbaby.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/es-mx/",
+      "destination": "https://pagewrenbaby.com/es-mx/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/pt-br/",
+      "destination": "https://pagewrenbaby.com/pt-br/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/ja/",
+      "destination": "https://pagewrenbaby.com/ja/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/ko/",
+      "destination": "https://pagewrenbaby.com/ko/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/zh-hans/",
+      "destination": "https://pagewrenbaby.com/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/zh-hant/",
+      "destination": "https://pagewrenbaby.com/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/th/",
+      "destination": "https://pagewrenbaby.com/th/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/privacy-policy/",
+      "destination": "https://pagewrenbaby.com/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/terms-of-use/",
+      "destination": "https://pagewrenbaby.com/terms-of-use/",
+      "permanent": true
+    },
+    {
+      "source": "/pagewren/support/",
+      "destination": "https://pagewrenbaby.com/support/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/baby-milestone-cards/",
+      "destination": "https://pagewrenbaby.com/baby-milestone-cards/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/de/meilensteinkarten-baby/",
+      "destination": "https://pagewrenbaby.com/de/meilensteinkarten-baby/",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {

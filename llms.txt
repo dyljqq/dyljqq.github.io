@@ -143,18 +143,8 @@ A gym workout log for iPhone.
 
 A baby memory book for iPhone where every photo and note becomes a page.
 
-- Page: https://beforego.art/pagewren/
-- Page (de): https://beforego.art/pagewren/de/
-- Page (fr): https://beforego.art/pagewren/fr/
-- Page (it): https://beforego.art/pagewren/it/
-- Page (es): https://beforego.art/pagewren/es/
-- Page (es-MX): https://beforego.art/pagewren/es-mx/
-- Page (pt-BR): https://beforego.art/pagewren/pt-br/
-- Page (ja): https://beforego.art/pagewren/ja/
-- Page (ko): https://beforego.art/pagewren/ko/
-- Page (zh-Hans): https://beforego.art/pagewren/zh-hans/
-- Page (zh-Hant): https://beforego.art/pagewren/zh-hant/
-- Page (th): https://beforego.art/pagewren/th/
+- Website: https://pagewrenbaby.com/
+- Support: https://pagewrenbaby.com/support/
 - App Store: https://apps.apple.com/app/id6823661619
 - Platform: iOS (iPhone)
 - Category: Lifestyle
@@ -220,8 +210,6 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [Angebotsvorlage](https://beforego.art/tools/de/angebot-vorlage/) — Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.
 - [Rechnung schreiben mit dem iPhone](https://beforego.art/tools/de/rechnung-schreiben-app-iphone/) — So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.
 - [Free online countdown wallpaper maker](https://beforego.art/tools/countdown-wallpaper-maker/) — Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.
-- [Free baby milestone card maker](https://beforego.art/tools/baby-milestone-cards/) — Make free baby milestone cards online: month, name, date and your own photo, saved as an image, or all 13 monthly cards ready to print. No sign-up.
-- [Meilensteinkarten kostenlos gestalten](https://beforego.art/tools/de/meilensteinkarten-baby/) — Meilensteinkarten fürs Baby kostenlos online gestalten: Monat, Name, Datum und eigenes Foto als Bild speichern oder alle 13 Karten ausdrucken. Ohne Anmeldung.
 - [How to Put a Countdown on Your iPhone Lock Screen (iOS 27)](https://beforego.art/blog/countdown-widget-iphone-home-lock-screen/) — How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.
 - [Count Down to a Birthday, Exam or Trip on iPhone](https://beforego.art/blog/count-down-birthday-exam-trip-iphone/) — How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.
 - [Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice](https://beforego.art/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/) — Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.
@@ -263,7 +251,7 @@ Countdown, BeforeGo, Invoice Maker, DailyCalorie, Word Beast and Pagewren are av
 
 ### How do I get help with one of the apps?
 
-Email qinqiangji@gmail.com and say which app it is about. Every message is read. Each app also has its own page on this site with its privacy policy and terms.
+Email qinqiangji@gmail.com and say which app it is about. Every message is read. Each app also has its own page with its privacy policy and terms.
 
 ## Notes
 

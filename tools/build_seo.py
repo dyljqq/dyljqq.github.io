@@ -283,7 +283,10 @@ def build_llms():
         out.append("")
         out.append(a["oneLiner"])
         out.append("")
-        if a.get("noPage"):          # 没有产品页（Pagewren）：给支持页，别写 404 的 Page
+        if a.get("site"):            # 有独立站（10-25 Pagewren → pagewrenbaby.com）
+            out.append(f"- Website: {bp.site_url(a)}")
+            out += [f"- Support: {h}" for h, _ in a.get("legal", []) if "/support/" in h]
+        elif a.get("noPage"):        # 没有产品页：给支持页，别写 404 的 Page
             out += [f"- Support: {ORIGIN}{h}" for h, _ in a.get("legal", []) if "/support/" in h]
         else:
             out.append(f"- Page: {ORIGIN}{a['path']}")
@@ -336,8 +339,8 @@ def software_jsonld(app, kind="product"):
         d["downloadUrl"] = su
         d["installUrl"] = su
         d["sameAs"] = [su]
-        if app.get("noPage"):            # 没有产品页（Pagewren）：url 别指 404 的 /pagewren/，指商店（10-20 评审）
-            d["url"] = su
+        if app.get("noPage"):            # 没有产品页：url 别指 404 的 /pagewren/——有独立站指独立站，否则指商店（10-20 评审）
+            d["url"] = bp.site_url(app) if app.get("site") else su
     if app.get("icon"):
         d["image"] = asset(app["icon"])
     # 生成页：截图和预览视频来自商店缓存 / assets/<key>/preview（与页面上展示的一致）
@@ -616,8 +619,6 @@ HUB_LABEL = {"en": "Free tools & guides in English", "pt-BR": "Ferramentas grát
 TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-faltam/", "ja": "/tools/ja/ato-nannichi/"},
               # 10-17：通用发票模板，英 / 德同一主题
               {"en": "/tools/invoice-template/", "de": "/tools/de/rechnungsvorlage/"},
-              # 10-25：Pagewren 里程碑卡片，英 / 德同一个工具
-              {"en": "/tools/baby-milestone-cards/", "de": "/tools/de/meilensteinkarten-baby/"},
               # 榜单两版选的 app 不同（各按本国商店评分），主题相同，互为语言版本
               {"en": "/tools/best-countdown-widget-apps-iphone/", "pt-BR": "/tools/pt-br/melhores-apps-contagem-regressiva/"},
               # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题
@@ -670,10 +671,11 @@ def home_head(lang="en"):
         # 以前名字不一致就不挂 @id，结果这些条目被 Ahrefs 当成独立的 SoftwareApplication 按 Google「软件应用」
         # 富结果校验，报缺 aggregateRating（2026-10-07 首轮体检 12 个语言首页全中；Google 自己的测试只当选填）。
         target = bp.sibling_path(a, lang)
+        ext = bp.site_url(a, lang) if a.get("site") else None     # 独立站的 app：@id / url 用新站那一页
         item = {"@type": "SoftwareApplication",
-                "@id": f"{ORIGIN}{target}#app",
+                "@id": f"{ext}#app" if ext else f"{ORIGIN}{target}#app",
                 "name": c["name"], "alternateName": a["home"]["label"],
-                "url": su if a.get("noPage") and su else f"{ORIGIN}{target}", "description": c["blurb"],
+                "url": ext or (su if a.get("noPage") and su else f"{ORIGIN}{target}"), "description": c["blurb"],
                 "applicationCategory": a["category"],
                 "operatingSystem": f"iOS {a.get('minOS', '17.0')} or later",
                 "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},

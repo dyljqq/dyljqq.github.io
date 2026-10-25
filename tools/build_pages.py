@@ -85,9 +85,16 @@ def icon_of(app, w=128):
             return ""
     return cdn(u, w)
 
+SITE_LANGS = {"en", "de", "fr", "it", "es", "es-MX", "pt-BR", "ja", "ko", "zh-Hans", "zh-Hant", "th"}
+def site_url(app, lang="en"):
+    """独立站（site.json 的 site）上的同语言页；新站没有的语言（en-GB 等）落到英文首页。"""
+    return app["site"].rstrip("/") + ("/" if lang not in SITE_LANGS or lang == "en" else f"/{lang.lower()}/")
+
 def page_for(app, lang, where="more"):
     """站内对应语言的页面；页面只有中文（单词兽）而读者不是中文时，直接去商店，别把人送到看不懂的页面。"""
     page_lang = app.get("lang") or "en"
+    if app.get("site"):     # 10-25 Pagewren 搬到独立站：去新站的同语言页（新站 12 语，路径 /de/、/pt-br/…，英语是根目录）
+        return site_url(app, lang)
     # noPage（10-20 Pagewren）：站内只有隐私 / 条款 / 支持页、没有产品页，卡片和页脚直接去商店，别链到 404 的 /pagewren/
     if app.get("noPage") or (page_lang.startswith("zh") and not lang.startswith("zh")):
         return f"https://apps.apple.com/app/apple-store/id{app['appId']}?pt={PT}&ct=web-{app['key']}-{where}&mt=8"
