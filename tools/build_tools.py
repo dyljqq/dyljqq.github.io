@@ -285,7 +285,9 @@ def shell(pg, body):
     if pg.get("app") == "countdown" and lang in TOP_CTA and '<p class="count-sub">' in body:
         body = re.sub(r'(<p class="count-sub">.*?</p>)', lambda m: m.group(1) + top_cta("countdown", lang), body, count=1, flags=re.S)
     hub, home = HUBS.get(lang, "/tools/"), HOMES.get(lang, "/")
-    if pg["path"].startswith("/blog/"):
+    if pg.get("crumbs"):   # 不在 /tools/ 和 /blog/ 下的页（/about/）自带面包屑
+        crumbs = pg["crumbs"]
+    elif pg["path"].startswith("/blog/"):
         crumbs = [(ts(lang, "home"), "/"), ("Blog", "/blog/" if pg["path"] != "/blog/" else None)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
     else:
         crumbs = [(ts(lang, "home"), home), (ts(lang, "tools"), hub)] + ([(pg["crumb"], None)] if pg.get("crumb") else [])
@@ -521,6 +523,7 @@ PAGES.append({"path": "/tools/christmas-countdown-widget-iphone/", "iphone_only"
 <tr><th>Work</th><td>Make a new image each day</td><td>Set the date once</td></tr>
 <tr><th style="white-space:nowrap">Where</th><td>Behind everything</td><td>Under the Lock Screen clock, or anywhere on the Home Screen</td></tr>
 </tbody></table>
+<p>Prefer the number on a picture? The <a href="/tools/countdown-wallpaper-maker/">countdown wallpaper maker</a> puts it on your own photo; make a new one when you want a fresh count. For a number that stays current, use the widget with a plain photo behind it.</p>
 <h2>Christmas setups that work well</h2>
 <ul><li><strong>One big number:</strong> a single countdown to Christmas Day on the Lock Screen, set to repeat yearly so it is back on December 26.</li>
 <li><strong>The whole season in a list:</strong> the first Sunday of Advent ({fmt_us(ADVENT1)}), Christmas Eve ({fmt_us(XEVE)}), Christmas Day and New Year's Eve, shown together in the list widget.</li>
@@ -907,7 +910,7 @@ SCENES = [
   "hub_title": "Quantos dias faltam para as férias?", "hub_desc": "Fim das aulas de 2026 em SP, MG, PR, RS e PE, com os dias que faltam hoje — e um contador com dias úteis para as suas férias.",
   "more": [
     ("Quantos dias faltam para as férias de dezembro?", "Nas redes da tabela acima, as aulas de 2026 terminam entre 18 e 23 de dezembro, e a tabela mostra quantos dias faltam em cada uma. Para as férias do trabalho, use o contador com a data combinada com a empresa."),
-    ("Quantos dias faltam para as férias de julho?", "O recesso de julho de 2026 já passou: foi de 7 a 23 de julho na rede estadual de São Paulo, de 20 a 31 de julho em Minas Gerais, de 10 a 26 de julho em Pernambuco e de 27 de julho a 2 de agosto no Rio Grande do Sul. Para julho de 2027, digite no contador a data do calendário de 2027 da sua rede."),
+    ("Quantos dias faltam para as férias de julho?", "O recesso de julho de 2026 já passou: foi de 7 a 23 de julho na rede estadual de São Paulo, de 20 a 31 de julho em Minas Gerais, de 13 a 22 de julho no Paraná, de 10 a 26 de julho em Pernambuco e de 27 de julho a 2 de agosto no Rio Grande do Sul. Para julho de 2027, digite no contador a data do calendário de 2027 da sua rede."),
     ("Quantas semanas faltam para as férias?", "A contagem no alto da página mostra também as semanas e os dias que faltam para 18 de dezembro. No contador, o resultado vem em dias, em dias úteis e em semanas."),
     ("Como colocar a contagem regressiva das férias na tela de bloqueio?", "No iPhone, crie o evento “Férias” no Countdown: Contagem regressiva com a data do último dia de aula ou do primeiro dia de férias e, na Tela Bloqueada, toque e segure → Personalizar → Tela Bloqueada → Adicionar widgets → Countdown. O widget é grátis e o número diminui sozinho todo dia."),
     ("Quantos dias faltam para as férias do fim do ano no trabalho?", "Depende da data combinada com a empresa. Digite o primeiro dia das férias no contador para ver os dias corridos e os dias úteis que faltam."),
@@ -926,13 +929,14 @@ SCENES = [
 <table><thead><tr><th>Rede de ensino</th><th>Último dia de aula</th><th>Faltam</th></tr></thead><tbody>{ferias_rows()}</tbody></table>
 <p>Para os alunos, as férias começam depois do último dia de aula. Quem fica de recuperação pode ter atividades depois dessa data: em Pernambuco, por exemplo, a recuperação final está marcada para 24, 28 e 29 de dezembro.</p>
 <p class="meta">Datas dos calendários oficiais de 2026 de cada rede, conferidas em {FERIAS_CHECKED.day} de {PT_MONTHS[FERIAS_CHECKED.month - 1]} de {FERIAS_CHECKED.year}. A escola pode ajustar o calendário (reposição de aulas, feriados municipais), e as redes municipais e particulares têm datas próprias: confirme com a sua escola.</p>
-<p>O calendário completo de cada rede, com o recesso de julho e a volta às aulas, está nas páginas de <a href="/tools/pt-br/ferias-escolares-sao-paulo-2026/">São Paulo</a>, <a href="/tools/pt-br/ferias-escolares-minas-gerais-2026/">Minas Gerais</a>, <a href="/tools/pt-br/ferias-escolares-parana-2026/">Paraná</a>, <a href="/tools/pt-br/ferias-escolares-rio-grande-do-sul-2026/">Rio Grande do Sul</a> e <a href="/tools/pt-br/ferias-escolares-pernambuco-2026/">Pernambuco</a>.</p>
+<p>O calendário completo de cada rede, com o recesso de julho e a volta às aulas, está <a href="#calendarios">mais abaixo nesta página</a>.</p>
 <p>O seu estado não está na tabela? O calendário é publicado pela secretaria de educação do estado ou pela escola: digite o primeiro dia das férias no contador abaixo.</p>
 <h2>Conte os dias até as suas férias</h2>
 <p>Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
 <form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
 <p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados.</p>
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
+<!--ESCOLAS-->
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> a contagem das férias fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos, com lembretes no dia e com a antecedência que você quiser.</p>
 <ol><li>Toque em <strong>Adicionar evento</strong> (ou em <strong>+</strong>, se já tiver eventos) e dê o nome “Férias”.</li><li>Data: o primeiro dia das férias. Adicione um lembrete uma semana antes, para arrumar as malas com calma.</li>{PT_WIDGET_STEP}</ol>
@@ -1026,7 +1030,7 @@ PAGES[_ci + 1:_ci + 1] = SCENES   # 场景页紧跟在计算器后面（常青�
 #   RS  educacao.rs.gov.br（Portaria 704/2025）；2027 预告见 estado.rs.gov.br 2026-10-02 稿   PE  DOE 2025-12-12 的 IN SEE/PE 19/2025
 # ⚠ 和 FERIAS_2026 一起在 12-18 过期（上面的 SystemExit 会拦住构建）。
 PT_DMW = lambda d: f"{PT_DM(d)} ({PT_WD[d.weekday()]})"
-ESC_2027_PADRAO = "O calendário de 2026 foi {verbo} em {pub}; o de 2027 ainda não está nesta página. Como referência, em 2026 as aulas começaram em {inicio}."
+ESC_2027_PADRAO = "O calendário de 2026 foi {verbo} em {pub}; o de 2027 ainda não foi conferido para esta página. Como referência, em 2026 as aulas começaram em {inicio}."
 ESCOLAS = [
  {"slug": "ferias-escolares-sao-paulo-2026", "pub": "setembro de 2025", "hub_desc": "Aulas até 18 de dezembro na rede estadual e até 22 na rede municipal da capital, com a contagem dos dias.", "nome": "São Paulo", "em": "em São Paulo", "da": "de São Paulo",
   "title": "Quando começam as férias escolares em São Paulo? Aulas até 18/12/2026",
@@ -1139,8 +1143,36 @@ def escola_page(e):
               (f"Quando acabam as aulas {e['em']} em 2026?", f"Na {wd}, {PT_DM(fim)} de 2026, na {rede}."),
               ("As escolas particulares seguem o mesmo calendário?", "Não necessariamente. Cada escola particular define o seu calendário, respeitando o mínimo de 200 dias letivos da Lei de Diretrizes e Bases da Educação; confirme as datas com a escola."),
             ]}
+# 10-25：5 个分州页并回假期页，旧网址在 vercel.json 301 到这里。依据：claude-seo 的程序化页面门槛——这 5 页独有内容只有 28~32%
+# （同一模板只换州名），10-18 起 Google 把它们全放进「已抓取未收录」。数据和来源原样保留，变成假期页里的一节 + 「更多问题」。
+# escola_page() 留着不删：2027 学年要是再拆页，从这里接着改。
+def escola_anchor(e): return e["slug"].replace("ferias-escolares-", "").replace("-2026", "")
+def escolas_html():
+    out, toc = [], []
+    for e in ESCOLAS:
+        fim, wd, a = e["fim"], PT_WD[e["fim"].weekday()], escola_anchor(e)
+        rows = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in e["rows"])
+        fontes = " e ".join(f'<a href="{u}" rel="noopener">{esc(t)}</a>' for t, u in e["fontes"])
+        n_cap = days_to(dt.date(2026, 12, 22))
+        extra = (e["extra"].replace("{n_cap}", str(abs(n_cap)) if n_cap else "")
+                 .replace("{u_cap}", "É hoje!" if n_cap == 0 else ("dias atrás" if n_cap < 0 else ("dia" if n_cap == 1 else "dias")))
+                 .replace("<h2>", "<p><strong>").replace("</h2>", "</strong></p>"))
+        y27, y27_src = e.get("y2027", (ESC_2027_PADRAO.format(verbo=e.get("pub_verbo", "publicado"), pub=e.get("pub", ""), inicio=PT_DM(e["inicio"])), ""))
+        toc.append(f'<a href="#{a}">{esc(e["nome"])}</a>')
+        out.append(f'<h3 id="{a}">{esc(e["nome"])}: rede estadual</h3>\n'
+                   f'<p>Último dia de aula de 2026: <strong>{wd}, {PT_DM(fim)}</strong>. {esc(e["julho"])}</p>\n'
+                   f'<table><tbody>{rows}</tbody></table>\n<p class="meta">Fonte: {fontes}.</p>\n{extra}\n'
+                   f'<p><strong>Volta às aulas em 2027:</strong> {esc(y27)}{y27_src}</p>')
+    return (f'<h2 id="calendarios">Calendário escolar 2026 de cada rede estadual</h2>\n'
+            f'<p>Ir para: {" · ".join(toc)}. Datas conferidas em {FERIAS_CHECKED.day} de {PT_MONTHS[FERIAS_CHECKED.month - 1]} de {FERIAS_CHECKED.year} '
+            f'nos calendários oficiais; a escola pode ajustar as datas, e as redes municipais e particulares têm calendário próprio.</p>\n' + "\n".join(out))
 _fi = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/quantos-dias-faltam-para-as-ferias/")
-PAGES[_fi + 1:_fi + 1] = [escola_page(e) for e in ESCOLAS]   # 紧跟在假期页后面
+PAGES[_fi]["body"] = PAGES[_fi]["body"].replace("<!--ESCOLAS-->", escolas_html())
+PAGES[_fi]["more"] = PAGES[_fi]["more"] + [
+    (f"Quando começam as férias escolares {e['em']} em 2026?",
+     f"Na rede estadual {e['da']}, o último dia de aula de 2026 é {PT_WD[e['fim'].weekday()]}, {PT_DM(e['fim'])}; "
+     f'as férias dos alunos começam depois desse dia. O calendário completo está <a href="#{escola_anchor(e)}">nesta página</a>.')
+    for e in ESCOLAS]
 
 # 8b. Quinto dia útil（工资最迟发放日）+ 每月工作日数
 # 规则：CLT art. 459 § 1º（次月第 5 个工作日前发）；Instrução Normativa MTP n.º 2/2021 art. 14, I（数的时候周六算、周日和节假日不算，含市级节日）、
@@ -1413,86 +1445,70 @@ TH_NOTE = ('<p class="meta" style="margin-top:18px"><strong>หมายเห�
 TH_APP = ('ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ คือแอป iPhone ของเรา ทำเรื่องเดียวกันนี้ได้ในไม่กี่นาที และจำลูกค้ากับรายการไว้ใช้ซ้ำ: '
           'เริ่มจากใบเสนอราคา แล้วแปลงเป็นใบแจ้งหนี้ได้ในแตะเดียว ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย '
           'และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้เลย เอกสารใบแรกฟรี ไม่ต้องสมัครบัญชี')
+# 10-25：ใบเสร็จรับเงิน 页并进 ใบเสนอราคา 页（同一张表单，上方切换文档类型），旧网址在 vercel.json 301 到 ?doc=receipt。
+# 依据：claude-seo 程序化门槛——两页共用同一套表单和说明，独有内容只有 24% / 32%；泰国也已不是 IQ 的目标市场（10-17 用户定 IQ 瞄德国）。
+# 切换只改还没被用户改过的默认文字（data-q / data-r），已填的客户、条目、金额都留着。
+TH_DOC_JS = r"""
+(function(){var t=document.getElementById('inv'),sw=document.getElementById('doc-switch');if(!t||!sw)return;
+function set(mode){var r=mode==='receipt';t.setAttribute('data-doc',mode);
+t.querySelectorAll('[data-q]').forEach(function(el){var q=el.getAttribute('data-q'),rc=el.getAttribute('data-r'),cur=el.textContent.trim();if(!el.isContentEditable||!cur||cur===q||cur===rc)el.textContent=r?rc:q});
+t.querySelectorAll('.only-q').forEach(function(el){el.hidden=r});t.querySelectorAll('.only-r').forEach(function(el){el.hidden=!r});
+sw.querySelectorAll('button[data-doc]').forEach(function(b){var on=b.getAttribute('data-doc')===mode;b.setAttribute('aria-pressed',on?'true':'false');b.classList.toggle('ghost',!on)})}
+sw.addEventListener('click',function(e){var b=e.target.closest('button[data-doc]');if(b)set(b.getAttribute('data-doc'))});
+if(new URLSearchParams(location.search).get('doc')==='receipt')set('receipt')})();
+"""
 PAGES.append({"path": "/tools/th/bai-sanoe-rakha/", "lang": "th", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-12",
-  "title": "ใบเสนอราคา ฟรี — กรอกออนไลน์ บุคคลธรรมดาใช้ได้ พิมพ์หรือบันทึก PDF", "crumb": "ใบเสนอราคา",
-  "description": "แบบฟอร์มใบเสนอราคาฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง แล้วพิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร ไม่ต้องโหลด Excel หรือ Word",
-  "hub_title": "ใบเสนอราคา ฟรี", "hub_desc": "กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึกเป็น PDF ได้ทันที",
-  "js": [INVOICE_JS],
+  "title": "ใบเสนอราคา ใบเสร็จรับเงิน ฟรี — กรอกออนไลน์ บุคคลธรรมดาใช้ได้", "crumb": "ใบเสนอราคา / ใบเสร็จรับเงิน",
+  "description": "แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ สลับประเภทเอกสารได้ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึก PDF ไม่ต้องสมัคร",
+  "hub_title": "ใบเสนอราคา และใบเสร็จรับเงิน ฟรี", "hub_desc": "ฟอร์มเดียว สลับเป็นใบเสนอราคาหรือใบเสร็จรับเงินได้ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึกเป็น PDF",
+  "js": [INVOICE_JS, TH_DOC_JS], "css": ".doc-switch{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}.doc-switch .btn{padding:12px 18px}.doc-switch .btn[aria-pressed=true]{background:var(--yellow);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}.inv [hidden]{display:none!important}@media print{.doc-switch{display:none!important}}",
   "more": [
     ("ใบเสนอราคา excel ฟรี มีไหม", "หน้านี้ไม่ต้องโหลด Excel: กรอกบนหน้าเว็บได้เลย ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง แล้วกด «พิมพ์ / บันทึก PDF»"),
     ("ใบเสนอราคา word ใช้แทนได้ไหม", "ได้ บันทึกเป็น PDF จากหน้านี้แล้วส่งให้ลูกค้า ไฟล์ PDF เปิดได้ทุกเครื่องและแก้ไขไม่ได้โดยไม่ตั้งใจ"),
-    ("ใบเสนอราคา ตัวอย่าง ควรมีอะไรบ้าง", "ดูหัวข้อ «ใบเสนอราคาควรมีอะไรบ้าง» ด้านล่าง ตัวอย่างในฟอร์มนี้ก็กรอกไว้ให้ดูแล้ว แก้ทับได้ทุกช่อง"),
+    ("ใบเสร็จรับเงิน excel ฟรี มีไหม", "กดปุ่ม «ใบเสร็จรับเงิน» เหนือฟอร์ม แล้วกรอกบนหน้าเว็บได้เลย ยอดรวมคำนวณให้เอง ไม่ต้องโหลด Excel"),
+    ("ใบเสร็จรับเงิน ภาษาอังกฤษ เรียกว่าอะไร", "ภาษาอังกฤษเรียกว่า Receipt ส่วนใบเสนอราคาเรียกว่า Quotation และใบแจ้งหนี้เรียกว่า Invoice"),
   ],
   "faq": [
     ("ฟอร์มนี้ฟรีจริงไหม", "ฟรี ทุกอย่างทำงานในเบราว์เซอร์ของคุณ ไม่มีการอัปโหลด ไม่ต้องสมัคร และไม่มีลายน้ำ กรอกเสร็จแล้วพิมพ์หรือบันทึกเป็น PDF ได้เลย"),
     ("บุคคลธรรมดาออกใบเสนอราคาได้ไหม", "ได้ ใบเสนอราคาคือเอกสารเสนอราคาก่อนตกลงซื้อขาย ฟรีแลนซ์และบุคคลธรรมดาออกได้ ใส่ชื่อ ที่อยู่ และช่องทางติดต่อของคุณแทนชื่อบริษัท"),
+    ("บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม", "ได้ ใบเสร็จรับเงินคือหลักฐานว่าได้รับเงินแล้ว บุคคลธรรมดาและฟรีแลนซ์ออกให้ลูกค้าได้ ใส่ชื่อ ที่อยู่ และลงลายมือชื่อผู้รับเงิน"),
     ("ต้องใส่ภาษีมูลค่าเพิ่มไหม", "ถ้าคุณไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ให้ปล่อยช่องภาษีเป็น 0 ถ้าจดทะเบียนแล้ว ให้ใส่อัตราที่ใช้อยู่ ยอดภาษีและยอดรวมจะคำนวณให้เอง"),
     ("ใบเสนอราคาควรมีกำหนดยืนราคาไหม", "ควรมี เพื่อบอกว่าราคานี้ใช้ได้ถึงวันไหน ในฟอร์มนี้จะตั้งไว้ให้ 15 วันนับจากวันนี้ แก้เป็นวันอื่นได้"),
-    ("บันทึกเป็น PDF อย่างไร", "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสนอราคา"),
-    ("มีแอปทำใบเสนอราคาบน iPhone ไหม", TH_APP),
+    ("ใบเสร็จรับเงินกับใบกำกับภาษีต่างกันอย่างไร", "ใบเสร็จรับเงินยืนยันว่าได้รับเงินแล้ว ส่วนใบกำกับภาษีเป็นเอกสารภาษีมูลค่าเพิ่ม ออกโดยผู้ประกอบการที่จดทะเบียนภาษีมูลค่าเพิ่ม ฟอร์มในหน้านี้ไม่ใช่ใบกำกับภาษี"),
+    ("บันทึกเป็น PDF อย่างไร", "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวเอกสาร"),
+    ("มีแอปทำใบเสนอราคาและใบเสร็จบน iPhone ไหม", TH_APP),
   ],
-  "body": f"""<h1>ใบเสนอราคา ฟรี</h1>
-<p class="lede">กรอกได้บนหน้านี้เลย คลิกช่องที่มีเส้นประเพื่อแก้ไข ยอดของแต่ละรายการ ภาษี และยอดรวมคำนวณให้เอง จากนั้นพิมพ์หรือบันทึกเป็น PDF ข้อมูลไม่ออกจากเบราว์เซอร์ของคุณ</p>
+  "body": f"""<h1>ใบเสนอราคา และใบเสร็จรับเงิน ฟรี</h1>
+<p class="lede">กรอกได้บนหน้านี้เลย เลือกว่าจะทำใบเสนอราคาหรือใบเสร็จรับเงิน แล้วคลิกช่องที่มีเส้นประเพื่อแก้ไข ยอดของแต่ละรายการ ภาษี และยอดรวมคำนวณให้เอง จากนั้นพิมพ์หรือบันทึกเป็น PDF ข้อมูลไม่ออกจากเบราว์เซอร์ของคุณ</p>
 <div class="inv-wrap">
+<div class="doc-switch" id="doc-switch" role="group" aria-label="เลือกเอกสาร"><button class="btn" type="button" data-doc="quote" aria-pressed="true" data-track-id="th-doc-quote">ใบเสนอราคา</button><button class="btn ghost" type="button" data-doc="receipt" aria-pressed="false" data-track-id="th-doc-receipt">ใบเสร็จรับเงิน</button></div>
 <div class="inv-tools"><button class="btn" id="print" type="button">พิมพ์ / บันทึก PDF</button><button class="btn ghost" id="addrow" type="button">+ เพิ่มรายการ</button></div>
-<div class="inv" id="inv" data-newitem="รายการ" data-days="15">
-<div class="inv-head"><div><div class="inv-title">ใบเสนอราคา</div><p style="margin:6px 0 0"><span contenteditable="true">ชื่อของคุณหรือชื่อร้าน</span><br><span contenteditable="true">ที่อยู่</span><br><span contenteditable="true">อีเมล · 08x-xxx-xxxx</span></p></div>
-<div class="inv-meta"><div class="k">เลขที่</div><p style="margin:0 0 10px"><span contenteditable="true">QT-0001</span></p><div class="k">วันที่</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="k">ยืนราคาถึง</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div>
-<div class="inv-parties"><div><div class="k">เสนอราคาให้</div><p style="margin:0"><span contenteditable="true">ชื่อลูกค้า</span><br><span contenteditable="true">ที่อยู่ลูกค้า</span><br><span contenteditable="true">อีเมลหรือเบอร์โทรลูกค้า</span></p></div>
-<div><div class="k">เงื่อนไข</div><p style="margin:0"><span contenteditable="true">มัดจำ 50% ส่วนที่เหลือชำระเมื่อส่งงาน</span><br><span contenteditable="true">โอนเข้าบัญชี ธนาคาร … เลขที่ …</span></p></div></div>
+<div class="inv" id="inv" data-newitem="รายการ" data-days="15" data-doc="quote">
+<div class="inv-head"><div><div class="inv-title" data-q="ใบเสนอราคา" data-r="ใบเสร็จรับเงิน">ใบเสนอราคา</div><p style="margin:6px 0 0"><span contenteditable="true">ชื่อของคุณหรือชื่อร้าน</span><br><span contenteditable="true">ที่อยู่</span><br><span contenteditable="true">อีเมล · 08x-xxx-xxxx</span></p></div>
+<div class="inv-meta"><div class="k">เลขที่</div><p style="margin:0 0 10px"><span contenteditable="true" data-q="QT-0001" data-r="RC-0001">QT-0001</span></p><div class="k">วันที่</div><p style="margin:0 0 10px"><span contenteditable="true" id="today"></span></p><div class="only-q"><div class="k">ยืนราคาถึง</div><p style="margin:0"><span contenteditable="true" id="due"></span></p></div></div></div>
+<div class="inv-parties"><div><div class="k" data-q="เสนอราคาให้" data-r="ได้รับเงินจาก">เสนอราคาให้</div><p style="margin:0"><span contenteditable="true">ชื่อลูกค้า</span><br><span contenteditable="true">ที่อยู่ลูกค้า</span><br><span contenteditable="true">อีเมลหรือเบอร์โทรลูกค้า</span></p></div>
+<div class="only-q"><div class="k">เงื่อนไข</div><p style="margin:0"><span contenteditable="true">มัดจำ 50% ส่วนที่เหลือชำระเมื่อส่งงาน</span><br><span contenteditable="true">โอนเข้าบัญชี ธนาคาร … เลขที่ …</span></p></div>
+<div class="only-r" hidden><div class="k">ชำระโดย</div><p style="margin:0"><span contenteditable="true">เงินสด / โอนเงิน / พร้อมเพย์</span></p></div></div>
 <table><thead><tr><th>รายการ</th><th>จำนวน</th><th>ราคาต่อหน่วย</th><th>จำนวนเงิน</th></tr></thead>
 <tbody><tr><td contenteditable="true">ออกแบบโลโก้</td><td contenteditable="true">1</td><td contenteditable="true">5000.00</td><td>5,000.00</td></tr>
 <tr><td contenteditable="true">ออกแบบนามบัตร</td><td contenteditable="true">1</td><td contenteditable="true">1500.00</td><td>1,500.00</td></tr></tbody></table>
 <div class="totals"><div><span>รวม</span><span id="sub">6,500.00</span></div><div><span>ภาษีมูลค่าเพิ่ม (<span contenteditable="true" id="taxrate">0</span>%)</span><span id="tax">0.00</span></div><div class="grand"><span>รวมทั้งสิ้น</span><span id="total">6,500.00</span></div></div>
-<p class="notes" contenteditable="true">ราคาเป็นเงินบาท ใบเสนอราคานี้มีผลถึงวันที่ยืนราคา</p>
+<p class="notes only-q" contenteditable="true">ราคาเป็นเงินบาท ใบเสนอราคานี้มีผลถึงวันที่ยืนราคา</p>
+<p class="notes only-r" contenteditable="true" hidden>ได้รับเงินถูกต้องครบถ้วนแล้ว ขอบคุณที่ใช้บริการ<br><br>ลงชื่อ ................................ ผู้รับเงิน</p>
 </div></div>
 <h2>ใบเสนอราคาควรมีอะไรบ้าง</h2>
 <ul><li><strong>คำว่า «ใบเสนอราคา»</strong> และเลขที่เอกสาร</li><li><strong>วันที่</strong> และ <strong>วันยืนราคา</strong>: ราคานี้ใช้ได้ถึงวันไหน</li><li><strong>ข้อมูลของคุณ</strong>: ชื่อหรือชื่อร้าน ที่อยู่ และช่องทางติดต่อ</li><li><strong>ข้อมูลลูกค้า</strong>: ชื่อ ที่อยู่ หรืออีเมล</li><li><strong>รายการ</strong>: รายละเอียด จำนวน ราคาต่อหน่วย และจำนวนเงิน</li><li><strong>ยอดรวม</strong> ภาษี (ถ้ามี) และ <strong>ยอดรวมทั้งสิ้น</strong></li><li><strong>เงื่อนไข</strong>: การชำระเงิน มัดจำ และระยะเวลาส่งงาน</li></ul>
+<h2>ใบเสร็จรับเงินควรมีอะไรบ้าง</h2>
+<ul><li><strong>คำว่า «ใบเสร็จรับเงิน»</strong> และเลขที่เรียงกันไป</li><li><strong>วันที่</strong> ได้รับเงิน</li><li><strong>ชื่อผู้รับเงิน</strong>: ชื่อของคุณหรือชื่อร้าน และที่อยู่</li><li><strong>ชื่อผู้จ่ายเงิน</strong>: ชื่อลูกค้า</li><li><strong>รายการ</strong>: รายละเอียด จำนวน ราคาต่อหน่วย และจำนวนเงิน</li><li><strong>ยอดรวมทั้งสิ้น</strong> และวิธีชำระ</li><li><strong>ลายมือชื่อผู้รับเงิน</strong></li></ul>
+<h2>บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม</h2>
+<p>ได้ ใบเสร็จรับเงินเป็นหลักฐานว่าคุณได้รับเงินจากลูกค้าแล้ว ฟรีแลนซ์ แม่ค้าออนไลน์ และร้านเล็ก ๆ ที่ยังไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ใช้ฟอร์มนี้ออกให้ลูกค้าได้ ปล่อยช่องภาษีเป็น 0 แล้วลงลายมือชื่อผู้รับเงิน</p>
 <h2>ใบเสนอราคา ใบแจ้งหนี้ ใบเสร็จรับเงิน ต่างกันอย่างไร</h2>
 <table><thead><tr><th>เอกสาร</th><th>ออกเมื่อไร</th><th>ใช้ทำอะไร</th></tr></thead><tbody>
 <tr><td>ใบเสนอราคา</td><td>ก่อนตกลงซื้อขาย</td><td>เสนอราคาที่ยืนให้จนถึงวันยืนราคา</td></tr>
 <tr><td>ใบแจ้งหนี้</td><td>เมื่อส่งงานหรือส่งของ</td><td>แจ้งยอดที่ลูกค้าต้องชำระและกำหนดชำระ</td></tr>
 <tr><td>ใบเสร็จรับเงิน</td><td>เมื่อได้รับเงินแล้ว</td><td>ยืนยันว่าได้รับเงินจำนวนนั้นแล้ว</td></tr>
 </tbody></table>
-<p>ลูกค้าตกลงและจ่ายเงินแล้ว? ใช้<a href="/tools/th/bai-set-rap-ngoen/">แบบฟอร์มใบเสร็จรับเงิน</a>ต่อได้เลย ถ้าทำใบเสนอราคาหลายใบต่อเดือน <a href="/invoiceqr/th/">ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ</a> บน iPhone จำลูกค้าและรายการไว้ให้ และแปลงใบเสนอราคาเป็นใบแจ้งหนี้ได้ในแตะเดียว</p>
-{TH_NOTE}"""})
-
-PAGES.append({"path": "/tools/th/bai-set-rap-ngoen/", "lang": "th", "kind": "WebApplication", "app": "invoiceqr", "published": "2026-10-12",
-  "title": "ใบเสร็จรับเงิน ฟรี — บุคคลธรรมดาใช้ได้ กรอกออนไลน์ พิมพ์หรือบันทึก PDF", "crumb": "ใบเสร็จรับเงิน",
-  "description": "แบบฟอร์มใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและร้านค้าเล็ก ๆ กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง มีช่องลายมือชื่อผู้รับเงิน พิมพ์หรือบันทึกเป็น PDF ไม่ต้องสมัคร",
-  "hub_title": "ใบเสร็จรับเงิน ฟรี", "hub_desc": "รายการ ยอดรวม และช่องลายมือชื่อผู้รับเงิน กรอกบนหน้าเว็บแล้วพิมพ์หรือบันทึกเป็น PDF",
-  "js": [INVOICE_JS],
-  "more": [
-    ("ใบเสร็จรับเงิน excel ฟรี มีไหม", "หน้านี้ไม่ต้องโหลด Excel: กรอกบนหน้าเว็บได้เลย ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง แล้วกด «พิมพ์ / บันทึก PDF»"),
-    ("ใบเสร็จรับเงิน ภาษาอังกฤษ เรียกว่าอะไร", "ภาษาอังกฤษเรียกว่า Receipt ส่วนใบเสนอราคาเรียกว่า Quotation และใบแจ้งหนี้เรียกว่า Invoice"),
-  ],
-  "faq": [
-    ("บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม", "ได้ ใบเสร็จรับเงินคือหลักฐานว่าได้รับเงินแล้ว บุคคลธรรมดาและฟรีแลนซ์ออกให้ลูกค้าได้ ใส่ชื่อ ที่อยู่ และลงลายมือชื่อผู้รับเงิน"),
-    ("ใบเสร็จรับเงินควรมีอะไรบ้าง", "คำว่าใบเสร็จรับเงิน เลขที่และวันที่ ชื่อผู้รับเงินและผู้จ่ายเงิน รายการพร้อมจำนวนเงิน ยอดรวม วิธีชำระ และลายมือชื่อผู้รับเงิน"),
-    ("ใบเสร็จรับเงินกับใบกำกับภาษีต่างกันอย่างไร", "ใบเสร็จรับเงินยืนยันว่าได้รับเงินแล้ว ส่วนใบกำกับภาษีเป็นเอกสารภาษีมูลค่าเพิ่ม ออกโดยผู้ประกอบการที่จดทะเบียนภาษีมูลค่าเพิ่ม ฟอร์มในหน้านี้ไม่ใช่ใบกำกับภาษี"),
-    ("บันทึกเป็น PDF อย่างไร", "กด «พิมพ์ / บันทึก PDF» แล้วในหน้าต่างพิมพ์ เลือกปลายทางเป็น «บันทึกเป็น PDF» จะพิมพ์ออกมาเฉพาะตัวใบเสร็จ"),
-    ("มีแอปออกใบเสร็จบน iPhone ไหม", TH_APP),
-  ],
-  "body": f"""<h1>ใบเสร็จรับเงิน ฟรี</h1>
-<p class="lede">กรอกได้บนหน้านี้เลย คลิกช่องที่มีเส้นประเพื่อแก้ไข ยอดของแต่ละรายการและยอดรวมคำนวณให้เอง ถ้าคิดภาษีให้ใส่อัตรา จากนั้นพิมพ์หรือบันทึกเป็น PDF ข้อมูลไม่ออกจากเบราว์เซอร์ของคุณ</p>
-<div class="inv-wrap">
-<div class="inv-tools"><button class="btn" id="print" type="button">พิมพ์ / บันทึก PDF</button><button class="btn ghost" id="addrow" type="button">+ เพิ่มรายการ</button></div>
-<div class="inv" id="inv" data-newitem="รายการ">
-<div class="inv-head"><div><div class="inv-title">ใบเสร็จรับเงิน</div><p style="margin:6px 0 0"><span contenteditable="true">ชื่อของคุณหรือชื่อร้าน</span><br><span contenteditable="true">ที่อยู่</span><br><span contenteditable="true">อีเมล · 08x-xxx-xxxx</span></p></div>
-<div class="inv-meta"><div class="k">เลขที่</div><p style="margin:0 0 10px"><span contenteditable="true">RC-0001</span></p><div class="k">วันที่</div><p style="margin:0"><span contenteditable="true" id="today"></span></p></div></div>
-<div class="inv-parties"><div><div class="k">ได้รับเงินจาก</div><p style="margin:0"><span contenteditable="true">ชื่อลูกค้า</span><br><span contenteditable="true">ที่อยู่หรือเบอร์โทรลูกค้า</span></p></div>
-<div><div class="k">ชำระโดย</div><p style="margin:0"><span contenteditable="true">เงินสด / โอนเงิน / พร้อมเพย์</span></p></div></div>
-<table><thead><tr><th>รายการ</th><th>จำนวน</th><th>ราคาต่อหน่วย</th><th>จำนวนเงิน</th></tr></thead>
-<tbody><tr><td contenteditable="true">เค้กช็อกโกแลต 2 ปอนด์</td><td contenteditable="true">1</td><td contenteditable="true">650.00</td><td>650.00</td></tr>
-<tr><td contenteditable="true">คัพเค้ก</td><td contenteditable="true">12</td><td contenteditable="true">35.00</td><td>420.00</td></tr></tbody></table>
-<div class="totals"><div><span>รวม</span><span id="sub">1,070.00</span></div><div><span>ภาษีมูลค่าเพิ่ม (<span contenteditable="true" id="taxrate">0</span>%)</span><span id="tax">0.00</span></div><div class="grand"><span>รวมทั้งสิ้น</span><span id="total">1,070.00</span></div></div>
-<p class="notes" contenteditable="true">ได้รับเงินถูกต้องครบถ้วนแล้ว ขอบคุณที่ใช้บริการ<br><br>ลงชื่อ ................................ ผู้รับเงิน</p>
-</div></div>
-<h2>ใบเสร็จรับเงินควรมีอะไรบ้าง</h2>
-<ul><li><strong>คำว่า «ใบเสร็จรับเงิน»</strong> และเลขที่เรียงกันไป</li><li><strong>วันที่</strong> ได้รับเงิน</li><li><strong>ชื่อผู้รับเงิน</strong>: ชื่อของคุณหรือชื่อร้าน และที่อยู่</li><li><strong>ชื่อผู้จ่ายเงิน</strong>: ชื่อลูกค้า</li><li><strong>รายการ</strong>: รายละเอียด จำนวน ราคาต่อหน่วย และจำนวนเงิน</li><li><strong>ยอดรวมทั้งสิ้น</strong> และวิธีชำระ</li><li><strong>ลายมือชื่อผู้รับเงิน</strong></li></ul>
-<h2>บุคคลธรรมดาออกใบเสร็จรับเงินได้ไหม</h2>
-<p>ได้ ใบเสร็จรับเงินเป็นหลักฐานว่าคุณได้รับเงินจากลูกค้าแล้ว ฟรีแลนซ์ แม่ค้าออนไลน์ และร้านเล็ก ๆ ที่ยังไม่ได้จดทะเบียนภาษีมูลค่าเพิ่ม ใช้ฟอร์มนี้ออกให้ลูกค้าได้ ปล่อยช่องภาษีเป็น 0 แล้วลงลายมือชื่อผู้รับเงิน</p>
-<p>ยังไม่ได้ตกลงราคา? เริ่มจาก<a href="/tools/th/bai-sanoe-rakha/">แบบฟอร์มใบเสนอราคา</a>ก่อน บน iPhone <a href="/invoiceqr/th/">ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ</a> ใส่คิวอาร์โค้ดชำระเงินให้ลูกค้าสแกนจ่าย และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้ทันที</p>
+<p>ลูกค้าตกลงและจ่ายเงินแล้ว? กดปุ่ม «ใบเสร็จรับเงิน» เหนือฟอร์ม รายการและยอดเงินที่กรอกไว้ยังอยู่ครบ ถ้าทำเอกสารหลายใบต่อเดือน <a href="/invoiceqr/th/">ทำใบแจ้งหนี้ ใบเสนอราคา ง่ายๆ</a> บน iPhone จำลูกค้าและรายการไว้ให้ แปลงใบเสนอราคาเป็นใบแจ้งหนี้ได้ในแตะเดียว และเมื่อชำระครบแล้ว แชร์เอกสารเดิมเป็นใบเสร็จได้ทันที</p>
 {TH_NOTE}"""})
 
 # 7c. 港台：報價單範本 / 收據範本（zh-Hant，InvoiceQR）——09-29
@@ -2657,7 +2673,7 @@ PAGES.append({"path": "/tools/countdown-widget-with-your-own-photo-iphone/", "ip
 <ol><li>Touch and hold the Lock Screen, tap <strong>+</strong>, choose <strong>Photos</strong> and pick the photo.</li>
 <li>Tap <strong>Add Widgets</strong> under the clock, choose Countdown and close the widget panel.</li>
 <li>Tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
-<p>More on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
+<p>Want the date written on the photo as well? The <a href="/tools/countdown-wallpaper-maker/">countdown wallpaper maker</a> puts your title, the days left and the date on your photo, sized for the Lock Screen. More on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
 <h2>Photos that work well</h2>
 <ul><li><strong>A trip.</strong> Last year’s beach behind this year’s <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a>.</li>
 <li><strong>The two of you.</strong> Behind the next visit, on a countdown you <a href="/tools/shared-countdown-app-couples/">share with your partner</a>.</li>
@@ -3113,13 +3129,214 @@ PAGES.append({"path": "/tools/de/rechnung-schreiben-app-iphone/", "lang": "de", 
 {DE_NOTE.replace("Die Vorlage erzeugt ein PDF, keine E-Rechnung", "Die App und die Vorlagen erzeugen PDFs, keine E-Rechnungen")}"""})
 
 
+# 7d4. 美区：倒数壁纸生成器（Countdown）——10-25
+# 用户 10-25：「把 App 的功能搬到网站上导流」。选题证据（10-25 Google 美国联想词）：countdown wallpaper iphone / pc / for laptop、
+# christmas countdown wallpaper live、countdown link to share / maker、countdown to share on imessage、photo countdown widget；
+# GSC 历史上有点击的只有「待ち受け / 倒數桌布 / 锁屏」这类想把倒数放到手机上的意图（site-countdown-queries-are-zero-click）。
+# 页面做的事：日期 + 标题 + 自己的照片 → 浏览器里用 canvas 画成锁屏 / 电脑壁纸（JPEG 下载），外加一条分享链接（只带标题、日期、底色，不带照片）。
+# 交给 App 的点：壁纸是死的，数字不会变；Countdown 的锁屏小组件免费、每天自己变（en-US 商店 1.4.2x：every widget size free；自己的照片属于 Pro）。
+# 锁屏换壁纸步骤同照片小组件页（Apple 支持「Create a custom Lock Screen」：长按 → + → Photos → Add → Set as Wallpaper Pair）。
+# 埋点：表单 id=wallpaper（form_start / form_submit = 生成），关键按钮 data-track-id（wp-preset-* / wp-make / wp-download / wp-share-link / wp-photo-remove），
+# 生成后的商店按钮 ct=web-countdown-wallpaper、区块 wallpaper-next；分享链接带 ref=wallpaper-share，对方打开时记在 source_ref。见 ANALYTICS.md。
+WALL_JS = r"""
+(function(){var f=document.getElementById('wallpaper');if(!f)return;
+var cv=document.getElementById('wp-canvas'),out=document.getElementById('wp-out'),pic=document.getElementById('wp-img'),save=document.getElementById('wp-save'),share=document.getElementById('wp-share'),linkBox=document.getElementById('wp-link'),ctl=document.getElementById('wp-photo-ctl'),bgset=document.getElementById('wp-bgset'),msg=document.getElementById('wp-msg'),box=f.closest('.wp');
+var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+var BG={cream:['#fffaf0','#f5dc61',0],ink:['#141414','#3d3d3d',1],dusk:['#2b2d5e','#e98a6b',1],pine:['#123a2e','#5c8f6b',1]};
+var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
+function E(n){return f.elements[n]}
+function pad(n){return(n<10?'0':'')+n}
+function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function today(){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate())}
+function next(m,d){var t=today(),x=new Date(t.getFullYear(),m,d);return x<t?new Date(t.getFullYear()+1,m,d):x}
+function thanks(){function q(y){var d=new Date(y,10,1);return new Date(y,10,1+(4-d.getDay()+7)%7+21)}var t=today(),x=q(t.getFullYear());return x<t?q(t.getFullYear()+1):x}
+var PRE={christmas:['Christmas',function(){return next(11,25)}],newyear:['New Year',function(){return next(0,1)}],thanksgiving:['Thanksgiving',thanks],valentines:["Valentine's Day",function(){return next(1,14)}],halloween:['Halloween',function(){return next(9,31)}]};
+function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
+function size(){var s=E('size').value.split('x');return[+s[0]||1206,+s[1]||2622]}
+function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
+function title(){return(E('title').value||'').trim().slice(0,40)}
+function days(d){return Math.round((d-today())/864e5)}
+function words(n,t){var a=Math.abs(n),u=a===1?'day':'days';if(n===0)return['Today','',t];return[String(a),u+(n>0?(t?' until':' to go'):(t?' since':' ago')),t]}
+function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
+if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
+function draw(c,W,H,prev){c.width=W;c.height=H;var x=c.getContext('2d'),land=W>H,B=BG[bgKey()],dark=img?1:B[2],u=land?H:W;
+if(img){var s=Math.max(W/img.naturalWidth,H/img.naturalHeight),dw=img.naturalWidth*s,dh=img.naturalHeight*s,p=+E('pos').value/100;x.drawImage(img,dw>W+1?(W-dw)*p:(W-dw)/2,dh>H+1?(H-dh)*p:(H-dh)/2,dw,dh);
+var sh=+E('shade').value/100;if(sh>0){x.fillStyle='rgba(0,0,0,'+sh+')';x.fillRect(0,0,W,H)}}
+else{var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,B[0]);g.addColorStop(1,B[1]);x.fillStyle=g;x.fillRect(0,0,W,H)}
+var ink=dark?'#ffffff':'#141414';x.textAlign='center';x.textBaseline='alphabetic';x.fillStyle=ink;
+if(prev&&!land){x.save();x.globalAlpha=.3;x.font='600 '+Math.round(u*.042)+'px '+TXT;x.fillText(today().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}),W/2,H*.09);
+x.font='600 '+Math.round(u*.21)+'px '+TXT;x.fillText('9:41',W/2,H*.215);x.restore()}
+if(dark){x.shadowColor='rgba(0,0,0,.35)';x.shadowBlur=u*.025}
+var d=parse(E('date').value);if(!d){x.font='600 '+Math.round(u*.06)+'px '+TXT;x.fillText('Pick a date',W/2,land?H*.5:H*.6);return}
+var n=days(d),wd=words(n,title()),big=u*(land?.26:.3)*(n===0?.55:1),maxW=W*(land?.62:.84);
+x.font='600 '+Math.round(big)+'px '+DISP;var nw=x.measureText(wd[0]).width;if(nw>maxW){big*=maxW/nw;x.font='600 '+Math.round(big)+'px '+DISP}
+var L1=u*(land?.054:.064),T=u*(land?.064:.078),D=u*(land?.036:.042),rows=[];
+rows.push([wd[0],x.font,big*.74,0]);
+if(wd[1])rows.push([wd[1],'600 '+Math.round(L1)+'px '+TXT,L1*.78,u*.035]);
+if(wd[2]){x.font='700 '+Math.round(T)+'px '+TXT;var tl=wrap(x,wd[2],maxW,9);if(tl.length>2){T*=.8;x.font='700 '+Math.round(T)+'px '+TXT;tl=wrap(x,wd[2],maxW,3)}tl.forEach(function(l,i){rows.push([l,x.font,T*.78,i?T*.32:(wd[1]?u*.018:u*.035)])})}
+rows.push([d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}),'500 '+Math.round(D)+'px '+TXT,D*.78,u*.04]);
+var h=0;rows.forEach(function(r){h+=r[2]+r[3]});var y=(land?H*.5:H*.6)-h/2;if(!land&&y+h>H*.84)y=H*.84-h;
+rows.forEach(function(r,i){y+=r[3]+r[2];x.font=r[1];x.globalAlpha=i===rows.length-1?.88:1;x.fillText(r[0],W/2,y)});x.globalAlpha=1}
+function preview(){pending=false;var s=size(),land=s[0]>s[1],pw=land?640:360;box.classList.toggle('land',land);draw(cv,pw,Math.round(pw*s[1]/s[0]),true)}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true}
+function photoOn(on){ctl.hidden=!on;bgset.hidden=on}
+function shareURL(){var q=new URLSearchParams();if(title())q.set('t',title());q.set('d',E('date').value);q.set('bg',bgKey());q.set('ref','wallpaper-share');return location.origin+location.pathname+'?'+q}
+f.addEventListener('input',redraw);f.addEventListener('change',redraw);
+f.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){var p=PRE[b.getAttribute('data-preset')];if(!p)return;E('title').value=p[0];E('date').value=iso(p[1]());redraw()})});
+E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;photoOn(true);redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent='That file could not be opened as a picture. Try a JPEG or PNG.';msg.hidden=false};im.src=src});
+document.getElementById('wp-clear').addEventListener('click',function(){img=null;E('photo').value='';photoOn(false);redraw()});
+f.addEventListener('submit',function(e){e.preventDefault();if(!parse(E('date').value)){E('date').focus();return}var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);
+c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.classList.toggle('land',s[0]>s[1]);out.hidden=false;share.textContent='Share the countdown';linkBox.hidden=true;
+out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
+save.addEventListener('click',function(){if(!blob)return;var file=null;try{file=new File([blob],'countdown-wallpaper.jpg',{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+var a=document.createElement('a');a.href=url;a.download='countdown-wallpaper.jpg';a.click()});
+share.addEventListener('click',function(){var link=shareURL();if(navigator.share&&coarse){navigator.share({title:'Countdown',url:link}).catch(function(){});return}
+function show(){linkBox.value=link;linkBox.hidden=false;linkBox.select()}
+if(navigator.clipboard)navigator.clipboard.writeText(link).then(function(){share.textContent='Link copied'},show);else show()});
+var q=new URLSearchParams(location.search),sd=parse(q.get('d'));
+if(sd){E('date').value=q.get('d');E('title').value=(q.get('t')||'').trim().slice(0,40);var r=f.querySelector('input[name=bg][value="'+(BG[q.get('bg')]?q.get('bg'):'cream')+'"]');if(r)r.checked=true;
+var n=days(sd),wd=words(n,title()),banner=document.getElementById('wp-shared');banner.textContent='Shared with you: '+(n===0?(wd[2]||'The big day')+' is today.':wd[0]+' '+wd[1]+(wd[2]?' '+wd[2]:'')+'.')+' Add your own photo below and make it your wallpaper.';banner.hidden=false}
+else{E('title').value=PRE.christmas[0];E('date').value=iso(PRE.christmas[1]())}
+preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
+"""
+WALL_CSS = """
+.wp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,240px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.wp.land{grid-template-columns:minmax(0,1fr)}.wp.land .wp-preview{order:-1}.wp [hidden],#wp-out[hidden]{display:none!important}
+.wp-form{display:grid;gap:14px;min-width:0}.wp-form label,.wp-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.wp-form input[type=text],.wp-form input[type=date],.wp-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.wp-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.wp-form input[type=range]{width:100%;accent-color:var(--ink)}
+.wp-pre{display:flex;flex-wrap:wrap;gap:8px}.wp-pre button{font:600 13px/1 var(--text);padding:9px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}.wp-pre button:hover{background:var(--yellow)}
+.wp-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.wp-bg legend{margin:0 0 8px;padding:0}
+.wp-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.wp-bg input{accent-color:var(--ink);margin:0}
+.wp-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.wp-photo-ctl{display:grid;gap:12px}.wp-photo-ctl .btn{justify-self:start;padding:11px 16px}.wp-form .btn{justify-self:start}
+.wp-msg{margin:0;color:#a3341f;font-size:14px}
+.wp-preview{margin:0}.wp-preview canvas{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 0 0 1.5px var(--ink);background:#fff}.wp.land .wp-preview canvas{border-radius:12px}
+.wp.land .wp-preview figcaption{display:none}.wp-preview figcaption{font-size:12.5px;line-height:1.5;color:var(--soft);margin:10px 0 0;text-align:center}
+.wp-shared{margin:0 0 4px;padding:14px 18px;border-radius:14px;background:var(--yellow);color:var(--ink)!important;font-weight:600}
+#wp-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
+.wp-result{display:flex;gap:22px;align-items:flex-start}.wp-result img{width:150px;height:auto;flex:none;border-radius:16px;box-shadow:0 0 0 1.5px var(--ink)}
+#wp-out .wp-hint-desk,#wp-out.land .wp-hint-phone{display:none}#wp-out.land .wp-hint-desk{display:block}#wp-out.land .wp-result{flex-direction:column}#wp-out.land .wp-result img{width:100%;max-width:420px;border-radius:10px}
+.wp-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.wp-hint{font-size:14px;margin:0!important}
+.wp-link{width:100%;margin:12px 0 0;font:400 14px/1.3 var(--text);padding:10px 12px;border:1.5px solid var(--rule);border-radius:10px;color:var(--ink)}
+.wp-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.wp-next p{margin:0 0 14px}
+@media (max-width:760px){.wp{grid-template-columns:minmax(0,1fr);padding:18px}.wp-preview{order:-1;width:min(100%,200px);margin:0 auto}.wp.land .wp-preview{width:100%}.wp-result{flex-direction:column}.wp-result img{width:min(100%,200px)}#wp-out{padding:18px}}
+"""
+def wall_store(where):
+    p = BY_KEY["countdown"]
+    return bp.store_link(p, bp.store_of(p), where)
+
+PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind": "WebApplication", "app": "countdown", "published": "2026-10-25",
+  "title": "Free Online Countdown Wallpaper Maker, With Your Own Photo", "crumb": "Countdown wallpaper maker",
+  "description": "Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.",
+  "hub_title": "Free online countdown wallpaper maker", "hub_desc": "Your date and your photo on a Lock Screen or desktop wallpaper, plus a link to share the countdown.",
+  "js": [WALL_JS], "css": WALL_CSS,
+  "faq": [
+    ("Is the countdown wallpaper maker free?", "Yes. There is no sign-up, no watermark and no limit on how many wallpapers you make."),
+    ("Is my photo uploaded anywhere?", "No. Your browser draws the wallpaper on this page, and the photo never leaves your device. The share link carries only the title, the date and the background color, never the photo."),
+    ("Will the number on the wallpaper count down by itself?", "No. A wallpaper is a still picture, so it keeps the number it had on the day you made it. For a number that changes every day, use a countdown widget instead, with a plain photo as the wallpaper; in Countdown Widget: Any Event every widget size on the Lock Screen and the Home Screen is free."),
+    ("How do I set it as my iPhone Lock Screen?", "Save the wallpaper to Photos, then touch and hold the Lock Screen, tap +, tap Photos and choose it. Tap Add, then Set as Wallpaper Pair."),
+    ("Which sizes can I download?", "iPhone (1206 × 2622 pixels, the screen of a 6.3-inch iPhone), Large iPhone (1320 × 2868, the screen of a 6.9-inch iPhone) and a 16:9 computer size (2560 × 1440). Other iPhones have almost the same shape, and you can pinch and drag the picture when you set it."),
+    ("Does it work on Android or Windows?", "Yes. The download is an ordinary JPEG picture, so any phone or computer can use it as a wallpaper. Countdown, the app with the countdown widget, is for iPhone and iPad."),
+  ],
+  "more": [
+    ("Is there a Christmas countdown wallpaper that updates live?", 'A picture can’t change by itself, so on iPhone the “live” part is a widget: use a Christmas photo as your Lock Screen wallpaper and put the Countdown widget over it; the number goes down every day. The <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget</a> page has the steps.'),
+    ("Can I make a countdown wallpaper for my laptop?", "Yes. Choose Computer (16:9) as the size. On a Mac, right-click the downloaded file in Finder and choose Set Desktop Picture; on Windows, right-click it and choose Set as desktop background."),
+    ("Can I send the countdown to a friend?", "Yes. Tap Share the countdown and send the link. It opens this page with the same title, date and background, counted from the day they open it, so they can make their own wallpaper. Photos are never part of the link."),
+  ],
+  "body": f"""<h1>Free online countdown wallpaper maker</h1>
+<p class="lede">Pick a date, add your own photo and download a countdown wallpaper for your iPhone Lock Screen or your computer. Free, no sign-up, no watermark. Your browser draws the picture on this page, so the photo never leaves your device.</p>
+<p class="wp-shared" id="wp-shared" hidden></p>
+<div class="wp">
+<form class="wp-form" id="wallpaper">
+<div class="wp-pre" role="group" aria-label="Quick picks"><button type="button" data-preset="christmas" data-track-id="wp-preset-christmas">Christmas</button><button type="button" data-preset="newyear" data-track-id="wp-preset-newyear">New Year</button><button type="button" data-preset="thanksgiving" data-track-id="wp-preset-thanksgiving">Thanksgiving</button><button type="button" data-preset="valentines" data-track-id="wp-preset-valentines">Valentine’s Day</button><button type="button" data-preset="halloween" data-track-id="wp-preset-halloween">Halloween</button></div>
+<label>Counting down to<input type="text" name="title" maxlength="40" placeholder="Our trip to Lisbon" autocomplete="off"></label>
+<label>Date<input type="date" name="date" required></label>
+<label>Your photo (optional)<input type="file" name="photo" accept="image/*"></label>
+<p class="wp-msg" id="wp-msg" role="alert" hidden></p>
+<div class="wp-photo-ctl" id="wp-photo-ctl" hidden><label>Photo position<input type="range" name="pos" min="0" max="100" value="50"></label><label>Darken photo<input type="range" name="shade" min="0" max="60" value="25"></label><button type="button" class="btn ghost" id="wp-clear" data-track-id="wp-photo-remove">Remove photo</button></div>
+<fieldset class="wp-bg" id="wp-bgset"><legend>Background</legend><label><input type="radio" name="bg" value="cream" checked><i style="background:linear-gradient(#fffaf0,#f5dc61)"></i>Cream</label><label><input type="radio" name="bg" value="ink"><i style="background:linear-gradient(#141414,#3d3d3d)"></i>Ink</label><label><input type="radio" name="bg" value="dusk"><i style="background:linear-gradient(#2b2d5e,#e98a6b)"></i>Dusk</label><label><input type="radio" name="bg" value="pine"><i style="background:linear-gradient(#123a2e,#5c8f6b)"></i>Pine</label></fieldset>
+<label>Size<select name="size"><option value="1206x2622">iPhone</option><option value="1320x2868">Large iPhone</option><option value="2560x1440">Computer (16:9)</option></select></label>
+<button type="submit" class="btn" data-track-id="wp-make">Make my wallpaper</button>
+</form>
+<figure class="wp-preview"><canvas id="wp-canvas" width="360" height="780" aria-label="Preview of your countdown wallpaper"></canvas><figcaption>The grey time marks where the iPhone clock sits. It isn’t in the download.</figcaption></figure>
+</div>
+<div id="wp-out" hidden aria-live="polite" data-track-section="wallpaper-result">
+<div class="wp-result"><img id="wp-img" alt="Your countdown wallpaper" width="150" height="325"><div>
+<p class="wp-actions"><button class="btn" id="wp-save" type="button" data-track-id="wp-download">Save wallpaper</button><button class="btn ghost" id="wp-share" type="button" data-track-id="wp-share-link">Share the countdown</button></p>
+<p class="wp-hint wp-hint-phone">On iPhone, tap Save wallpaper and then Save Image, or touch and hold the picture and tap Save to Photos.</p><p class="wp-hint wp-hint-desk">On a Mac, right-click the downloaded file in Finder and choose Set Desktop Picture. On Windows, right-click it and choose Set as desktop background.</p>
+<input class="wp-link" id="wp-link" type="text" readonly hidden aria-label="Link to this countdown">
+</div></div>
+<div class="wp-next" data-track-section="wallpaper-next"><p><strong>A wallpaper won’t count down.</strong> It keeps the number it shows today. On iPhone, the free Countdown widget shows a number that changes by itself every midnight, on the Lock Screen or the Home Screen.</p>
+<a class="btn" href="{esc(wall_store("wallpaper"))}">{bp.APPLE}Get the Countdown widget, free</a></div>
+</div>
+<h2>Set it as your iPhone Lock Screen</h2>
+<ol><li>Tap <strong>Save wallpaper</strong>, then <strong>Save Image</strong>. Or touch and hold the picture and tap <strong>Save to Photos</strong>.</li>
+<li>Touch and hold the Lock Screen, tap <strong>+</strong>, tap <strong>Photos</strong> and choose the wallpaper.</li>
+<li>Pinch or drag to adjust it if you like, tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
+<p>The Lock Screen clock and widgets sit at the top of the screen, so the maker places your number in the lower half. That is what the grey time in the preview is for.</p>
+<h2>Make the number count down by itself</h2>
+<p>A wallpaper keeps the number it was made with. A widget is the part of the Lock Screen that changes: in <a href="/countdown/">Countdown Widget: Any Event</a> every widget size on the Lock Screen and the Home Screen is free, with unlimited countdowns and no ads.</p>
+<ul>{EN_WIDGET_STEPS}</ul>
+<p>If you switch to the widget, use a photo without a number as your wallpaper, so the screen doesn’t show an old count next to the new one. Lock Screen widgets are drawn in one tint over the wallpaper; on the Home Screen, the widget itself can show your own photo, which is part of Countdown Pro (<a href="/tools/countdown-widget-with-your-own-photo-iphone/">how it works</a>).</p>
+<h2>On a computer</h2>
+<p>Choose <strong>Computer (16:9)</strong> as the size. On a Mac, right-click the downloaded file in Finder and choose <strong>Set Desktop Picture</strong>. On Windows, right-click it and choose <strong>Set as desktop background</strong>.</p>
+<h2>Ideas</h2>
+<ul><li><strong>Christmas.</strong> The days to December 25 over a photo from last year. For a number that updates itself, see the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget</a>.</li>
+<li><strong>A trip.</strong> The beach you are going to, with the date you fly out. See the <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a> for reminders before you leave.</li>
+<li><strong>A birthday.</strong> Their photo and their day; the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown</a> repeats every year.</li>
+<li><strong>The two of you.</strong> Send the share link to your partner, or <a href="/tools/shared-countdown-app-couples/">share one countdown</a> that shows up on both iPhones.</li></ul>
+<p>Need only the number? The <a href="/tools/days-until/">days until calculator</a> counts to any date.</p>"""})
+
+
+# ------------------------------------------------------------------ About（10-25）
+# claude-seo 的「谁写的 / 怎么做的 / 为什么写」三问：站内原来只有首页 #about 一小段，没有说明页面怎么核对事实。
+# 说法都按现状写：「independent developer」首页早就这么写；不写真人姓名（要不要加由用户定）；AI 协助起草和翻译是实情，照实写。
+# 不进工具目录（nohub），面包屑 Home › About，sitemap 归 pages 组，统计 page_type=about——这几处在 build_seo.py 里按 kind == "AboutPage" 分支。
+ABOUT_APPS = [a for a in APPS if a.get("live") and not a.get("variantOf") and a.get("appId") and a["path"] != "/"]
+_CJK = re.compile(r"[\u3040-\u30ff\u4e00-\u9fff]")
+def about_name(a): return a["home"]["label"] if _CJK.search(a["name"]) else a["name"]            # 单词兽只有中文商店名：英文页用首页卡片上的英文名
+def about_line(a): return a["home"]["tagline"] if _CJK.search(a.get("oneLiner", "")) else a.get("oneLiner", "")
+def about_hl(a): return ' hreflang="zh-Hans"' if _CJK.search(a["name"]) else ""                   # 链过去是中文页，先告诉读者
+ABOUT_SOCIAL = " · ".join(f'<a href="{esc(x["url"])}" rel="me noopener">{esc(x.get("nameIntl", x["name"]))}</a>' for x in bp.SOCIAL)
+PAGES.append({"path": "/about/", "lang": "en", "kind": "AboutPage", "nohub": True, "published": "2026-10-25",
+  "title": "About go ka: Who Makes These Apps and How We Check Facts", "crumbs": [("Home", "/"), ("About", None)],
+  "description": "go ka is an independent developer of small iPhone apps. Who we are, the apps we make, and how the facts on this site are sourced and checked.",
+  "body": f"""<h1>About go ka</h1>
+<p class="lede">go ka is an independent developer making small iPhone apps for everyday things. All {len(ABOUT_APPS)} apps are published on the App Store under one developer account, and this site is where we explain them and keep a few free tools.</p>
+<h2>The apps</h2>
+<ul>{"".join(f'<li><a href="{a["path"]}"{about_hl(a)}>{esc(about_name(a))}</a>: {esc(about_line(a))}</li>' for a in ABOUT_APPS)}</ul>
+<p>Every app is free to download, none of them asks you to create an account, and the price of anything extra is shown in the App Store before you pay. All of them are listed on our <a href="{esc(CFG["site"]["developerUrl"])}" rel="noopener">App Store developer page</a>.</p>
+<h2>How we check what these pages say</h2>
+<ul><li><strong>What an app does</strong> comes from its own App Store description, in the language of the page. Where the description says nothing, we check the app itself before writing a sentence about it.</li>
+<li><strong>Dates and rules</strong>, such as exam dates, school calendars, tax law and park rules, come from the official source wherever there is one: the exam board, the education department, the published law or the park’s own rules. Many pages also say which source and when we checked it.</li>
+<li><strong>Other apps</strong> in a comparison are described only with what their own App Store listing says. Nobody pays to be listed, and our own app is always marked as ours.</li>
+<li><strong>Prices</strong> are not written on this site. The App Store shows the current price for your country.</li></ul>
+<p>We use AI tools to help draft and translate pages. Before a page goes live, its facts are checked against the sources above, and a separate review checks the page on a phone and on a computer.</p>
+<h2>The free tools</h2>
+<p>The <a href="/tools/">calculators, templates and makers</a> run in your browser. What you type, and any photo you add to the <a href="/tools/countdown-wallpaper-maker/">countdown wallpaper maker</a>, stays on your device. We count visits and button taps to see which pages help; the <a href="/privacy-policy/">privacy policy</a> lists exactly what is measured.</p>
+<h2>Found a mistake?</h2>
+<p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> with the page and what is wrong. We fix it, and the page’s “Updated” date changes with the fix.</p>
+<p>Elsewhere: {ABOUT_SOCIAL}.</p>"""})
+
+# 德国开票页的署名（10-25）：涉及税法的页，claude-seo 认为「谁写的」是硬要求。日期 = 10-17 逐条读 gesetze-im-internet.de 原文那天（见 7e 节注释）。
+DE_BYLINE = ('<p class="meta" style="margin-top:12px"><strong>Über diese Seite:</strong> Geschrieben von go ka, dem unabhängigen Entwickler der App '
+             'Smart Rechnung &amp; Angebot. Die genannten Paragrafen haben wir am 17. Oktober 2026 im Wortlaut auf gesetze-im-internet.de nachgelesen. '
+             'Fehler gefunden? Schreiben Sie an <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>. <a href="/about/" hreflang="en">Wie wir Fakten prüfen</a> (Englisch).</p>')
+for _pg in PAGES:
+    if _pg["path"].startswith("/tools/de/") and _pg["path"] != "/tools/de/":
+        _pg["body"] = _pg["body"] + "\n" + DE_BYLINE
+
 # ------------------------------------------------------------------ 目录页
 HUB_EN_EXTRA = {"de": ("Weitere kostenlose Tools (auf Englisch)", [
     ("/tools/days-until/", "Datum eingeben, verbleibende Tage und Wochen sehen."),
     ("/tools/packing-list/", "Eine Checkliste passend zu Reiseart und ‑dauer.")])}
 def hub_page(lang):
     hub_path = HUBS[lang]
-    items = sorted([p for p in PAGES if p["lang"] == lang], key=lambda p: "/ferias-escolares-" in p["path"])   # 分州校历页排在其它工具后面（稳定排序）
+    items = sorted([p for p in PAGES if p["lang"] == lang and not p.get("nohub")], key=lambda p: "/ferias-escolares-" in p["path"])   # 分州校历页排在其它工具后面（稳定排序）
     # 卡片小字：英文目录用 app 短名；其它语言用该语言商店名（09-28：西语目录显示 Invoice Maker 是英文）
     label = lambda k: BY_KEY[k]["home"]["label"] if lang == "en" else bp.store_of({"variantOf": k, "lang": lang})["name"]
     cards = "\n".join(f'  <a href="{p["path"]}"><b>{esc(p["hub_title"])}</b><span>{esc(p["hub_desc"])}</span><small>{esc(label(p["app"]))}</small></a>' for p in items)

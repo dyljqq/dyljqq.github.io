@@ -243,8 +243,8 @@ def build_sitemap(final=None):
             continue          # 没上架的 app 不进 sitemap，页面另有 noindex
         if kind == "product":
             group = "products"
-        elif kind == "tool":
-            group = "blog" if url.startswith("/blog/") else "tools"
+        elif kind == "tool":   # /about/ 走工具页的生成流程，但它是站点页，归 pages 组
+            group = "blog" if url.startswith("/blog/") else ("pages" if app.get("kind") == "AboutPage" else "tools")
         else:
             group = "pages"
         groups[group].append((url, git_lastmod(path, final.get(path)), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
@@ -302,6 +302,8 @@ def build_llms():
     if TOOLS:
         out += ["## Free tools & guides", ""]
         for tp in TOOLS:
+            if tp["kind"] == "AboutPage":
+                continue
             out.append(f"- [{tp['hubTitle']}]({ORIGIN}{tp['path']}) — {tp['description']}")
         out.append("")
     if HOME and HOME.get("faq"):
@@ -311,6 +313,7 @@ def build_llms():
     out += ["## Notes", "",
             "- Every app is free to download. Paid parts, where there are any, are listed on each app's page.",
             "- No app asks for an account or sign-up. Where an app syncs, it uses the user's own iCloud.",
+            f"- Who makes the apps and how facts on this site are checked: {ORIGIN}/about/",
             f"- Support and feedback: {EMAIL}", ""]
     return "\n".join(out)
 
@@ -802,8 +805,7 @@ WEB_FIRST = {
     "de": [("/tools/de/rechnungsvorlage-kleinunternehmer/", "Ohne Umsatzsteuer, mit Hinweis nach § 19 UStG; als PDF speichern."),
            ("/tools/de/rechnungsvorlage/", "Im Browser ausfüllen, 19 % MwSt. rechnet sich selbst; drucken oder PDF."),
            ("/tools/de/angebot-vorlage/", "Mit Gültigkeitsdatum und Positionen; nach der Zusage abrechnen.")],
-    "th": [("/tools/th/bai-sanoe-rakha/", "กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึกเป็น PDF"),
-           ("/tools/th/bai-set-rap-ngoen/", "รายการ ยอดรวม และช่องลายมือชื่อผู้รับเงิน บันทึกเป็น PDF ได้")],
+    "th": [("/tools/th/bai-sanoe-rakha/", "ใบเสนอราคาหรือใบเสร็จรับเงิน กรอกบนหน้าเว็บ ยอดรวมคำนวณให้เอง บันทึกเป็น PDF ได้")],
     "ja": [("/tools/ja/ato-nannichi/", "日付を入れるだけで、あと何日かと曜日が分かります。"),
            ("/tools/ja/kyotsu-test-2027/", "2027年1月16日の本試験まで、毎日更新のカウントダウン。")],
     "zh-Hant": [("/tools/zh-hant/bao-jia-dan-fan-ben/", "線上填寫，金額與總計自動計算，列印或存成 PDF。"),
@@ -976,7 +978,8 @@ def site_footer_html(lang="en"):
     en_only = ' hreflang="en"' if lang != "en" else ""                 # 博客只有英文
     hub = TOOLS_HUB.get(lang, "/tools/")
     hub_attr = en_only if hub == "/tools/" else ""
-    site_links = (f'<li><a href="{home}#about">{esc_text(H(lang, "nav_about"))}</a></li>'
+    about = "/about/" if lang == "en" else f"{home}#about"   # 英文有独立的 /about/（10-25）；其它语言仍指本语言首页的关于一节
+    site_links = (f'<li><a href="{about}">{esc_text(H(lang, "nav_about"))}</a></li>'
                   f'<li><a href="/blog/"{en_only}>{esc_text(H(lang, "nav_blog"))}</a></li>'
                   f'<li><a href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))}</a></li>'
                   f'<li><a href="{home}#contact">{esc_text(H(lang, "nav_contact"))}</a></li>')
@@ -1043,10 +1046,14 @@ def tool_head(tp):
                      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}})
     if tp.get("app"):
         page["about"] = {"@id": f"{ORIGIN}{next(a['path'] for a in APPS if a['key'] == tp['app'])}#app"}
+    if tp["kind"] == "AboutPage":
+        page["mainEntity"] = {"@id": f"{ORIGIN}/#org"}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": tp.get("crumbHome") or "Home", "item": f"{ORIGIN}{home_path(lang)}"},
         {"@type": "ListItem", "position": 2, "name": "Blog" if hub == "/blog/" else (tp.get("crumbHub") or "Tools"), "item": f"{ORIGIN}{hub}"}]}
-    if url != hub:
+    if tp["kind"] == "AboutPage":   # Home › About，不挂工具目录
+        crumbs["itemListElement"][1:] = [{"@type": "ListItem", "position": 2, "name": "About", "item": canonical}]
+    elif url != hub:
         crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
     blobs = [page, crumbs]
     if tp.get("items"):
@@ -1058,7 +1065,7 @@ def tool_head(tp):
                       "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>' % json.dumps(b, ensure_ascii=False, indent=2))
-    lines.append(analytics_html("blog" if url.startswith("/blog/") else "tool", tp.get("app") or "site"))
+    lines.append(analytics_html("blog" if url.startswith("/blog/") else ("about" if tp["kind"] == "AboutPage" else "tool"), tp.get("app") or "site"))
     lines.append(END)
     return "\n".join(lines) + "\n"
 

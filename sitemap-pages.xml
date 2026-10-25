@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://beforego.art/about/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://beforego.art/citu/privacy-policy/</loc>
     <lastmod>2026-10-24</lastmod>
     <priority>0.3</priority>
@@ -132,7 +137,7 @@
   </url>
   <url>
     <loc>https://beforego.art/th/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <priority>1.0</priority>
   </url>
   <url>

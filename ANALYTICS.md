@@ -47,6 +47,28 @@
 - 商店下载：继续看 App Store Connect 的活动归因与实际下载。网页无法确认用户是否打开商店、安装或付款；`app_store_click` 仅为点击意向，不能写成下载、首开或收入。
 - 旧 Vercel 的 `~out-*` 行仍用于历史点击趋势。计算 Vercel PV 时须剔除这些虚拟行；Firebase PV 不包含虚拟点击页面。不要把两套平台 PV 相加。
 
+## 工具专项：倒数壁纸生成器（2026-10-25 起）
+
+页面 `/tools/countdown-wallpaper-maker/`，不改跟踪器，全部用现有事件 + 显式 `data-track-id`：
+
+| 步骤 | 事件与筛选 | 说明 |
+| --- | --- | --- |
+| 落地 | `page_view`，`page_path=/tools/countdown-wallpaper-maker/` | `source_ref=wallpaper-share` = 别人分享的链接打开的（分享链接自带 `ref=wallpaper-share`；标题、日期参数不上报） |
+| 开始填 | `form_start`，`form_id=wallpaper` | 每次加载一次 |
+| 快捷日期 | `button_click`，`control_id=wp-preset-christmas / newyear / thanksgiving / valentines / halloween` | |
+| 加照片 | `control_change`，`section=wallpaper`、`control_type=file` | 只记有选择动作，不记文件名或内容；照片不离开浏览器 |
+| 生成 | `form_submit`，`form_id=wallpaper`（按钮 `wp-make`） | 生成成功才显示结果区 |
+| 保存 | `button_click`，`control_id=wp-download`，`section=wallpaper-result` | iPhone 走系统分享面板，网页拿不到用户最后是否点了「存储图像」 |
+| 分享 | `button_click`，`control_id=wp-share-link` | 对方打开记在 `source_ref=wallpaper-share` |
+| 去商店 | `app_store_impression` / `app_store_click`，`section=wallpaper-next`、`store_campaign=web-countdown-wallpaper` | 生成后才露出；页尾卡片仍是 `web-countdown-tool` |
+
+漏斗（同一会话、按时间顺序）：`page_view` → `form_submit(wallpaper)` → `button_click(wp-download)` → `app_store_click(web-countdown-wallpaper)`。下载量以 App Store Connect 的活动 `web-countdown-wallpaper` 为准。
+
+## 同批页面调整（2026-10-25）
+
+- 巴西 5 个分州假期页并入 `/tools/pt-br/quantos-dias-faltam-para-as-ferias/`（301）；泰语收据页并入 `/tools/th/bai-sanoe-rakha/?doc=receipt`（301），页面上切换单据类型记 `button_click`，`control_id=th-doc-quote / th-doc-receipt`。旧网址的历史数据按旧 `page_path` 查。
+- 新增 `/about/`，`page_type=about`。
+
 ## GA4 后台配置
 
 发布前在与 `G-ZHCG565YKK` 对应的 Web 数据流关闭增强型衡量。页面、滚动、外跳、表单由本脚本负责，自动事件并行开启会重复计算，并可能收集未经筛选的链接。客户端通过 `initializeAnalytics(..., {config: {send_page_view: false}})` 关闭默认初始浏览，只手动上报一次真实页面浏览。

@@ -51,6 +51,36 @@
       "source": "/(.*)index.html",
       "destination": "/$1",
       "permanent": true
+    },
+    {
+      "source": "/tools/pt-br/ferias-escolares-sao-paulo-2026/",
+      "destination": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/pt-br/ferias-escolares-minas-gerais-2026/",
+      "destination": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/pt-br/ferias-escolares-parana-2026/",
+      "destination": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/pt-br/ferias-escolares-rio-grande-do-sul-2026/",
+      "destination": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/pt-br/ferias-escolares-pernambuco-2026/",
+      "destination": "/tools/pt-br/quantos-dias-faltam-para-as-ferias/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/th/bai-set-rap-ngoen/",
+      "destination": "/tools/th/bai-sanoe-rakha/?doc=receipt",
+      "permanent": true
     }
   ]
 }

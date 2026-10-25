@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Countdown Wallpaper Maker, With Your Own Photo</title>
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/josefin-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Josefin Sans";src:url(/assets/fonts/josefin-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap}
+@font-face{font-family:"Manrope";src:url(/assets/fonts/manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--ink:#141414;--line:#151515;--muted:#5a5a5a;--soft:#737373;--rule:#e7e5df;--paper:#fff;--cream:#fffaf0;--yellow:#f5dc61;
+--display:"Josefin Sans","Manrope","PingFang SC","Hiragino Sans",system-ui,sans-serif;
+--text:"Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,sans-serif;--wrap:1080px;--gutter:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.7 var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}img,video,svg{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.top{display:flex;align-items:center;justify-content:space-between;height:80px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}.brand svg{width:30px;height:30px;flex:none}
+.brand b{font:600 20px/1 var(--display);letter-spacing:-.4px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}.nav a{font:700 12px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;text-decoration:none;padding:12px 10px;border-radius:999px;white-space:nowrap}
+html[lang^=ja] .nav a,html[lang^=zh] .nav a,html[lang^=ko] .nav a,html[lang^=th] .nav a{letter-spacing:0;text-transform:none}
+html[lang^=ja] h1,html[lang^=zh] h1,html[lang^=ko] h1{letter-spacing:0;font-weight:600}
+html[lang^=ko] body{word-break:keep-all;overflow-wrap:anywhere}
+html[lang^=zh] h1{text-wrap:wrap}
+html[lang^=th] *{letter-spacing:0!important}
+.seg{display:inline-block}html[lang^=ja] h1{word-break:auto-phrase}
+.nav a:hover{background:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,72px);align-items:center;padding:clamp(24px,5vw,56px) 0 clamp(32px,6vw,64px)}
+.hero .icon{width:84px;height:84px;border-radius:19px;box-shadow:0 10px 30px -14px rgba(0,0,0,.35);margin-bottom:22px}
+h1{margin:0;font:500 clamp(34px,5vw,54px)/1.08 var(--display);letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:20px 0 0;color:var(--muted);font-size:17px;line-height:1.7}.lede p{margin:0 0 12px}
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--ink);color:#fff;text-decoration:none;font:700 15px/1 var(--text);padding:16px 24px;border-radius:999px;transition:background .2s,color .2s}
+.cta:hover{background:var(--yellow);color:var(--ink)}.cta svg{width:18px;height:18px;fill:currentColor}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none;font:600 12px/1 var(--text);letter-spacing:.6px;color:var(--muted)}
+.chips li{border:1px solid var(--rule);border-radius:999px;padding:9px 12px}
+.hero-media{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:4/5;background:var(--cream);border-radius:28px;overflow:hidden;display:grid;place-items:center}.hero-media img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 70%}.hero-media video{position:absolute;top:6%;left:50%;transform:translateX(-50%);height:88%;width:auto;max-width:none;aspect-ratio:886/1920;border-radius:22px;object-fit:cover;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}
+.hero-media .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);cursor:pointer;border:0;padding:0;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.hero-media .play svg{width:22px;height:22px;margin-left:3px}
+.preview-media{margin:0 auto}.hero-media img{object-position:50% 50%}
+section{scroll-margin-top:20px}
+.sec{padding:clamp(40px,7vw,80px) 0 0}
+h2{margin:0 0 20px;font:500 clamp(26px,3.4vw,36px)/1.15 var(--display);letter-spacing:-.02em}
+.label{font:700 12px/1 var(--text);letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,44px) clamp(28px,5vw,64px)}
+.feat h3{margin:0 0 10px;font:600 18px/1.35 var(--text);letter-spacing:-.2px}.feat h3.caps{font-size:14px;letter-spacing:.08em}
+.feat ul{margin:0;padding:0;list-style:none}.feat li{position:relative;padding-left:22px;margin:0 0 8px;color:var(--muted)}
+.feat li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:1.5px solid var(--ink)}
+.feat p{margin:0 0 10px;color:var(--muted)}
+.fine{margin-top:clamp(28px,4vw,40px);border-top:1px solid var(--rule);padding-top:18px}
+.fine summary{cursor:pointer;font:600 15px/1.4 var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+.fine summary::-webkit-details-marker{display:none}.fine summary::before{content:"+";font:500 20px/1 var(--display);width:20px}
+.fine[open] summary::before{content:"–"}.fine p{margin:10px 0 0;color:var(--muted);font-size:14px;line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 clamp(28px,5vw,64px)}
+.card{padding:22px 0;border-top:1px solid var(--rule)}.card h3{margin:0;font:600 17px/1.4 var(--text);letter-spacing:-.2px}
+.card p{margin:10px 0 0;color:var(--muted);font-size:15px}
+.langs{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0;padding:0;list-style:none;font-size:14px}.langs a{color:var(--muted);text-underline-offset:4px}
+.langs a[aria-current]{color:var(--ink);font-weight:700;text-decoration:none}
+.hls{display:grid;gap:22px;margin-top:8px}.hl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(24px,4vw,44px) clamp(24px,5vw,60px);background:var(--cream);border-radius:28px}
+.hl:nth-child(even) figure{order:2}.hl figure{margin:0;justify-self:center;width:min(100%,320px);aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.35)}.hl img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}.hl h3{margin:0 0 14px;font:500 clamp(24px,3vw,34px)/1.15 var(--display);letter-spacing:-.02em;text-wrap:balance}.hl p{margin:0;color:var(--muted);font-size:17px;line-height:1.7;max-width:32em}html:is([lang^=ja],[lang^=zh],[lang^=ko]) .hl h3{letter-spacing:0;font-weight:600}html[lang^=ja] .hl h3{word-break:auto-phrase}
+.news{max-width:46em;color:var(--muted)}.news h3{margin:18px 0 6px;font:600 16px/1.4 var(--text);color:var(--ink)}.news p{margin:0 0 10px}.news ul{margin:0 0 10px;padding-left:20px}.news li{margin:0 0 6px}
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.guides a{display:block;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:18px 20px;transition:background .2s}.guides a:hover{background:var(--cream)}.guides b{display:block;font:600 16px/1.35 var(--text)}.guides span{display:block;margin-top:6px;color:var(--muted);font-size:14px;line-height:1.55}
+.others{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.others a{display:flex;align-items:center;gap:12px;text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:14px;transition:background .2s}
+.others a:hover{background:var(--cream)}.others img{width:44px;height:44px;border-radius:10px}.others b{display:block;font:600 15px/1.3 var(--text)}
+.others small{display:block;color:var(--soft);font-size:12px;margin-top:2px}
+.alt,.alt-qr,.alt-scan,html.not-ios .alt.qr-only{display:none}
+html.not-ios .alt,html.is-desk .alt.qr-only{display:flex;align-items:center;gap:16px;width:fit-content;max-width:100%;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:18px}
+html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block;width:96px;height:96px;flex:none;border-radius:8px}html.is-desk .alt-scan{display:block}
+.alt-txt{max-width:24em}.alt-txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.alt-scan+.alt-web{margin-top:8px}
+.alt-web a{color:var(--ink);font-weight:700;text-underline-offset:4px}html[lang^=ja] .alt-txt p{word-break:auto-phrase}
+.end{text-align:center;padding:clamp(48px,8vw,90px) 0 clamp(40px,6vw,60px)}
+@media (max-width:760px){.hl{grid-template-columns:1fr;padding:22px 20px;border-radius:22px}.hl figure,.hl:nth-child(even) figure{order:-1;width:min(78vw,300px)}:root{--gutter:16px}.top{height:auto;flex-wrap:wrap;row-gap:2px;padding-top:12px;padding-bottom:2px}.top .lang-switch{margin-left:auto}.nav{order:3;width:100%;margin:0 0 0 -7px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.hero{grid-template-columns:1fr}.hero-media{width:min(86vw,360px)}
+.nav a{padding:10px 7px;letter-spacing:.8px;font-size:11px;flex:none}}
+
+.crumbs{margin:24px 0 28px;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px 8px;font-size:13px;line-height:1.6;color:var(--soft)}.crumbs a{color:var(--soft);text-decoration:none}.crumbs a:hover{text-decoration:underline}
+.crumbs li+li::before{content:"›";margin-right:8px}
+html[lang^=th] *{letter-spacing:0!important}
+.shot{margin:28px 0;display:flex;flex-direction:column;align-items:center;gap:10px}.shot img{width:min(100%,280px);height:auto;border-radius:24px;background:var(--cream)}.shot figcaption{font-size:13px;color:var(--soft);text-align:center}
+@media (max-width:760px){.crumbs{margin:20px 0 24px}.crumbs li:last-child{display:none}}
+.article{max-width:720px}.article h1{font-size:clamp(32px,5vw,50px);line-height:1.15;margin:0 0 20px}.article .lede{font-size:18px;margin:0 0 28px}
+.article h2{font:500 clamp(24px,3vw,32px)/1.25 var(--display);margin:48px 0 18px}.article h3{font:600 18px/1.4 var(--text);margin:28px 0 12px}
+.article p,.article li{color:var(--muted)}.article ul,.article ol{padding-left:22px}.article li{margin:0 0 6px}
+.tbl{overflow-x:auto;max-width:100%;margin:12px 0;-webkit-overflow-scrolling:touch}.tbl.full{max-width:none;width:min(1032px,calc(100vw - 2 * var(--gutter)))}.article table{border-collapse:collapse;width:100%;font-size:15px;margin:0}.article table.cmp{min-width:720px}.article th,.article td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}.article th{font-weight:700;color:var(--ink)}
+.count{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:22px 0 6px;font:500 clamp(48px,9vw,96px)/1 var(--display);letter-spacing:-.04em}.count small{font:600 16px/1 var(--text);letter-spacing:.5px;color:var(--muted)}
+.count-sub{margin:0 0 6px;color:var(--muted);font-size:15px}
+.ios-cta{display:none;margin:16px 0 0}html.is-ios .ios-cta{display:block}
+.more{max-width:720px}.more details{border-bottom:1px solid var(--rule);padding:0}.more summary{cursor:pointer;padding:14px 0;font:600 16px/1.5 var(--text);color:var(--ink)}.more details p{margin:0 0 14px;color:var(--muted)}
+.countdown-result{margin:28px 0 36px;padding:28px;border:1px solid var(--rule);border-radius:20px;background:var(--cream)}.countdown-result .count{margin:0}.countdown-result .count-sub{margin:16px 0 0}.calc-note{font-size:14px;color:var(--muted);margin:12px 0 24px}
+@media (max-width:760px){.countdown-result{padding:24px 20px}.article .lede{font-size:17px}}
+.calc{display:grid;gap:12px;grid-template-columns:1fr 1fr auto;align-items:end;margin:22px 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.calc label{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.calc input,.calc select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0}
+.calc button,.btn{font:700 14px/1 var(--text);padding:15px 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.calc button:hover,.btn:hover{background:var(--yellow);color:var(--ink)}.btn svg{width:18px;height:18px;flex:none;fill:currentColor}.appcard .btn{white-space:nowrap}.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+#calc-out .big,.tool-out .big{font:500 clamp(22px,3.4vw,32px)/1.3 var(--display);letter-spacing:-.02em;margin:8px 0 6px;color:var(--ink)}#calc-out .share a,.tool-out .share a{font-size:14px}
+.tool-out p{margin:6px 0}.tool-out ul{margin:10px 0 6px}.calc.c2{grid-template-columns:minmax(0,1fr) auto}.calc.c4{grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr) minmax(0,1fr) auto}
+.pop{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0 0}.pop a{text-decoration:none;border:1px solid var(--rule);border-radius:16px;padding:16px;display:block}.pop a:hover{background:var(--cream)}
+.pop span span{display:inline;margin:0}.pop b{display:block;font:500 30px/1 var(--display);letter-spacing:-.03em}.pop span{display:block;color:var(--muted);font-size:14px;margin-top:6px}
+.appcard{display:flex;gap:18px;align-items:center;margin:48px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:22px;background:#fff}
+.appcard img{width:72px;height:72px;border-radius:16px;flex:none}.appcard b{display:block;font:600 18px/1.3 var(--text)}.appcard p{margin:4px 0 12px;color:var(--muted);font-size:15px}
+.ask{margin:36px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted)}.ask a{margin-right:14px;text-underline-offset:3px}
+.meta{font-size:13px;color:var(--soft);margin:16px 0 0}.meta.meta-top{margin:-4px 0 14px}
+.hub{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0 0}.hub a{text-decoration:none;border:1px solid var(--rule);border-radius:20px;padding:22px;display:block;transition:background .2s}.hub a:hover{background:var(--cream)}
+.hub b{display:block;font:500 22px/1.25 var(--display);letter-spacing:-.02em}.hub span{display:block;color:var(--muted);font-size:14.5px;margin-top:8px}.hub small{display:block;margin-top:12px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv-wrap{margin:22px 0}.inv-tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px}
+.inv{border:1.5px solid var(--ink);border-radius:16px;padding:32px;background:#fff;font-size:15px;color:var(--ink)}
+.inv [contenteditable]{outline:none;border-bottom:1px dashed #cfcac0;min-width:2ch}.inv [contenteditable]:focus{background:var(--cream)}
+.inv-head{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.inv-title{margin:0;font:600 34px/1 var(--display);letter-spacing:-.02em}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:24px 0}.inv-parties .k,.inv-meta .k{margin:0 0 6px;font:700 11px/1 var(--text);letter-spacing:1.6px;text-transform:uppercase;color:var(--soft)}
+.inv table{width:100%;border-collapse:collapse;margin:8px 0}.inv th{font:700 11px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--soft);text-align:left;padding:8px 6px;border-bottom:1.5px solid var(--ink)}
+.inv td{padding:9px 6px;border-bottom:1px solid var(--rule)}.inv td:nth-child(n+2),.inv th:nth-child(n+2){text-align:right;width:14%}
+.inv .totals{margin-left:auto;width:min(100%,320px);margin-top:12px}.inv .totals div{display:flex;justify-content:space-between;padding:6px 0}.inv .totals .grand{border-top:1.5px solid var(--ink);font-weight:800;font-size:18px;margin-top:6px;padding-top:10px}
+.inv .notes{margin-top:22px;color:var(--muted);font-size:14px}
+.itin .days{display:grid;gap:14px;margin-top:18px}.itin .day{border-top:1.5px solid var(--ink);padding-top:10px;break-inside:avoid}.itin .day h3{margin:0 0 6px;font:600 17px/1.4 var(--text)}.itin .day h3 [contenteditable]{display:inline-block;min-width:8em}.itin .slot{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:6px 0;border-bottom:1px solid var(--rule)}.itin .slot b{font:700 11px/1.9 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--soft)}
+.rcpt-line{margin:14px 0;font-size:17px;line-height:1.7}.rcpt-line strong{font-size:19px;letter-spacing:.06em}.rcpt-sign{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 24px;margin-top:40px}
+.check{list-style:none;padding:0;margin:0 0 18px;columns:2;column-gap:32px}.check li{break-inside:avoid;margin:0 0 6px}.check label{display:flex;gap:10px;align-items:flex-start;color:var(--ink);cursor:pointer}.check input{margin-top:5px;accent-color:var(--ink)}
+html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .article table.cmp td:nth-child(4),html[lang=ja] .article table.cmp td:last-child{white-space:nowrap}
+@media (max-width:760px){.calc,.calc.c2,.calc.c4{grid-template-columns:1fr}.inv{padding:20px}.inv th{letter-spacing:.4px}.inv td,.inv th{padding:8px 4px}.inv-parties{grid-template-columns:1fr}.check{columns:1}.appcard{flex-direction:column;align-items:flex-start}}
+.print-title{display:none}
+@media print{.print-title{display:block!important;font:600 22px/1.3 var(--display);margin:0 0 12px}.inv-wrap h3,#pack-out h3{break-after:avoid}header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
+
+.wp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,240px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
+.wp.land{grid-template-columns:minmax(0,1fr)}.wp.land .wp-preview{order:-1}.wp [hidden],#wp-out[hidden]{display:none!important}
+.wp-form{display:grid;gap:14px;min-width:0}.wp-form label,.wp-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.wp-form input[type=text],.wp-form input[type=date],.wp-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
+.wp-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.wp-form input[type=range]{width:100%;accent-color:var(--ink)}
+.wp-pre{display:flex;flex-wrap:wrap;gap:8px}.wp-pre button{font:600 13px/1 var(--text);padding:9px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}.wp-pre button:hover{background:var(--yellow)}
+.wp-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.wp-bg legend{margin:0 0 8px;padding:0}
+.wp-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.wp-bg input{accent-color:var(--ink);margin:0}
+.wp-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
+.wp-photo-ctl{display:grid;gap:12px}.wp-photo-ctl .btn{justify-self:start;padding:11px 16px}.wp-form .btn{justify-self:start}
+.wp-msg{margin:0;color:#a3341f;font-size:14px}
+.wp-preview{margin:0}.wp-preview canvas{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 0 0 1.5px var(--ink);background:#fff}.wp.land .wp-preview canvas{border-radius:12px}
+.wp.land .wp-preview figcaption{display:none}.wp-preview figcaption{font-size:12.5px;line-height:1.5;color:var(--soft);margin:10px 0 0;text-align:center}
+.wp-shared{margin:0 0 4px;padding:14px 18px;border-radius:14px;background:var(--yellow);color:var(--ink)!important;font-weight:600}
+#wp-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
+.wp-result{display:flex;gap:22px;align-items:flex-start}.wp-result img{width:150px;height:auto;flex:none;border-radius:16px;box-shadow:0 0 0 1.5px var(--ink)}
+#wp-out .wp-hint-desk,#wp-out.land .wp-hint-phone{display:none}#wp-out.land .wp-hint-desk{display:block}#wp-out.land .wp-result{flex-direction:column}#wp-out.land .wp-result img{width:100%;max-width:420px;border-radius:10px}
+.wp-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.wp-hint{font-size:14px;margin:0!important}
+.wp-link{width:100%;margin:12px 0 0;font:400 14px/1.3 var(--text);padding:10px 12px;border:1.5px solid var(--rule);border-radius:10px;color:var(--ink)}
+.wp-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.wp-next p{margin:0 0 14px}
+@media (max-width:760px){.wp{grid-template-columns:minmax(0,1fr);padding:18px}.wp-preview{order:-1;width:min(100%,200px);margin:0 auto}.wp.land .wp-preview{width:100%}.wp-result{flex-direction:column}.wp-result img{width:min(100%,200px)}#wp-out{padding:18px}}
+</style>
+<!-- seo:start -->
+<meta name="description" content="Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.">
+<link rel="canonical" href="https://beforego.art/tools/countdown-wallpaper-maker/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="go ka">
+<meta property="og:title" content="Free Online Countdown Wallpaper Maker, With Your Own Photo">
+<meta property="og:description" content="Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.">
+<meta property="og:url" content="https://beforego.art/tools/countdown-wallpaper-maker/">
+<meta property="og:image" content="https://beforego.art/assets/brand/og-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Online Countdown Wallpaper Maker, With Your Own Photo">
+<meta name="twitter:description" content="Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.">
+<meta name="twitter:image" content="https://beforego.art/assets/brand/og-home.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://beforego.art/tools/countdown-wallpaper-maker/#page",
+  "url": "https://beforego.art/tools/countdown-wallpaper-maker/",
+  "name": "Free Online Countdown Wallpaper Maker, With Your Own Photo",
+  "headline": "Free Online Countdown Wallpaper Maker, With Your Own Photo",
+  "description": "Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://beforego.art/#website"
+  },
+  "publisher": {
+    "@id": "https://beforego.art/#org"
+  },
+  "author": {
+    "@id": "https://beforego.art/#org"
+  },
+  "isAccessibleForFree": true,
+  "image": "https://beforego.art/assets/brand/og-home.png",
+  "datePublished": "2026-10-25",
+  "dateModified": "2026-10-25",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (web browser)",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "about": {
+    "@id": "https://beforego.art/countdown/#app"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://beforego.art/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tools",
+      "item": "https://beforego.art/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Free Online Countdown Wallpaper Maker, With Your Own Photo",
+      "item": "https://beforego.art/tools/countdown-wallpaper-maker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://beforego.art/tools/countdown-wallpaper-maker/#faq",
+  "inLanguage": "en",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the countdown wallpaper maker free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There is no sign-up, no watermark and no limit on how many wallpapers you make."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your browser draws the wallpaper on this page, and the photo never leaves your device. The share link carries only the title, the date and the background color, never the photo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the number on the wallpaper count down by itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A wallpaper is a still picture, so it keeps the number it had on the day you made it. For a number that changes every day, use a countdown widget instead, with a plain photo as the wallpaper; in Countdown Widget: Any Event every widget size on the Lock Screen and the Home Screen is free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I set it as my iPhone Lock Screen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Save the wallpaper to Photos, then touch and hold the Lock Screen, tap +, tap Photos and choose it. Tap Add, then Set as Wallpaper Pair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which sizes can I download?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iPhone (1206 × 2622 pixels, the screen of a 6.3-inch iPhone), Large iPhone (1320 × 2868, the screen of a 6.9-inch iPhone) and a 16:9 computer size (2560 × 1440). Other iPhones have almost the same shape, and you can pinch and drag the picture when you set it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on Android or Windows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The download is an ordinary JPEG picture, so any phone or computer can use it as a wallpaper. Countdown, the app with the countdown widget, is for iPhone and iPad."
+      }
+    }
+  ]
+}
+</script>
+<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
+<meta name="gk-analytics" content="{&quot;page_type&quot;:&quot;tool&quot;,&quot;page_app&quot;:&quot;countdown&quot;,&quot;apps&quot;:{&quot;6786561175&quot;:&quot;beforego&quot;,&quot;6799846628&quot;:&quot;countdown&quot;,&quot;6790383156&quot;:&quot;invoiceqr&quot;,&quot;6798095407&quot;:&quot;dailycalorie&quot;,&quot;6799589471&quot;:&quot;qrcodestudio&quot;,&quot;6796596826&quot;:&quot;citu&quot;,&quot;6803828068&quot;:&quot;repdex&quot;,&quot;6823661619&quot;:&quot;pagewren&quot;}}">
+<script defer src="/assets/analytics/firebase-web-v1.js"></script>
+<!-- seo:end -->
+<style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="#151515" stroke-width="2"/><rect x="0" y="22" width="34" height="12" fill="#fff"/><path d="M3 22h28M9 27h16" stroke="#151515" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">All apps</a>
+    <a href="/tools/">Tools</a>
+    <a href="/blog/">Blog</a>
+    <a href="mailto:qinqiangji@gmail.com">Support</a>
+  </nav>
+  <!-- lang:start -->
+  <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="English"><span>EN</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/tools/countdown-wallpaper-maker/" hreflang="en" lang="en" aria-current="true">English</a></li><li class="ln-note">This page is in English only</li><li class="ln-other"><a href="/tools/pt-br/" hreflang="pt-BR" lang="pt-BR">Ferramentas grátis em português</a></li><li class="ln-other"><a href="/tools/es-mx/" hreflang="es-MX" lang="es-MX">Herramientas gratis en español</a></li><li class="ln-other"><a href="/tools/zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文免費工具</a></li><li class="ln-other"><a href="/tools/ja/" hreflang="ja" lang="ja">日本語の無料ツール</a></li><li class="ln-other"><a href="/tools/th/" hreflang="th" lang="th">เครื่องมือฟรีภาษาไทย</a></li><li class="ln-other"><a href="/tools/ko/" hreflang="ko" lang="ko">한국어 무료 가이드</a></li><li class="ln-other"><a href="/tools/de/" hreflang="de" lang="de">Kostenlose Vorlagen auf Deutsch</a></li></ul></details><a class="header-download" href="https://apps.apple.com/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-header&amp;mt=8" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
+  <!-- lang:end -->
+</header>
+<main class="wrap">
+<ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/tools/">Tools</a></li><li>Countdown wallpaper maker</li></ol>
+<article class="article">
+<h1>Free online countdown wallpaper maker</h1>
+<p class="lede">Pick a date, add your own photo and download a countdown wallpaper for your iPhone Lock Screen or your computer. Free, no sign-up, no watermark. Your browser draws the picture on this page, so the photo never leaves your device.</p>
+<p class="wp-shared" id="wp-shared" hidden></p>
+<div class="wp">
+<form class="wp-form" id="wallpaper">
+<div class="wp-pre" role="group" aria-label="Quick picks"><button type="button" data-preset="christmas" data-track-id="wp-preset-christmas">Christmas</button><button type="button" data-preset="newyear" data-track-id="wp-preset-newyear">New Year</button><button type="button" data-preset="thanksgiving" data-track-id="wp-preset-thanksgiving">Thanksgiving</button><button type="button" data-preset="valentines" data-track-id="wp-preset-valentines">Valentine’s Day</button><button type="button" data-preset="halloween" data-track-id="wp-preset-halloween">Halloween</button></div>
+<label>Counting down to<input type="text" name="title" maxlength="40" placeholder="Our trip to Lisbon" autocomplete="off"></label>
+<label>Date<input type="date" name="date" required></label>
+<label>Your photo (optional)<input type="file" name="photo" accept="image/*"></label>
+<p class="wp-msg" id="wp-msg" role="alert" hidden></p>
+<div class="wp-photo-ctl" id="wp-photo-ctl" hidden><label>Photo position<input type="range" name="pos" min="0" max="100" value="50"></label><label>Darken photo<input type="range" name="shade" min="0" max="60" value="25"></label><button type="button" class="btn ghost" id="wp-clear" data-track-id="wp-photo-remove">Remove photo</button></div>
+<fieldset class="wp-bg" id="wp-bgset"><legend>Background</legend><label><input type="radio" name="bg" value="cream" checked><i style="background:linear-gradient(#fffaf0,#f5dc61)"></i>Cream</label><label><input type="radio" name="bg" value="ink"><i style="background:linear-gradient(#141414,#3d3d3d)"></i>Ink</label><label><input type="radio" name="bg" value="dusk"><i style="background:linear-gradient(#2b2d5e,#e98a6b)"></i>Dusk</label><label><input type="radio" name="bg" value="pine"><i style="background:linear-gradient(#123a2e,#5c8f6b)"></i>Pine</label></fieldset>
+<label>Size<select name="size"><option value="1206x2622">iPhone</option><option value="1320x2868">Large iPhone</option><option value="2560x1440">Computer (16:9)</option></select></label>
+<button type="submit" class="btn" data-track-id="wp-make">Make my wallpaper</button>
+</form>
+<figure class="wp-preview"><canvas id="wp-canvas" width="360" height="780" aria-label="Preview of your countdown wallpaper"></canvas><figcaption>The grey time marks where the iPhone clock sits. It isn’t in the download.</figcaption></figure>
+</div>
+<div id="wp-out" hidden aria-live="polite" data-track-section="wallpaper-result">
+<div class="wp-result"><img id="wp-img" alt="Your countdown wallpaper" width="150" height="325"><div>
+<p class="wp-actions"><button class="btn" id="wp-save" type="button" data-track-id="wp-download">Save wallpaper</button><button class="btn ghost" id="wp-share" type="button" data-track-id="wp-share-link">Share the countdown</button></p>
+<p class="wp-hint wp-hint-phone">On iPhone, tap Save wallpaper and then Save Image, or touch and hold the picture and tap Save to Photos.</p><p class="wp-hint wp-hint-desk">On a Mac, right-click the downloaded file in Finder and choose Set Desktop Picture. On Windows, right-click it and choose Set as desktop background.</p>
+<input class="wp-link" id="wp-link" type="text" readonly hidden aria-label="Link to this countdown">
+</div></div>
+<div class="wp-next" data-track-section="wallpaper-next"><p><strong>A wallpaper won’t count down.</strong> It keeps the number it shows today. On iPhone, the free Countdown widget shows a number that changes by itself every midnight, on the Lock Screen or the Home Screen.</p>
+<a class="btn" href="https://apps.apple.com/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-wallpaper&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Get the Countdown widget, free</a></div>
+</div>
+<h2>Set it as your iPhone Lock Screen</h2>
+<ol><li>Tap <strong>Save wallpaper</strong>, then <strong>Save Image</strong>. Or touch and hold the picture and tap <strong>Save to Photos</strong>.</li>
+<li>Touch and hold the Lock Screen, tap <strong>+</strong>, tap <strong>Photos</strong> and choose the wallpaper.</li>
+<li>Pinch or drag to adjust it if you like, tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
+<p>The Lock Screen clock and widgets sit at the top of the screen, so the maker places your number in the lower half. That is what the grey time in the preview is for.</p>
+<h2>Make the number count down by itself</h2>
+<p>A wallpaper keeps the number it was made with. A widget is the part of the Lock Screen that changes: in <a href="/countdown/">Countdown Widget: Any Event</a> every widget size on the Lock Screen and the Home Screen is free, with unlimited countdowns and no ads.</p>
+<ul><li>Lock Screen: touch and hold the Lock Screen, tap <strong>Customize</strong>, choose the Lock Screen, tap <strong>Add Widgets</strong> under the clock, choose Countdown and tap <strong>Done</strong>.</li><li>Home Screen: touch and hold an empty area, tap <strong>Edit</strong> → <strong>Add Widget</strong> (on iOS 17, tap <strong>+</strong>), search for Countdown, pick a size and tap <strong>Add Widget</strong>.</li></ul>
+<p>If you switch to the widget, use a photo without a number as your wallpaper, so the screen doesn’t show an old count next to the new one. Lock Screen widgets are drawn in one tint over the wallpaper; on the Home Screen, the widget itself can show your own photo, which is part of Countdown Pro (<a href="/tools/countdown-widget-with-your-own-photo-iphone/">how it works</a>).</p>
+<h2>On a computer</h2>
+<p>Choose <strong>Computer (16:9)</strong> as the size. On a Mac, right-click the downloaded file in Finder and choose <strong>Set Desktop Picture</strong>. On Windows, right-click it and choose <strong>Set as desktop background</strong>.</p>
+<h2>Ideas</h2>
+<ul><li><strong>Christmas.</strong> The days to December 25 over a photo from last year. For a number that updates itself, see the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget</a>.</li>
+<li><strong>A trip.</strong> The beach you are going to, with the date you fly out. See the <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a> for reminders before you leave.</li>
+<li><strong>A birthday.</strong> Their photo and their day; the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown</a> repeats every year.</li>
+<li><strong>The two of you.</strong> Send the share link to your partner, or <a href="/tools/shared-countdown-app-couples/">share one countdown</a> that shows up on both iPhones.</li></ul>
+<p>Need only the number? The <a href="/tools/days-until/">days until calculator</a> counts to any date.</p>
+<p class="meta">Published 2026-10-25 · Updated 2026-10-25 · go ka</p>
+</article>
+<section class="sec" id="faq-section"><h2 id="faq">Questions people ask</h2><div class="grid">
+    <div class="card"><h3>Is the countdown wallpaper maker free?</h3><p>Yes. There is no sign-up, no watermark and no limit on how many wallpapers you make.</p></div>
+    <div class="card"><h3>Is my photo uploaded anywhere?</h3><p>No. Your browser draws the wallpaper on this page, and the photo never leaves your device. The share link carries only the title, the date and the background color, never the photo.</p></div>
+    <div class="card"><h3>Will the number on the wallpaper count down by itself?</h3><p>No. A wallpaper is a still picture, so it keeps the number it had on the day you made it. For a number that changes every day, use a countdown widget instead, with a plain photo as the wallpaper; in Countdown Widget: Any Event every widget size on the Lock Screen and the Home Screen is free.</p></div>
+    <div class="card"><h3>How do I set it as my iPhone Lock Screen?</h3><p>Save the wallpaper to Photos, then touch and hold the Lock Screen, tap +, tap Photos and choose it. Tap Add, then Set as Wallpaper Pair.</p></div>
+    <div class="card"><h3>Which sizes can I download?</h3><p>iPhone (1206 × 2622 pixels, the screen of a 6.3-inch iPhone), Large iPhone (1320 × 2868, the screen of a 6.9-inch iPhone) and a 16:9 computer size (2560 × 1440). Other iPhones have almost the same shape, and you can pinch and drag the picture when you set it.</p></div>
+    <div class="card"><h3>Does it work on Android or Windows?</h3><p>Yes. The download is an ordinary JPEG picture, so any phone or computer can use it as a wallpaper. Countdown, the app with the countdown widget, is for iPhone and iPad.</p></div>
+</div></section>
+<section class="sec more"><h2>More questions</h2><details><summary>Is there a Christmas countdown wallpaper that updates live?</summary><p>A picture can’t change by itself, so on iPhone the “live” part is a widget: use a Christmas photo as your Lock Screen wallpaper and put the Countdown widget over it; the number goes down every day. The <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget</a> page has the steps.</p></details><details><summary>Can I make a countdown wallpaper for my laptop?</summary><p>Yes. Choose Computer (16:9) as the size. On a Mac, right-click the downloaded file in Finder and choose Set Desktop Picture; on Windows, right-click it and choose Set as desktop background.</p></details><details><summary>Can I send the countdown to a friend?</summary><p>Yes. Tap Share the countdown and send the link. It opens this page with the same title, date and background, counted from the day they open it, so they can make their own wallpaper. Photos are never part of the link.</p></details></section>
+<aside class="appcard"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/7f/c4/7f7fc450-a50c-1b82-f330-bfc32d88f72f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="72" height="72" alt="" loading="lazy"><div><p class="label" style="margin:0 0 6px">Do this on your iPhone</p><b>Countdown Widget: Any Event</b><p>A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number.</p><a class="btn" href="https://apps.apple.com/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-tool&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Download on the App Store</a> &nbsp; <a href="/countdown/" style="font-size:14px">Countdown →</a></div></aside>
+<p class="ask">Ask an AI about this page: <a href="https://chatgpt.com/?q=Read%20https%3A//beforego.art/tools/countdown-wallpaper-maker/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">ChatGPT</a><a href="https://www.perplexity.ai/search?q=Read%20https%3A//beforego.art/tools/countdown-wallpaper-maker/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Perplexity</a><a href="https://claude.ai/new?q=Read%20https%3A//beforego.art/tools/countdown-wallpaper-maker/%20and%20summarise%20its%20key%20points%20in%20a%20few%20sentences." rel="nofollow noopener">Claude</a></p>
+<div style="height:48px"></div>
+</main>
+<!-- sitefooter:start -->
+<footer class="gk-foot">
+  <div class="gk-foot-in">
+    <div class="gk-foot-top">
+      <div class="gk-foot-id">
+        <a class="gk-foot-brand" href="/"><svg viewBox="0 0 34 34" width="34" height="34" aria-hidden="true"><clipPath id="gk-foot-sun"><rect width="34" height="22"/></clipPath><circle cx="17" cy="19" r="9.5" fill="#f5dc61" stroke="currentColor" stroke-width="2" clip-path="url(#gk-foot-sun)"/><path d="M3 22h28M9 27h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b>go ka</b></a>
+        <p class="gk-foot-tag">Small apps. Everyday things.</p>
+        <ul class="gk-foot-social" aria-label="Follow go ka"><li><a href="https://www.tiktok.com/@getbeforego" rel="me noopener" target="_blank" aria-label="TikTok" title="TikTok"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#tiktok"/></svg></a></li><li><a href="https://www.instagram.com/dyljqq/" rel="me noopener" target="_blank" aria-label="Instagram" title="Instagram"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#instagram"/></svg></a></li><li><a href="https://x.com/dyljqq21" rel="me noopener" target="_blank" aria-label="X" title="X"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#x"/></svg></a></li><li><a href="https://www.reddit.com/user/lybjqq/" rel="me noopener" target="_blank" aria-label="Reddit" title="Reddit"><svg width="18" height="18" aria-hidden="true"><use href="/assets/social.svg#reddit"/></svg></a></li><li><a href="https://www.xiaohongshu.com/user/profile/64f946e700000000040276bd" rel="me noopener" target="_blank" aria-label="RedNote (小红书)" title="RedNote (小红书)"><svg width="40" height="15" aria-hidden="true"><use href="/assets/social.svg#xhs"/></svg></a></li></ul>
+      </div>
+      <div class="gk-foot-cols">
+        <div class="gk-foot-col gk-foot-col-site">
+          <h2>go ka</h2>
+          <ul><li><a href="/about/">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/tools/">Free tools &amp; guides</a></li><li><a href="/#contact">Contact</a></li></ul>
+        </div>
+        <div class="gk-foot-col">
+          <h2>Apps</h2>
+          <ul class="gk-foot-legal">
+          <li><a class="gk-foot-app" href="/pagewren/">Pagewren</a><a href="/pagewren/privacy-policy/">Privacy</a><a href="/pagewren/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/countdown/">Countdown</a><a href="/countdown/privacy-policy/">Privacy</a><a href="/countdown/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/beforego/">BeforeGo</a><a href="/privacy-policy/">Privacy</a><a href="/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/invoiceqr/">Invoice Maker</a><a href="/invoiceqr/privacy-policy/">Privacy</a><a href="/invoiceqr/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/dailycalorie/">DailyCalorie</a><a href="/dailycalorie/privacy-policy/">Privacy</a><a href="/dailycalorie/terms-of-use/">Terms</a></li>
+          <li><a class="gk-foot-app" href="/qrcodestudio/">QR Studio</a><a href="/qrcodestudio/privacy-policy/">Privacy</a><a href="/qrcodestudio/terms-of-service/">Terms</a></li>
+          <li><a class="gk-foot-app" href="https://apps.apple.com/app/apple-store/id6796596826?pt=128309253&ct=web-citu-footer&mt=8">Word Beast</a><a href="/citu/privacy-policy/" hreflang="zh-CN">Privacy</a><a href="/citu/terms-of-use/" hreflang="zh-CN">Terms</a></li>
+          <li><a class="gk-foot-app" href="/repdex/">Repdex</a><a href="/repdex/privacy-policy/">Privacy</a><a href="/repdex/terms-of-use/">Terms</a></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+    <div class="gk-foot-bar">
+      <p>© 2026 go ka</p>
+      <p class="gk-foot-links"><a href="mailto:qinqiangji@gmail.com">qinqiangji@gmail.com</a><a href="/llms.txt">llms.txt</a></p>
+    </div>
+  </div>
+</footer>
+<!-- sitefooter:end -->
+<script>
+(function(){var f=document.getElementById('wallpaper');if(!f)return;
+var cv=document.getElementById('wp-canvas'),out=document.getElementById('wp-out'),pic=document.getElementById('wp-img'),save=document.getElementById('wp-save'),share=document.getElementById('wp-share'),linkBox=document.getElementById('wp-link'),ctl=document.getElementById('wp-photo-ctl'),bgset=document.getElementById('wp-bgset'),msg=document.getElementById('wp-msg'),box=f.closest('.wp');
+var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+var BG={cream:['#fffaf0','#f5dc61',0],ink:['#141414','#3d3d3d',1],dusk:['#2b2d5e','#e98a6b',1],pine:['#123a2e','#5c8f6b',1]};
+var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
+function E(n){return f.elements[n]}
+function pad(n){return(n<10?'0':'')+n}
+function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+function today(){var n=new Date();return new Date(n.getFullYear(),n.getMonth(),n.getDate())}
+function next(m,d){var t=today(),x=new Date(t.getFullYear(),m,d);return x<t?new Date(t.getFullYear()+1,m,d):x}
+function thanks(){function q(y){var d=new Date(y,10,1);return new Date(y,10,1+(4-d.getDay()+7)%7+21)}var t=today(),x=q(t.getFullYear());return x<t?q(t.getFullYear()+1):x}
+var PRE={christmas:['Christmas',function(){return next(11,25)}],newyear:['New Year',function(){return next(0,1)}],thanksgiving:['Thanksgiving',thanks],valentines:["Valentine's Day",function(){return next(1,14)}],halloween:['Halloween',function(){return next(9,31)}]};
+function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
+function size(){var s=E('size').value.split('x');return[+s[0]||1206,+s[1]||2622]}
+function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
+function title(){return(E('title').value||'').trim().slice(0,40)}
+function days(d){return Math.round((d-today())/864e5)}
+function words(n,t){var a=Math.abs(n),u=a===1?'day':'days';if(n===0)return['Today','',t];return[String(a),u+(n>0?(t?' until':' to go'):(t?' since':' ago')),t]}
+function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
+if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
+function draw(c,W,H,prev){c.width=W;c.height=H;var x=c.getContext('2d'),land=W>H,B=BG[bgKey()],dark=img?1:B[2],u=land?H:W;
+if(img){var s=Math.max(W/img.naturalWidth,H/img.naturalHeight),dw=img.naturalWidth*s,dh=img.naturalHeight*s,p=+E('pos').value/100;x.drawImage(img,dw>W+1?(W-dw)*p:(W-dw)/2,dh>H+1?(H-dh)*p:(H-dh)/2,dw,dh);
+var sh=+E('shade').value/100;if(sh>0){x.fillStyle='rgba(0,0,0,'+sh+')';x.fillRect(0,0,W,H)}}
+else{var g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,B[0]);g.addColorStop(1,B[1]);x.fillStyle=g;x.fillRect(0,0,W,H)}
+var ink=dark?'#ffffff':'#141414';x.textAlign='center';x.textBaseline='alphabetic';x.fillStyle=ink;
+if(prev&&!land){x.save();x.globalAlpha=.3;x.font='600 '+Math.round(u*.042)+'px '+TXT;x.fillText(today().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}),W/2,H*.09);
+x.font='600 '+Math.round(u*.21)+'px '+TXT;x.fillText('9:41',W/2,H*.215);x.restore()}
+if(dark){x.shadowColor='rgba(0,0,0,.35)';x.shadowBlur=u*.025}
+var d=parse(E('date').value);if(!d){x.font='600 '+Math.round(u*.06)+'px '+TXT;x.fillText('Pick a date',W/2,land?H*.5:H*.6);return}
+var n=days(d),wd=words(n,title()),big=u*(land?.26:.3)*(n===0?.55:1),maxW=W*(land?.62:.84);
+x.font='600 '+Math.round(big)+'px '+DISP;var nw=x.measureText(wd[0]).width;if(nw>maxW){big*=maxW/nw;x.font='600 '+Math.round(big)+'px '+DISP}
+var L1=u*(land?.054:.064),T=u*(land?.064:.078),D=u*(land?.036:.042),rows=[];
+rows.push([wd[0],x.font,big*.74,0]);
+if(wd[1])rows.push([wd[1],'600 '+Math.round(L1)+'px '+TXT,L1*.78,u*.035]);
+if(wd[2]){x.font='700 '+Math.round(T)+'px '+TXT;var tl=wrap(x,wd[2],maxW,9);if(tl.length>2){T*=.8;x.font='700 '+Math.round(T)+'px '+TXT;tl=wrap(x,wd[2],maxW,3)}tl.forEach(function(l,i){rows.push([l,x.font,T*.78,i?T*.32:(wd[1]?u*.018:u*.035)])})}
+rows.push([d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}),'500 '+Math.round(D)+'px '+TXT,D*.78,u*.04]);
+var h=0;rows.forEach(function(r){h+=r[2]+r[3]});var y=(land?H*.5:H*.6)-h/2;if(!land&&y+h>H*.84)y=H*.84-h;
+rows.forEach(function(r,i){y+=r[3]+r[2];x.font=r[1];x.globalAlpha=i===rows.length-1?.88:1;x.fillText(r[0],W/2,y)});x.globalAlpha=1}
+function preview(){pending=false;var s=size(),land=s[0]>s[1],pw=land?640:360;box.classList.toggle('land',land);draw(cv,pw,Math.round(pw*s[1]/s[0]),true)}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true}
+function photoOn(on){ctl.hidden=!on;bgset.hidden=on}
+function shareURL(){var q=new URLSearchParams();if(title())q.set('t',title());q.set('d',E('date').value);q.set('bg',bgKey());q.set('ref','wallpaper-share');return location.origin+location.pathname+'?'+q}
+f.addEventListener('input',redraw);f.addEventListener('change',redraw);
+f.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){var p=PRE[b.getAttribute('data-preset')];if(!p)return;E('title').value=p[0];E('date').value=iso(p[1]());redraw()})});
+E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;photoOn(true);redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent='That file could not be opened as a picture. Try a JPEG or PNG.';msg.hidden=false};im.src=src});
+document.getElementById('wp-clear').addEventListener('click',function(){img=null;E('photo').value='';photoOn(false);redraw()});
+f.addEventListener('submit',function(e){e.preventDefault();if(!parse(E('date').value)){E('date').focus();return}var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);
+c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.classList.toggle('land',s[0]>s[1]);out.hidden=false;share.textContent='Share the countdown';linkBox.hidden=true;
+out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
+save.addEventListener('click',function(){if(!blob)return;var file=null;try{file=new File([blob],'countdown-wallpaper.jpg',{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+var a=document.createElement('a');a.href=url;a.download='countdown-wallpaper.jpg';a.click()});
+share.addEventListener('click',function(){var link=shareURL();if(navigator.share&&coarse){navigator.share({title:'Countdown',url:link}).catch(function(){});return}
+function show(){linkBox.value=link;linkBox.hidden=false;linkBox.select()}
+if(navigator.clipboard)navigator.clipboard.writeText(link).then(function(){share.textContent='Link copied'},show);else show()});
+var q=new URLSearchParams(location.search),sd=parse(q.get('d'));
+if(sd){E('date').value=q.get('d');E('title').value=(q.get('t')||'').trim().slice(0,40);var r=f.querySelector('input[name=bg][value="'+(BG[q.get('bg')]?q.get('bg'):'cream')+'"]');if(r)r.checked=true;
+var n=days(sd),wd=words(n,title()),banner=document.getElementById('wp-shared');banner.textContent='Shared with you: '+(n===0?(wd[2]||'The big day')+' is today.':wd[0]+' '+wd[1]+(wd[2]?' '+wd[2]:'')+'.')+' Add your own photo below and make it your wallpaper.';banner.hidden=false}
+else{E('title').value=PRE.christmas[0];E('date').value=iso(PRE.christmas[1]())}
+preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
+</script>
+</body>
+</html>

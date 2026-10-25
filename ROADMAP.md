@@ -244,6 +244,16 @@ Ahrefs：外链 33 条里 31 条是 SPAM 自动站，真实第三方外链 0；�
 - **别做**：重复手动提交 beforego.art 同一批网址（10-14、10-18 已交）；调高 Crawl Control（只是上限）；为收录加新页。
 - **11-02 回看**：WMT Site Explorer 里 beforego.art 已知 / 收录网址数（10-19：28 / 16）；Bing 搜 Countdown 页原标题时出来的是不是 beforego.art；dyljqq.github.io 的收录数是否下降。
 
+## 10-25：壁纸生成器 + 合并薄页 + About（用户「按你的建议顺序，一起做完，测试，发布，记得做好埋点补充」）
+
+依据：App 数据仓库 `reports/seo/2026-10-25-claude-seo-lens.md`（Google 10-18 起 0 曝光、收录 31→28 还在掉；按 claude-seo 程序化门槛算出 11 个薄工具页）。
+
+- 新页 `/tools/countdown-wallpaper-maker/`：日期 + 标题 + 本地照片 → canvas 出锁屏 / 电脑壁纸（JPEG），分享链接带 `ref=wallpaper-share`；生成后的商店按钮 `ct=web-countdown-wallpaper`。埋点口径见 ANALYTICS.md「工具专项」。圣诞小组件页、照片小组件页各加一句内链。
+- 巴西 5 个分州假期页并进假期页「Calendário escolar 2026 de cada rede estadual」一节；泰语收据页并进报价单页（切换器，`?doc=receipt`）。旧网址在 vercel.json 301。
+- 新页 `/about/`（AboutPage，不进工具目录，sitemap 归 pages）；英文页脚 About 指过去；德语 4 页加「Über diese Seite」署名。
+- ⚠ App Store 上 8 个 App 的开发者名（artistName / sellerName）是「可 吴」，不是 go ka——site.json `brandNote` 那句写错了；About 只写「同一个开发者账号」，没写真名（要不要写由用户定）。
+- 回看（11-08）：壁纸页的 `form_submit(wallpaper)` / `wp-download` / `app_store_click(web-countdown-wallpaper)` 漏斗；ASC 活动 `web-countdown-wallpaper` 下载；合并后的假期页、报价单页收录状态；Google 曝光是否恢复。
+
 ## 持续基建（穿插在各版本里）
 
 | 项 | 做什么 | 时机 |
