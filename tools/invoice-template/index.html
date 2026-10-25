@@ -465,7 +465,7 @@ html:has(.invoice-app-dialog[open]){overflow:hidden}
         <div class="invoice-item-numbers">
           <label>Quantity<input name="quantity" type="number" min="0.01" max="1000000" step="0.01" value="1" required inputmode="decimal"></label>
           <label>Unit price<input name="price" type="number" min="0" max="1000000000" step="0.01" value="0" required inputmode="decimal"></label>
-          <button type="button" data-remove-item disabled>Remove</button>
+          <button type="button" data-remove-item data-track-id="inv-remove-item" disabled>Remove</button>
         </div>
       </div>
     </div>

@@ -64,6 +64,22 @@
 
 漏斗（同一会话、按时间顺序）：`page_view` → `form_submit(wallpaper)` → `button_click(wp-download)` → `app_store_click(web-countdown-wallpaper)`。下载量以 App Store Connect 的活动 `web-countdown-wallpaper` 为准。
 
+## 各工具的固定控件 ID（2026-10-25 补齐）
+
+页面一改，没有 `id` / `data-track-id` 的按钮会退回「标签名 + DOM 序号」（如 `button_3`），前后版本对不上。10-25 全站审计后补齐，`lastmod` / IndexNow 比较时会忽略 `data-track-*` 属性，只补埋点不刷修改日期。
+
+| 页面 | 关键动作 | `control_id` |
+| --- | --- | --- |
+| 各「还有几天」计算器（`/tools/days-until/`、pt-BR、ja） | 计算 | `calc-submit`（同时有 `form_submit`，`form_id=calc`）；分享链接 `share` |
+| pt-BR 生日 / 假期 / 恋爱天数 | 计算 | `bday-submit` / `ferias-submit` / `namoro-submit` |
+| 打包清单（通用、Disney） | 生成清单 | `pack-submit` |
+| 单据模板（报价单、收据、发票、Angebot 等 contenteditable 页） | 打印 / 存 PDF、加一行 | `print`、`addrow`；英文发票表单 `print-invoice`、`add-invoice-item`、`inv-remove-item` |
+| 泰语报价单 / 收据 | 切换单据类型 | `th-doc-quote` / `th-doc-receipt` |
+| 倒数壁纸生成器 | 见上节 | `wp-*` |
+| 产品页预览视频 | 播放 | `video-play` |
+
+已知盲区：contenteditable 单据页里的打字没有 `change` 事件，网页只知道打开了页面和点了打印，不知道用户填了多少；要量「开始填写」得给跟踪器加接口（换 `firebase-web-v2.js` 文件名、全站重建），这次没做。
+
 ## 同批页面调整（2026-10-25）
 
 - 巴西 5 个分州假期页并入 `/tools/pt-br/quantos-dias-faltam-para-as-ferias/`（301）；泰语收据页并入 `/tools/th/bai-sanoe-rakha/?doc=receipt`（301），页面上切换单据类型记 `button_click`，`control_id=th-doc-quote / th-doc-receipt`。旧网址的历史数据按旧 `page_path` 查。

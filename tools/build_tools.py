@@ -390,7 +390,7 @@ PAGES.append({"path": "/tools/days-until/", "lang": "en", "kind": "WebApplicatio
   ],
   "body": f"""<h1>How many days until…?</h1>
 <p class="lede">Type any date and get the number of days, weeks and the day of the week. Free, no sign-up, and you can share the link.</p>
-<form class="calc" id="calc"><label>Event<input type="text" name="name" placeholder="Wedding, exam, trip…" maxlength="60"></label><label>Date<input type="date" name="date" required></label><button type="submit">Count the days</button></form>
+<form class="calc" id="calc"><label>Event<input type="text" name="name" placeholder="Wedding, exam, trip…" maxlength="60"></label><label>Date<input type="date" name="date" required></label><button type="submit" data-track-id="calc-submit">Count the days</button></form>
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>Popular countdowns</h2>
 <div class="pop">
@@ -764,7 +764,7 @@ PAGES.append({"path": "/tools/pt-br/quantos-dias-faltam/", "lang": "pt-BR", "kin
   ],
   "body": f"""<h1>Quantos dias faltam?</h1>
 <p class="lede">Digite uma data e veja quantos dias e semanas faltam, e em que dia da semana ela cai. Também conta os dias desde uma data que já passou. Grátis, sem cadastro, com link para compartilhar.</p>
-<form class="calc" id="calc"><label>Evento<input type="text" name="name" placeholder="Aniversário, casamento, viagem…" maxlength="60"></label><label>Data<input type="date" name="date" required></label><button type="submit">Contar os dias</button></form>
+<form class="calc" id="calc"><label>Evento<input type="text" name="name" placeholder="Aniversário, casamento, viagem…" maxlength="60"></label><label>Data<input type="date" name="date" required></label><button type="submit" data-track-id="calc-submit">Contar os dias</button></form>
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>As contagens mais procuradas</h2>
 <div class="pop">
@@ -892,7 +892,7 @@ SCENES = [
   ],
   "body": f"""<h1>Quantos dias faltam para o meu aniversário?</h1>
 <p class="lede">Escolha o dia e o mês em que você nasceu e veja quantos dias faltam para o próximo aniversário e em que dia da semana ele cai. Informe o ano, se quiser, para ver quantos anos vai fazer. Serve também para o aniversário do filho, da filha ou do amor.</p>
-<form class="calc c4" id="bday"><label>Dia<select name="dia" required>{"".join(f'<option value="{d}">{d}</option>' for d in range(1, 32))}</select></label><label>Mês<select name="mes" required>{"".join(f'<option value="{i}">{m}</option>' for i, m in enumerate(PT_MONTHS, 1))}</select></label><label>Ano (opcional)<input type="number" name="ano" min="1900" max="{TODAY.year}" placeholder="1995" inputmode="numeric"></label><button type="submit">Contar</button></form>
+<form class="calc c4" id="bday"><label>Dia<select name="dia" required>{"".join(f'<option value="{d}">{d}</option>' for d in range(1, 32))}</select></label><label>Mês<select name="mes" required>{"".join(f'<option value="{i}">{m}</option>' for i, m in enumerate(PT_MONTHS, 1))}</select></label><label>Ano (opcional)<input type="number" name="ano" min="1900" max="{TODAY.year}" placeholder="1995" inputmode="numeric"></label><button type="submit" data-track-id="bday-submit">Contar</button></form>
 <div id="bday-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>A contagem na tela de bloqueio do iPhone</h2>
 <p>Com o <a href="/countdown/pt-br/">Countdown: Contagem regressiva</a> o aniversário fica na Tela de Início ou na Tela Bloqueada como widget, grátis em todos os tamanhos. O app tem modelos prontos, entre eles o de aniversário, que já vêm com a repetição e os lembretes certos. Os eventos são ilimitados: cabem o seu, o dos filhos e o de quem mais você quiser.</p>
@@ -933,7 +933,7 @@ SCENES = [
 <p>O seu estado não está na tabela? O calendário é publicado pela secretaria de educação do estado ou pela escola: digite o primeiro dia das férias no contador abaixo.</p>
 <h2>Conte os dias até as suas férias</h2>
 <p>Informe o primeiro dia das férias para contar os dias que faltam. Adicione o último dia para ver a duração ou quanto falta para acabarem.</p>
-<form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit">Contar</button></form>
+<form class="calc" id="ferias"><label>Primeiro dia<input type="date" name="inicio" required></label><label>Último dia (opcional)<input type="date" name="fim"></label><button type="submit" data-track-id="ferias-submit">Contar</button></form>
 <p class="calc-note">Dias úteis: de segunda a sexta, sem descontar feriados.</p>
 <div id="ferias-out" class="tool-out" hidden aria-live="polite"></div>
 <!--ESCOLAS-->
@@ -959,7 +959,7 @@ SCENES = [
   ],
   "body": f"""<h1>Contador de dias de namoro</h1>
 <p class="lede">Digite a data em que vocês começaram a namorar e veja há quantos dias estão juntos — em dias, semanas, meses e anos — e quando caem o próximo mesversário, a próxima centena de dias e o próximo aniversário de namoro. A página gera um link para compartilhar.</p>
-<form class="calc c2" id="namoro"><label>Começamos a namorar em<input type="date" name="desde" max="{TODAY.isoformat()}" required></label><button type="submit">Contar os dias</button></form>
+<form class="calc c2" id="namoro"><label>Começamos a namorar em<input type="date" name="desde" max="{TODAY.isoformat()}" required></label><button type="submit" data-track-id="namoro-submit">Contar os dias</button></form>
 <div id="namoro-out" class="tool-out" hidden aria-live="polite"></div>
 <h2>Quantos dias têm os meses de namoro</h2>
 <p>Os meses não têm o mesmo tamanho, então “7 meses de namoro” dá um número de dias diferente conforme o mês em que vocês começaram. A tabela mostra o mínimo e o máximo:</p>
@@ -1918,7 +1918,7 @@ PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebAppli
   ],
   "body": f"""<h1>あと何日？</h1>
 <p class="lede">日付を入れるだけで、今日からその日まで<strong>あと何日</strong>か、何週間か、何曜日かが分かります。過ぎた日なら、何日たったかを表示します。登録不要で、結果はリンクで共有できます。</p>
-<form class="calc" id="calc"><label>イベント<input type="text" name="name" placeholder="誕生日、旅行、試験…" maxlength="60"></label><label>日付<input type="date" name="date" required></label><button type="submit">日数を数える</button></form>
+<form class="calc" id="calc"><label>イベント<input type="text" name="name" placeholder="誕生日、旅行、試験…" maxlength="60"></label><label>日付<input type="date" name="date" required></label><button type="submit" data-track-id="calc-submit">日数を数える</button></form>
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>よく数える日</h2>
 <div class="pop">
@@ -2172,7 +2172,7 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
   "body": f"""<h1>Packing list generator</h1>
 <p class="lede">Pick the kind of trip and how long you're going. You get a checklist you can tick off, print, or copy into your notes. Ticks are saved on this device.</p>
 <form class="calc pack-head" id="pack"><label>Trip type<select name="type"><option value="beach">Beach</option><option value="city" selected>City break</option><option value="winter">Winter / ski</option><option value="business">Business</option><option value="backpacking">Backpacking</option></select></label>
-<label>Length<select name="days"><option value="3">Weekend (3 days)</option><option value="7" selected>One week</option><option value="14">Two weeks</option></select></label><button type="submit">Make my list</button></form>
+<label>Length<select name="days"><option value="3">Weekend (3 days)</option><option value="7" selected>One week</option><option value="14">Two weeks</option></select></label><button type="submit" data-track-id="pack-submit">Make my list</button></form>
 <div class="inv-wrap"><p class="print-title">Packing list</p><div id="pack-out" hidden></div></div>
 <p id="pack-actions" hidden><button class="btn ghost" id="pack-print" type="button">Print</button> <button class="btn ghost" id="pack-copy" type="button">Copy as text</button></p>
 <script type="application/json" id="pack-data">{json.dumps(PACK)}</script>
@@ -2905,7 +2905,7 @@ PAGES.append({"path": "/tools/disney-world-packing-list/", "lang": "en", "kind":
   "body": f"""<h1>Disney World packing list</h1>
 <p class="lede">Pick who’s coming and how long you’re staying, and you get a Walt Disney World packing list to tick off, print or copy. Ticks are saved on this device. Under it: what the parks don’t let you bring, from Disney’s own rules.</p>
 <form class="calc pack-head" id="pack"><label>Who’s coming<select name="type"><option value="adults">Adults only</option><option value="kids" selected>With kids</option><option value="toddler">With a toddler (stroller)</option></select></label>
-<label>Length<select name="days"><option value="4">4 days</option><option value="6" selected>6 days</option><option value="8">8 days</option></select></label><button type="submit">Make my list</button></form>
+<label>Length<select name="days"><option value="4">4 days</option><option value="6" selected>6 days</option><option value="8">8 days</option></select></label><button type="submit" data-track-id="pack-submit">Make my list</button></form>
 <div class="inv-wrap"><p class="print-title">Disney World packing list</p><div id="pack-out" hidden></div></div>
 <p id="pack-actions" hidden><button class="btn ghost" id="pack-print" type="button">Print</button> <button class="btn ghost" id="pack-copy" type="button">Copy as text</button></p>
 <script type="application/json" id="pack-data">{json.dumps(DISNEY_PACK)}</script>

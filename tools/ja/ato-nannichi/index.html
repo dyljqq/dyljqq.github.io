@@ -282,7 +282,7 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 <article class="article">
 <h1>あと何日？</h1>
 <p class="lede">日付を入れるだけで、今日からその日まで<strong>あと何日</strong>か、何週間か、何曜日かが分かります。過ぎた日なら、何日たったかを表示します。登録不要で、結果はリンクで共有できます。</p>
-<form class="calc" id="calc"><label>イベント<input type="text" name="name" placeholder="誕生日、旅行、試験…" maxlength="60"></label><label>日付<input type="date" name="date" required></label><button type="submit">日数を数える</button></form>
+<form class="calc" id="calc"><label>イベント<input type="text" name="name" placeholder="誕生日、旅行、試験…" maxlength="60"></label><label>日付<input type="date" name="date" required></label><button type="submit" data-track-id="calc-submit">日数を数える</button></form>
 <div id="calc-out" hidden aria-live="polite"></div>
 <h2>よく数える日</h2>
 <div class="pop">

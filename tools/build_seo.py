@@ -124,6 +124,7 @@ def _lastmod_norm(t: str, day: date | None = None) -> str:
     t = re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S)
     t = re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), "", t, flags=re.S)
     t = re.sub(r"<footer\b.*?</footer>", "", t, flags=re.S)
+    t = re.sub(r'\s+data-track-(?:id|section)="[^"]*"', "", t)   # 埋点标识不是内容：只补埋点不刷 lastmod / dateModified，也不推 IndexNow（10-25）
     return re.sub(r"\s+", " ", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
 
 def git_lastmod(path: Path, text: str | None = None) -> str:

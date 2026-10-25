@@ -495,7 +495,7 @@ def render(a):
         play = esc(T("video_label", name=name))
         preview = (f'<section class="sec" id="preview" aria-labelledby="h-preview">\n  <h2 id="h-preview">{esc(T("h_preview"))}</h2>\n'
                    f'  <div class="hero-media preview-media"><video playsinline preload="none" poster="{poster}" aria-label="{play}">'
-                   f'<source src="{video}" type="video/mp4"></video><button type="button" class="play" aria-label="{play}">'
+                   f'<source src="{video}" type="video/mp4"></video><button type="button" class="play" data-track-id="video-play" aria-label="{play}">'
                    f'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>\n</section>\n\n')
 
     feats = []
