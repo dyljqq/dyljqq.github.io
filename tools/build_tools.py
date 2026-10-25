@@ -3139,9 +3139,10 @@ PAGES.append({"path": "/tools/de/rechnung-schreiben-app-iphone/", "lang": "de", 
 # 埋点：表单 id=wallpaper（form_start / form_submit = 生成），关键按钮 data-track-id（wp-preset-* / wp-make / wp-download / wp-share-link / wp-photo-remove），
 # 生成后的商店按钮 ct=web-countdown-wallpaper、区块 wallpaper-next；分享链接带 ref=wallpaper-share，对方打开时记在 source_ref。见 ANALYTICS.md。
 WALL_JS = r"""
-(function(){var f=document.getElementById('wallpaper');if(!f)return;
-var cv=document.getElementById('wp-canvas'),out=document.getElementById('wp-out'),pic=document.getElementById('wp-img'),save=document.getElementById('wp-save'),share=document.getElementById('wp-share'),linkBox=document.getElementById('wp-link'),ctl=document.getElementById('wp-photo-ctl'),bgset=document.getElementById('wp-bgset'),msg=document.getElementById('wp-msg'),box=f.closest('.wp');
-var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+(function(){var f=document.getElementById('wallpaper'),S=window.gkStudio;if(!f||!S)return;
+function $(i){return document.getElementById(i)}
+var cv=$('wp-canvas'),stage=$('wp-wrap'),box=f.closest('.st'),dropz=$('wp-drop'),thumb=$('wp-thumb'),timg=$('wp-thumbimg'),save=$('wp-save'),share=$('wp-share'),linkBox=$('wp-link'),ctl=$('wp-photo-ctl'),bgstep=$('wp-bgstep'),msg=$('wp-msg'),nextc=$('wp-next'),lb=$('wp-lb'),dim=$('wp-dim');
+var img=null,pending=false;
 var BG={cream:['#fffaf0','#f5dc61',0],ink:['#141414','#3d3d3d',1],dusk:['#2b2d5e','#e98a6b',1],pine:['#123a2e','#5c8f6b',1]};
 var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
 function E(n){return f.elements[n]}
@@ -3157,7 +3158,7 @@ function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.
 function title(){return(E('title').value||'').trim().slice(0,40)}
 function days(d){return Math.round((d-today())/864e5)}
 function words(n,t){var a=Math.abs(n),u=a===1?'day':'days';if(n===0)return['Today','',t];return[String(a),u+(n>0?(t?' until':' to go'):(t?' since':' ago')),t]}
-function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+function lines(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
 while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
 if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
 function draw(c,W,H,prev){c.width=W;c.height=H;var x=c.getContext('2d'),land=W>H,B=BG[bgKey()],dark=img?1:B[2],u=land?H:W;
@@ -3174,56 +3175,124 @@ x.font='600 '+Math.round(big)+'px '+DISP;var nw=x.measureText(wd[0]).width;if(nw
 var L1=u*(land?.054:.064),T=u*(land?.064:.078),D=u*(land?.036:.042),rows=[];
 rows.push([wd[0],x.font,big*.74,0]);
 if(wd[1])rows.push([wd[1],'600 '+Math.round(L1)+'px '+TXT,L1*.78,u*.035]);
-if(wd[2]){x.font='700 '+Math.round(T)+'px '+TXT;var tl=wrap(x,wd[2],maxW,9);if(tl.length>2){T*=.8;x.font='700 '+Math.round(T)+'px '+TXT;tl=wrap(x,wd[2],maxW,3)}tl.forEach(function(l,i){rows.push([l,x.font,T*.78,i?T*.32:(wd[1]?u*.018:u*.035)])})}
+if(wd[2]){x.font='700 '+Math.round(T)+'px '+TXT;var tl=lines(x,wd[2],maxW,9);if(tl.length>2){T*=.8;x.font='700 '+Math.round(T)+'px '+TXT;tl=lines(x,wd[2],maxW,3)}tl.forEach(function(l,i){rows.push([l,x.font,T*.78,i?T*.32:(wd[1]?u*.018:u*.035)])})}
 rows.push([d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}),'500 '+Math.round(D)+'px '+TXT,D*.78,u*.04]);
 var h=0;rows.forEach(function(r){h+=r[2]+r[3]});var y=(land?H*.5:H*.6)-h/2;if(!land&&y+h>H*.84)y=H*.84-h;
 rows.forEach(function(r,i){y+=r[3]+r[2];x.font=r[1];x.globalAlpha=i===rows.length-1?.88:1;x.fillText(r[0],W/2,y)});x.globalAlpha=1}
-function preview(){pending=false;var s=size(),land=s[0]>s[1],pw=land?640:360;box.classList.toggle('land',land);draw(cv,pw,Math.round(pw*s[1]/s[0]),true)}
-function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true}
-function photoOn(on){ctl.hidden=!on;bgset.hidden=on}
+function preview(){pending=false;var s=size(),land=s[0]>s[1],pw=land?640:360;box.classList.toggle('land',land);dim.textContent=s[0]+' × '+s[1];draw(cv,pw,Math.round(pw*s[1]/s[0]),true)}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}}
+function photo(on){ctl.hidden=!on;bgstep.hidden=on;dropz.hidden=on;thumb.hidden=!on}
 function shareURL(){var q=new URLSearchParams();if(title())q.set('t',title());q.set('d',E('date').value);q.set('bg',bgKey());q.set('ref','wallpaper-share');return location.origin+location.pathname+'?'+q}
-f.addEventListener('input',redraw);f.addEventListener('change',redraw);
-f.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){var p=PRE[b.getAttribute('data-preset')];if(!p)return;E('title').value=p[0];E('date').value=iso(p[1]());redraw()})});
-E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
-im.onload=function(){img=im;photoOn(true);redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent='That file could not be opened as a picture. Try a JPEG or PNG.';msg.hidden=false};im.src=src});
-document.getElementById('wp-clear').addEventListener('click',function(){img=null;E('photo').value='';photoOn(false);redraw()});
-f.addEventListener('submit',function(e){e.preventDefault();if(!parse(E('date').value)){E('date').focus();return}var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);
-c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.classList.toggle('land',s[0]>s[1]);out.hidden=false;share.textContent='Share the countdown';linkBox.hidden=true;
-out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
-save.addEventListener('click',function(){if(!blob)return;var file=null;try{file=new File([blob],'countdown-wallpaper.jpg',{type:'image/jpeg'})}catch(e){}
-if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
-var a=document.createElement('a');a.href=url;a.download='countdown-wallpaper.jpg';a.click()});
-share.addEventListener('click',function(){var link=shareURL();if(navigator.share&&coarse){navigator.share({title:'Countdown',url:link}).catch(function(){});return}
+f.addEventListener('input',redraw);f.addEventListener('change',function(){redraw();S.bump(stage)});
+f.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){var p=PRE[b.getAttribute('data-preset')];if(!p)return;E('title').value=p[0];E('date').value=iso(p[1]());redraw();S.bump(stage)})});
+S.drop(dropz,E('photo'),function(file){msg.hidden=true;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;timg.src=src;photo(true);redraw();S.bump(stage)};im.onerror=function(){URL.revokeObjectURL(src);E('photo').value='';msg.textContent='That file could not be opened as a picture. Try a JPEG or PNG.';msg.hidden=false};im.src=src});
+$('wp-clear').addEventListener('click',function(){img=null;E('photo').value='';photo(false);redraw();S.bump(stage)});
+f.addEventListener('submit',function(e){e.preventDefault()});
+save.addEventListener('click',function(){if(!parse(E('date').value)){E('date').focus();return}var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);
+S.deliver(c,'countdown-wallpaper.jpg',lb);S.done(save,'Saved');nextc.hidden=false});
+share.addEventListener('click',function(){var link=shareURL();if(navigator.share&&S.coarse){navigator.share({title:'Countdown',url:link}).catch(function(){});return}
 function show(){linkBox.value=link;linkBox.hidden=false;linkBox.select()}
-if(navigator.clipboard)navigator.clipboard.writeText(link).then(function(){share.textContent='Link copied'},show);else show()});
+if(navigator.clipboard)navigator.clipboard.writeText(link).then(function(){S.done(share,'Link copied')},show);else show()});
 var q=new URLSearchParams(location.search),sd=parse(q.get('d'));
 if(sd){E('date').value=q.get('d');E('title').value=(q.get('t')||'').trim().slice(0,40);var r=f.querySelector('input[name=bg][value="'+(BG[q.get('bg')]?q.get('bg'):'cream')+'"]');if(r)r.checked=true;
-var n=days(sd),wd=words(n,title()),banner=document.getElementById('wp-shared');banner.textContent='Shared with you: '+(n===0?(wd[2]||'The big day')+' is today.':wd[0]+' '+wd[1]+(wd[2]?' '+wd[2]:'')+'.')+' Add your own photo below and make it your wallpaper.';banner.hidden=false}
+var n=days(sd),wd=words(n,title()),banner=$('wp-shared');banner.textContent='Shared with you: '+(n===0?(wd[2]||'The big day')+' is today.':wd[0]+' '+wd[1]+(wd[2]?' '+wd[2]:'')+'.')+' Add your own photo below and make it your wallpaper.';banner.hidden=false}
 else{E('title').value=PRE.christmas[0];E('date').value=iso(PRE.christmas[1]())}
 preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
 """
-WALL_CSS = """
-.wp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,240px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
-.wp.land{grid-template-columns:minmax(0,1fr)}.wp.land .wp-preview{order:-1}.wp [hidden],#wp-out[hidden]{display:none!important}
-.wp-form{display:grid;gap:14px;min-width:0}.wp-form label,.wp-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
-.wp-form input[type=text],.wp-form input[type=date],.wp-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
-.wp-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.wp-form input[type=range]{width:100%;accent-color:var(--ink)}
-.wp-pre{display:flex;flex-wrap:wrap;gap:8px}.wp-pre button{font:600 13px/1 var(--text);padding:9px 12px;border:1.5px solid var(--ink);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}.wp-pre button:hover{background:var(--yellow)}
-.wp-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.wp-bg legend{margin:0 0 8px;padding:0}
-.wp-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.wp-bg input{accent-color:var(--ink);margin:0}
-.wp-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
-.wp-photo-ctl{display:grid;gap:12px}.wp-photo-ctl .btn{justify-self:start;padding:11px 16px}.wp-form .btn{justify-self:start}
-.wp-msg{margin:0;color:#a3341f;font-size:14px}
-.wp-preview{margin:0}.wp-preview canvas{width:100%;height:auto;display:block;border-radius:22px;box-shadow:0 0 0 1.5px var(--ink);background:#fff}.wp.land .wp-preview canvas{border-radius:12px}
-.wp.land .wp-preview figcaption{display:none}.wp-preview figcaption{font-size:12.5px;line-height:1.5;color:var(--soft);margin:10px 0 0;text-align:center}
+# 10-25 用户看了里程碑卡片的结果区：「save card 放在顶部很丑；交互？动画？参考我们精品的网站」。
+# 参照 BarcodeGuru 生成器（~/Desktop/Github/Project_Web_Barcode/generator.html：左设置卡、右预览卡、下载按钮在预览正下方、按钮带图标和悬停上浮、区块淡入）
+# 和 QR 站的柔光 / 浮动动效，两个生成器（壁纸、里程碑卡片）改成同一套「分步面板 + 实时预览舞台」：
+# 改了就是预览，「保存」放在预览正下方（form="…" 的提交按钮，form_submit 即保存），保存后按钮变「已保存」、App 卡从下面滑出；
+# 手机上预览在最上面、操作条贴底；照顾 prefers-reduced-motion。
+ICO_DL = '<svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>'
+ICO_LINK = '<svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>'
+ICO_PRINT = '<svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg>'
+ICO_IMG = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>'
+STUDIO_CSS = """
+.st{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:28px;align-items:start;width:min(1032px,calc(100vw - 2 * var(--gutter)));margin:28px 0 12px;animation:stIn .5s cubic-bezier(.2,.8,.2,1) both}
+.st-panel{padding:8px 26px 26px;border-radius:24px;background:#fff;border:1px solid var(--rule);box-shadow:0 22px 44px -30px rgba(20,20,20,.35)}
+.st-step{border:0;margin:0;padding:20px 0 0;min-width:0}.st-step+.st-step{margin-top:18px;border-top:1px solid var(--rule)}
+.st-step>legend{float:left;width:100%;display:flex;align-items:center;gap:10px;padding:0;margin:0 0 14px;font:700 12px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink)}
+.st-step>legend+*{clear:both}.st-step>legend b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;letter-spacing:0}
+.st-step>legend small{font:500 12px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--soft)}
+.st-stack{display:grid;gap:12px}.st-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.st-field{display:grid;gap:6px;font:600 13px/1.2 var(--text);color:var(--muted)}
+.st input[type=text],.st input[type=date]{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);width:100%;min-width:0;transition:border-color .15s,box-shadow .15s}
+.st input[type=text]:hover,.st input[type=date]:hover{border-color:#cfc8b8}
+.st input[type=text]:focus-visible,.st input[type=date]:focus-visible{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(245,220,97,.55)}
+.st input[type=range]{width:100%;accent-color:var(--ink)}
+.st-chips{display:flex;flex-wrap:wrap;gap:8px}.st-chips+.st-chips{margin-top:10px}.st-glabel{display:block;margin:12px 0 8px;font:600 12px/1 var(--text);color:var(--soft)}
+.st-chip{position:relative;display:inline-flex}.st-chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.st-chip span,.st-chipbtn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;min-width:38px;padding:0 14px;border:1.5px solid var(--rule);border-radius:999px;font:600 14px/1 var(--text);color:var(--ink);background:#fff;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .12s}
+.st-chip:hover span,.st-chipbtn:hover{border-color:var(--ink)}.st-chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.st-chip input:focus-visible+span,.st-chipbtn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(245,220,97,.6)}.st-chip:active span,.st-chipbtn:active{transform:scale(.95)}
+.st-swatches{display:flex;flex-wrap:wrap;gap:14px}.st-sw{position:relative;display:inline-block;width:40px;height:40px}
+.st-sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}.st-sw i{display:block;width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);transition:transform .15s,box-shadow .15s}
+.st-sw:hover i{transform:scale(1.06)}.st-sw input:checked+i{box-shadow:inset 0 0 0 1px rgba(0,0,0,.14),0 0 0 3px #fff,0 0 0 5px var(--ink)}
+.st-sw input:focus-visible+i{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ink),0 0 0 9px rgba(245,220,97,.6)}
+.st-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.st-seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:16px;background:var(--cream);border:1px solid var(--rule);max-width:100%}
+.st-segi{position:relative;display:inline-flex}.st-segi input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.st-segi span{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:12px;font:600 14px/1 var(--text);color:var(--muted);transition:background .15s,color .15s,box-shadow .15s}
+.st-segi input:checked+span{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08),0 4px 10px -4px rgba(0,0,0,.18)}.st-segi input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,220,97,.7)}
+.st-drop{position:relative;display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px dashed #cfc8b8;border-radius:16px;background:var(--cream);cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+.st-drop:hover,.st-drop.is-over{border-color:var(--ink);background:#fff4cc}.st-drop:focus-within{border-color:var(--ink);border-style:solid;box-shadow:0 0 0 4px rgba(245,220,97,.6)}.st-drop.is-over{transform:scale(1.01)}
+.st-drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.st-ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+.st-drop b,.st-thumb b{display:block;font:600 15px/1.3 var(--text);color:var(--ink)}.st-drop small,.st-thumb small{display:block;margin-top:2px;font-size:13px;color:var(--muted)}
+.st-thumb{display:flex;align-items:center;gap:12px;padding:10px;border-radius:16px;background:var(--cream);border:1px solid var(--rule);animation:stUp .3s ease both}
+.st-thumb img{width:56px;height:56px;object-fit:cover;border-radius:12px;flex:none}.st-thumb div{flex:1;min-width:0}
+.st-x{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--rule);background:#fff;color:var(--ink);font:500 20px/1 var(--text);cursor:pointer;transition:border-color .15s,transform .12s}
+.st-x:hover{border-color:var(--ink)}.st-x:active{transform:scale(.92)}.st-msg{margin:0;color:#a3341f;font-size:14px}
+.st-side{position:sticky;top:20px;display:grid;gap:14px}
+.st-stage{margin:0;padding:18px 22px 22px;border-radius:28px;background:radial-gradient(130% 90% at 50% 0%,#fff 0%,var(--cream) 55%,#f2e7cf 100%);border:1px solid var(--rule)}
+.st-top{display:flex;justify-content:space-between;align-items:center;margin:0 0 16px;font:700 11px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;color:var(--soft)}
+.st-live{display:inline-flex;align-items:center;gap:7px}.st-live i{width:8px;height:8px;border-radius:50%;background:#3fb37f;animation:stPulse 1.8s ease-out infinite}
+.st-wrap{display:grid;place-items:center}.st-wrap.bump{animation:stBump .38s cubic-bezier(.2,.8,.2,1)}
+.st-cap{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--soft);text-align:center}
+.st-actions{display:grid;gap:10px}.st-actions .btn{width:100%;justify-content:center;padding:15px 20px;transition:background .15s,color .15s,transform .15s,box-shadow .15s}
+.st-actions .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px -12px rgba(20,20,20,.55)}.st-actions .btn:active{transform:translateY(0)}
+.st .btn svg.si{fill:none}.st-save.is-done{background:#2f8f5b;color:#fff}
+.st-hint{margin:2px 0 0;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}.st-hint-ios,.st-hint-desk{display:none}html.is-ios .st-hint-ios,html.is-desk .st-hint-desk{display:block}
+.st-link{width:100%;font:400 14px/1.3 var(--text);padding:10px 12px;border:1.5px solid var(--rule);border-radius:10px;color:var(--ink);background:#fff}
+.st-next{padding:18px;border-radius:20px;background:#fff;border:1.5px solid var(--ink);animation:stUp .45s cubic-bezier(.2,.8,.2,1) both}.st-next p{margin:0 0 14px;font-size:15px}.st-next .btn{width:100%;justify-content:center}
+.st-lb{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background:rgba(20,20,20,.78);animation:stFade .2s ease both}
+.st-lb figure{margin:0;display:grid;gap:12px;justify-items:center}.st-lb img{max-width:min(86vw,420px);max-height:72vh;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.st-lb figcaption{color:#fff;font:600 15px/1.4 var(--text);text-align:center}.st-lbx{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:500 24px/1 var(--text);cursor:pointer}
+.st [hidden],.st-lb[hidden]{display:none!important}
+@keyframes stIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes stUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes stFade{from{opacity:0}to{opacity:1}}@keyframes stBump{40%{transform:scale(.982)}100%{transform:scale(1)}}
+@keyframes stPulse{0%{box-shadow:0 0 0 0 rgba(63,179,127,.5)}70%{box-shadow:0 0 0 7px rgba(63,179,127,0)}100%{box-shadow:0 0 0 0 rgba(63,179,127,0)}}
+@media (prefers-reduced-motion:reduce){.st,.st *,.st-lb{animation:none!important;transition:none!important}}
+@media (max-width:860px){.st{grid-template-columns:minmax(0,1fr);gap:16px}.st-side{display:contents}.st-stage{order:-1;padding:14px 16px 16px}.st-panel{order:0;padding:4px 18px 20px}
+.st-actions{order:1;position:sticky;bottom:0;z-index:5;grid-template-columns:minmax(0,1fr) auto;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(rgba(255,255,255,0),#fff 26%)}.st-actions .btn.ghost{width:52px;padding:0;background:#fff}.st-actions .btn.ghost span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.st-actions .st-hint{grid-column:1/-1;margin:0;font-size:12.5px;line-height:1.35}.st-actions .st-link{grid-column:1/-1}.st-next{order:2}.st-row{grid-template-columns:minmax(0,1fr)}}
+"""
+
+STUDIO_JS = r"""
+window.gkStudio=(function(){var coarse=!!(window.matchMedia&&matchMedia('(pointer:coarse)').matches),reduce=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+function toBlob(d){var p=d.split(','),b=atob(p[1]),n=b.length,u=new Uint8Array(n);while(n--)u[n]=b.charCodeAt(n);return new Blob([u],{type:'image/jpeg'})}
+function bump(el){if(reduce||!el)return;el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
+function done(btn,text){var lab=btn&&btn.querySelector('span');if(!lab)return;if(!btn.getAttribute('data-label'))btn.setAttribute('data-label',lab.textContent);lab.textContent='✓ '+text;btn.classList.add('is-done');clearTimeout(btn._t);btn._t=setTimeout(function(){lab.textContent=btn.getAttribute('data-label');btn.classList.remove('is-done')},2200)}
+function lightbox(lb,src){lb.querySelector('img').src=src;lb.hidden=false;var x=lb.querySelector('.st-lbx');x.focus();function close(){lb.hidden=true;document.removeEventListener('keydown',key)}function key(e){if(e.key==='Escape')close()}x.onclick=close;lb.onclick=function(e){if(e.target===lb)close()};document.addEventListener('keydown',key)}
+function deliver(canvas,name,lb){var data=canvas.toDataURL('image/jpeg',.92),blob=toBlob(data),file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+if(coarse&&lb){lightbox(lb,data);return}
+var a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
+function drop(zone,input,onFile){['dragenter','dragover'].forEach(function(t){zone.addEventListener(t,function(e){e.preventDefault();zone.classList.add('is-over')})});
+['dragleave','dragend'].forEach(function(t){zone.addEventListener(t,function(){zone.classList.remove('is-over')})});
+zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('is-over');var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f)onFile(f)});
+input.addEventListener('change',function(){var f=input.files&&input.files[0];if(f)onFile(f)})}
+return{coarse:coarse,bump:bump,done:done,deliver:deliver,drop:drop}})();
+"""
+WALL_CSS = STUDIO_CSS + """
 .wp-shared{margin:0 0 4px;padding:14px 18px;border-radius:14px;background:var(--yellow);color:var(--ink)!important;font-weight:600}
-#wp-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
-.wp-result{display:flex;gap:22px;align-items:flex-start}.wp-result img{width:150px;height:auto;flex:none;border-radius:16px;box-shadow:0 0 0 1.5px var(--ink)}
-#wp-out .wp-hint-desk,#wp-out.land .wp-hint-phone{display:none}#wp-out.land .wp-hint-desk{display:block}#wp-out.land .wp-result{flex-direction:column}#wp-out.land .wp-result img{width:100%;max-width:420px;border-radius:10px}
-.wp-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.wp-hint{font-size:14px;margin:0!important}
-.wp-link{width:100%;margin:12px 0 0;font:400 14px/1.3 var(--text);padding:10px 12px;border:1.5px solid var(--rule);border-radius:10px;color:var(--ink)}
-.wp-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.wp-next p{margin:0 0 14px}
-@media (max-width:760px){.wp{grid-template-columns:minmax(0,1fr);padding:18px}.wp-preview{order:-1;width:min(100%,200px);margin:0 auto}.wp.land .wp-preview{width:100%}.wp-result{flex-direction:column}.wp-result img{width:min(100%,200px)}#wp-out{padding:18px}}
+.wp .st-device{width:min(100%,248px);padding:9px;border-radius:44px;background:#151515;box-shadow:inset 0 0 0 1.5px #343434,0 32px 50px -28px rgba(0,0,0,.6)}
+.wp .st-device canvas{display:block;width:100%;height:auto;border-radius:35px;background:#fff}
+.wp.land .st-wrap{padding-bottom:16px}.wp.land .st-device{position:relative;width:100%;padding:8px 8px 18px;border-radius:14px}.wp.land .st-device canvas{border-radius:6px}
+.wp.land .st-device::after{content:"";position:absolute;left:50%;bottom:-14px;width:28%;height:14px;transform:translateX(-50%);background:#d8cfbb;border-radius:0 0 10px 10px}
+.wp.land .st-cap{display:none}
+@media (max-width:860px){.wp .st-device{width:min(60vw,226px)}}
 """
 def wall_store(where):
     p = BY_KEY["countdown"]
@@ -3233,7 +3302,7 @@ PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind":
   "title": "Free Online Countdown Wallpaper Maker, With Your Own Photo", "crumb": "Countdown wallpaper maker",
   "description": "Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.",
   "hub_title": "Free online countdown wallpaper maker", "hub_desc": "Your date and your photo on a Lock Screen or desktop wallpaper, plus a link to share the countdown.",
-  "js": [WALL_JS], "css": WALL_CSS,
+  "js": [STUDIO_JS, WALL_JS], "css": WALL_CSS,
   "faq": [
     ("Is the countdown wallpaper maker free?", "Yes. There is no sign-up, no watermark and no limit on how many wallpapers you make."),
     ("Is my photo uploaded anywhere?", "No. Your browser draws the wallpaper on this page, and the photo never leaves your device. The share link carries only the title, the date and the background color, never the photo."),
@@ -3250,31 +3319,38 @@ PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind":
   "body": f"""<h1>Free online countdown wallpaper maker</h1>
 <p class="lede">Pick a date, add your own photo and download a countdown wallpaper for your iPhone Lock Screen or your computer. Free, no sign-up, no watermark. Your browser draws the picture on this page, so the photo never leaves your device.</p>
 <p class="wp-shared" id="wp-shared" hidden></p>
-<div class="wp">
-<form class="wp-form" id="wallpaper">
-<div class="wp-pre" role="group" aria-label="Quick picks"><button type="button" data-preset="christmas" data-track-id="wp-preset-christmas">Christmas</button><button type="button" data-preset="newyear" data-track-id="wp-preset-newyear">New Year</button><button type="button" data-preset="thanksgiving" data-track-id="wp-preset-thanksgiving">Thanksgiving</button><button type="button" data-preset="valentines" data-track-id="wp-preset-valentines">Valentine’s Day</button><button type="button" data-preset="halloween" data-track-id="wp-preset-halloween">Halloween</button></div>
-<label>Counting down to<input type="text" name="title" maxlength="40" placeholder="Our trip to Lisbon" autocomplete="off"></label>
-<label>Date<input type="date" name="date" required></label>
-<label>Your photo (optional)<input type="file" name="photo" accept="image/*"></label>
-<p class="wp-msg" id="wp-msg" role="alert" hidden></p>
-<div class="wp-photo-ctl" id="wp-photo-ctl" hidden><label>Photo position<input type="range" name="pos" min="0" max="100" value="50"></label><label>Darken photo<input type="range" name="shade" min="0" max="60" value="25"></label><button type="button" class="btn ghost" id="wp-clear" data-track-id="wp-photo-remove">Remove photo</button></div>
-<fieldset class="wp-bg" id="wp-bgset"><legend>Background</legend><label><input type="radio" name="bg" value="cream" checked><i style="background:linear-gradient(#fffaf0,#f5dc61)"></i>Cream</label><label><input type="radio" name="bg" value="ink"><i style="background:linear-gradient(#141414,#3d3d3d)"></i>Ink</label><label><input type="radio" name="bg" value="dusk"><i style="background:linear-gradient(#2b2d5e,#e98a6b)"></i>Dusk</label><label><input type="radio" name="bg" value="pine"><i style="background:linear-gradient(#123a2e,#5c8f6b)"></i>Pine</label></fieldset>
-<label>Size<select name="size"><option value="1206x2622">iPhone</option><option value="1320x2868">Large iPhone</option><option value="2560x1440">Computer (16:9)</option></select></label>
-<button type="submit" class="btn" data-track-id="wp-make">Make my wallpaper</button>
+<div class="st wp">
+<form class="st-panel" id="wallpaper">
+<fieldset class="st-step"><legend><b>1</b>Your countdown</legend><div class="st-stack">
+<div class="st-chips" role="group" aria-label="Quick picks"><button type="button" class="st-chipbtn" data-preset="christmas" data-track-id="wp-preset-christmas">Christmas</button><button type="button" class="st-chipbtn" data-preset="newyear" data-track-id="wp-preset-newyear">New Year</button><button type="button" class="st-chipbtn" data-preset="thanksgiving" data-track-id="wp-preset-thanksgiving">Thanksgiving</button><button type="button" class="st-chipbtn" data-preset="valentines" data-track-id="wp-preset-valentines">Valentine’s Day</button><button type="button" class="st-chipbtn" data-preset="halloween" data-track-id="wp-preset-halloween">Halloween</button></div>
+<div class="st-row"><label class="st-field">Counting down to<input type="text" name="title" maxlength="40" placeholder="Our trip to Lisbon" autocomplete="off"></label><label class="st-field">Date<input type="date" name="date" required></label></div>
+</div></fieldset>
+<fieldset class="st-step"><legend><b>2</b>Photo <small>optional</small></legend><div class="st-stack">
+<label class="st-drop" id="wp-drop"><input type="file" name="photo" accept="image/*"><span class="st-ico">{ICO_IMG}</span><span><b>Add a photo</b><small>Choose one, or drop it here</small></span></label>
+<div class="st-thumb" id="wp-thumb" hidden><img id="wp-thumbimg" alt="" width="56" height="56"><div><b>Your photo</b><small>It stays on this device</small></div><button type="button" class="st-x" id="wp-clear" data-track-id="wp-photo-remove" aria-label="Remove photo">×</button></div>
+<p class="st-msg" id="wp-msg" role="alert" hidden></p>
+<div class="st-stack" id="wp-photo-ctl" hidden><label class="st-field">Photo position<input type="range" name="pos" min="0" max="100" value="50"></label><label class="st-field">Darken photo<input type="range" name="shade" min="0" max="60" value="25"></label></div>
+</div></fieldset>
+<fieldset class="st-step" id="wp-bgstep"><legend><b>3</b>Background</legend><div class="st-swatches"><label class="st-sw" title="Cream"><input type="radio" name="bg" value="cream" checked><i style="background:linear-gradient(#fffaf0,#f5dc61)"></i><span class="st-sr">Cream</span></label><label class="st-sw" title="Ink"><input type="radio" name="bg" value="ink"><i style="background:linear-gradient(#141414,#3d3d3d)"></i><span class="st-sr">Ink</span></label><label class="st-sw" title="Dusk"><input type="radio" name="bg" value="dusk"><i style="background:linear-gradient(#2b2d5e,#e98a6b)"></i><span class="st-sr">Dusk</span></label><label class="st-sw" title="Pine"><input type="radio" name="bg" value="pine"><i style="background:linear-gradient(#123a2e,#5c8f6b)"></i><span class="st-sr">Pine</span></label></div></fieldset>
+<fieldset class="st-step"><legend><b>4</b>Size</legend><div class="st-seg"><label class="st-segi"><input type="radio" name="size" value="1206x2622" checked><span>iPhone</span></label><label class="st-segi"><input type="radio" name="size" value="1320x2868"><span>Large iPhone</span></label><label class="st-segi"><input type="radio" name="size" value="2560x1440"><span>Computer</span></label></div></fieldset>
 </form>
-<figure class="wp-preview"><canvas id="wp-canvas" width="360" height="780" aria-label="Preview of your countdown wallpaper"></canvas><figcaption>The grey time marks where the iPhone clock sits. It isn’t in the download.</figcaption></figure>
+<div class="st-side">
+<figure class="st-stage"><figcaption class="st-top"><span class="st-live"><i></i>Live preview</span><span id="wp-dim">1206 × 2622</span></figcaption>
+<div class="st-wrap" id="wp-wrap"><div class="st-device"><canvas id="wp-canvas" width="360" height="783" aria-label="Preview of your countdown wallpaper"></canvas></div></div>
+<p class="st-cap">The grey time marks where the iPhone clock sits. It isn’t in the download.</p></figure>
+<div class="st-actions" data-track-section="wallpaper-stage">
+<button type="button" class="btn st-save" id="wp-save" data-track-id="wp-download">{ICO_DL}<span>Save wallpaper</span></button>
+<button type="button" class="btn ghost" id="wp-share" data-track-id="wp-share-link">{ICO_LINK}<span>Share the countdown</span></button>
+<input class="st-link" id="wp-link" type="text" readonly hidden aria-label="Link to this countdown">
+<p class="st-hint st-hint-ios">On iPhone, tap Save wallpaper, then Save Image.</p><p class="st-hint st-hint-desk">On a computer the wallpaper downloads as a JPEG.</p>
 </div>
-<div id="wp-out" hidden aria-live="polite" data-track-section="wallpaper-result">
-<div class="wp-result"><img id="wp-img" alt="Your countdown wallpaper" width="150" height="325"><div>
-<p class="wp-actions"><button class="btn" id="wp-save" type="button" data-track-id="wp-download">Save wallpaper</button><button class="btn ghost" id="wp-share" type="button" data-track-id="wp-share-link">Share the countdown</button></p>
-<p class="wp-hint wp-hint-phone">On iPhone, tap Save wallpaper and then Save Image, or touch and hold the picture and tap Save to Photos.</p><p class="wp-hint wp-hint-desk">On a Mac, right-click the downloaded file in Finder and choose Set Desktop Picture. On Windows, right-click it and choose Set as desktop background.</p>
-<input class="wp-link" id="wp-link" type="text" readonly hidden aria-label="Link to this countdown">
-</div></div>
-<div class="wp-next" data-track-section="wallpaper-next"><p><strong>A wallpaper won’t count down.</strong> It keeps the number it shows today. On iPhone, the free Countdown widget shows a number that changes by itself every midnight, on the Lock Screen or the Home Screen.</p>
+<div class="st-next" id="wp-next" hidden data-track-section="wallpaper-next"><p><strong>A wallpaper won’t count down.</strong> It keeps the number it shows today. On iPhone, the free Countdown widget shows a number that changes by itself every midnight, on the Lock Screen or the Home Screen.</p>
 <a class="btn" href="{esc(wall_store("wallpaper"))}">{bp.APPLE}Get the Countdown widget, free</a></div>
 </div>
+</div>
+<div class="st-lb" id="wp-lb" hidden role="dialog" aria-modal="true" aria-label="Your wallpaper"><figure><img alt="Your countdown wallpaper"><figcaption>Touch and hold the picture to save it to Photos.</figcaption></figure><button type="button" class="st-lbx" aria-label="Close">×</button></div>
 <h2>Set it as your iPhone Lock Screen</h2>
-<ol><li>Tap <strong>Save wallpaper</strong>, then <strong>Save Image</strong>. Or touch and hold the picture and tap <strong>Save to Photos</strong>.</li>
+<ol><li>Tap <strong>Save wallpaper</strong>, then <strong>Save Image</strong>.</li>
 <li>Touch and hold the Lock Screen, tap <strong>+</strong>, tap <strong>Photos</strong> and choose the wallpaper.</li>
 <li>Pinch or drag to adjust it if you like, tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
 <p>The Lock Screen clock and widgets sit at the top of the screen, so the maker places your number in the lower half. That is what the grey time in the preview is for.</p>
@@ -3304,16 +3380,16 @@ PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind":
 # 只做「纪念用」的里程碑，不写发育标准（几个月该会什么）——那是健康类内容，不碰。
 # 埋点：表单 id=milestone；mk-make / mk-download / mk-print / mk-photo-remove；结果区 milestone-result；生成后商店按钮 ct=web-pagewren-milestone（区块 milestone-next）。
 MK_JS = r"""
-(function(){var f=document.getElementById('milestone');if(!f)return;
+(function(){var f=document.getElementById('milestone'),S=window.gkStudio;if(!f||!S)return;function $(i){return document.getElementById(i)}
 var DE=/^de/.test(document.documentElement.lang);
-var T=DE?{m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
+var T=DE?{saved:'Gespeichert',m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
 F:{smile:'Erstes Lächeln',tooth:'Erster Zahn',steps:'Erste Schritte',word:'Erstes Wort',food:'Erster Brei',night:'Durchgeschlafen',trip:'Erster Urlaub',xmas:'Erstes Weihnachten'}}
-:{m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
+:{saved:'Saved',m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
 F:{smile:'First smile',tooth:'First tooth',steps:'First steps',word:'First word',food:'First solid food',night:'Slept through the night',trip:'First trip',xmas:'First Christmas'}};
 var BG={cream:['#fffaf0','#141414','#e2cfa6'],sage:['#e3ebdf','#253528','#a9c0a2'],rose:['#f7e3e0','#46282a','#e1aea8'],sky:['#e1ebf5','#1f2f45','#a8c1de'],ink:['#1d1d1d','#fffaf0','#4a4a4a']};
 var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
-var cv=document.getElementById('mk-canvas'),out=document.getElementById('mk-out'),pic=document.getElementById('mk-img'),ctl=document.getElementById('mk-photo-ctl'),bgset=document.getElementById('mk-bgset'),msg=document.getElementById('mk-msg'),own=document.getElementById('mk-own');
-var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+var cv=$('mk-canvas'),stage=$('mk-wrap'),ctl=$('mk-photo-ctl'),bgstep=$('mk-bgstep'),msg=$('mk-msg'),own=$('mk-own'),dropz=$('mk-drop'),thumb=$('mk-thumb'),timg=$('mk-thumbimg'),save=$('mk-save'),nextc=$('mk-next'),lb=$('mk-lb');
+var img=null,pending=false;
 function E(n){return f.elements[n]}
 function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
 function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
@@ -3321,7 +3397,7 @@ function fmt(d){return d?d.toLocaleDateString(T.loc,{day:'numeric',month:'long',
 function opts(k){var d=parse(E('date').value);return{key:k||E('key').value,own:(E('own').value||'').trim().slice(0,40),name:(E('name').value||'').trim().slice(0,30),date:k?null:d,note:k?'':(E('note').value||'').trim().slice(0,40),img:k?null:img,bg:bgKey()}}
 function head(o){var k=o.key,m=/^m(\d+)$/.exec(k);if(m)return{num:m[1],unit:(+m[1]===1?T.m[0]:T.m[1]).toUpperCase()};if(k==='y1')return{num:'1',unit:T.y[0].toUpperCase()};
 if(k==='birth')return{title:T.hello};if(k==='own')return{title:o.own||'…'};return{title:T.F[k]||k}}
-function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+function lines(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
 while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
 if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
 function star(x,cx,cy,r){x.beginPath();for(var i=0;i<8;i++){var a=i*Math.PI/4,rr=i%2?r*.32:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.fill()}
@@ -3333,7 +3409,7 @@ else{x.strokeStyle=C[2];x.lineWidth=5*u;x.strokeRect(34*u,34*u,W-68*u,H-68*u);x.
 x.fillStyle=C[1];x.textAlign='center';x.textBaseline='alphabetic';
 var h=head(o),top=o.img?pad+ph:0,area=H-top-(o.img?pad*.4:0),sc=o.img?.55:1,s2=o.img?.82:1,rows=[],maxW=W-(o.img?2*pad+40*u:220*u);
 if(h.num){var big=330*sc*u;x.font='600 '+Math.round(big)+'px '+DISP;rows.push([h.num,x.font,big*.72,0]);rows.push([h.unit,'700 '+Math.round(54*s2*u)+'px '+TXT,46*s2*u,28*sc*u,1])}
-else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=wrap(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=wrap(x,h.title,maxW,3)}
+else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=lines(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=lines(x,h.title,maxW,3)}
 tl.forEach(function(l,i){rows.push([l,x.font,tz*.74,i?tz*.28:0])})}
 var sub=o.key==='birth'&&o.date?T.born+fmt(o.date):(o.date?fmt(o.date):'');
 if(o.name)rows.push([o.name,'700 '+Math.round(72*s2*u)+'px '+TXT,60*s2*u,(h.num?44:52)*sc*u]);
@@ -3342,17 +3418,16 @@ if(o.note)rows.push([o.note,'500 '+Math.round(40*s2*u)+'px '+TXT,32*s2*u,18*s2*u
 var tot=0;rows.forEach(function(r){tot+=r[2]+r[3]});var y=top+(area-tot)/2;
 rows.forEach(function(r){y+=r[3]+r[2];x.font=r[1];var ls=r[4]&&'letterSpacing' in x;if(ls)x.letterSpacing=Math.round(10*sc*u)+'px';x.fillText(r[0],W/2,y);if(ls)x.letterSpacing='0px'})}
 function preview(){pending=false;draw(cv,540,675,opts())}
-function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true;own.hidden=E('key').value!=='own'}
-f.addEventListener('input',redraw);f.addEventListener('change',redraw);
-E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
-im.onload=function(){img=im;ctl.hidden=false;bgset.hidden=true;redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent=T.bad;msg.hidden=false};im.src=src});
-document.getElementById('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';ctl.hidden=true;bgset.hidden=false;redraw()});
-f.addEventListener('submit',function(e){e.preventDefault();var c=document.createElement('canvas');draw(c,1080,1350,opts());
-c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.hidden=false;out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
-document.getElementById('mk-save').addEventListener('click',function(){if(!blob)return;var name=T.file+'-'+E('key').value+'.jpg',file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
-if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
-var a=document.createElement('a');a.href=url;a.download=name;a.click()});
-document.getElementById('mk-print').addEventListener('click',function(){var sheet=document.getElementById('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}own.hidden=E('key').value!=='own'}
+function photo(on){ctl.hidden=!on;bgstep.hidden=on;dropz.hidden=on;thumb.hidden=!on}
+f.addEventListener('input',redraw);f.addEventListener('change',function(){redraw();S.bump(stage)});
+S.drop(dropz,E('photo'),function(file){msg.hidden=true;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;timg.src=src;photo(true);redraw();S.bump(stage)};im.onerror=function(){URL.revokeObjectURL(src);E('photo').value='';msg.textContent=T.bad;msg.hidden=false};im.src=src});
+$('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';photo(false);redraw();S.bump(stage)});
+f.addEventListener('submit',function(e){e.preventDefault()});
+save.addEventListener('click',function(){var c=document.createElement('canvas');draw(c,1080,1350,opts());
+S.deliver(c,T.file+'-'+E('key').value+'.jpg',lb);S.done(save,T.saved);nextc.hidden=false});
+$('mk-print').addEventListener('click',function(){var sheet=$('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
 sheet.textContent='';var keys=['birth','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','y1'],loads=[];
 keys.forEach(function(k){var c=document.createElement('canvas');draw(c,900,1125,opts(k));var im=new Image();im.alt='';im.src=c.toDataURL('image/jpeg',.9);sheet.appendChild(im);if(im.decode)loads.push(im.decode().catch(function(){}))});
 document.documentElement.classList.add('mk-printing');Promise.all(loads).then(function(){window.print()})});
@@ -3360,26 +3435,14 @@ window.addEventListener('afterprint',function(){document.documentElement.classLi
 var t=new Date();E('date').value=t.getFullYear()+'-'+('0'+(t.getMonth()+1)).slice(-2)+'-'+('0'+t.getDate()).slice(-2);
 preview();if(document.fonts&&document.fonts.load)Promise.all([document.fonts.load('600 40px "Josefin Sans"'),document.fonts.load('700 20px "Manrope"')]).then(preview,preview)})();
 """
-MK_CSS = """
-.mk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
-.mk [hidden],#mk-out[hidden]{display:none!important}
-.mk-form{display:grid;gap:14px;min-width:0}.mk-form label,.mk-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
-.mk-form input[type=text],.mk-form input[type=date],.mk-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
-.mk-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.mk-form input[type=range]{width:100%;accent-color:var(--ink)}
-.mk-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.mk-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.mk-bg legend{margin:0 0 8px;padding:0}
-.mk-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.mk-bg input{accent-color:var(--ink);margin:0}
-.mk-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
-.mk-photo-ctl{display:grid;gap:12px}.mk-photo-ctl .btn{justify-self:start;padding:11px 16px}.mk-form .btn{justify-self:start}
-.mk-msg{margin:0;color:#a3341f;font-size:14px}.mk-btns{display:flex;flex-wrap:wrap;gap:10px}
-.mk-preview{margin:0}.mk-preview canvas{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink),0 10px 24px rgba(0,0,0,.08);background:#fff}
-#mk-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
-.mk-result{display:flex;gap:22px;align-items:flex-start}.mk-result img{width:180px;height:auto;flex:none;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink)}
-.mk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.mk-hint{font-size:14px;margin:0!important}
-.mk-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.mk-next p{margin:0 0 14px}
+MK_CSS = STUDIO_CSS + """
+.mk .st-paper{width:min(100%,292px);transform:rotate(-1.4deg);transition:transform .45s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 22px 24px rgba(70,45,10,.22))}
+.mk .st-paper:hover{transform:rotate(0) translateY(-3px)}
+.mk .st-paper canvas{display:block;width:100%;height:auto;border-radius:4px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.mk-months .st-chip span{min-width:44px;padding:0 10px}
 #mk-sheet{display:none}
 @media print{html.mk-printing main,html.mk-printing header,html.mk-printing footer{display:none!important}html.mk-printing #mk-sheet{display:grid!important;grid-template-columns:1fr 1fr;gap:6mm}html.mk-printing #mk-sheet img{width:100%;height:auto;break-inside:avoid;page-break-inside:avoid}}
-@media (max-width:760px){.mk{grid-template-columns:minmax(0,1fr);padding:18px}.mk-preview{order:-1;width:min(100%,220px);margin:0 auto}.mk-result{flex-direction:column}.mk-result img{width:min(100%,220px)}#mk-out{padding:18px}.mk-two{grid-template-columns:1fr}}
+@media (max-width:860px){.mk .st-paper{width:min(62vw,236px)}}
 """
 MK = {
  "en": {"path": "/tools/baby-milestone-cards/",
@@ -3391,9 +3454,9 @@ MK = {
   "L": {"key": "Milestone", "own": "Your own text", "own_ph": "First swim", "name": "Baby’s name", "name_ph": "Emma", "date": "Date", "note": "Note (optional)", "note_ph": "24 in · 13 lb",
         "photo": "Photo (optional)", "pos": "Photo position", "remove": "Remove photo", "bg": "Background", "make": "Make my card", "save": "Save card", "print": "Print all 13 monthly cards",
         "cap": "Preview. The saved card is 1080 × 1350 pixels.", "alt": "Your milestone card",
-        "hint": "On iPhone, tap Save card and then Save Image, or touch and hold the card and tap Save to Photos. On a computer the card downloads as a JPEG.",
+        "hint_ios": "On iPhone, tap Save card, then Save Image.", "hint_desk": "On a computer the card downloads as a JPEG.",
         "next": "<strong>One card a month adds up.</strong> In Pagewren, each month’s photo sits on its own chapter page, so the first year turns into a book you can flip through.",
-        "cta": "Get Pagewren for iPhone", "birth": "Hello world (birth)", "m": ["month", "months"], "y1": "1 year", "first": "First moments",
+        "cta": "Get Pagewren for iPhone", "steps": ["Milestone", "Details", "Photo", "Background"], "opt": "optional", "drop": "Add a photo", "drop_sub": "Choose one, or drop it here", "thumb": "Your photo", "thumb_sub": "It stays on this device", "live": "Live preview", "lb": "Touch and hold the card to save it to Photos.", "close": "Close", "birth_chip": "Hello world", "y1_chip": "1 year", "birth": "Hello world (birth)", "m": ["month", "months"], "y1": "1 year", "first": "First moments",
         "F": [("smile", "First smile"), ("tooth", "First tooth"), ("steps", "First steps"), ("word", "First word"), ("food", "First solid food"), ("night", "Slept through the night"), ("trip", "First trip"), ("xmas", "First Christmas"), ("own", "Your own text…")],
         "bgs": [("cream", "Cream"), ("sage", "Sage"), ("rose", "Rose"), ("sky", "Sky"), ("ink", "Ink")], "group_m": "Months"},
   "rest": """<h2>Month photos that look good together</h2>
@@ -3427,9 +3490,9 @@ MK = {
   "L": {"key": "Meilenstein", "own": "Eigener Text", "own_ph": "Erstes Mal schwimmen", "name": "Name des Babys", "name_ph": "Emma", "date": "Datum", "note": "Notiz (optional)", "note_ph": "62 cm · 6,1 kg",
         "photo": "Foto (optional)", "pos": "Fotoausschnitt", "remove": "Foto entfernen", "bg": "Hintergrund", "make": "Karte erstellen", "save": "Karte speichern", "print": "Alle 13 Monatskarten drucken",
         "cap": "Vorschau. Die gespeicherte Karte hat 1080 × 1350 Pixel.", "alt": "Deine Meilensteinkarte",
-        "hint": "Auf dem iPhone: „Karte speichern“ tippen und „Bild sichern“ wählen, oder die Karte lange drücken und sie über das Menü in deinen Fotos sichern. Am Computer wird die Karte als JPEG heruntergeladen.",
+        "hint_ios": "Auf dem iPhone „Karte speichern“ tippen und „Bild sichern“ wählen.", "hint_desk": "Am Computer wird die Karte als JPEG heruntergeladen.",
         "next": "<strong>Jeden Monat eine Karte, und daraus wird ein Buch.</strong> In Pagewren steht das Foto jedes Monats auf seiner eigenen Kapitelseite, und aus dem ersten Jahr wird ein Buch zum Durchblättern.",
-        "cta": "Pagewren fürs iPhone laden", "birth": "Hallo Welt (Geburt)", "m": ["Monat", "Monate"], "y1": "1 Jahr", "first": "Erste Male",
+        "cta": "Pagewren fürs iPhone laden", "steps": ["Meilenstein", "Angaben", "Foto", "Hintergrund"], "opt": "optional", "drop": "Foto hinzufügen", "drop_sub": "Foto auswählen oder hierher ziehen", "thumb": "Dein Foto", "thumb_sub": "Es bleibt auf diesem Gerät", "live": "Live-Vorschau", "lb": "Karte lange drücken und in deinen Fotos sichern.", "close": "Schließen", "birth_chip": "Hallo Welt", "y1_chip": "1 Jahr", "birth": "Hallo Welt (Geburt)", "m": ["Monat", "Monate"], "y1": "1 Jahr", "first": "Erste Male",
         "F": [("smile", "Erstes Lächeln"), ("tooth", "Erster Zahn"), ("steps", "Erste Schritte"), ("word", "Erstes Wort"), ("food", "Erster Brei"), ("night", "Durchgeschlafen"), ("trip", "Erster Urlaub"), ("xmas", "Erstes Weihnachten"), ("own", "Eigener Text …")],
         "bgs": [("cream", "Creme"), ("sage", "Salbei"), ("rose", "Rosé"), ("sky", "Himmelblau"), ("ink", "Tinte")], "group_m": "Monate"},
   "rest": """<h2>Monatsbilder, die zusammenpassen</h2>
@@ -3460,40 +3523,53 @@ def mk_store(lang):
     return bp.store_link(a, bp.store_of(a), "milestone")
 def mk_page(lang):
     S = MK[lang]; L = S["L"]
-    months = "".join(f'<option value="m{n}">{n} {L["m"][0] if n == 1 else L["m"][1]}</option>' for n in range(1, 12))
-    firsts = "".join(f'<option value="{k}">{esc(v)}</option>' for k, v in L["F"])
-    bgs = "".join(f'<label><input type="radio" name="bg" value="{k}"{" checked" if k == "cream" else ""}><i style="background:{c}"></i>{esc(v)}</label>'
+    chip = lambda v, label, checked=False: f'<label class="st-chip"><input type="radio" name="key" value="{v}"{" checked" if checked else ""}><span>{esc(label)}</span></label>'
+    months = "".join(chip(f"m{n}", str(n)) for n in range(1, 12)) + chip("y1", L["y1_chip"])
+    firsts = "".join(chip(k, v.rstrip(" …")) for k, v in L["F"])
+    bgs = "".join(f'<label class="st-sw" title="{esc(v)}"><input type="radio" name="bg" value="{k}"{" checked" if k == "cream" else ""}><i style="background:{c}"></i><span class="st-sr">{esc(v)}</span></label>'
                   for (k, v), c in zip(L["bgs"], ["#fffaf0", "#e3ebdf", "#f7e3e0", "#e1ebf5", "#1d1d1d"]))
+    st = L["steps"]
     body = f"""<h1>{esc(S["h1"])}</h1>
 <p class="lede">{esc(S["lede"])}</p>
-<div class="mk">
-<form class="mk-form" id="milestone">
-<label>{esc(L["key"])}<select name="key"><option value="birth">{esc(L["birth"])}</option><optgroup label="{esc(L["group_m"])}">{months}<option value="y1">{esc(L["y1"])}</option></optgroup><optgroup label="{esc(L["first"])}">{firsts}</optgroup></select></label>
-<label id="mk-own" hidden>{esc(L["own"])}<input type="text" name="own" maxlength="40" placeholder="{esc(L["own_ph"])}" autocomplete="off"></label>
-<div class="mk-two"><label>{esc(L["name"])}<input type="text" name="name" maxlength="30" placeholder="{esc(L["name_ph"])}" autocomplete="off"></label><label>{esc(L["date"])}<input type="date" name="date"></label></div>
-<label>{esc(L["note"])}<input type="text" name="note" maxlength="40" placeholder="{esc(L["note_ph"])}" autocomplete="off"></label>
-<label>{esc(L["photo"])}<input type="file" name="photo" accept="image/*"></label>
-<p class="mk-msg" id="mk-msg" role="alert" hidden></p>
-<div class="mk-photo-ctl" id="mk-photo-ctl" hidden><label>{esc(L["pos"])}<input type="range" name="pos" min="0" max="100" value="50"></label><button type="button" class="btn ghost" id="mk-clear" data-track-id="mk-photo-remove">{esc(L["remove"])}</button></div>
-<fieldset class="mk-bg" id="mk-bgset"><legend>{esc(L["bg"])}</legend>{bgs}</fieldset>
-<div class="mk-btns"><button type="submit" class="btn" data-track-id="mk-make">{esc(L["make"])}</button><button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print">{esc(L["print"])}</button></div>
+<div class="st mk">
+<form class="st-panel" id="milestone">
+<fieldset class="st-step"><legend><b>1</b>{esc(st[0])}</legend>
+<div class="st-chips">{chip("birth", L["birth_chip"], True)}</div>
+<span class="st-glabel">{esc(L["group_m"])}</span><div class="st-chips mk-months" role="group" aria-label="{esc(L["group_m"])}">{months}</div>
+<span class="st-glabel">{esc(L["first"])}</span><div class="st-chips" role="group" aria-label="{esc(L["first"])}">{firsts}</div>
+<label class="st-field" id="mk-own" hidden style="margin-top:12px">{esc(L["own"])}<input type="text" name="own" maxlength="40" placeholder="{esc(L["own_ph"])}" autocomplete="off"></label>
+</fieldset>
+<fieldset class="st-step"><legend><b>2</b>{esc(st[1])}</legend><div class="st-stack">
+<div class="st-row"><label class="st-field">{esc(L["name"])}<input type="text" name="name" maxlength="30" placeholder="{esc(L["name_ph"])}" autocomplete="off"></label><label class="st-field">{esc(L["date"])}<input type="date" name="date"></label></div>
+<label class="st-field">{esc(L["note"])}<input type="text" name="note" maxlength="40" placeholder="{esc(L["note_ph"])}" autocomplete="off"></label>
+</div></fieldset>
+<fieldset class="st-step"><legend><b>3</b>{esc(st[2])} <small>{esc(L["opt"])}</small></legend><div class="st-stack">
+<label class="st-drop" id="mk-drop"><input type="file" name="photo" accept="image/*"><span class="st-ico">{ICO_IMG}</span><span><b>{esc(L["drop"])}</b><small>{esc(L["drop_sub"])}</small></span></label>
+<div class="st-thumb" id="mk-thumb" hidden><img id="mk-thumbimg" alt="" width="56" height="56"><div><b>{esc(L["thumb"])}</b><small>{esc(L["thumb_sub"])}</small></div><button type="button" class="st-x" id="mk-clear" data-track-id="mk-photo-remove" aria-label="{esc(L["remove"])}">×</button></div>
+<p class="st-msg" id="mk-msg" role="alert" hidden></p>
+<label class="st-field" id="mk-photo-ctl" hidden>{esc(L["pos"])}<input type="range" name="pos" min="0" max="100" value="50"></label>
+</div></fieldset>
+<fieldset class="st-step" id="mk-bgstep"><legend><b>4</b>{esc(st[3])}</legend><div class="st-swatches">{bgs}</div></fieldset>
 </form>
-<figure class="mk-preview"><canvas id="mk-canvas" width="540" height="675" aria-label="{esc(L["alt"])}"></canvas><figcaption class="meta" style="text-align:center">{esc(L["cap"])}</figcaption></figure>
+<div class="st-side">
+<figure class="st-stage"><figcaption class="st-top"><span class="st-live"><i></i>{esc(L["live"])}</span><span>1080 × 1350</span></figcaption>
+<div class="st-wrap" id="mk-wrap"><div class="st-paper"><canvas id="mk-canvas" width="540" height="675" aria-label="{esc(L["alt"])}"></canvas></div></div></figure>
+<div class="st-actions" data-track-section="milestone-stage">
+<button type="button" class="btn st-save" id="mk-save" data-track-id="mk-download">{ICO_DL}<span>{esc(L["save"])}</span></button>
+<button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print">{ICO_PRINT}<span>{esc(L["print"])}</span></button>
+<p class="st-hint st-hint-ios">{esc(L["hint_ios"])}</p><p class="st-hint st-hint-desk">{esc(L["hint_desk"])}</p>
 </div>
-<div id="mk-out" hidden aria-live="polite" data-track-section="milestone-result">
-<div class="mk-result"><img id="mk-img" alt="{esc(L["alt"])}" width="180" height="225"><div>
-<p class="mk-actions"><button class="btn" id="mk-save" type="button" data-track-id="mk-download">{esc(L["save"])}</button></p>
-<p class="mk-hint">{esc(L["hint"])}</p>
-</div></div>
-<div class="mk-next" data-track-section="milestone-next"><p>{L["next"]}</p>
+<div class="st-next" id="mk-next" hidden data-track-section="milestone-next"><p>{L["next"]}</p>
 <a class="btn" href="{esc(mk_store(lang))}">{bp.APPLE}{esc(L["cta"])}</a></div>
 </div>
+</div>
+<div class="st-lb" id="mk-lb" hidden role="dialog" aria-modal="true" aria-label="{esc(L["alt"])}"><figure><img alt="{esc(L["alt"])}"><figcaption>{esc(L["lb"])}</figcaption></figure><button type="button" class="st-lbx" aria-label="{esc(L["close"])}">×</button></div>
 {S["rest"]}"""
     for k in ("title", "description"):
         assert len(S[k]) <= {"title": 65, "description": 160}[k], (lang, k, len(S[k]))
     return {"path": S["path"], "lang": lang, "kind": "WebApplication", "app": "pagewren", "published": "2026-10-25",
             "title": S["title"], "crumb": S["crumb"], "description": S["description"], "hub_title": S["hub_title"], "hub_desc": S["hub_desc"],
-            "js": [MK_JS], "css": MK_CSS, "faq": S["faq"], "more": S["more"], "body": body}
+            "js": [STUDIO_JS, MK_JS], "css": MK_CSS, "faq": S["faq"], "more": S["more"], "body": body}
 PAGES.append(mk_page("en"))
 PAGES.append(mk_page("de"))
 

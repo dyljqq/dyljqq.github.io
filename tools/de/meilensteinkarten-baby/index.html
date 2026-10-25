@@ -126,25 +126,71 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 .print-title{display:none}
 @media print{.print-title{display:block!important;font:600 22px/1.3 var(--display);margin:0 0 12px}.inv-wrap h3,#pack-out h3{break-after:avoid}header,.crumbs,.calc,.appcard,.ask,.meta,footer,#faq-section,.more,.article>*:not(.inv-wrap):not(#pack-out):not(.pack-head){display:none!important}.inv{border:0;padding:0}.inv [contenteditable]{border:0}.inv-tools,#pack-actions{display:none!important}body{font-size:13px}}
 
-.mk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:24px;align-items:start;margin:22px 0 8px;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:var(--cream)}
-.mk [hidden],#mk-out[hidden]{display:none!important}
-.mk-form{display:grid;gap:14px;min-width:0}.mk-form label,.mk-bg legend{display:grid;gap:6px;font:700 12px/1 var(--text);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
-.mk-form input[type=text],.mk-form input[type=date],.mk-form select{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);min-width:0;width:100%}
-.mk-form input[type=file]{font:400 14px/1.4 var(--text);color:var(--ink);max-width:100%;text-transform:none;letter-spacing:0}.mk-form input[type=range]{width:100%;accent-color:var(--ink)}
-.mk-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.mk-bg{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px 14px}.mk-bg legend{margin:0 0 8px;padding:0}
-.mk-bg label{display:flex;align-items:center;gap:7px;font:600 14px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}.mk-bg input{accent-color:var(--ink);margin:0}
-.mk-bg i{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block}
-.mk-photo-ctl{display:grid;gap:12px}.mk-photo-ctl .btn{justify-self:start;padding:11px 16px}.mk-form .btn{justify-self:start}
-.mk-msg{margin:0;color:#a3341f;font-size:14px}.mk-btns{display:flex;flex-wrap:wrap;gap:10px}
-.mk-preview{margin:0}.mk-preview canvas{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink),0 10px 24px rgba(0,0,0,.08);background:#fff}
-#mk-out{margin:22px 0 0;padding:22px;border:1.5px solid var(--ink);border-radius:20px;background:#fff}
-.mk-result{display:flex;gap:22px;align-items:flex-start}.mk-result img{width:180px;height:auto;flex:none;border-radius:6px;box-shadow:0 0 0 1.5px var(--ink)}
-.mk-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px!important}.mk-hint{font-size:14px;margin:0!important}
-.mk-next{margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}.mk-next p{margin:0 0 14px}
+.st{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:28px;align-items:start;width:min(1032px,calc(100vw - 2 * var(--gutter)));margin:28px 0 12px;animation:stIn .5s cubic-bezier(.2,.8,.2,1) both}
+.st-panel{padding:8px 26px 26px;border-radius:24px;background:#fff;border:1px solid var(--rule);box-shadow:0 22px 44px -30px rgba(20,20,20,.35)}
+.st-step{border:0;margin:0;padding:20px 0 0;min-width:0}.st-step+.st-step{margin-top:18px;border-top:1px solid var(--rule)}
+.st-step>legend{float:left;width:100%;display:flex;align-items:center;gap:10px;padding:0;margin:0 0 14px;font:700 12px/1 var(--text);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink)}
+.st-step>legend+*{clear:both}.st-step>legend b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;letter-spacing:0}
+.st-step>legend small{font:500 12px/1 var(--text);letter-spacing:0;text-transform:none;color:var(--soft)}
+.st-stack{display:grid;gap:12px}.st-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.st-field{display:grid;gap:6px;font:600 13px/1.2 var(--text);color:var(--muted)}
+.st input[type=text],.st input[type=date]{font:400 16px/1.3 var(--text);padding:12px 14px;border:1.5px solid var(--rule);border-radius:12px;background:#fff;color:var(--ink);width:100%;min-width:0;transition:border-color .15s,box-shadow .15s}
+.st input[type=text]:hover,.st input[type=date]:hover{border-color:#cfc8b8}
+.st input[type=text]:focus-visible,.st input[type=date]:focus-visible{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(245,220,97,.55)}
+.st input[type=range]{width:100%;accent-color:var(--ink)}
+.st-chips{display:flex;flex-wrap:wrap;gap:8px}.st-chips+.st-chips{margin-top:10px}.st-glabel{display:block;margin:12px 0 8px;font:600 12px/1 var(--text);color:var(--soft)}
+.st-chip{position:relative;display:inline-flex}.st-chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.st-chip span,.st-chipbtn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;min-width:38px;padding:0 14px;border:1.5px solid var(--rule);border-radius:999px;font:600 14px/1 var(--text);color:var(--ink);background:#fff;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .12s}
+.st-chip:hover span,.st-chipbtn:hover{border-color:var(--ink)}.st-chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.st-chip input:focus-visible+span,.st-chipbtn:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(245,220,97,.6)}.st-chip:active span,.st-chipbtn:active{transform:scale(.95)}
+.st-swatches{display:flex;flex-wrap:wrap;gap:14px}.st-sw{position:relative;display:inline-block;width:40px;height:40px}
+.st-sw input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}.st-sw i{display:block;width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.14);transition:transform .15s,box-shadow .15s}
+.st-sw:hover i{transform:scale(1.06)}.st-sw input:checked+i{box-shadow:inset 0 0 0 1px rgba(0,0,0,.14),0 0 0 3px #fff,0 0 0 5px var(--ink)}
+.st-sw input:focus-visible+i{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ink),0 0 0 9px rgba(245,220,97,.6)}
+.st-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.st-seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:4px;border-radius:16px;background:var(--cream);border:1px solid var(--rule);max-width:100%}
+.st-segi{position:relative;display:inline-flex}.st-segi input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.st-segi span{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:12px;font:600 14px/1 var(--text);color:var(--muted);transition:background .15s,color .15s,box-shadow .15s}
+.st-segi input:checked+span{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08),0 4px 10px -4px rgba(0,0,0,.18)}.st-segi input:focus-visible+span{box-shadow:0 0 0 3px rgba(245,220,97,.7)}
+.st-drop{position:relative;display:flex;align-items:center;gap:14px;padding:14px 16px;border:1.5px dashed #cfc8b8;border-radius:16px;background:var(--cream);cursor:pointer;transition:border-color .15s,background .15s,transform .15s}
+.st-drop:hover,.st-drop.is-over{border-color:var(--ink);background:#fff4cc}.st-drop:focus-within{border-color:var(--ink);border-style:solid;box-shadow:0 0 0 4px rgba(245,220,97,.6)}.st-drop.is-over{transform:scale(1.01)}
+.st-drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.st-ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--rule)}
+.st-drop b,.st-thumb b{display:block;font:600 15px/1.3 var(--text);color:var(--ink)}.st-drop small,.st-thumb small{display:block;margin-top:2px;font-size:13px;color:var(--muted)}
+.st-thumb{display:flex;align-items:center;gap:12px;padding:10px;border-radius:16px;background:var(--cream);border:1px solid var(--rule);animation:stUp .3s ease both}
+.st-thumb img{width:56px;height:56px;object-fit:cover;border-radius:12px;flex:none}.st-thumb div{flex:1;min-width:0}
+.st-x{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--rule);background:#fff;color:var(--ink);font:500 20px/1 var(--text);cursor:pointer;transition:border-color .15s,transform .12s}
+.st-x:hover{border-color:var(--ink)}.st-x:active{transform:scale(.92)}.st-msg{margin:0;color:#a3341f;font-size:14px}
+.st-side{position:sticky;top:20px;display:grid;gap:14px}
+.st-stage{margin:0;padding:18px 22px 22px;border-radius:28px;background:radial-gradient(130% 90% at 50% 0%,#fff 0%,var(--cream) 55%,#f2e7cf 100%);border:1px solid var(--rule)}
+.st-top{display:flex;justify-content:space-between;align-items:center;margin:0 0 16px;font:700 11px/1 var(--text);letter-spacing:1.3px;text-transform:uppercase;color:var(--soft)}
+.st-live{display:inline-flex;align-items:center;gap:7px}.st-live i{width:8px;height:8px;border-radius:50%;background:#3fb37f;animation:stPulse 1.8s ease-out infinite}
+.st-wrap{display:grid;place-items:center}.st-wrap.bump{animation:stBump .38s cubic-bezier(.2,.8,.2,1)}
+.st-cap{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--soft);text-align:center}
+.st-actions{display:grid;gap:10px}.st-actions .btn{width:100%;justify-content:center;padding:15px 20px;transition:background .15s,color .15s,transform .15s,box-shadow .15s}
+.st-actions .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px -12px rgba(20,20,20,.55)}.st-actions .btn:active{transform:translateY(0)}
+.st .btn svg.si{fill:none}.st-save.is-done{background:#2f8f5b;color:#fff}
+.st-hint{margin:2px 0 0;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}.st-hint-ios,.st-hint-desk{display:none}html.is-ios .st-hint-ios,html.is-desk .st-hint-desk{display:block}
+.st-link{width:100%;font:400 14px/1.3 var(--text);padding:10px 12px;border:1.5px solid var(--rule);border-radius:10px;color:var(--ink);background:#fff}
+.st-next{padding:18px;border-radius:20px;background:#fff;border:1.5px solid var(--ink);animation:stUp .45s cubic-bezier(.2,.8,.2,1) both}.st-next p{margin:0 0 14px;font-size:15px}.st-next .btn{width:100%;justify-content:center}
+.st-lb{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:24px;background:rgba(20,20,20,.78);animation:stFade .2s ease both}
+.st-lb figure{margin:0;display:grid;gap:12px;justify-items:center}.st-lb img{max-width:min(86vw,420px);max-height:72vh;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.st-lb figcaption{color:#fff;font:600 15px/1.4 var(--text);text-align:center}.st-lbx{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font:500 24px/1 var(--text);cursor:pointer}
+.st [hidden],.st-lb[hidden]{display:none!important}
+@keyframes stIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes stUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes stFade{from{opacity:0}to{opacity:1}}@keyframes stBump{40%{transform:scale(.982)}100%{transform:scale(1)}}
+@keyframes stPulse{0%{box-shadow:0 0 0 0 rgba(63,179,127,.5)}70%{box-shadow:0 0 0 7px rgba(63,179,127,0)}100%{box-shadow:0 0 0 0 rgba(63,179,127,0)}}
+@media (prefers-reduced-motion:reduce){.st,.st *,.st-lb{animation:none!important;transition:none!important}}
+@media (max-width:860px){.st{grid-template-columns:minmax(0,1fr);gap:16px}.st-side{display:contents}.st-stage{order:-1;padding:14px 16px 16px}.st-panel{order:0;padding:4px 18px 20px}
+.st-actions{order:1;position:sticky;bottom:0;z-index:5;grid-template-columns:minmax(0,1fr) auto;padding:12px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(rgba(255,255,255,0),#fff 26%)}.st-actions .btn.ghost{width:52px;padding:0;background:#fff}.st-actions .btn.ghost span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.st-actions .st-hint{grid-column:1/-1;margin:0;font-size:12.5px;line-height:1.35}.st-actions .st-link{grid-column:1/-1}.st-next{order:2}.st-row{grid-template-columns:minmax(0,1fr)}}
+
+.mk .st-paper{width:min(100%,292px);transform:rotate(-1.4deg);transition:transform .45s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 22px 24px rgba(70,45,10,.22))}
+.mk .st-paper:hover{transform:rotate(0) translateY(-3px)}
+.mk .st-paper canvas{display:block;width:100%;height:auto;border-radius:4px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.mk-months .st-chip span{min-width:44px;padding:0 10px}
 #mk-sheet{display:none}
 @media print{html.mk-printing main,html.mk-printing header,html.mk-printing footer{display:none!important}html.mk-printing #mk-sheet{display:grid!important;grid-template-columns:1fr 1fr;gap:6mm}html.mk-printing #mk-sheet img{width:100%;height:auto;break-inside:avoid;page-break-inside:avoid}}
-@media (max-width:760px){.mk{grid-template-columns:minmax(0,1fr);padding:18px}.mk-preview{order:-1;width:min(100%,220px);margin:0 auto}.mk-result{flex-direction:column}.mk-result img{width:min(100%,220px)}#mk-out{padding:18px}.mk-two{grid-template-columns:1fr}}
+@media (max-width:860px){.mk .st-paper{width:min(62vw,236px)}}
 </style>
 <!-- seo:start -->
 <meta name="description" content="Meilensteinkarten fürs Baby kostenlos online gestalten: Monat, Name, Datum und eigenes Foto als Bild speichern oder alle 13 Karten ausdrucken. Ohne Anmeldung.">
@@ -309,28 +355,39 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 <article class="article">
 <h1>Meilensteinkarten fürs Baby, kostenlos online gestalten</h1>
 <p class="lede">Wähle einen Meilenstein, trag Namen, Datum und auf Wunsch ein Foto ein und speichere die Karte als Bild für die Familie. Oder drucke alle 13 Monatskarten auf einmal. Kostenlos, ohne Anmeldung, ohne Wasserzeichen, und dein Foto verlässt diese Seite nicht.</p>
-<div class="mk">
-<form class="mk-form" id="milestone">
-<label>Meilenstein<select name="key"><option value="birth">Hallo Welt (Geburt)</option><optgroup label="Monate"><option value="m1">1 Monat</option><option value="m2">2 Monate</option><option value="m3">3 Monate</option><option value="m4">4 Monate</option><option value="m5">5 Monate</option><option value="m6">6 Monate</option><option value="m7">7 Monate</option><option value="m8">8 Monate</option><option value="m9">9 Monate</option><option value="m10">10 Monate</option><option value="m11">11 Monate</option><option value="y1">1 Jahr</option></optgroup><optgroup label="Erste Male"><option value="smile">Erstes Lächeln</option><option value="tooth">Erster Zahn</option><option value="steps">Erste Schritte</option><option value="word">Erstes Wort</option><option value="food">Erster Brei</option><option value="night">Durchgeschlafen</option><option value="trip">Erster Urlaub</option><option value="xmas">Erstes Weihnachten</option><option value="own">Eigener Text …</option></optgroup></select></label>
-<label id="mk-own" hidden>Eigener Text<input type="text" name="own" maxlength="40" placeholder="Erstes Mal schwimmen" autocomplete="off"></label>
-<div class="mk-two"><label>Name des Babys<input type="text" name="name" maxlength="30" placeholder="Emma" autocomplete="off"></label><label>Datum<input type="date" name="date"></label></div>
-<label>Notiz (optional)<input type="text" name="note" maxlength="40" placeholder="62 cm · 6,1 kg" autocomplete="off"></label>
-<label>Foto (optional)<input type="file" name="photo" accept="image/*"></label>
-<p class="mk-msg" id="mk-msg" role="alert" hidden></p>
-<div class="mk-photo-ctl" id="mk-photo-ctl" hidden><label>Fotoausschnitt<input type="range" name="pos" min="0" max="100" value="50"></label><button type="button" class="btn ghost" id="mk-clear" data-track-id="mk-photo-remove">Foto entfernen</button></div>
-<fieldset class="mk-bg" id="mk-bgset"><legend>Hintergrund</legend><label><input type="radio" name="bg" value="cream" checked><i style="background:#fffaf0"></i>Creme</label><label><input type="radio" name="bg" value="sage"><i style="background:#e3ebdf"></i>Salbei</label><label><input type="radio" name="bg" value="rose"><i style="background:#f7e3e0"></i>Rosé</label><label><input type="radio" name="bg" value="sky"><i style="background:#e1ebf5"></i>Himmelblau</label><label><input type="radio" name="bg" value="ink"><i style="background:#1d1d1d"></i>Tinte</label></fieldset>
-<div class="mk-btns"><button type="submit" class="btn" data-track-id="mk-make">Karte erstellen</button><button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print">Alle 13 Monatskarten drucken</button></div>
+<div class="st mk">
+<form class="st-panel" id="milestone">
+<fieldset class="st-step"><legend><b>1</b>Meilenstein</legend>
+<div class="st-chips"><label class="st-chip"><input type="radio" name="key" value="birth" checked><span>Hallo Welt</span></label></div>
+<span class="st-glabel">Monate</span><div class="st-chips mk-months" role="group" aria-label="Monate"><label class="st-chip"><input type="radio" name="key" value="m1"><span>1</span></label><label class="st-chip"><input type="radio" name="key" value="m2"><span>2</span></label><label class="st-chip"><input type="radio" name="key" value="m3"><span>3</span></label><label class="st-chip"><input type="radio" name="key" value="m4"><span>4</span></label><label class="st-chip"><input type="radio" name="key" value="m5"><span>5</span></label><label class="st-chip"><input type="radio" name="key" value="m6"><span>6</span></label><label class="st-chip"><input type="radio" name="key" value="m7"><span>7</span></label><label class="st-chip"><input type="radio" name="key" value="m8"><span>8</span></label><label class="st-chip"><input type="radio" name="key" value="m9"><span>9</span></label><label class="st-chip"><input type="radio" name="key" value="m10"><span>10</span></label><label class="st-chip"><input type="radio" name="key" value="m11"><span>11</span></label><label class="st-chip"><input type="radio" name="key" value="y1"><span>1 Jahr</span></label></div>
+<span class="st-glabel">Erste Male</span><div class="st-chips" role="group" aria-label="Erste Male"><label class="st-chip"><input type="radio" name="key" value="smile"><span>Erstes Lächeln</span></label><label class="st-chip"><input type="radio" name="key" value="tooth"><span>Erster Zahn</span></label><label class="st-chip"><input type="radio" name="key" value="steps"><span>Erste Schritte</span></label><label class="st-chip"><input type="radio" name="key" value="word"><span>Erstes Wort</span></label><label class="st-chip"><input type="radio" name="key" value="food"><span>Erster Brei</span></label><label class="st-chip"><input type="radio" name="key" value="night"><span>Durchgeschlafen</span></label><label class="st-chip"><input type="radio" name="key" value="trip"><span>Erster Urlaub</span></label><label class="st-chip"><input type="radio" name="key" value="xmas"><span>Erstes Weihnachten</span></label><label class="st-chip"><input type="radio" name="key" value="own"><span>Eigener Text</span></label></div>
+<label class="st-field" id="mk-own" hidden style="margin-top:12px">Eigener Text<input type="text" name="own" maxlength="40" placeholder="Erstes Mal schwimmen" autocomplete="off"></label>
+</fieldset>
+<fieldset class="st-step"><legend><b>2</b>Angaben</legend><div class="st-stack">
+<div class="st-row"><label class="st-field">Name des Babys<input type="text" name="name" maxlength="30" placeholder="Emma" autocomplete="off"></label><label class="st-field">Datum<input type="date" name="date"></label></div>
+<label class="st-field">Notiz (optional)<input type="text" name="note" maxlength="40" placeholder="62 cm · 6,1 kg" autocomplete="off"></label>
+</div></fieldset>
+<fieldset class="st-step"><legend><b>3</b>Foto <small>optional</small></legend><div class="st-stack">
+<label class="st-drop" id="mk-drop"><input type="file" name="photo" accept="image/*"><span class="st-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg></span><span><b>Foto hinzufügen</b><small>Foto auswählen oder hierher ziehen</small></span></label>
+<div class="st-thumb" id="mk-thumb" hidden><img id="mk-thumbimg" alt="" width="56" height="56"><div><b>Dein Foto</b><small>Es bleibt auf diesem Gerät</small></div><button type="button" class="st-x" id="mk-clear" data-track-id="mk-photo-remove" aria-label="Foto entfernen">×</button></div>
+<p class="st-msg" id="mk-msg" role="alert" hidden></p>
+<label class="st-field" id="mk-photo-ctl" hidden>Fotoausschnitt<input type="range" name="pos" min="0" max="100" value="50"></label>
+</div></fieldset>
+<fieldset class="st-step" id="mk-bgstep"><legend><b>4</b>Hintergrund</legend><div class="st-swatches"><label class="st-sw" title="Creme"><input type="radio" name="bg" value="cream" checked><i style="background:#fffaf0"></i><span class="st-sr">Creme</span></label><label class="st-sw" title="Salbei"><input type="radio" name="bg" value="sage"><i style="background:#e3ebdf"></i><span class="st-sr">Salbei</span></label><label class="st-sw" title="Rosé"><input type="radio" name="bg" value="rose"><i style="background:#f7e3e0"></i><span class="st-sr">Rosé</span></label><label class="st-sw" title="Himmelblau"><input type="radio" name="bg" value="sky"><i style="background:#e1ebf5"></i><span class="st-sr">Himmelblau</span></label><label class="st-sw" title="Tinte"><input type="radio" name="bg" value="ink"><i style="background:#1d1d1d"></i><span class="st-sr">Tinte</span></label></div></fieldset>
 </form>
-<figure class="mk-preview"><canvas id="mk-canvas" width="540" height="675" aria-label="Deine Meilensteinkarte"></canvas><figcaption class="meta" style="text-align:center">Vorschau. Die gespeicherte Karte hat 1080 × 1350 Pixel.</figcaption></figure>
+<div class="st-side">
+<figure class="st-stage"><figcaption class="st-top"><span class="st-live"><i></i>Live-Vorschau</span><span>1080 × 1350</span></figcaption>
+<div class="st-wrap" id="mk-wrap"><div class="st-paper"><canvas id="mk-canvas" width="540" height="675" aria-label="Deine Meilensteinkarte"></canvas></div></div></figure>
+<div class="st-actions" data-track-section="milestone-stage">
+<button type="button" class="btn st-save" id="mk-save" data-track-id="mk-download"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Karte speichern</span></button>
+<button type="button" class="btn ghost" id="mk-print" data-track-id="mk-print"><svg class="si" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>Alle 13 Monatskarten drucken</span></button>
+<p class="st-hint st-hint-ios">Auf dem iPhone „Karte speichern“ tippen und „Bild sichern“ wählen.</p><p class="st-hint st-hint-desk">Am Computer wird die Karte als JPEG heruntergeladen.</p>
 </div>
-<div id="mk-out" hidden aria-live="polite" data-track-section="milestone-result">
-<div class="mk-result"><img id="mk-img" alt="Deine Meilensteinkarte" width="180" height="225"><div>
-<p class="mk-actions"><button class="btn" id="mk-save" type="button" data-track-id="mk-download">Karte speichern</button></p>
-<p class="mk-hint">Auf dem iPhone: „Karte speichern“ tippen und „Bild sichern“ wählen, oder die Karte lange drücken und sie über das Menü in deinen Fotos sichern. Am Computer wird die Karte als JPEG heruntergeladen.</p>
-</div></div>
-<div class="mk-next" data-track-section="milestone-next"><p><strong>Jeden Monat eine Karte, und daraus wird ein Buch.</strong> In Pagewren steht das Foto jedes Monats auf seiner eigenen Kapitelseite, und aus dem ersten Jahr wird ein Buch zum Durchblättern.</p>
+<div class="st-next" id="mk-next" hidden data-track-section="milestone-next"><p><strong>Jeden Monat eine Karte, und daraus wird ein Buch.</strong> In Pagewren steht das Foto jedes Monats auf seiner eigenen Kapitelseite, und aus dem ersten Jahr wird ein Buch zum Durchblättern.</p>
 <a class="btn" href="https://apps.apple.com/de/app/apple-store/id6823661619?pt=128309253&amp;ct=web-pagewren-milestone&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>Pagewren fürs iPhone laden</a></div>
 </div>
+</div>
+<div class="st-lb" id="mk-lb" hidden role="dialog" aria-modal="true" aria-label="Deine Meilensteinkarte"><figure><img alt="Deine Meilensteinkarte"><figcaption>Karte lange drücken und in deinen Fotos sichern.</figcaption></figure><button type="button" class="st-lbx" aria-label="Schließen">×</button></div>
 <h2>Monatsbilder, die zusammenpassen</h2>
 <ul><li><strong>Gleicher Ort, gleiche Tageszeit.</strong> Eine Decke am Boden vor demselben Fenster macht aus zwölf Fotos eine Serie.</li>
 <li><strong>Tageslicht statt Blitz.</strong> Weiches Licht vom Fenster ist für Haut und Augen des Babys angenehmer als der Blitz.</li>
@@ -392,16 +449,31 @@ html[lang=ja] .article table.cmp thead th{white-space:nowrap}html[lang=ja] .arti
 </footer>
 <!-- sitefooter:end -->
 <script>
-(function(){var f=document.getElementById('milestone');if(!f)return;
+window.gkStudio=(function(){var coarse=!!(window.matchMedia&&matchMedia('(pointer:coarse)').matches),reduce=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+function toBlob(d){var p=d.split(','),b=atob(p[1]),n=b.length,u=new Uint8Array(n);while(n--)u[n]=b.charCodeAt(n);return new Blob([u],{type:'image/jpeg'})}
+function bump(el){if(reduce||!el)return;el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
+function done(btn,text){var lab=btn&&btn.querySelector('span');if(!lab)return;if(!btn.getAttribute('data-label'))btn.setAttribute('data-label',lab.textContent);lab.textContent='✓ '+text;btn.classList.add('is-done');clearTimeout(btn._t);btn._t=setTimeout(function(){lab.textContent=btn.getAttribute('data-label');btn.classList.remove('is-done')},2200)}
+function lightbox(lb,src){lb.querySelector('img').src=src;lb.hidden=false;var x=lb.querySelector('.st-lbx');x.focus();function close(){lb.hidden=true;document.removeEventListener('keydown',key)}function key(e){if(e.key==='Escape')close()}x.onclick=close;lb.onclick=function(e){if(e.target===lb)close()};document.addEventListener('keydown',key)}
+function deliver(canvas,name,lb){var data=canvas.toDataURL('image/jpeg',.92),blob=toBlob(data),file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
+if(coarse&&lb){lightbox(lb,data);return}
+var a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
+function drop(zone,input,onFile){['dragenter','dragover'].forEach(function(t){zone.addEventListener(t,function(e){e.preventDefault();zone.classList.add('is-over')})});
+['dragleave','dragend'].forEach(function(t){zone.addEventListener(t,function(){zone.classList.remove('is-over')})});
+zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('is-over');var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f)onFile(f)});
+input.addEventListener('change',function(){var f=input.files&&input.files[0];if(f)onFile(f)})}
+return{coarse:coarse,bump:bump,done:done,deliver:deliver,drop:drop}})();
+</script><script>
+(function(){var f=document.getElementById('milestone'),S=window.gkStudio;if(!f||!S)return;function $(i){return document.getElementById(i)}
 var DE=/^de/.test(document.documentElement.lang);
-var T=DE?{m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
+var T=DE?{saved:'Gespeichert',m:['Monat','Monate'],y:['Jahr','Jahre'],hello:'Hallo Welt',born:'geboren am ',loc:'de-DE',file:'meilensteinkarte',bad:'Diese Datei lässt sich nicht als Bild öffnen. Versuche JPEG oder PNG.',
 F:{smile:'Erstes Lächeln',tooth:'Erster Zahn',steps:'Erste Schritte',word:'Erstes Wort',food:'Erster Brei',night:'Durchgeschlafen',trip:'Erster Urlaub',xmas:'Erstes Weihnachten'}}
-:{m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
+:{saved:'Saved',m:['month','months'],y:['year','years'],hello:'Hello world',born:'born ',loc:'en-US',file:'milestone-card',bad:'That file could not be opened as a picture. Try a JPEG or PNG.',
 F:{smile:'First smile',tooth:'First tooth',steps:'First steps',word:'First word',food:'First solid food',night:'Slept through the night',trip:'First trip',xmas:'First Christmas'}};
 var BG={cream:['#fffaf0','#141414','#e2cfa6'],sage:['#e3ebdf','#253528','#a9c0a2'],rose:['#f7e3e0','#46282a','#e1aea8'],sky:['#e1ebf5','#1f2f45','#a8c1de'],ink:['#1d1d1d','#fffaf0','#4a4a4a']};
 var DISP='"Josefin Sans","Manrope",system-ui,sans-serif',TXT='"Manrope",system-ui,-apple-system,"Hiragino Sans","PingFang SC",sans-serif';
-var cv=document.getElementById('mk-canvas'),out=document.getElementById('mk-out'),pic=document.getElementById('mk-img'),ctl=document.getElementById('mk-photo-ctl'),bgset=document.getElementById('mk-bgset'),msg=document.getElementById('mk-msg'),own=document.getElementById('mk-own');
-var img=null,blob=null,url=null,pending=false,coarse=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+var cv=$('mk-canvas'),stage=$('mk-wrap'),ctl=$('mk-photo-ctl'),bgstep=$('mk-bgstep'),msg=$('mk-msg'),own=$('mk-own'),dropz=$('mk-drop'),thumb=$('mk-thumb'),timg=$('mk-thumbimg'),save=$('mk-save'),nextc=$('mk-next'),lb=$('mk-lb');
+var img=null,pending=false;
 function E(n){return f.elements[n]}
 function bgKey(){var r=f.querySelector('input[name=bg]:checked');return r&&BG[r.value]?r.value:'cream'}
 function parse(v){if(!/^\d{4}-\d{2}-\d{2}$/.test(v||''))return null;var p=v.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]);return isNaN(d)||d.getMonth()!==+p[1]-1?null:d}
@@ -409,7 +481,7 @@ function fmt(d){return d?d.toLocaleDateString(T.loc,{day:'numeric',month:'long',
 function opts(k){var d=parse(E('date').value);return{key:k||E('key').value,own:(E('own').value||'').trim().slice(0,40),name:(E('name').value||'').trim().slice(0,30),date:k?null:d,note:k?'':(E('note').value||'').trim().slice(0,40),img:k?null:img,bg:bgKey()}}
 function head(o){var k=o.key,m=/^m(\d+)$/.exec(k);if(m)return{num:m[1],unit:(+m[1]===1?T.m[0]:T.m[1]).toUpperCase()};if(k==='y1')return{num:'1',unit:T.y[0].toUpperCase()};
 if(k==='birth')return{title:T.hello};if(k==='own')return{title:o.own||'…'};return{title:T.F[k]||k}}
-function wrap(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
+function lines(x,t,max,n){var w=t.split(/\s+/),out=[],line='';for(var i=0;i<w.length;i++){var s=w[i],test=line?line+' '+s:s;if(x.measureText(test).width<=max){line=test;continue}if(line)out.push(line);line='';
 while(s.length>1&&x.measureText(s).width>max){var k=s.length;while(k>1&&x.measureText(s.slice(0,k)).width>max)k--;out.push(s.slice(0,k));s=s.slice(k)}line=s}if(line)out.push(line);
 if(out.length>n){out=out.slice(0,n);var l=out[n-1];while(l.length>1&&x.measureText(l+'…').width>max)l=l.slice(0,-1);out[n-1]=l+'…'}return out}
 function star(x,cx,cy,r){x.beginPath();for(var i=0;i<8;i++){var a=i*Math.PI/4,rr=i%2?r*.32:r;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}x.closePath();x.fill()}
@@ -421,7 +493,7 @@ else{x.strokeStyle=C[2];x.lineWidth=5*u;x.strokeRect(34*u,34*u,W-68*u,H-68*u);x.
 x.fillStyle=C[1];x.textAlign='center';x.textBaseline='alphabetic';
 var h=head(o),top=o.img?pad+ph:0,area=H-top-(o.img?pad*.4:0),sc=o.img?.55:1,s2=o.img?.82:1,rows=[],maxW=W-(o.img?2*pad+40*u:220*u);
 if(h.num){var big=330*sc*u;x.font='600 '+Math.round(big)+'px '+DISP;rows.push([h.num,x.font,big*.72,0]);rows.push([h.unit,'700 '+Math.round(54*s2*u)+'px '+TXT,46*s2*u,28*sc*u,1])}
-else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=wrap(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=wrap(x,h.title,maxW,3)}
+else{var tz=(h.title.length>14?118:150)*sc*u+(o.img?14*u:0);x.font='600 '+Math.round(tz)+'px '+DISP;var tl=lines(x,h.title,maxW,9);if(tl.length>2){tz*=.78;x.font='600 '+Math.round(tz)+'px '+DISP;tl=lines(x,h.title,maxW,3)}
 tl.forEach(function(l,i){rows.push([l,x.font,tz*.74,i?tz*.28:0])})}
 var sub=o.key==='birth'&&o.date?T.born+fmt(o.date):(o.date?fmt(o.date):'');
 if(o.name)rows.push([o.name,'700 '+Math.round(72*s2*u)+'px '+TXT,60*s2*u,(h.num?44:52)*sc*u]);
@@ -430,17 +502,16 @@ if(o.note)rows.push([o.note,'500 '+Math.round(40*s2*u)+'px '+TXT,32*s2*u,18*s2*u
 var tot=0;rows.forEach(function(r){tot+=r[2]+r[3]});var y=top+(area-tot)/2;
 rows.forEach(function(r){y+=r[3]+r[2];x.font=r[1];var ls=r[4]&&'letterSpacing' in x;if(ls)x.letterSpacing=Math.round(10*sc*u)+'px';x.fillText(r[0],W/2,y);if(ls)x.letterSpacing='0px'})}
 function preview(){pending=false;draw(cv,540,675,opts())}
-function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}if(!out.hidden)out.hidden=true;own.hidden=E('key').value!=='own'}
-f.addEventListener('input',redraw);f.addEventListener('change',redraw);
-E('photo').addEventListener('change',function(){var file=this.files&&this.files[0];msg.hidden=true;if(!file)return;var src=URL.createObjectURL(file),im=new Image();
-im.onload=function(){img=im;ctl.hidden=false;bgset.hidden=true;redraw()};im.onerror=function(){URL.revokeObjectURL(src);msg.textContent=T.bad;msg.hidden=false};im.src=src});
-document.getElementById('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';ctl.hidden=true;bgset.hidden=false;redraw()});
-f.addEventListener('submit',function(e){e.preventDefault();var c=document.createElement('canvas');draw(c,1080,1350,opts());
-c.toBlob(function(b){if(!b)return;blob=b;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(b);pic.src=url;out.hidden=false;out.scrollIntoView({behavior:'smooth',block:'nearest'})},'image/jpeg',.92)});
-document.getElementById('mk-save').addEventListener('click',function(){if(!blob)return;var name=T.file+'-'+E('key').value+'.jpg',file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
-if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
-var a=document.createElement('a');a.href=url;a.download=name;a.click()});
-document.getElementById('mk-print').addEventListener('click',function(){var sheet=document.getElementById('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
+function redraw(){if(!pending){pending=true;requestAnimationFrame(preview)}own.hidden=E('key').value!=='own'}
+function photo(on){ctl.hidden=!on;bgstep.hidden=on;dropz.hidden=on;thumb.hidden=!on}
+f.addEventListener('input',redraw);f.addEventListener('change',function(){redraw();S.bump(stage)});
+S.drop(dropz,E('photo'),function(file){msg.hidden=true;var src=URL.createObjectURL(file),im=new Image();
+im.onload=function(){img=im;timg.src=src;photo(true);redraw();S.bump(stage)};im.onerror=function(){URL.revokeObjectURL(src);E('photo').value='';msg.textContent=T.bad;msg.hidden=false};im.src=src});
+$('mk-clear').addEventListener('click',function(){img=null;E('photo').value='';photo(false);redraw();S.bump(stage)});
+f.addEventListener('submit',function(e){e.preventDefault()});
+save.addEventListener('click',function(){var c=document.createElement('canvas');draw(c,1080,1350,opts());
+S.deliver(c,T.file+'-'+E('key').value+'.jpg',lb);S.done(save,T.saved);nextc.hidden=false});
+$('mk-print').addEventListener('click',function(){var sheet=$('mk-sheet');if(!sheet){sheet=document.createElement('div');sheet.id='mk-sheet';document.body.appendChild(sheet)}
 sheet.textContent='';var keys=['birth','m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','y1'],loads=[];
 keys.forEach(function(k){var c=document.createElement('canvas');draw(c,900,1125,opts(k));var im=new Image();im.alt='';im.src=c.toDataURL('image/jpeg',.9);sheet.appendChild(im);if(im.decode)loads.push(im.decode().catch(function(){}))});
 document.documentElement.classList.add('mk-printing');Promise.all(loads).then(function(){window.print()})});

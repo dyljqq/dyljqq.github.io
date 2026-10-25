@@ -57,12 +57,11 @@
 | 开始填 | `form_start`，`form_id=wallpaper` | 每次加载一次 |
 | 快捷日期 | `button_click`，`control_id=wp-preset-christmas / newyear / thanksgiving / valentines / halloween` | |
 | 加照片 | `control_change`，`section=wallpaper`、`control_type=file` | 只记有选择动作，不记文件名或内容；照片不离开浏览器 |
-| 生成 | `form_submit`，`form_id=wallpaper`（按钮 `wp-make`） | 生成成功才显示结果区 |
-| 保存 | `button_click`，`control_id=wp-download`，`section=wallpaper-result` | iPhone 走系统分享面板，网页拿不到用户最后是否点了「存储图像」 |
+| 保存 | `button_click`，`control_id=wp-download`，`section=wallpaper-stage` | 10-25 晚起预览实时更新，没有单独的「生成」步骤；保存是普通按钮、不发 `form_submit`（避免在输入框按回车误保存）；iPhone 走系统分享面板，网页拿不到用户最后是否点了「存储图像」 |
 | 分享 | `button_click`，`control_id=wp-share-link` | 对方打开记在 `source_ref=wallpaper-share` |
 | 去商店 | `app_store_impression` / `app_store_click`，`section=wallpaper-next`、`store_campaign=web-countdown-wallpaper` | 生成后才露出；页尾卡片仍是 `web-countdown-tool` |
 
-漏斗（同一会话、按时间顺序）：`page_view` → `form_submit(wallpaper)` → `button_click(wp-download)` → `app_store_click(web-countdown-wallpaper)`。下载量以 App Store Connect 的活动 `web-countdown-wallpaper` 为准。
+漏斗（同一会话、按时间顺序）：`page_view` → `button_click(wp-download)`（= 保存）→ `app_store_click(web-countdown-wallpaper)`。10-25 晚之前的数据里 `form_submit` 是「生成」，之后不再有 `form_submit`。下载量以 App Store Connect 的活动 `web-countdown-wallpaper` 为准。
 
 ## 工具专项：Pagewren 里程碑卡片（2026-10-25 起）
 
@@ -73,12 +72,11 @@
 | 落地 | `page_view`，按 `page_path` 分德 / 英 |
 | 开始填 | `form_start`，`form_id=milestone` |
 | 选里程碑 / 加照片 | `control_change`，`section=milestone`（`control_type=select-one` / `file`）|
-| 生成 | `form_submit`，`form_id=milestone`（按钮 `mk-make`）|
-| 保存卡片 | `button_click`，`control_id=mk-download`，`section=milestone-result` |
+| 保存卡片 | `button_click`，`control_id=mk-download`，`section=milestone-stage`（10-25 晚起没有单独的「生成」步骤，保存不发 `form_submit`）|
 | 打印 13 张 | `button_click`，`control_id=mk-print` |
 | 去商店 | `app_store_impression` / `app_store_click`，`section=milestone-next`，`store_campaign=web-pagewren-milestone` |
 
-漏斗：`page_view` → `form_submit(milestone)` → `mk-download` 或 `mk-print` → `app_store_click(web-pagewren-milestone)`。下载以 ASC 活动 `web-pagewren-milestone` 为准；Pagewren App 的 GA4 资源是 559322873。
+漏斗：`page_view` → `button_click(mk-download)`（= 保存）或 `mk-print` → `app_store_click(web-pagewren-milestone)`。下载以 ASC 活动 `web-pagewren-milestone` 为准；Pagewren App 的 GA4 资源是 559322873。
 
 ## 各工具的固定控件 ID（2026-10-25 补齐）
 
