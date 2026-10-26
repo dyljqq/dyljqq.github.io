@@ -323,13 +323,14 @@ def build_llms():
 
 # ---------------------------------------------------------------- head 改写
 def software_jsonld(app, kind="product"):
+    home = bp.site_url(app) if app.get("site") else f"{ORIGIN}{app['path']}"   # 10-26 BeforeGo 有独立站：节点和网址指新站
     d = {"@context": "https://schema.org", "@type": "SoftwareApplication",
-         "@id": f"{ORIGIN}{app['path']}#app",
+         "@id": f"{home}#app",
          "name": app["name"], "alternateName": app["shortName"],
          "applicationCategory": app["category"],
          "operatingSystem": f"iOS {app.get('minOS', '17.0')} or later",
          "description": app["description"],
-         "url": f"{ORIGIN}{app['path']}",
+         "url": home,
          "inLanguage": app.get("lang", "en"),
          "author": {"@type": "Organization", "@id": f"{ORIGIN}/#org", "name": BRAND},
          "publisher": {"@type": "Organization", "@id": f"{ORIGIN}/#org", "name": BRAND},
@@ -624,8 +625,8 @@ TOOL_PAIRS = [{"en": "/tools/days-until/", "pt-BR": "/tools/pt-br/quantos-dias-f
               # 10-12：「把倒数放到 iPhone 锁屏 / 主屏」教程，三种语言同一主题
               {"ja": "/tools/ja/countdown-machiuke-iphone/", "pt-BR": "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/",
                "zh-Hant": "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/", "ko": "/tools/ko/iphone-didei-wijet/"},
-              # 10-12：BeforeGo「行程规划 App 推荐」三语榜单，各按本国商店选 app，主题相同
-              {"zh-Hant": "/tools/zh-hant/xing-cheng-gui-hua-app/", "ja": "/tools/ja/ryoko-keikaku-app/", "ko": "/tools/ko/yeohaeng-iljeong-aep/"}]
+              # 10-12 BeforeGo「行程规划 App 推荐」三语榜单：10-26 繁中、日语两版搬到 beforegotech.com，韩语一版不再成对
+              ]
 def tool_pair(url):
     return next((p for p in TOOL_PAIRS if url in p.values()), None)
 
@@ -798,8 +799,7 @@ def home_faq_html(lang="en"):
 # 有本语言工具的语言用本语言的；其余语言首页列英文工具，链接标 hreflang/lang="en"，说明句里写明是英文。
 WEB_FIRST = {
     "en": [("/tools/days-until/", "Type a date, get the days and weeks left."),
-           ("/tools/invoice-template/", "Fill it in on the page, then print or save as PDF."),
-           ("/tools/packing-list/", "A checklist for your trip type and length.")],
+           ("/tools/invoice-template/", "Fill it in on the page, then print or save as PDF.")],   # 打包清单 10-26 随 BeforeGo 搬到 beforegotech.com
     "pt-BR": [("/tools/pt-br/quantos-dias-faltam/", "Dias até qualquer data, ou desde uma data."),
               ("/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/", "Contagem ao vivo até 25 de dezembro."),
               ("/tools/pt-br/contagem-regressiva-black-friday-2026/", "Contagem ao vivo até 27 de novembro.")],
@@ -832,12 +832,6 @@ WEB_BLURB = {
         "ja": "ページ上で入力して、印刷するか PDF で保存できます。", "ko": "페이지에서 바로 작성하고 인쇄하거나 PDF로 저장하세요.",
         "zh-Hans": "在网页上直接填写，然后打印或存成 PDF。", "zh-Hant": "在網頁上直接填寫，然後列印或存成 PDF。",
         "th": "กรอกบนหน้าเว็บได้เลย แล้วพิมพ์หรือบันทึกเป็น PDF"},
-    "/tools/packing-list/": {
-        "de": "Eine Checkliste passend zu Reiseart und -dauer.", "fr": "Une liste adaptée au type et à la durée du voyage.",
-        "it": "Una checklist su misura per tipo e durata del viaggio.", "es": "Una lista según el tipo y la duración del viaje.",
-        "ja": "旅行のタイプと日数に合わせたチェックリスト。", "ko": "여행 유형과 기간에 맞춘 체크리스트예요.",
-        "zh-Hans": "按旅行类型和天数生成的清单。", "zh-Hant": "依旅行類型和天數產生的清單。",
-        "th": "เช็กลิสต์ตามประเภทและระยะเวลาของทริป"},
 }
 
 def home_webtools_html(lang="en"):
@@ -1050,7 +1044,8 @@ def tool_head(tp):
         page.update({"applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript",
                      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}})
     if tp.get("app"):
-        page["about"] = {"@id": f"{ORIGIN}{next(a['path'] for a in APPS if a['key'] == tp['app'])}#app"}
+        app = next(a for a in APPS if a["key"] == tp["app"])
+        page["about"] = {"@id": f"{bp.site_url(app, tp['lang'])}#app" if app.get("site") else f"{ORIGIN}{app['path']}#app"}
     if tp["kind"] == "AboutPage":
         page["mainEntity"] = {"@id": f"{ORIGIN}/#org"}
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [

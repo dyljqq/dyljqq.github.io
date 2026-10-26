@@ -30,18 +30,7 @@
 
 An AI itinerary planner for iPhone that turns a travel post, link or note into a day-by-day trip plan, and writes the packing list from your destination and dates.
 
-- Page: https://beforego.art/beforego/
-- Page (de): https://beforego.art/beforego/de/
-- Page (fr): https://beforego.art/beforego/fr/
-- Page (it): https://beforego.art/beforego/it/
-- Page (es): https://beforego.art/beforego/es/
-- Page (es-MX): https://beforego.art/beforego/es-mx/
-- Page (pt-BR): https://beforego.art/beforego/pt-br/
-- Page (ja): https://beforego.art/beforego/ja/
-- Page (ko): https://beforego.art/beforego/ko/
-- Page (zh-Hans): https://beforego.art/beforego/zh-hans/
-- Page (zh-Hant): https://beforego.art/beforego/zh-hant/
-- Page (th): https://beforego.art/beforego/th/
+- Website: https://beforegotech.com/
 - App Store: https://apps.apple.com/app/id6786561175
 - Platform: iOS (iPhone, iPad)
 - Category: Travel
@@ -192,19 +181,13 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
-- [Packing list generator](https://beforego.art/tools/packing-list/) — Free packing list generator: pick the trip type and length and get a travel checklist you can tick off, print or copy. Beach, city, winter, business or backpacking.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, October 2026.
-- [行程規劃 App 推薦（2026）](https://beforego.art/tools/zh-hant/xing-cheng-gui-hua-app/) — 7 款 iPhone 行程規劃 App 比較：行程怎麼排、能不能共同編輯、離線、行前清單。資料取自台灣 App Store 頁面（2026 年 10 月 12 日）。
-- [旅行計画アプリおすすめ7選（2026）](https://beforego.art/tools/ja/ryoko-keikaku-app/) — iPhoneの旅行計画アプリ7つを、プランの作り方・共同編集・オフライン・持ち物リスト・有料機能で比較。日本のApp Storeの掲載内容（2026年10月12日）から。
 - [여행 일정 앱 추천 (2026)](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플이 11월 3일 서비스를 종료하고 NOL로 통합됩니다. 여행 일정 앱 5가지를 일정 짜기, 공동 편집, 오프라인, 준비물 체크리스트로 비교했습니다.
 - [Shared countdown for couples](https://beforego.art/tools/shared-countdown-app-couples/) — Count down to your next visit together: one of you sends an invite, the other taps the link, and the same countdown and widget show up on both iPhones.
 - [Birthday countdown widget for iPhone](https://beforego.art/tools/birthday-countdown-widget-iphone/) — Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.
 - [Disney trip countdown widget](https://beforego.art/tools/disney-countdown-widget-iphone/) — Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.
 - [Countdown widget with your own photo](https://beforego.art/tools/countdown-widget-with-your-own-photo-iphone/) — Put your own photo behind a countdown widget on your iPhone Home Screen, framed for each widget size. Lock Screen widgets can't show photos; use your wallpaper.
 - [Vacation countdown widget for iPhone](https://beforego.art/tools/vacation-countdown-widget-iphone/) — Put the days until your vacation on your iPhone Lock Screen or Home Screen with a free widget. The Vacation event reminds you 30 days, a week and a day before.
-- [Disney World itinerary template](https://beforego.art/tools/disney-world-itinerary-template/) — A free Disney World itinerary template you fill in on the page: one block per day with park, morning, afternoon, evening and dining. Print it or save as PDF.
-- [Japan travel checklist](https://beforego.art/tools/japan-travel-checklist/) — A Japan travel checklist to tick off and print: the 90-day visa-free stay, medicines Japan bans, Visit Japan Web, plugs, Suica, and the 2026 tax changes.
-- [Disney World packing list](https://beforego.art/tools/disney-world-packing-list/) — A free Disney World packing list to tick off, print or copy, for adults, kids or a toddler in a stroller, plus Disney’s rules on strollers, coolers and food.
 - [Rechnungsvorlage für Kleinunternehmer](https://beforego.art/tools/de/rechnungsvorlage-kleinunternehmer/) — Kostenlose Rechnungsvorlage für Kleinunternehmer: online ausfüllen, als PDF speichern. Mit Hinweis nach § 19 UStG und allen Pflichtangaben nach § 34a UStDV.
 - [Rechnungsvorlage mit MwSt.](https://beforego.art/tools/de/rechnungsvorlage/) — Kostenlose Rechnungsvorlage ohne Anmeldung: Umsatzsteuer und Summe rechnen sich selbst, PDF speichern. Mit Pflichtangaben nach § 14 UStG und E-Rechnung-Fristen.
 - [Angebotsvorlage](https://beforego.art/tools/de/angebot-vorlage/) — Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.
@@ -215,9 +198,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [Put a Venmo, Cash App, PayPal or Zelle QR Code on an Invoice](https://beforego.art/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/) — Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.
 - [Add a Payment QR Code to an Invoice and Get Paid Faster](https://beforego.art/blog/payment-qr-code-on-invoice/) — What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.
 - [Invoice vs Estimate vs Quote: What's the Difference?](https://beforego.art/blog/invoice-vs-estimate-vs-quote/) — The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.
-- [Turn TikTok and Instagram Travel Posts into an Itinerary](https://beforego.art/blog/travel-post-screenshot-to-itinerary/) — Turn the travel posts you saved on TikTok and Instagram into a day-by-day itinerary, by hand or from screenshots, and check what a post won't tell you.
-- [A Packing List That Fits the Destination: Plugs, Currency, Rules](https://beforego.art/blog/packing-list-by-destination/) — What to check per destination before you pack, and how a generated packing list covers plugs, currency, entry rules and reminders.
-- [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator.
+- [Free tools & guides — go ka](https://beforego.art/tools/) — Free, no-sign-up tools from go ka: a days-until calculator, holiday countdowns, a countdown wallpaper maker, and an invoice template and guide.
 - [Ferramentas e guias grátis — go ka](https://beforego.art/tools/pt-br/) — Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.
 - [Herramientas y guías gratis — go ka](https://beforego.art/tools/es-mx/) — Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
@@ -225,7 +206,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
 - [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.
 - [Kostenlose Vorlagen und Anleitungen — go ka](https://beforego.art/tools/de/) — Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern.
-- [Blog — guides for countdowns, invoices and trips | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.
+- [Blog — guides for countdowns and invoices | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, and the difference between invoices, estimates and quotes.
 
 ## FAQ
 

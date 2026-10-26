@@ -172,11 +172,11 @@ try {
     "non-production local visit should not initialize analytics");
 
   // App landing page has real header, hero SVG CTA and end CTA placements.
-  await navigate("/beforego/?analytics_debug=1");
+  await navigate("/countdown/?analytics_debug=1");   // 10-26 BeforeGo 搬到 beforegotech.com，换 Countdown 产品页
   await waitFor("window.__analyticsInit && (window.__analyticsEvents||[]).some(e=>e.name==='page_view')", "Firebase stubs and initial page_view");
   let current = await events();
   assert(current.filter((e) => e.name === "page_view").length === 1, "one page_view on initial load");
-  assert(current.some((e) => e.name === "app_store_impression" && e.params.target_app === "beforego"),
+  assert(current.some((e) => e.name === "app_store_impression" && e.params.target_app === "countdown"),
     "visible owned store links emit an impression");
   const init = await evaluate("window.__analyticsInit");
   assert(init.app?.name === "goka-web" && init.options?.config?.send_page_view === false &&
@@ -193,7 +193,7 @@ try {
     await sleep(100);
     current = await events();
     const clicks = current.filter((e) => e.name === "app_store_click");
-    assert(clicks.length === 1 && clicks[0].params.section === section && clicks[0].params.app_store_id === "6786561175",
+    assert(clicks.length === 1 && clicks[0].params.section === section && clicks[0].params.app_store_id === "6799846628",
       `${section} App Store click emits one attributed app_store_click (got ${JSON.stringify(current)})`);
     assert(current.every((e) => e.name !== "button_click"), `${section} App Store click is not duplicated as button_click`);
   }
@@ -237,14 +237,15 @@ try {
   current = await events();
   assert(current.some((e) => e.name === "language_switch" && e.params.target_language === "ja"), `language link reports target language (got ${JSON.stringify(current)})`);
 
-  // A generated packing list uses native form/change/submit and creates checkbox controls.
-  await navigate("/tools/disney-world-packing-list/?analytics_debug=1");
-  await waitFor("window.__analyticsInit && (window.__analyticsEvents||[]).some(e=>e.name==='page_view')", "dynamic tool analytics");
+  // A native form with selects and submit. 10-26: the packing lists (the only generated-checkbox tools) moved to
+  // beforegotech.com with BeforeGo, so the old dynamic-checkbox assertions went with them; the birthday tool covers the form path.
+  await navigate("/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/?analytics_debug=1");
+  await waitFor("window.__analyticsInit && (window.__analyticsEvents||[]).some(e=>e.name==='page_view')", "form tool analytics");
   await clearEvents();
-  await evaluate(`(() => { const form=document.querySelector('#pack'); const select=form.querySelector('[name="type"]');
+  await evaluate(`(() => { const form=document.querySelector('#bday'); const select=form.querySelector('[name="mes"]');
     document.activeElement?.blur?.(); select.focus(); select.dispatchEvent(new FocusEvent('focusin',{bubbles:true}));
-    select.value='toddler'; select.dispatchEvent(new Event('change',{bubbles:true}));
-    form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})); return document.querySelectorAll('#pack-out input[type="checkbox"]').length; })()`);
+    select.value='5'; select.dispatchEvent(new Event('change',{bubbles:true}));
+    form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})); return true; })()`);
   await sleep(80);
   current = await events();
   const formEvents = current.filter((e) => ["form_start", "form_submit", "control_change"].includes(e.name));
@@ -252,13 +253,6 @@ try {
     `tool form focus, submit, and categorical changes are recorded (got ${JSON.stringify(current)})`);
   assert(formEvents.every((e) => !("value" in e.params) && !("checked" in e.params) && !("name" in e.params)),
     "form analytics omit form values, checked state, and field names");
-  const generatedCount = await evaluate("document.querySelectorAll('#pack-out input[type=checkbox]').length");
-  assert(generatedCount > 0, "tool submit generated interactive checklist controls");
-  await evaluate("(() => { const box=document.querySelector('#pack-out input[type=checkbox]'); box.checked=true; box.dispatchEvent(new Event('change',{bubbles:true})); })()");
-  current = await events();
-  const changed = current.filter((e) => e.name === "control_change");
-  assert(changed.length >= 2 && changed.every((e) => !JSON.stringify(e.params).includes("checked") && !JSON.stringify(e.params).includes("Passport")),
-    "dynamically generated control changes reveal no checklist content/state");
 
   // No match means a competitor store page; expected owned-app links never take this branch.
   await navigate("/tools/best-countdown-widget-apps-iphone/?analytics_debug=1");

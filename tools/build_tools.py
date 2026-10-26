@@ -219,7 +219,7 @@ APP_LINK = {"de": "Mehr zur App"}   # 卡片里去产品页的链接文字；其
 def app_card(app_key, lang):
     """页尾「去 iPhone 上做这件事」卡片：图标 + 商店名 + 一句话 + 商店按钮。"""
     p = BY_KEY[app_key]; s = bp.store_of({"variantOf": app_key, "lang": lang} if lang != "en" else p)
-    page = bp.sibling_path(p, lang) if lang != "en" else p["path"]
+    page = bp.site_url(p, lang) if p.get("site") else bp.sibling_path(p, lang) if lang != "en" else p["path"]   # 有独立站（10-26 BeforeGo）去新站同语言页
     icon = bp.cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else p["icon"]
     return (f'<aside class="appcard"><img src="{icon}" width="72" height="72" alt="" loading="lazy"><div>'
             f'<p class="label" style="margin:0 0 6px">{esc(ts(lang, "get"))}</p><b>{esc(s["name"])}</b><p>{esc(p["home"]["blurb"] if lang == "en" else clip(s["description"].split(chr(10))[0], 160))}</p>'
@@ -2144,7 +2144,7 @@ PAGES.append({"path": "/tools/how-to-write-an-invoice/", "lang": "en", "kind": "
 <h2>Do it in a minute</h2>
 <p>Use the <a href="/tools/invoice-template/">free invoice template</a> on this site for a one-off. If you invoice regularly, <a href="/invoiceqr/">Smart Invoice &amp; Estimate Maker</a> on iPhone keeps clients, items and tax rates, puts a payment QR code on each one and shows what's paid, unpaid and overdue.</p>"""})
 
-# 9. 打包清单
+# 9. 打包清单（10-26 已搬到 beforegotech.com，本站不再生成，见 BG_MOVED）
 PACK = {"base": {
   "Documents & money": ["Passport or ID", "Tickets and booking confirmations", "Travel insurance details", "Bank card + some local cash", "Copies of documents (photo on your phone)"],
   "Clothes": ["Underwear × {n}", "Socks × {n}", "T-shirts / tops × {n}", "Trousers or skirts × 2", "One warm layer", "Sleepwear", "Comfortable walking shoes"],
@@ -2325,7 +2325,7 @@ def best_page_pt():
 _ci = next(i for i, p in enumerate(PAGES) if p["path"] == "/tools/pt-br/contador-de-dias-de-namoro/")
 PAGES.insert(_ci + 1, best_page_pt())   # 常青页一组：计算器 → 场景页 → 榜单 → 节日页
 
-# 10c. BeforeGo「行程规划 App 推荐」三语榜单（zh-Hant / ja / ko）——10-12
+# 10c. BeforeGo「行程规划 App 推荐」三语榜单（zh-Hant / ja / ko；10-26 繁中、日语两版已搬到 beforegotech.com，只剩韩语，见 BG_MOVED）——10-12
 # 依据：10-12 Google 联想词「行程規劃 app 推薦 / dcard / ptt / 日本 / ai」「旅行 計画 アプリ おすすめ / 無料 / 海外 / 共有」
 # 「여행 계획 앱 추천」「여행 일정 앱 추천 / 디시」「트리플 종료 / 트리플 앱 종료 / 트리플 대체 어플」。
 # 选法同 Countdown 榜单：各国商店搜「行程規劃」「旅行 計画」「여행 계획」，去掉订房订票平台、行事历、地图，留下专门排行程的 app，
@@ -2522,7 +2522,7 @@ PAGES.append(bg_list_page({
   ],
 }))
 
-# 7d. 美区：Countdown 三页 + BeforeGo 一页——10-17（用户：「Countdown 跟 BeforeGo 瞄准美国」，选题与证据见 App 数据仓库 reports/aso/site-us-topics-2026-10-17.md）
+# 7d. 美区：Countdown 三页 + BeforeGo 一页（BeforeGo 那页 10-26 已搬到 beforegotech.com，见 BG_MOVED）——10-17（用户：「Countdown 跟 BeforeGo 瞄准美国」，选题与证据见 App 数据仓库 reports/aso/site-us-topics-2026-10-17.md）
 # 证据：Google 美国联想词（shared countdown app for couples / long distance relationship countdown widget / birthday countdown app / disney countdown app (widget, for iphone)
 # / disney itinerary template）；App Store 美区广告：birthday countdown 780 展示 / 54 安装、shared countdown widget 点击率 24%。
 # App 说法只用 tools/store/countdown.json en-US（1.4.20）与 beforego.json en-US（1.2.6），外加 Countdown 源码核实的：
@@ -2772,7 +2772,7 @@ PAGES.append({"path": "/tools/disney-world-itinerary-template/", "lang": "en", "
 {DISNEY_NOTE.replace("The booking windows above", "The booking windows on this page")}"""})
 
 
-# 7d2. 美区 BeforeGo 第一批内容页——10-19（用户批「日本出发前清单 + Disney 打包清单」，选题与证据见 App 数据仓库
+# 7d2. 美区 BeforeGo 第一批内容页（10-26 已搬到 beforegotech.com，本站不再生成，见 BG_MOVED）——10-19（用户批「日本出发前清单 + Disney 打包清单」，选题与证据见 App 数据仓库
 # reports/aso/beforego-us-content-topics-2026-10-19.md）。依据：Google 美国联想词 japan trip / travel checklist（pdf / 2026 / reddit）、
 # things to do before traveling to japan（from usa）、medications banned in japan、can i bring sudafed to japan；disney packing list
 # （printable / with kids / with toddlers / 2026）、disney prohibited items。
@@ -3413,7 +3413,23 @@ for _pg in PAGES:
 # ------------------------------------------------------------------ 目录页
 HUB_EN_EXTRA = {"de": ("Weitere kostenlose Tools (auf Englisch)", [
     ("/tools/days-until/", "Datum eingeben, verbleibende Tage und Wochen sehen."),
-    ("/tools/packing-list/", "Eine Checkliste passend zu Reiseart und ‑dauer.")])}
+    ("/tools/countdown-wallpaper-maker/", "Einen Countdown als Hintergrundbild für Handy oder Computer erstellen.")])}   # 打包清单 10-26 随 BeforeGo 搬走
+# ------------------------------------------------------------------ 10-26 BeforeGo 搬到独立站 beforegotech.com
+# 下面这几页不再在本站生成（vercel.json 308 到新站同路径，正文已搬进新站仓库 ~/Documents/beforego-site）；
+# 其余页面正文里指向它们和 /beforego/ 的链接，写文件时改成新站的绝对地址（bg_links）。
+# 韩语트리플替代页 /tools/ko/yeohaeng-iljeong-aep/ 是旧站唯一有 Google 点击的 BeforeGo 页，트리플 11-03 停服前后正值高峰，11 月中旬再搬。
+BG_SITE = "https://beforegotech.com"
+BG_MOVED = {"/tools/packing-list/", "/tools/japan-travel-checklist/", "/tools/disney-world-packing-list/",
+            "/tools/disney-world-itinerary-template/", "/tools/ja/ryoko-keikaku-app/", "/tools/zh-hant/xing-cheng-gui-hua-app/",
+            "/blog/packing-list-by-destination/", "/blog/travel-post-screenshot-to-itinerary/"}
+PAGES[:] = [p for p in PAGES if p["path"] not in BG_MOVED]
+
+def bg_links(page):
+    page = re.sub(r'href="/beforego/(?:([a-z-]+)/)?"', lambda m: f'href="{BG_SITE}/{m[1] + "/" if m[1] else ""}"', page)
+    for p in BG_MOVED:
+        page = page.replace(f'href="{p}"', f'href="{BG_SITE}{p}"')
+    return page
+
 def hub_page(lang):
     hub_path = HUBS[lang]
     items = sorted([p for p in PAGES if p["lang"] == lang and not p.get("nohub")], key=lambda p: "/ferias-escolares-" in p["path"])   # 分州校历页排在其它工具后面（稳定排序）
@@ -3430,7 +3446,7 @@ def hub_page(lang):
         body += f'\n<h2>{esc(h2)}</h2>\n<div class="hub">\n' + "\n".join(
             f'  <a href="{u}" hreflang="en"><b lang="en">{esc(by[u]["hub_title"])}</b><span>{esc(d)}</span><small>{esc(BY_KEY[by[u]["app"]]["home"]["label"])}</small></a>' for u, d in extra) + "\n</div>"
     title, desc = {
-        "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: days-until calculator and holiday countdowns, an invoice template and guide, and a packing list generator."),
+        "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: a days-until calculator, holiday countdowns, a countdown wallpaper maker, and an invoice template and guide."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple."),
         "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교."),
@@ -3446,6 +3462,7 @@ def hub_page(lang):
 # ------------------------------------------------------------------ 博客（09-26 用户要求：参照 EasyNotes 官网补博客）
 BLOG_SRC = ROOT / "tools/blog/posts.en.json"
 BLOG = json.loads(BLOG_SRC.read_text(encoding="utf-8"))["posts"] if BLOG_SRC.exists() else []
+BLOG = [p for p in BLOG if f"/blog/{p['slug']}/" not in BG_MOVED]   # 10-26 BeforeGo 两篇搬到新站
 APP_ORDER = {"countdown": 0, "invoiceqr": 1, "beforego": 2}
 POST_SHOT = {  # 每篇配一张对应功能的插画（assets/art，编号同 features.en.json；09-28 起不用商店截图）
     "countdown-widget-iphone-home-lock-screen": ("countdown", "07"), "count-down-birthday-exam-trip-iphone": ("countdown", "09"),
@@ -3488,10 +3505,10 @@ def blog_hub():
                           for p in BLOG if p["app"] == key)
         groups.append(f'<h2>{esc(BY_KEY[key]["home"]["label"])}</h2>\n<div class="hub">\n{cards}\n</div>')
     body = f"""<h1>Blog</h1>
-<p class="lede">Plain how-to guides for the everyday things our apps do: countdown widgets, invoices and payment QR codes, trip plans and packing lists.</p>
+<p class="lede">Plain how-to guides for the everyday things our apps do: countdown widgets, invoices and payment QR codes. Trip planning and packing guides moved to <a href="https://beforegotech.com/tools/">beforegotech.com</a>, the BeforeGo website.</p>
 {chr(10).join(groups)}"""
-    return {"path": "/blog/", "lang": "en", "kind": "CollectionPage", "title": "Blog — guides for countdowns, invoices and trips | go ka",
-            "description": "How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, estimates vs quotes, and trip plans and packing lists.",
+    return {"path": "/blog/", "lang": "en", "kind": "CollectionPage", "title": "Blog — guides for countdowns and invoices | go ka",
+            "description": "How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, and the difference between invoices, estimates and quotes.",
             "body": body, "published": None, "faq": [], "js": []}
 
 def main():
@@ -3500,7 +3517,7 @@ def main():
     for pg in PAGES + blog + [hub_page(l) for l in HUBS] + ([blog_hub()] if blog else []):
         out = ROOT / pg["path"].strip("/") / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(shell(pg, pg["body"]), encoding="utf-8")
+        out.write_text(bg_links(shell(pg, pg["body"])), encoding="utf-8")
         manifest.append({"path": pg["path"], "lang": pg["lang"], "kind": pg["kind"], "title": pg["title"], "description": pg["description"],
                          "faq": [{"q": q, "a": a} for q, a in pg.get("faq", [])], "published": pg.get("published"), "app": pg.get("app"),
                          "hubTitle": pg.get("hub_title", pg["title"]), "items": pg.get("items", []),

@@ -26,6 +26,106 @@
   ],
   "redirects": [
     {
+      "source": "/beforego/",
+      "destination": "https://beforegotech.com/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/de/",
+      "destination": "https://beforegotech.com/de/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/fr/",
+      "destination": "https://beforegotech.com/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/it/",
+      "destination": "https://beforegotech.com/it/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/es/",
+      "destination": "https://beforegotech.com/es/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/es-mx/",
+      "destination": "https://beforegotech.com/es-mx/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/pt-br/",
+      "destination": "https://beforegotech.com/pt-br/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/ja/",
+      "destination": "https://beforegotech.com/ja/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/ko/",
+      "destination": "https://beforegotech.com/ko/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/zh-hans/",
+      "destination": "https://beforegotech.com/zh-hans/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/zh-hant/",
+      "destination": "https://beforegotech.com/zh-hant/",
+      "permanent": true
+    },
+    {
+      "source": "/beforego/th/",
+      "destination": "https://beforegotech.com/th/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/packing-list/",
+      "destination": "https://beforegotech.com/tools/packing-list/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/japan-travel-checklist/",
+      "destination": "https://beforegotech.com/tools/japan-travel-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/disney-world-packing-list/",
+      "destination": "https://beforegotech.com/tools/disney-world-packing-list/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/disney-world-itinerary-template/",
+      "destination": "https://beforegotech.com/tools/disney-world-itinerary-template/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/ja/ryoko-keikaku-app/",
+      "destination": "https://beforegotech.com/tools/ja/ryoko-keikaku-app/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/zh-hant/xing-cheng-gui-hua-app/",
+      "destination": "https://beforegotech.com/tools/zh-hant/xing-cheng-gui-hua-app/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/packing-list-by-destination/",
+      "destination": "https://beforegotech.com/blog/packing-list-by-destination/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/travel-post-screenshot-to-itinerary/",
+      "destination": "https://beforegotech.com/blog/travel-post-screenshot-to-itinerary/",
+      "permanent": true
+    },
+    {
       "source": "/pagewren/",
       "destination": "https://pagewrenbaby.com/",
       "permanent": true

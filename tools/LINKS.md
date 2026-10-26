@@ -6,7 +6,7 @@
 
 - 格式：`https://beforego.art/<页面>/?ref=<平台>-<内容名>`；ref 只用小写字母、数字、连字符，最长 40 字符。
 - **域名只写 beforego.art，别写 dyljqq.github.io / goka-xi.vercel.app**（10-19 起两者都 301 到这里）：Bing 把外链记在链接写的那个域名上，10-19 查到它把 Countdown 页收在 github.io / goka-xi 上、beforego.art 版一直不抓。也别只给 App Store 链接——站外文章是 Bingbot 找到具体页面最快的路（dev.to 一天内被 Bing 收录过）。Reddit 照旧正文不放推广链接。
-  例：`https://beforego.art/beforego/?ref=reddit-receipts-0929`
+  例：`https://beforego.art/countdown/?ref=reddit-widget-0929`（BeforeGo 10-26 起有独立站，推广链接写 `https://beforegotech.com/?ref=…`）
 - `build_seo.py` 的 `ANALYTICS` 把**落地那一次**浏览记成 `/<页面>/~<ref>`，在 Vercel 的 Pages 里单独一行；之后在站内点开的页面照常记。
 - 别用 `utm_*`：Vercel Hobby 版查 UTM 维度返回 402（要 Web Analytics Plus）。
 - 只看来源（referrer）会漏：09-28 Reddit 那波约一半人来源为空（Reddit App 内置浏览器不带），带 ref 才分得清是哪一帖。
@@ -15,7 +15,7 @@
 |---|---|
 | Countdown（倒数小组件） | `/countdown/`；葡语帖 `/countdown/pt-br/`，其余语言见页头语言菜单 |
 | InvoiceQR（发票 / 报价单） | `/invoiceqr/`；墨西哥西语帖 `/invoiceqr/es-mx/` |
-| BeforeGo（行程 / 记账） | `/beforego/` |
+| BeforeGo（行程 / 记账） | `https://beforegotech.com/`（10-26 起独立站） |
 | 只讲某个网页工具 | 工具页本身，如 `/tools/days-until/`、`/tools/invoice-template/`、`/tools/packing-list/` |
 | 讲网站本身 / 多个 app | `/` |
 
