@@ -1,0 +1,48 @@
+{
+ "en-US": {
+  "storefront": "us",
+  "name": "Countdown Widget: Any Event",
+  "version": "1.4.26",
+  "releaseNotes": "Your photos now show just as you took them: widgets, Photo Roll included, no longer lay a shade over them. If you want one, turn up Contrast when you adjust a photo. The Custom Backdrop page has a new look, too: your widget stays in view at the top, your photos sit below in their own shapes, and a tap ripples a photo onto the widget. Scrolling and animations are smoother on iPhone Pro and iPad Pro. This update also fixes a crash some people saw on iOS 26.",
+  "description": "A countdown that never loses your days — and never holds its four widgets back.\n\nAdd the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number.\n\nFOUR WIDGETS, FREE\n• Four widgets: one countdown, the next few in a list, a spotlight, or a tile for each\n• Every size of all four, on the Home Screen and the Lock Screen\n• Unlimited events — there is no cap, and there never will be\n• Count down to a date, or count up from one\n• Recurring events: yearly, monthly, weekly, or every few days\n• Reminders on the day, and as far ahead as you want\n• iCloud sync, with no account to make\n• Import from a calendar, a spreadsheet, or another countdown app — and export any time\n• No ads, ever\n\nCOUNT DOWN TO ANYTHING\nA wedding countdown, a vacation or trip countdown, a birthday or an anniversary. Christmas, New Year, Halloween and Thanksgiving. Exam day, graduation, retirement, a baby due date, a concert, a deadline, payday. Or count the days since a day that has already happened.\n\nYOUR DAYS, KEPT\nMost countdown apps lose your events at the worst moment — an update, a reinstall, a phone that died. This one takes a snapshot of everything on this device every single day, and always before anything risky. Thirty days of history, one tap to restore, and nothing ever leaves your phone. Days that have already passed are never deleted either: they collect into a timeline you can look back through, with the longest wait of each year written next to it.\n\nTHE MOMENT ITSELF\nWhen a countdown reaches a milestone — a hundred days, a week, the morning of — the app opens on the number, full screen, and gives you a card worth sharing.\n\nTHE BACK OF EVERY EVENT\nTap an event and it turns over to a page of its own. Write a few lines, add photos, record a voice — the story of the day, kept with the day. It syncs with iCloud, goes into every backup, and shares as one picture.\n\nMADE TO LOOK LIKE YOURS\nThirty-six ready-made events, from a birthday to a first day at work, each already set up with the right repeat and the right reminders. Two hundred drawn icons and the whole emoji keyboard. A hundred and fifty-nine full-screen backdrops — twenty-two of them photographs — a hundred and seven in Pro.\n\nCOUNTDOWN PRO\nPro unlocks the Pro backdrops, with a new drop every month, your own photos behind a countdown, Photo Roll — a widget that turns your event's own photos over behind the count, the Pro typefaces, the Lock Screen Live Activity, and inviting someone to count down with you. Whatever you unlock while subscribed stays yours for good — cancelling only stops the new ones arriving. Your countdowns, reminders and the four widgets work the same whether you subscribe or not.\n\n———\n\nCountdown Pro is an auto-renewing subscription. Prices for the annual plan, which includes a 7-day free trial, and the monthly plan are shown in the app before purchase. Payment is charged to your Apple Account at confirmation of purchase. It renews automatically unless cancelled at least 24 hours before the current period ends, and you can manage or cancel it in your Apple Account settings at any time. A one-time Lifetime purchase is also available; it does not renew.\n\nPrivacy Policy: https://dyljqq.github.io/countdown/privacy-policy/\nTerms of Use: https://dyljqq.github.io/countdown/terms-of-service/",
+  "screenshots": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/86/8f/a8/868fa8a0-ba71-45f0-49b4-aa3db81a1726/01-see-every-day.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/9e/de/c89edeee-c4c9-5038-ce97-28f3b5bf6da2/02-dress-it-up.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c0/4b/0f/c04b0fdd-a64c-c2d6-d8ea-9bd341132a36/03-watch-it-closer.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/64/fb/a0/64fba0dc-465e-5e04-08f8-f3628e6f7e62/04-count-together.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/ae/5c/ebae5c1f-9dc9-7909-4270-62530520fd69/05-turn-it-over.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/4b/30/d1/4b30d1db-d2fe-d6bf-61a4-eafdd96e6abf/06-your-photo.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/3e/83/e4/3e83e47b-bda3-8f41-9965-d42e86c1b7d6/07-keep-the-memories.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ac/69/c1/ac69c132-cc97-1931-fb7d-d16c71964523/08-pick-your-widget.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fe/4a/15/fe4a1557-77ee-498d-f1cb-3838d215a620/09-every-event-one-place.png/320x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7f/98/91/7f9891fe-a3aa-8a41-7244-e01e7e1ef6fb/10-keep-every-day-safe.png/320x480bb.jpg"
+  ],
+  "ipad": [
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/58/34/91/58349157-b656-da14-23d7-95e5661e00a1/02-detail.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/45/5a/a3455a60-67c0-a307-a170-a3025fcf30b6/03-list.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2f/88/20/2f8820bf-009d-2aca-1b79-6b0508b1e7f2/04-widgets.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/d5/3c/80d53cd2-1928-9dc2-14e8-d752f8b113f5/05-templates.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d2/73/6f/d2736f50-ad45-6f4d-cde6-327c348459ba/06-backups.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9f/94/8c/9f948c14-a6ca-a144-a026-8463c26ec5fc/07-backdrops.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/dd/64/31dd6440-1407-7dcf-4cea-ad202c1f3773/08-year.png/360x480bb.jpg",
+   "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/44/e1/08/44e108ab-d677-7933-b308-0560e219c395/09-past.png/360x480bb.jpg"
+  ],
+  "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5c/65/b5/5c65b52c-d4cf-ea64-8398-eed36599d848/AppIcon-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+  "minOS": "17.0",
+  "languages": [
+   "EN",
+   "FR",
+   "DE",
+   "IT",
+   "JA",
+   "KO",
+   "PT",
+   "ZH",
+   "TH",
+   "ZH"
+  ],
+  "rating": 4.58333,
+  "ratingCount": 24,
+  "fetched": "2026-10-28"
+ }
+}

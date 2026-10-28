@@ -2548,19 +2548,20 @@ EN_WIDGET_STEPS = ('<li>Lock Screen: touch and hold the Lock Screen, tap <strong
 LL_URL = "https://disneyworld.disney.go.com/lightning-lane-passes/"
 DINE_URL = "https://disneyworld.disney.go.com/resorts/contemporary-resort/dining/"   # 10-17 评审读过原文：「Guests with a Valid Disney Resort Hotel Reservation … up to 60 days in advance of your arrival」「All Other Guests: Make reservations up to 60 days in advance.」
 
+# 10-28: US 1.4.26 evidence is pinned in tools/store/countdown-1.4.26.json; date/name editing differs from shared-story editing.
 PAGES.append({"path": "/tools/shared-countdown-app-couples/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
   "meta_top": True, "title": "Shared Countdown App for Couples: Same Countdown on Both iPhones", "crumb": "Shared countdown for couples",
-  "description": "Count down to your next visit together: one of you sends an invite, the other taps the link, and the same countdown and widget show up on both iPhones.",
+  "description": "Share a countdown on both iPhones with Countdown Widget: Any Event. Inviting needs Pro; joining needs no subscription. Only the creator changes its date or name.",
   "hub_title": "Shared countdown for couples", "hub_desc": "One countdown on both iPhones: invite, tap the link, and the date and widget stay in sync.",
   "faq": [
-    ("Is there a free shared countdown app?", "In Countdown Widget: Any Event, joining a countdown someone shares with you is free, and so is every widget. Sending the invitation is part of Countdown Pro, so one of you needs Pro and the other doesn't."),
-    ("Can both of us change the date?", "No. Only the person who created the countdown can change it. When they move the date, the countdown and its widget change on the other iPhone too."),
+    ("Is there a free shared countdown app?", "In Countdown Widget: Any Event, joining a countdown someone shares with you needs no subscription. Sending an invitation requires Countdown Pro. All sizes of the four standard countdown widgets are free; Photo Roll is a separate Pro widget."),
+    ("Can both of us change the date?", "No. Only the creator can change the countdown's date or name. When they move the date, the countdown and its widget change on the other iPhone too. This is separate from writing in a shared story."),
     ("Do we need the same Apple ID?", "No. Each of you uses your own iPhone with your own iCloud account."),
     ("Does it work with Android?", "No. Countdown is an app for iPhone and iPad, so both of you need one of those."),
     ("How do I stop sharing a countdown?", "Touch and hold the countdown in your list and tap Manage Sharing. If someone shared it with you, deleting it from your list takes you out of the share without touching their copy."),
   ],
   "body": f"""<h1>A shared countdown for couples</h1>
-<p class="lede">Whether you live apart or are just counting the days to a trip, one of you sets up the countdown and taps <strong>Invite Someone</strong>, the other taps the link, and the same countdown appears on both iPhones, widget and all. Move the date and it moves on both.</p>
+<p class="lede"><strong>Countdown Widget: Any Event</strong> lets a couple keep the same countdown on both iPhones. The person who creates it needs <strong>Countdown Pro</strong> to send an invitation; the other person can join without a subscription. Only the creator changes the countdown's date or name. When they change its date, it updates for both people.</p>
 {top_cta("countdown", "en", "Get Countdown — joining is free")}
 <h2>How to share a countdown</h2>
 <ol><li>Both of you install <a href="/countdown/">Countdown Widget: Any Event</a>.</li>
@@ -2571,16 +2572,24 @@ PAGES.append({"path": "/tools/shared-countdown-app-couples/", "iphone_only": Tru
 <h2>Who can do what</h2>
 <table><thead><tr><th></th><th>The one who invites</th><th>The one who joins</th></tr></thead><tbody>
 <tr><th>Needs</th><td>Countdown Pro</td><td>Nothing: joining is free</td></tr>
-<tr><th>Changes the date or name</th><td>Yes, and it updates on both phones</td><td>No, it’s view-only</td></tr>
-<tr><th>Widgets</th><td>Free, every size</td><td>Free, every size</td></tr>
+<tr><th>Changes the date or name</th><td>Yes, and it updates on both phones</td><td>No; those fields stay with the creator</td></tr>
+<tr><th>Four standard countdown widgets</th><td>All sizes free</td><td>All sizes free</td></tr>
 <tr><th>Stops sharing</th><td>Manage Sharing</td><td>Deletes it from their own list</td></tr>
+</tbody></table>
+<p>Each person needs the app and their own iCloud account. The creator controls the countdown's date and name; this does not mean the event's story is always read-only. New invitations support writing that story together, while older shares can retain read-only story access until the owner reopens them. The separate <strong>Photo Roll</strong> widget requires Pro; it is not included among the four free standard widgets.</p>
+<h2>A shared app event or a browser link?</h2>
+<table><thead><tr><th>What you need</th><th>Which option fits</th></tr></thead><tbody>
+<tr><td>The same saved event on two iPhones, with widgets</td><td>Use the app invitation: the creator needs Pro, joining needs no subscription</td></tr>
+<tr><td>Both people able to change the countdown date</td><td>This sharing mode does not fit: only the creator changes the date</td></tr>
+<tr><td>A simple countdown link that opens in a browser</td><td>Use the <a href="/tools/days-until/">free online days-until calculator</a> and its share link; it does not join an app event</td></tr>
 </tbody></table>
 <h2>Countdowns worth sharing</h2>
 <ul><li><strong>The next visit.</strong> The one long-distance couples check most. Change it once when the flight moves, and the other phone follows.</li>
 <li><strong>Moving to the same city.</strong> The big one, on both Lock Screens.</li>
 <li><strong>Your anniversary.</strong> Set it to repeat yearly and it starts again the day after.</li>
 <li><strong>A trip together.</strong> Start from the <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a>; the <a href="/tools/disney-countdown-widget-iphone/">Disney trip countdown</a> shows how to add the booking dates as countdowns too.</li></ul>
-<p>Counting up rather than down? Countdown also counts up from a date, like the day you met. For a birthday, see the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown widget</a>.</p>"""})
+<p>Counting up rather than down? Countdown also counts up from a date, like the day you met. For a birthday, see the <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown widget</a>.</p>
+<p class="meta">We make Countdown Widget: Any Event. Product details checked against the <a href="{bp.store_link(BY_KEY['countdown'], bp.store_of(BY_KEY['countdown']), 'tool')}">US App Store description, version 1.4.26</a>, on October 28, 2026. Plan prices are shown in the app before purchase.</p>"""})
 
 PAGES.append({"path": "/tools/birthday-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-17",
   "meta_top": True, "title": "Birthday Countdown Widget for iPhone: Free, Repeats Every Year", "crumb": "Birthday countdown widget",
@@ -2646,24 +2655,31 @@ PAGES.append({"path": "/tools/disney-countdown-widget-iphone/", "iphone_only": T
 # 7d3. 美区 GEO：自己的照片当背景 + 度假倒数——10-18（App 数据仓库 reports/aso/geo-baseline-2026-10-18-countdown-us.md：
 # ChatGPT 未登录 8 题 ×2，这两题官网没有对应页；赢家是名字带场景的小 App 或开发者自己域名上的专题页）。
 # 照片：源码核实——编辑页 Backdrop → Custom → Add Photo → Photo adjustments（Detail / Small / Medium / Large 四个预览各自取景，只能拖动；
-# Opacity / Blur / Text Contrast 三个滑块）→ Done；自己的照片属于 Pro（商店 1.4.21 原文）。锁屏三种小组件按系统单色渲染，不画背景（CountdownWidgetView isAccessory）。
+# Opacity / Blur / Text Contrast 三个滑块）→ Done；自己的照片属于 Pro（1.4.26 US 快照：tools/store/countdown-1.4.26.json）。锁屏三种小组件按系统单色渲染，不画背景（CountdownWidgetView isAccessory）。
 # 背景 159 张、Pro 107 张 → 免费 52 张（商店原文）。度假：EventTemplate vacation 全天、提醒 30 / 7 / 1 天和当天（milestoneTiers 就是提醒通知），默认背景 Beach Pup 免费；
 # Road trip 全天 7 / 1 / 当天；Flight 定时（默认 9:00，改成起飞时间），提醒前一天和当天。
 PAGES.append({"path": "/tools/countdown-widget-with-your-own-photo-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-18",
   "meta_top": True, "title": "Countdown Widget With Your Own Photo on iPhone: Home Screen Setup", "crumb": "Countdown widget with your photo",
-  "description": "Put your own photo behind a countdown widget on your iPhone Home Screen, framed for each widget size. Lock Screen widgets can't show photos; use your wallpaper.",
+  "description": "Use your own photo in an iPhone countdown widget with Countdown Pro. Setup, free widget limits, Photo Roll and Lock Screen differences explained.",
   "hub_title": "Countdown widget with your own photo", "hub_desc": "Your photo behind the number, framed for each Home Screen size, and how to get it on the Lock Screen.",
   "faq": [
     ("Can I use my own photo as a countdown widget background on iPhone?", "Yes. In Countdown Widget: Any Event you can put your own photo behind any countdown, and it shows on its Home Screen widgets in every size when the Home Screen uses the Default or Dark look. Using your own photo is part of Countdown Pro."),
     ("Why doesn't my photo show in the Lock Screen widget?", "iOS draws Lock Screen widgets in a single tint over your wallpaper, so a photo can’t appear inside them. Set the photo as your Lock Screen wallpaper and put the countdown widget over it."),
-    ("Is the countdown widget free?", "Yes. Every widget size on the Home Screen and the Lock Screen is free, with unlimited events and no ads. Of the 159 built-in backdrops, 52 are free; your own photo, the other 107 backdrops and the Pro typefaces are part of Countdown Pro."),
+    ("Is a countdown widget with my own photo free?", "Using your own photo as the countdown backdrop requires Countdown Pro. All sizes of the four standard countdown widgets are free, with unlimited events and no ads. Photo Roll, which cycles through an event's photos, is a separate Pro widget."),
     ("Can each widget size show a different part of the photo?", "Yes. You frame the photo separately for the countdown's page and for the small, medium and large widgets, so a face isn't cut in half in the wide one."),
     ("What if the number is hard to read on my photo?", "Photo adjustments has three sliders: Opacity fades the photo, Blur softens the detail behind the digits, and Text Contrast adds a shade behind the number."),
     ("Does it work on Android?", "No. Countdown is an app for iPhone and iPad."),
   ],
   "body": f"""<h1>Your own photo behind a countdown widget</h1>
-<p class="lede">In Countdown Widget: Any Event you can put your own photo behind any countdown and frame it separately for the small, medium and large Home Screen widgets. Opacity, Blur and Text Contrast keep the number readable. The widgets are free; using your own photo is part of Countdown Pro. Lock Screen widgets are drawn in a single tint, so a photo can’t appear inside them; the workaround is below.</p>
-{top_cta("countdown", "en", "Get Countdown — every widget is free")}
+<p class="lede"><strong>Countdown Widget: Any Event</strong> can show your own photo behind a countdown on the iPhone Home Screen. <strong>Using your own photo requires Countdown Pro</strong>; all sizes of the four standard widgets are free. Frame the photo separately for small, medium and large widgets. On the Lock Screen, use the photo as wallpaper with a countdown widget over it.</p>
+{top_cta("countdown", "en", "Get Countdown — photo backdrops need Pro")}
+<h2>What is free, and what needs Pro?</h2>
+<table><thead><tr><th>What you want</th><th>Requirement</th></tr></thead><tbody>
+<tr><td>Unlimited events and all sizes of the four standard countdown widgets</td><td>Free</td></tr>
+<tr><td>Your own photo as a countdown backdrop</td><td>Countdown Pro</td></tr>
+<tr><td>Photo Roll: an event's photos changing behind the count</td><td>A separate Pro widget</td></tr>
+<tr><td>A downloadable still picture with a countdown and your photo</td><td>The <a href="/tools/countdown-wallpaper-maker/">free online countdown wallpaper maker</a>; the saved number does not update by itself</td></tr>
+</tbody></table>
 <h2>Step by step</h2>
 <ol><li>Install <a href="/countdown/">Countdown Widget: Any Event</a>, tap <strong>Add Event</strong> (or <strong>+</strong> once you already have events) and pick a ready-made event or <strong>Blank Event</strong>. For a countdown you already have, open it and tap the pencil to edit it.</li>
 <li>Tap <strong>Backdrop</strong>, choose <strong>Custom</strong>, then <strong>Add Photo</strong>, and pick the photo.</li>
@@ -2675,19 +2691,20 @@ PAGES.append({"path": "/tools/countdown-widget-with-your-own-photo-iphone/", "ip
 <tr><td>The countdown’s own page in the app</td><td>Yes, framed in the Detail preview</td></tr>
 <tr><td>Home Screen widgets</td><td>Yes, every size, each framed on its own, with the Home Screen set to the Default or Dark look</td></tr>
 <tr><td>Home Screen widgets on a Tinted or Clear Home Screen</td><td>No. iOS removes widget backgrounds in those looks</td></tr>
-<tr><td>Lock Screen widgets</td><td>No. iOS draws them in one tint over the wallpaper, for every app</td></tr>
+<tr><td>Countdown's Lock Screen widgets</td><td>No photo inside the widget; use your photo as the wallpaper behind it</td></tr>
 </tbody></table>
 <h2>Want the photo on the Lock Screen too?</h2>
 <p>Use the photo as the wallpaper and put the number on top of it:</p>
 <ol><li>Touch and hold the Lock Screen, tap <strong>+</strong>, choose <strong>Photos</strong> and pick the photo.</li>
 <li>Tap <strong>Add Widgets</strong> under the clock, choose Countdown and close the widget panel.</li>
 <li>Tap <strong>Add</strong>, then <strong>Set as Wallpaper Pair</strong>.</li></ol>
-<p>Want the date written on the photo as well? The <a href="/tools/countdown-wallpaper-maker/">countdown wallpaper maker</a> puts your title, the days left and the date on your photo, sized for the Lock Screen. More on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
+<p>Want the date written on the photo as well? The <a href="/tools/countdown-wallpaper-maker/">countdown wallpaper maker</a> puts your title, the days left and the date on your photo, sized for the Lock Screen. It exports a still picture: the saved number stays as it was when you made it. For a count that updates, use a plain photo as wallpaper and add the countdown widget. More on both screens, and what to do if a widget looks stuck, is in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>.</p>
 <h2>Photos that work well</h2>
 <ul><li><strong>A trip.</strong> Last year’s beach behind this year’s <a href="/tools/vacation-countdown-widget-iphone/">vacation countdown</a>.</li>
 <li><strong>The two of you.</strong> Behind the next visit, on a countdown you <a href="/tools/shared-countdown-app-couples/">share with your partner</a>.</li>
 <li><strong>The birthday person.</strong> Behind a <a href="/tools/birthday-countdown-widget-iphone/">birthday countdown</a> that repeats every year.</li></ul>
-<p>Rather not use a photo? The 52 free backdrops include drawn scenes and patterns, and they work in every widget the same way.</p>"""})
+<p>Rather not use a photo? The free built-in backdrops include drawn scenes and patterns for the standard Home Screen widgets.</p>
+<p class="meta">We make Countdown Widget: Any Event. Product details checked against the <a href="{bp.store_link(BY_KEY['countdown'], bp.store_of(BY_KEY['countdown']), 'tool')}">US App Store description, version 1.4.26</a>, on October 28, 2026. Plan prices are shown in the app before purchase.</p>"""})
 
 PAGES.append({"path": "/tools/vacation-countdown-widget-iphone/", "iphone_only": True, "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-10-18",
   "meta_top": True, "title": "Vacation Countdown Widget for iPhone: Free, on Your Lock Screen", "crumb": "Vacation countdown widget",
