@@ -173,16 +173,16 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [2027 農曆新年倒數](https://beforego.art/tools/zh-hant/nong-li-xin-nian-2027/) — 2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。
 - [2027 連假行事曆：下一個連假還有幾天？](https://beforego.art/tools/zh-hant/2027-lian-jia-xing-shi-li/) — 2027 年（民國 116 年）3 天以上的連假有 9 個：元旦 1/1–1/3、春節 2/4–2/10 共 7 天，還有 228、清明、勞動節、國慶、光復節、行憲紀念日。每個連假還有幾天，每天更新。
 - [116 學測倒數](https://beforego.art/tools/zh-hant/116-xue-ce-dao-shu/) — 116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。
-- [116 會考倒數](https://beforego.art/tools/zh-hant/116-hui-kao-dao-shu/) — 116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。
+- [116 會考倒數](https://beforego.art/tools/zh-hant/116-hui-kao-dao-shu/) — 116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日）。本頁整理 2 天考試日程節次表、考場必備文具與准考證規定、成績等第計分、100 天備考節點，以及 iPhone 鎖定畫面自動更新的免費倒數小工具。
 - [iPhone 桌面倒數教學](https://beforego.art/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/) — 把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
 - [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。
-- [都立入試2027まであと何日？](https://beforego.art/tools/ja/toritsu-nyushi-2027/) — 令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。
+- [都立入試2027まであと何日？](https://beforego.art/tools/ja/toritsu-nyushi-2027/) — 令和9年度（2027年）の都立高校入試は学力検査（第一次募集）が2月21日（日）。本試験当日の時間割（国・数・英・社・理）、持ち物チェックリスト、ESAT-J英語スピーキングテストの点数換算、内申点と総合得点の仕組み、iPhone待ち受けウィジェットをまとめました。
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
 - [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, October 2026.
-- [트리플 대체 앱 비교](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플 11월 3일 서비스 종료 전 확인할 NOL 일정 이전과 가계부 CSV 백업. 체크리스트, 출발 알림, 여행 경비, 캡처 정리 기준으로 대체 앱을 비교하세요.
+- [트리플 대체 앱 비교](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플 11월 3일 서비스 종료 전 확인할 NOL 일정 이전과 가계부 CSV 백업. 체크리스트, 출발 알림, 여행 경비 분담, 캡처 정리 기준으로 5대 대체 앱을 비교하세요.
 - [Shared countdown for couples](https://beforego.art/tools/shared-countdown-app-couples/) — Share a countdown on both iPhones with Countdown Widget: Any Event. Inviting needs Pro; joining needs no subscription. Only the creator changes its date or name.
 - [Birthday countdown widget for iPhone](https://beforego.art/tools/birthday-countdown-widget-iphone/) — Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.
 - [Disney trip countdown widget](https://beforego.art/tools/disney-countdown-widget-iphone/) — Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.
