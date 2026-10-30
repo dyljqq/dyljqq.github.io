@@ -176,7 +176,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [116 會考倒數](https://beforego.art/tools/zh-hant/116-hui-kao-dao-shu/) — 116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日），6 月 4 日寄發成績通知單。想要會考倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與准考證日期。
 - [iPhone 桌面倒數教學](https://beforego.art/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/) — 把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。
 - [あと何日？（日数計算）](https://beforego.art/tools/ja/ato-nannichi/) — 日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。
-- [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、100日前・1週間前の日付と、iPhoneのロック画面に置く方法をまとめました。
+- [共通テスト2027まであと何日？](https://beforego.art/tools/ja/kyotsu-test-2027/) — 2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。
 - [都立入試2027まであと何日？](https://beforego.art/tools/ja/toritsu-nyushi-2027/) — 令和9年度（2027年）の都立高校入試は、学力検査（第一次募集）が2月21日（日）、推薦入試が1月26日（火）・27日（水）。あと何日かを毎日更新でカウントダウンし、出願期間と合格発表日、iPhoneのロック画面に置く方法をまとめました。
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
