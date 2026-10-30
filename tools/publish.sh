@@ -34,7 +34,7 @@ $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true
 if ! deploy_ok "$DEPLOY_LOG"; then echo "Vercel 首次部署未就绪，重试一次…"; $VERCEL --prod --yes >"$DEPLOY_LOG" 2>&1 || true; fi
 # 新版 CLI 输出 JSON（"message": "Deployment … ready."）；没有 ready 就是没部署上，停下别推 git、别报 IndexNow
 if ! deploy_ok "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
-grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1
+grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1 || grep -i 'ready' "$DEPLOY_LOG" | head -1 || true
 
 # IndexNow 只推和上次推送时比内容变了的页（新增 / 修改 / 删除，见 tools/indexnow.py）。
 # 推成功才把记录提交、跟 git 一起推上去（下次从别的 worktree 发布也知道上次推过什么）；推失败或记录读不出来不拦发布，记录不提交、下次再推。
