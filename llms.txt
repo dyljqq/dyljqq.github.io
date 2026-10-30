@@ -239,4 +239,4 @@ Email qinqiangji@gmail.com and say which app it is about. Every message is read.
 - Every app is free to download. Paid parts, where there are any, are listed on each app's page.
 - No app asks for an account or sign-up. Where an app syncs, it uses the user's own iCloud.
 - Who makes the apps and how facts on this site are checked: https://beforego.art/about/
-- Support and feedback: qinqiangji@gmail.com
+- Support and feedback: https://beforego.art/support/ (email: qinqiangji@gmail.com)

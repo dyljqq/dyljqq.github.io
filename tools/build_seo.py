@@ -245,7 +245,7 @@ def build_sitemap(final=None):
         if kind == "product":
             group = "products"
         elif kind == "tool":   # /about/ 走工具页的生成流程，但它是站点页，归 pages 组
-            group = "blog" if url.startswith("/blog/") else ("pages" if app.get("kind") == "AboutPage" else "tools")
+            group = "blog" if url.startswith("/blog/") else ("pages" if app.get("kind") in ("AboutPage", "ContactPage") else "tools")
         else:
             group = "pages"
         groups[group].append((url, git_lastmod(path, final.get(path)), {"home": "1.0", "product": "0.9", "tool": "0.7"}.get(kind, "0.3")))
@@ -306,7 +306,7 @@ def build_llms():
     if TOOLS:
         out += ["## Free tools & guides", ""]
         for tp in TOOLS:
-            if tp["kind"] == "AboutPage":
+            if tp["kind"] in ("AboutPage", "ContactPage"):
                 continue
             out.append(f"- [{tp['hubTitle']}]({ORIGIN}{tp['path']}) — {tp['description']}")
         out.append("")
@@ -318,7 +318,7 @@ def build_llms():
             "- Every app is free to download. Paid parts, where there are any, are listed on each app's page.",
             "- No app asks for an account or sign-up. Where an app syncs, it uses the user's own iCloud.",
             f"- Who makes the apps and how facts on this site are checked: {ORIGIN}/about/",
-            f"- Support and feedback: {EMAIL}", ""]
+            f"- Support and feedback: {ORIGIN}/support/ (email: {EMAIL})", ""]
     return "\n".join(out)
 
 # ---------------------------------------------------------------- head 改写
@@ -981,7 +981,8 @@ def site_footer_html(lang="en"):
     site_links = (f'<li><a href="{about}">{esc_text(H(lang, "nav_about"))}</a></li>'
                   f'<li><a href="/blog/"{en_only}>{esc_text(H(lang, "nav_blog"))}</a></li>'
                   f'<li><a href="{hub}"{hub_attr}>{esc_text(H(lang, "tools_link"))}</a></li>'
-                  f'<li><a href="{home}#contact">{esc_text(H(lang, "nav_contact"))}</a></li>')
+                  f'<li><a href="{home}#contact">{esc_text(H(lang, "nav_contact"))}</a></li>'
+                  f'<li><a href="/support/"{en_only}>{esc_text(bp.t(lang, "nav_support"))}</a></li>')
     return f"""{FOOT_START}
 <footer class="gk-foot">
   <div class="gk-foot-in">
@@ -1051,8 +1052,8 @@ def tool_head(tp):
     crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": tp.get("crumbHome") or "Home", "item": f"{ORIGIN}{home_path(lang)}"},
         {"@type": "ListItem", "position": 2, "name": "Blog" if hub == "/blog/" else (tp.get("crumbHub") or "Tools"), "item": f"{ORIGIN}{hub}"}]}
-    if tp["kind"] == "AboutPage":   # Home › About，不挂工具目录
-        crumbs["itemListElement"][1:] = [{"@type": "ListItem", "position": 2, "name": "About", "item": canonical}]
+    if tp["kind"] in ("AboutPage", "ContactPage"):
+        crumbs["itemListElement"][1:] = [{"@type": "ListItem", "position": 2, "name": "About" if tp["kind"] == "AboutPage" else "Support", "item": canonical}]
     elif url != hub:
         crumbs["itemListElement"].append({"@type": "ListItem", "position": 3, "name": title, "item": canonical})
     blobs = [page, crumbs]
@@ -1065,7 +1066,7 @@ def tool_head(tp):
                       "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in tp["faq"]]})
     for b in blobs:
         lines.append('<script type="application/ld+json">\n%s\n</script>' % json.dumps(b, ensure_ascii=False, indent=2))
-    lines.append(analytics_html("blog" if url.startswith("/blog/") else ("about" if tp["kind"] == "AboutPage" else "tool"), tp.get("app") or "site"))
+    lines.append(analytics_html("blog" if url.startswith("/blog/") else ("about" if tp["kind"] == "AboutPage" else "support" if tp["kind"] == "ContactPage" else "tool"), tp.get("app") or "site"))
     lines.append(END)
     return "\n".join(lines) + "\n"
 

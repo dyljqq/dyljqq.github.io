@@ -3516,6 +3516,30 @@ PAGES.append({"path": "/about/", "lang": "en", "kind": "AboutPage", "nohub": Tru
 <p>Email <a href="mailto:{EMAIL}">{EMAIL}</a> with the page and what is wrong. We fix it, and the page’s “Updated” date changes with the fix.</p>
 <p>Elsewhere: {ABOUT_SOCIAL}.</p>"""})
 
+PAGES.append({"path": "/support/", "lang": "en", "kind": "ContactPage", "nohub": True, "published": "2026-10-30",
+  "title": "Support for go ka Apps and Free Web Tools",
+  "description": "Get help with Countdown widgets, Smart Invoice PDFs, BeforeGo and Pagewren. Contact go ka, report a website issue, or find Apple purchase support.",
+  "crumbs": [("Home", "/"), ("Support", None)],
+  "body": f"""<h1>Support</h1>
+<p class="lede">Need help with a go ka app or a tool on this website? Start with the relevant guide below, or email <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+<h2 id="countdown">Countdown Widget: Any Event</h2>
+<p>For help adding a widget, follow the <a href="/blog/countdown-widget-iphone-home-lock-screen/">Home Screen and Lock Screen guide</a>. For photo backgrounds, see <a href="/tools/countdown-widget-with-your-own-photo-iphone/">using your own photo</a>. For invitations and shared events, see <a href="/tools/shared-countdown-app-couples/">sharing a countdown</a>.</p>
+<p>If a widget looks wrong, tell us which widget and size you added, whether it is on the Home Screen or Lock Screen, and what you see in the app compared with the widget. A screenshot of each view helps.</p>
+<h2 id="invoiceqr">Smart Invoice &amp; Estimate Maker</h2>
+<p>For help preparing a document, see <a href="/tools/how-to-write-an-invoice/">how to write an invoice</a> or the <a href="/blog/invoice-vs-estimate-vs-quote/">invoice, estimate and quote guide</a>. For payment links, read <a href="/blog/payment-qr-code-on-invoice/">adding a payment QR code</a>.</p>
+<p>If an exported PDF or QR code is not working, tell us the document type, the action that failed and any error message. If you attach an example, remove client names, addresses, bank details and other private information first.</p>
+<h2 id="beforego">BeforeGo</h2>
+<p>BeforeGo has its own <a href="https://beforegotech.com/support/">support page</a>, covering guide imports, trip storage and Premium purchases. Its <a href="https://beforegotech.com/about/">About page</a> explains who makes the app.</p>
+<h2 id="pagewren">Pagewren</h2>
+<p>For books, backups, moving to a new iPhone and PDF export, visit <a href="https://pagewrenbaby.com/support/">Pagewren Support</a>. You can also read <a href="https://pagewrenbaby.com/about/">about Pagewren</a>.</p>
+<h2 id="website">Free web tools and website corrections</h2>
+<p>Send the full page address, your browser and device, what you tried and what happened. For a calculation issue, include a non-private example and the result you expected. For a factual correction, include the source so we can check it.</p>
+<h2 id="purchases">Apple purchases and subscriptions</h2>
+<p>For purchases billed through the App Store, use <a href="https://apps.apple.com/account/subscriptions">Apple's subscription settings</a> to manage a subscription, or <a href="https://reportaproblem.apple.com/" rel="nofollow">reportaproblem.apple.com</a> to request a refund. For a missing app unlock, email us the app name and what you see after attempting to restore your purchase. Never send your Apple Account password or payment card number.</p>
+<h2 id="contact">Contact go ka</h2>
+<p>Email <a href="mailto:{EMAIL}?subject=App%20or%20website%20support">{EMAIL}</a>. Include the app name or page address, your iPhone or device model, iOS or browser version, app version, and the steps that reproduce the issue. The same address handles questions about our other apps.</p>
+<p>Learn <a href="/about/">about go ka</a>, or read the <a href="/privacy-policy/">website privacy policy</a>.</p>"""})
+
 # 德国开票页的署名（10-25）：涉及税法的页，claude-seo 认为「谁写的」是硬要求。日期 = 10-17 逐条读 gesetze-im-internet.de 原文那天（见 7e 节注释）。
 DE_BYLINE = ('<p class="meta" style="margin-top:12px"><strong>Über diese Seite:</strong> Geschrieben von go ka, dem unabhängigen Entwickler der App '
              'Smart Rechnung &amp; Angebot. Die genannten Paragrafen haben wir am 17. Oktober 2026 im Wortlaut auf gesetze-im-internet.de nachgelesen. '

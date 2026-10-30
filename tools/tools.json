@@ -2035,6 +2035,22 @@
   "crumbHub": "Tools"
  },
  {
+  "path": "/support/",
+  "lang": "en",
+  "kind": "ContactPage",
+  "title": "Support for go ka Apps and Free Web Tools",
+  "description": "Get help with Countdown widgets, Smart Invoice PDFs, BeforeGo and Pagewren. Contact go ka, report a website issue, or find Apple purchase support.",
+  "faq": [],
+  "published": "2026-10-30",
+  "app": null,
+  "hubTitle": "Support for go ka Apps and Free Web Tools",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Home",
+  "crumbHub": "Tools"
+ },
+ {
   "path": "/blog/countdown-widget-iphone-home-lock-screen/",
   "lang": "en",
   "kind": "Article",

@@ -19,6 +19,8 @@ class SitemapTests(unittest.TestCase):
             ("/tools/example/", Path("tool.html"), {}, "tool"),
             ("/blog/example/", Path("blog.html"), {}, "tool"),
             ("/app/privacy/", Path("legal.html"), {"live": True}, "legal"),
+            ("/support/", Path("support.html"), {"kind": "ContactPage"}, "tool"),
+            ("/about/", Path("about.html"), {"kind": "AboutPage"}, "tool"),
             ("/unreleased/", Path("hidden.html"), {"live": False}, "product"),
         ]
         dates = {p: f"2026-10-{i + 10:02}" for i, (_, p, _, _) in enumerate(records)}
@@ -26,13 +28,15 @@ class SitemapTests(unittest.TestCase):
              patch.object(seo, "git_lastmod", side_effect=lambda p, text: dates[p]):
             documents, count = seo.build_sitemap()
         self.assertIsInstance(documents, dict)
-        self.assertEqual(count, 5)
+        self.assertEqual(count, 7)
         expected = {
             "sitemap-products.xml": {ORIGIN + "/app/": dates[Path("app.html")]},
             "sitemap-tools.xml": {ORIGIN + "/tools/example/": dates[Path("tool.html")]},
             "sitemap-blog.xml": {ORIGIN + "/blog/example/": dates[Path("blog.html")]},
             "sitemap-pages.xml": {ORIGIN + "/": dates[Path("home.html")],
-                                  ORIGIN + "/app/privacy/": dates[Path("legal.html")]},
+                                  ORIGIN + "/app/privacy/": dates[Path("legal.html")],
+                                  ORIGIN + "/support/": dates[Path("support.html")],
+                                  ORIGIN + "/about/": dates[Path("about.html")]},
         }
         index = ET.fromstring(documents["sitemap.xml"])
         self.assertEqual(index.tag, NS + "sitemapindex")
