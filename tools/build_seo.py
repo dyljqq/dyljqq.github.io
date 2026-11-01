@@ -66,7 +66,7 @@ def analytics_html(page_type, page_app="site"):
     meta = {"page_type": page_type, "page_app": page_app,
             "apps": {str(a["appId"]): a.get("variantOf") or a["key"] for a in APPS if a.get("live") and a.get("appId")}}
     return (ANALYTICS + '\n<meta name="gk-analytics" content="' + esc(json.dumps(meta, separators=(",", ":"))) + '">'
-            '\n<script defer src="/assets/analytics/firebase-web-v1.js"></script>')
+            '\n<script defer src="/assets/analytics/firebase-web-v2.js"></script>')
 
 def root_key(app):
     return app.get("variantOf") or app["key"]
@@ -101,6 +101,9 @@ def mask_daily(html: str, day: date) -> str:
       整行抹会让它今天命中、明天不命中，两天对不上；去日期后它本来就没剩数字，命中不命中都是同一个样子。"""
     if not DAILY_COUNTER.search(html):
         return html
+    # Below seven days counter() omits the whole week summary and separator.
+    # Keep the surrounding fixed event date and label for editorial comparison.
+    html = re.sub(r' · <span\s+data-weeks(?:="[^"]*")?>[^<]*</span>', '', html)
     long_re = _day_re(day.strftime("%-d %B %Y"), day.strftime("%B %-d, %Y"), day.strftime("%d/%m/%Y"),
                       f"{day.year}年{day.month}月{day.day}日", f"{day.year}년 {day.month}월 {day.day}일")
     iso_re = _day_re(day.isoformat())
@@ -127,6 +130,16 @@ def _lastmod_norm(t: str, day: date | None = None) -> str:
     t = re.sub(r'\s+data-track-(?:id|section)="[^"]*"', "", t)   # 埋点标识不是内容：只补埋点不刷 lastmod / dateModified，也不推 IndexNow（10-25）
     return re.sub(r"\s+", " ", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
 
+def _git_read(args, **kwargs):
+    """Allow slow Git reads one retry; real Git errors retain their usual handling."""
+    for attempt in range(2):
+        try:
+            return subprocess.run(args, timeout=600, **kwargs)
+        except subprocess.TimeoutExpired:
+            if attempt:
+                raise
+
+
 def git_lastmod(path: Path, text: str | None = None) -> str:
     """lastmod＝这个页面正文最后一次真正变化的那次提交的日期，不用构建时间，也不用「最后一次提交」——
     每次构建都刷新、或者一次纯 CSS 提交就刷新全站，等于告诉爬虫全站都变了，几轮之后它就不信了。
@@ -135,15 +148,22 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
     try:
         rel = str(path.relative_to(ROOT))
         if text is None and path.suffix not in (".html", ".xml", ".txt"):     # 视频 / 图片：就用最后一次提交的日期
-            last = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
-                                  capture_output=True, text=True, timeout=10).stdout.strip()
+            last = _git_read(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
+                                  capture_output=True, text=True, check=True).stdout.strip()
             return datetime.fromisoformat(last).astimezone().date().isoformat() if last else today
         cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"), date.today())
-        revs = [l.split(" ", 1) for l in subprocess.run(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
-                capture_output=True, text=True, timeout=10).stdout.split("\n") if l.strip()]
+        revs = [l.split(" ", 1) for l in _git_read(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
+                capture_output=True, text=True, check=True).stdout.split("\n") if l.strip()]
         newer = cur
         for i, (h, when) in enumerate(revs):
-            v = subprocess.run(["git", "show", f"{h}:{rel}"], cwd=ROOT, capture_output=True, text=True, timeout=10)
+            v = _git_read(["git", "show", f"{h}:{rel}"], cwd=ROOT, capture_output=True, text=True)
+            if v.returncode:
+                # A deletion commit legitimately has no blob. Verify its tree;
+                # invalid revisions, unreadable trees/blobs and other errors still stop the build.
+                entry = _git_read(["git", "ls-tree", h, "--", f":(literal){rel}"], cwd=ROOT,
+                                       capture_output=True, text=True, check=True)
+                if entry.stdout.strip():
+                    v.check_returncode()
             # 旧版按它的提交日抹每日部分（构建→评审→提交在同一天做完，提交日就是构建日；跨零点提交的那版会多算一次修改，无害）
             v = _lastmod_norm(v.stdout, datetime.fromisoformat(when).astimezone().date()) if v.returncode == 0 else None
             if v != newer:                       # 比它新的那一版（或这次构建）正文变了
@@ -151,8 +171,9 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
             newer = v
         if revs:
             return datetime.fromisoformat(revs[-1][1]).astimezone().date().isoformat()
-    except Exception:
-        pass
+    except Exception as exc:
+        # 无法核实历史时停止构建，不能把读取失败伪装成今天修改了正文。
+        raise RuntimeError(f"无法核实 lastmod：{path}；保留现有文件并检查 Git 历史") from exc
     return today
 
 def variants_of(app):

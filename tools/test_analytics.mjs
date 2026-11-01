@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Browser integration checks for assets/analytics/firebase-web-v1.js.
+// Browser integration checks for assets/analytics/firebase-web-v2.js.
 // Uses the installed Chrome + Node 22's built-in WebSocket; no dependencies.
 //   /Users/polarisdev/.nvm/versions/node/v22.23.1/bin/node tools/test_analytics.mjs
 import { createServer } from "node:http";
@@ -63,7 +63,7 @@ try {
     try { html = readFileSync(resolve(ROOT, `.${filePath}`), "utf8"); }
     catch { invalidPages.push(`${path}: file missing`); continue; }
     const metas = html.match(/<meta\s+name=["']gk-analytics["'][^>]*>/gi) || [];
-    const scripts = html.match(/<script\s+defer\s+src=["']\/assets\/analytics\/firebase-web-v1\.js["']\s*>\s*<\/script>/gi) || [];
+    const scripts = html.match(/<script\s+defer\s+src=["']\/assets\/analytics\/firebase-web-v2\.js["']\s*>\s*<\/script>/gi) || [];
     if (metas.length !== 1 || scripts.length !== 1) invalidPages.push(`${path}: metadata=${metas.length}, script=${scripts.length}`);
   }
   assert(paths.length > 0 && invalidPages.length === 0,
@@ -124,12 +124,17 @@ try {
         await send("Fetch.fulfillRequest", { requestId, responseCode: 200,
           responseHeaders: [{ name: "Content-Type", value: "text/javascript; charset=utf-8" },
             { name: "Access-Control-Allow-Origin", value: "*" }], body: Buffer.from(source).toString("base64") });
-      } else await send("Fetch.continueRequest", { requestId });
+      } else if (new URL(request.url).origin === base) {
+        await send("Fetch.continueRequest", { requestId });
+      } else {
+        // Deny every other network request, including any unexpected GA transport.
+        await send("Fetch.failRequest", { requestId, errorReason: "BlockedByClient" });
+      }
     } catch (error) { console.error(`Firebase mock failed for ${request.url}: ${error.message}`); }
   });
   await send("Page.enable");
   await send("Runtime.enable");
-  await send("Fetch.enable", { patterns: [APP_SDK, ANALYTICS_SDK].map((urlPattern) => ({ urlPattern, requestStage: "Request" })) });
+  await send("Fetch.enable", { patterns: [{ urlPattern: "*", requestStage: "Request" }] });
 
   const evaluate = async (expression) => {
     const result = await send("Runtime.evaluate", { expression, returnByValue: true, awaitPromise: true });
@@ -162,6 +167,23 @@ try {
       return true; })()`);
   }
   async function eventCount(name) { return (await events()).filter((e) => e.name === name).length; }
+
+  // Real headless identity must be excluded even with debug enabled.
+  await navigate("/countdown/?analytics_debug=1");
+  assert(await evaluate("navigator.webdriver === true && !window.__analyticsInit && !(window.__analyticsEvents||[]).length"),
+    "headless visit is excluded even in debug mode");
+  // Only the intercepted test context impersonates a human for positive-path coverage.
+  await send("Page.addScriptToEvaluateOnNewDocument", {
+    source: "Object.defineProperty(navigator, 'webdriver', {get: () => false})"
+  });
+  await navigate("/countdown/?analytics_debug=1&internal=1");
+  assert(await evaluate("localStorage.getItem('gk_analytics_internal') === '1' && !window.__analyticsInit"),
+    "internal=1 persists exclusion without SDK initialization");
+  await navigate("/countdown/?analytics_debug=1");
+  assert(!await evaluate("!!window.__analyticsInit"), "internal exclusion persists on later visits");
+  await navigate("/countdown/?analytics_debug=1&internal=0");
+  await waitFor("window.__analyticsInit", "internal=0 resumes analytics");
+  assert(await evaluate("localStorage.getItem('gk_analytics_internal') === null"), "internal=0 clears exclusion");
 
   // Local preview mode is intentionally inert without the explicit debug query.
   failSdk = false;

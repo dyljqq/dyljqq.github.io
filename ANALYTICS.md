@@ -112,7 +112,13 @@
 
 不采集控件文字、输入值、金额、发票行、清单内容、邮箱或电话。不读取 localStorage 中的工具内容。页面 URL 仅保留符合字符规则的 `utm_source/medium/campaign/content/id` 与 `ref` 营销标签，丢弃 `name/date/desde` 等工具查询值和片段；referrer 仅保留来源站点。营销标签必须使用渠道或活动名，不能放用户标识。Google signals 与广告个性化在客户端关闭；Firebase Web Analytics 使用 Cookie，八份网站隐私说明已同步。
 
-生产仅在 `beforego.art` 启用。localhost 和 Vercel 预览默认不上报；手动验收可加 `?analytics_debug=1`，进入 Firebase DebugView。测试脚本只替换外部 SDK 传输边界，不向生产发送测试点击。
+生产仅在 `beforego.art` 启用。localhost 和 Vercel 预览默认不上报；手动验收可加 `?analytics_debug=1`，进入 Firebase DebugView。
+
+2026-11-01 起排除自家流量：`navigator.webdriver === true` 的自动化浏览器不加载 Firebase、不初始化统计、不发送事件，`analytics_debug=1` 也不能绕过。人工自测先访问 `https://beforego.art/?internal=1`，脚本将 `gk_analytics_internal=1` 存入 localStorage；该浏览器同源后续访问继续排除，直到访问 `?internal=0` 清除标记。此标记按浏览器配置与站点源隔离，不会同步到其他设备；localStorage 被禁用时，`internal=1` 仍排除当前页面，但不能保证后续访问持久排除。SDK 导入、支持检测完成后以及每次发送前都重新检查排除状态，避免等待期间启用排除后仍发送队列事件。
+
+往返缓存恢复时重新读取当前排除状态：最初因 `internal=1` 或持久标记跳过初始化的页面，在另一页用 `internal=0` 清除标记后恢复，会初始化统计并记录本次 `page_view` 和后续交互。SDK 等待期间因排除标记中止的初始化，也会在清除标记后的恢复时重试。恢复不会再次应用缓存页 URL 中的旧 `internal=1`；存储读取仍被禁用时保留原页面的排除状态。如果 `internal=1` 写入失败（包括配额耗尽但读取正常），当前文档始终排除，缓存恢复不会解除；需显式访问 `?internal=0` 打开新文档恢复统计。监听安装与 SDK 启动分别管理，重复恢复只补记页面浏览，不重复安装交互监听或初始化已就绪的 SDK。
+
+测试不允许发送真实 GA4 数据：`tools/test_analytics.mjs` 在导航前拦截所有页面网络请求，两个 Firebase 模块使用本地模拟响应，其他非本地请求一律阻断。测试先验证真实 headless 身份被排除，再仅在这个受拦截的上下文中模拟普通浏览器以检查正常事件。`tools/test_analytics_exclusion.mjs` 在离线 VM 中模拟 SDK 与 DOM，覆盖持久标记、清除、存储异常、SDK 等待竞态与往返缓存恢复；不会加载任何远程模块。
 
 ```sh
 python3 tools/build_tools.py
@@ -121,8 +127,9 @@ python3 tools/build_home.py
 python3 tools/build_seo.py
 python3 tools/check_structure.py .
 node tools/test_analytics.mjs
+node tools/test_analytics_exclusion.mjs
 ```
 
-客户端位于 `assets/analytics/firebase-web-v1.js`。assets 使用一年 immutable 缓存，修改脚本内容时必须换新文件名并同步生成器。SDK 使用固定 Firebase 12.4.0 CDN 模块；SDK 被屏蔽或初始化失败时，工具与链接仍可用，统计不保证送达。SDK 加载期间事件暂存内存，若用户在初始化完成前离开页面，该页队列可能丢失；点击意向应结合真实商店活动数据核对。
+客户端位于 `assets/analytics/firebase-web-v2.js`，旧 `firebase-web-v1.js` 保留供缓存页面使用。assets 使用一年 immutable 缓存，修改脚本内容时必须换新文件名并同步生成器。SDK 使用固定 Firebase 12.4.0 CDN 模块；SDK 被屏蔽或初始化失败时，工具与链接仍可用，统计不保证送达。SDK 加载期间事件暂存内存，若用户在初始化完成前离开页面，该页队列可能丢失；点击意向应结合真实商店活动数据核对。
 
 实现依据：[Firebase Web 事件](https://firebase.google.com/docs/analytics/web/events)、[Firebase Analytics JS API](https://firebase.google.com/docs/reference/js/analytics)、[GA4 页面浏览与去重](https://developers.google.com/analytics/devguides/collection/ga4/views)、[增强型衡量配置](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/EnhancedMeasurementSettings)。

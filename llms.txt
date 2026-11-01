@@ -39,7 +39,7 @@ An AI itinerary planner for iPhone that turns a travel post, link or note into a
 
 ### Countdown Widget: Any Event
 
-A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.
+A countdown widget app for iPhone where every size of the four standard widgets is free and the number of events is unlimited.
 
 - Page: https://beforego.art/countdown/
 - Page (pt-BR): https://beforego.art/countdown/pt-br/
@@ -55,8 +55,8 @@ A countdown widget app for iPhone where every widget size is free and the number
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity
 - For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
-- Free: Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
-- Paid: Pro unlocks 107 of the 159 backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
+- Free: Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
+- Paid: Pro unlocks 107 of the 159 backdrops, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
 
 ### Smart Invoice & Estimate Maker
 
@@ -145,7 +145,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 
 - [Days until calculator](https://beforego.art/tools/days-until/) — Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.
 - [How many days until Christmas 2026?](https://beforego.art/tools/days-until-christmas/) — Christmas Day 2026 is on Friday, December 25, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
-- [How many days until Halloween 2026?](https://beforego.art/tools/days-until-halloween/) — Halloween 2026 is on Saturday, October 31, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
+- [How many days until Halloween 2027?](https://beforego.art/tools/days-until-halloween/) — Halloween 2027 is on Sunday, October 31, 2027. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.
 - [How many days until Diwali 2026?](https://beforego.art/tools/days-until-diwali/) — Diwali 2026 is on Sunday, 8 November 2026, the day of Lakshmi Puja, with Dhanteras on 6 November. Live countdown in days and weeks, plus a free iPhone widget.
 - [How many days until New Year 2027?](https://beforego.art/tools/days-until-new-year/) — New Year's Day 2027 is on Friday, January 1, 2027; New Year's Eve is Thursday, December 31, 2026. Live countdown plus a free iPhone widget.
 - [How many days until Thanksgiving 2026?](https://beforego.art/tools/days-until-thanksgiving/) — Thanksgiving 2026 in the US is on Thursday, November 26, 2026, with Black Friday on the 27th. Live countdown in days and weeks, plus a free iPhone widget.
@@ -181,7 +181,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [カウントダウンを待ち受けにする方法（iPhone）](https://beforego.art/tools/ja/countdown-machiuke-iphone/) — iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。
 - [아이폰 디데이 위젯 설정 방법](https://beforego.art/tools/ko/iphone-didei-wijet/) — 아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.
 - [How to write an invoice](https://beforego.art/tools/how-to-write-an-invoice/) — How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.
-- [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, October 2026.
+- [Best countdown widget apps for iPhone (2026)](https://beforego.art/tools/best-countdown-widget-apps-iphone/) — Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, November 2026.
 - [트리플 대체 앱 비교](https://beforego.art/tools/ko/yeohaeng-iljeong-aep/) — 트리플 11월 3일 서비스 종료 전 확인할 NOL 일정 이전과 가계부 CSV 백업. 체크리스트, 출발 알림, 여행 경비 분담, 캡처 정리 기준으로 5대 대체 앱을 비교하세요.
 - [Shared countdown for couples](https://beforego.art/tools/shared-countdown-app-couples/) — Share a countdown on both iPhones with Countdown Widget: Any Event. Inviting needs Pro; joining needs no subscription. Only the creator changes its date or name.
 - [Birthday countdown widget for iPhone](https://beforego.art/tools/birthday-countdown-widget-iphone/) — Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.

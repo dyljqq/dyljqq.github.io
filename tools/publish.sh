@@ -13,6 +13,7 @@ python3 tools/build_pages.py | tail -1
 python3 tools/build_home.py | tail -1
 python3 tools/build_seo.py | head -1
 python3 tools/check_structure.py .
+python3 tools/check_page_budget.py
 
 PORT=$((8900 + RANDOM % 400))
 python3 -m http.server "$PORT" --bind 127.0.0.1 --directory . >/dev/null 2>&1 &
@@ -36,15 +37,22 @@ if ! deploy_ok "$DEPLOY_LOG"; then echo "Vercel 首次部署未就绪，重试�
 if ! deploy_ok "$DEPLOY_LOG"; then echo "✗ Vercel 部署失败："; tail -20 "$DEPLOY_LOG"; exit 1; fi
 grep -o '"message": "[^"]*"' "$DEPLOY_LOG" | head -1 || grep -i 'ready' "$DEPLOY_LOG" | head -1 || true
 
+# 记录真正部署的 HEAD；记录提交本身不作为已发布页面基线。
+mkdir -p content
+printf '%s\t%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$(git rev-parse HEAD)" >> content/published-log.tsv
+RELEASE_RECORDS=(content/published-log.tsv)
+
 # IndexNow 只推和上次推送时比内容变了的页（新增 / 修改 / 删除，见 tools/indexnow.py）。
-# 推成功才把记录提交、跟 git 一起推上去（下次从别的 worktree 发布也知道上次推过什么）；推失败或记录读不出来不拦发布，记录不提交、下次再推。
+# 推成功才把 IndexNow 记录与发布日志一起提交；推失败仍保存成功部署的日志，下次再推 IndexNow。
 if python3 tools/indexnow.py; then
   if [ -n "$(git status --porcelain -- tools/indexnow-state.json)" ]; then
-    { git add tools/indexnow-state.json && git commit -q -m "chore(indexnow): 记录本次发布后的页面 hash" -- tools/indexnow-state.json; } \
-      || echo "⚠ IndexNow 记录没提交上，之后手动提交 tools/indexnow-state.json。"
+    RELEASE_RECORDS+=(tools/indexnow-state.json)
   fi
 else
   echo "⚠ IndexNow 没推成（原因见上一行），记录没提交；继续推 git。"
 fi
-git push -q origin HEAD:main && git push -q origin HEAD 2>/dev/null || true
+git add -- "${RELEASE_RECORDS[@]}"
+git commit -q -m "chore(publish): 记录成功发布与页面 hash" -- "${RELEASE_RECORDS[@]}"
+git push -q origin HEAD:main
+git push -q origin HEAD 2>/dev/null || true
 echo "发布完成：$ORIGIN"

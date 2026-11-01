@@ -6,45 +6,142 @@
   python3 tools/indexnow.py             # 推送并更新记录（publish.sh 在 Vercel 部署成功后跑）
   python3 tools/indexnow.py --record    # 只按当前文件重写记录、不推（记录坏了、或线上和本地一致想清零时用）
 
-记录在 tools/indexnow-state.json：{URL 路径: 内容 hash}，即上次推送成功时各页的样子；publish.sh 推完会把它提交，
-换个 worktree 发布也接得上。没有记录文件（第一次跑）：只记录、不推送。推送失败不写记录，下次发布连同新变化一起再推。
-
-「内容」= meta description + sitemap lastmod 口径的正文（build_seo._lastmod_norm：<title> 和 <body>，去掉样式、
-YYYY-MM-DD、全站页脚、空白，再用 build_seo.mask_daily 去掉倒数页每天重建都会变的计数器和「截至今天」那句）——
-10-16 一次重建就让 30 页变了，天天推等于又回到全量推。10-19 起 sitemap lastmod / dateModified 也用同一套规则。
-别处的数字照比：假期页、考试页改了日期会推。构建和本脚本要在同一天（越南时间）跑，publish.sh 是连着跑的。
-跨零点发布时倒数页（约 30 页）可能那次和下一次各推一遍。固定考试日、D-30 等日期不会仅因碰巧等于构建日就被抹掉。
-新增 = 记录里没有；删除 = 记录里有、sitemap 里没了（推了让 Bing 回来看到 404 / noindex 再除名）。
+记录在 tools/indexnow-state.json，逐页保存 lastmod、description、正文签名及签名版本。
+修改 = sitemap lastmod、meta description 或同版本正文签名变化；每日日期与计数不触发。
+旧的纯 hash 记录从记录文件最后一次 Git 提交恢复 sitemap lastmod 和页面 description，
+逐页比较是否变化（包括日期向后纠正）。缺少正文签名或签名版本变化时仅建立签名基线，
+不会单因迁移推送；已有 lastmod / description 的真实变化仍推送。
+新增 = 记录里没有；删除 = 记录里有、sitemap 里没了。推送失败或 dry-run 不写记录。
+没有记录文件（第一次跑）：只记录、不推送。
 """
-import hashlib, json, re, sys, urllib.request
+import hashlib, json, subprocess, sys, urllib.request
+import xml.etree.ElementTree as ET
 from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_seo import ROOT, ORIGIN, _lastmod_norm     # import 时已把时区设成越南时间，date.today() 和构建同口径
-from sitemap import sitemap_urls
+from build_seo import ROOT, ORIGIN  # import 时设为越南时间，与 sitemap 的日期口径一致
+import check_page_budget as budget
+from sitemap import NS, sitemap_urls
 
 KEY = "6bc0c7e758182078db2f4e3107b328d5"     # 站根的 <KEY>.txt 就是验证文件
 STATE = ROOT / "tools/indexnow-state.json"
 DRY, RECORD = "--dry-run" in sys.argv, "--record" in sys.argv
 
-DESC = re.compile(r'<meta name="description" content="([^"]*)"')
-TODAY = date.today()
+class DescriptionParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.description = ""
 
-def norm(html):
-    desc = DESC.search(html)
-    return (desc.group(1) if desc else "") + "\n" + _lastmod_norm(html, TODAY)
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "meta" and attrs.get("name", "").lower() == "description":
+            self.description = attrs.get("content") or ""
+
+
+def description(html):
+    parser = DescriptionParser()
+    parser.feed(html)
+    return parser.description
+
+
+def page_file(path):
+    return ROOT / path.strip("/") / "index.html" if path.endswith("/") else ROOT / path.lstrip("/")
+
 
 def current():
-    """sitemap 里每个 URL 路径 → 内容 hash。读的是本地文件，所以要在构建之后、和刚部署的内容一致时跑。"""
+    """读取本地发布信号；正文与页面预算共用日期和计数归一化规则。"""
+    urls = sitemap_urls(ROOT, ORIGIN)  # 同时校验子图引用、URL 和重复项
+    tree = ET.parse(ROOT / "sitemap.xml").getroot()
+    maps = [tree]
+    if tree.tag == NS + "sitemapindex":
+        maps = [ET.parse(ROOT / child.findtext(NS + "loc")[len(ORIGIN) + 1:]).getroot()
+                for child in tree.findall(NS + "sitemap")]
+    lastmods = {page.findtext(NS + "loc"): page.findtext(NS + "lastmod")
+                for tree in maps for page in tree.findall(NS + "url")}
     out = {}
-    for loc in sitemap_urls(ROOT, ORIGIN):
-        assert loc.startswith(ORIGIN + "/"), loc
+    for loc in urls:
         path = loc[len(ORIGIN):]
-        f = ROOT / path.strip("/") / "index.html" if path.endswith("/") else ROOT / path.lstrip("/")
-        body = norm(f.read_text(encoding="utf-8")).encode() if f.suffix == ".html" else f.read_bytes()
-        out[path] = hashlib.sha256(body).hexdigest()[:16]
+        f = page_file(path)
+        source = f.read_text(encoding="utf-8") if f.suffix == ".html" else ""
+        signature = json.dumps(budget.body_signature(source, date.today()), ensure_ascii=False,
+                               separators=(",", ":")).encode("utf-8")
+        out[path] = {"lastmod": lastmods[loc],
+                     "description": description(source),
+                     "body_signature": hashlib.sha256(signature).hexdigest(),
+                     "body_signature_version": budget.BODY_SIGNATURE_VERSION}
     return out
+
+
+def legacy_snapshot(paths):
+    """从旧记录的提交恢复逐页信号，包含该提交引用的拆分 sitemap。"""
+    def git(*args):
+        return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True,
+                              text=True, timeout=30).stdout
+    try:
+        commit = git("log", "-1", "--format=%H", "--",
+                     STATE.relative_to(ROOT).as_posix()).strip()
+        if not commit:
+            raise ValueError("记录文件没有 Git 提交")
+        tree = ET.fromstring(git("show", f"{commit}:sitemap.xml"))
+        maps = [tree]
+        if tree.tag == NS + "sitemapindex":
+            maps = []
+            for child in tree.findall(NS + "sitemap"):
+                loc = child.findtext(NS + "loc") or ""
+                name = loc.removeprefix(ORIGIN + "/")
+                if not loc.startswith(ORIGIN + "/") or "/" in name or not name.endswith(".xml"):
+                    raise ValueError(f"Invalid historical sitemap reference: {loc}")
+                maps.append(ET.fromstring(git("show", f"{commit}:{name}")))
+        lastmods = {}
+        for tree in maps:
+            if tree.tag != NS + "urlset":
+                raise ValueError("Expected a historical sitemap urlset")
+            for page in tree.findall(NS + "url"):
+                loc = page.findtext(NS + "loc") or ""
+                if not loc.startswith(ORIGIN + "/") or loc in lastmods:
+                    raise ValueError(f"Invalid or duplicated historical sitemap URL: {loc}")
+                lastmods[loc] = page.findtext(NS + "lastmod")
+        snapshot = {}
+        for path in paths:
+            if ORIGIN + path not in lastmods:
+                raise ValueError(f"Historical sitemap is missing recorded URL: {path}")
+            f = page_file(path)
+            snapshot[path] = {
+                "lastmod": lastmods[ORIGIN + path],
+                "description": description(git("show", f"{commit}:{f.relative_to(ROOT).as_posix()}"))
+                if f.suffix == ".html" else ""}
+        return snapshot
+    except (subprocess.SubprocessError, OSError, ValueError, ET.ParseError) as error:
+        raise RuntimeError("无法核实旧 IndexNow 记录的 sitemap lastmod 或 description；"
+                           f"请恢复记录文件及对应 sitemap / 页面的 Git 历史（{error}）") from error
+
+
+def changes(cur, old):
+    shared = [p for p in cur if p in old]
+    legacy = [p for p in shared if not isinstance(old[p], dict)
+              or "lastmod" not in old[p] or "description" not in old[p]]
+    snapshot = legacy_snapshot(legacy) if legacy else {}
+    modified = []
+    for path in shared:
+        previous = old[path] if isinstance(old[path], dict) else {}
+        baseline = {**snapshot.get(path, {}), **previous}
+        date_changed = baseline["lastmod"] != cur[path]["lastmod"]
+        old_description = baseline["description"]
+        # Missing or outdated signatures are migration, not evidence of an edit.
+        # Compare only compatible signatures; save(cur) establishes the new
+        # baseline after a successful submission or a no-change non-dry run.
+        body_changed = ("body_signature" in previous and "body_signature" in cur[path]
+                        and previous.get("body_signature_version") == budget.BODY_SIGNATURE_VERSION
+                        and cur[path].get("body_signature_version") == budget.BODY_SIGNATURE_VERSION
+                        and previous["body_signature"] != cur[path]["body_signature"])
+        if date_changed or old_description != cur[path]["description"] or body_changed:
+            modified.append(path)
+    return (("新增", [p for p in cur if p not in old]),
+            ("修改", modified),
+            ("删除", [p for p in old if p not in cur]))
+
 
 def save(state):
     STATE.write_text(json.dumps(state, indent=0, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -54,10 +151,10 @@ def main():
     if RECORD or not STATE.exists():
         why = "--record" if RECORD else "没有记录文件，第一次运行"
         if DRY:
-            print(f"IndexNow（dry-run）：{why}——只会记录 {len(cur)} 页的 hash，不推送")
+            print(f"IndexNow（dry-run）：{why}——只会记录 {len(cur)} 页的 lastmod / description / 正文签名，不推送")
             return
         save(cur)
-        print(f"IndexNow：{why}——已记录 {len(cur)} 页的 hash，本次不推送")
+        print(f"IndexNow：{why}——已记录 {len(cur)} 页的 lastmod / description / 正文签名，本次不推送")
         return
     try:
         old = json.loads(STATE.read_text(encoding="utf-8"))
@@ -65,9 +162,7 @@ def main():
     except Exception as e:          # 多半是合并冲突标记：别悄悄跳过，publish.sh 也不会把它提交
         sys.exit(f"✗ IndexNow 记录 tools/{STATE.name} 读不出来（{e!r}，合并冲突？）——"
                  "修好它，或跑 python3 tools/indexnow.py --record 按当前文件重建")
-    groups = (("新增", [p for p in cur if p not in old]),
-              ("修改", [p for p in cur if p in old and old[p] != cur[p]]),
-              ("删除", [p for p in old if p not in cur]))
+    groups = changes(cur, old)
     paths = [p for _, ps in groups for p in ps]
     head = "IndexNow（dry-run）" if DRY else "IndexNow"
     print(f"{head}：sitemap 共 {len(cur)} 页，" + " · ".join(f"{name} {len(ps)}" for name, ps in groups))
@@ -75,6 +170,8 @@ def main():
         for p in ps:
             print(f"  {name}  {ORIGIN}{p}")
     if not paths:
+        if not DRY and cur != old:
+            save(cur)
         print("  没有内容变化的页面，不推送")
         return
     if DRY:

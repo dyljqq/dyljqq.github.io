@@ -24,11 +24,11 @@
  "countdown": {
   "es": {
    "tagline": "Días que faltan, recuerdos que quedan",
-   "blurb": "Una cuenta atrás que nunca pierde tus días y que no te guarda ningún widget bajo llave. Añade el día que importa, ponlo en la pantalla de inicio y míralo acercarse. Sin límite de cuántos guardas, y nada entre tú y el número."
+   "blurb": "Una cuenta atrás que nunca pierde tus días y que no se guarda ninguno de sus cuatro widgets. Añade el día que importa, ponlo en la pantalla de inicio y míralo acercarse. Sin límite de cuántos guardas, y nada entre tú y el número."
   },
   "es-MX": {
    "tagline": "Días que faltan, recuerdos que quedan",
-   "blurb": "Una cuenta regresiva que nunca pierde tus días y que no te esconde ningún widget. Agrega el día que importa, ponlo en tu pantalla de inicio y mira cómo se acerca. Sin límite de cuántos guardas, y nada entre tú y el número."
+   "blurb": "Una cuenta regresiva que nunca pierde tus días y que no se guarda ninguno de sus cuatro widgets. Agrega el día que importa, ponlo en tu pantalla de inicio y mira cómo se acerca. Sin límite de cuántos guardas, y nada entre tú y el número."
   }
  },
  "dailycalorie": {

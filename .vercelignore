@@ -15,3 +15,6 @@
 /tools/art/
 /tools/blog/
 /CNAME
+# 内部记录不上线（仓库根目录整体部署）
+/docs/
+/content/

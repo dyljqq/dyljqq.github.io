@@ -134,12 +134,12 @@
       "genre": "Productivity",
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
-      "title": "Countdown Widget — Every Widget Free, No Event Limit",
-      "oneLiner": "A countdown widget app for iPhone where every widget size is free and the number of events is unlimited.",
-      "description": "A countdown widget app for iPhone: every widget size on the Home and Lock Screen is free, events are unlimited, and a daily backup keeps them safe. Pro adds backdrops, your own photos, typefaces, the Live Activity and counting down together.",
+      "title": "Countdown Widget — Four Free Widgets, No Event Limit",
+      "oneLiner": "A countdown widget app for iPhone where every size of the four standard widgets is free and the number of events is unlimited.",
+      "description": "A countdown widget app for iPhone: four free widgets in every size for the Home and Lock Screen, unlimited events, and a daily backup that keeps them safe. Pro adds backdrops, your own photos, Photo Roll, typefaces, the Live Activity and counting down together.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
-      "free": "Every widget size, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
-      "paid": "Pro unlocks 107 of the 159 backdrops, your own photos behind a countdown, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
+      "free": "Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
+      "paid": "Pro unlocks 107 of the 159 backdrops, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
       "legal": [
         [
           "/countdown/privacy-policy/",
@@ -153,7 +153,7 @@
       "faq": [
         {
           "q": "Is there a countdown widget app for iPhone that is actually free?",
-          "a": "Yes. In Countdown Widget: Any Event every widget size works on both the Home Screen and the Lock Screen without paying, and the number of events is unlimited. Reminders, repeats and count-up are free as well. Pro adds backdrops, your own photos, typefaces, the Live Activity and counting down together with someone you invite."
+          "a": "Yes. In Countdown Widget: Any Event every size of the four standard widgets works on both the Home Screen and the Lock Screen without paying, and the number of events is unlimited. Reminders, repeats and count-up are free as well. Pro adds backdrops, your own photo backgrounds, Photo Roll, typefaces, the Live Activity and counting down together with someone you invite."
         },
         {
           "q": "How many countdowns can I create on the free tier?",
@@ -169,7 +169,7 @@
         },
         {
           "q": "What does Countdown Pro unlock, and how is it sold?",
-          "a": "Pro unlocks the Pro backdrops — 107 of the 159 full-screen backdrops — with a new drop every month, your own photos behind a countdown, the Pro typefaces, the Live Activity pinned to the Lock Screen, and inviting someone to count down with you; joining a countdown someone else shares with you needs no subscription. Whatever you unlock while subscribed stays yours. It comes as an annual plan with a 7-day free trial, a monthly plan, or a one-time Lifetime purchase; the prices are shown in the app before purchase. Countdowns, reminders and widgets behave identically with or without it."
+          "a": "Pro unlocks the Pro backdrops — 107 of the 159 full-screen backdrops — with a new drop every month, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Live Activity pinned to the Lock Screen, and inviting someone to count down with you; joining a countdown someone else shares with you needs no subscription. Whatever you unlock while subscribed stays yours. It comes as an annual plan with a 7-day free trial, a monthly plan, or a one-time Lifetime purchase; the prices are shown in the app before purchase. Countdowns, reminders and the four standard widgets behave identically with or without it."
         },
         {
           "q": "Do I need an account?",
@@ -180,7 +180,7 @@
         "order": 1,
         "label": "Countdown",
         "tagline": "Days to Go & Memories to Keep",
-        "blurb": "A countdown that never loses your days — and never holds a widget back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number."
+        "blurb": "A countdown that never loses your days — and never holds its four widgets back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number."
       },
       "generated": true,
       "noAccount": true
@@ -199,16 +199,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Contagem Regressiva com Widget — Grátis, Eventos Ilimitados",
-      "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos de widget são grátis e o número de eventos é ilimitado.",
-      "description": "App de contagem regressiva para iPhone: todos os widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios. O Pro acrescenta planos de fundo, suas próprias fotos, fontes, a Atividade ao Vivo e a contagem junto com quem você convida.",
+      "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos dos quatro widgets padrão são grátis e o número de eventos é ilimitado.",
+      "description": "App de contagem regressiva para iPhone: os quatro widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios. O Pro acrescenta planos de fundo, suas próprias fotos, o Rolo de fotos, fontes, a Atividade ao Vivo e a contagem junto com quem você convida.",
       "audience": "Quem conta os dias para o ENEM, o Réveillon, o Carnaval, uma viagem, um casamento ou um aniversário — ou conta os dias desde uma data.",
-      "free": "Todos os tamanhos de widget, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
-      "paid": "O Pro desbloqueia 107 dos 159 planos de fundo, suas próprias fotos como fundo, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém fazer a contagem com você. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
+      "free": "Todos os tamanhos dos quatro widgets padrão, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
+      "paid": "O Pro desbloqueia 107 dos 159 planos de fundo, suas próprias fotos como fundo, o widget Rolo de fotos, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém fazer a contagem com você. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
       "legal": [],
       "faq": [
         {
           "q": "Existe um app de contagem regressiva com widget para iPhone que seja grátis de verdade?",
-          "a": "Sim. No Countdown: Contagem regressiva todos os tamanhos de widget funcionam na Tela de Início e na Tela Bloqueada sem pagar, e o número de eventos é ilimitado. Lembretes, repetição e contagem progressiva também são grátis. O Pro acrescenta planos de fundo, suas próprias fotos, fontes, a Atividade ao Vivo e a contagem feita junto com alguém que você convida."
+          "a": "Sim. No Countdown: Contagem regressiva todos os tamanhos dos quatro widgets padrão funcionam na Tela de Início e na Tela Bloqueada sem pagar, e o número de eventos é ilimitado. Lembretes, repetição e contagem progressiva também são grátis. O Pro acrescenta planos de fundo, suas próprias fotos, o widget Rolo de fotos, fontes, a Atividade ao Vivo e a contagem feita junto com alguém que você convida."
         },
         {
           "q": "Quantas contagens regressivas posso criar na versão grátis?",
@@ -228,7 +228,7 @@
         },
         {
           "q": "O que o Pro desbloqueia e como ele é vendido?",
-          "a": "O Pro desbloqueia os planos de fundo Pro — 107 dos 159 —, com novos todo mês, suas próprias fotos como fundo, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém fazer a contagem com você; entrar numa contagem que alguém compartilhou com você não exige assinatura. O que você desbloquear durante a assinatura continua seu. Há um plano anual com 7 dias grátis, um plano mensal ou uma compra única vitalícia; os preços aparecem no app antes da compra. Contagens, lembretes e widgets funcionam exatamente igual com ou sem ele."
+          "a": "O Pro desbloqueia os planos de fundo Pro — 107 dos 159 —, com novos todo mês, suas próprias fotos como fundo, o widget Rolo de fotos, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém fazer a contagem com você; entrar numa contagem que alguém compartilhou com você não exige assinatura. O que você desbloquear durante a assinatura continua seu. Há um plano anual com 7 dias grátis, um plano mensal ou uma compra única vitalícia; os preços aparecem no app antes da compra. Contagens, lembretes e os quatro widgets padrão funcionam exatamente igual com ou sem ele."
         },
         {
           "q": "Precisa de conta?",
@@ -250,16 +250,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Countdown Widget — Kostenlos, unbegrenzt viele Ereignisse",
-      "oneLiner": "Countdown-App für iPhone: jede Widget-Größe ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
-      "description": "Countdown-App für iPhone: Alle Widget-Größen für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung. Pro ergänzt Hintergründe, eigene Fotos, Schriften, die Live-Aktivität und gemeinsames Herunterzählen.",
+      "oneLiner": "Countdown-App für iPhone: jede Größe der vier Standard-Widgets ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
+      "description": "Countdown-App für iPhone: Die vier Widgets für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung. Pro ergänzt Hintergründe, eigene Fotos, Fotowechsel, Schriften, die Live-Aktivität und gemeinsames Herunterzählen.",
       "audience": "Alle, die die Tage bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente oder zum Geburtstag zählen — oder die Tage seit einem Datum.",
-      "free": "Jede Widget-Größe, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
-      "paid": "Pro schaltet 107 der 159 Hintergründe, eigene Fotos als Hintergrund, die Pro-Schriften, die Live-Aktivität auf dem Sperrbildschirm und das Einladen zum gemeinsamen Herunterzählen frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
+      "free": "Jede Größe der vier Standard-Widgets, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
+      "paid": "Pro schaltet 107 der 159 Hintergründe, das Widget Fotowechsel, eigene Fotos als Hintergrund, die Pro-Schriften, die Live-Aktivität auf dem Sperrbildschirm und das Einladen zum gemeinsamen Herunterzählen frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
       "legal": [],
       "faq": [
         {
           "q": "Gibt es eine Countdown-App mit Widget für das iPhone, die wirklich kostenlos ist?",
-          "a": "Ja. In Countdown Widget: Tage bis funktioniert jede Widget-Größe auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Hochzählen ab einem Datum sind ebenfalls kostenlos. Pro ergänzt Hintergründe, eigene Fotos als Hintergrund, Schriften, die Live-Aktivität und das gemeinsame Herunterzählen mit einer eingeladenen Person."
+          "a": "Ja. In Countdown Widget: Tage bis funktioniert jede Größe der vier Standard-Widgets auf dem Home-Bildschirm und dem Sperrbildschirm ohne Bezahlung, und die Zahl der Ereignisse ist unbegrenzt. Erinnerungen, Wiederholung und Hochzählen ab einem Datum sind ebenfalls kostenlos. Pro ergänzt Hintergründe, das Widget Fotowechsel, eigene Fotos als Hintergrund, Schriften, die Live-Aktivität und das gemeinsame Herunterzählen mit einer eingeladenen Person."
         },
         {
           "q": "Wie viele Countdowns kann ich in der kostenlosen Version anlegen?",
@@ -279,7 +279,7 @@
         },
         {
           "q": "Was schaltet Countdown Pro frei, und wie wird es verkauft?",
-          "a": "Pro schaltet die Pro-Hintergründe frei – 107 der 159 –, jeden Monat kommen neue dazu, und was du im Abo freischaltest, bleibt dir. Dazu kommen eigene Fotos als Hintergrund, die Pro-Schriften, die Live-Aktivität auf dem Sperrbildschirm und das Einladen zum gemeinsamen Herunterzählen; einem Countdown beizutreten, den jemand mit dir teilt, braucht kein Abo. Es gibt ein Jahresabo mit 7 Tagen kostenlosem Test, ein Monatsabo oder einen einmaligen Lifetime-Kauf; die Preise stehen vor dem Kauf in der App. Countdowns, Erinnerungen und Widgets funktionieren mit und ohne Pro genau gleich."
+          "a": "Pro schaltet die Pro-Hintergründe frei – 107 der 159 –, jeden Monat kommen neue dazu, und was du im Abo freischaltest, bleibt dir. Dazu kommen das Widget Fotowechsel, eigene Fotos als Hintergrund, die Pro-Schriften, die Live-Aktivität auf dem Sperrbildschirm und das Einladen zum gemeinsamen Herunterzählen; einem Countdown beizutreten, den jemand mit dir teilt, braucht kein Abo. Es gibt ein Jahresabo mit 7 Tagen kostenlosem Test, ein Monatsabo oder einen einmaligen Lifetime-Kauf; die Preise stehen vor dem Kauf in der App. Countdowns, Erinnerungen und die vier Standard-Widgets funktionieren mit und ohne Pro genau gleich."
         },
         {
           "q": "Brauche ich ein Konto?",
@@ -301,16 +301,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Compte à rebours avec widget — Gratuit, événements illimités",
-      "oneLiner": "App de compte à rebours pour iPhone où chaque taille de widget est gratuite et le nombre d'événements illimité.",
-      "description": "App de compte à rebours pour iPhone : tous les widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub. Pro ajoute des fonds, vos propres photos, des polices, l'Activité en direct et le compte à rebours à deux.",
+      "oneLiner": "App de compte à rebours pour iPhone où chaque taille des quatre widgets standard est gratuite et le nombre d'événements illimité.",
+      "description": "App de compte à rebours pour iPhone : les quatre widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub. Pro ajoute des fonds, vos propres photos, Défilé photo, des polices, l'Activité en direct et le compte à rebours à deux.",
       "audience": "Tous ceux qui comptent les jours avant les vacances, le mariage, le bac, la retraite ou un anniversaire — ou les jours depuis une date.",
-      "free": "Chaque taille de widget, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
-      "paid": "Pro débloque 107 des 159 fonds d'écran, vos propres photos en fond, les polices Pro, l'Activité en direct sur l'écran verrouillé et l'invitation d'un proche à faire le compte à rebours avec vous. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
+      "free": "Chaque taille des quatre widgets standard, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
+      "paid": "Pro débloque 107 des 159 fonds d'écran, le widget Défilé photo, vos propres photos en fond, les polices Pro, l'Activité en direct sur l'écran verrouillé et l'invitation d'un proche à faire le compte à rebours avec vous. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
       "legal": [],
       "faq": [
         {
           "q": "Existe-t-il une app de compte à rebours avec widget pour iPhone vraiment gratuite ?",
-          "a": "Oui. Dans Countdown Widget: Décompte, chaque taille de widget fonctionne sur l'écran d'accueil et l'écran verrouillé sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ajoute des fonds, vos propres photos en fond, des polices, l'Activité en direct et l'invitation d'un proche à faire le compte à rebours avec vous."
+          "a": "Oui. Dans Countdown Widget: Décompte, chaque taille des quatre widgets standard fonctionne sur l'écran d'accueil et l'écran verrouillé sans payer, et le nombre d'événements est illimité. Les rappels, la répétition et le décompte depuis une date sont gratuits aussi. Pro ajoute des fonds, le widget Défilé photo, vos propres photos en fond, des polices, l'Activité en direct et l'invitation d'un proche à faire le compte à rebours avec vous."
         },
         {
           "q": "Combien de comptes à rebours puis-je créer en version gratuite ?",
@@ -330,7 +330,7 @@
         },
         {
           "q": "Que débloque Countdown Pro, et comment est-il vendu ?",
-          "a": "Pro débloque les fonds Pro – 107 des 159 –, avec des nouveaux chaque mois, et ce que vous débloquez pendant l'abonnement vous reste acquis. S'y ajoutent vos propres photos en fond, les polices Pro, l'Activité en direct sur l'écran verrouillé et l'invitation d'un proche à faire le compte à rebours avec vous ; rejoindre un compte à rebours partagé avec vous ne demande aucun abonnement. Il existe un abonnement annuel avec 7 jours d'essai gratuit, un abonnement mensuel ou un achat unique à vie ; les prix sont affichés dans l'app avant l'achat. Comptes à rebours, rappels et widgets fonctionnent exactement pareil avec ou sans."
+          "a": "Pro débloque les fonds Pro – 107 des 159 –, avec de nouveaux fonds chaque mois, et ce que vous débloquez pendant l'abonnement vous reste acquis. S'y ajoutent le widget Défilé photo, vos propres photos en fond, les polices Pro, l'Activité en direct sur l'écran verrouillé et l'invitation d'un proche à faire le compte à rebours avec vous ; rejoindre un compte à rebours partagé avec vous ne demande aucun abonnement. Il existe un abonnement annuel avec 7 jours d'essai gratuit, un abonnement mensuel ou un achat unique à vie ; les prix sont affichés dans l'app avant l'achat. Les comptes à rebours, les rappels et les quatre widgets standard fonctionnent exactement pareil avec ou sans abonnement."
         },
         {
           "q": "Faut-il un compte ?",
@@ -352,16 +352,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Conto alla rovescia con widget — Gratis, eventi illimitati",
-      "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione di widget è gratis e il numero di eventi è illimitato.",
-      "description": "App di conto alla rovescia per iPhone: tutti i widget per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità. Pro aggiunge sfondi, le tue foto, caratteri, l'Attività in tempo reale e il conto alla rovescia insieme.",
+      "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione dei quattro widget standard è gratis e il numero di eventi è illimitato.",
+      "description": "App di conto alla rovescia per iPhone: i quattro widget standard per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità. Pro aggiunge sfondi, le tue foto, Rullino foto, caratteri, l'Attività in tempo reale e il conto alla rovescia insieme.",
       "audience": "Chi conta i giorni alle vacanze, al matrimonio, alla maturità, alla pensione o a un compleanno — o i giorni da una data.",
-      "free": "Ogni dimensione di widget, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
-      "paid": "Pro sblocca 107 dei 159 sfondi, le tue foto come sfondo, i caratteri Pro, l'Attività in tempo reale sulla schermata di blocco e l'invito a contare i giorni insieme a qualcuno. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
+      "free": "Ogni dimensione dei quattro widget standard, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
+      "paid": "Pro sblocca 107 dei 159 sfondi, il widget Rullino foto, le tue foto come sfondo, i caratteri Pro, l'Attività in tempo reale sulla schermata di blocco e l'invito a contare i giorni insieme a qualcuno. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
       "legal": [],
       "faq": [
         {
           "q": "Esiste un'app di conto alla rovescia con widget per iPhone davvero gratis?",
-          "a": "Sì. In Countdown Widget: Eventi ogni dimensione di widget funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro aggiunge sfondi, le tue foto come sfondo, caratteri, l'Attività in tempo reale e l'invito a contare i giorni insieme a qualcuno."
+          "a": "Sì. In Countdown Widget: Eventi ogni dimensione dei quattro widget standard funziona nella schermata Home e nella schermata di blocco senza pagare, e il numero di eventi è illimitato. Anche promemoria, ripetizione e conteggio da una data sono gratis. Pro aggiunge sfondi, il widget Rullino foto, le tue foto come sfondo, caratteri, l'Attività in tempo reale e l'invito a contare i giorni insieme a qualcuno."
         },
         {
           "q": "Quanti conti alla rovescia posso creare nella versione gratis?",
@@ -381,7 +381,7 @@
         },
         {
           "q": "Cosa sblocca Countdown Pro e come si acquista?",
-          "a": "Pro sblocca gli sfondi Pro – 107 dei 159 –, con nuovi sfondi ogni mese, e ciò che sblocchi durante l'abbonamento resta tuo. In più ci sono le tue foto come sfondo, i caratteri Pro, l'Attività in tempo reale sulla schermata di blocco e l'invito a contare i giorni insieme a qualcuno; unirsi a un conto alla rovescia condiviso con te non richiede abbonamento. C'è un piano annuale con 7 giorni di prova gratuita, un piano mensile o un acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto. Conti alla rovescia, promemoria e widget funzionano esattamente allo stesso modo con o senza Pro."
+          "a": "Pro sblocca gli sfondi Pro – 107 dei 159 –, con nuovi sfondi ogni mese, e ciò che sblocchi durante l'abbonamento resta tuo. In più ci sono il widget Rullino foto, le tue foto come sfondo, i caratteri Pro, l'Attività in tempo reale sulla schermata di blocco e l'invito a contare i giorni insieme a qualcuno; unirsi a un conto alla rovescia condiviso con te non richiede abbonamento. C'è un piano annuale con 7 giorni di prova gratuita, un piano mensile o un acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto. Conti alla rovescia, promemoria e i quattro widget standard funzionano esattamente allo stesso modo con o senza Pro."
         },
         {
           "q": "Serve un account?",
@@ -403,16 +403,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "カウントダウン ウィジェット — 無料・イベント無制限",
-      "oneLiner": "iPhone向けカウントダウンアプリ。ウィジェットは全サイズ無料、イベント数は無制限。",
-      "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景、自分の写真の背景、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。",
+      "oneLiner": "iPhone向けカウントダウンアプリ。4種類の標準ウィジェットは全サイズ無料、イベント数は無制限。",
+      "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面の4種類のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景、自分の写真の背景、フォトロール、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。",
       "audience": "受験、旅行、結婚式、推しのライブ、誕生日まであと何日かを数える人。ある日からの日数を数える人にも。",
-      "free": "全サイズのウィジェット、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
-      "paid": "Proは159種の背景のうち107種、自分の写真の背景、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待を解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
+      "free": "4種類の標準ウィジェットの全サイズ、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
+      "paid": "Proは159種の背景のうち107種、自分の写真の背景、フォトロール（ウィジェット）、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待を解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
       "legal": [],
       "faq": [
         {
           "q": "iPhoneで本当に無料で使えるカウントダウンウィジェットのアプリはありますか？",
-          "a": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも全サイズのウィジェットが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proでは背景、自分の写真の背景、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。"
+          "a": "あります。「カウントダウン ウィジェット: 記念日」では、ホーム画面でもロック画面でも4種類の標準ウィジェットの全サイズが無料で使え、イベント数は無制限です。リマインダー、繰り返し、経過日数のカウントも無料。Proでは背景、自分の写真の背景、フォトロール（ウィジェット）、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。"
         },
         {
           "q": "無料版でカウントダウンはいくつ作れますか？",
@@ -432,7 +432,7 @@
         },
         {
           "q": "Proで何が解放され、どのように購入できますか？",
-          "a": "Proでは全159種の全画面背景のうちPro用の107種が解放され、毎月新しい背景が追加されます。購読中に解除したものはその後もずっと使えます。このほか、自分の写真の背景、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待もProの機能です。7日間の無料トライアル付き年額プラン、月額プラン、買い切りから選べ、価格は購入前にアプリ内に表示されます。カウントダウン、リマインダー、ウィジェットの動作はProの有無で一切変わりません。"
+          "a": "Proでは全159種の全画面背景のうちPro用の107種が解放され、毎月新しい背景が追加されます。購読中に解除したものはその後もずっと使えます。このほか、自分の写真の背景、フォトロール（ウィジェット）、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待もProの機能です。7日間の無料トライアル付き年額プラン、月額プラン、買い切りから選べ、価格は購入前にアプリ内に表示されます。カウントダウン、リマインダー、4種類の標準ウィジェットの動作はProの有無で一切変わりません。"
         },
         {
           "q": "アカウントは必要ですか？",
@@ -454,16 +454,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
-      "oneLiner": "iPhone용 디데이 카운트다운 앱. 위젯은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
-      "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯은 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경, 내 사진 배경, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다.",
+      "oneLiner": "iPhone용 디데이 카운트다운 앱. 표준 위젯 4종은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
+      "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯 네 가지는 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경, 내 사진 배경, 포토 롤, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다.",
       "audience": "수능, 전역, 여행, 결혼식, 콘서트, 생일까지 며칠 남았는지 세는 사람. 어떤 날로부터 며칠 지났는지 세는 사람에게도.",
-      "free": "모든 크기의 위젯, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
-      "paid": "Pro는 배경 159가지 중 107가지, 내 사진 배경, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
+      "free": "표준 위젯 4종의 모든 크기, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
+      "paid": "Pro는 배경 159가지 중 107가지, 내 사진 배경, 포토 롤 위젯, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
       "legal": [],
       "faq": [
         {
           "q": "iPhone에서 정말 무료로 쓸 수 있는 디데이 카운트다운 위젯 앱이 있나요?",
-          "a": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 모든 크기의 위젯을 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경, 내 사진 배경, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다."
+          "a": "있습니다. '카운트다운 위젯: 디데이'에서는 홈 화면과 잠금 화면 모두에서 표준 위젯 4종의 모든 크기를 결제 없이 쓸 수 있고, 이벤트 수는 무제한입니다. 알림, 반복, 경과일 세기도 무료입니다. Pro는 배경, 내 사진 배경, 포토 롤 위젯, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다."
         },
         {
           "q": "무료 버전에서 디데이를 몇 개까지 만들 수 있나요?",
@@ -483,7 +483,7 @@
         },
         {
           "q": "Pro는 무엇이 열리고, 어떻게 구매하나요?",
-          "a": "Pro는 전체 화면 배경 159가지 중 Pro 배경 107가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 잠금 해제한 것은 계속 내 것으로 남습니다. 이 밖에 내 사진 배경, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 위젯은 Pro 여부와 상관없이 똑같이 작동합니다."
+          "a": "Pro는 전체 화면 배경 159가지 중 Pro 배경 107가지를 열고, 매달 새 배경이 추가됩니다. 구독 중에 잠금 해제한 것은 계속 내 것으로 남습니다. 이 밖에 내 사진 배경, 포토 롤 위젯, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대도 Pro 기능입니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 평생 이용권 중에서 고를 수 있고, 가격은 구매 전에 앱에 표시됩니다. 디데이, 알림, 표준 위젯 4종은 Pro 여부와 상관없이 똑같이 작동합니다."
         },
         {
           "q": "계정이 필요한가요?",
@@ -505,16 +505,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "แอปนับถอยหลังพร้อมวิดเจ็ต — ฟรี อีเวนต์ไม่จำกัด",
-      "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
-      "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ตทุกขนาดบนหน้าจอหลักและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด แจ้งเตือนฟรี ไม่มีโฆษณา Pro เพิ่มพื้นหลัง ฟอนต์ และกิจกรรมสด",
+      "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
+      "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ต 4 แบบทุกขนาดบนหน้าจอโฮมและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด ไม่มีโฆษณา Pro เพิ่มพื้นหลัง รูปของคุณเอง ภาพหมุนเวียน และฟอนต์",
       "audience": "คนที่นับวันรอสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง หรือวันเกิด — หรือนับว่าผ่านมากี่วันแล้วจากวันหนึ่ง",
-      "free": "วิดเจ็ตทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
-      "paid": "Pro ปลดล็อกพื้นหลัง 107 จาก 159 แบบ รูปของคุณเองเป็นพื้นหลัง ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
+      "free": "วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
+      "paid": "Pro ปลดล็อกพื้นหลัง 107 จาก 159 แบบ รูปของคุณเองเป็นพื้นหลัง วิดเจ็ตภาพหมุนเวียน ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
       "legal": [],
       "faq": [
         {
           "q": "มีแอปนับถอยหลังพร้อมวิดเจ็ตสำหรับ iPhone ที่ฟรีจริงไหม",
-          "a": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตทุกขนาดใช้ได้ทั้งบนหน้าจอโฮมและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro เพิ่มพื้นหลัง รูปของคุณเองเป็นพื้นหลัง ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน"
+          "a": "มี ใน นับถอยหลัง Widget: วันสำคัญ วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาดใช้ได้ทั้งบนหน้าจอโฮมและหน้าจอล็อกโดยไม่ต้องจ่าย และจำนวนอีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ และนับวันที่ผ่านมาก็ฟรีเช่นกัน Pro เพิ่มพื้นหลัง รูปของคุณเองเป็นพื้นหลัง วิดเจ็ตภาพหมุนเวียน ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน"
         },
         {
           "q": "เวอร์ชันฟรีสร้างนับถอยหลังได้กี่รายการ",
@@ -534,7 +534,7 @@
         },
         {
           "q": "Pro ปลดล็อกอะไร และซื้อแบบไหนได้บ้าง",
-          "a": "Pro ปลดล็อกพื้นหลัง Pro 107 แบบจากทั้งหมด 159 แบบ และมีพื้นหลังใหม่ทุกเดือน สิ่งที่ปลดล็อกระหว่างสมัครสมาชิกจะเป็นของคุณตลอดไป นอกจากนี้ยังมีรูปของคุณเองเป็นพื้นหลัง ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว โดยราคาจะแสดงในแอปก่อนซื้อ นับถอยหลัง แจ้งเตือน และวิดเจ็ตทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
+          "a": "Pro ปลดล็อกพื้นหลัง Pro 107 แบบจากทั้งหมด 159 แบบ และมีพื้นหลังใหม่ทุกเดือน สิ่งที่ปลดล็อกระหว่างสมัครสมาชิกจะเป็นของคุณตลอดไป นอกจากนี้ยังมีรูปของคุณเองเป็นพื้นหลัง วิดเจ็ตภาพหมุนเวียน ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว โดยราคาจะแสดงในแอปก่อนซื้อ นับถอยหลัง แจ้งเตือน และวิดเจ็ตมาตรฐานทั้ง 4 แบบทำงานเหมือนกันทุกอย่างไม่ว่าจะมี Pro หรือไม่"
         },
         {
           "q": "ต้องมีบัญชีไหม",
@@ -556,16 +556,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "倒计时小组件 — 免费、事件不限量",
-      "oneLiner": "iPhone 倒计时 App：小组件全尺寸免费，事件数量不限。",
-      "description": "iPhone 倒计时 App：主屏幕和锁屏的小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 增加背景、自己的照片、字体、实时活动和一起倒数。",
+      "oneLiner": "iPhone 倒计时 App：四款标准小组件全尺寸免费，事件数量不限。",
+      "description": "iPhone 倒计时 App：主屏幕和锁屏的四款小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 增加背景、自己的照片、照片轮播、字体、实时活动和一起倒数。",
       "audience": "给高考、考研、春节、旅行、婚礼、生日倒数的人，也给想知道「在一起多少天」的人。",
-      "free": "全尺寸小组件、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
-      "paid": "Pro 解锁 159 张背景中的 107 张、用自己的照片做背景、Pro 字体、锁屏实时活动，以及邀请别人一起倒数。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
+      "free": "四款标准小组件的全尺寸、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
+      "paid": "Pro 解锁 159 张背景中的 107 张、用自己的照片做背景、照片轮播小组件、Pro 字体、锁屏实时活动，以及邀请别人一起倒数。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
       "legal": [],
       "faq": [
         {
           "q": "iPhone 上有真正免费的倒计时小组件 App 吗？",
-          "a": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 增加背景、用自己的照片做背景、Pro 字体、锁屏实时活动，以及邀请别人一起倒数。"
+          "a": "有。在「倒计时 Widget：纪念日提醒」里，主屏幕和锁屏的四款标准小组件全尺寸都能免费用，事件数量不限。提醒、重复、正数日也免费。Pro 增加背景、用自己的照片做背景、照片轮播小组件、Pro 字体、锁屏实时活动，以及邀请别人一起倒数。"
         },
         {
           "q": "免费版能建多少个倒计时？",
@@ -585,7 +585,7 @@
         },
         {
           "q": "Pro 解锁什么，怎么买？",
-          "a": "Pro 解锁 159 张整屏背景中属于 Pro 的 107 张，每月上新；订阅期间解锁过的永久归你。此外还有用自己的照片做背景、Pro 字体、锁屏实时活动，以及邀请别人一起倒数；加入别人分享给你的倒计时无需订阅。可以选年付（含 7 天免费试用）、月付或一次性买断，价格会在购买前显示在应用内。倒计时、提醒和小组件有没有 Pro 都完全一样。"
+          "a": "Pro 解锁 159 张整屏背景中属于 Pro 的 107 张，每月上新；订阅期间解锁过的永久归你。此外还有用自己的照片做背景、照片轮播小组件、Pro 字体、锁屏实时活动，以及邀请别人一起倒数；加入别人分享给你的倒计时无需订阅。可以选年付（含 7 天免费试用）、月付或一次性买断，价格会在购买前显示在应用内。倒计时、提醒和四款标准小组件有没有 Pro 都完全一样。"
         },
         {
           "q": "需要账号吗？",
@@ -607,16 +607,16 @@
       "icon": "/assets/countdown/icon.png",
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "倒數計時小工具 — 免費、事件不限量",
-      "oneLiner": "iPhone 倒數計時 App：小工具全尺寸免費，事件數量不限。",
-      "description": "iPhone 倒數計時 App：主畫面和鎖定畫面的小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景、自己的照片、字體、即時動態和一起倒數。",
+      "oneLiner": "iPhone 倒數計時 App：四款標準小工具全尺寸免費，事件數量不限。",
+      "description": "iPhone 倒數計時 App：主畫面和鎖定畫面的四款小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景、自己的照片、照片輪播、字體、即時動態和一起倒數。",
       "audience": "給學測、會考、過年、旅行、婚禮、演唱會、生日倒數的人，也給想知道「交往幾天」的人。",
-      "free": "全尺寸小工具、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
-      "paid": "Pro 解鎖 159 張背景中的 107 張、用自己的照片做背景、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
+      "free": "四款標準小工具的全尺寸、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
+      "paid": "Pro 解鎖 159 張背景中的 107 張、用自己的照片做背景、照片輪播小工具、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
       "legal": [],
       "faq": [
         {
           "q": "iPhone 上有真正免費的倒數計時小工具 App 嗎？",
-          "a": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 增加背景、用自己的照片做背景、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數。"
+          "a": "有。在「倒數計時 Widget：紀念日提醒」裡，主畫面和鎖定畫面的四款標準小工具全尺寸都能免費用，事件數量不限。提醒、重複、正數日也免費。Pro 增加背景、用自己的照片做背景、照片輪播小工具、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數。"
         },
         {
           "q": "免費版能建幾個倒數計時？",
@@ -636,7 +636,7 @@
         },
         {
           "q": "Pro 解鎖什麼，怎麼買？",
-          "a": "Pro 解鎖 159 張全螢幕背景中屬於 Pro 的 107 張，每月上新；訂閱期間解鎖過的永久歸你。此外還有用自己的照片做背景、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數；加入別人分享給你的倒數不需訂閱。可以選年繳（含 7 天免費試用）、月繳或一次買斷，價格會在購買前顯示在 App 內。倒數計時、提醒和小工具有沒有 Pro 都完全一樣。"
+          "a": "Pro 解鎖 159 張全螢幕背景中屬於 Pro 的 107 張，每月上新；訂閱期間解鎖過的永久歸你。此外還有用自己的照片做背景、照片輪播小工具、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數；加入別人分享給你的倒數不需訂閱。可以選年繳（含 7 天免費試用）、月繳或一次買斷，價格會在購買前顯示在 App 內。倒數計時、提醒和四款標準小工具有沒有 Pro 都完全一樣。"
         },
         {
           "q": "需要帳號嗎？",
