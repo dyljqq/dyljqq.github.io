@@ -133,3 +133,13 @@ node tools/test_analytics_exclusion.mjs
 客户端位于 `assets/analytics/firebase-web-v2.js`，旧 `firebase-web-v1.js` 保留供缓存页面使用。assets 使用一年 immutable 缓存，修改脚本内容时必须换新文件名并同步生成器。SDK 使用固定 Firebase 12.4.0 CDN 模块；SDK 被屏蔽或初始化失败时，工具与链接仍可用，统计不保证送达。SDK 加载期间事件暂存内存，若用户在初始化完成前离开页面，该页队列可能丢失；点击意向应结合真实商店活动数据核对。
 
 实现依据：[Firebase Web 事件](https://firebase.google.com/docs/analytics/web/events)、[Firebase Analytics JS API](https://firebase.google.com/docs/reference/js/analytics)、[GA4 页面浏览与去重](https://developers.google.com/analytics/devguides/collection/ga4/views)、[增强型衡量配置](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/EnhancedMeasurementSettings)。
+
+## InvoiceQR 德语人群页（2026-11-02）
+
+`/tools/de/rechnungsvorlage-handwerker/`、`/tools/de/rechnungsvorlage-freiberufler/` 沿用 contenteditable 单据编辑器的 `print`、`addrow`，以及商店归因 `ct=web-invoiceqr-tool`。输入与发票数据不上报；人工费备注由用户手动更新，不新增计算事件。
+
+- 正文与 FAQ 站内链接：`iq-hw-*` / `iq-fb-*`（`navigation_click`），后缀为 `pflichtangaben`、`kleinunternehmer`、`angebot`、`app`、`iphone-guide`、另一人群名，以及 `faq-erechnung` / `b2b-fristen`。
+- 法条来源链接：`iq-hw-source-*` / `iq-fb-source-*`（`outbound_click`），后缀为条文编号。
+- 通用与 Kleinunternehmer 页的新增 more 链接：`iq-more-handwerker`、`iq-more-freiberufler`（`navigation_click`）；若独有率检查要求撤回旧页链接，则这些 ID 暂不生成。
+
+新页署名区使用 `iq-berufe-contact`（`contact_click`）及 `iq-berufe-about`（`navigation_click`）。沿用自动生成的 FAQ 展开、页头/页尾、hub 和商店卡片埋点；无需更改跟踪器。
