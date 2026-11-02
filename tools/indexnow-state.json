@@ -186,10 +186,10 @@
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/de/": {
-"body_signature": "0824525adaebb1eee9d80cb4b3aed447432ae96a88af5456fd436e413636f714",
+"body_signature": "0d2cf48cf99448dce99e6830b1c3ba9bd186438aac6a2efebd4f3b8298d6ec6f",
 "body_signature_version": 1,
 "description": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
-"lastmod": "2026-10-26"
+"lastmod": "2026-11-02"
 },
 "/invoiceqr/es-mx/": {
 "body_signature": "c7d7565c090271f4420b462c2a599009d5b077bbaaa7bd8707491444ad0226c3",
@@ -414,10 +414,10 @@
 "lastmod": "2026-11-02"
 },
 "/tools/de/": {
-"body_signature": "8d6f385e6241842479071079e521ddd6df6515b7b664553d00bb6fce171e030c",
+"body_signature": "6d469d4821fd94d61aa4c52c91e0602a7e7c2617e73b4dc63147153b7da2d129",
 "body_signature_version": 1,
 "description": "Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern.",
-"lastmod": "2026-10-26"
+"lastmod": "2026-11-02"
 },
 "/tools/de/angebot-vorlage/": {
 "body_signature": "47cc3b05754db3e2785254bae383d609ad28d73de0897709c0df02e84e838b96",
@@ -431,17 +431,29 @@
 "description": "So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.",
 "lastmod": "2026-10-25"
 },
+"/tools/de/rechnungsvorlage-freiberufler/": {
+"body_signature": "d660d90846e6246de83ef266f8ef84c4d1afec324d2809ed6518fe8c0c3449d5",
+"body_signature_version": 1,
+"description": "Rechnungsvorlage für Freiberufler kostenlos: im Browser ausfüllen, als PDF speichern. Mit Stunden- und Tagessatz und Hinweisen zur Rechnung ohne Umsatzsteuer.",
+"lastmod": "2026-11-02"
+},
+"/tools/de/rechnungsvorlage-handwerker/": {
+"body_signature": "1c65830c086d87025e0edf503a9ff75f034417ed49eb206425ff4085d9834849",
+"body_signature_version": 1,
+"description": "Handwerkerrechnung im Browser ausfüllen und als PDF speichern: Arbeitskosten und Material für § 35a EStG getrennt, mit Muster und Aufbewahrungshinweis.",
+"lastmod": "2026-11-02"
+},
 "/tools/de/rechnungsvorlage-kleinunternehmer/": {
-"body_signature": "6173607a190e3d61b7a9bbfa3d565eb7ead2c53acd298380dc56e404f4f8bc5e",
+"body_signature": "00494c23715baa95d63edbe2053f69017b3cc770753c7b5dcc36409deddd85ad",
 "body_signature_version": 1,
 "description": "Kostenlose Rechnungsvorlage für Kleinunternehmer: online ausfüllen, als PDF speichern. Mit Hinweis nach § 19 UStG und allen Pflichtangaben nach § 34a UStDV.",
-"lastmod": "2026-10-25"
+"lastmod": "2026-11-02"
 },
 "/tools/de/rechnungsvorlage/": {
-"body_signature": "0ac78c1379189ee09e1936cfd6462b51eedbf5532ea990f5a7b567c2f0761992",
+"body_signature": "58cbd8daa6a550c928d2eec59a07ea338dc650f12cf551ae7659295f1f5bd0ee",
 "body_signature_version": 1,
 "description": "Kostenlose Rechnungsvorlage ohne Anmeldung: Umsatzsteuer und Summe rechnen sich selbst, PDF speichern. Mit Pflichtangaben nach § 14 UStG und E-Rechnung-Fristen.",
-"lastmod": "2026-10-25"
+"lastmod": "2026-11-02"
 },
 "/tools/disney-countdown-widget-iphone/": {
 "body_signature": "33b307b397e7c6d3f10a20a3445b550d456ea62ec69ad222183359890642f1f3",
