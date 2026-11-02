@@ -14,11 +14,13 @@ Ausdrücklich NICHT belegt (nicht schreiben): dass Fahrt- oder Maschinenkosten z
 - „rechnungsvorlage fotograf“: fotograf kleinunternehmer · rechnung vorlage fotograf (sonst nichts)
 - „rechnungsvorlage nachhilfe / reinigung / musiker“: nur 1–2 Varianten des Stichworts selbst
 
-## § 35a Abs. 3 und Abs. 5 EStG
+## § 35a Abs. 3, 4 und 5 EStG
 
 Quelle: https://www.gesetze-im-internet.de/estg/__35a.html
 
 (3) 1Für die Inanspruchnahme von Handwerkerleistungen für Renovierungs-, Erhaltungs- und Modernisierungsmaßnahmen ermäßigt sich die tarifliche Einkommensteuer, vermindert um die sonstigen Steuerermäßigungen, auf Antrag um 20 Prozent der Aufwendungen des Steuerpflichtigen, höchstens jedoch um 1 200 Euro. 2Dies gilt nicht für öffentlich geförderte Maßnahmen, für die zinsverbilligte Darlehen oder steuerfreie Zuschüsse in Anspruch genommen werden.
+
+(4) 1Die Steuerermäßigung nach den Absätzen 1 bis 3 kann nur in Anspruch genommen werden, wenn das Beschäftigungsverhältnis, die Dienstleistung oder die Handwerkerleistung in einem in der Europäischen Union oder dem Europäischen Wirtschaftsraum liegenden Haushalt des Steuerpflichtigen oder – bei Pflege- und Betreuungsleistungen – der gepflegten oder betreuten Person ausgeübt oder erbracht wird. 2In den Fällen des Absatzes 2 Satz 2 zweiter Halbsatz ist Voraussetzung, dass das Heim oder der Ort der dauernden Pflege in der Europäischen Union oder dem Europäischen Wirtschaftsraum liegt.
 
 (5) 1Die Steuerermäßigungen nach den Absätzen 1 bis 3 können nur in Anspruch genommen werden, soweit die Aufwendungen nicht Betriebsausgaben oder Werbungskosten darstellen und soweit sie nicht als Sonderausgaben oder außergewöhnliche Belastungen berücksichtigt worden sind; für Aufwendungen, die dem Grunde nach unter § 10 Absatz 1 Nummer 5 fallen, ist eine Inanspruchnahme ebenfalls ausgeschlossen. 2Der Abzug von der tariflichen Einkommensteuer nach den Absätzen 2 und 3 gilt nur für Arbeitskosten. 3Voraussetzung für die Inanspruchnahme der Steuerermäßigungen nach den Absätzen 2 und 3 ist, dass der Steuerpflichtige für die Aufwendungen eine Rechnung erhalten hat und die Zahlung auf das Konto des Erbringers der Leistung erfolgt ist.
 
@@ -76,13 +78,13 @@ nicht Unternehmer ist oder
 2.
 Unternehmer ist, aber die Leistung für seinen nichtunternehmerischen Bereich verwendet.
 
-## § 14a Abs. 1 Satz 1–3 und Abs. 5 Satz 1 UStG
+## § 14a Abs. 1 Satz 1–3 und Abs. 5 UStG
 
 Quelle: https://www.gesetze-im-internet.de/ustg_1980/__14a.html
 
 (1) Hat der Unternehmer seinen Sitz, seine Geschäftsleitung, eine Betriebsstätte, von der aus der Umsatz ausgeführt wird, oder in Ermangelung eines Sitzes seinen Wohnsitz oder gewöhnlichen Aufenthalt im Inland und führt er einen Umsatz in einem anderen Mitgliedstaat aus, an dem eine Betriebsstätte in diesem Mitgliedstaat nicht beteiligt ist, so ist er zur Ausstellung einer Rechnung mit der Angabe „Steuerschuldnerschaft des Leistungsempfängers“ verpflichtet, wenn die Steuer in dem anderen Mitgliedstaat von dem Leistungsempfänger geschuldet wird und keine Gutschrift gemäß § 14 Absatz 2 Satz 5 vereinbart worden ist. Führt der Unternehmer eine sonstige Leistung im Sinne des § 3a Absatz 2 in einem anderen Mitgliedstaat aus, so ist die Rechnung bis zum fünfzehnten Tag des Monats, der auf den Monat folgt, in dem der Umsatz ausgeführt worden ist, auszustellen. In dieser Rechnung sind die Umsatzsteuer-Identifikationsnummer des Unternehmers und die des Leistungsempfängers anzugeben.
 
-(5) Führt der Unternehmer eine Leistung im Sinne des § 13b Absatz 2 aus, für die der Leistungsempfänger nach § 13b Absatz 5 die Steuer schuldet, ist er zur Ausstellung einer Rechnung mit der Angabe „Steuerschuldnerschaft des Leistungsempfängers“ verpflichtet; Absatz 1 bleibt unberührt.
+(5) Führt der Unternehmer eine Leistung im Sinne des § 13b Absatz 2 aus, für die der Leistungsempfänger nach § 13b Absatz 5 die Steuer schuldet, ist er zur Ausstellung einer Rechnung mit der Angabe „Steuerschuldnerschaft des Leistungsempfängers“ verpflichtet; Absatz 1 bleibt unberührt. Die Vorschrift über den gesonderten Steuerausweis in einer Rechnung nach § 14 Absatz 4 Satz 1 Nummer 8 wird nicht angewendet.
 
 ## § 13b Abs. 2 Nr. 4 Satz 1 und Abs. 5 (Auszug) UStG
 
@@ -139,3 +141,9 @@ Quelle: https://www.gesetze-im-internet.de/estg/__18.html
 (1) Einkünfte aus selbständiger Arbeit sind 
 1.
 Einkünfte aus freiberuflicher Tätigkeit. 2Zu der freiberuflichen Tätigkeit gehören die selbständig ausgeübte wissenschaftliche, künstlerische, schriftstellerische, unterrichtende oder erzieherische Tätigkeit, die selbständige Berufstätigkeit der Ärzte, Zahnärzte, Tierärzte, Rechtsanwälte, Notare, Patentanwälte, Vermessungsingenieure, Ingenieure, Architekten, Handelschemiker, Wirtschaftsprüfer, Steuerberater, beratenden Volks- und Betriebswirte, vereidigten Buchprüfer, Steuerbevollmächtigten, Heilpraktiker, Dentisten, Krankengymnasten, Journalisten, Bildberichterstatter, Dolmetscher, Übersetzer, Lotsen und ähnlicher Berufe. 3Ein Angehöriger eines freien Berufs im Sinne der Sätze 1 und 2 ist auch dann freiberuflich tätig, wenn er sich der Mithilfe fachlich vorgebildeter Arbeitskräfte bedient; Voraussetzung ist, dass er auf Grund eigener Fachkenntnisse leitend und eigenverantwortlich tätig wird. 4Eine Vertretung im Fall vorübergehender Verhinderung steht der Annahme einer leitenden und eigenverantwortlichen Tätigkeit nicht entgegen;
+
+## § 2 Abs. 7 Satz 1–2 EStG (Jahressteuer)
+
+Quelle: https://www.gesetze-im-internet.de/estg/__2.html
+
+(7)1 Die Einkommensteuer ist eine Jahressteuer. 2Die Grundlagen für ihre Festsetzung sind jeweils für ein Kalenderjahr zu ermitteln.

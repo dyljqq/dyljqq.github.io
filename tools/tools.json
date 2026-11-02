@@ -1986,6 +1986,88 @@
   "crumbHub": "Tools"
  },
  {
+  "path": "/tools/de/rechnungsvorlage-handwerker/",
+  "lang": "de",
+  "kind": "WebApplication",
+  "title": "Rechnungsvorlage Handwerker kostenlos: Arbeitskosten und Material",
+  "description": "Handwerkerrechnung im Browser ausfüllen und als PDF speichern: Arbeitskosten und Material für § 35a EStG getrennt, mit Muster und Aufbewahrungshinweis.",
+  "faq": [
+   {
+    "q": "Muss Material extra auf die Rechnung?",
+    "a": "Damit dein Kunde die Arbeitskosten belegen kann, weist du Arbeit und Material in getrennten Positionen aus. § 35a EStG begünstigt nur Arbeitskosten; Stunden und Materialmengen einzeln zu beschreiben macht deren Anteil nachvollziehbar."
+   },
+   {
+    "q": "Wie viel kann mein Kunde von der Handwerkerrechnung absetzen?",
+    "a": "Für begünstigte Renovierungs-, Erhaltungs- und Modernisierungsmaßnahmen beträgt die Steuerermäßigung auf Antrag 20 % der Arbeitskosten, höchstens 1 200 € im Jahr (§ 35a Abs. 3 und 5 in Verbindung mit § 2 Abs. 7 EStG). Die Arbeiten müssen im Haushalt des Kunden in der EU oder im EWR erbracht werden (§ 35a Abs. 4). Material zählt nicht dazu; Rechnung und Zahlung auf dein Konto sind Voraussetzung. Ausgeschlossen sind öffentlich geförderte Maßnahmen mit zinsverbilligten Darlehen oder steuerfreien Zuschüssen sowie Aufwendungen, die Betriebsausgaben oder Werbungskosten darstellen oder bereits als Sonderausgaben oder außergewöhnliche Belastungen berücksichtigt wurden; ebenso Aufwendungen, die dem Grunde nach unter § 10 Abs. 1 Nr. 5 fallen."
+   },
+   {
+    "q": "Darf der Kunde bar zahlen?",
+    "a": "Ja, aber dann kann er die Steuerermäßigung nach § 35a EStG nicht nutzen: Dafür muss das Geld auf das Konto des Leistungserbringers gehen (§ 35a Abs. 5 Satz 3). Vereinbare für diesen Zweck eine Banküberweisung und gib die Bankverbindung an."
+   },
+   {
+    "q": "Muss ich Privatkunden eine Rechnung schreiben?",
+    "a": "Bei steuerpflichtigen Werklieferungen oder sonstigen Leistungen im Zusammenhang mit einem Grundstück musst du auch Privatkunden innerhalb von sechs Monaten nach der Leistung eine Rechnung ausstellen (§ 14 Abs. 2 Satz 2 Nr. 3 UStG). Als Kleinunternehmer kläre den konkreten Fall mit deiner Steuerberatung."
+   },
+   {
+    "q": "Brauche ich als Handwerker eine E-Rechnung?",
+    "a": "Für Privatkunden besteht diese Pflicht nicht; bei inländischen Geschäftskunden kommt es auf die geltenden Übergangsregeln und Ausnahmen an. Prüfe die <a href=\"/tools/de/rechnungsvorlage/\" data-track-id=\"iq-hw-faq-erechnung\">E-Rechnung-Fristen</a>, bevor du das PDF versendest. Ein PDF ist keine strukturierte E-Rechnung."
+   },
+   {
+    "q": "Gibt es eine App für Handwerkerrechnungen?",
+    "a": "Ja. Smart Rechnung & Angebot auf dem iPhone unterstützt „Std.“ als Einheit und Mengen wie 1,5. Wiederverwendbare Klauseln drucken den passenden Hinweis unten auf die Rechnung. Du prüfst und aktualisierst dabei den Arbeitskostenbetrag für jeden Auftrag; das erste Dokument ist kostenlos, ohne Konto."
+   }
+  ],
+  "published": "2026-11-02",
+  "app": "invoiceqr",
+  "hubTitle": "Rechnungsvorlage für Handwerker",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Startseite",
+  "crumbHub": "Tools"
+ },
+ {
+  "path": "/tools/de/rechnungsvorlage-freiberufler/",
+  "lang": "de",
+  "kind": "WebApplication",
+  "title": "Rechnungsvorlage Freiberufler kostenlos: mit und ohne Umsatzsteuer",
+  "description": "Rechnungsvorlage für Freiberufler kostenlos: im Browser ausfüllen, als PDF speichern. Mit Stunden- und Tagessatz und Hinweisen zur Rechnung ohne Umsatzsteuer.",
+  "faq": [
+   {
+    "q": "Brauche ich als Freiberufler eine Steuernummer auf der Rechnung?",
+    "a": "Auf einer Rechnung nach § 14 Abs. 4 UStG muss deine Steuernummer oder deine USt-IdNr. stehen (Nr. 2). Du brauchst dort also nicht beides. Bei einer sonstigen Leistung nach § 3a Abs. 2 im anderen EU-Mitgliedstaat, für die der Empfänger die Steuer schuldet, verlangt § 14a Abs. 1 dagegen die USt-IdNr. beider Beteiligten."
+   },
+   {
+    "q": "Wie schreibe ich als Freiberufler eine Rechnung ohne Umsatzsteuer?",
+    "a": "Nenne den tatsächlich einschlägigen Grund: Kleinunternehmerbefreiung, eine konkrete Steuerbefreiung der Leistung oder Steuerschuldnerschaft des Leistungsempfängers. Der Status „Freiberufler“ allein rechtfertigt keine Rechnung ohne Umsatzsteuer. Die drei Fälle und ihre Rechnungshinweise sind auf dieser Seite getrennt erklärt."
+   },
+   {
+    "q": "Was gehört auf eine Rechnung an einen Geschäftskunden im EU-Ausland?",
+    "a": "Wenn bei einer sonstigen Leistung nach § 3a Abs. 2 UStG im anderen EU-Mitgliedstaat der Empfänger die Steuer schuldet, gehören „Steuerschuldnerschaft des Leistungsempfängers“ und beide USt-IdNr. auf die Rechnung. Nach § 14a Abs. 1 ist sie bis zum 15. des Folgemonats auszustellen; nicht jede Rechnung ins EU-Ausland fällt automatisch darunter."
+   },
+   {
+    "q": "Darf ich als Freiberufler immer 7 % berechnen?",
+    "a": "Nein. Entscheidend ist der Umsatz, nicht deine Berufsbezeichnung. § 12 Abs. 2 Nr. 7 Buchst. c UStG nennt die Einräumung, Übertragung und Wahrnehmung von Rechten aus dem Urheberrechtsgesetz. Ob dein Vertrag darunter fällt, klärst du im Zweifel mit deiner Steuerberatung."
+   },
+   {
+    "q": "Muss ich als Freiberufler E-Rechnungen schreiben?",
+    "a": "Dein Freiberuflerstatus allein entscheidet das nicht: Bei inländischen B2B-Leistungen sind Übergangsregeln und Ausnahmen zu prüfen; für Privatkunden besteht diese Pflicht nicht. Lies die <a href=\"/tools/de/rechnungsvorlage/\" data-track-id=\"iq-fb-faq-erechnung\">Fristen zur E-Rechnung</a>. Diese Browser-Vorlage erstellt nur PDF."
+   },
+   {
+    "q": "Gibt es eine App für Freiberufler-Rechnungen mit verschiedenen Steuersätzen?",
+    "a": "Ja. In Smart Rechnung & Angebot kannst du für jede Position einen eigenen Steuersatz wählen: 7 % und 19 % können auf derselben Rechnung stehen, ebenso gibt es „Keine Steuer“. Für Zeitabrechnungen verwendest du „Std.“ oder „Tag“ als Einheit. Das erste Dokument ist kostenlos und erfordert kein Konto."
+   }
+  ],
+  "published": "2026-11-02",
+  "app": "invoiceqr",
+  "hubTitle": "Rechnungsvorlage für Freiberufler",
+  "items": [],
+  "headline": null,
+  "image": null,
+  "crumbHome": "Startseite",
+  "crumbHub": "Tools"
+ },
+ {
   "path": "/tools/countdown-wallpaper-maker/",
   "lang": "en",
   "kind": "WebApplication",

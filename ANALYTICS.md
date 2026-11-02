@@ -140,6 +140,6 @@ node tools/test_analytics_exclusion.mjs
 
 - 正文与 FAQ 站内链接：`iq-hw-*` / `iq-fb-*`（`navigation_click`），后缀为 `pflichtangaben`、`kleinunternehmer`、`angebot`、`app`、`iphone-guide`、另一人群名，以及 `faq-erechnung` / `b2b-fristen`。
 - 法条来源链接：`iq-hw-source-*` / `iq-fb-source-*`（`outbound_click`），后缀为条文编号。
-- 通用与 Kleinunternehmer 页的新增 more 链接：`iq-more-handwerker`、`iq-more-freiberufler`（`navigation_click`）；若独有率检查要求撤回旧页链接，则这些 ID 暂不生成。
+- 通用与 Kleinunternehmer 页在原有 more 条目之后追加完整问答，回答中的链接沿用：`iq-more-handwerker`、`iq-more-freiberufler`（`navigation_click`）；若独有率检查要求撤回旧页链接，则这些 ID 暂不生成。
 
 新页署名区使用 `iq-berufe-contact`（`contact_click`）及 `iq-berufe-about`（`navigation_click`）。沿用自动生成的 FAQ 展开、页头/页尾、hub 和商店卡片埋点；无需更改跟踪器。
