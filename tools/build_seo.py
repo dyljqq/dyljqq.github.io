@@ -756,7 +756,9 @@ def localize_illus(svg, lang):
 
 # 卡片介绍下面的一条站内链接，只加在列出的 (app, 语言) 上。
 # 10-16：英文首页链到美区对比页——那页从首页点不到，Google 一直「已发现未编入」；其它语言首页不加。
-HOME_CARD_LINKS = {("countdown", "en"): ("/tools/best-countdown-widget-apps-iphone/", "Compare the best countdown widget apps for iPhone")}
+# 首页卡片下的站内链接：(网址, 文字, data-track-id 或 None)
+HOME_CARD_LINKS = {("countdown", "en"): [("/tools/best-countdown-widget-apps-iphone/", "Compare the best countdown widget apps for iPhone", None),
+                                         ("/tools/countdown-wallpaper-maker/", "Free countdown wallpaper maker", "wp-entry-home")]}
 
 def home_apps_html(lang="en"):
     cards, featured = [], []
@@ -772,8 +774,8 @@ def home_apps_html(lang="en"):
         btn = esc_text(H(lang, "get_on_store").replace("{label}", h["label"]))
         get = f'\n      <a class="get" href="{su}">{btn} ↗</a>' if su else ""
         tag = f'\n      <p class="tagline">{esc_text(c["tagline"])}</p>' if c["tagline"] else ""
-        more = HOME_CARD_LINKS.get((key, lang))
-        also = f'\n      <p class="also"><a href="{esc(more[0])}">{esc_text(more[1])} →</a></p>' if more else ""
+        also = "".join(f'\n      <p class="also"><a href="{esc(u)}"' + (f' data-track-id="{tid}"' if tid else "") + f'>{esc_text(t)} →</a></p>'
+                       for u, t, tid in HOME_CARD_LINKS.get((key, lang), []))
         if h.get("isNew"):
             featured.append(f"""  <article class="app-new" id="app-{key}" aria-labelledby="new-{key}">
     <a class="art" href="{page}"{hl} tabindex="-1" aria-hidden="true">

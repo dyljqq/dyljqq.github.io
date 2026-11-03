@@ -53,6 +53,8 @@
 
 | 步骤 | 事件与筛选 | 说明 |
 | --- | --- | --- |
+| 榜单页入口 | `navigation_click`，`page_path=/tools/best-countdown-widget-apps-iphone/`、`control_id=wp-entry-best-apps` | `link_path=/tools/countdown-wallpaper-maker/`；站内链接不带 UTM |
+| 英文首页入口 | `navigation_click`，`page_path=/`、`control_id=wp-entry-home` | `link_path=/tools/countdown-wallpaper-maker/`；站内链接不带 UTM |
 | 落地 | `page_view`，`page_path=/tools/countdown-wallpaper-maker/` | `source_ref=wallpaper-share` = 别人分享的链接打开的（分享链接自带 `ref=wallpaper-share`；标题、日期参数不上报） |
 | 开始填 | `form_start`，`form_id=wallpaper` | 每次加载一次 |
 | 快捷日期 | `button_click`，`control_id=wp-preset-christmas / newyear / thanksgiving / valentines / halloween` | |
