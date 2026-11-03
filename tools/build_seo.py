@@ -758,7 +758,7 @@ def localize_illus(svg, lang):
 # 10-16：英文首页链到美区对比页——那页从首页点不到，Google 一直「已发现未编入」；其它语言首页不加。
 # 首页卡片下的站内链接：(网址, 文字, data-track-id 或 None)
 HOME_CARD_LINKS = {("countdown", "en"): [("/tools/best-countdown-widget-apps-iphone/", "Compare the best countdown widget apps for iPhone", None),
-                                         ("/tools/countdown-wallpaper-maker/", "Free countdown wallpaper maker", "wp-entry-home")]}
+                                         ("/tools/countdown-wallpaper-maker/", "Free online countdown wallpaper maker", "wp-entry-home")]}
 
 def home_apps_html(lang="en"):
     cards, featured = [], []

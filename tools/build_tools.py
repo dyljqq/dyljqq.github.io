@@ -2442,7 +2442,7 @@ def best_page():
 {entries}
 <h2>How we chose</h2>
 <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>
-<p>Not ready to install an app? <a href="/tools/countdown-wallpaper-maker/" data-track-id="wp-entry-best-apps">Make a lock-screen countdown wallpaper from your own photo in your browser</a>. The saved image is a still picture; its number does not update by itself.</p>"""
+<p>Not ready to install an app? <a href="/tools/countdown-wallpaper-maker/" data-track-id="wp-entry-best-apps">Make a free Lock Screen countdown wallpaper from your own photo in your browser</a>. The saved image is a still picture; its number does not update by itself.</p>"""
     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
             "updated": "2026-11-01",
             "title": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free", "crumb": "Best countdown widget apps",
