@@ -126,9 +126,9 @@
 "lastmod": "2026-11-02"
 },
 "/countdown/zh-hans/": {
-"body_signature": "4804d4ad738daea6667a03a24b2f7a4394c082829ca8dc2be82d33b33caa2f86",
+"body_signature": "e021aaa2471f5659442cd754ce5913267c2cbcb91a1a0cdc21b20f9c2768d9c4",
 "body_signature_version": 1,
-"description": "iPhone 倒计时 App：主屏幕和锁屏的四款小组件全尺寸免费，事件数量不限，提醒免费，无广告。Pro 增加背景、自己的照片、照片轮播、字体、实时活动和一起倒数。",
+"description": "在 iPhone 主屏幕和锁屏查看生日、高考或旅行倒数。四款标准小组件全尺寸免费，事件不限量，提醒免费，无广告。Pro 可用自己的照片做背景、开启照片轮播和锁屏实时活动，也能邀请别人一起倒数。",
 "lastmod": "2026-11-02"
 },
 "/countdown/zh-hant/": {
@@ -534,9 +534,9 @@
 "lastmod": "2026-11-02"
 },
 "/tools/ko/": {
-"body_signature": "19773daec70da53a327ed3c5ffdf083ad53e8a554e27158a5f0774eae3d223ae",
+"body_signature": "d4a6b832410318bb68b8f68b8ea8748cd3202ecfef71a2e12208f219134fde3f",
 "body_signature_version": 1,
-"description": "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.",
+"description": "아이폰 잠금 화면에 디데이 위젯을 추가하는 법을 알아보세요. 트리플에서 NOL로 옮길 수 있는 일정과 저장해 둔 가계부 CSV의 보관법을 확인하고, 체크리스트나 여행 경비 정리에 맞는 대체 앱을 비교하세요.",
 "lastmod": "2026-10-28"
 },
 "/tools/ko/iphone-didei-wijet/": {
@@ -702,15 +702,15 @@
 "lastmod": "2026-10-30"
 },
 "/zh-hans/": {
-"body_signature": "46bc7fa9162f5d6f4ff58a23a8a9c82355978a3a2028def0a093bda6093912a3",
+"body_signature": "bbc8e311e3d05e08eceb2e8a945cae68c0f769e19b6361c5d0a7a8021cea10f1",
 "body_signature_version": 1,
-"description": "go ka 的 8 个 iPhone 小应用：宝宝成长纪念册、倒计时小组件、AI 行程规划、开单与报价单、卡路里记录、二维码生成、儿童英语单词、健身记录。",
+"description": "浏览独立开发者 go ka 的 8 款 iPhone 应用。用小组件给重要日子倒计时，用 AI 整理旅行行程，也能开报价单、记录宝宝成长、卡路里和训练。各款应用都可在 App Store 免费下载，无需注册。",
 "lastmod": "2026-11-02"
 },
 "/zh-hant/": {
-"body_signature": "f69468a131f4c197f14f23f3d313e864fd005b47df7a030722fefe5aac818f89",
+"body_signature": "eb5028600bc1b3e197bb04a0056c302cdee3bd80c538ae8b651e5f73d4615f7f",
 "body_signature_version": 1,
-"description": "go ka 的 8 款 iPhone App：寶寶成長紀念冊、倒數計時小工具、AI 行程規劃、開單與報價單、卡路里記錄、QR Code 產生器、兒童英文單字、健身紀錄。",
+"description": "探索獨立開發者 go ka 的 8 款 iPhone App。從倒數計時小工具、AI 旅行行程到報價單、QR Code、寶寶成長紀錄與健身日誌，按需求挑選。每款都可在 App Store 免費下載，無須註冊帳號。",
 "lastmod": "2026-11-02"
 }
 }
