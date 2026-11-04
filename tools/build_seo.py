@@ -116,14 +116,15 @@ def mask_daily(html: str, day: date) -> str:
         return ">" + t + "<"
     return re.sub(r">([^<]*)<", mask, DAILY_COUNTER.sub(r"\1", html))
 
-def _lastmod_norm(t: str, day: date | None = None) -> str:
-    """只比 <title> 和 <body>，去掉 <style> 和日期串：head 里的 SEO 块是本脚本后补的，
+def _lastmod_norm(t: str, day: date | None = None, *, include_title: bool = True) -> str:
+    """提取正文，可选保留 <title>，去掉 <style> 和日期串。head 里的 SEO 块是本脚本后补的，
     只改样式或日期字段不算内容变了（09-27 评审：改 CSS 让 11 个首页和 6 篇博客的 lastmod 全跳到当天）；
     全站页脚也不算（09-28 统一页脚时 82 页的页脚都换了位置和内容，正文没变）；空白差异一并忽略。
     给了 day 就再抹掉那天构建的每日部分（mask_daily）。"""
     if day is not None:
         t = mask_daily(t, day)
-    parts = re.findall(r"<title>.*?</title>|<body.*</body>", t, flags=re.S)
+    pattern = r"<title>.*?</title>|<body.*</body>" if include_title else r"<body.*</body>"
+    parts = re.findall(pattern, t, flags=re.S)
     t = re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S)
     t = re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), "", t, flags=re.S)
     t = re.sub(r"<footer\b.*?</footer>", "", t, flags=re.S)
@@ -151,7 +152,7 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
             last = _git_read(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
                                   capture_output=True, text=True, check=True).stdout.strip()
             return datetime.fromisoformat(last).astimezone().date().isoformat() if last else today
-        cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"), date.today())
+        cur = _lastmod_norm(text if text is not None else path.read_text(encoding="utf-8"), date.today(), include_title=False)
         revs = [l.split(" ", 1) for l in _git_read(["git", "log", "--format=%H %cI", "--", rel], cwd=ROOT,
                 capture_output=True, text=True, check=True).stdout.split("\n") if l.strip()]
         newer = cur
@@ -165,7 +166,8 @@ def git_lastmod(path: Path, text: str | None = None) -> str:
                 if entry.stdout.strip():
                     v.check_returncode()
             # 旧版按它的提交日抹每日部分（构建→评审→提交在同一天做完，提交日就是构建日；跨零点提交的那版会多算一次修改，无害）
-            v = _lastmod_norm(v.stdout, datetime.fromisoformat(when).astimezone().date()) if v.returncode == 0 else None
+            v = _lastmod_norm(v.stdout, datetime.fromisoformat(when).astimezone().date(),
+                              include_title=False) if v.returncode == 0 else None
             if v != newer:                       # 比它新的那一版（或这次构建）正文变了
                 return today if i == 0 else datetime.fromisoformat(revs[i - 1][1]).astimezone().date().isoformat()
             newer = v

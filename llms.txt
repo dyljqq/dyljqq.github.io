@@ -206,7 +206,7 @@ A baby memory book for iPhone where every photo and note becomes a page.
 - [免費工具與指南 — go ka](https://beforego.art/tools/zh-hant/) — go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。
 - [無料ツールとガイド — go ka](https://beforego.art/tools/ja/) — go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。
 - [เครื่องมือและคู่มือฟรี — go ka](https://beforego.art/tools/th/) — เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF
-- [무료 도구와 가이드 — go ka](https://beforego.art/tools/ko/) — go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교.
+- [아이폰 디데이 위젯 설정과 트리플 대체 여행 앱 비교 | go ka](https://beforego.art/tools/ko/) — 아이폰 잠금 화면에 디데이 위젯을 추가하는 법을 알아보세요. 트리플에서 NOL로 옮길 수 있는 일정과 저장해 둔 가계부 CSV의 보관법을 확인하고, 체크리스트나 여행 경비 정리에 맞는 대체 앱을 비교하세요.
 - [Kostenlose Vorlagen und Anleitungen — go ka](https://beforego.art/tools/de/) — Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern.
 - [Blog — guides for countdowns and invoices | go ka](https://beforego.art/blog/) — How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, and the difference between invoices, estimates and quotes.
 

@@ -61,6 +61,12 @@ class RestoredPageTests(unittest.TestCase):
         self.commit('2026-10-22')
         self.assertEqual(seo.git_lastmod(self.path), '2026-10-22')
 
+    def test_title_only_change_preserves_last_body_change_date(self):
+        self.commit('2026-10-22')
+        self.path.write_text(self.source.replace('<title>Page</title>', '<title>New title</title>'))
+        self.commit('2026-10-23')
+        self.assertEqual(seo.git_lastmod(self.path), '2026-10-22')
+
     def test_git_show_timeout_retries_once_and_preserves_lastmod(self):
         self.commit('2026-10-22')
         real_run = subprocess.run

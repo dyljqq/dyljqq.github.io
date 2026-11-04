@@ -3863,7 +3863,7 @@ def hub_page(lang):
         "en": ("Free tools & guides — go ka", "Free, no-sign-up tools from go ka: a days-until calculator, holiday countdowns, a countdown wallpaper maker, and an invoice template and guide."),
         "pt-BR": ("Ferramentas e guias grátis — go ka", "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal."),
         "es-MX": ("Herramientas y guías gratis — go ka", "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple."),
-        "ko": ("무료 도구와 가이드 — go ka", "go ka의 무료 가이드: 아이폰 잠금 화면에 디데이 위젯을 띄우는 방법, 그리고 트리플 서비스 종료 후 쓸 만한 여행 일정 앱 비교."),
+        "ko": ("아이폰 디데이 위젯 설정과 트리플 대체 여행 앱 비교 | go ka", "아이폰 잠금 화면에 디데이 위젯을 추가하는 법을 알아보세요. 트리플에서 NOL로 옮길 수 있는 일정과 저장해 둔 가계부 CSV의 보관법을 확인하고, 체크리스트나 여행 경비 정리에 맞는 대체 앱을 비교하세요."),
         "th": ("เครื่องมือและคู่มือฟรี — go ka", "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF"),
         "ja": ("無料ツールとガイド — go ka", "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。"),
         "de": ("Kostenlose Vorlagen und Anleitungen — go ka", "Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern."),
