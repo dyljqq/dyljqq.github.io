@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """免费工具页 / 指南页（/tools/…）：吃 Google 长尾和 AI 引用的页面，每页挂对应 app 的入口。
 
   python3 tools/build_tools.py     # 生成全部工具页 + 目录页，并写 tools/tools.json 清单
@@ -367,6 +368,7 @@ def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq
     # moving：按阴历 / 印度历定日子的节日（排灯节等）每年公历日期不同，「每年重复」会数错，改成提示明年另加
     repeat = repeat_note or ("The date moves every year, so add next year's date as a new event instead of turning on <strong>Repeat yearly</strong>."
               if moving else "Turn on <strong>Repeat yearly</strong> if you want it back next year.")
+    clean_name = esc(re.sub(r'\s\d{4}$', '', name))
     body = f"""<h1>{esc(h1)}</h1>
 <p class="lede">{intro}</p>
 {counter(d, lang, name, us)}
@@ -378,7 +380,7 @@ def holiday_page(slug, name, d, lang, title, desc, h1, intro, glance, ideas, faq
 {extra}<p>Still choosing an app? See <a href="/tools/best-countdown-widget-apps-iphone/">which countdown widget apps are free</a> — seven compared.</p>
 <h2>Countdown ideas</h2>
 <ul>{"".join(f"<li>{i}</li>" for i in ideas)}</ul>
-<h2>{esc(re.sub(r'\s\d{4}$', '', name))} in the next few years</h2>
+<h2>{clean_name} in the next few years</h2>
 <table><thead><tr><th>Year</th><th>Date</th><th>Day of the week</th></tr></thead><tbody>{"".join(f"<tr><td>{y}</td><td>{esc(F(dd))}</td><td>{dd.strftime('%A')}</td></tr>" for y, dd in next_dates)}</tbody></table>
 {tail}"""
     return {"path": f"/tools/{slug}/", "lang": lang, "title": title, "description": desc, "crumb": name, "kind": "Article",
@@ -2408,6 +2410,16 @@ for _app in BEST:
 
 
 def best_page():
+    css = """
+.countdown-choices{display:flow-root}
+.countdown-choices figure{float:right;width:204px;margin:0 0 14px 24px}
+.countdown-choices img{display:block;width:100%;height:auto;border-radius:16px}
+.countdown-choices figcaption{margin-top:8px;color:var(--soft);font-size:13px;text-align:center}
+.countdown-choices ul{margin-top:0}
+@media(max-width:640px){
+  .countdown-choices figure{float:none;width:168px;max-width:100%;margin:0 auto 16px}
+}
+"""
     rows = "".join(f"<tr><th>{esc(b['name'])}{' <small>(ours)</small>' if b.get('ours') else ''}</th><td>{esc(b['free'])}</td><td>{esc(b['widgets'])}</td><td>{esc(b['recur'])}</td><td>{esc(b['sync'])}</td><td>{('★ %.1f · %s ratings' % (b['rating'][0], format(b['rating'][1], ','))) if b['rating'] else 'New in 2026 — few ratings yet'}</td></tr>" for b in BEST)
     entries = "".join(f"""<h3>{i}. {esc(b['name'])} <span style="font-weight:400;color:var(--soft)">— {esc(b['by'])}</span></h3>
 <p>{esc(b['take'])}</p>
@@ -2415,17 +2427,19 @@ def best_page():
 <p><strong>Free tier:</strong> {esc(b['free'])}<br><strong>Widgets:</strong> {esc(b['widgets'])} · <strong>Repeats:</strong> {esc(b['recur'])} · <strong>Sync:</strong> {esc(b['sync'])}</p>
 <p><a href="{'/countdown/' if b.get('ours') else 'https://apps.apple.com/us/app/id%d' % b['id']}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'Our product page' if b.get('ours') else 'View on the App Store'} →</a></p>""" for i, b in enumerate(BEST, 1))
     body = f"""<h1>Best countdown widget apps for iPhone (2026)</h1>
-<p class="lede">Seven countdown apps that put a widget on your Home Screen or Lock Screen, compared on the things that actually differ: what the free tier includes, which widgets cost money, repeats, reminders and sync. Data comes from the US App Store listings captured on November 1, 2026. Ratings, rating counts, versions and update dates below use that same snapshot. One of the seven is ours; it is marked, and it is judged by the same table as the rest.</p>
+<p class="lede">Compare seven iPhone apps that count down to a calendar date, with a quick check of which Home Screen and Lock Screen widgets are free. Ratings, rating counts, versions and release dates below come from the November 1, 2026 US App Store snapshot. Our app is marked and compared on the same terms.</p>
 <h2>The comparison</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Free tier</th><th>Widgets</th><th>Repeats</th><th>Sync</th><th>US rating</th></tr></thead><tbody>{rows}</tbody></table>
 <p class="meta">"Not stated" means the App Store description does not say. US App Store, as of 2026-11-01. Ratings are rounded to one decimal; counts are storefront-wide, not just the current version. Update dates use UTC. A free download does not mean every listed feature is free.</p>
-<h2>Choose by what you need</h2>
+<h2 id="choose-by-need">Choose by what you need</h2>
 <p>Start with where you want to see the countdown, then check the exact widget and payment model. These choices follow the descriptions linked in each app entry; they are not results of hands-on tests.</p>
-<figure style="margin:24px auto;max-width:320px">
-<img src="/assets/art/countdown/07-920.webp" srcset="/assets/art/countdown/07-460.webp 460w, /assets/art/countdown/07-920.webp 920w" sizes="(max-width:600px) 78vw, 320px" width="460" height="575" loading="lazy" decoding="async" alt="Illustration of an iPhone Home Screen with several countdown widgets in different sizes." style="display:block;width:100%;height:auto;border-radius:20px">
-<figcaption>Choose the screen you check most often. This illustration shows the idea, not any app’s actual interface.</figcaption>
+<div class="countdown-choices">
+<figure>
+<img src="/assets/art/countdown/07-460.webp" srcset="/assets/art/countdown/07-460.webp 460w, /assets/art/countdown/07-920.webp 920w" sizes="(max-width:640px) 168px, 204px" width="460" height="575" loading="lazy" decoding="async" alt="Illustration of an iPhone Home Screen with several countdown widgets in different sizes.">
+<figcaption>Concept illustration of countdown widgets.</figcaption>
 </figure>
 <ul>
+<li id="birthday-countdown"><strong>A birthday widget that repeats every year:</strong> <a href="https://apps.apple.com/us/app/id6799846628?pt=128309253&amp;ct=web-countdown-best-apps-birthday">Countdown Widget: Any Event</a> (ours) lets you add unlimited birthdays, set them to repeat yearly and use any size of its four standard Home Screen and Lock Screen widgets for free. Your own photo as the widget background requires Pro. Find Appiness makes two separate apps: <a href="https://apps.apple.com/us/app/id1403367428" rel="nofollow noopener">Countdown</a> includes free circular and inline Lock Screen widgets, while <a href="https://apps.apple.com/us/app/id1452049360" rel="nofollow noopener">Birthday Countdown</a> lets you add unlimited birthdays for free but requires Premium for its widgets. See the <a href="/tools/birthday-countdown-widget-iphone/">birthday widget setup guide</a>.</li>
 <li><strong>A free glance without unlocking:</strong> our Countdown Widget: Any Event lists all sizes of its four standard widgets as free. Countdown by Find Appiness offers free circular and inline Lock Screen widgets; its rectangular widget is Premium. If a small indicator is enough, both deserve a look.</li>
 <li><strong>A free Home Screen widget:</strong> our app includes all four standard widget types and sizes; Event Countdown explicitly includes a free Next Event widget. Event Countdown’s multi-event and choose-your-event widgets are Premium, so decide whether the next date alone is enough.</li>
 <li><strong>Multiple time zones or Apple Watch:</strong> Countdown Star lists a time zone per event, Home Screen widgets and sync across iPhone, iPad and Apple Watch. Its free edition has ads, with an optional removal purchase. Its description does not promise a Lock Screen widget.</li>
@@ -2435,6 +2449,7 @@ def best_page():
 <li><strong>Photo-led event browsing:</strong> Days describes swiping between full-screen event photos, recurring dates and widgets on both screens. Free-feature limits are not stated. In our app, personal photo backgrounds and Photo Roll are Pro features even though the four standard widgets are free.</li>
 <li><strong>Calendar import without a recurring subscription:</strong> Find Appiness lists calendar import and a one-time Premium purchase; automatic import of new calendar events is Premium. Our app lists calendar and spreadsheet import plus export in its free feature section, while Pro offers subscriptions and a one-time Lifetime option. Manual import and automatic import are different needs.</li>
 </ul>
+</div>
 <h3>Before choosing a paid tier</h3>
 <p>Confirm three things in the app: the widget shape you want, whether the purchase renews, and whether your dates can be imported or exported. Start with a single event and the intended widget before adding a long list. The descriptions do not establish delivery timing, battery use or backup recovery reliability, and we have not tested those here. A high rating or a recent update cannot answer those questions.</p>
 <p>If you go with ours, the Home Screen and Lock Screen steps are in <a href="/blog/countdown-widget-iphone-home-lock-screen/">how to put a countdown on your iPhone Lock Screen</a>, and the <a href="/tools/christmas-countdown-widget-iphone/">Christmas countdown widget guide</a> covers a holiday setup.</p>
@@ -2455,7 +2470,7 @@ def best_page():
               ("Do these apps sync between iPhone and iPad?", "Countdown Widget: Any Event, Countdown Star and Countdown by Find Appiness list iCloud sync, and DayCount lists backup and sync across iPhone, iPad and Mac. Countdown: Event Countdown lists sync across Apple devices as a Premium feature. Countdown Buddy and Days do not state it."),
               ("Can I count up from a past date?", "Yes in Countdown Widget: Any Event, Countdown Star, Countdown by Find Appiness, Countdown: Event Countdown, DayCount, Countdown Buddy and Days — all list count-up from a past date."),
               ("Is this list independent?", "We make Countdown Widget: Any Event, so no. Everything in the table comes from the public App Store listings, the fields are the same for every app, and each competitor is linked so you can check. We did not test paid tiers."),
-            ], "js": [], "body": body}
+            ], "js": [], "css": css, "body": body}
 PAGES.append(best_page())
 
 # 10b. 葡语榜单（09-29）：联想词 app contagem regressiva (iphone / widget / grátis)、melhor app de contagem regressiva、
@@ -3898,7 +3913,8 @@ def post_figure(slug):
     key, num = POST_SHOT[slug][:2]; name = bp.store_of(BY_KEY[key])["name"]
     # 图注：没有对应功能块的图（05）在 POST_SHOT 第三项写明，别退回 app 名（09-28 评审：「Invoice Maker — Smart Invoice & Estimate Maker」重复）
     alt = POST_SHOT[slug][2] if len(POST_SHOT[slug]) > 2 else next(f["title"] for f in bp.FEAT_EN[key] if f["shot"] == num)
-    return (f'<figure class="shot">{bp.art_img(pic, "280px", f"{alt} — {name}", ' loading="lazy" decoding="async"')}'
+    img_html = bp.art_img(pic, "280px", f"{alt} — {name}", ' loading="lazy" decoding="async"')
+    return (f'<figure class="shot">{img_html}'
             f'<figcaption>{esc(alt)} — {esc(name)}</figcaption></figure>')
 
 def blog_page(post):
