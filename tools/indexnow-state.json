@@ -1,9 +1,9 @@
 {
 "/": {
-"body_signature": "9a159e4fd2a3dd79567c0dc0598a97cefaf4ecbb1aa3b32cabdb262c42daecae",
+"body_signature": "6f1e2f95331cdde529ed6ad16395f78b68997ccc804c51d6bd8169be50e2e609",
 "body_signature_version": 1,
 "description": "Eight small iPhone apps by go ka: baby memory book, countdown widget, AI trip planner, invoice maker, calorie counter, QR maker, kids' vocabulary and gym log.",
-"lastmod": "2026-11-03"
+"lastmod": "2026-11-05"
 },
 "/about/": {
 "body_signature": "6fe2351eeb7116f45982d16880289197bcfb0e37a9f8fb307e15bd1e8dca295c",
@@ -18,16 +18,16 @@
 "lastmod": "2026-10-26"
 },
 "/blog/count-down-birthday-exam-trip-iphone/": {
-"body_signature": "bebe6fe01723465639370ae9db56bbf3ed7b8e72b69cad71cfcaf750132d0e3c",
+"body_signature": "ffe0af0fb0673cd5bc24ec256d9ae29576e55cbc4822547b9652d07fafddfbcb",
 "body_signature_version": 1,
 "description": "How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/blog/countdown-widget-iphone-home-lock-screen/": {
-"body_signature": "5f0f0cb31bb9860f2a28412273beeee5d76721f52602e3323e7c89c86f4bdc3a",
+"body_signature": "d874200b8c2af548a8283afb5eaf09d44f12fc4a1cf04a1f9bf517895129541a",
 "body_signature_version": 1,
 "description": "How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/blog/invoice-vs-estimate-vs-quote/": {
 "body_signature": "f69e8da0d5a9da03dd2dc8cc455e3b8388e34240d1247d3ed2af8d153734307f",
@@ -66,10 +66,10 @@
 "lastmod": "2026-09-26"
 },
 "/countdown/": {
-"body_signature": "a6354a7a0aa989abb48138b2257a35119f00463c5d5c60cb7653ba73c4767890",
+"body_signature": "cabae3edfcaa0a78a593735ef7e511a5cd0f4adaef54899afd5e555da4787dc6",
 "body_signature_version": 1,
-"description": "A countdown widget app for iPhone: four free widgets in every size for the Home and Lock Screen, unlimited events, and a daily backup that keeps them safe.",
-"lastmod": "2026-11-02"
+"description": "Four free countdown widgets in every size for iPhone Home and Lock Screen, unlimited events, local snapshots and iCloud sync.",
+"lastmod": "2026-11-05"
 },
 "/countdown/de/": {
 "body_signature": "79707019f2521ab9eb94e98a959df1cdc940d28c5092bb523700c3e8f4705a4e",
@@ -96,10 +96,10 @@
 "lastmod": "2026-11-02"
 },
 "/countdown/ko/": {
-"body_signature": "887e7895934ca5606843334efedf8ecf082260aa33dd21dee24686a588f9f196",
+"body_signature": "62fb3b9b108214f4b691217d9fcd78fc4ca285b53e364c4028a78d7e6dee4268",
 "body_signature_version": 1,
 "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯 네 가지는 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경, 내 사진 배경, 포토 롤, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/countdown/privacy-policy/": {
 "body_signature": "6ce49ee090214cb8d1343248121a0c857f5d3470a24ee88caa5149df0cc14111",
@@ -348,70 +348,70 @@
 "lastmod": "2026-11-02"
 },
 "/tools/best-countdown-widget-apps-iphone/": {
-"body_signature": "81aafe85b21672ec2f2f138f157065e203bad58ca072b01441cad383ea89cec5",
+"body_signature": "f99c0242643ef3359acfd5930ac0d0804758f8188b1d4bd58b5f8c8945fd4fd2",
 "body_signature_version": 1,
 "description": "Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, November 2026.",
 "lastmod": "2026-11-05"
 },
 "/tools/birthday-countdown-widget-iphone/": {
-"body_signature": "0b84ff80bbc3d7ecfe39a366164fed729ac3f01f0eb596f85794e6b577fa2ee5",
+"body_signature": "8f589cb18f99b4e9d0e4edeb61a8e50d70d8e5b6c7ee3ba4ba6c88cd353dd6c8",
 "body_signature_version": 1,
 "description": "Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/christmas-countdown-widget-iphone/": {
-"body_signature": "3724db846d49ec86d2e9a35d864fc2d946d51f9eff91d779e27a19939106ac53",
+"body_signature": "7a6c0fb55975e43e5ac280279530d9a8fbec1f62e08430c0c402d57f690c7cc3",
 "body_signature_version": 1,
 "description": "A free Christmas countdown widget for your iPhone Lock Screen or Home Screen, step by step, with the iOS 27 extra large size. Christmas 2026 is December 25.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/countdown-wallpaper-maker/": {
-"body_signature": "d5e91b83308a55ee6a255106513206dc5425e4792ebd37259c5f5e5ec4cefd6d",
+"body_signature": "2862deab429479d42fc43af39276a5f262698e21fb2816a1001cb5cfac33e6b4",
 "body_signature_version": 1,
 "description": "Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/countdown-widget-with-your-own-photo-iphone/": {
-"body_signature": "22d0611938f5928fb0437a862aa58d6454bfe784fa33cc50d4eb89ad96273db4",
+"body_signature": "5b6afb05117a58e88d588501701c397564df0ab7e51b4fc1abda46637185a621",
 "body_signature_version": 1,
 "description": "Use your own photo in an iPhone countdown widget with Countdown Pro. Setup, free widget limits, Photo Roll and Lock Screen differences explained.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until-christmas/": {
-"body_signature": "21f9d5e11374b1629040ec5b37dd352f4317ca95ae3a2059cce6a5043132049f",
+"body_signature": "ce8776779fbbfbe568b0ea3b78398fd72a7f0cf24197888c491e7c3af222b368",
 "body_signature_version": 1,
 "description": "Christmas Day 2026 is on Friday, December 25, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until-diwali/": {
-"body_signature": "1f54de196ad338717b329db47b06664268a949b32c2d9668f6ce7bf36e8a2dcb",
+"body_signature": "31cd32cdbe13d84b9b6dc375bbed32915caa35d76df0997cd2a47aa1de1cddeb",
 "body_signature_version": 1,
 "description": "Diwali 2026 is on Sunday, 8 November 2026, the day of Lakshmi Puja, with Dhanteras on 6 November. Live countdown in days and weeks, plus a free iPhone widget.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until-halloween/": {
-"body_signature": "dda9faf4dee76105986e377e354cfb89fc533fe226222111cd2e7e5c57c6c84f",
+"body_signature": "5d93dbbe129b3ab8163c5d4a220ca4aae7295a67b4ba19c830459025f49f20be",
 "body_signature_version": 1,
 "description": "Halloween 2027 is on Sunday, October 31, 2027. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until-new-year/": {
-"body_signature": "78ee5da794452ec9f7d7cc4a5c1e8b35461c30cdd93b362010639852d01824ad",
+"body_signature": "6bda3639210d0c8ef80196f9fb26907db5285f24bdfb14315f5d9b8af6b5d92e",
 "body_signature_version": 1,
 "description": "New Year's Day 2027 is on Friday, January 1, 2027; New Year's Eve is Thursday, December 31, 2026. Live countdown plus a free iPhone widget.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until-thanksgiving/": {
-"body_signature": "bf4243a3c0bce0dac1e798f232c2f80f44c5f1ac72bbedd3d7fbd0cf74d82c44",
+"body_signature": "1828c979f4f62943c80ac62e1ff41233d621cac092a1298e16a84dd7ec127320",
 "body_signature_version": 1,
 "description": "Thanksgiving 2026 in the US is on Thursday, November 26, 2026, with Black Friday on the 27th. Live countdown in days and weeks, plus a free iPhone widget.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/days-until/": {
-"body_signature": "7846001221d4acf0c6d577ecdfff682ac820ed2e907f7aeaba95179d7e9e3cfd",
+"body_signature": "1a99fa5c003028f58d5d40153326aaa0f7fd60576e23bcd726cba4c3b44784d6",
 "body_signature_version": 1,
 "description": "Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/de/": {
 "body_signature": "6d469d4821fd94d61aa4c52c91e0602a7e7c2617e73b4dc63147153b7da2d129",
@@ -456,10 +456,10 @@
 "lastmod": "2026-11-02"
 },
 "/tools/disney-countdown-widget-iphone/": {
-"body_signature": "33b307b397e7c6d3f10a20a3445b550d456ea62ec69ad222183359890642f1f3",
+"body_signature": "fa6daa46777450e92d4b63846a3f7b142a0167829a5381d25497e0e05219a9f2",
 "body_signature_version": 1,
 "description": "Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/es-mx/": {
 "body_signature": "a2767da519991b818e970fad7aab21d01e7b9bb6ef64ecb66511d8384643e5cb",
@@ -546,10 +546,10 @@
 "lastmod": "2026-11-02"
 },
 "/tools/ko/yeohaeng-iljeong-aep/": {
-"body_signature": "d0f4dd3015e9b09477a53511ca9cdcd9ec173b414c9ce53a2f03e7e79c25571f",
+"body_signature": "8b31e12519991f0feed6c4c8a062efb99f0634857fd2de2a5211338547beb9a5",
 "body_signature_version": 1,
-"description": "트리플 11월 3일 서비스 종료 전 확인할 NOL 일정 이전과 가계부 CSV 백업. 체크리스트, 출발 알림, 여행 경비 분담, 캡처 정리 기준으로 5대 대체 앱을 비교하세요.",
-"lastmod": "2026-10-30"
+"description": "트리플 종료 안내 후 NOL로 일정을 옮기는 방법과 이미 저장한 CSV 보관법. 백업이 없을 때 확인할 공식 문의 경로, 체크리스트·여행 경비용 대체 앱을 비교하세요.",
+"lastmod": "2026-11-05"
 },
 "/tools/pt-br/": {
 "body_signature": "cbfea9d0ef66beb08ce7f2ed7f73694a03da3a6d79d513ce5682dccf0a275788",
@@ -630,10 +630,10 @@
 "lastmod": "2026-11-02"
 },
 "/tools/shared-countdown-app-couples/": {
-"body_signature": "4798db6da7cf0909a0f2c66ff05e715936ca5b735730b3e49f09e5eb467c4a08",
+"body_signature": "eda14abc1c93e9e60c72e1b4134f0fbe1565f79478e994cd3eb8f83eee115d01",
 "body_signature_version": 1,
 "description": "Share a countdown on both iPhones with Countdown Widget: Any Event. Inviting needs Pro; joining needs no subscription.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/th/": {
 "body_signature": "95751d6776c229e45a590eca9bcb89e4b7d5ccf8d5d774e30c6307490b7449b0",
@@ -648,10 +648,10 @@
 "lastmod": "2026-10-25"
 },
 "/tools/vacation-countdown-widget-iphone/": {
-"body_signature": "9ce5027c112d7def55d850bfa7d321c366154e8b906432aaa60d0b3e2a0a3f6a",
+"body_signature": "06b799478e6ecdb9fd61ce45583b1ea1a1225819d8dfe72d5f4dbe5bf66b2961",
 "body_signature_version": 1,
 "description": "Put the days until your vacation on your iPhone Lock Screen or Home Screen with a free widget. The Vacation event reminds you 30 days, a week and a day before.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-05"
 },
 "/tools/zh-hant/": {
 "body_signature": "ae0957235ad376b807eafe824d701f7f8b80e5254658480265cdccd51af507b3",
