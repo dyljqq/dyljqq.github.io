@@ -29,7 +29,7 @@
   {
    "shot": "10",
    "title": "Your days, kept",
-   "text": "Every day the app takes a snapshot of all your events on this device, and always before anything risky: thirty days of history, one tap to restore, and nothing leaves your phone.",
+   "text": "Keep up to 30 routine snapshots on this device, with separate safety copies. Local history is different from iCloud sync: verify your synced copy and save an export before deleting the app or changing phones.",
    "skip": [
     "th"
    ]

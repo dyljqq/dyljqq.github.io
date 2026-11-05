@@ -136,7 +136,7 @@
       "ogImage": "/assets/art/countdown/og.jpg",
       "title": "Countdown Widget — Four Free Widgets, No Event Limit",
       "oneLiner": "A countdown widget app for iPhone where every size of the four standard widgets is free and the number of events is unlimited.",
-      "description": "A countdown widget app for iPhone: four free widgets in every size for the Home and Lock Screen, unlimited events, and a daily backup that keeps them safe. Pro adds backdrops, your own photos, Photo Roll, typefaces, the Live Activity and counting down together.",
+      "description": "Four free countdown widgets in every size for iPhone Home and Lock Screen, unlimited events, local snapshots and iCloud sync. See backup limits and optional Pro features.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
       "free": "Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
       "paid": "Pro unlocks 107 of the 159 backdrops, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
@@ -164,8 +164,8 @@
           "a": "Yes. Any event can count down to a date or count up from one, and repeats can be yearly, monthly, weekly or every few days."
         },
         {
-          "q": "What happens to my countdowns if the app updates badly or I reinstall?",
-          "a": "The app takes a snapshot of everything on the device once a day, and always before anything risky. Thirty days of history are kept and any snapshot restores in one tap. iCloud sync is available and needs no account."
+          "q": "Can local snapshots restore my events after I delete the app or lose my phone?",
+          "a": "Do not rely on local snapshots for that. They are stored on this device and keep up to 30 routine snapshots, with separate safety copies. iCloud sync is a separate path and needs your Apple Account and a working connection. Before deleting the app or moving devices, verify that your events have synced and save an export outside the app. Without a synced copy or an export, recovery is not guaranteed."
         },
         {
           "q": "What does Countdown Pro unlock, and how is it sold?",
@@ -180,10 +180,16 @@
         "order": 1,
         "label": "Countdown",
         "tagline": "Days to Go & Memories to Keep",
-        "blurb": "A countdown that never loses your days — and never holds its four widgets back. Add the day that matters, put it on your home screen, and watch it come closer. No limit on how many you keep, and nothing between you and the number."
+        "blurb": "Keep your important days close, with local snapshots and optional iCloud sync. Add the day that matters, put it on your home screen, and watch it come closer. All four standard widgets are free in every size, with no limit on events."
       },
       "generated": true,
-      "noAccount": true
+      "noAccount": true,
+      "descriptionReplacements": {
+        "A countdown that never loses your days — and never holds its four widgets back.": "Keep your important days close, with local snapshots and optional iCloud sync.",
+        "Most countdown apps lose your events at the worst moment — an update, a reinstall, a phone that died. This one takes a snapshot of everything on this device every single day, and always before anything risky. Thirty days of history, one tap to restore, and nothing ever leaves your phone. Days that have already passed are never deleted either: they collect into a timeline you can look back through, with the longest wait of each year written next to it.": "Countdown keeps local snapshots on this device: up to 30 routine snapshots, with separate safety copies before a restore or migration. These can help recover an earlier version while the files remain available. Local snapshots are not an off-device backup: do not rely on them surviving app deletion or a lost or damaged phone. iCloud sync is separate and requires a signed-in iCloud account and a working sync connection. Before deleting the app or changing devices, check that your events have synced and save an export outside the app. If neither a synced copy nor an export is available, recovery is not guaranteed. Past events can also be viewed in the timeline."
+      },
+      "detailsHeading": "Features and backup limits",
+      "hideWhatsNew": true
     },
     {
       "key": "countdown-pt-br",
@@ -457,7 +463,7 @@
       "oneLiner": "iPhone용 디데이 카운트다운 앱. 표준 위젯 4종은 모든 크기가 무료이고 이벤트 수는 무제한입니다.",
       "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯 네 가지는 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경, 내 사진 배경, 포토 롤, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다.",
       "audience": "수능, 전역, 여행, 결혼식, 콘서트, 생일까지 며칠 남았는지 세는 사람. 어떤 날로부터 며칠 지났는지 세는 사람에게도.",
-      "free": "표준 위젯 4종의 모든 크기, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 매일 백업, iCloud 동기화.",
+      "free": "표준 위젯 4종의 모든 크기, 무제한 이벤트, 알림, 반복, 경과일 세기(D+), 기기 내 스냅샷, iCloud 동기화.",
       "paid": "Pro는 배경 159가지 중 107가지, 내 사진 배경, 포토 롤 위젯, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 엽니다. 7일 무료 체험이 포함된 연간 플랜, 월간 플랜, 또는 평생 이용권. 가격은 구매 전에 앱에 표시됩니다.",
       "legal": [],
       "faq": [
@@ -478,8 +484,8 @@
           "a": "셀 수 있습니다. 모든 이벤트는 어떤 날까지의 디데이(D-)로도, 어떤 날부터의 경과일(D+)로도 쓸 수 있고, 반복은 매년·매월·매주·며칠마다 중에서 고릅니다."
         },
         {
-          "q": "업데이트 오류나 재설치 후에 디데이는 어떻게 되나요?",
-          "a": "앱은 하루에 한 번, 그리고 위험한 작업 전에는 반드시 기기 안에 전체 백업을 만듭니다. 30일치 기록이 남고 어떤 백업이든 한 번의 탭으로 복원됩니다. iCloud 동기화도 되고 계정은 필요 없습니다."
+          "q": "앱을 삭제하거나 휴대폰을 잃어버려도 복원할 수 있나요?",
+          "a": "기기 내 스냅샷만으로는 복원을 보장할 수 없습니다. 일반 스냅샷은 최대 30개이며, 30일치 기록을 뜻하지 않습니다. iCloud 동기화에는 본인의 Apple 계정과 정상적인 연결이 필요합니다. 앱 삭제나 기기 변경 전 동기화 상태를 확인하고 파일을 앱 밖에 내보내 두세요. 사용할 수 있는 동기화 사본이나 내보낸 파일이 없으면 복구를 보장할 수 없습니다."
         },
         {
           "q": "Pro는 무엇이 열리고, 어떻게 구매하나요?",
@@ -487,9 +493,15 @@
         },
         {
           "q": "계정이 필요한가요?",
-          "a": "계정도 가입도 필요 없습니다. iCloud 동기화를 켜면 본인의 Apple 계정이 쓰이고, 매일 백업은 iPhone 안에 저장됩니다."
+          "a": "별도의 Countdown 계정이나 회원가입은 필요 없습니다. iCloud 동기화에는 본인의 Apple 계정이 필요하며, 기기 내 스냅샷은 iPhone 안에 저장됩니다."
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "소중한 날을 잃어버리지 않고, 네 가지 위젯을 잠가 두지도 않는 디데이·카운트다운 앱입니다.": "중요한 날을 위젯으로 가까이 두세요. 기기 내 스냅샷과 iCloud 동기화를 지원합니다.",
+        "계정이 필요 없는 iCloud 동기화": "본인의 Apple 계정을 사용하는 iCloud 동기화",
+        "이 분야에서 가장 흔한 불만은 \"업데이트했더니 다 사라졌다\"입니다. 이 앱은 매일 이 기기에 모든 이벤트의 스냅샷을 저장하고, 위험한 작업 전에도 반드시 저장합니다. 30일치 기록, 한 번의 탭으로 복원, 그리고 아무것도 기기를 떠나지 않습니다. 지나간 날도 지우지 않습니다. 되돌아볼 수 있는 타임라인으로 쌓이고, 해마다 가장 오래 기다린 일이 그 옆에 적힙니다.": "기기에 일반 스냅샷을 최대 30개 보관하고, 복원이나 데이터 이전 전에는 별도의 안전 사본을 만듭니다. 이는 30일치 기록을 보장한다는 뜻이 아닙니다. 앱 삭제나 휴대폰 분실 후에는 기기 내 사본을 이용한 복구를 보장할 수 없습니다. 삭제나 기기 변경 전에는 iCloud 동기화 상태를 확인하고 파일을 앱 밖에 내보내 두세요. 사용할 수 있는 동기화 사본이나 내보낸 파일이 없으면 복구를 보장할 수 없습니다. 지나간 이벤트는 타임라인에서 돌아볼 수 있습니다."
+      },
+      "detailsHeading": "기능과 백업 안내"
     },
     {
       "key": "countdown-th",

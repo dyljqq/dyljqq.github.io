@@ -381,8 +381,11 @@ def software_jsonld(app, kind="product"):
         for cand in ((vf, "en") if lang in ("en", "en-GB") else (vf,)):   # 与页面一致：非英文页不拿英文视频顶
             f = ROOT / "assets" / parent["key"] / "preview" / f"{cand}.mp4"
             if f.exists():
+                video_description = st["description"].split("\n")[0]
+                for original, reviewed in app.get("descriptionReplacements", {}).items():
+                    video_description = video_description.replace(original, reviewed)
                 d["video"] = {"@type": "VideoObject", "name": bp.t(lang, "video_label", name=st["name"]),
-                              "description": st["description"].split("\n")[0][:200],
+                              "description": video_description[:200],
                               "thumbnailUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.jpg",
                               "contentUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.mp4",
                               "uploadDate": git_lastmod(f), "inLanguage": lang}

@@ -470,7 +470,10 @@ APPLE = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2
 def render(a):
     p, lang, s = parent_of(a), lang_of(a), store_of(a)
     name = s["name"]
-    lede, sections, fine = parse_desc(retract(p["key"], s["description"]))
+    description = retract(p["key"], s["description"])
+    for original, reviewed in a.get("descriptionReplacements", {}).items():
+        description = description.replace(original, reviewed)
+    lede, sections, fine = parse_desc(description)
     video, poster = video_of(a)
     icon = cdn(s["icon"], 256) if s.get("icon", "").startswith("http") else (p.get("icon") or "")
     fam = family(a)
@@ -478,6 +481,7 @@ def render(a):
     hl = highlights(a, s, lang)
     home = "/" if lang in ("en", "en-GB") or not (ROOT / lang.lower() / "index.html").exists() else f"/{lang.lower()}/"
     hl_html, details_h = hl if hl else ("", None)
+    details_h = a.get("detailsHeading") or details_h
     copy = PAGEWREN_COPY[lang] if p["key"] == "pagewren" else None
     story_html, pricing_html = pagewren_sections(copy, a, s) if copy else ("", "")
     hero_heading = f'<h1>{title_html(name, lang)}</h1>'

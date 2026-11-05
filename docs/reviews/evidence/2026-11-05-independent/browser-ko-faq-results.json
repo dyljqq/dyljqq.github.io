@@ -1,0 +1,146 @@
+{
+  "results": [
+    {
+      "path": "/countdown/ko/",
+      "mode": "desktop",
+      "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793858361820.675,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "35712.5"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_ko_-desktop.png"
+    },
+    {
+      "path": "/countdown/ko/",
+      "mode": "mobile",
+      "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793858364558.68,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "35712.60"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_ko_-mobile.png"
+    }
+  ]
+}

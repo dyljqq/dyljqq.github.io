@@ -1,0 +1,1620 @@
+{
+  "results": [
+    {
+      "path": "/",
+      "mode": "desktop",
+      "title": "go ka — Small iPhone apps for everyday things",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857713771.307,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.4"
+            }
+          }
+        }
+      ],
+      "screenshot": "_-desktop.png"
+    },
+    {
+      "path": "/",
+      "mode": "mobile",
+      "title": "go ka — Small iPhone apps for everyday things",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857715694.777,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.22"
+            }
+          }
+        }
+      ],
+      "screenshot": "_-mobile.png"
+    },
+    {
+      "path": "/de/",
+      "mode": "desktop",
+      "title": "go ka — kleine iPhone-Apps für jeden Tag",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857717041.782,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.40"
+            }
+          }
+        }
+      ],
+      "screenshot": "_de_-desktop.png"
+    },
+    {
+      "path": "/de/",
+      "mode": "mobile",
+      "title": "go ka — kleine iPhone-Apps für jeden Tag",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857718401.548,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.59"
+            }
+          }
+        }
+      ],
+      "screenshot": "_de_-mobile.png"
+    },
+    {
+      "path": "/ja/",
+      "mode": "desktop",
+      "title": "go ka — 毎日を彩るiPhoneアプリ",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857719731.236,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.77"
+            }
+          }
+        }
+      ],
+      "screenshot": "_ja_-desktop.png"
+    },
+    {
+      "path": "/ja/",
+      "mode": "mobile",
+      "title": "go ka — 毎日を彩るiPhoneアプリ",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857721065.33,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.95"
+            }
+          }
+        }
+      ],
+      "screenshot": "_ja_-mobile.png"
+    },
+    {
+      "path": "/es-mx/",
+      "mode": "desktop",
+      "title": "go ka — apps pequeñas para iPhone, para el día a día",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857722406.549,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.113"
+            }
+          }
+        }
+      ],
+      "screenshot": "_es-mx_-desktop.png"
+    },
+    {
+      "path": "/es-mx/",
+      "mode": "mobile",
+      "title": "go ka — apps pequeñas para iPhone, para el día a día",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/ko/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857723744.557,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.131"
+            }
+          }
+        }
+      ],
+      "screenshot": "_es-mx_-mobile.png"
+    },
+    {
+      "path": "/countdown/",
+      "mode": "desktop",
+      "title": "Countdown Widget — Four Free Widgets, No Event Limit",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857725065.194,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.150"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_-desktop.png"
+    },
+    {
+      "path": "/countdown/",
+      "mode": "mobile",
+      "title": "Countdown Widget — Four Free Widgets, No Event Limit",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857726359.858,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.197"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_-mobile.png"
+    },
+    {
+      "path": "/countdown/ko/",
+      "mode": "desktop",
+      "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857727613.624,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.255"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_ko_-desktop.png"
+    },
+    {
+      "path": "/countdown/ko/",
+      "mode": "mobile",
+      "title": "디데이 카운트다운 위젯 — 무료, 이벤트 무제한",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857728901.305,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.313"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_ko_-mobile.png"
+    },
+    {
+      "path": "/invoiceqr/",
+      "mode": "desktop",
+      "title": "Invoice Maker — Invoices, Estimates and Payment QR on iPhone",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/invoiceqr/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/invoiceqr/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/invoiceqr/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/invoiceqr/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/invoiceqr/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/invoiceqr/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/invoiceqr/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/invoiceqr/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/invoiceqr/ko/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/invoiceqr/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/invoiceqr/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/invoiceqr/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857730150.161,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.371"
+            }
+          }
+        }
+      ],
+      "screenshot": "_invoiceqr_-desktop.png"
+    },
+    {
+      "path": "/invoiceqr/",
+      "mode": "mobile",
+      "title": "Invoice Maker — Invoices, Estimates and Payment QR on iPhone",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/invoiceqr/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/invoiceqr/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/invoiceqr/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/invoiceqr/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/invoiceqr/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/invoiceqr/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/invoiceqr/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/invoiceqr/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/invoiceqr/ko/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/invoiceqr/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/invoiceqr/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/invoiceqr/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857731443.43,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.418"
+            }
+          }
+        }
+      ],
+      "screenshot": "_invoiceqr_-mobile.png"
+    },
+    {
+      "path": "/invoiceqr/es-mx/",
+      "mode": "desktop",
+      "title": "Nota de Venta, Cotización — cotiza y cobra con QR en iPhone",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/invoiceqr/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/invoiceqr/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/invoiceqr/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/invoiceqr/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/invoiceqr/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/invoiceqr/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/invoiceqr/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/invoiceqr/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/invoiceqr/ko/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/invoiceqr/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/invoiceqr/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/invoiceqr/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857732899.085,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.476"
+            }
+          }
+        }
+      ],
+      "screenshot": "_invoiceqr_es-mx_-desktop.png"
+    },
+    {
+      "path": "/invoiceqr/es-mx/",
+      "mode": "mobile",
+      "title": "Nota de Venta, Cotización — cotiza y cobra con QR en iPhone",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/invoiceqr/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/invoiceqr/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/invoiceqr/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/invoiceqr/it/"
+        },
+        {
+          "lang": "es",
+          "href": "https://beforego.art/invoiceqr/es/"
+        },
+        {
+          "lang": "es-MX",
+          "href": "https://beforego.art/invoiceqr/es-mx/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/invoiceqr/pt-br/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/invoiceqr/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/invoiceqr/ko/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/invoiceqr/zh-hant/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/invoiceqr/th/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/invoiceqr/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857734185.567,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.532"
+            }
+          }
+        }
+      ],
+      "screenshot": "_invoiceqr_es-mx_-mobile.png"
+    },
+    {
+      "path": "/dailycalorie/",
+      "mode": "desktop",
+      "title": "DailyCalorie – AI Photo Calorie Tracker for iPhone · Support",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857735446.204,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.585"
+            }
+          }
+        }
+      ],
+      "screenshot": "_dailycalorie_-desktop.png"
+    },
+    {
+      "path": "/dailycalorie/",
+      "mode": "mobile",
+      "title": "DailyCalorie – AI Photo Calorie Tracker for iPhone · Support",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857736693.603,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.600"
+            }
+          }
+        }
+      ],
+      "screenshot": "_dailycalorie_-mobile.png"
+    },
+    {
+      "path": "/tools/countdown-wallpaper-maker/",
+      "mode": "desktop",
+      "title": "Free Online Countdown Wallpaper Maker, With Your Own Photo",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [
+        "",
+        ""
+      ],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857737969.354,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.616"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_countdown-wallpaper-maker_-desktop.png"
+    },
+    {
+      "path": "/tools/countdown-wallpaper-maker/",
+      "mode": "mobile",
+      "title": "Free Online Countdown Wallpaper Maker, With Your Own Photo",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [
+        "",
+        ""
+      ],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857739305.292,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.637"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_countdown-wallpaper-maker_-mobile.png"
+    },
+    {
+      "path": "/tools/invoice-template/",
+      "mode": "desktop",
+      "title": "Free Online Invoice Maker — No Sign-up, No Watermark",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/tools/invoice-template/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/tools/de/rechnungsvorlage/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/tools/invoice-template/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857740664.047,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.658"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_invoice-template_-desktop.png"
+    },
+    {
+      "path": "/tools/invoice-template/",
+      "mode": "mobile",
+      "title": "Free Online Invoice Maker — No Sign-up, No Watermark",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/tools/invoice-template/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/tools/de/rechnungsvorlage/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/tools/invoice-template/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857741949.535,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.681"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_invoice-template_-mobile.png"
+    },
+    {
+      "path": "/tools/days-until/",
+      "mode": "desktop",
+      "title": "Days Until Calculator — how many days until any date",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/tools/days-until/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/tools/pt-br/quantos-dias-faltam/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/tools/ja/ato-nannichi/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/tools/days-until/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857743770.131,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.704"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_days-until_-desktop.png"
+    },
+    {
+      "path": "/tools/days-until/",
+      "mode": "mobile",
+      "title": "Days Until Calculator — how many days until any date",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/tools/days-until/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/tools/pt-br/quantos-dias-faltam/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/tools/ja/ato-nannichi/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/tools/days-until/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857745051.28,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.725"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_days-until_-mobile.png"
+    },
+    {
+      "path": "/tools/ko/yeohaeng-iljeong-aep/",
+      "mode": "desktop",
+      "title": "트리플 대체 앱 비교: NOL 이전·가계부 백업·체크리스트와 여행 경비 | BeforeGo",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857746358.568,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.746"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_ko_yeohaeng-iljeong-aep_-desktop.png"
+    },
+    {
+      "path": "/tools/ko/yeohaeng-iljeong-aep/",
+      "mode": "mobile",
+      "title": "트리플 대체 앱 비교: NOL 이전·가계부 백업·체크리스트와 여행 경비 | BeforeGo",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857747681.167,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.764"
+            }
+          }
+        }
+      ],
+      "screenshot": "_tools_ko_yeohaeng-iljeong-aep_-mobile.png"
+    },
+    {
+      "path": "/countdown/privacy-policy/",
+      "mode": "desktop",
+      "title": "Countdown Privacy Policy",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857748938.021,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.780"
+            }
+          }
+        },
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857748955.123,
+              "url": "http://127.0.0.1:8801/favicon.ico",
+              "networkRequestId": "24086.793"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_privacy-policy_-desktop.png"
+    },
+    {
+      "path": "/countdown/privacy-policy/",
+      "mode": "mobile",
+      "title": "Countdown Privacy Policy",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857750214.357,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "24086.795"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_privacy-policy_-mobile.png"
+    }
+  ],
+  "exportState": {
+    "title": "Independent review trip",
+    "date": "2026-12-25",
+    "dimensions": "1206 × 2622",
+    "filesHint": false,
+    "files": [
+      "countdown-wallpaper.jpg"
+    ]
+  }
+}

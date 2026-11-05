@@ -1,0 +1,155 @@
+{
+  "results": [
+    {
+      "path": "/countdown/",
+      "mode": "desktop",
+      "title": "Countdown Widget — Four Free Widgets, No Event Limit",
+      "width": 1280,
+      "viewport": 1280,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857987054.224,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "28760.5"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_-desktop.png"
+    },
+    {
+      "path": "/countdown/",
+      "mode": "mobile",
+      "title": "Countdown Widget — Four Free Widgets, No Event Limit",
+      "width": 375,
+      "viewport": 375,
+      "missingImages": [],
+      "headerOutside": [],
+      "languages": [
+        {
+          "lang": "en",
+          "href": "https://beforego.art/countdown/"
+        },
+        {
+          "lang": "pt-BR",
+          "href": "https://beforego.art/countdown/pt-br/"
+        },
+        {
+          "lang": "de",
+          "href": "https://beforego.art/countdown/de/"
+        },
+        {
+          "lang": "fr",
+          "href": "https://beforego.art/countdown/fr/"
+        },
+        {
+          "lang": "it",
+          "href": "https://beforego.art/countdown/it/"
+        },
+        {
+          "lang": "ja",
+          "href": "https://beforego.art/countdown/ja/"
+        },
+        {
+          "lang": "ko",
+          "href": "https://beforego.art/countdown/ko/"
+        },
+        {
+          "lang": "th",
+          "href": "https://beforego.art/countdown/th/"
+        },
+        {
+          "lang": "zh-Hans",
+          "href": "https://beforego.art/countdown/zh-hans/"
+        },
+        {
+          "lang": "zh-Hant",
+          "href": "https://beforego.art/countdown/zh-hant/"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://beforego.art/countdown/"
+        }
+      ],
+      "errors": [
+        {
+          "method": "Log.entryAdded",
+          "params": {
+            "entry": {
+              "source": "network",
+              "level": "error",
+              "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+              "timestamp": 1793857991342.103,
+              "url": "http://127.0.0.1:8801/_vercel/insights/script.js",
+              "networkRequestId": "28760.53"
+            }
+          }
+        }
+      ],
+      "screenshot": "_countdown_-mobile.png"
+    }
+  ],
+  "exportState": {
+    "title": "Independent review trip",
+    "date": "2026-12-25",
+    "dimensions": "1206 × 2622",
+    "filesHint": false,
+    "files": [
+      "countdown-wallpaper.jpg"
+    ]
+  }
+}
