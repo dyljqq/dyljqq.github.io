@@ -55,7 +55,7 @@ A countdown widget app for iPhone where every size of the four standard widgets 
 - Platform: iOS (iPhone, iPad)
 - Category: Productivity
 - For: Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.
-- Free: Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.
+- Free: Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, local snapshots, iCloud sync.
 - Paid: Pro unlocks 107 of the 159 backdrops, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.
 
 ### Smart Invoice & Estimate Maker

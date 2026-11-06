@@ -323,7 +323,7 @@ def shell(pg, body):
     <a href="{home}">{esc(T("nav_all_apps"))}</a>
     <a href="{hub}">{esc(ts(lang, "tools"))}</a>
     <a href="/blog/">Blog</a>
-    <a href="mailto:{EMAIL}">{esc(T("nav_support"))}</a>
+    <a href="/support/" hreflang="en">{esc(T("nav_support"))}</a>
   </nav>
   <!-- lang:start -->
   <!-- lang:end -->
@@ -2002,6 +2002,11 @@ PAGES.append({"path": ZH_LOCK_PATH, "iphone_only": True, "lang": "zh-Hant", "kin
 # jp 商店 10-10 已是 1.4.16（Pro＝背景 / 自分の写真 / Pro フォント / ロック画面のライブアクティビティ / 招待）。
 KT1, KT2, KTM1, KTM2, KT28A, KT28B = (dt.date(2027, 1, 16), dt.date(2027, 1, 17), dt.date(2027, 1, 23), dt.date(2027, 1, 24),
                                        dt.date(2028, 1, 15), dt.date(2028, 1, 16))
+KT_CHECKED = dt.date(2026, 11, 6)
+KT_GUIDE = "https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r9/r9_jukenannai.html"
+KT_OVERVIEW = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017475.pdf"
+KT_TICKET = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017486.pdf"
+KT_RULES = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017490.pdf"
 JA_APP = ("「カウントダウン ウィジェット: 記念日」は私たちの無料 iPhone アプリです。4種類のウィジェットはすべて無料で、ホーム画面にもロック画面にも置けます。"
           "イベント数は無制限、繰り返しと通知、アカウント不要の iCloud 同期にも対応しています。")
 PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
@@ -2029,12 +2034,12 @@ PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebAppli
 <p>今日を0日として、指定した日までに日付が何回変わるかを数えます。時刻はあなたの端末のタイムゾーンで数えます。指定した日が今日なら0日、過去の日付なら「何日たったか」になるので、記念日や禁煙の日数にも使えます。</p>
 <p>サイトを開かなくても残り日数が見えるように、下のアプリで iPhone のホーム画面やロック画面に置くこともできます。</p>"""})
 
-PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29",
+PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29", "updated": KT_CHECKED.isoformat(),
   "more": [
     ("共通テスト2027の追・再試験はいつですか？", f"{fmt(KTM1, 'ja')}・{KTM2.day}日（{'月火水木金土日'[KTM2.weekday()]}）です。"),
     ("共通テストまであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2026, 12, 16), 'ja')}、30日前は{fmt(KT1 - dt.timedelta(days=30), 'ja')}です。"),
-    ("共通テスト当日の持ち物は？", "受験票・写真票、黒鉛筆（H/F/HB）、プラスチック消しゴム、時計（アラーム音OFF）、昼食・飲料、身分証明書、防寒着が基本です。シャープペンシルはメモのみ可でマーク不可です。"),
-    ("自己採点はいつ行われますか？", "各予備校（河合塾・駿台等）の解答速報は試験当日の夜から公開され、学校での自己採点は試験翌日の月曜日に行われるのが一般的です。"),
+    ("共通テスト当日の持ち物は？", "印刷した受験票、有効な顔写真付き身分証明書、黒鉛筆（H/F/HB）、プラスチック製の消しゴムを用意します。受験票をスマートフォンで見せるだけでは受験できません。時計や服装にも制限があるため、下のチェックリストと令和9年度の受験案内を確認してください。"),
+    ("自己採点はいつ行いますか？", "学校や予備校の案内に従って予定を決めてください。自己採点の結果と、大学入試センターが通知する成績は別のものです。"),
   ],
   "title": "共通テスト2027 カウントダウン・待ち受け（1/16・17）", "crumb": "共通テスト2027",
   "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。",
@@ -2055,28 +2060,32 @@ PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Arti
 <tr><th>追・再試験</th><td>{fmt(KTM1, "ja")}・{fmt(KTM2, "ja")}</td></tr>
 <tr><th>2028年（令和10年度）の本試験</th><td>{fmt(KT28A, "ja")}・{fmt(KT28B, "ja")}</td></tr>
 </tbody></table>
-<p class="meta">出典：大学入試センター「令和9年度試験」「令和10年度試験」（{SOURCES_CHECKED.year}年{SOURCES_CHECKED.month}月{SOURCES_CHECKED.day}日に確認）。出願の手続きや時間割は、大学入試センターの案内で確認してください。</p>
+<p class="meta">出典：大学入試センター「<a href="{KT_GUIDE}">令和9年度 受験案内</a>」「<a href="https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r10/">令和10年度試験</a>」。{KT_CHECKED.year}年{KT_CHECKED.month}月{KT_CHECKED.day}日に確認。追・再試験は災害などにより日程が変わる場合があります。</p>
 <h2>本試験2日間の時間割</h2>
+<p>以下は通常の試験時間です（日本時間）。受験上の配慮がある場合は、個別の通知も確認してください。</p>
 <table><thead><tr><th>日程</th><th>科目</th><th>試験時間</th></tr></thead><tbody>
-<tr><th rowspan="4">1日目（土）</th><td>地理歴史・公民</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
+<tr><th rowspan="4">1月16日（土）</th><td>地理歴史・公民</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
 <tr><td>国語</td><td>13:00〜14:30（90分）</td></tr>
-<tr><td>外国語（リーディング）</td><td>15:10〜16:30（80分）</td></tr>
-<tr><td>外国語（リスニング）</td><td>17:10〜18:10（機器操作含む60分、解答30分）</td></tr>
-<tr><th rowspan="5">2日目（日）</th><td>理科①</td><td>9:30〜10:30（60分）</td></tr>
-<tr><td>数学①</td><td>11:20〜12:30（70分）</td></tr>
-<tr><td>数学②</td><td>13:50〜15:00（70分）</td></tr>
-<tr><td>情報Ⅰ</td><td>15:50〜16:50（60分）</td></tr>
-<tr><td>理科②</td><td>17:40〜19:50（2科目）/ 18:50〜19:50（1科目）</td></tr>
+<tr><td>外国語（英語リーディング・その他の外国語）</td><td>15:20〜16:40（80分）</td></tr>
+<tr><td>英語（リスニング）</td><td>17:20〜18:20（機器操作を含む60分、解答30分）</td></tr>
+<tr><th rowspan="4">1月17日（日）</th><td>理科</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
+<tr><td>数学①</td><td>13:00〜14:10（70分）</td></tr>
+<tr><td>数学②</td><td>15:00〜16:10（70分）</td></tr>
+<tr><td>情報Ⅰ</td><td>17:00〜18:00（60分）</td></tr>
 </tbody></table>
-<p class="meta">時間割の開始・終了時刻は前年度までの実施基準に基づきます。年度ごとの確定時刻は大学入試センター発表の受験票・実施要項で必ずご確認ください。</p>
+<p class="meta">出典：<a href="{KT_OVERVIEW}">令和9年度 受験案内「A 試験概要」8ページ（PDF）</a>。地理歴史・公民と理科で2科目を受験する場合、解答は各60分で、その間の10分は答案回収などに使われます。登録した科目数に対応する時間を確認してください。</p>
+<p><strong>試験開始時刻と入室終了時刻は異なります。</strong>入室終了時刻は、12月上旬に公開予定の「受験上の注意」で確認してください。受験票で指定された試験場・科目も照合し、当日の行き方を決めておきましょう。</p>
 <h2>当日の持ち物チェックリスト</h2>
 <ul>
-<li><strong>受験票・写真票</strong>：万が一忘れた場合は、会場の試験場本部に申し出て「仮受験票」の発行を受けられます。慌てずに会場へ向かいましょう。</li>
-<li><strong>黒鉛筆（H、F、HB）とプラスチック消しゴム</strong>：マークシートの読み取り精度の関係上、鉛筆の濃さは厳守です。シャープペンシルはメモや計算のみ使用可能で、マークには使えません。</li>
-<li><strong>腕時計（アラーム機能のないもの）</strong>：スマートウォッチ等の通信機能・計算機能付き時計は使用不可。音やバイブが鳴ると不正行為とみなされる恐れがあるため、事前にアラームを完全に切っておきましょう。</li>
-<li><strong>昼食・飲料</strong>：試験場近くのコンビニは混雑・品切れになりやすいため、自宅近くで事前に用意しておくのが安心です。</li>
-<li><strong>防寒具・上着</strong>：定期的な換気で教室内の温度差が大きいため、着脱しやすい前開きのカーディガンやパーカーが適しています。英文字や格言が入った衣服は着用できない場合があります。</li>
+<li><strong>印刷した受験票</strong>：2026年12月4日10時から出願サイトのマイページで取得できます。A4の白い紙に縦向き・原寸で印刷し、写真などが鮮明か確認します。スマートフォン画面の提示では受験できません。</li>
+<li><strong>顔写真付きの身分証明書</strong>：氏名・生年月日が確認でき、試験当日に有効な学生証やパスポートなどが必要です。</li>
+<li><strong>黒鉛筆（H、F、HB）とプラスチック製の消しゴム</strong>：シャープペンシルは黒い芯でメモ・計算に使う場合に限られ、マークには使えません。格言などが印刷された鉛筆も避けてください。</li>
+<li><strong>規定に合う時計</strong>：辞書・計算・端末機能付き、機能が判別しづらいもの、秒針音のするもの、キッチンタイマー・学習タイマー、大型の時計は使えません。詳しい条件は受験案内で確認してください。</li>
+<li><strong>スマートフォン・スマートウォッチ等の収納</strong>：入室終了時刻までにアラームを解除して電源を切り、かばんへ。電源が切れていても衣服のポケットに入れたままでは不正行為になります。</li>
+<li><strong>服装・防寒</strong>：コート類は着用できます。英文字や地図などがプリントされた服は避け、ひざ掛け等を使う場合は事前に監督者の許可を受けてください。</li>
 </ul>
+<p>昼食・飲料や会場までの交通手段も前日までに準備しておくと安心です。受験票に「上履き持参」とある場合は、上履きと外履きを入れる袋も用意してください。</p>
+<p class="meta">出典：<a href="{KT_TICKET}">令和9年度 受験案内「C-2 受験票」42〜44ページ（PDF）</a>、<a href="{KT_RULES}">「D 試験」48〜49ページ（PDF）</a>。12月上旬の「受験上の注意」公開後は、<a href="{KT_GUIDE}">大学入試センターの最新案内</a>も確認してください。</p>
 <h2>節目の日付</h2>
 <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
 <h2>カウントダウン時期別の学習ポイント</h2>
@@ -2377,7 +2386,7 @@ BEST = [
   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "since": 2026, "ours": True,
    "free": "Unlimited events, every size of the four standard widgets on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds the Pro backdrops, your own photos, the Photo Roll widget, typefaces, the Live Activity and counting down with someone you invite.",
    "widgets": "Four standard widgets on Home Screen + Lock Screen, all sizes free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The listing also describes daily on-device snapshots with thirty days of restore history, plus calendar and spreadsheet import and export. Its 27 US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
+   "take": "All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The app keeps up to 30 routine snapshots on this device, not a guaranteed 30 days of history or an off-device backup. These snapshots do not guarantee recovery after uninstalling the app or replacing the device. Before either, verify a synced copy and save an export outside the app. Calendar and spreadsheet import and export are also available. Its 27 US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "since": 2012,
    "free": "Free version with ads and an optional Remove Ads purchase (there is also a paid ad-free version); add as many events as you like, with iCloud sync, repeating events and Home Screen widgets listed as features.",
    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "In the free version",
@@ -2457,6 +2466,7 @@ def best_page():
 {entries}
 <h2>How we chose</h2>
 <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>
+<p>We corrected our app's local-snapshot limits on November 6, 2026 after checking its implementation and <a href="/countdown/">current product guidance</a>. This was a source review, not a device-recovery test. The App Store ratings, versions and competitor descriptions remain the November 1 snapshot.</p>
 <p>Not ready to install an app? <a href="/tools/countdown-wallpaper-maker/" data-track-id="wp-entry-best-apps">Make a free Lock Screen countdown wallpaper from your own photo in your browser</a>. The saved image is a still picture; its number does not update by itself.</p>"""
     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
             "updated": "2026-11-01",
@@ -3417,7 +3427,7 @@ PAGES.append({"path": "/tools/de/rechnungsvorlage-handwerker/", "lang": "de", "k
     ("Wie viel kann mein Kunde von der Handwerkerrechnung absetzen?", "Für begünstigte Renovierungs-, Erhaltungs- und Modernisierungsmaßnahmen beträgt die Steuerermäßigung auf Antrag 20 % der Arbeitskosten, höchstens 1 200 € im Jahr (§ 35a Abs. 3 und 5 in Verbindung mit § 2 Abs. 7 EStG). Die Arbeiten müssen im Haushalt des Kunden in der EU oder im EWR erbracht werden (§ 35a Abs. 4). Material zählt nicht dazu; Rechnung und Zahlung auf dein Konto sind Voraussetzung. Ausgeschlossen sind öffentlich geförderte Maßnahmen mit zinsverbilligten Darlehen oder steuerfreien Zuschüssen sowie Aufwendungen, die Betriebsausgaben oder Werbungskosten darstellen oder bereits als Sonderausgaben oder außergewöhnliche Belastungen berücksichtigt wurden; ebenso Aufwendungen, die dem Grunde nach unter § 10 Abs. 1 Nr. 5 fallen."),
     ("Darf der Kunde bar zahlen?", "Ja, aber dann kann er die Steuerermäßigung nach § 35a EStG nicht nutzen: Dafür muss das Geld auf das Konto des Leistungserbringers gehen (§ 35a Abs. 5 Satz 3). Vereinbare für diesen Zweck eine Banküberweisung und gib die Bankverbindung an."),
     ("Muss ich Privatkunden eine Rechnung schreiben?", "Bei steuerpflichtigen Werklieferungen oder sonstigen Leistungen im Zusammenhang mit einem Grundstück musst du auch Privatkunden innerhalb von sechs Monaten nach der Leistung eine Rechnung ausstellen (§ 14 Abs. 2 Satz 2 Nr. 3 UStG). Als Kleinunternehmer kläre den konkreten Fall mit deiner Steuerberatung."),
-    ("Brauche ich als Handwerker eine E-Rechnung?", 'Für Privatkunden besteht diese Pflicht nicht; bei inländischen Geschäftskunden kommt es auf die geltenden Übergangsregeln und Ausnahmen an. Prüfe die <a href="/tools/de/rechnungsvorlage/" data-track-id="iq-hw-faq-erechnung">E-Rechnung-Fristen</a>, bevor du das PDF versendest. Ein PDF ist keine strukturierte E-Rechnung.'),
+    ("Brauche ich als Handwerker eine E-Rechnung?", 'Für Privatkunden besteht diese Pflicht nicht; bei inländischen Geschäftskunden kommt es auf die geltenden Übergangsregeln und Ausnahmen an. Prüfe die E-Rechnung-Fristen im verlinkten Leitfaden auf dieser Seite, bevor du das PDF versendest. Ein PDF ist keine strukturierte E-Rechnung.'),
     ("Gibt es eine App für Handwerkerrechnungen?", "Ja. Smart Rechnung & Angebot auf dem iPhone unterstützt „Std.“ als Einheit und Mengen wie 1,5. Wiederverwendbare Klauseln drucken den passenden Hinweis unten auf die Rechnung. Du prüfst und aktualisierst dabei den Arbeitskostenbetrag für jeden Auftrag; das erste Dokument ist kostenlos, ohne Konto."),
   ],
   "body": f"""<h1>Rechnungsvorlage für Handwerker</h1>
@@ -3480,7 +3490,7 @@ PAGES.append({"path": "/tools/de/rechnungsvorlage-freiberufler/", "lang": "de", 
     ("Wie schreibe ich als Freiberufler eine Rechnung ohne Umsatzsteuer?", "Nenne den tatsächlich einschlägigen Grund: Kleinunternehmerbefreiung, eine konkrete Steuerbefreiung der Leistung oder Steuerschuldnerschaft des Leistungsempfängers. Der Status „Freiberufler“ allein rechtfertigt keine Rechnung ohne Umsatzsteuer. Die drei Fälle und ihre Rechnungshinweise sind auf dieser Seite getrennt erklärt."),
     ("Was gehört auf eine Rechnung an einen Geschäftskunden im EU-Ausland?", "Wenn bei einer sonstigen Leistung nach § 3a Abs. 2 UStG im anderen EU-Mitgliedstaat der Empfänger die Steuer schuldet, gehören „Steuerschuldnerschaft des Leistungsempfängers“ und beide USt-IdNr. auf die Rechnung. Nach § 14a Abs. 1 ist sie bis zum 15. des Folgemonats auszustellen; nicht jede Rechnung ins EU-Ausland fällt automatisch darunter."),
     ("Darf ich als Freiberufler immer 7 % berechnen?", "Nein. Entscheidend ist der Umsatz, nicht deine Berufsbezeichnung. § 12 Abs. 2 Nr. 7 Buchst. c UStG nennt die Einräumung, Übertragung und Wahrnehmung von Rechten aus dem Urheberrechtsgesetz. Ob dein Vertrag darunter fällt, klärst du im Zweifel mit deiner Steuerberatung."),
-    ("Muss ich als Freiberufler E-Rechnungen schreiben?", 'Dein Freiberuflerstatus allein entscheidet das nicht: Bei inländischen B2B-Leistungen sind Übergangsregeln und Ausnahmen zu prüfen; für Privatkunden besteht diese Pflicht nicht. Lies die <a href="/tools/de/rechnungsvorlage/" data-track-id="iq-fb-faq-erechnung">Fristen zur E-Rechnung</a>. Diese Browser-Vorlage erstellt nur PDF.'),
+    ("Muss ich als Freiberufler E-Rechnungen schreiben?", 'Dein Freiberuflerstatus allein entscheidet das nicht: Bei inländischen B2B-Leistungen sind Übergangsregeln und Ausnahmen zu prüfen; für Privatkunden besteht diese Pflicht nicht. Lies die Fristen zur E-Rechnung im verlinkten Leitfaden auf dieser Seite. Diese Browser-Vorlage erstellt nur PDF.'),
     ("Gibt es eine App für Freiberufler-Rechnungen mit verschiedenen Steuersätzen?", "Ja. In Smart Rechnung & Angebot kannst du für jede Position einen eigenen Steuersatz wählen: 7 % und 19 % können auf derselben Rechnung stehen, ebenso gibt es „Keine Steuer“. Für Zeitabrechnungen verwendest du „Std.“ oder „Tag“ als Einheit. Das erste Dokument ist kostenlos und erfordert kein Konto."),
   ],
   "body": f"""<h1>Rechnungsvorlage für Freiberufler</h1>
@@ -3587,11 +3597,19 @@ S.drop(dropz,E('photo'),function(file){msg.hidden=true;var src=URL.createObjectU
 im.onload=function(){img=im;timg.src=src;photo(true);redraw();S.bump(stage)};im.onerror=function(){URL.revokeObjectURL(src);E('photo').value='';msg.textContent='That file could not be opened as a picture. Try a JPEG or PNG.';msg.hidden=false};im.src=src});
 $('wp-clear').addEventListener('click',function(){img=null;E('photo').value='';photo(false);redraw();S.bump(stage)});
 f.addEventListener('submit',function(e){e.preventDefault()});
-save.addEventListener('click',function(){if(!parse(E('date').value)){E('date').focus();return}var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);
-S.deliver(c,'countdown-wallpaper.jpg',lb);S.done(save,'Saved');nextc.hidden=false});
-share.addEventListener('click',function(){var link=shareURL();if(navigator.share&&S.coarse){navigator.share({title:'Countdown',url:link}).catch(function(){});return}
-function show(){linkBox.value=link;linkBox.hidden=false;linkBox.select()}
-if(navigator.clipboard)navigator.clipboard.writeText(link).then(function(){S.done(share,'Link copied')},show);else show()});
+var status=$('wp-status'),busy=false;
+function report(text){status.textContent=text;status.hidden=false}
+function track(action,outcome){document.dispatchEvent(new CustomEvent('goka:tool',{detail:{action:action,outcome:outcome}}))}
+save.addEventListener('click',async function(){if(busy)return;if(!parse(E('date').value)){E('date').focus();return}busy=true;save.disabled=true;report('Preparing wallpaper…');
+try{var s=size(),c=document.createElement('canvas');draw(c,s[0],s[1],false);var result=await S.deliver(c,'countdown-wallpaper.jpg',lb);
+report({download_started:'Download started',share_completed:'Sharing completed',cancelled:'Sharing cancelled',preview_opened:'Wallpaper ready. Press and hold the image to save it.'}[result]);
+track('export',result);if(result!=='cancelled')nextc.hidden=false;
+}catch(e){report('Could not export the wallpaper. Try again.');track('export','failed')}finally{busy=false;save.disabled=false}});
+share.addEventListener('click',async function(){if(share.disabled)return;share.disabled=true;var link=shareURL();
+function show(){linkBox.value=link;linkBox.hidden=false;linkBox.select();report('Copy the link below.');track('share','link_shown')}
+try{if(navigator.share&&S.coarse){await navigator.share({title:'Countdown',url:link});report('Sharing completed');track('share','share_completed')}
+else if(navigator.clipboard){try{await navigator.clipboard.writeText(link);report('Link copied');track('share','copied')}catch(e){show()}}else show();
+}catch(e){if(e&&e.name==='AbortError'){report('Sharing cancelled');track('share','cancelled')}else{show()}}finally{share.disabled=false}});
 var q=new URLSearchParams(location.search),sd=parse(q.get('d'));
 if(sd){E('date').value=q.get('d');E('title').value=(q.get('t')||'').trim().slice(0,40);var r=f.querySelector('input[name=bg][value="'+(BG[q.get('bg')]?q.get('bg'):'cream')+'"]');if(r)r.checked=true;
 var n=days(sd),wd=words(n,title()),banner=$('wp-shared');banner.textContent='Shared with you: '+(n===0?(wd[2]||'The big day')+' is today.':wd[0]+' '+wd[1]+(wd[2]?' '+wd[2]:'')+'.')+' Add your own photo below and make it your wallpaper.';banner.hidden=false}
@@ -3673,10 +3691,10 @@ function toBlob(d){var p=d.split(','),b=atob(p[1]),n=b.length,u=new Uint8Array(n
 function bump(el){if(reduce||!el)return;el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
 function done(btn,text){var lab=btn&&btn.querySelector('span');if(!lab)return;if(!btn.getAttribute('data-label'))btn.setAttribute('data-label',lab.textContent);lab.textContent='✓ '+text;btn.classList.add('is-done');clearTimeout(btn._t);btn._t=setTimeout(function(){lab.textContent=btn.getAttribute('data-label');btn.classList.remove('is-done')},2200)}
 function lightbox(lb,src){lb.querySelector('img').src=src;lb.hidden=false;var x=lb.querySelector('.st-lbx');x.focus();function close(){lb.hidden=true;document.removeEventListener('keydown',key)}function key(e){if(e.key==='Escape')close()}x.onclick=close;lb.onclick=function(e){if(e.target===lb)close()};document.addEventListener('keydown',key)}
-function deliver(canvas,name,lb){var data=canvas.toDataURL('image/jpeg',.92),blob=toBlob(data),file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
-if(file&&coarse&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file]}).catch(function(){});return}
-if(coarse&&lb){lightbox(lb,data);return}
-var a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(u)},4000)}
+async function deliver(canvas,name,lb){var data=canvas.toDataURL('image/jpeg',.92),blob=toBlob(data),file=null;try{file=new File([blob],name,{type:'image/jpeg'})}catch(e){}
+if(file&&coarse&&navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){try{await navigator.share({files:[file]});return 'share_completed'}catch(e){if(e&&e.name==='AbortError')return 'cancelled';throw e}}
+if(coarse&&lb){lightbox(lb,data);return 'preview_opened'}
+var a=document.createElement('a'),u=URL.createObjectURL(blob);a.href=u;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(u)},4000);return 'download_started'}
 function drop(zone,input,onFile){['dragenter','dragover'].forEach(function(t){zone.addEventListener(t,function(e){e.preventDefault();zone.classList.add('is-over')})});
 ['dragleave','dragend'].forEach(function(t){zone.addEventListener(t,function(){zone.classList.remove('is-over')})});
 zone.addEventListener('drop',function(e){e.preventDefault();zone.classList.remove('is-over');var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f)onFile(f)});
@@ -3740,6 +3758,7 @@ PAGES.append({"path": "/tools/countdown-wallpaper-maker/", "lang": "en", "kind":
 <button type="button" class="btn st-save" id="wp-save" data-track-id="wp-download">{ICO_DL}<span>Save wallpaper</span></button>
 <button type="button" class="btn ghost" id="wp-share" data-track-id="wp-share-link">{ICO_LINK}<span>Share the countdown</span></button>
 <input class="st-link" id="wp-link" type="text" readonly hidden aria-label="Link to this countdown">
+<p class="st-hint" id="wp-status" role="status" aria-live="polite" hidden></p>
 <p class="st-hint st-hint-ios">On iPhone, tap Save wallpaper, then Save Image.</p><p class="st-hint st-hint-desk">On a computer the wallpaper downloads as a JPEG.</p>
 </div>
 <div class="st-next" id="wp-next" hidden data-track-section="wallpaper-next"><p><strong>A wallpaper won’t count down.</strong> It keeps the number it shows today. On iPhone, the free Countdown widget shows a number that changes by itself every midnight, on the Lock Screen or the Home Screen.</p>

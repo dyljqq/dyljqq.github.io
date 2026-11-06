@@ -18,3 +18,7 @@
 # 内部记录不上线（仓库根目录整体部署）
 /docs/
 /content/
+
+# Offline test code and SDK fixtures are not website assets.
+/tools/*.cjs
+/tools/fixtures/

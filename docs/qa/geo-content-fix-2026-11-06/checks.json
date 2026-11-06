@@ -1,0 +1,52 @@
+[
+  {
+    "name": "structure",
+    "command": [
+      "python3",
+      "tools/check_structure.py",
+      "."
+    ],
+    "exit_code": 0,
+    "log": "structure.log"
+  },
+  {
+    "name": "page-budget",
+    "command": [
+      "python3",
+      "tools/check_page_budget.py",
+      "."
+    ],
+    "exit_code": 0,
+    "log": "page-budget.log"
+  },
+  {
+    "name": "daily-metadata",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools",
+      "-p",
+      "test_daily_metadata.py"
+    ],
+    "exit_code": 0,
+    "log": "daily-metadata.log"
+  },
+  {
+    "name": "diff-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check",
+      "--",
+      "tools/build_tools.py",
+      "tools/best-countdown-widget-apps-iphone/index.html",
+      "tools/ja/kyotsu-test-2027/index.html",
+      "sitemap-tools.xml"
+    ],
+    "exit_code": 0,
+    "log": "diff-whitespace.log"
+  }
+]

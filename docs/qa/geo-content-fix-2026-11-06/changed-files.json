@@ -1,0 +1,22 @@
+[
+  {
+    "path": "tools/build_tools.py",
+    "before_sha256": "17f9e9707b1cc065462d9a80d37aa0cad10e5c0bc2053bad2c00fabe341f76c6",
+    "after_sha256": "1f956253297a3b86f2a3fda57ea0b1c107da9d8eaaa9cd163b70f9737e6bff2e"
+  },
+  {
+    "path": "tools/best-countdown-widget-apps-iphone/index.html",
+    "before_sha256": "91fda6ab5405c1a6bfcf064fe97324de41374dac43ac0c895bf9c4b161974e8c",
+    "after_sha256": "28a7f690dc920687597e7d8b5bb970ec16af3561b8b6126b3bb444da314da47b"
+  },
+  {
+    "path": "tools/ja/kyotsu-test-2027/index.html",
+    "before_sha256": "72bb582073e67efeea5f8174c6a73c55d427ecff92f9d62f45feb901595893cf",
+    "after_sha256": "68e444a2de9e3e9a89f1ee33134f20b1be2e99512df23dbcf47e964199fe901f"
+  },
+  {
+    "path": "sitemap-tools.xml",
+    "before_sha256": "a51787354dd8adb906bbece888107c047488b23b5b37a292604874abb28b40cb",
+    "after_sha256": "3e388f8f5e30dbd66a87fdfe0e63a8008041035bc5d63ed5b6b15c15d5e3fcbd"
+  }
+]

@@ -150,7 +150,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
   "video": {
     "@type": "VideoObject",
     "name": "倒數計時 Widget：紀念日提醒 — App 預覽",
-    "description": "一個不會弄丟你的日子、四款小工具也一款都不扣下的倒數計時應用。",
+    "description": "用四款免費標準小工具記錄重要日子，支援本機快照與可選用的 iCloud 同步。",
     "thumbnailUrl": "https://beforego.art/assets/countdown/preview/zh-Hant.jpg",
     "contentUrl": "https://beforego.art/assets/countdown/preview/zh-Hant.mp4",
     "uploadDate": "2026-09-26",
@@ -202,7 +202,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
       "name": "App 更新出錯或重裝了，我的倒數計時會怎樣？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。"
+        "text": "Countdown 在本機最多保留 30 份一般快照，並在還原或移轉資料前另建安全副本。30 份是數量上限，不代表保證有連續 30 天的歷史記錄。只有檔案仍保存在裝置上，才能用來嘗試還原先前的狀態。刪除 App 或更換手機前，請確認事件已同步，並將匯出檔案存放在 App 之外。iCloud 同步需要登入自己的 Apple 帳號且連線正常。沒有已同步的副本或匯出檔案，就無法保證資料能還原。過去的事件也可以在時間軸中查看。"
       }
     },
     {
@@ -218,18 +218,17 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
       "name": "需要帳號嗎？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "不需要帳號，不用註冊。開啟 iCloud 同步時用的是你自己的 Apple 帳號，每天的備份也只存在你的 iPhone 裡。"
+        "text": "不需要註冊 Countdown 專用帳號。iCloud 同步需要登入自己的 Apple 帳號且連線正常；本機快照儲存在你的 iPhone 上。"
       }
     }
   ]
 }
 </script>
 <script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1);h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.va("beforeSend",function(e){if(navigator.webdriver||new URLSearchParams(location.search).get("internal")==="1")return null;try{if(localStorage.getItem("gk_analytics_internal")==="1")return null;var src=document.referrer?new URL(document.referrer):null;if(src&&(src.search||src.hash||src.username||src.password))return null}catch(err){if(document.referrer)return null}var u=new URL(e.url);u.search="";u.hash="";e.url=u.href;var r=new URLSearchParams(location.search).get("ref");if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest('a[href*="apps.apple.com"]');if(!a)return;var m=/[?&]ct=([a-z0-9-]+)/.exec(a.href);window.va("pageview",{path:location.pathname.replace(/\/?$/,"/")+"~out-"+(m?m[1]:"store")})},true);</script>
 <script defer src="/_vercel/insights/script.js"></script>
-<script src="https://analytics.ahrefs.com/analytics.js" data-key="sl5M4FXUBhQDbFowpFp3aA" async></script>
-<meta name="gk-analytics" content="{&quot;page_type&quot;:&quot;product&quot;,&quot;page_app&quot;:&quot;countdown&quot;,&quot;apps&quot;:{&quot;6786561175&quot;:&quot;beforego&quot;,&quot;6799846628&quot;:&quot;countdown&quot;,&quot;6790383156&quot;:&quot;invoiceqr&quot;,&quot;6798095407&quot;:&quot;dailycalorie&quot;,&quot;6799589471&quot;:&quot;qrcodestudio&quot;,&quot;6796596826&quot;:&quot;citu&quot;,&quot;6803828068&quot;:&quot;repdex&quot;,&quot;6823661619&quot;:&quot;pagewren&quot;}}">
-<script defer src="/assets/analytics/firebase-web-v2.js"></script>
+<meta name="gk-analytics" content="{&quot;page_type&quot;:&quot;product&quot;,&quot;page_app&quot;:&quot;countdown&quot;,&quot;ahrefs_key&quot;:&quot;sl5M4FXUBhQDbFowpFp3aA&quot;,&quot;apps&quot;:{&quot;6786561175&quot;:&quot;beforego&quot;,&quot;6799846628&quot;:&quot;countdown&quot;,&quot;6790383156&quot;:&quot;invoiceqr&quot;,&quot;6798095407&quot;:&quot;dailycalorie&quot;,&quot;6799589471&quot;:&quot;qrcodestudio&quot;,&quot;6796596826&quot;:&quot;citu&quot;,&quot;6803828068&quot;:&quot;repdex&quot;,&quot;6823661619&quot;:&quot;pagewren&quot;}}">
+<script defer src="/assets/analytics/firebase-web-v4.js"></script>
 <!-- seo:end -->
 <style id="gk-foot-css">footer.gk-foot{position:relative;display:block;margin:0;padding:72px 0 44px;border:0;background:#F1E8D9;text-align:left;overflow:hidden;font:400 14px/1.6 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:.1px;color:#4F5B72}.gk-foot-in{position:relative;z-index:1;box-sizing:border-box;max-width:var(--gk-foot-w,var(--wrap,1120px));margin:0 auto;padding:0 var(--gk-foot-g,var(--gutter,24px))}.gk-foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px 64px;flex-wrap:wrap}.gk-foot-id{display:flex;flex-direction:column;gap:14px;max-width:320px}.gk-foot a.gk-foot-brand{display:flex;align-items:center;gap:10px;color:#22324F;text-decoration:none;border:0}.gk-foot-brand svg{width:34px;height:34px;flex:none}.gk-foot-brand b{font:600 26px/1 "Josefin Sans","Manrope",system-ui,-apple-system,sans-serif;letter-spacing:-.5px}.gk-foot p.gk-foot-tag{margin:2px 0 0;font-size:16px;line-height:1.5;color:#22324F}.gk-foot ul{margin:0;padding:0;list-style:none}.gk-foot li,.gk-foot p{margin:0;padding:0;font-size:14px;line-height:1.6;font-weight:400;color:#4F5B72}.gk-foot a{color:#4F5B72;font-weight:400;text-decoration:none;border:0;background:none}.gk-foot a:hover{color:#22324F;text-decoration:underline;text-underline-offset:3px}.gk-foot-social{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0 -7px}.gk-foot-social a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:32px;height:32px;padding:0 5px;border-radius:8px;color:#22324F}.gk-foot-social a:hover{background:rgba(34,50,79,.08)}.gk-foot-social svg{display:block;flex:none}.gk-foot-cols{display:flex;flex-wrap:wrap;gap:40px 72px}.gk-foot h2{margin:0 0 14px;padding:0;border:0;font:700 15px/1.3 "Manrope","PingFang SC","Hiragino Sans","Microsoft YaHei","Noto Sans Thai",system-ui,-apple-system,sans-serif;letter-spacing:0;text-transform:none;color:#22324F}.gk-foot-col ul{display:grid;row-gap:8px}.gk-foot-legal{display:grid;grid-template-columns:auto auto auto;column-gap:24px;row-gap:8px}.gk-foot-legal li{display:contents}.gk-foot a.gk-foot-app{color:#22324F}.gk-foot-bar{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(34,50,79,.16)}.gk-foot-bar p{font-size:13px}.gk-foot-links{display:flex;flex-wrap:wrap;gap:4px 20px}@media (max-width:760px){footer.gk-foot{padding:48px 0 32px}.gk-foot-in{padding:0 var(--gk-foot-g,var(--gutter,16px))}.gk-foot-top,.gk-foot-cols{flex-direction:column}.gk-foot-cols{gap:32px}.gk-foot-col-site ul{grid-template-columns:repeat(2,minmax(0,max-content));column-gap:32px}.gk-foot-legal{column-gap:16px;grid-template-columns:repeat(3,minmax(0,max-content))}.gk-foot-legal a{overflow-wrap:anywhere;hyphens:auto}.gk-foot-bar{flex-direction:column;margin-top:40px}}</style>
 </head>
@@ -240,7 +239,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     <a href="/zh-hant/">所有 App</a>
     <a href="/tools/zh-hant/">工具</a>
     <a href="/blog/">部落格</a>
-    <a href="mailto:qinqiangji@gmail.com?subject=Countdown%20Widget">支援</a>
+    <a href="/support/" hreflang="en">支援</a>
   </nav>
   <!-- lang:start -->
   <style>.header-actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}.lang-switch{position:relative;flex:none}.lang-switch summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;font:600 13px/1 var(--text);letter-spacing:.02em;padding:9px 12px 9px 14px;min-height:44px;border:1px solid var(--rule);border-radius:999px;background:#fff;white-space:nowrap;color:var(--ink)}.lang-switch summary::-webkit-details-marker{display:none}.lang-switch summary:hover{background:var(--cream)}.lang-switch summary svg{width:12px;height:12px;flex:none;transition:transform .2s}.lang-switch[open] summary svg{transform:rotate(180deg)}.lang-switch ul{position:absolute;right:0;top:calc(100% + 8px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:0 16px 36px -16px rgba(0,0,0,.3);min-width:190px;max-height:min(calc(100vh - 90px),560px);overflow:auto}.lang-switch li a{display:block;padding:10px 14px;border-radius:9px;text-decoration:none;font:500 14px/1.2 var(--text);color:var(--ink)}.lang-switch li a:hover{background:var(--cream)}.lang-switch li a[aria-current]{font-weight:700;background:var(--cream)}.lang-switch .ln-note{padding:10px 14px 6px;border-top:1px solid var(--rule);margin-top:6px;font:500 12px/1.4 var(--text);color:var(--muted)}.header-download{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;white-space:nowrap;font:700 12px/1 var(--text)}.header-download:hover{background:var(--yellow);color:var(--ink)}.header-download svg{width:16px;height:16px;fill:currentColor;flex:none}.top .nav{min-width:0}@media (max-width:760px){.header-actions{order:2;position:relative}.header-actions .lang-switch{margin-left:0;position:static}.lang-switch ul{right:0}.lang-switch summary{padding:8px 10px 8px 12px}}@media (max-width:380px){.top{column-gap:8px}.top .brand{gap:6px}.top .brand svg{width:28px;height:28px}.header-actions{gap:6px}.header-download{padding:0 10px;font-size:11px}.header-download[href$="#apps"] svg{display:none}.lang-switch summary{padding-left:10px;padding-right:8px}}@media (min-width:761px) and (max-width:980px){.top .nav{gap:0}.top .nav a{padding-left:6px;padding-right:6px;letter-spacing:.7px}}</style><div class="header-actions"><details class="lang-switch"><summary title="繁體中文"><span>繁中</span><svg viewBox="0 0 12 12" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5 9 4.5"/></svg></summary><ul><li><a href="/countdown/" hreflang="en" lang="en">English</a></li><li><a href="/countdown/de/" hreflang="de" lang="de">Deutsch</a></li><li><a href="/countdown/fr/" hreflang="fr" lang="fr">Français</a></li><li><a href="/countdown/it/" hreflang="it" lang="it">Italiano</a></li><li><a href="/countdown/pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="/countdown/ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="/countdown/ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="/countdown/zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li><li><a href="/countdown/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文</a></li><li><a href="/countdown/th/" hreflang="th" lang="th">ไทย</a></li></ul></details><a class="header-download" href="https://apps.apple.com/tw/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-header&amp;mt=8" aria-label="在 App Store 下載"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg><span>App Store</span></a></div><script>document.addEventListener("click",function(e){document.querySelectorAll("details.lang-switch[open]").forEach(function(d){if(!d.contains(e.target))d.removeAttribute("open")})});</script>
@@ -252,7 +251,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
   <div>
     <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/7f/7f/c4/7f7fc450-a50c-1b82-f330-bfc32d88f72f/AppIcon-0-0-1x_U007epad-0-1-85-220.png/256x0w.webp" width="84" height="84" alt="">
     <h1><span class="seg">倒數計時 Widget：</span><span class="seg">紀念日提醒</span></h1>
-    <div class="lede"><p>一個不會弄丟你的日子、四款小工具也一款都不扣下的倒數計時應用。</p><p>把重要的那天加進來，放到主畫面上，看著它一天天靠近。想加多少個都行，數字和你之間不隔著任何東西。</p></div>
+    <div class="lede"><p>用四款免費標準小工具記錄重要日子，支援本機快照與可選用的 iCloud 同步。</p><p>把重要的那天加進來，放到主畫面上，看著它一天天靠近。想加多少個都行，數字和你之間不隔著任何東西。</p></div>
     <a class="cta" href="https://apps.apple.com/tw/app/apple-store/id6799846628?pt=128309253&amp;ct=web-countdown-app&amp;mt=8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.7c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.5-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.3.8c1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.3c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1.1 3 1.1.1 2.3-.6 3-1.4z"/></svg>在 App Store 下載</a>
     <ul class="chips"><li>免費下載</li><li>iPhone 和 iPad</li><li>iOS 17 或更新版本</li><li>免註冊</li></ul>
     <div class="alt"><img class="alt-qr" src="/assets/qr/countdown.svg" width="96" height="96" alt="" loading="lazy"><div class="alt-txt"><p class="alt-scan">在電腦上看？用 iPhone 相機掃這個碼就能下載。</p><p class="alt-web">沒有 iPhone？瀏覽器裡就能用：<a href="/tools/zh-hant/nong-li-xin-nian-2027/">2027 農曆新年倒數</a></p></div></div>
@@ -268,7 +267,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     <div class="hl"><figure><img src="/assets/art/countdown/09-460.webp" srcset="/assets/art/countdown/09-460.webp 460w, /assets/art/countdown/09-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="從範本開始" loading="lazy" decoding="async"></figure><div><h3>從範本開始</h3><p>三十六個現成範本，從生日到到職第一天，每個都已經配好合適的重複規則和提醒。</p></div></div>
     <div class="hl"><figure><img src="/assets/art/countdown/02-460.webp" srcset="/assets/art/countdown/02-460.webp 460w, /assets/art/countdown/02-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="每個事件的背面" loading="lazy" decoding="async"></figure><div><h3>每個事件的背面</h3><p>點一下事件，就翻到專屬的一頁：寫幾句話、加幾張照片、錄一段聲音，這一天的故事留在這一天裡，還能做成一張圖片分享。</p></div></div>
     <div class="hl"><figure><img src="/assets/art/countdown/04-460.webp" srcset="/assets/art/countdown/04-460.webp 460w, /assets/art/countdown/04-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="看起來就是你的" loading="lazy" decoding="async"></figure><div><h3>看起來就是你的</h3><p>兩百個手繪圖示，加上整個表情鍵盤，還有一百五十九張全螢幕背景——其中二十二張是照片，一百零七張屬於 Pro。</p></div></div>
-    <div class="hl"><figure><img src="/assets/art/countdown/10-460.webp" srcset="/assets/art/countdown/10-460.webp 460w, /assets/art/countdown/10-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="你的日子，替你留著" loading="lazy" decoding="async"></figure><div><h3>你的日子，替你留著</h3><p>這款 App 每天都會在本機為所有事件拍一份快照，任何有風險的操作之前也會先拍一份：三十天的歷史記錄，一鍵還原，沒有任何內容會離開你的手機。</p></div></div>
+    <div class="hl"><figure><img src="/assets/art/countdown/10-460.webp" srcset="/assets/art/countdown/10-460.webp 460w, /assets/art/countdown/10-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="本機快照與還原限制" loading="lazy" decoding="async"></figure><div><h3>本機快照與還原限制</h3><p>本機最多保留 30 份一般快照，另有獨立的安全副本。還原需要檔案仍保存在這台裝置上，不能保證刪除 App 或遺失手機後仍可還原。</p></div></div>
     <div class="hl"><figure><img src="/assets/art/countdown/06-460.webp" srcset="/assets/art/countdown/06-460.webp 460w, /assets/art/countdown/06-920.webp 920w" sizes="(max-width:760px) 78vw, 320px" width="460" height="575" alt="過去的日子始終陪著你" loading="lazy" decoding="async"></figure><div><h3>過去的日子始終陪著你</h3><p>過去的日子從不會被刪除。它們匯成一條可以往回翻的時間軸，每一年旁邊，寫著那年等得最久的一件事。</p></div></div>
   </div>
 </section>
@@ -278,11 +277,11 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
 </section>
 
 <section class="sec" id="features" aria-labelledby="h-features">
-  <h2 id="h-features">詳情——App Store 原文</h2>
+  <h2 id="h-features">功能與還原說明</h2>
   <div class="feats">
-    <div class="feat"><h3>四款小工具，免費</h3><ul><li>四款小工具：單一倒數、接下來的清單、聚焦一件、每件一格</li><li>這四款的全部尺寸，主畫面和鎖定畫面都有</li><li>事件數量無限制，以後也不會設上限</li><li>可以倒數，也可以從某天起正數</li><li>重複：每年、每月、每週，或每隔幾天</li><li>當天提醒，也可以提前任意天數</li><li>iCloud 同步，不需要註冊帳號</li><li>可從日曆、表格或別的倒數應用匯入，也隨時可以匯出</li><li>永不投放廣告</li></ul></div>
+    <div class="feat"><h3>四款小工具，免費</h3><ul><li>四款小工具：單一倒數、接下來的清單、聚焦一件、每件一格</li><li>這四款的全部尺寸，主畫面和鎖定畫面都有</li><li>事件數量無限制，以後也不會設上限</li><li>可以倒數，也可以從某天起正數</li><li>重複：每年、每月、每週，或每隔幾天</li><li>當天提醒，也可以提前任意天數</li><li>使用自己的 Apple 帳號進行 iCloud 同步</li><li>可從日曆、表格或別的倒數應用匯入，也隨時可以匯出</li><li>永不投放廣告</li></ul></div>
     <div class="feat"><h3>什麼日子都能倒數</h3><p>婚禮、婚期、旅行、生日、紀念日、交往紀念日；跨年、春節、聖誕；考試、學測、會考、畢業、退伍、退休、預產期、演唱會、截止日、發薪日。已經過去的日子也能正著數：在一起幾天、寶寶出生幾天。</p></div>
-    <div class="feat"><h3>你的日子，替你留著</h3><p>這個品類最常見的負評是「更新之後全沒了」。這個應用每天都會在本機給全部事件拍一份快照，任何有風險的操作之前也會先拍一份。三十天的歷史，一鍵還原，而且沒有任何內容會離開你的手機。已經過去的日子也不會刪掉：它們會匯成一條可以往回翻的時間軸，每一年旁邊寫著那年等得最久的一件事。</p></div>
+    <div class="feat"><h3>本機快照與還原限制</h3><p>Countdown 在本機最多保留 30 份一般快照，並在還原或移轉資料前另建安全副本。30 份是數量上限，不代表保證有連續 30 天的歷史記錄。只有檔案仍保存在裝置上，才能用來嘗試還原先前的狀態。刪除 App 或更換手機前，請確認事件已同步，並將匯出檔案存放在 App 之外。iCloud 同步需要登入自己的 Apple 帳號且連線正常。沒有已同步的副本或匯出檔案，就無法保證資料能還原。過去的事件也可以在時間軸中查看。</p></div>
     <div class="feat"><h3>那一刻本身</h3><p>當倒數走到一個節點——一百天、一週、當天早上——應用會以整螢幕的數字打開，並給你一張值得分享的卡片。</p></div>
     <div class="feat"><h3>每個事件的背面</h3><p>點一下事件，它會翻到屬於自己的一頁：寫幾句話、放幾張照片、錄一段聲音，這一天的故事就留在這一天裡。背面會透過 iCloud 同步、納入每一次備份，還能做成一張圖分享。</p></div>
     <div class="feat"><h3>看起來就是你的</h3><p>三十六個現成範本，從生日到到職第一天，重複規則和提醒都已經配好。兩百個手繪圖示，加上整個表情鍵盤。一百五十九張整螢幕背景，其中二十二張是照片，一百零七張屬於 Pro。</p></div>
@@ -317,7 +316,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     </div>
     <div class="card">
       <h3>App 更新出錯或重裝了，我的倒數計時會怎樣？</h3>
-      <p>App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。</p>
+      <p>Countdown 在本機最多保留 30 份一般快照，並在還原或移轉資料前另建安全副本。30 份是數量上限，不代表保證有連續 30 天的歷史記錄。只有檔案仍保存在裝置上，才能用來嘗試還原先前的狀態。刪除 App 或更換手機前，請確認事件已同步，並將匯出檔案存放在 App 之外。iCloud 同步需要登入自己的 Apple 帳號且連線正常。沒有已同步的副本或匯出檔案，就無法保證資料能還原。過去的事件也可以在時間軸中查看。</p>
     </div>
     <div class="card">
       <h3>Pro 解鎖什麼，怎麼買？</h3>
@@ -325,7 +324,7 @@ html.is-desk .alt{padding:12px 20px 12px 12px}html.is-desk .alt-qr{display:block
     </div>
     <div class="card">
       <h3>需要帳號嗎？</h3>
-      <p>不需要帳號，不用註冊。開啟 iCloud 同步時用的是你自己的 Apple 帳號，每天的備份也只存在你的 iPhone 裡。</p>
+      <p>不需要註冊 Countdown 專用帳號。iCloud 同步需要登入自己的 Apple 帳號且連線正常；本機快照儲存在你的 iPhone 上。</p>
     </div>
   </div>
   <!-- faq:end -->

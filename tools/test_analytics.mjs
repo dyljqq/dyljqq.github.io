@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Browser integration checks for assets/analytics/firebase-web-v2.js.
+// Browser integration checks for assets/analytics/firebase-web-v4.js.
 // Uses the installed Chrome + Node 22's built-in WebSocket; no dependencies.
 //   /Users/polarisdev/.nvm/versions/node/v22.23.1/bin/node tools/test_analytics.mjs
 import { createServer } from "node:http";
@@ -48,7 +48,7 @@ await new Promise((resolve) => server.once("listening", resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
 const profile = mkdtempSync(join(tmpdir(), "goka-analytics-test-"));
 const debugPort = 10300 + Math.floor(Math.random() * 500);
-const chrome = spawn(CHROME, ["--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
+const chrome = spawn(CHROME, ["--headless=new", "--enable-automation", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
   "--disable-background-networking", "--disable-features=MediaRouter,OptimizationHints,Translate",
   `--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
 let ws;
@@ -63,7 +63,7 @@ try {
     try { html = readFileSync(resolve(ROOT, `.${filePath}`), "utf8"); }
     catch { invalidPages.push(`${path}: file missing`); continue; }
     const metas = html.match(/<meta\s+name=["']gk-analytics["'][^>]*>/gi) || [];
-    const scripts = html.match(/<script\s+defer\s+src=["']\/assets\/analytics\/firebase-web-v2\.js["']\s*>\s*<\/script>/gi) || [];
+    const scripts = html.match(/<script\s+defer\s+src=["']\/assets\/analytics\/firebase-web-v4\.js["']\s*>\s*<\/script>/gi) || [];
     if (metas.length !== 1 || scripts.length !== 1) invalidPages.push(`${path}: metadata=${metas.length}, script=${scripts.length}`);
   }
   assert(paths.length > 0 && invalidPages.length === 0,

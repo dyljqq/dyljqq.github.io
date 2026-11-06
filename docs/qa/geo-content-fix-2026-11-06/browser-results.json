@@ -1,0 +1,351 @@
+{
+  "at": "2026-11-06T05:05:29.039Z",
+  "scope": "Two local content fixes; isolated Chromium; external requests blocked",
+  "pages": [
+    {
+      "name": "exam",
+      "path": "/tools/ja/kyotsu-test-2027/",
+      "status": 200,
+      "canonical": "https://beforego.art/tools/ja/kyotsu-test-2027/",
+      "views": [
+        {
+          "device": "desktop",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "screenshot": "exam-desktop.png"
+        },
+        {
+          "device": "mobile",
+          "width": 375,
+          "scrollWidth": 375,
+          "screenshot": "exam-mobile.png"
+        }
+      ],
+      "timetable": [
+        [
+          "1月16日（土）",
+          "地理歴史・公民",
+          "9:30〜11:40（2科目）/ 10:40〜11:40（1科目）"
+        ],
+        [
+          "国語",
+          "13:00〜14:30（90分）"
+        ],
+        [
+          "外国語（英語リーディング・その他の外国語）",
+          "15:20〜16:40（80分）"
+        ],
+        [
+          "英語（リスニング）",
+          "17:20〜18:20（機器操作を含む60分、解答30分）"
+        ],
+        [
+          "1月17日（日）",
+          "理科",
+          "9:30〜11:40（2科目）/ 10:40〜11:40（1科目）"
+        ],
+        [
+          "数学①",
+          "13:00〜14:10（70分）"
+        ],
+        [
+          "数学②",
+          "15:00〜16:10（70分）"
+        ],
+        [
+          "情報Ⅰ",
+          "17:00〜18:00（60分）"
+        ]
+      ],
+      "countdown": "71",
+      "officialLinks": [
+        "https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r9/r9_jukenannai.html",
+        "https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r10/",
+        "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017475.pdf",
+        "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017486.pdf",
+        "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017490.pdf",
+        "https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r9/r9_jukenannai.html"
+      ],
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "@id": "https://beforego.art/tools/ja/kyotsu-test-2027/#page",
+          "url": "https://beforego.art/tools/ja/kyotsu-test-2027/",
+          "name": "共通テスト2027 カウントダウン・待ち受け（1/16・17）",
+          "headline": "共通テスト2027 カウントダウン・待ち受け（1/16・17）",
+          "description": "2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。",
+          "inLanguage": "ja",
+          "isPartOf": {
+            "@id": "https://beforego.art/#website"
+          },
+          "publisher": {
+            "@id": "https://beforego.art/#org"
+          },
+          "author": {
+            "@id": "https://beforego.art/#org"
+          },
+          "isAccessibleForFree": true,
+          "image": "https://beforego.art/assets/brand/og-home.png",
+          "datePublished": "2026-09-29",
+          "dateModified": "2026-11-06",
+          "about": {
+            "@id": "https://beforego.art/countdown/#app"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ホーム",
+              "item": "https://beforego.art/ja/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "ツール",
+              "item": "https://beforego.art/tools/ja/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "共通テスト2027 カウントダウン・待ち受け（1/16・17）",
+              "item": "https://beforego.art/tools/ja/kyotsu-test-2027/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": "https://beforego.art/tools/ja/kyotsu-test-2027/#faq",
+          "inLanguage": "ja",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "共通テスト2027はいつですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "本試験は2027年1月16日（土）と2027年1月17日（日）です。追・再試験は2027年1月23日（土）と2027年1月24日（日）です（大学入試センター「令和9年度試験」）。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "共通テストまであと何週間ですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026年11月6日の時点で本試験まで71日、10週と1日です。このページのカウントダウンは、開いた日に合わせて再計算されます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "共通テストの100日前はいつですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026年10月8日（木）です。50日前は2026年11月27日（金）、1週間前は2027年1月9日（土）です。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "2028年の共通テストはいつですか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "令和10年度の本試験は2028年1月15日（土）と2028年1月16日（日）です（大学入試センター「令和10年度試験」）。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "iPhone の待ち受け（ロック画面）にカウントダウンを置くには？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "カウントダウン ウィジェット: 記念日で「共通テスト」を2027年1月16日に作り、ロック画面を長押し →「カスタマイズ」→ ロック画面 → ウィジェットを追加 → Countdown、の順に進みます。4種類のウィジェットはすべて無料です。"
+              }
+            }
+          ]
+        }
+      ],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "name": "comparison",
+      "path": "/tools/best-countdown-widget-apps-iphone/",
+      "status": 200,
+      "canonical": "https://beforego.art/tools/best-countdown-widget-apps-iphone/",
+      "views": [
+        {
+          "device": "desktop",
+          "width": 1280,
+          "scrollWidth": 1280,
+          "screenshot": "comparison-desktop.png"
+        },
+        {
+          "device": "mobile",
+          "width": 375,
+          "scrollWidth": 375,
+          "screenshot": "comparison-mobile.png"
+        }
+      ],
+      "currentProductLink": 4,
+      "schema": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "@id": "https://beforego.art/tools/best-countdown-widget-apps-iphone/#page",
+          "url": "https://beforego.art/tools/best-countdown-widget-apps-iphone/",
+          "name": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free",
+          "headline": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free",
+          "description": "Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, November 2026.",
+          "inLanguage": "en",
+          "isPartOf": {
+            "@id": "https://beforego.art/#website"
+          },
+          "publisher": {
+            "@id": "https://beforego.art/#org"
+          },
+          "author": {
+            "@id": "https://beforego.art/#org"
+          },
+          "isAccessibleForFree": true,
+          "image": "https://beforego.art/assets/brand/og-home.png",
+          "datePublished": "2026-09-26",
+          "dateModified": "2026-11-06",
+          "about": {
+            "@id": "https://beforego.art/countdown/#app"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://beforego.art/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://beforego.art/tools/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free",
+              "item": "https://beforego.art/tools/best-countdown-widget-apps-iphone/"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "@id": "https://beforego.art/tools/best-countdown-widget-apps-iphone/#list",
+          "name": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free",
+          "itemListOrder": "https://schema.org/ItemListOrderAscending",
+          "numberOfItems": 7,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Countdown Widget: Any Event",
+              "url": "https://apps.apple.com/us/app/id6799846628"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Countdown Star",
+              "url": "https://apps.apple.com/us/app/id576177593"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Countdown",
+              "url": "https://apps.apple.com/us/app/id1403367428"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Countdown: Event Countdown",
+              "url": "https://apps.apple.com/us/app/id983258067"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "DayCount",
+              "url": "https://apps.apple.com/us/app/id1121088244"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Countdown Buddy",
+              "url": "https://apps.apple.com/us/app/id1534850579"
+            },
+            {
+              "@type": "ListItem",
+              "position": 7,
+              "name": "Days • Countdown & Widgets",
+              "url": "https://apps.apple.com/us/app/id939368917"
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "@id": "https://beforego.art/tools/best-countdown-widget-apps-iphone/#faq",
+          "inLanguage": "en",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Which countdown app has free Lock Screen widgets on iPhone?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Countdown Widget: Any Event (ours) makes every size of its four standard widgets free, on both the Home Screen and the Lock Screen. Countdown by Find Appiness also lists free circular and inline Lock Screen widgets, with the rectangular widget in Premium. Event Countdown lists its Lock Screen widgets under Premium. DayCount and Days do not specify their free-feature limits."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which countdown apps allow unlimited events for free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Countdown Widget: Any Event, Countdown Star ('add as many events as you like'), Countdown by Find Appiness ('Create unlimited events') and Countdown: Event Countdown ('unlimited countdowns') all state unlimited events in their free version."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do these apps sync between iPhone and iPad?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Countdown Widget: Any Event, Countdown Star and Countdown by Find Appiness list iCloud sync, and DayCount lists backup and sync across iPhone, iPad and Mac. Countdown: Event Countdown lists sync across Apple devices as a Premium feature. Countdown Buddy and Days do not state it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I count up from a past date?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes in Countdown Widget: Any Event, Countdown Star, Countdown by Find Appiness, Countdown: Event Countdown, DayCount, Countdown Buddy and Days — all list count-up from a past date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this list independent?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We make Countdown Widget: Any Event, so no. Everything in the table comes from the public App Store listings, the fields are the same for every app, and each competitor is linked so you can check. We did not test paid tiers."
+              }
+            }
+          ]
+        }
+      ],
+      "pageErrors": [],
+      "pass": true
+    }
+  ],
+  "localOrigin": "http://127.0.0.1:52353",
+  "pass": true,
+  "cleanup": "browser and owned local server closed"
+}

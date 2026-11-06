@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
 
-const source = readFileSync(new URL("../assets/analytics/firebase-web-v2.js", import.meta.url), "utf8");
+const source = readFileSync(new URL("../assets/analytics/firebase-web-v4.js", import.meta.url), "utf8");
 const imports = source.match(/import\("https:\/\/www\.gstatic\.com\/firebasejs\/12\.4\.0\/firebase-(?:app|analytics)\.js"\)/g);
 assert.equal(imports.length, 2);
 const executable = source.replace(/\bimport\(/g, "mockImport(");

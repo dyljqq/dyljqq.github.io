@@ -138,7 +138,7 @@
       "oneLiner": "A countdown widget app for iPhone where every size of the four standard widgets is free and the number of events is unlimited.",
       "description": "Four free countdown widgets in every size for iPhone Home and Lock Screen, unlimited events, local snapshots and iCloud sync. See backup limits and optional Pro features.",
       "audience": "Anyone counting down to a trip, wedding, exam, birthday or due date — or counting up from one.",
-      "free": "Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, daily on-device backup, iCloud sync.",
+      "free": "Every size of the four standard widgets, unlimited events, reminders, repeats, count-up, local snapshots, iCloud sync.",
       "paid": "Pro unlocks 107 of the 159 backdrops, your own photo backgrounds, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. Annual plan with a 7-day free trial, monthly plan, or a one-time Lifetime purchase; prices are shown in the app before purchase.",
       "legal": [
         [
@@ -173,7 +173,7 @@
         },
         {
           "q": "Do I need an account?",
-          "a": "No account and no sign-up. iCloud sync uses your own Apple Account when you turn it on, and the daily backup stays on your iPhone."
+          "a": "No separate Countdown account is needed. iCloud sync requires your signed-in Apple Account and a working connection. Local snapshots stay on your iPhone."
         }
       ],
       "home": {
@@ -186,7 +186,8 @@
       "noAccount": true,
       "descriptionReplacements": {
         "A countdown that never loses your days — and never holds its four widgets back.": "Keep your important days close, with local snapshots and optional iCloud sync.",
-        "Most countdown apps lose your events at the worst moment — an update, a reinstall, a phone that died. This one takes a snapshot of everything on this device every single day, and always before anything risky. Thirty days of history, one tap to restore, and nothing ever leaves your phone. Days that have already passed are never deleted either: they collect into a timeline you can look back through, with the longest wait of each year written next to it.": "Countdown keeps local snapshots on this device: up to 30 routine snapshots, with separate safety copies before a restore or migration. These can help recover an earlier version while the files remain available. Local snapshots are not an off-device backup: do not rely on them surviving app deletion or a lost or damaged phone. iCloud sync is separate and requires a signed-in iCloud account and a working sync connection. Before deleting the app or changing devices, check that your events have synced and save an export outside the app. If neither a synced copy nor an export is available, recovery is not guaranteed. Past events can also be viewed in the timeline."
+        "Most countdown apps lose your events at the worst moment — an update, a reinstall, a phone that died. This one takes a snapshot of everything on this device every single day, and always before anything risky. Thirty days of history, one tap to restore, and nothing ever leaves your phone. Days that have already passed are never deleted either: they collect into a timeline you can look back through, with the longest wait of each year written next to it.": "Countdown keeps local snapshots on this device: up to 30 routine snapshots, with separate safety copies before a restore or migration. These can help recover an earlier version while the files remain available. Local snapshots are not an off-device backup: do not rely on them surviving app deletion or a lost or damaged phone. iCloud sync is separate and requires a signed-in iCloud account and a working sync connection. Before deleting the app or changing devices, check that your events have synced and save an export outside the app. If neither a synced copy nor an export is available, recovery is not guaranteed. Past events can also be viewed in the timeline.",
+        "• iCloud sync, with no account to make": "• iCloud sync using your Apple Account"
       },
       "detailsHeading": "Features and backup limits",
       "hideWhatsNew": true
@@ -208,7 +209,7 @@
       "oneLiner": "App de contagem regressiva para iPhone em que todos os tamanhos dos quatro widgets padrão são grátis e o número de eventos é ilimitado.",
       "description": "App de contagem regressiva para iPhone: os quatro widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios. O Pro acrescenta planos de fundo, suas próprias fotos, o Rolo de fotos, fontes, a Atividade ao Vivo e a contagem junto com quem você convida.",
       "audience": "Quem conta os dias para o ENEM, o Réveillon, o Carnaval, uma viagem, um casamento ou um aniversário — ou conta os dias desde uma data.",
-      "free": "Todos os tamanhos dos quatro widgets padrão, eventos ilimitados, lembretes, repetição, contagem progressiva, cópia diária no aparelho, sincronização pelo iCloud.",
+      "free": "Todos os tamanhos dos quatro widgets padrão, eventos ilimitados, lembretes, repetição, contagem progressiva, cópias locais no aparelho, sincronização pelo iCloud.",
       "paid": "O Pro desbloqueia 107 dos 159 planos de fundo, suas próprias fotos como fundo, o widget Rolo de fotos, as fontes Pro, a Atividade ao Vivo na Tela Bloqueada e o convite para alguém fazer a contagem com você. Plano anual com 7 dias grátis, plano mensal ou compra única vitalícia; os preços aparecem no app antes da compra.",
       "legal": [],
       "faq": [
@@ -230,7 +231,7 @@
         },
         {
           "q": "O que acontece com as minhas contagens se o app atualizar mal ou eu reinstalar?",
-          "a": "O app guarda uma cópia de tudo no aparelho uma vez por dia, e sempre antes de qualquer operação arriscada. Trinta dias de histórico ficam salvos e qualquer cópia é restaurada em um toque. A sincronização pelo iCloud está disponível e não precisa de conta."
+          "a": "O Countdown mantém até 30 cópias locais de rotina, com cópias de segurança separadas antes de uma restauração ou migração. São 30 cópias, não uma garantia de 30 dias de histórico. Elas podem ajudar enquanto os arquivos continuarem disponíveis no aparelho. Antes de apagar o app ou trocar de iPhone, confira se os eventos foram sincronizados e salve uma exportação fora do app. A sincronização pelo iCloud exige sua Conta Apple conectada e uma conexão funcionando. Sem uma cópia sincronizada ou uma exportação, a recuperação não é garantida. Os eventos passados também podem ser consultados na linha do tempo."
         },
         {
           "q": "O que o Pro desbloqueia e como ele é vendido?",
@@ -238,9 +239,15 @@
         },
         {
           "q": "Precisa de conta?",
-          "a": "Não precisa de conta nem de cadastro. A sincronização pelo iCloud usa a sua própria Conta Apple quando você a ativa, e a cópia diária fica no seu iPhone."
+          "a": "Não é preciso criar uma conta própria do Countdown. Para sincronizar pelo iCloud, é necessário entrar na sua Conta Apple e ter uma conexão funcionando. As cópias locais ficam no iPhone."
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "Uma contagem regressiva que nunca perde os seus dias — e nunca deixa nenhum dos seus quatro widgets de fora.": "Guarde suas datas importantes com quatro widgets padrão gratuitos, cópias locais e sincronização opcional pelo iCloud.",
+        "SEUS DIAS, GUARDADOS\nA reclamação mais comum nesta categoria é \"atualizei e sumiu tudo\". Este app salva todos os dias um instantâneo de todos os seus eventos neste aparelho, e sempre antes de qualquer operação arriscada. Trinta dias de histórico, um toque para restaurar, e nada nunca sai do seu telefone. Dias que já passaram também não são apagados: eles formam uma linha do tempo para percorrer de volta, com a espera mais longa de cada ano anotada ao lado.": "Cópias locais e seus limites\nO Countdown mantém até 30 cópias locais de rotina, com cópias de segurança separadas antes de uma restauração ou migração. São 30 cópias, não uma garantia de 30 dias de histórico. Elas podem ajudar enquanto os arquivos continuarem disponíveis no aparelho. Antes de apagar o app ou trocar de iPhone, confira se os eventos foram sincronizados e salve uma exportação fora do app. A sincronização pelo iCloud exige sua Conta Apple conectada e uma conexão funcionando. Sem uma cópia sincronizada ou uma exportação, a recuperação não é garantida. Os eventos passados também podem ser consultados na linha do tempo.",
+        "• Sincronização com iCloud, sem criar conta": "• Sincronização pelo iCloud com sua Conta Apple"
+      },
+      "detailsHeading": "Recursos e limites de recuperação"
     },
     {
       "key": "countdown-de",
@@ -259,7 +266,7 @@
       "oneLiner": "Countdown-App für iPhone: jede Größe der vier Standard-Widgets ist kostenlos, die Zahl der Ereignisse ist unbegrenzt.",
       "description": "Countdown-App für iPhone: Die vier Widgets für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung. Pro ergänzt Hintergründe, eigene Fotos, Fotowechsel, Schriften, die Live-Aktivität und gemeinsames Herunterzählen.",
       "audience": "Alle, die die Tage bis zum Urlaub, zur Hochzeit, zum Abitur, zur Rente oder zum Geburtstag zählen — oder die Tage seit einem Datum.",
-      "free": "Jede Größe der vier Standard-Widgets, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, tägliche Sicherung auf dem Gerät, iCloud-Sync.",
+      "free": "Jede Größe der vier Standard-Widgets, unbegrenzt viele Ereignisse, Erinnerungen, Wiederholung, Tage zählen ab einem Datum, lokale Sicherungen auf dem Gerät, iCloud-Sync.",
       "paid": "Pro schaltet 107 der 159 Hintergründe, das Widget Fotowechsel, eigene Fotos als Hintergrund, die Pro-Schriften, die Live-Aktivität auf dem Sperrbildschirm und das Einladen zum gemeinsamen Herunterzählen frei. Jahresabo mit 7 Tagen kostenlosem Test, Monatsabo oder einmaliger Lifetime-Kauf; die Preise stehen vor dem Kauf in der App.",
       "legal": [],
       "faq": [
@@ -281,7 +288,7 @@
         },
         {
           "q": "Was passiert mit meinen Countdowns bei einem fehlerhaften Update oder einer Neuinstallation?",
-          "a": "Die App sichert einmal am Tag alles auf dem Gerät, und immer vor riskanten Vorgängen. Dreißig Tage Verlauf werden aufbewahrt, und jede Sicherung lässt sich mit einem Tipp wiederherstellen. iCloud-Sync ist verfügbar und braucht kein Konto."
+          "a": "Countdown bewahrt bis zu 30 reguläre Sicherungen auf diesem Gerät auf, dazu separate Sicherheitskopien vor einer Wiederherstellung oder Migration. Das sind 30 Kopien, keine garantierten 30 Tage Verlauf. Sie können helfen, solange die Dateien auf dem Gerät verfügbar sind. Prüfe vor dem Löschen der App oder einem Gerätewechsel, ob deine Ereignisse synchronisiert wurden, und speichere einen Export außerhalb der App. iCloud-Sync benötigt deinen angemeldeten Apple Account und eine funktionierende Verbindung. Ohne synchronisierte Kopie oder Export ist eine Wiederherstellung nicht garantiert. Vergangene Ereignisse kannst du auch im Zeitstrahl ansehen."
         },
         {
           "q": "Was schaltet Countdown Pro frei, und wie wird es verkauft?",
@@ -289,9 +296,15 @@
         },
         {
           "q": "Brauche ich ein Konto?",
-          "a": "Kein Konto, keine Registrierung. Der iCloud-Sync nutzt deinen eigenen Apple Account, wenn du ihn einschaltest, und die tägliche Sicherung bleibt auf deinem iPhone."
+          "a": "Du brauchst kein eigenes Countdown-Konto. Für iCloud-Sync benötigst du deinen angemeldeten Apple Account und eine funktionierende Verbindung. Lokale Sicherungen bleiben auf deinem iPhone."
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "Ein Countdown, der deine Tage nie verliert — und dir keines seiner vier Widgets vorenthält.": "Behalte wichtige Tage im Blick: mit vier kostenlosen Standard-Widgets, lokalen Sicherungen und optionaler iCloud-Synchronisierung.",
+        "DEINE TAGE, AUFGEHOBEN\nDie häufigste Beschwerde in dieser Kategorie lautet: „Nach dem Update war alles weg.“ Diese App legt jeden Tag eine Sicherung aller Ereignisse auf diesem Gerät an, und immer vor riskanten Schritten. Dreißig Tage Verlauf, ein Tipp zum Wiederherstellen, und nichts verlässt jemals dein Telefon. Auch vergangene Tage werden nicht gelöscht: Sie sammeln sich zu einem Zeitstrahl, den du zurückgehen kannst, mit der längsten Wartezeit jedes Jahres daneben.": "Lokale Sicherungen und ihre Grenzen\nCountdown bewahrt bis zu 30 reguläre Sicherungen auf diesem Gerät auf, dazu separate Sicherheitskopien vor einer Wiederherstellung oder Migration. Das sind 30 Kopien, keine garantierten 30 Tage Verlauf. Sie können helfen, solange die Dateien auf dem Gerät verfügbar sind. Prüfe vor dem Löschen der App oder einem Gerätewechsel, ob deine Ereignisse synchronisiert wurden, und speichere einen Export außerhalb der App. iCloud-Sync benötigt deinen angemeldeten Apple Account und eine funktionierende Verbindung. Ohne synchronisierte Kopie oder Export ist eine Wiederherstellung nicht garantiert. Vergangene Ereignisse kannst du auch im Zeitstrahl ansehen.",
+        "• iCloud-Sync, ganz ohne Konto": "• iCloud-Sync mit deinem Apple Account"
+      },
+      "detailsHeading": "Funktionen und Grenzen der Wiederherstellung"
     },
     {
       "key": "countdown-fr",
@@ -310,7 +323,7 @@
       "oneLiner": "App de compte à rebours pour iPhone où chaque taille des quatre widgets standard est gratuite et le nombre d'événements illimité.",
       "description": "App de compte à rebours pour iPhone : les quatre widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub. Pro ajoute des fonds, vos propres photos, Défilé photo, des polices, l'Activité en direct et le compte à rebours à deux.",
       "audience": "Tous ceux qui comptent les jours avant les vacances, le mariage, le bac, la retraite ou un anniversaire — ou les jours depuis une date.",
-      "free": "Chaque taille des quatre widgets standard, événements illimités, rappels, répétition, décompte depuis une date, sauvegarde quotidienne sur l'appareil, synchronisation iCloud.",
+      "free": "Chaque taille des quatre widgets standard, événements illimités, rappels, répétition, décompte depuis une date, copies locales sur l'appareil, synchronisation iCloud.",
       "paid": "Pro débloque 107 des 159 fonds d'écran, le widget Défilé photo, vos propres photos en fond, les polices Pro, l'Activité en direct sur l'écran verrouillé et l'invitation d'un proche à faire le compte à rebours avec vous. Abonnement annuel avec 7 jours d'essai gratuit, abonnement mensuel ou achat unique à vie ; les prix sont affichés dans l'app avant l'achat.",
       "legal": [],
       "faq": [
@@ -332,7 +345,7 @@
         },
         {
           "q": "Que deviennent mes comptes à rebours après une mauvaise mise à jour ou une réinstallation ?",
-          "a": "L'app fait une sauvegarde de tout sur l'appareil une fois par jour, et toujours avant une opération risquée. Trente jours d'historique sont conservés et chaque sauvegarde se restaure d'un geste. La synchronisation iCloud est disponible et ne demande aucun compte."
+          "a": "Countdown conserve jusqu'à 30 copies locales courantes, avec des copies de sécurité distinctes avant une restauration ou une migration. Il s'agit de 30 copies, pas de 30 jours d'historique garantis. Elles peuvent servir tant que les fichiers restent disponibles sur l'appareil. Avant de supprimer l'app ou de changer d'iPhone, vérifiez la synchronisation des événements et enregistrez un export hors de l'app. La synchronisation iCloud nécessite votre compte Apple connecté et une connexion fonctionnelle. Sans copie synchronisée ni export, la récupération n'est pas garantie. Les événements passés restent consultables dans la frise chronologique."
         },
         {
           "q": "Que débloque Countdown Pro, et comment est-il vendu ?",
@@ -340,9 +353,15 @@
         },
         {
           "q": "Faut-il un compte ?",
-          "a": "Aucun compte, aucune inscription. La synchronisation iCloud utilise votre propre compte Apple quand vous l'activez, et la sauvegarde quotidienne reste sur votre iPhone."
+          "a": "Aucun compte propre à Countdown n'est nécessaire. Pour la synchronisation iCloud, vous devez être connecté à votre compte Apple et disposer d'une connexion fonctionnelle. Les copies locales restent sur votre iPhone."
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "Un compte à rebours qui ne perd jamais vos jours — et qui ne vous prive d'aucun de ses quatre widgets.": "Gardez vos dates importantes à portée de main avec quatre widgets standard gratuits, des copies locales et la synchronisation iCloud en option.",
+        "VOS JOURS, GARDÉS\nLe reproche le plus courant dans cette catégorie : « la mise à jour a tout effacé ». Cette app enregistre chaque jour un instantané de tous vos événements sur cet appareil, et toujours avant une opération risquée. Trente jours d'historique, une touche pour restaurer, et rien ne quitte jamais votre téléphone. Les jours déjà passés ne sont pas supprimés non plus : ils forment une frise que vous pouvez remonter, avec la plus longue attente de chaque année inscrite à côté.": "Copies locales et limites de restauration\nCountdown conserve jusqu'à 30 copies locales courantes, avec des copies de sécurité distinctes avant une restauration ou une migration. Il s'agit de 30 copies, pas de 30 jours d'historique garantis. Elles peuvent servir tant que les fichiers restent disponibles sur l'appareil. Avant de supprimer l'app ou de changer d'iPhone, vérifiez la synchronisation des événements et enregistrez un export hors de l'app. La synchronisation iCloud nécessite votre compte Apple connecté et une connexion fonctionnelle. Sans copie synchronisée ni export, la récupération n'est pas garantie. Les événements passés restent consultables dans la frise chronologique.",
+        "• Synchronisation iCloud, sans compte à créer": "• Synchronisation iCloud avec votre compte Apple"
+      },
+      "detailsHeading": "Fonctionnalités et limites de restauration"
     },
     {
       "key": "countdown-it",
@@ -361,7 +380,7 @@
       "oneLiner": "App di conto alla rovescia per iPhone in cui ogni dimensione dei quattro widget standard è gratis e il numero di eventi è illimitato.",
       "description": "App di conto alla rovescia per iPhone: i quattro widget standard per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità. Pro aggiunge sfondi, le tue foto, Rullino foto, caratteri, l'Attività in tempo reale e il conto alla rovescia insieme.",
       "audience": "Chi conta i giorni alle vacanze, al matrimonio, alla maturità, alla pensione o a un compleanno — o i giorni da una data.",
-      "free": "Ogni dimensione dei quattro widget standard, eventi illimitati, promemoria, ripetizione, conteggio da una data, backup quotidiano sul dispositivo, sincronizzazione iCloud.",
+      "free": "Ogni dimensione dei quattro widget standard, eventi illimitati, promemoria, ripetizione, conteggio da una data, copie locali sul dispositivo, sincronizzazione iCloud.",
       "paid": "Pro sblocca 107 dei 159 sfondi, il widget Rullino foto, le tue foto come sfondo, i caratteri Pro, l'Attività in tempo reale sulla schermata di blocco e l'invito a contare i giorni insieme a qualcuno. Piano annuale con 7 giorni di prova gratuita, piano mensile o acquisto una tantum a vita; i prezzi sono mostrati nell'app prima dell'acquisto.",
       "legal": [],
       "faq": [
@@ -383,7 +402,7 @@
         },
         {
           "q": "Che fine fanno i miei conti alla rovescia dopo un aggiornamento sbagliato o una reinstallazione?",
-          "a": "L'app fa un backup di tutto sul dispositivo una volta al giorno, e sempre prima di un'operazione rischiosa. Trenta giorni di cronologia restano salvati e ogni backup si ripristina con un tocco. La sincronizzazione iCloud è disponibile e non richiede account."
+          "a": "Countdown conserva fino a 30 copie locali ordinarie, con copie di sicurezza separate prima di un ripristino o di una migrazione. Sono 30 copie, non 30 giorni di cronologia garantiti. Possono aiutare finché i file restano disponibili sul dispositivo. Prima di eliminare l'app o cambiare iPhone, verifica che gli eventi siano sincronizzati e salva un'esportazione fuori dall'app. La sincronizzazione iCloud richiede l'accesso al tuo account Apple e una connessione funzionante. Senza una copia sincronizzata o un'esportazione, il recupero non è garantito. Gli eventi passati sono consultabili anche nella linea del tempo."
         },
         {
           "q": "Cosa sblocca Countdown Pro e come si acquista?",
@@ -391,9 +410,15 @@
         },
         {
           "q": "Serve un account?",
-          "a": "Nessun account, nessuna registrazione. La sincronizzazione iCloud usa il tuo account Apple quando la attivi, e il backup quotidiano resta sul tuo iPhone."
+          "a": "Non serve un account specifico per Countdown. Per sincronizzare con iCloud devi accedere al tuo account Apple e avere una connessione funzionante. Le copie locali restano sull'iPhone."
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "Un conto alla rovescia che non perde mai i tuoi giorni — e non ti nega nessuno dei suoi quattro widget.": "Tieni vicine le date importanti con quattro widget standard gratuiti, copie locali e sincronizzazione iCloud facoltativa.",
+        "I TUOI GIORNI, AL SICURO\nLa lamentela più comune in questa categoria è «con l'aggiornamento è sparito tutto». Questa app salva ogni giorno un'istantanea di tutti i tuoi eventi su questo dispositivo, e sempre prima di qualcosa di rischioso. Trenta giorni di cronologia, un tocco per ripristinare, e niente lascia mai il telefono. Nemmeno i giorni già passati vengono cancellati: si raccolgono in una linea del tempo che puoi risalire, con accanto l'attesa più lunga di ogni anno.": "Copie locali e limiti del ripristino\nCountdown conserva fino a 30 copie locali ordinarie, con copie di sicurezza separate prima di un ripristino o di una migrazione. Sono 30 copie, non 30 giorni di cronologia garantiti. Possono aiutare finché i file restano disponibili sul dispositivo. Prima di eliminare l'app o cambiare iPhone, verifica che gli eventi siano sincronizzati e salva un'esportazione fuori dall'app. La sincronizzazione iCloud richiede l'accesso al tuo account Apple e una connessione funzionante. Senza una copia sincronizzata o un'esportazione, il recupero non è garantito. Gli eventi passati sono consultabili anche nella linea del tempo.",
+        "• Sincronizzazione iCloud, senza creare un account": "• Sincronizzazione iCloud con il tuo account Apple"
+      },
+      "detailsHeading": "Funzioni e limiti del ripristino"
     },
     {
       "key": "countdown-ja",
@@ -412,7 +437,7 @@
       "oneLiner": "iPhone向けカウントダウンアプリ。4種類の標準ウィジェットは全サイズ無料、イベント数は無制限。",
       "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面の4種類のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景、自分の写真の背景、フォトロール、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。",
       "audience": "受験、旅行、結婚式、推しのライブ、誕生日まであと何日かを数える人。ある日からの日数を数える人にも。",
-      "free": "4種類の標準ウィジェットの全サイズ、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内への毎日のバックアップ、iCloud同期。",
+      "free": "4種類の標準ウィジェットの全サイズ、無制限のイベント、リマインダー、繰り返し、経過日数のカウント、端末内のスナップショット、iCloud同期。",
       "paid": "Proは159種の背景のうち107種、自分の写真の背景、フォトロール（ウィジェット）、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待を解放。7日間の無料トライアル付き年額プラン、月額プラン、または買い切り。価格は購入前にアプリ内に表示されます。",
       "legal": [],
       "faq": [
@@ -434,7 +459,7 @@
         },
         {
           "q": "アップデートの不具合や再インストールでカウントダウンはどうなりますか？",
-          "a": "アプリは1日1回、そして危険な操作の前には必ず、端末内にすべてのバックアップを取ります。30日分の履歴が残り、どのバックアップもワンタップで復元できます。iCloud同期も使え、アカウント登録は不要です。"
+          "a": "Countdownは端末内に通常のスナップショットを最大30件保存し、復元やデータ移行の前には別枠の安全用コピーを作成します。30件は保存数であり、30日分の履歴を保証するものではありません。ファイルが端末内に残っている場合に、以前の状態へ戻すために使えます。アプリの削除や機種変更の前にイベントの同期を確認し、書き出したデータをアプリの外に保存してください。iCloud同期にはApple Accountへのサインインと正常な接続が必要です。同期済みのコピーや書き出しデータがなければ、復元は保証できません。過去のイベントはタイムラインでも確認できます。"
         },
         {
           "q": "Proで何が解放され、どのように購入できますか？",
@@ -442,9 +467,15 @@
         },
         {
           "q": "アカウントは必要ですか？",
-          "a": "アカウントも登録も不要です。iCloud同期をオンにするとご自身のApple Accountが使われ、毎日のバックアップはiPhone内に保存されます。"
+          "a": "Countdown専用のアカウント登録は不要です。iCloud同期には、ご自身のApple Accountへのサインインと正常な接続が必要です。端末内のスナップショットはiPhoneに保存されます。"
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "大切な日を失わない、そして4種類のウィジェットを出し惜しみしないカウントダウンアプリです。": "大切な日を身近に。4種類の標準ウィジェットは無料で、端末内のスナップショットと任意のiCloud同期に対応しています。",
+        "あなたの日々を、確実に\nこのジャンルで最も多い不満は「アップデートで全部消えた」です。このアプリは毎日この端末にすべてのイベントのスナップショットを保存し、危険な操作の前にも必ず保存します。30日分の履歴、ワンタップで復元、そして何ひとつ端末の外には出ません。過ぎた日も削除しません。さかのぼって眺められるタイムラインになり、その年いちばん長く待ったものが横に記されます。": "端末内のスナップショットと復元の条件\nCountdownは端末内に通常のスナップショットを最大30件保存し、復元やデータ移行の前には別枠の安全用コピーを作成します。30件は保存数であり、30日分の履歴を保証するものではありません。ファイルが端末内に残っている場合に、以前の状態へ戻すために使えます。アプリの削除や機種変更の前にイベントの同期を確認し、書き出したデータをアプリの外に保存してください。iCloud同期にはApple Accountへのサインインと正常な接続が必要です。同期済みのコピーや書き出しデータがなければ、復元は保証できません。過去のイベントはタイムラインでも確認できます。",
+        "• アカウント不要の iCloud 同期": "• ご自身のApple Accountを使ったiCloud同期"
+      },
+      "detailsHeading": "機能と復元の条件"
     },
     {
       "key": "countdown-ko",
@@ -520,7 +551,7 @@
       "oneLiner": "แอปนับถอยหลังสำหรับ iPhone ที่วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาดใช้ฟรี และจำนวนอีเวนต์ไม่จำกัด",
       "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ต 4 แบบทุกขนาดบนหน้าจอโฮมและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด ไม่มีโฆษณา Pro เพิ่มพื้นหลัง รูปของคุณเอง ภาพหมุนเวียน และฟอนต์",
       "audience": "คนที่นับวันรอสอบ ปีใหม่ สงกรานต์ ทริป งานแต่ง หรือวันเกิด — หรือนับว่าผ่านมากี่วันแล้วจากวันหนึ่ง",
-      "free": "วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำรองข้อมูลในเครื่องทุกวัน ซิงก์ iCloud",
+      "free": "วิดเจ็ตมาตรฐานทั้ง 4 แบบทุกขนาด อีเวนต์ไม่จำกัด แจ้งเตือน ทำซ้ำ นับวันที่ผ่านมา สำเนาข้อมูลในเครื่อง ซิงก์ iCloud",
       "paid": "Pro ปลดล็อกพื้นหลัง 107 จาก 159 แบบ รูปของคุณเองเป็นพื้นหลัง วิดเจ็ตภาพหมุนเวียน ฟอนต์ Pro กิจกรรมสดบนหน้าจอล็อก และการชวนคนอื่นมานับถอยหลังด้วยกัน มีแผนรายปีพร้อมทดลองฟรี 7 วัน แผนรายเดือน หรือซื้อขาดครั้งเดียว ราคาแสดงในแอปก่อนซื้อ",
       "legal": [],
       "faq": [
@@ -542,7 +573,7 @@
         },
         {
           "q": "ถ้าแอปอัปเดตพัง หรือลงใหม่ ข้อมูลนับถอยหลังจะเป็นอย่างไร",
-          "a": "แอปสำรองข้อมูลทั้งหมดไว้ในเครื่องวันละครั้ง และก่อนทำอะไรที่เสี่ยงเสมอ เก็บประวัติไว้ 30 วัน และกู้คืนได้ในแตะเดียว มีซิงก์ iCloud ให้ใช้โดยไม่ต้องมีบัญชี"
+          "a": "Countdown เก็บสำเนาข้อมูลปกติไว้ในเครื่องได้สูงสุด 30 ชุด และสร้างสำเนาเพื่อความปลอดภัยแยกต่างหากก่อนกู้คืนหรือย้ายข้อมูล จำนวนนี้หมายถึง 30 ชุด ไม่ใช่การรับประกันว่าจะมีประวัติครบ 30 วัน สำเนาจะช่วยได้เมื่อไฟล์ยังอยู่ในเครื่อง ก่อนลบแอปหรือเปลี่ยน iPhone ให้ตรวจสอบว่าอีเวนต์ซิงก์แล้ว และส่งออกข้อมูลไปเก็บไว้นอกแอป การซิงก์ iCloud ต้องลงชื่อเข้าใช้ Apple Account และมีการเชื่อมต่อที่ใช้งานได้ หากไม่มีสำเนาที่ซิงก์ไว้หรือไฟล์ที่ส่งออก จะไม่สามารถรับประกันการกู้คืนได้ อีเวนต์ที่ผ่านมาแล้วยังดูได้ในไทม์ไลน์"
         },
         {
           "q": "Pro ปลดล็อกอะไร และซื้อแบบไหนได้บ้าง",
@@ -550,9 +581,15 @@
         },
         {
           "q": "ต้องมีบัญชีไหม",
-          "a": "ไม่ต้องมีบัญชี ไม่ต้องสมัคร เมื่อเปิดซิงก์ iCloud จะใช้ Apple Account ของคุณเอง และข้อมูลสำรองรายวันจะเก็บไว้ใน iPhone ของคุณ"
+          "a": "ไม่ต้องสร้างบัญชีเฉพาะสำหรับ Countdown แต่การซิงก์ iCloud ต้องลงชื่อเข้าใช้ Apple Account ของคุณและมีการเชื่อมต่อที่ใช้งานได้ สำเนาในเครื่องจะเก็บอยู่บน iPhone"
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "แอปนับถอยหลังที่ไม่ทำวันสำคัญของคุณหาย และไม่ล็อกวิดเจ็ตทั้ง 4 แบบไว้": "เก็บวันสำคัญไว้ใกล้ตัวด้วยวิดเจ็ตมาตรฐานฟรีทั้ง 4 แบบ สำเนาข้อมูลในเครื่อง และตัวเลือกซิงก์ผ่าน iCloud",
+        "เก็บวันของคุณไว้ให้\nคำบ่นที่พบบ่อยที่สุดในหมวดนี้คือ \"อัปเดตแล้วหายหมด\" แอปนี้บันทึกสแนปช็อตของทุกกิจกรรมไว้ในเครื่องนี้ทุกวัน และก่อนทำสิ่งที่เสี่ยงเสมอ ประวัติ 30 วัน กู้คืนด้วยการแตะครั้งเดียว และไม่มีอะไรออกจากเครื่องของคุณ และวันที่ผ่านมาแล้วก็ไม่ถูกลบเช่นกัน มันจะรวมเป็นไทม์ไลน์ที่ย้อนกลับไปดูได้ พร้อมบอกว่าปีนั้นคุณรอนานที่สุดกี่วัน": "สำเนาในเครื่องและข้อจำกัดในการกู้คืน\nCountdown เก็บสำเนาข้อมูลปกติไว้ในเครื่องได้สูงสุด 30 ชุด และสร้างสำเนาเพื่อความปลอดภัยแยกต่างหากก่อนกู้คืนหรือย้ายข้อมูล จำนวนนี้หมายถึง 30 ชุด ไม่ใช่การรับประกันว่าจะมีประวัติครบ 30 วัน สำเนาจะช่วยได้เมื่อไฟล์ยังอยู่ในเครื่อง ก่อนลบแอปหรือเปลี่ยน iPhone ให้ตรวจสอบว่าอีเวนต์ซิงก์แล้ว และส่งออกข้อมูลไปเก็บไว้นอกแอป การซิงก์ iCloud ต้องลงชื่อเข้าใช้ Apple Account และมีการเชื่อมต่อที่ใช้งานได้ หากไม่มีสำเนาที่ซิงก์ไว้หรือไฟล์ที่ส่งออก จะไม่สามารถรับประกันการกู้คืนได้ อีเวนต์ที่ผ่านมาแล้วยังดูได้ในไทม์ไลน์",
+        "• ซิงก์ iCloud โดยไม่ต้องสมัครบัญชี": "• ซิงก์ iCloud ผ่าน Apple Account ของคุณ"
+      },
+      "detailsHeading": "ฟีเจอร์และข้อจำกัดในการกู้คืน"
     },
     {
       "key": "countdown-zh-hans",
@@ -571,7 +608,7 @@
       "oneLiner": "iPhone 倒计时 App：四款标准小组件全尺寸免费，事件数量不限。",
       "description": "在 iPhone 主屏幕和锁屏查看生日、高考或旅行倒数。四款标准小组件全尺寸免费，事件不限量，提醒免费，无广告。Pro 可用自己的照片做背景、开启照片轮播和锁屏实时活动，也能邀请别人一起倒数。",
       "audience": "给高考、考研、春节、旅行、婚礼、生日倒数的人，也给想知道「在一起多少天」的人。",
-      "free": "四款标准小组件的全尺寸、不限量事件、提醒、重复、正数日、每天本机备份、iCloud 同步。",
+      "free": "四款标准小组件的全尺寸、不限量事件、提醒、重复、正数日、本机快照、iCloud 同步。",
       "paid": "Pro 解锁 159 张背景中的 107 张、用自己的照片做背景、照片轮播小组件、Pro 字体、锁屏实时活动，以及邀请别人一起倒数。年付（含 7 天免费试用）、月付或一次性买断，价格在购买前显示在应用内。",
       "legal": [],
       "faq": [
@@ -593,7 +630,7 @@
         },
         {
           "q": "App 更新出错或者重装了，我的倒计时会怎样？",
-          "a": "App 每天在本机备份一次全部数据，任何有风险的操作前也一定先备份。保留 30 天历史，任何一份备份一键还原。iCloud 同步可用，不需要账号。"
+          "a": "Countdown 在本机最多保留 30 份常规快照，并在恢复或迁移数据前另建安全副本。30 份是数量上限，不代表保证有连续 30 天的历史。只有文件仍保存在设备上，才能用来尝试恢复之前的状态。卸载 App 或更换手机前，请确认事件已同步，并把导出文件保存在 App 之外。iCloud 同步需要登录自己的 Apple 账户并保持连接正常。没有已同步的副本或导出文件，无法保证恢复数据。过去的事件也可以在时间轴中查看。"
         },
         {
           "q": "Pro 解锁什么，怎么买？",
@@ -601,9 +638,15 @@
         },
         {
           "q": "需要账号吗？",
-          "a": "不需要账号，不用注册。开启 iCloud 同步时用的是你自己的 Apple 账户，每天的备份也只存在你的 iPhone 里。"
+          "a": "不需要注册 Countdown 专用账号。iCloud 同步需要登录自己的 Apple 账户并保持连接正常；本机快照保存在你的 iPhone 上。"
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "一个不会弄丢你的日子、四款小组件也一款都不扣下的倒计时应用。": "用四款免费标准小组件记录重要日子，支持本机快照和可选的 iCloud 同步。",
+        "你的日子，替你留着\n这个品类最常见的差评是\"更新之后全没了\"。这个应用每天都会在本机给全部事件拍一份快照，任何有风险的操作之前也会先拍一份。三十天的历史，一键恢复，而且没有任何内容会离开你的手机。已经过去的日子也不会删掉：它们会汇成一条可以往回翻的时间轴，每一年旁边写着那年等得最久的一件事。": "本机快照与恢复边界\nCountdown 在本机最多保留 30 份常规快照，并在恢复或迁移数据前另建安全副本。30 份是数量上限，不代表保证有连续 30 天的历史。只有文件仍保存在设备上，才能用来尝试恢复之前的状态。卸载 App 或更换手机前，请确认事件已同步，并把导出文件保存在 App 之外。iCloud 同步需要登录自己的 Apple 账户并保持连接正常。没有已同步的副本或导出文件，无法保证恢复数据。过去的事件也可以在时间轴中查看。",
+        "• iCloud 同步，不需要注册账号": "• 使用自己的 Apple 账户进行 iCloud 同步"
+      },
+      "detailsHeading": "功能与恢复说明"
     },
     {
       "key": "countdown-zh-hant",
@@ -622,7 +665,7 @@
       "oneLiner": "iPhone 倒數計時 App：四款標準小工具全尺寸免費，事件數量不限。",
       "description": "iPhone 倒數計時 App：主畫面和鎖定畫面的四款小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景、自己的照片、照片輪播、字體、即時動態和一起倒數。",
       "audience": "給學測、會考、過年、旅行、婚禮、演唱會、生日倒數的人，也給想知道「交往幾天」的人。",
-      "free": "四款標準小工具的全尺寸、不限量事件、提醒、重複、正數日、每天本機備份、iCloud 同步。",
+      "free": "四款標準小工具的全尺寸、不限量事件、提醒、重複、正數日、本機快照、iCloud 同步。",
       "paid": "Pro 解鎖 159 張背景中的 107 張、用自己的照片做背景、照片輪播小工具、Pro 字體、鎖定畫面即時動態，以及邀請別人一起倒數。年繳（含 7 天免費試用）、月繳或一次買斷，價格在購買前顯示於 App 內。",
       "legal": [],
       "faq": [
@@ -644,7 +687,7 @@
         },
         {
           "q": "App 更新出錯或重裝了，我的倒數計時會怎樣？",
-          "a": "App 每天在本機備份一次全部資料，任何有風險的操作前也一定先備份。保留 30 天歷史，任何一份備份一鍵還原。iCloud 同步可用，不需要帳號。"
+          "a": "Countdown 在本機最多保留 30 份一般快照，並在還原或移轉資料前另建安全副本。30 份是數量上限，不代表保證有連續 30 天的歷史記錄。只有檔案仍保存在裝置上，才能用來嘗試還原先前的狀態。刪除 App 或更換手機前，請確認事件已同步，並將匯出檔案存放在 App 之外。iCloud 同步需要登入自己的 Apple 帳號且連線正常。沒有已同步的副本或匯出檔案，就無法保證資料能還原。過去的事件也可以在時間軸中查看。"
         },
         {
           "q": "Pro 解鎖什麼，怎麼買？",
@@ -652,9 +695,15 @@
         },
         {
           "q": "需要帳號嗎？",
-          "a": "不需要帳號，不用註冊。開啟 iCloud 同步時用的是你自己的 Apple 帳號，每天的備份也只存在你的 iPhone 裡。"
+          "a": "不需要註冊 Countdown 專用帳號。iCloud 同步需要登入自己的 Apple 帳號且連線正常；本機快照儲存在你的 iPhone 上。"
         }
-      ]
+      ],
+      "descriptionReplacements": {
+        "一個不會弄丟你的日子、四款小工具也一款都不扣下的倒數計時應用。": "用四款免費標準小工具記錄重要日子，支援本機快照與可選用的 iCloud 同步。",
+        "你的日子，替你留著\n這個品類最常見的負評是「更新之後全沒了」。這個應用每天都會在本機給全部事件拍一份快照，任何有風險的操作之前也會先拍一份。三十天的歷史，一鍵還原，而且沒有任何內容會離開你的手機。已經過去的日子也不會刪掉：它們會匯成一條可以往回翻的時間軸，每一年旁邊寫著那年等得最久的一件事。": "本機快照與還原限制\nCountdown 在本機最多保留 30 份一般快照，並在還原或移轉資料前另建安全副本。30 份是數量上限，不代表保證有連續 30 天的歷史記錄。只有檔案仍保存在裝置上，才能用來嘗試還原先前的狀態。刪除 App 或更換手機前，請確認事件已同步，並將匯出檔案存放在 App 之外。iCloud 同步需要登入自己的 Apple 帳號且連線正常。沒有已同步的副本或匯出檔案，就無法保證資料能還原。過去的事件也可以在時間軸中查看。",
+        "• iCloud 同步，不需要註冊帳號": "• 使用自己的 Apple 帳號進行 iCloud 同步"
+      },
+      "detailsHeading": "功能與還原說明"
     },
     {
       "key": "invoiceqr",

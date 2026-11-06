@@ -132,7 +132,7 @@ node tools/test_analytics.mjs
 node tools/test_analytics_exclusion.mjs
 ```
 
-客户端位于 `assets/analytics/firebase-web-v2.js`，旧 `firebase-web-v1.js` 保留供缓存页面使用。assets 使用一年 immutable 缓存，修改脚本内容时必须换新文件名并同步生成器。SDK 使用固定 Firebase 12.4.0 CDN 模块；SDK 被屏蔽或初始化失败时，工具与链接仍可用，统计不保证送达。SDK 加载期间事件暂存内存，若用户在初始化完成前离开页面，该页队列可能丢失；点击意向应结合真实商店活动数据核对。
+客户端位于 `assets/analytics/firebase-web-v3.js`，旧 `firebase-web-v1.js` 保留供缓存页面使用。assets 使用一年 immutable 缓存，修改脚本内容时必须换新文件名并同步生成器。SDK 使用固定 Firebase 12.4.0 CDN 模块；SDK 被屏蔽或初始化失败时，工具与链接仍可用，统计不保证送达。SDK 加载期间事件暂存内存，若用户在初始化完成前离开页面，该页队列可能丢失；点击意向应结合真实商店活动数据核对。
 
 实现依据：[Firebase Web 事件](https://firebase.google.com/docs/analytics/web/events)、[Firebase Analytics JS API](https://firebase.google.com/docs/reference/js/analytics)、[GA4 页面浏览与去重](https://developers.google.com/analytics/devguides/collection/ga4/views)、[增强型衡量配置](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/EnhancedMeasurementSettings)。
 
@@ -145,3 +145,11 @@ node tools/test_analytics_exclusion.mjs
 - 通用与 Kleinunternehmer 页在原有 more 条目之后追加完整问答，回答中的链接沿用：`iq-more-handwerker`、`iq-more-freiberufler`（`navigation_click`）；若独有率检查要求撤回旧页链接，则这些 ID 暂不生成。
 
 新页署名区使用 `iq-berufe-contact`（`contact_click`）及 `iq-berufe-about`（`navigation_click`）。沿用自动生成的 FAQ 展开、页头/页尾、hub 和商店卡片埋点；无需更改跟踪器。
+
+## Ahrefs 与 Vercel 边界（2026-11-06）
+
+Ahrefs key按项目设置页核对，SDK仅在正式域名且非内部/自动化访问时载入。通过临时data-key手动发送pageview、tool_open、tool_action、tool_result和app_store_click；SDK默认链接/表单回调不持有key，不发送任意href/action。工具动作是点击意图；壁纸结果区分download_started/share_completed/cancelled/preview_opened/failed，不把请求或取消标记为已保存。props全为固定字符串，数量如有需转字符串。
+
+Referrer-Policy部署改strict-origin。来源地址仍带query/hash/凭据或无效时，Ahrefs保守跳过该页采集；GA来源只取origin。Vercel beforeSend也排除内部/webdriver/敏感来源，并剔除URL所有查询和片段（仍保留固定ref路径归因）。Vercel脚本资源仍可能加载，不能把零事件说成零第三方网络请求。来源被排除的访问不是零真实访问；统计工具屏蔽/网络失败也会漏记。
+
+离线真实Ahrefs SDK契约测试：node tools/test_ahrefs.cjs；fixture SHA256 b270afc5f9df7bcd9239c22857fb1511bba1398a28b1c3548272d720cb433c62。完整请求在本地VM拦截，不证明后台入账。旧文件保留以兼容缓存页面。

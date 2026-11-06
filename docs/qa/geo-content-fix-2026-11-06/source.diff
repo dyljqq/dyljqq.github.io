@@ -1,0 +1,100 @@
+--- before/tools/build_tools.py
++++ after/tools/build_tools.py
+@@ -2002,6 +2002,11 @@
+ # jp 商店 10-10 已是 1.4.16（Pro＝背景 / 自分の写真 / Pro フォント / ロック画面のライブアクティビティ / 招待）。
+ KT1, KT2, KTM1, KTM2, KT28A, KT28B = (dt.date(2027, 1, 16), dt.date(2027, 1, 17), dt.date(2027, 1, 23), dt.date(2027, 1, 24),
+                                        dt.date(2028, 1, 15), dt.date(2028, 1, 16))
++KT_CHECKED = dt.date(2026, 11, 6)
++KT_GUIDE = "https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r9/r9_jukenannai.html"
++KT_OVERVIEW = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017475.pdf"
++KT_TICKET = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017486.pdf"
++KT_RULES = "https://www.dnc.ac.jp/albums/abm.php?d=2164&amp;f=abm00017490.pdf"
+ JA_APP = ("「カウントダウン ウィジェット: 記念日」は私たちの無料 iPhone アプリです。4種類のウィジェットはすべて無料で、ホーム画面にもロック画面にも置けます。"
+           "イベント数は無制限、繰り返しと通知、アカウント不要の iCloud 同期にも対応しています。")
+ PAGES.append({"path": "/tools/ja/ato-nannichi/", "lang": "ja", "kind": "WebApplication", "app": "countdown", "published": "2026-09-29",
+@@ -2029,12 +2034,12 @@
+ <p>今日を0日として、指定した日までに日付が何回変わるかを数えます。時刻はあなたの端末のタイムゾーンで数えます。指定した日が今日なら0日、過去の日付なら「何日たったか」になるので、記念日や禁煙の日数にも使えます。</p>
+ <p>サイトを開かなくても残り日数が見えるように、下のアプリで iPhone のホーム画面やロック画面に置くこともできます。</p>"""})
+ 
+-PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29",
++PAGES.append({"path": "/tools/ja/kyotsu-test-2027/", "lang": "ja", "kind": "Article", "app": "countdown", "published": "2026-09-29", "updated": KT_CHECKED.isoformat(),
+   "more": [
+     ("共通テスト2027の追・再試験はいつですか？", f"{fmt(KTM1, 'ja')}・{KTM2.day}日（{'月火水木金土日'[KTM2.weekday()]}）です。"),
+     ("共通テストまであと1か月になるのはいつですか？", f"1か月前は{fmt(dt.date(2026, 12, 16), 'ja')}、30日前は{fmt(KT1 - dt.timedelta(days=30), 'ja')}です。"),
+-    ("共通テスト当日の持ち物は？", "受験票・写真票、黒鉛筆（H/F/HB）、プラスチック消しゴム、時計（アラーム音OFF）、昼食・飲料、身分証明書、防寒着が基本です。シャープペンシルはメモのみ可でマーク不可です。"),
+-    ("自己採点はいつ行われますか？", "各予備校（河合塾・駿台等）の解答速報は試験当日の夜から公開され、学校での自己採点は試験翌日の月曜日に行われるのが一般的です。"),
++    ("共通テスト当日の持ち物は？", "印刷した受験票、有効な顔写真付き身分証明書、黒鉛筆（H/F/HB）、プラスチック製の消しゴムを用意します。受験票をスマートフォンで見せるだけでは受験できません。時計や服装にも制限があるため、下のチェックリストと令和9年度の受験案内を確認してください。"),
++    ("自己採点はいつ行いますか？", "学校や予備校の案内に従って予定を決めてください。自己採点の結果と、大学入試センターが通知する成績は別のものです。"),
+   ],
+   "title": "共通テスト2027 カウントダウン・待ち受け（1/16・17）", "crumb": "共通テスト2027",
+   "description": f"2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。",
+@@ -2055,28 +2060,32 @@
+ <tr><th>追・再試験</th><td>{fmt(KTM1, "ja")}・{fmt(KTM2, "ja")}</td></tr>
+ <tr><th>2028年（令和10年度）の本試験</th><td>{fmt(KT28A, "ja")}・{fmt(KT28B, "ja")}</td></tr>
+ </tbody></table>
+-<p class="meta">出典：大学入試センター「令和9年度試験」「令和10年度試験」（{SOURCES_CHECKED.year}年{SOURCES_CHECKED.month}月{SOURCES_CHECKED.day}日に確認）。出願の手続きや時間割は、大学入試センターの案内で確認してください。</p>
++<p class="meta">出典：大学入試センター「<a href="{KT_GUIDE}">令和9年度 受験案内</a>」「<a href="https://www.dnc.ac.jp/kyotsu/shiken_jouhou/r10/">令和10年度試験</a>」。{KT_CHECKED.year}年{KT_CHECKED.month}月{KT_CHECKED.day}日に確認。追・再試験は災害などにより日程が変わる場合があります。</p>
+ <h2>本試験2日間の時間割</h2>
++<p>以下は通常の試験時間です（日本時間）。受験上の配慮がある場合は、個別の通知も確認してください。</p>
+ <table><thead><tr><th>日程</th><th>科目</th><th>試験時間</th></tr></thead><tbody>
+-<tr><th rowspan="4">1日目（土）</th><td>地理歴史・公民</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
++<tr><th rowspan="4">1月16日（土）</th><td>地理歴史・公民</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
+ <tr><td>国語</td><td>13:00〜14:30（90分）</td></tr>
+-<tr><td>外国語（リーディング）</td><td>15:10〜16:30（80分）</td></tr>
+-<tr><td>外国語（リスニング）</td><td>17:10〜18:10（機器操作含む60分、解答30分）</td></tr>
+-<tr><th rowspan="5">2日目（日）</th><td>理科①</td><td>9:30〜10:30（60分）</td></tr>
+-<tr><td>数学①</td><td>11:20〜12:30（70分）</td></tr>
+-<tr><td>数学②</td><td>13:50〜15:00（70分）</td></tr>
+-<tr><td>情報Ⅰ</td><td>15:50〜16:50（60分）</td></tr>
+-<tr><td>理科②</td><td>17:40〜19:50（2科目）/ 18:50〜19:50（1科目）</td></tr>
+-</tbody></table>
+-<p class="meta">時間割の開始・終了時刻は前年度までの実施基準に基づきます。年度ごとの確定時刻は大学入試センター発表の受験票・実施要項で必ずご確認ください。</p>
++<tr><td>外国語（英語リーディング・その他の外国語）</td><td>15:20〜16:40（80分）</td></tr>
++<tr><td>英語（リスニング）</td><td>17:20〜18:20（機器操作を含む60分、解答30分）</td></tr>
++<tr><th rowspan="4">1月17日（日）</th><td>理科</td><td>9:30〜11:40（2科目）/ 10:40〜11:40（1科目）</td></tr>
++<tr><td>数学①</td><td>13:00〜14:10（70分）</td></tr>
++<tr><td>数学②</td><td>15:00〜16:10（70分）</td></tr>
++<tr><td>情報Ⅰ</td><td>17:00〜18:00（60分）</td></tr>
++</tbody></table>
++<p class="meta">出典：<a href="{KT_OVERVIEW}">令和9年度 受験案内「A 試験概要」8ページ（PDF）</a>。地理歴史・公民と理科で2科目を受験する場合、解答は各60分で、その間の10分は答案回収などに使われます。登録した科目数に対応する時間を確認してください。</p>
++<p><strong>試験開始時刻と入室終了時刻は異なります。</strong>入室終了時刻は、12月上旬に公開予定の「受験上の注意」で確認してください。受験票で指定された試験場・科目も照合し、当日の行き方を決めておきましょう。</p>
+ <h2>当日の持ち物チェックリスト</h2>
+ <ul>
+-<li><strong>受験票・写真票</strong>：万が一忘れた場合は、会場の試験場本部に申し出て「仮受験票」の発行を受けられます。慌てずに会場へ向かいましょう。</li>
+-<li><strong>黒鉛筆（H、F、HB）とプラスチック消しゴム</strong>：マークシートの読み取り精度の関係上、鉛筆の濃さは厳守です。シャープペンシルはメモや計算のみ使用可能で、マークには使えません。</li>
+-<li><strong>腕時計（アラーム機能のないもの）</strong>：スマートウォッチ等の通信機能・計算機能付き時計は使用不可。音やバイブが鳴ると不正行為とみなされる恐れがあるため、事前にアラームを完全に切っておきましょう。</li>
+-<li><strong>昼食・飲料</strong>：試験場近くのコンビニは混雑・品切れになりやすいため、自宅近くで事前に用意しておくのが安心です。</li>
+-<li><strong>防寒具・上着</strong>：定期的な換気で教室内の温度差が大きいため、着脱しやすい前開きのカーディガンやパーカーが適しています。英文字や格言が入った衣服は着用できない場合があります。</li>
++<li><strong>印刷した受験票</strong>：2026年12月4日10時から出願サイトのマイページで取得できます。A4の白い紙に縦向き・原寸で印刷し、写真などが鮮明か確認します。スマートフォン画面の提示では受験できません。</li>
++<li><strong>顔写真付きの身分証明書</strong>：氏名・生年月日が確認でき、試験当日に有効な学生証やパスポートなどが必要です。</li>
++<li><strong>黒鉛筆（H、F、HB）とプラスチック製の消しゴム</strong>：シャープペンシルは黒い芯でメモ・計算に使う場合に限られ、マークには使えません。格言などが印刷された鉛筆も避けてください。</li>
++<li><strong>規定に合う時計</strong>：辞書・計算・端末機能付き、機能が判別しづらいもの、秒針音のするもの、キッチンタイマー・学習タイマー、大型の時計は使えません。詳しい条件は受験案内で確認してください。</li>
++<li><strong>スマートフォン・スマートウォッチ等の収納</strong>：入室終了時刻までにアラームを解除して電源を切り、かばんへ。電源が切れていても衣服のポケットに入れたままでは不正行為になります。</li>
++<li><strong>服装・防寒</strong>：コート類は着用できます。英文字や地図などがプリントされた服は避け、ひざ掛け等を使う場合は事前に監督者の許可を受けてください。</li>
+ </ul>
++<p>昼食・飲料や会場までの交通手段も前日までに準備しておくと安心です。受験票に「上履き持参」とある場合は、上履きと外履きを入れる袋も用意してください。</p>
++<p class="meta">出典：<a href="{KT_TICKET}">令和9年度 受験案内「C-2 受験票」42〜44ページ（PDF）</a>、<a href="{KT_RULES}">「D 試験」48〜49ページ（PDF）</a>。12月上旬の「受験上の注意」公開後は、<a href="{KT_GUIDE}">大学入試センターの最新案内</a>も確認してください。</p>
+ <h2>節目の日付</h2>
+ <table><thead><tr><th>節目</th><th>日付</th></tr></thead><tbody>{"".join(f"<tr><td>{k}</td><td>{fmt(KT1 - dt.timedelta(days=n), 'ja')}</td></tr>" for k, n in (("100日前", 100), ("50日前", 50), ("30日前", 30), ("1週間前", 7), ("前日", 1)))}</tbody></table>
+ <h2>カウントダウン時期別の学習ポイント</h2>
+@@ -2377,7 +2386,7 @@
+   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "since": 2026, "ours": True,
+    "free": "Unlimited events, every size of the four standard widgets on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds the Pro backdrops, your own photos, the Photo Roll widget, typefaces, the Live Activity and counting down with someone you invite.",
+    "widgets": "Four standard widgets on Home Screen + Lock Screen, all sizes free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
+-   "take": "All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The listing also describes daily on-device snapshots with thirty days of restore history, plus calendar and spreadsheet import and export. Its 27 US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
++   "take": "All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The app keeps up to 30 routine snapshots on this device, not a guaranteed 30 days of history or an off-device backup. These snapshots do not guarantee recovery after uninstalling the app or replacing the device. Before either, verify a synced copy and save an export outside the app. Calendar and spreadsheet import and export are also available. Its 27 US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
+   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "since": 2012,
+    "free": "Free version with ads and an optional Remove Ads purchase (there is also a paid ad-free version); add as many events as you like, with iCloud sync, repeating events and Home Screen widgets listed as features.",
+    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "In the free version",
+@@ -2457,9 +2466,10 @@
+ {entries}
+ <h2>How we chose</h2>
+ <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>
++<p>We corrected our app's local-snapshot limits on November 6, 2026 after checking its implementation and <a href="/countdown/">current product guidance</a>. This was a source review, not a device-recovery test. The App Store ratings, versions and competitor descriptions remain the November 1 snapshot.</p>
+ <p>Not ready to install an app? <a href="/tools/countdown-wallpaper-maker/" data-track-id="wp-entry-best-apps">Make a free Lock Screen countdown wallpaper from your own photo in your browser</a>. The saved image is a still picture; its number does not update by itself.</p>"""
+     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
+-            "updated": "2026-11-01",
++            "updated": "2026-11-06",
+             "title": "Best Countdown Widget Apps for iPhone (2026): Which Ones Are Free", "crumb": "Best countdown widget apps",
+             "description": "Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, November 2026.",
+             "hub_title": "Best countdown widget apps for iPhone (2026)", "hub_desc": "Seven apps compared on free tier, widgets, repeats, reminders and sync.",

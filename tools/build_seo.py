@@ -50,7 +50,7 @@ DEVICE = ('<script>(function(h){var u=navigator.userAgent,i=/iP(hone|ad|od)/.tes
           'h.classList.add(i?"is-ios":"not-ios");if(!i&&!/Android/.test(u)&&matchMedia("(hover:hover) and (pointer:fine)").matches)h.classList.add("is-desk")})(document.documentElement)</script>')
 ANALYTICS = (DEVICE + '\n'
              '<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};'
-             'window.va("beforeSend",function(e){var r=new URLSearchParams(location.search).get("ref");'
+             'window.va("beforeSend",function(e){if(navigator.webdriver||new URLSearchParams(location.search).get("internal")==="1")return null;try{if(localStorage.getItem("gk_analytics_internal")==="1")return null;var src=document.referrer?new URL(document.referrer):null;if(src&&(src.search||src.hash||src.username||src.password))return null}catch(err){if(document.referrer)return null}var u=new URL(e.url);u.search="";u.hash="";e.url=u.href;var r=new URLSearchParams(location.search).get("ref");'
              'if(e.type==="pageview"&&r&&/^[a-z0-9-]{1,40}$/.test(r)&&e.url.indexOf("~out-")<0){var u=new URL(e.url);u.pathname=u.pathname.replace(/\\/?$/,"/")+"~"+r;u.search="";e.url=u.href}return e});'
              # 点 App Store 按钮 = 一次路径为 /<页面>/~out-<ct> 的浏览：能看出哪一页、哪个位置的按钮被点了（10-10 加；隐私政策「This Website」一节已写明）
              'document.addEventListener("click",function(v){var a=v.target&&v.target.closest&&v.target.closest(\'a[href*="apps.apple.com"]\');if(!a)return;'
@@ -58,15 +58,14 @@ ANALYTICS = (DEVICE + '\n'
              '<script defer src="/_vercel/insights/script.js"></script>')
 # Ahrefs Web Analytics（无 cookie；能把搜索 / AI 引荐来源单独分出来）。key 在 site.json，删掉 key 就不输出。
 # 隐私政策各页的「This Website」一节写明了这两项统计，换 / 加统计工具时那一节要跟着改。
-if CFG["site"].get("ahrefsAnalyticsKey"):
-    ANALYTICS += '\n<script src="https://analytics.ahrefs.com/analytics.js" data-key="%s" async></script>' % CFG["site"]["ahrefsAnalyticsKey"]
 
 def analytics_html(page_type, page_app="site"):
     # Keep this in the shared head generator so rebuilt and new pages are covered.
     meta = {"page_type": page_type, "page_app": page_app,
+            "ahrefs_key": CFG["site"].get("ahrefsAnalyticsKey"),
             "apps": {str(a["appId"]): a.get("variantOf") or a["key"] for a in APPS if a.get("live") and a.get("appId")}}
     return (ANALYTICS + '\n<meta name="gk-analytics" content="' + esc(json.dumps(meta, separators=(",", ":"))) + '">'
-            '\n<script defer src="/assets/analytics/firebase-web-v2.js"></script>')
+            '\n<script defer src="/assets/analytics/firebase-web-v4.js"></script>')
 
 def root_key(app):
     return app.get("variantOf") or app["key"]
@@ -128,6 +127,11 @@ def _lastmod_norm(t: str, day: date | None = None, *, include_title: bool = True
     t = re.sub(r"<style>.*?</style>", "", "".join(parts) or t, flags=re.S)
     t = re.sub(re.escape(FOOT_START) + r".*?" + re.escape(FOOT_END), "", t, flags=re.S)
     t = re.sub(r"<footer\b.*?</footer>", "", t, flags=re.S)
+    # The shared site header is navigation, like the shared footer. Keep article headers.
+    def without_site_header(match):
+        classes = re.search(r'\bclass="([^"]*)"', match.group(1))
+        return '' if classes and {'wrap', 'top'} <= set(classes.group(1).split()) else match.group(0)
+    t = re.sub(r'<header\b([^>]*)>.*?</header>', without_site_header, t, flags=re.S)
     t = re.sub(r'\s+data-track-(?:id|section)="[^"]*"', "", t)   # 埋点标识不是内容：只补埋点不刷 lastmod / dateModified，也不推 IndexNow（10-25）
     return re.sub(r"\s+", " ", re.sub(r"\d{4}-\d{2}-\d{2}", "", t))
 

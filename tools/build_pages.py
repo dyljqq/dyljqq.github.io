@@ -248,7 +248,7 @@ def social_html(lang):
 
 # 预览视频文件名（assets/<key>/preview/<file>.mp4）
 VIDEO_FILE = {"en": "en", "en-GB": "en", "pt-BR": "pt"}
-LEGAL = re.compile(r"auto-?renew|renews automatically|renouvel|verlängert|rinnov|renueva|renova|Apple Account|Apple ID|"
+LEGAL = re.compile(r"auto-?renew|renews automatically|renouvel|verlängert|rinnov|renueva|renova|"
                    r"24 hours|24 Stunden|24 heures|24 ore|24 horas|24時間|24시간|24 ?小时|24 ?小時|24 ชั่วโมง|"
                    r"自動更新|자동 갱신|自动续|自動續|ต่ออายุ", re.I)
 
@@ -555,7 +555,7 @@ def render(a):
     <a href="{home}">{esc(T("nav_all_apps"))}</a>
     <a href="{ {'pt-BR': '/tools/pt-br/', 'es-MX': '/tools/es-mx/', 'zh-Hant': '/tools/zh-hant/', 'ja': '/tools/ja/', 'th': '/tools/th/', 'ko': '/tools/ko/', 'de': '/tools/de/'}.get(lang, '/tools/') }">{esc(T("nav_tools"))}</a>
     <a href="/blog/">{esc(T("nav_blog"))}</a>
-    <a href="mailto:{EMAIL}?subject={quote(p['shortName'])}">{esc(T("nav_support"))}</a>
+    <a href="/support/" hreflang="en">{esc(T("nav_support"))}</a>
   </nav>
   <!-- lang:start -->
   <!-- lang:end -->

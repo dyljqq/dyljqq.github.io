@@ -213,6 +213,19 @@ class PageBudgetTests(unittest.TestCase):
         self.assertNotEqual(budget.body_signature(page("something"), None),
                             budget.body_signature(page("some<div>thing</div>"), None))
 
+    def test_shared_header_navigation_does_not_change_editorial_content(self):
+        def with_header(href):
+            return page().replace('<body>', '<body><header class="wrap top"><nav>'
+                                  f'<a href="{href}">Support</a></nav></header>')
+        before = with_header('mailto:qinqiangji@gmail.com')
+        after = with_header('/support/')
+        self.assertEqual(budget.body_signature(before, None), budget.body_signature(after, None))
+        self.assertEqual(budget._lastmod_norm(before), budget._lastmod_norm(after))
+        for wrapper in ('header', 'nav', 'p'):
+            before = page(f'<{wrapper}><a href="/old/">Read more</a></{wrapper}>')
+            after = before.replace('/old/', '/new/')
+            self.assertNotEqual(budget.body_signature(before, None), budget.body_signature(after, None))
+
     def test_unchanged_pages_on_november_2_and_3(self):
         # The persisted build remains unchanged even when the check runs later.
         source = page('<b data-n>10</b>On October 31, 2026, there were 10 days. The counter recalculates.')

@@ -1,0 +1,23 @@
+[
+  {
+    "url": "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017475.pdf",
+    "status": 200,
+    "at": "2026-11-06T05:02:40.067358+00:00",
+    "sha256": "3dee2e8e090f22a3ec65eac748279facd5f24e014bbd14873f96431fbe489a17",
+    "file": "dnc-r9-overview.pdf"
+  },
+  {
+    "url": "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017486.pdf",
+    "status": 200,
+    "at": "2026-11-06T05:02:43.145115+00:00",
+    "sha256": "a7e5e63b91b8befa14b0770f354de31ce92d7d4b611fcbb3fb469e71927532e4",
+    "file": "dnc-r9-ticket.pdf"
+  },
+  {
+    "url": "https://www.dnc.ac.jp/albums/abm.php?d=2164&f=abm00017490.pdf",
+    "status": 200,
+    "at": "2026-11-06T05:02:46.943290+00:00",
+    "sha256": "fb9aa3e7867f2a8ed59b61776f01c5dd1cbed8eee43ee5684e52c087de45aedd",
+    "file": "dnc-r9-rules.pdf"
+  }
+]
