@@ -1,51 +1,51 @@
 {
 "/": {
-"body_signature": "6f1e2f95331cdde529ed6ad16395f78b68997ccc804c51d6bd8169be50e2e609",
+"body_signature": "00ae0a66e56f38dcea875af0cc9c9bcca417978a909e3d4cade3849c68e05a55",
 "body_signature_version": 1,
 "description": "Eight small iPhone apps by go ka: baby memory book, countdown widget, AI trip planner, invoice maker, calorie counter, QR maker, kids' vocabulary and gym log.",
 "lastmod": "2026-11-05"
 },
 "/about/": {
-"body_signature": "6fe2351eeb7116f45982d16880289197bcfb0e37a9f8fb307e15bd1e8dca295c",
+"body_signature": "eefa077be9a93647e718f4e9d6d129bcd2b74a61efe87c433b5fa59e4a8ca27e",
 "body_signature_version": 1,
 "description": "go ka is an independent developer of small iPhone apps. Who we are, the apps we make, and how the facts on this site are sourced and checked.",
 "lastmod": "2026-11-02"
 },
 "/blog/": {
-"body_signature": "e00dc361adc3590112f130ef9bbbec6eeff171ebfff37411df397a4ca3f4a05f",
+"body_signature": "b7d52504e2d871a2b31812a8d27672b93fb81d3b7a4e7d2aeaf9926a11ebcdf0",
 "body_signature_version": 1,
 "description": "How-to guides from go ka: countdown widgets on iPhone, payment QR codes on invoices, and the difference between invoices, estimates and quotes.",
 "lastmod": "2026-10-26"
 },
 "/blog/count-down-birthday-exam-trip-iphone/": {
-"body_signature": "ffe0af0fb0673cd5bc24ec256d9ae29576e55cbc4822547b9652d07fafddfbcb",
+"body_signature": "265cbc965783a06a493c99116c576d6fa876619e46dab8887f35afd100098ff0",
 "body_signature_version": 1,
 "description": "How to set up a countdown for a birthday, exam or trip on iPhone, with repeats, templates, reminders and a place for the story.",
 "lastmod": "2026-11-05"
 },
 "/blog/countdown-widget-iphone-home-lock-screen/": {
-"body_signature": "d874200b8c2af548a8283afb5eaf09d44f12fc4a1cf04a1f9bf517895129541a",
+"body_signature": "abd154dc51ba8ee11a617e97f338d4d6716624c1a54a68d79c12a2d25defa872",
 "body_signature_version": 1,
 "description": "How to add a free countdown widget to your iPhone Lock Screen and Home Screen, including the extra large size in iOS 27, and what Live Activity adds on top.",
 "lastmod": "2026-11-05"
 },
 "/blog/invoice-vs-estimate-vs-quote/": {
-"body_signature": "f69e8da0d5a9da03dd2dc8cc455e3b8388e34240d1247d3ed2af8d153734307f",
+"body_signature": "b04846b6feab340eadd07b48d0aa0244ed2f454e2414cdeed7224d1c430f60de",
 "body_signature_version": 1,
 "description": "The plain-language difference between an invoice, an estimate and a quote, and how to turn one into the other with one tap.",
-"lastmod": "2026-10-17"
+"lastmod": "2026-10-16"
 },
 "/blog/payment-qr-code-on-invoice/": {
-"body_signature": "bca8a6c822ebe5fe899f8d4828db929c6b950f8d97364063b548e19b2cf64a2d",
+"body_signature": "a7fdc6cb27649cbf2ce6be9105b030b3cd3e086da802acc301fb496890a1ad56",
 "body_signature_version": 1,
 "description": "What a payment QR code on an invoice is, how clients scan it to pay, and how to track paid, unpaid and overdue invoices.",
 "lastmod": "2026-10-21"
 },
 "/blog/venmo-cash-app-paypal-zelle-qr-code-on-invoice/": {
-"body_signature": "5eb7c7d67b7a7ff4fcbcf4f6e6996fe2ba7e92c672acaa3d971fbe40a3b8827b",
+"body_signature": "acbc563ab0013667e18676233d2e4971220c3d0d57ef051b3258d769efb5e8cd",
 "body_signature_version": 1,
 "description": "Where each app keeps your payment link or QR code, how to put it on an invoice so clients scan to pay, and the details that stop a payment going astray.",
-"lastmod": "2026-10-17"
+"lastmod": "2026-10-16"
 },
 "/citu/": {
 "body_signature": "a1d14ff86075ccffaa33f596701e50bd7eb0e610070768f6cee9638d211d0764",
@@ -66,37 +66,37 @@
 "lastmod": "2026-09-26"
 },
 "/countdown/": {
-"body_signature": "cabae3edfcaa0a78a593735ef7e511a5cd0f4adaef54899afd5e555da4787dc6",
+"body_signature": "3ea5ce8fd67bd5fb6fc1a59c1b228f543dbea555b827e8dd55c626562b1a70aa",
 "body_signature_version": 1,
 "description": "Four free countdown widgets in every size for iPhone Home and Lock Screen, unlimited events, local snapshots and iCloud sync.",
-"lastmod": "2026-11-05"
+"lastmod": "2026-11-06"
 },
 "/countdown/de/": {
-"body_signature": "79707019f2521ab9eb94e98a959df1cdc940d28c5092bb523700c3e8f4705a4e",
+"body_signature": "611c7f890b9b80abb2feae6c2181d30506f4ff13709aad66f8bee1051444ee5a",
 "body_signature_version": 1,
 "description": "Countdown-App für iPhone: Die vier Widgets für Home- und Sperrbildschirm sind kostenlos, dazu unbegrenzte Ereignisse und Erinnerungen, ohne Werbung.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/fr/": {
-"body_signature": "2a4cb5db3a4b446dd3fab97828b1d2b8a8be7ec716cbdcdb017728c4b8f6341e",
+"body_signature": "ff732982c0702df4cd944cd6149cbe240ddf227dc148136228113433a1cc372a",
 "body_signature_version": 1,
 "description": "App de compte à rebours pour iPhone : les quatre widgets de l'écran d'accueil et de l'écran verrouillé sont gratuits, avec événements illimités et sans pub.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/it/": {
-"body_signature": "dab40e4410f058ff2b4a474deb822d0060c79c43fb87fd12f659f43b45f6319e",
+"body_signature": "8f793cee2fd884b1d932d4c5e90ddcf39d6965d4d5b31bce4f41fbca34984380",
 "body_signature_version": 1,
 "description": "App di conto alla rovescia per iPhone: i quattro widget standard per Home e schermata di blocco sono gratis, con eventi illimitati e senza pubblicità.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/ja/": {
-"body_signature": "19d64d06d17da01c33269b5c4e35b4bb89648c8d66d4a2b040b86601aae77908",
+"body_signature": "a3b795dc255bafe7be0c6e4a5615ac8726728144964a86da570108e17182026f",
 "body_signature_version": 1,
 "description": "iPhone向けカウントダウンアプリ。ホーム画面とロック画面の4種類のウィジェットは全サイズ無料、イベントは無制限、リマインダーも無料、広告なし。Proでは背景、自分の写真の背景、フォトロール、Proフォント、ロック画面のライブアクティビティ、一緒にカウントダウンする人の招待が使えます。",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/ko/": {
-"body_signature": "62fb3b9b108214f4b691217d9fcd78fc4ca285b53e364c4028a78d7e6dee4268",
+"body_signature": "7731d3575b2e2b0c9a9b2ddecb8ff8bc6e14f9d1bc20a496e4b963cdba1b3615",
 "body_signature_version": 1,
 "description": "iPhone용 디데이 카운트다운 앱. 홈 화면과 잠금 화면의 위젯 네 가지는 모든 크기가 무료, 이벤트는 무제한, 알림도 무료, 광고 없음. Pro는 배경, 내 사진 배경, 포토 롤, Pro 서체, 잠금 화면 실시간 현황, 함께 카운트다운할 사람 초대를 더합니다.",
 "lastmod": "2026-11-05"
@@ -108,10 +108,10 @@
 "lastmod": "2026-10-24"
 },
 "/countdown/pt-br/": {
-"body_signature": "82d46f12ce3321f082834fcd6174c14ad6d695f00a3586bbb9d89304554e3ea0",
+"body_signature": "116a36a5f20d62e727bec9bbbfe5327a12fe77991c7ffeb9a97424a479a8ff64",
 "body_signature_version": 1,
 "description": "App de contagem regressiva para iPhone: os quatro widgets da Tela de Início e da Tela Bloqueada são grátis, com eventos ilimitados e sem anúncios.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/terms-of-service/": {
 "body_signature": "1711d93ff6422f60e69cd457c180eef3740e8608ea280519a71febc22708e26f",
@@ -120,22 +120,22 @@
 "lastmod": "2026-11-02"
 },
 "/countdown/th/": {
-"body_signature": "686d110be1de13a59a520ef35f8d62b0e790383ba7541ac240bc1f6e6518a5de",
+"body_signature": "1c9d9c9146e9c98cfb68ce9081934de0aea929012124755a53e9944f14818e8c",
 "body_signature_version": 1,
 "description": "แอปนับถอยหลังสำหรับ iPhone: วิดเจ็ต 4 แบบทุกขนาดบนหน้าจอโฮมและหน้าจอล็อกใช้ฟรี อีเวนต์ไม่จำกัด ไม่มีโฆษณา Pro เพิ่มพื้นหลัง รูปของคุณเอง ภาพหมุนเวียน และฟอนต์",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/zh-hans/": {
-"body_signature": "e021aaa2471f5659442cd754ce5913267c2cbcb91a1a0cdc21b20f9c2768d9c4",
+"body_signature": "b687897e497fb1c152d121cfca294dc5d7efd5c5b1ed2a3fc09d2236b34e0951",
 "body_signature_version": 1,
 "description": "在 iPhone 主屏幕和锁屏查看生日、高考或旅行倒数。四款标准小组件全尺寸免费，事件不限量，提醒免费，无广告。Pro 可用自己的照片做背景、开启照片轮播和锁屏实时活动，也能邀请别人一起倒数。",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/countdown/zh-hant/": {
-"body_signature": "df2002fa571abdd434f7f5a8d4602c1ce434f082263390337b702d9753a0df37",
+"body_signature": "eddd29356fd8b27b1078b347b5945a55a42feb34b4868eb0e2ffc2be9c7ba0f4",
 "body_signature_version": 1,
 "description": "iPhone 倒數計時 App：主畫面和鎖定畫面的四款小工具全尺寸免費，事件數量不限，提醒免費，無廣告。Pro 增加背景、自己的照片、照片輪播、字體、即時動態和一起倒數。",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/dailycalorie/": {
 "body_signature": "87be902778617be206d26eaf51e0219b7060cfc3dae7cfb206cbdf48366ebcc8",
@@ -156,73 +156,73 @@
 "lastmod": "2026-08-21"
 },
 "/de/": {
-"body_signature": "d28b69897e91633576463745bc238a3d45b29225259afcbabbab79cc0cfeb3a8",
+"body_signature": "c042b464dc4690bd86d6e1e75353bc2cf55b8b2b7f5b5c850fef7f42f80685e1",
 "body_signature_version": 1,
 "description": "Acht kleine iPhone-Apps von go ka: Babytagebuch, Countdown-Widget, KI-Reiseplaner, Rechnungen, Kalorienzähler, QR-Codes, Vokabeltrainer und Training.",
 "lastmod": "2026-11-02"
 },
 "/es-mx/": {
-"body_signature": "bd8968118a5c536dfe95344054d770a88b1be4ce1a8f48fda59d39b652d71a64",
+"body_signature": "714d42032f947eae4107b54236735d141d4c1da9b29807b4f313abcda76d2d29",
 "body_signature_version": 1,
 "description": "Ocho apps para iPhone de go ka: diario del bebé, widget de cuenta regresiva, planificador de viajes con IA, notas de venta y cotizaciones, calorías y más.",
 "lastmod": "2026-11-02"
 },
 "/es/": {
-"body_signature": "b1aa9533efe3f6b063692a1c6abb487f0b94b4db6bcaaa9176062877924f79b2",
+"body_signature": "10d0c88453a2ff53e99ed2772a62f2d1da91530a0e2065b436029064580c61e1",
 "body_signature_version": 1,
 "description": "Ocho pequeñas apps para iPhone de go ka: diario del bebé, cuenta atrás, planificador de viajes con IA, facturas, calorías, códigos QR, vocabulario y gimnasio.",
 "lastmod": "2026-11-02"
 },
 "/fr/": {
-"body_signature": "8023dd22e7e176623275bd3d92f1ce08dc0c6218dfbe3318ab7c3f4f109908d4",
+"body_signature": "993af72d16a8be2ab324388d887bc9ee47a73e8b055107bbeb92665d5aeb5e55",
 "body_signature_version": 1,
 "description": "Huit petites apps iPhone de go ka : journal de bébé, compte à rebours, voyage IA, factures, calories, codes QR, vocabulaire et suivi sportif.",
 "lastmod": "2026-11-02"
 },
 "/invoiceqr/": {
-"body_signature": "3615dcdba014d981df169d4dfd5f26c8c80400a6631d5b2d9b087952b7f70c51",
+"body_signature": "40a2ce23fcf5c410dd7e49286cbc12b8e375d52b3980fe677fdaaf797b9222aa",
 "body_signature_version": 1,
 "description": "Create an invoice, estimate or receipt on your phone, export it as a PDF, and put a scan-to-pay QR code on it so the client can pay from the invoice itself.",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/de/": {
-"body_signature": "0d2cf48cf99448dce99e6830b1c3ba9bd186438aac6a2efebd4f3b8298d6ec6f",
+"body_signature": "33de92a3770d3e6d0dc052f567e7ecd5dc6355a8fbd9113ade40bba76cf4dd1c",
 "body_signature_version": 1,
 "description": "Erstelle Rechnungen, Angebote und Quittungen auf dem iPhone und verschicke sie als PDF mit Bezahl-QR-Code.",
 "lastmod": "2026-11-02"
 },
 "/invoiceqr/es-mx/": {
-"body_signature": "c7d7565c090271f4420b462c2a599009d5b077bbaaa7bd8707491444ad0226c3",
+"body_signature": "433a230ffa4cd7af379dc78cf24638d1020590a7ecd6fd448a49371157db2c5a",
 "body_signature_version": 1,
 "description": "Haz notas de venta, cotizaciones, remisiones y recibos en PDF desde tu iPhone, con QR o CLABE para cobrar y retenciones de ISR e IVA. Sin cuenta.",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/es/": {
-"body_signature": "5e3267d5b2cd5e3689eb3e10213f99b119f1ea8774e159b112789698b2e387f8",
+"body_signature": "bd4ebbbb80ad06cb9253da388587fc7325a4f5e205447db3f738d9e42899bcc9",
 "body_signature_version": 1,
 "description": "Crea facturas, presupuestos y recibos en tu iPhone, expórtalos como PDF e incluye un código QR de pago para que el cliente pague directamente.",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/fr/": {
-"body_signature": "85e506ece6f72ef800375f7de9e083060ab186acd9597f5000625223b80e5d8e",
+"body_signature": "13f4ff8525f961b472c7efe569c154233bbedf04d2c57c3f3f9868d23307547c",
 "body_signature_version": 1,
 "description": "Créez des factures, devis et reçus sur votre iPhone, exportez-les en PDF et ajoutez un code QR de paiement pour que le client paye directement.",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/it/": {
-"body_signature": "cd9ff372cbc3fc0719edef98d15cc96b66108bce35aa1ae10ad493b3064e1410",
+"body_signature": "03f7fa07b20d071d2cbfacb5e54dae456f5a783a6b5cc4e6bbb8e12cc40ad150",
 "body_signature_version": 1,
 "description": "Crea fatture, preventivi e ricevute sul tuo iPhone, esportali come PDF e aggiungi un codice QR di pagamento perché il cliente possa pagare direttamente.",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/ja/": {
-"body_signature": "0c7b6e425609e2d4a4d3340e9df264bec6ef9715b18d97093bce63358b0fbb6b",
+"body_signature": "85b8d5bb3b5009247b30c2dc3bc5d34bf925cedd61624f602a15f7fc2122e193",
 "body_signature_version": 1,
 "description": "iPhoneで請求書・見積書・領収書を作成してPDFで共有。決済QRコードを付ければ、取引先はスキャンしてすぐに支払えます。",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/ko/": {
-"body_signature": "92b64e004e2e8c647789fa0ba57445c1165c2cdd9eb32bd37317582502aa9cbc",
+"body_signature": "371632e95269c3264144b750ee35ce95a6d3d1edf725141ef926920980e27f32",
 "body_signature_version": 1,
 "description": "iPhone에서 청구서·견적서·영수증을 만들고 PDF로 내보낸 후 결제 QR코드를 추가해 고객이 직접 결제하게 하세요.",
 "lastmod": "2026-10-26"
@@ -234,7 +234,7 @@
 "lastmod": "2026-10-24"
 },
 "/invoiceqr/pt-br/": {
-"body_signature": "18e296433fd04eb93d2e3ae99c3913d70645f6e11e12a989ae25ff917b844b89",
+"body_signature": "f320a8c0af91b862b36f1725d2f05ac1ba430bf9c61636de2a30c4954442ca2f",
 "body_signature_version": 1,
 "description": "Crie faturas, orçamentos e recibos no iPhone, exporte como PDF e adicione um código QR de pagamento para que o cliente pague direto.",
 "lastmod": "2026-10-26"
@@ -246,43 +246,43 @@
 "lastmod": "2026-07-19"
 },
 "/invoiceqr/th/": {
-"body_signature": "5ddc95e17aabaa088d5b15e7f3d7a8d5ba0d6bba26f043a19528cef600bf054a",
+"body_signature": "6d16559c0faa80a2d1df8e952b07521495648692c72f4ce87b4c4d68df3fabf5",
 "body_signature_version": 1,
 "description": "สร้างใบแจ้งหนี้ ใบเสนอราคา และใบเสร็จบน iPhone ส่งออกเป็น PDF และแนบ QR ชำระเงินให้ลูกค้าสแกนจ่ายได้ทันที",
 "lastmod": "2026-10-26"
 },
 "/invoiceqr/zh-hant/": {
-"body_signature": "271850e8b1484f9849977340c16c34e7e90cc610780e1261d0d6062f79be6d84",
+"body_signature": "eeb31e10d139b9ca19e533cea1ee1c3d67645c59bb892de4b1979f0270d7ffa6",
 "body_signature_version": 1,
 "description": "在 iPhone 上開帳單、報價單與收據，匯出 PDF 分享，並附上收款 QR Code，讓客戶掃碼直接付款。",
 "lastmod": "2026-10-26"
 },
 "/it/": {
-"body_signature": "09c09f8753a9d048e619668ea3edb4141d9298e90f7d120d6a04c0bf88a416f4",
+"body_signature": "f7120ec084e97ccb590a7c1e1446afbcb08b4b97bcabe559a20bf2952265d48c",
 "body_signature_version": 1,
 "description": "Otto piccole app iPhone di go ka: diario del bebè, widget countdown, pianificatore di viaggio IA, fatture, contacalorie, codici QR, vocabolario e palestra.",
 "lastmod": "2026-11-02"
 },
 "/ja/": {
-"body_signature": "1e7b79d3b139e2f5635da211b1081d5f5ec9c1d6df1f43fcfb8ac701ed842eda",
+"body_signature": "cd0d8b2f44664dbfa6cfb795b3a369e88d01ffc4a664fc3928444a8658927aac",
 "body_signature_version": 1,
 "description": "go kaの8つのiPhoneアプリ：赤ちゃんの成長アルバム、カウントダウンウィジェット、AI旅行プランナー、請求書・見積書作成、カロリー記録、QRコード作成、子ども向け英単語、筋トレ記録。",
 "lastmod": "2026-11-02"
 },
 "/ko/": {
-"body_signature": "bd21543926e78260703a4839c6aec9249f21fe72085c24c88374bb431cd80705",
+"body_signature": "c8b81fa3943b0c18d8e7cdf7e90af1eaa710d7558b5b2e584e5636c466c3de76",
 "body_signature_version": 1,
 "description": "go ka의 iPhone 앱 8개: 아기 성장 앨범, 카운트다운 위젯, AI 여행 플래너, 청구서·견적서 작성, 칼로리 기록, QR 코드 생성, 어린이 영어 단어, 운동 기록.",
 "lastmod": "2026-11-02"
 },
 "/privacy-policy/": {
-"body_signature": "883a5c4d5db55a9152cf3c94b67b9f5c0cf76662a78e467e5a7fd26365296195",
+"body_signature": "47fca408eb966f74e704b92512fdb4c0f6c4c86284da6505d2016c8468007e20",
 "body_signature_version": 1,
 "description": "Privacy Policy for BeforeGo: AI Itinerary Planner. What information the app uses, where it is stored, which services process it, and how to contact us.",
-"lastmod": "2026-10-26"
+"lastmod": "2026-11-06"
 },
 "/pt-br/": {
-"body_signature": "a3e0163b450f34694fcb3f37a36ecc23350432b14df02b4532c4104fa059c9cb",
+"body_signature": "eedf0d011cf25527cb502f083cc8d1898c727033a52a671f30b14617a506cb0b",
 "body_signature_version": 1,
 "description": "Oito apps pequenos para iPhone da go ka: diário do bebê, contagem regressiva, planejador de viagem com IA, faturas, calorias, códigos QR, vocabulário e treinos.",
 "lastmod": "2026-11-02"
@@ -324,7 +324,7 @@
 "lastmod": "2026-08-28"
 },
 "/support/": {
-"body_signature": "f24eb019276b6156f4580d7766d8050a0fa2a1e08345717450fd7873a7c8a407",
+"body_signature": "be8c210967b725342553b72048933e5fc152e0a2bba930d68c46e1d2cc1b0655",
 "body_signature_version": 1,
 "description": "Get help with Countdown widgets, Smart Invoice PDFs, BeforeGo and Pagewren. Contact go ka, report a website issue, or find Apple purchase support.",
 "lastmod": "2026-10-30"
@@ -336,379 +336,379 @@
 "lastmod": "2026-07-04"
 },
 "/th/": {
-"body_signature": "28376d2e39f6193c4d899a012511acb99a07ba6b11b3cae887e9b20254240813",
+"body_signature": "39fc276d0b5f4f3c6248f5f91cf72cbf8f950a7695f9af9741eb33d7d18b2e60",
 "body_signature_version": 1,
 "description": "แอป iPhone 8 ตัวจาก go ka: สมุดบันทึกลูกน้อย นับถอยหลัง วางแผนเที่ยวด้วย AI ใบแจ้งหนี้ นับแคลอรี่ คิวอาร์โค้ด ศัพท์อังกฤษสำหรับเด็ก และบันทึกการออกกำลังกาย",
 "lastmod": "2026-11-02"
 },
 "/tools/": {
-"body_signature": "10c88d13e55bb4a202a96f6bb85b36b88a406e0bb742bcea78fb286813fc4e9f",
+"body_signature": "a4e7351ec3cf60de2fe53a340cd53aa8c1d99a362aeb83ec15f528465468bc4a",
 "body_signature_version": 1,
 "description": "Free, no-sign-up tools from go ka: a days-until calculator, holiday countdowns, a countdown wallpaper maker, and an invoice template and guide.",
 "lastmod": "2026-11-02"
 },
 "/tools/best-countdown-widget-apps-iphone/": {
-"body_signature": "f99c0242643ef3359acfd5930ac0d0804758f8188b1d4bd58b5f8c8945fd4fd2",
+"body_signature": "45de6c1563ac2d23156859fde1ad0a9e8ee1428471d54e6b4fef158f091dc882",
 "body_signature_version": 1,
 "description": "Seven iPhone countdown widget apps compared on what is free, which widgets cost money, repeats and sync — from their US App Store listings, November 2026.",
-"lastmod": "2026-11-05"
+"lastmod": "2026-11-06"
 },
 "/tools/birthday-countdown-widget-iphone/": {
-"body_signature": "8f589cb18f99b4e9d0e4edeb61a8e50d70d8e5b6c7ee3ba4ba6c88cd353dd6c8",
+"body_signature": "c9e540ad487e161bdc480c1a945535455098a3bbb92ccf73ad88e1ada230513c",
 "body_signature_version": 1,
 "description": "Put a birthday countdown on your iPhone Lock Screen or Home Screen with a free widget. The Birthday template repeats yearly and reminds you a week before.",
 "lastmod": "2026-11-05"
 },
 "/tools/christmas-countdown-widget-iphone/": {
-"body_signature": "7a6c0fb55975e43e5ac280279530d9a8fbec1f62e08430c0c402d57f690c7cc3",
+"body_signature": "1d2017880bdb023f17903ad5b0dee9b73f66eed1f0834814787836f4ea59bae9",
 "body_signature_version": 1,
 "description": "A free Christmas countdown widget for your iPhone Lock Screen or Home Screen, step by step, with the iOS 27 extra large size. Christmas 2026 is December 25.",
 "lastmod": "2026-11-05"
 },
 "/tools/countdown-wallpaper-maker/": {
-"body_signature": "2862deab429479d42fc43af39276a5f262698e21fb2816a1001cb5cfac33e6b4",
+"body_signature": "6a3c489cc27ecaf6af8bbffe5658de7ca6c15be6d3d01b3d687c85b2cd587afd",
 "body_signature_version": 1,
 "description": "Make a countdown wallpaper for your iPhone Lock Screen or computer: pick a date, add your own photo, download it. Free, no sign-up, nothing is uploaded.",
-"lastmod": "2026-11-05"
+"lastmod": "2026-11-06"
 },
 "/tools/countdown-widget-with-your-own-photo-iphone/": {
-"body_signature": "5b6afb05117a58e88d588501701c397564df0ab7e51b4fc1abda46637185a621",
+"body_signature": "82f0ae410a409d0b600837475760faefe3da17c591483a87098494a7fcf12f41",
 "body_signature_version": 1,
 "description": "Use your own photo in an iPhone countdown widget with Countdown Pro. Setup, free widget limits, Photo Roll and Lock Screen differences explained.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until-christmas/": {
-"body_signature": "ce8776779fbbfbe568b0ea3b78398fd72a7f0cf24197888c491e7c3af222b368",
+"body_signature": "6dc922c114486a561b999a6906ffb1b1747c42a69071d2c0c7c943047ceb0ce5",
 "body_signature_version": 1,
 "description": "Christmas Day 2026 is on Friday, December 25, 2026. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until-diwali/": {
-"body_signature": "31cd32cdbe13d84b9b6dc375bbed32915caa35d76df0997cd2a47aa1de1cddeb",
+"body_signature": "9fc65cde62f255ab00bbc87851d6e0d0b75e247f663f534415685812d9da2dec",
 "body_signature_version": 1,
 "description": "Diwali 2026 is on Sunday, 8 November 2026, the day of Lakshmi Puja, with Dhanteras on 6 November. Live countdown in days and weeks, plus a free iPhone widget.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until-halloween/": {
-"body_signature": "5d93dbbe129b3ab8163c5d4a220ca4aae7295a67b4ba19c830459025f49f20be",
+"body_signature": "1f0755ef792704afb3f489e36fbcdfaa4eda098d544b63dd1546c196c567250a",
 "body_signature_version": 1,
 "description": "Halloween 2027 is on Sunday, October 31, 2027. Live countdown in days and weeks, plus a free Home Screen widget for your iPhone.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until-new-year/": {
-"body_signature": "6bda3639210d0c8ef80196f9fb26907db5285f24bdfb14315f5d9b8af6b5d92e",
+"body_signature": "328feabd654eecc33843d2abc5e98b904771d17560ef863e2ac468643aad5065",
 "body_signature_version": 1,
 "description": "New Year's Day 2027 is on Friday, January 1, 2027; New Year's Eve is Thursday, December 31, 2026. Live countdown plus a free iPhone widget.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until-thanksgiving/": {
-"body_signature": "1828c979f4f62943c80ac62e1ff41233d621cac092a1298e16a84dd7ec127320",
+"body_signature": "511f0fc67403ba66f436ea3c01a892735e1f7ca5048e2f0aa2bf87cf2d874dc7",
 "body_signature_version": 1,
 "description": "Thanksgiving 2026 in the US is on Thursday, November 26, 2026, with Black Friday on the 27th. Live countdown in days and weeks, plus a free iPhone widget.",
 "lastmod": "2026-11-05"
 },
 "/tools/days-until/": {
-"body_signature": "1a99fa5c003028f58d5d40153326aaa0f7fd60576e23bcd726cba4c3b44784d6",
+"body_signature": "c7932fb3c46fb80a9c2aaa9cbb83a994db2efad895da1ec059ebf93b43ab0f97",
 "body_signature_version": 1,
 "description": "Free days-until calculator: type a date and get the exact number of days, weeks and the weekday. No sign-up. Link to your countdown to share it.",
 "lastmod": "2026-11-05"
 },
 "/tools/de/": {
-"body_signature": "6d469d4821fd94d61aa4c52c91e0602a7e7c2617e73b4dc63147153b7da2d129",
+"body_signature": "5e172e30965f1bc3aa669cc596a697e8cf5d86cc30cfe35e09c55f74b879b180",
 "body_signature_version": 1,
 "description": "Kostenlose Vorlagen ohne Anmeldung: Rechnung, Rechnung für Kleinunternehmer (§ 19 UStG) und Angebot, im Browser ausfüllen und als PDF speichern.",
 "lastmod": "2026-11-02"
 },
 "/tools/de/angebot-vorlage/": {
-"body_signature": "47cc3b05754db3e2785254bae383d609ad28d73de0897709c0df02e84e838b96",
+"body_signature": "43095d1cc04dc229e69a8deedf83ad4c87500dac93d3af417a6f04752009fe1f",
 "body_signature_version": 1,
 "description": "Kostenlose Angebotsvorlage für Selbstständige und Handwerker: Umsatzsteuer und Summe rechnen sich selbst, mit Gültigkeitsdatum. Als PDF speichern.",
 "lastmod": "2026-10-25"
 },
 "/tools/de/rechnung-schreiben-app-iphone/": {
-"body_signature": "c0268b76664f9a4b15812ab238a3f0eceeb4f7e1bb82d2aff5eaf24e548143ea",
+"body_signature": "2bde9805286f3ddceef71466201a0db6d5a862a75348c41e387c6aebe41978b1",
 "body_signature_version": 1,
 "description": "So schreibst du eine Rechnung auf dem iPhone und schickst sie als PDF: Kunde, Positionen, 19 % Umsatzsteuer oder Hinweis nach § 19 UStG, Bankverbindung.",
 "lastmod": "2026-10-25"
 },
 "/tools/de/rechnungsvorlage-freiberufler/": {
-"body_signature": "d660d90846e6246de83ef266f8ef84c4d1afec324d2809ed6518fe8c0c3449d5",
+"body_signature": "f602ffe2fd2e0e486d39cc71240ca4d3307287cfcdcb3f0e457196a15850cb91",
 "body_signature_version": 1,
 "description": "Rechnungsvorlage für Freiberufler kostenlos: im Browser ausfüllen, als PDF speichern. Mit Stunden- und Tagessatz und Hinweisen zur Rechnung ohne Umsatzsteuer.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/tools/de/rechnungsvorlage-handwerker/": {
-"body_signature": "1c65830c086d87025e0edf503a9ff75f034417ed49eb206425ff4085d9834849",
+"body_signature": "70558bd883941a17f03bee9e1ec803a89bb96caa134451e7651b8b4474c228dd",
 "body_signature_version": 1,
 "description": "Handwerkerrechnung im Browser ausfüllen und als PDF speichern: Arbeitskosten und Material für § 35a EStG getrennt, mit Muster und Aufbewahrungshinweis.",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/tools/de/rechnungsvorlage-kleinunternehmer/": {
-"body_signature": "00494c23715baa95d63edbe2053f69017b3cc770753c7b5dcc36409deddd85ad",
+"body_signature": "4a7caa0813f4ee6128ce19ce140226359bf428c6f849fe0cddb8bdfac497acec",
 "body_signature_version": 1,
 "description": "Kostenlose Rechnungsvorlage für Kleinunternehmer: online ausfüllen, als PDF speichern. Mit Hinweis nach § 19 UStG und allen Pflichtangaben nach § 34a UStDV.",
 "lastmod": "2026-11-02"
 },
 "/tools/de/rechnungsvorlage/": {
-"body_signature": "58cbd8daa6a550c928d2eec59a07ea338dc650f12cf551ae7659295f1f5bd0ee",
+"body_signature": "aa0c990d2510024c6defe88e1c3a12c888cd78ee7eace125e681b875d7b0f2a4",
 "body_signature_version": 1,
 "description": "Kostenlose Rechnungsvorlage ohne Anmeldung: Umsatzsteuer und Summe rechnen sich selbst, PDF speichern. Mit Pflichtangaben nach § 14 UStG und E-Rechnung-Fristen.",
 "lastmod": "2026-11-02"
 },
 "/tools/disney-countdown-widget-iphone/": {
-"body_signature": "fa6daa46777450e92d4b63846a3f7b142a0167829a5381d25497e0e05219a9f2",
+"body_signature": "fb17f9078dc2d42881ef6ac64d286424a5c32c7f50b1c1a7254b840916a661b7",
 "body_signature_version": 1,
 "description": "Put the days until your Disney World trip on your iPhone Lock Screen or Home Screen with a free widget, plus countdowns to when dining and Lightning Lane open.",
 "lastmod": "2026-11-05"
 },
 "/tools/es-mx/": {
-"body_signature": "a2767da519991b818e970fad7aab21d01e7b9bb6ef64ecb66511d8384643e5cb",
+"body_signature": "be1e114a0e0a4b1003efa11d6ffed5924c8f3d665a41209a5b1a3897b405ac0e",
 "body_signature_version": 1,
 "description": "Herramientas gratis y sin registro de go ka: formatos de cotización y nota de venta en línea, cómo cotizar desde el iPhone y una alternativa a Invoice Simple.",
-"lastmod": "2026-10-17"
+"lastmod": "2026-10-12"
 },
 "/tools/es-mx/alternativa-a-invoice-simple/": {
-"body_signature": "1f84fa90604b1f39869e6aa795e13f1284fae29bae15cd079f346903060c6073",
+"body_signature": "9452982064cc0407e943218e61e3e020c31c3590c71c157ffb763c0030de7e40",
 "body_signature_version": 1,
 "description": "Invoice Simple y Nota de Venta, Cotización lado a lado según la App Store de México: documentos, CFDI, cuántos son gratis, CLABE, retenciones y envío.",
 "lastmod": "2026-10-17"
 },
 "/tools/es-mx/app-para-hacer-cotizaciones-iphone/": {
-"body_signature": "6bd3176c2215ef4e905c2e47b31ecccfc055018ffcbbbe227c16e2befef93b80",
+"body_signature": "afa7f2f19664ef36e0a424a54d276a3eee53271c6e9399e9f3734a93bbb3dfcb",
 "body_signature_version": 1,
 "description": "Cómo hacer una cotización en el iPhone y mandarla en PDF por WhatsApp: cliente, conceptos, IVA, retenciones y CLABE; luego pásala a nota de venta.",
 "lastmod": "2026-10-17"
 },
 "/tools/es-mx/formato-de-cotizacion/": {
-"body_signature": "acd3e4d7a584f396bde5272dec99481941c93a4cbcf549cc413ea3a213a594a5",
+"body_signature": "e73e8d64f09e9f5e3ac3068c2a7e488a6d37846061bec6a08477adf535835c1b",
 "body_signature_version": 1,
 "description": "Formato de cotización gratis para llenar en línea: tus datos, el cliente, los conceptos con importe e IVA que se calculan solos.",
 "lastmod": "2026-10-17"
 },
 "/tools/es-mx/nota-de-venta/": {
-"body_signature": "ebb7c5685eb34df88e0e7174b53a6622401acf379e61b65bf2c64d6b0ae6d1d2",
+"body_signature": "3bc6f8cf1a2d5d3876747af1fb2076617c9fe2f1c437515b7181b508f0a78e98",
 "body_signature_version": 1,
 "description": "Formato de nota de venta gratis para llenar en línea: folio, fecha, cliente y conceptos con importes e IVA que se calculan solos.",
 "lastmod": "2026-10-17"
 },
 "/tools/how-to-write-an-invoice/": {
-"body_signature": "059fec16da8b123dd447b9e3fe09835c1c6bba0042d44a5c7dee15644997cb6c",
+"body_signature": "0f74b2046cf7b85d37c75431b0bd0ef119f47006de51dc58e31f932d12ff54f1",
 "body_signature_version": 1,
 "description": "How to write an invoice that gets paid: what to include, how to number it, payment terms that work, and the mistakes that delay payment. With a free template.",
-"lastmod": "2026-10-17"
+"lastmod": "2026-10-16"
 },
 "/tools/invoice-template/": {
-"body_signature": "b1c20b49f6fa81d6c2dfe5358b2e9efcff69ae2a71fe3a796aa1806cfdf2e977",
+"body_signature": "5e8cbeff5e9c0b3699fc15ccc355bb8858d47b11dfc9baf677571f7721e87c99",
 "body_signature_version": 1,
 "description": "Create an invoice online for free. No sign-up, watermark or credit card. Edit your details, calculate totals and tax, then print or save as PDF.",
 "lastmod": "2026-10-24"
 },
 "/tools/ja/": {
-"body_signature": "4e3e6a31233201c02ae686c77c61eebbfa83c46b34ab336e716b29cafdc9f8f2",
+"body_signature": "08ea11a2a81c15cb120b273b2f697ab2deb36c9cf4353ed4ac7e1bbea1a1dc87",
 "body_signature_version": 1,
 "description": "go ka の無料ツール（登録不要）：今日からあと何日かを数える日数計算、共通テスト2027までのカウントダウン、カウントダウンを待ち受けにする方法。",
 "lastmod": "2026-10-30"
 },
 "/tools/ja/ato-nannichi/": {
-"body_signature": "ff8d54bd7cb5093bfde14781bb1aaec3542351aa5ae6b23e1748a20a21b5dad5",
+"body_signature": "80fb0d318d8f24691042402bb8f91c228b5153c4030adadbbb52ef8ed7b14514",
 "body_signature_version": 1,
 "description": "日付を入れるだけで、今日からその日まであと何日か、何週間か、何曜日かを計算します。過ぎた日なら何日たったかも分かります。登録不要、結果はリンクで共有できます。",
 "lastmod": "2026-11-02"
 },
 "/tools/ja/countdown-machiuke-iphone/": {
-"body_signature": "354380b3d68f9e6faba0e4aa600ecf4368e83f7fb6091f0778f79b989d7660b4",
+"body_signature": "b90d2c3b56cb5772b343aaff9ae8478939545f3af2d6776007fbbaeb02c8662c",
 "body_signature_version": 1,
 "description": "iPhoneの待ち受け（ロック画面）やホーム画面に「あと何日」を表示する手順です。数字入りの壁紙画像と違い、ウィジェットなら日付を一度入れるだけで数字が毎日自動で減ります。",
 "lastmod": "2026-11-02"
 },
 "/tools/ja/kyotsu-test-2027/": {
-"body_signature": "9d00188875fa874299170aab274473720722739e17622a7b1e84edb133567ade",
+"body_signature": "d2f933a133c198444731abd183fbabad207cee6d592fc01b93929d85df5aaaad",
 "body_signature_version": 1,
 "description": "2027年の大学入学共通テストは1月16日（土）・17日（日）。本試験まであと何日かを毎日更新でカウントダウンし、時間割・当日の持ち物・100日前の節目と、iPhoneのロック画面に置く方法をまとめました。",
-"lastmod": "2026-11-02"
+"lastmod": "2026-11-06"
 },
 "/tools/ja/toritsu-nyushi-2027/": {
-"body_signature": "d1a957338fbfe0253035ad496f90116f74ee6b9d7340a7515b28808c51cad6cb",
+"body_signature": "949f8b4434b525e06c4915fe29358e087757e3894d1b7ca0106cd52c903d60d1",
 "body_signature_version": 1,
 "description": "令和9年度（2027年）の都立高校入試は学力検査（第一次募集）が2月21日（日）。本試験当日の時間割（国・数・英・社・理）、持ち物チェックリスト、ESAT-J英語スピーキングテストの点数換算、内申点と総合得点の仕組み、iPhone待ち受けウィジェットをまとめました。",
 "lastmod": "2026-11-02"
 },
 "/tools/ko/": {
-"body_signature": "d4a6b832410318bb68b8f68b8ea8748cd3202ecfef71a2e12208f219134fde3f",
+"body_signature": "fc6b55b27f6b2ade75a4b446515973d4eef36038d94dc916a30a5d175df5af22",
 "body_signature_version": 1,
 "description": "아이폰 잠금 화면에 디데이 위젯을 추가하는 법을 알아보세요. 트리플에서 NOL로 옮길 수 있는 일정과 저장해 둔 가계부 CSV의 보관법을 확인하고, 체크리스트나 여행 경비 정리에 맞는 대체 앱을 비교하세요.",
 "lastmod": "2026-10-28"
 },
 "/tools/ko/iphone-didei-wijet/": {
-"body_signature": "2d8b5704212616abe670bd26576aa6faf604ddbdfe68ec73cd933b5109ccc0c2",
+"body_signature": "596f6cbde2d46724a3455427cb08223a185f07082b1c42c3bd8b38d4f07bf147",
 "body_signature_version": 1,
 "description": "아이폰 잠금 화면과 홈 화면에 디데이를 띄우는 방법입니다. 숫자를 넣은 배경화면과 달리, 위젯은 날짜를 한 번만 입력하면 남은 날이 매일 자동으로 줄어듭니다.",
 "lastmod": "2026-11-02"
 },
 "/tools/ko/yeohaeng-iljeong-aep/": {
-"body_signature": "8b31e12519991f0feed6c4c8a062efb99f0634857fd2de2a5211338547beb9a5",
+"body_signature": "1a08f105afe23f9203cb84e85921e4acf338e01f71b62ead4e7ca897e37735ab",
 "body_signature_version": 1,
 "description": "트리플 종료 안내 후 NOL로 일정을 옮기는 방법과 이미 저장한 CSV 보관법. 백업이 없을 때 확인할 공식 문의 경로, 체크리스트·여행 경비용 대체 앱을 비교하세요.",
 "lastmod": "2026-11-05"
 },
 "/tools/pt-br/": {
-"body_signature": "cbfea9d0ef66beb08ce7f2ed7f73694a03da3a6d79d513ce5682dccf0a275788",
+"body_signature": "f94c2af903876dd022da904439b76362635836f0f2d79db315739da6f3793175",
 "body_signature_version": 1,
 "description": "Ferramentas grátis da go ka, sem cadastro: contador de dias, aniversário, férias com dias úteis, dias de namoro e contagem para o ENEM e o Natal.",
 "lastmod": "2026-10-25"
 },
 "/tools/pt-br/contador-de-dias-de-namoro/": {
-"body_signature": "bab00c36dfd3610dac00eb7e5bb02229b83a871044c310651477cb48c06f542e",
+"body_signature": "d9f2478eb406d765dd8329cfc863139276be81e6be9294cd3da24b7aa30da7e4",
 "body_signature_version": 1,
 "description": "Digite a data em que começaram a namorar e veja há quantos dias, meses e anos estão juntos, o próximo mesversário, os 100 dias e o aniversário de namoro.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/contagem-regressiva-black-friday-2026/": {
-"body_signature": "4521df3d76d1529fad74c6a9ed7227fa2149bd5832830c586c5df956b42c9188",
+"body_signature": "e232d58aca126e24366188f6f9c4f90278e4ecffa261ef359f712a5138c3b861",
 "body_signature_version": 1,
 "description": "Black Friday 2026: contagem regressiva até 27 de novembro. Veja quantos dias faltam, a Cyber Monday e como pôr a contagem na tela de bloqueio do iPhone.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/contagem-regressiva-reveillon-2027/": {
-"body_signature": "7a4cdc5d021d5b666488bd87886024b60bdfe0f9322efd4ce6d825a17b2f0a4b",
+"body_signature": "8b370794938dcd6cdc3408313e6850dac3550e19ab1d052426e55a5fae2e5bec",
 "body_signature_version": 1,
 "description": "Réveillon: quinta-feira, 31/12/2026. Carnaval 2027: sábado, 6, a terça, 9 de fevereiro. Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/contagem-regressiva-tela-de-bloqueio-iphone/": {
-"body_signature": "0e4dcd9dfc7d77048d7a90710b283e6253f6fc7fbc10a3de2d99c11d987ec6e6",
+"body_signature": "b58c89b51728a758c72f74c0eeeba725fbfc1adca74b69ff951a67aad7994c02",
 "body_signature_version": 1,
 "description": "Como colocar a contagem regressiva na tela de bloqueio e na Tela de Início do iPhone com um widget gratuito, passo a passo. O número de dias diminui sozinho.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/dias-para-o-enem-2026/": {
-"body_signature": "ad9120bfb070112d3fb5476c55c2667414e8f8888c0a115df7ee4ffd609515c3",
+"body_signature": "0f60d52f762b91b9c291d70c673edb3393ba9e1e7f28be0d63fd72f1f655121f",
 "body_signature_version": 1,
 "description": "As provas do ENEM 2026 são em 8 e 15 de novembro de 2026 (Edital nº 64 do Inep). Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/melhores-apps-contagem-regressiva/": {
-"body_signature": "ba3e8e7974bb073c37b9f960d207e0d5be33416dd0054ce38cbe43f83e1610f9",
+"body_signature": "61d92fa334b0b738e48f528b4fb5045518e75104fdd81dbe370dbfad3824abac",
 "body_signature_version": 1,
 "description": "Sete apps de contagem regressiva para iPhone comparados: o que é grátis, quais widgets são pagos, repetição e anúncios. Dados da App Store Brasil, set. 2026.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quantos-dias-faltam-para-as-ferias/": {
-"body_signature": "67dd30043e59166a70f97501ff3071ece03039546134a0ab5b7a8e07cec7657d",
+"body_signature": "e98251ee74f5c657edbd8b2cf43d82c52ad5d9ba5dcacbe387f388a97b45e97c",
 "body_signature_version": 1,
 "description": "As aulas de 2026 vão até 18/12 na rede estadual de SP, MG, PR e RS e até 23/12 em PE. Veja quantos dias faltam ou conte os dias até as suas férias do trabalho.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quantos-dias-faltam-para-o-carnaval-2027/": {
-"body_signature": "995dc3811a98a633afe7afd986c1d80103f0d11a6f5048bbc8f7eea17f9ca0b5",
+"body_signature": "a5ce6c82b916e8196486536451250e4c94d4bdbc472af8a29d210b18b87ce60d",
 "body_signature_version": 1,
 "description": "Carnaval 2027: de sábado, 6, a terça-feira, 9 de fevereiro (Cinzas, dia 10). Contagem ao vivo e widget grátis para a tela de bloqueio do iPhone.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quantos-dias-faltam-para-o-meu-aniversario/": {
-"body_signature": "dcd54ab57714ed459fb0014eab56e7c7df4d9c28273012627d7d94346ddaa529",
+"body_signature": "686817e12c7c3d75970b71255b05df817188cbb26dc9570394afe0f1229f25eb",
 "body_signature_version": 1,
 "description": "Escolha o dia e o mês do seu aniversário e veja quantos dias, meses e horas faltam, em que dia da semana ele cai e quantos anos você vai fazer.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quantos-dias-faltam-para-o-natal-2026/": {
-"body_signature": "d8b3a01489433bda8789e227a579b4e45073d7f19ce124d107a577bbc74aaac0",
+"body_signature": "5d6c0ccb7de04a2211a6947f7aecab7bbc2e13a12a509b419ebe4ae6460e2944",
 "body_signature_version": 1,
 "description": "O Natal 2026 é na sexta-feira, 25 de dezembro, e a véspera na quinta, 24. Contagem regressiva ao vivo e widget grátis para a tela de bloqueio do iPhone.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quantos-dias-faltam/": {
-"body_signature": "e33a7e58ddac447901deab5587f3fadd7b5672b54a0e8fee7d3b7d10043b2bc7",
+"body_signature": "351b6ea47296365966290850b3c590e0dd84230c1c1029f500fe5f2729c0f168",
 "body_signature_version": 1,
 "description": "Contador de dias grátis: digite uma data e veja quantos dias e semanas faltam e o dia da semana. Também conta os dias desde uma data. Sem cadastro.",
 "lastmod": "2026-11-02"
 },
 "/tools/pt-br/quinto-dia-util/": {
-"body_signature": "ca7138d4e1346c6845c65df4bcbc216e3fa0763869cb6fcee96007bb7695c229",
+"body_signature": "98f533c1fe0d4691930c623783d3833b59335d8e5d27850efd16e343cc0e8d0f",
 "body_signature_version": 1,
 "description": "O quinto dia útil de novembro de 2026 é sábado, 7; o de dezembro, sábado, 5. Veja todos os meses até dezembro de 2027 e como contar: o sábado entra.",
 "lastmod": "2026-11-02"
 },
 "/tools/shared-countdown-app-couples/": {
-"body_signature": "eda14abc1c93e9e60c72e1b4134f0fbe1565f79478e994cd3eb8f83eee115d01",
+"body_signature": "3bc0c6dd0a426c515d5bafcff583eb7461742211ce1f949af5524d91a1ce5762",
 "body_signature_version": 1,
 "description": "Share a countdown on both iPhones with Countdown Widget: Any Event. Inviting needs Pro; joining needs no subscription.",
 "lastmod": "2026-11-05"
 },
 "/tools/th/": {
-"body_signature": "95751d6776c229e45a590eca9bcb89e4b7d5ccf8d5d774e30c6307490b7449b0",
+"body_signature": "c1460f4dd4d5a266fbb558687d4b09c300e408ae2e96917bc2ddb35e5b7f89fc",
 "body_signature_version": 1,
 "description": "เครื่องมือฟรีจาก go ka ไม่ต้องสมัคร: แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินสำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ คำนวณยอดให้เอง พิมพ์หรือบันทึกเป็น PDF",
 "lastmod": "2026-10-25"
 },
 "/tools/th/bai-sanoe-rakha/": {
-"body_signature": "70912d5d90e2351e4374f912daa1ee26644b394c5f75723bfa4e85c2e56a070c",
+"body_signature": "b56c64c07674de8a178afab6d161837d3536516377abbd879ec337bf5405c201",
 "body_signature_version": 1,
 "description": "แบบฟอร์มใบเสนอราคาและใบเสร็จรับเงินฟรี สำหรับบุคคลธรรมดาและฟรีแลนซ์ กรอกบนหน้าเว็บ สลับประเภทเอกสารได้ ยอดรวมคำนวณให้เอง พิมพ์หรือบันทึก PDF ไม่ต้องสมัคร",
 "lastmod": "2026-10-25"
 },
 "/tools/vacation-countdown-widget-iphone/": {
-"body_signature": "06b799478e6ecdb9fd61ce45583b1ea1a1225819d8dfe72d5f4dbe5bf66b2961",
+"body_signature": "469681f324a5df28a1e21c3dbe38d94d544ef242716faec2f15b9d175043ac18",
 "body_signature_version": 1,
 "description": "Put the days until your vacation on your iPhone Lock Screen or Home Screen with a free widget. The Vacation event reminds you 30 days, a week and a day before.",
 "lastmod": "2026-11-05"
 },
 "/tools/zh-hant/": {
-"body_signature": "ae0957235ad376b807eafe824d701f7f8b80e5254658480265cdccd51af507b3",
+"body_signature": "1fe61434a92d6423821912816ef018d0d34a7a8a9e815ba6b065397c5f8fe39f",
 "body_signature_version": 1,
 "description": "go ka 的免費工具，不用註冊：報價單範本、收據範本（線上填寫、自動計算、存成 PDF），以及 2027 農曆新年倒數。",
 "lastmod": "2026-10-30"
 },
 "/tools/zh-hant/116-hui-kao-dao-shu/": {
-"body_signature": "71bf6e912969ccd3684bdbd830c00886511c6a470ce36a07c75d63100283b672",
+"body_signature": "c7faa423628fabb9114357d1f0cba1b042350b944e04e49ab44425c0d8bbde0a",
 "body_signature_version": 1,
 "description": "116 年國中教育會考在 2027 年 5 月 15 日（六）、16 日（日）。本頁整理 2 天考試日程節次表、考場必備文具與准考證規定、成績等第計分、100 天備考節點，以及 iPhone 鎖定畫面自動更新的免費倒數小工具。",
 "lastmod": "2026-11-02"
 },
 "/tools/zh-hant/116-xue-ce-dao-shu/": {
-"body_signature": "bc14039e610d056ff4aea2ed01f8a6741dc949b15ba42db50c446fcf8c51699f",
+"body_signature": "b56a7e283e3d78158b3d155acf5d09b317b3fb1f5e08e7315b21bca82867ff7e",
 "body_signature_version": 1,
 "description": "116 學年度學測在 2027 年 1 月 22 日（五）到 24 日（日），2 月 25 日公布成績。想要學測倒數桌布？用 iPhone 鎖定畫面的免費小工具，天數每天自動更新；另附報名與分科測驗日期。",
 "lastmod": "2026-11-02"
 },
 "/tools/zh-hant/2027-lian-jia-xing-shi-li/": {
-"body_signature": "7543a24b2c4ddee969883263aa63b6df7524bd1359cbc7ea606cddbb95b0f6e1",
+"body_signature": "8ab5590d7a3c71378ed921a4ab3f56224fceee38a0ae312768b18b25dfe24435",
 "body_signature_version": 1,
 "description": "2027 年（民國 116 年）3 天以上的連假有 9 個：元旦 1/1–1/3、春節 2/4–2/10 共 7 天，還有 228、清明、勞動節、國慶、光復節、行憲紀念日。每個連假還有幾天，每天更新。",
 "lastmod": "2026-11-02"
 },
 "/tools/zh-hant/bao-jia-dan-fan-ben/": {
-"body_signature": "79a9858df9e7ac17535fedf4a0a1a7219d2c6bc61a55369ff5b359478a301dc3",
+"body_signature": "59be2d996a5d6bbbf770183f0b9ef505559cf5f0cea93f1d18824121b207addc",
 "body_signature_version": 1,
 "description": "免費報價單範本：線上填好公司、客戶與品項，金額、稅額與總計自動計算，再列印或存成 PDF。不用註冊，港台都適用。",
 "lastmod": "2026-10-17"
 },
 "/tools/zh-hant/iphone-zhu-hua-mian-dao-shu/": {
-"body_signature": "46726a5049a72abe4c05fb071e2c4cd7ae954110444cd872fe4eaccfa45bf176",
+"body_signature": "53db2600881fcfa822ce276307a094c6bc87b6727f31f436a7050e9c5820d839",
 "body_signature_version": 1,
 "description": "把「還有幾天」放到 iPhone 主畫面和鎖定畫面的步驟。和寫上數字的桌布不同，小工具只要設定一次日期，數字每天自動更新；學測、會考、過年、連假都適用。",
 "lastmod": "2026-11-02"
 },
 "/tools/zh-hant/nong-li-xin-nian-2027/": {
-"body_signature": "d3f6d0fdb4a9361d291ae17e88e6cf203c21774c300e75a8ba805bf537ccc44c",
+"body_signature": "09598961b97663ba6f6a5bb561cab07ff0f19dce65213e63d9dce1a8eb3cd4ec",
 "body_signature_version": 1,
 "description": "2027 年農曆新年是 2 月 6 日（星期六），除夕是 2 月 5 日。每天更新的過年倒數，加上台灣春節連假 7 天與香港公眾假期的日期。",
 "lastmod": "2026-11-02"
 },
 "/tools/zh-hant/shou-ju-fan-ben/": {
-"body_signature": "2b55b221d5b578bf7663b71537fdaa393bf4e15a50bc8afcaac45a3d23e31697",
+"body_signature": "0c7cf8417b9b1a8620f21e4a82c95b92b159a3b014a29c013ac0a0854e2173df",
 "body_signature_version": 1,
 "description": "免費收據範本：線上填寫「茲收到」格式的收據，輸入金額就自動寫出中文大寫，再列印或存成 PDF。不用註冊，港台都適用。",
 "lastmod": "2026-10-30"
 },
 "/zh-hans/": {
-"body_signature": "bbc8e311e3d05e08eceb2e8a945cae68c0f769e19b6361c5d0a7a8021cea10f1",
+"body_signature": "f8a37b6f162ac649019f7b39c5770b01eebae02eb1c8aeb6796e39921a1d7abf",
 "body_signature_version": 1,
 "description": "浏览独立开发者 go ka 的 8 款 iPhone 应用。用小组件给重要日子倒计时，用 AI 整理旅行行程，也能开报价单、记录宝宝成长、卡路里和训练。各款应用都可在 App Store 免费下载，无需注册。",
 "lastmod": "2026-11-02"
 },
 "/zh-hant/": {
-"body_signature": "eb5028600bc1b3e197bb04a0056c302cdee3bd80c538ae8b651e5f73d4615f7f",
+"body_signature": "7911f722a1ca2740fde56a1adebc1335a92ad66764ef8bbb342cce2308bb5792",
 "body_signature_version": 1,
 "description": "探索獨立開發者 go ka 的 8 款 iPhone App。從倒數計時小工具、AI 旅行行程到報價單、QR Code、寶寶成長紀錄與健身日誌，按需求挑選。每款都可在 App Store 免費下載，無須註冊帳號。",
 "lastmod": "2026-11-02"
