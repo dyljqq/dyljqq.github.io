@@ -145,6 +145,26 @@ def _git_read(args, **kwargs):
                 raise
 
 
+def git_upload_date(path: Path) -> str:
+    """返回用于 Schema.org VideoObject.uploadDate 的 ISO 8601 完整日期时间（带时区）。
+    解决 Google Search Console 报错：
+      1. 日期时间属性“uploadDate”缺少时区信息
+      2. “uploadDate”的日期时间值无效
+    Google 官方要求 uploadDate 必须提供带时区偏移的 ISO 8601 日期时间（例如 2026-09-26T01:23:32+08:00）。"""
+    try:
+        rel = str(path.relative_to(ROOT))
+        last = _git_read(["git", "log", "-1", "--format=%cI", "--", rel], cwd=ROOT,
+                         capture_output=True, text=True, check=True).stdout.strip()
+        if last:
+            dt = datetime.fromisoformat(last)
+            if dt.tzinfo is None:
+                dt = dt.astimezone()
+            return dt.isoformat()
+    except Exception as exc:
+        raise RuntimeError(f"无法核实视频 uploadDate：{path}") from exc
+    return datetime.now().astimezone().isoformat()
+
+
 def git_lastmod(path: Path, text: str | None = None) -> str:
     """lastmod＝这个页面正文最后一次真正变化的那次提交的日期，不用构建时间，也不用「最后一次提交」——
     每次构建都刷新、或者一次纯 CSS 提交就刷新全站，等于告诉爬虫全站都变了，几轮之后它就不信了。
@@ -392,7 +412,7 @@ def software_jsonld(app, kind="product"):
                               "description": video_description[:200],
                               "thumbnailUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.jpg",
                               "contentUrl": f"{ORIGIN}/assets/{parent['key']}/preview/{cand}.mp4",
-                              "uploadDate": git_lastmod(f), "inLanguage": lang}
+                              "uploadDate": git_upload_date(f), "inLanguage": lang}
                 break
     return d
 

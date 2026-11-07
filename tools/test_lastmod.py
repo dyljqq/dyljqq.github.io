@@ -98,5 +98,20 @@ class RestoredPageTests(unittest.TestCase):
                 seo.git_lastmod(self.path)
 
 
+class UploadDateTests(unittest.TestCase):
+    def test_upload_date_includes_iso_timezone(self):
+        sample = '2026-09-26T01:23:32+08:00'
+        with patch.object(seo.subprocess, 'run', return_value=subprocess.CompletedProcess('git', 0, sample)):
+            val = seo.git_upload_date(seo.ROOT / 'assets/countdown/preview/en.mp4')
+            self.assertEqual(val, sample)
+            self.assertIn('T', val)
+            self.assertTrue('+' in val or '-' in val or val.endswith('Z'))
+
+    def test_upload_date_failure_stops_build(self):
+        with patch.object(seo.subprocess, 'run', side_effect=subprocess.CalledProcessError(128, 'git')):
+            with self.assertRaisesRegex(RuntimeError, '无法核实视频 uploadDate'):
+                seo.git_upload_date(seo.ROOT / 'assets/countdown/preview/en.mp4')
+
+
 if __name__ == '__main__':
     unittest.main()
