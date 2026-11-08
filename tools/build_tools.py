@@ -2438,6 +2438,14 @@ def best_page():
 <p><a href="{'/countdown/' if b.get('ours') else 'https://apps.apple.com/us/app/id%d' % b['id']}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'Our product page' if b.get('ours') else 'View on the App Store'} →</a></p>""" for i, b in enumerate(BEST, 1))
     body = f"""<h1>Best countdown widget apps for iPhone (2026)</h1>
 <p class="lede">Compare seven iPhone apps that count down to a calendar date, with a quick check of which Home Screen and Lock Screen widgets are free. Ratings, rating counts, versions and release dates below come from the November 8, 2026 US App Store snapshot. Our app is marked and compared on the same terms.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li>All seven apps are free to download from the US App Store. What differs is which widgets you can use without paying.</li>
+<li><strong>Every widget size free, with no event limit:</strong> Countdown Widget: Any Event (ours) lists all four of its standard widgets as free in every size on both the Home Screen and the Lock Screen. Your own photos, the Photo Roll widget and the Live Activity are Pro. It has {OUR_US_RATINGS} US ratings, which is still a small sample.</li>
+<li><strong>A free Lock Screen glance:</strong> Countdown by Find Appiness offers free circular and inline Lock Screen widgets; its Home Screen widgets and the rectangular Lock Screen widget are Premium.</li>
+<li><strong>Apple Watch, time zones and the most ratings:</strong> Countdown Star, on the App Store since 2012, has the most US ratings of the seven, lists a time zone per event and an Apple Watch app, and shows ads in its free edition.</li>
+</ul>
+<p>The other four apps are covered in <a href="#choose-by-need">Choose by what you need</a> below.</p>
 <h2>The comparison</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Free tier</th><th>Widgets</th><th>Repeats</th><th>Sync</th><th>US rating</th></tr></thead><tbody>{rows}</tbody></table>
 <p class="meta">"Not stated" means the App Store description does not say. US App Store, as of 2026-11-08. Ratings are rounded to one decimal; counts are storefront-wide, not just the current version. Update dates use UTC. A free download does not mean every listed feature is free.</p>
@@ -2527,6 +2535,13 @@ def best_page_pt():
 <p><a href="{link(b)}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'A nossa página do app' if b.get('ours') else 'Ver na App Store'} →</a></p>""" for i, b in enumerate(BEST_PT, 1))
     body = f"""<h1>Melhores apps de contagem regressiva para iPhone (2026)</h1>
 <p class="lede">Sete apps de contagem regressiva para iPhone comparados no que realmente muda de um para outro: o que a versão grátis inclui, quais widgets são pagos, repetição, sincronização e anúncios. Os dados vêm da página de cada app na App Store do Brasil em 29 de setembro de 2026. Um dos sete é nosso; ele está marcado e é julgado pela mesma tabela que os outros.</p>
+<h2 id="em-resumo">Em resumo</h2>
+<ul>
+<li><strong>Widgets grátis em todos os tamanhos, sem limite de eventos:</strong> Countdown: Contagem regressiva (o nosso). Os quatro widgets padrão são grátis na Tela de Início e na Tela Bloqueada; suas próprias fotos, o widget Rolo de fotos e a Atividade ao Vivo fazem parte do Pro. É novo e ainda tem poucas avaliações.</li>
+<li><strong>O mais avaliado, com Apple Watch:</strong> Countdown Star, na App Store desde 2012, é o mais avaliado desta lista no Brasil e, entre os quatro apps que também estão na lista em inglês, nos EUA. A versão grátis tem anúncios, e a descrição não promete widget na Tela Bloqueada.</li>
+<li><strong>Widget na Tela Bloqueada sem pagar, no app da Find Appiness:</strong> pela descrição americana de 8 de novembro de 2026, o Contagem Regressiva ◎ libera os widgets circular e em linha da Tela Bloqueada; o retangular da Tela Bloqueada e os da Tela de Início são Premium.</li>
+<li><strong>Para casais:</strong> o Widget Casal conta os dias juntos e tem um diário de fotos do casal.</li>
+</ul>
 <h2>A comparação</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Versão grátis</th><th>Widgets</th><th>Repetição</th><th>Sincronização</th><th>Anúncios</th><th>Nota no Brasil</th></tr></thead><tbody>{rows}</tbody></table>
 <p class="meta">“Não informado” quer dizer que a descrição na App Store não diz. As avaliações são da App Store do Brasil em 29/09/2026 e mudam todo dia.</p>
