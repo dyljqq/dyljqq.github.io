@@ -3,7 +3,9 @@
   --dry-run：只比对、不写文件（每周定时任务用它检测商店有没有更新）
 只覆盖 lookup 返回的字段；lookup 有几小时的缓存延迟，刚上架的版本可能还没出来。
 09-28 评审发现缓存停在 09-26（三个 app 之后都发了新版），补了这个脚本。
-⚠ 必须带 lang：th / sg 等商店不带 lang 时返回英文（09-28 第一次重抓就把泰语页和 InvoiceQR 简中页冲成了英文、还上线了）。"""
+⚠ 必须带 lang：th / sg 等商店不带 lang 时返回英文（09-28 第一次重抓就把泰语页和 InvoiceQR 简中页冲成了英文、还上线了）。
+⚠ 11-08：Countdown 的 icon 故意留在旧 mzstatic 地址（苹果换了存储路径，新旧图逐像素相同；换地址会让全站 59 页被页面预算算成正文变化）。
+  重抓后看到「icon 地址变」，先比图；图没变就把 icon 改回旧地址再构建。"""
 import json, sys, time, urllib.request, pathlib, datetime
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 IDS = {a["key"]: a["appId"] for a in json.loads((ROOT / "tools/site.json").read_text())["apps"] if a.get("appId")}
@@ -42,6 +44,8 @@ for app in [a for a in sys.argv[1:] if not a.startswith("--")] or ["countdown", 
             print(f"  ✗ {app} {loc} 抓回来的 {'/'.join(flipped)} 是英文，拒绝覆盖（检查 lang 参数）"); continue
         if new["version"] != cur.get("version") or new["description"] != cur.get("description"):
             changed.append(f"{loc} {cur.get('version')}→{new['version']}{' 描述变' if new['description'] != cur.get('description') else ''}")
+        if new["icon"] != cur.get("icon"):
+            changed.append(f"{loc} icon 地址变")
         cur.update(new); cur["fetched"] = datetime.date.today().isoformat()
         time.sleep(0.4)
     if not DRY:

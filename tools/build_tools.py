@@ -2379,14 +2379,15 @@ PAGES.append({"path": "/tools/packing-list/", "lang": "en", "kind": "WebApplicat
 <p>Packing for a particular trip? There is a <a href="/tools/japan-travel-checklist/">Japan travel checklist</a> and a <a href="/tools/disney-world-packing-list/">Disney World packing list</a>.</p>"""})
 
 
-# 10. 榜单：固定的 2026-11-01 美区 lookup；不在构建时联网或刷新核验日期。
+# 10. 榜单：固定的 2026-11-08 美区 lookup（11-01 快照留档）；不在构建时联网或刷新核验日期。
 BEST_LOOKUP = {a["trackId"]: a for a in json.loads(
-    (ROOT / "docs/facts/best-countdown-apps-lookup-us-2026-11-01.json").read_text())["results"]}
+    (ROOT / "docs/facts/best-countdown-apps-lookup-us-2026-11-08.json").read_text())["results"]}
+OUR_US_RATINGS = BEST_LOOKUP[6799846628]["userRatingCount"]  # 我们 App 的美区评分数：英文、葡语两张榜单正文共用，跟快照走
 BEST = [
   {"name": "Countdown Widget: Any Event", "by": "go ka (that's us)", "id": 6799846628, "since": 2026, "ours": True,
    "free": "Unlimited events, every size of the four standard widgets on Home Screen and Lock Screen, reminders, repeats, iCloud sync — all free. Pro adds the Pro backdrops, your own photos, the Photo Roll widget, typefaces, the Live Activity and counting down with someone you invite.",
    "widgets": "Four standard widgets on Home Screen + Lock Screen, all sizes free", "recur": "Yearly, monthly, weekly, every N days", "sync": "iCloud, no account", "ads": "None",
-   "take": "All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The app keeps up to 30 routine snapshots on this device, not a guaranteed 30 days of history or an off-device backup. These snapshots do not guarantee recovery after uninstalling the app or replacing the device. Before either, verify a synced copy and save an export outside the app. Calendar and spreadsheet import and export are also available. Its 27 US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
+   "take": f"All sizes of the four standard widgets, unlimited events, recurring dates, reminders and iCloud sync are free. Pro, available by subscription or Lifetime purchase, adds the Pro backdrops, your own photos behind a countdown, the Photo Roll widget, the Pro typefaces, the Lock Screen Live Activity and inviting someone to count down with you. The app keeps up to 30 routine snapshots on this device, not a guaranteed 30 days of history or an off-device backup. These snapshots do not guarantee recovery after uninstalling the app or replacing the device. Before either, verify a synced copy and save an export outside the app. Calendar and spreadsheet import and export are also available. Its {OUR_US_RATINGS} US ratings are a small sample; this is not evidence that it is more reliable than the other apps."},
   {"name": "Countdown Star", "by": "Joseph Merrill", "id": 576177593, "since": 2012,
    "free": "Free version with ads and an optional Remove Ads purchase (there is also a paid ad-free version); add as many events as you like, with iCloud sync, repeating events and Home Screen widgets listed as features.",
    "widgets": "Home Screen (small, medium, large) + Apple Watch", "recur": "Annual events advance automatically", "sync": "iCloud across iPhone, iPad, Apple Watch", "ads": "In the free version",
@@ -2436,10 +2437,10 @@ def best_page():
 <p><strong>Free tier:</strong> {esc(b['free'])}<br><strong>Widgets:</strong> {esc(b['widgets'])} · <strong>Repeats:</strong> {esc(b['recur'])} · <strong>Sync:</strong> {esc(b['sync'])}</p>
 <p><a href="{'/countdown/' if b.get('ours') else 'https://apps.apple.com/us/app/id%d' % b['id']}"{'' if b.get('ours') else ' rel="nofollow noopener"'}>{'Our product page' if b.get('ours') else 'View on the App Store'} →</a></p>""" for i, b in enumerate(BEST, 1))
     body = f"""<h1>Best countdown widget apps for iPhone (2026)</h1>
-<p class="lede">Compare seven iPhone apps that count down to a calendar date, with a quick check of which Home Screen and Lock Screen widgets are free. Ratings, rating counts, versions and release dates below come from the November 1, 2026 US App Store snapshot. Our app is marked and compared on the same terms.</p>
+<p class="lede">Compare seven iPhone apps that count down to a calendar date, with a quick check of which Home Screen and Lock Screen widgets are free. Ratings, rating counts, versions and release dates below come from the November 8, 2026 US App Store snapshot. Our app is marked and compared on the same terms.</p>
 <h2>The comparison</h2>
 <table class="cmp"><thead><tr><th>App</th><th>Free tier</th><th>Widgets</th><th>Repeats</th><th>Sync</th><th>US rating</th></tr></thead><tbody>{rows}</tbody></table>
-<p class="meta">"Not stated" means the App Store description does not say. US App Store, as of 2026-11-01. Ratings are rounded to one decimal; counts are storefront-wide, not just the current version. Update dates use UTC. A free download does not mean every listed feature is free.</p>
+<p class="meta">"Not stated" means the App Store description does not say. US App Store, as of 2026-11-08. Ratings are rounded to one decimal; counts are storefront-wide, not just the current version. Update dates use UTC. A free download does not mean every listed feature is free.</p>
 <h2 id="choose-by-need">Choose by what you need</h2>
 <p>Start with where you want to see the countdown, then check the exact widget and payment model. These choices follow the descriptions linked in each app entry; they are not results of hands-on tests.</p>
 <div class="countdown-choices">
@@ -2466,7 +2467,7 @@ def best_page():
 {entries}
 <h2>How we chose</h2>
 <p>We searched the US App Store for "countdown widget", "days until countdown" and "countdown app", took the countdown-specific apps with the most ratings, and read each listing for what it says about the free tier, widgets, repeats, reminders and sync. Apps that are general widget makers (Widgetsmith) or visual timers for kids were left out. We did not test paid tiers, and we did not rank by rating — the list is grouped by what each app is best at. We make one of these apps; it is included because it is a countdown widget app for iPhone, and it is described with the same fields as everyone else.</p>
-<p>We corrected our app's local-snapshot limits on November 6, 2026 after checking its implementation and <a href="/countdown/">current product guidance</a>. This was a source review, not a device-recovery test. The App Store ratings, versions and competitor descriptions remain the November 1 snapshot.</p>
+<p>We corrected our app's local-snapshot limits on November 6, 2026 after checking its implementation and <a href="/countdown/">current product guidance</a>. This was a source review, not a device-recovery test. On November 8, 2026 we rechecked every app’s rating, version and description; the only description change was Countdown Star adding support for iPhone Duo, which does not change this comparison.</p>
 <p>Not ready to install an app? <a href="/tools/countdown-wallpaper-maker/" data-track-id="wp-entry-best-apps">Make a free Lock Screen countdown wallpaper from your own photo in your browser</a>. The saved image is a still picture; its number does not update by itself.</p>"""
     return {"path": "/tools/best-countdown-widget-apps-iphone/", "lang": "en", "kind": "Article", "app": "countdown", "published": "2026-09-26",
             "updated": "2026-11-01",
@@ -2530,9 +2531,9 @@ def best_page_pt():
 <table class="cmp"><thead><tr><th>App</th><th>Versão grátis</th><th>Widgets</th><th>Repetição</th><th>Sincronização</th><th>Anúncios</th><th>Nota no Brasil</th></tr></thead><tbody>{rows}</tbody></table>
 <p class="meta">“Não informado” quer dizer que a descrição na App Store não diz. As avaliações são da App Store do Brasil em 29/09/2026 e mudam todo dia.</p>
 <h2>Atualização dos apps em comum com a lista em inglês</h2>
-<p>App Store dos Estados Unidos, em 2026-11-01: estes são os dados disponíveis mais recentes dos quatro apps presentes nas duas listas. Não são notas do Brasil e não substituem o retrato brasileiro de 29/09 acima. As datas de atualização estão em UTC; notas arredondadas a uma casa decimal.</p>
+<p>App Store dos Estados Unidos, em 2026-11-08: estes são os dados disponíveis mais recentes dos quatro apps presentes nas duas listas. Não são notas do Brasil e não substituem o retrato brasileiro de 29/09 acima. As datas de atualização estão em UTC; notas arredondadas a uma casa decimal.</p>
 <table class="cmp"><thead><tr><th>App</th><th>Nota · avaliações nos EUA</th><th>Versão</th><th>Última atualização</th></tr></thead><tbody>{shared_rows}</tbody></table>
-<p>Em 1º de novembro de 2026, o nosso app tinha 27 avaliações nos EUA: uma amostra pequena. A descrição americana atual do Countdown da Find Appiness já inclui widgets circulares e em linha grátis na Tela Bloqueada; o retangular e os da Tela de Início são Premium. Ela informa compra única, sem assinatura. O Countdown Buddy lista 11 estilos e um widget básico grátis. Consulte a <a href="/tools/best-countdown-widget-apps-iphone/">comparação atualizada em inglês</a> para as diferenças de recursos; as descrições brasileiras abaixo são históricas.</p>
+<p>Em 8 de novembro de 2026, o nosso app tinha {OUR_US_RATINGS} avaliações nos EUA: uma amostra pequena. A descrição americana atual do Countdown da Find Appiness já inclui widgets circulares e em linha grátis na Tela Bloqueada; o retangular e os da Tela de Início são Premium. Ela informa compra única, sem assinatura. O Countdown Buddy lista 11 estilos e um widget básico grátis. Consulte a <a href="/tools/best-countdown-widget-apps-iphone/">comparação atualizada em inglês</a> para as diferenças de recursos; as descrições brasileiras abaixo são históricas.</p>
 <h2>Qual escolher — segundo o retrato brasileiro de setembro</h2>
 <ul>
 <li><strong>Quer widget sem pagar:</strong> Countdown: Contagem regressiva (o nosso) — os quatro widgets padrão são grátis em todos os tamanhos, na Tela de Início e na Tela Bloqueada, sem anúncios. No Contagens, os widgets também fazem parte da versão gratuita.</li>
