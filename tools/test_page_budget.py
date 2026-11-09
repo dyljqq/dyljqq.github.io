@@ -76,10 +76,10 @@ class PageBudgetTests(unittest.TestCase):
                    f'<loc>{ORIGIN}/sitemap-pages.xml</loc></sitemap></sitemapindex>')
         (self.root / "sitemap.xml").write_text(xml)
 
-    def check(self, allow=None, now=NOW):
+    def check(self, now=NOW):
         output = io.StringIO()
         with contextlib.redirect_stdout(output):
-            passed = budget.check(self.root, now, allow)
+            passed = budget.check(self.root, now)
         return passed, output.getvalue()
 
     def test_seven_day_published_history_supports_flat_and_split_maps(self):
@@ -92,7 +92,7 @@ class PageBudgetTests(unittest.TestCase):
         revision, _ = budget.weekly_baseline(self.root, datetime(2026, 10, 25, tzinfo=timezone.utc))
         self.assertEqual(revision, self.old)
 
-    def test_four_pages_committed_eight_days_ago_but_never_published_fail(self):
+    def test_four_pages_committed_eight_days_ago_but_never_published_still_count_as_new(self):
         published = budget.published_revision(self.root)
         added = [f"/unpublished{i}/" for i in range(4)]
         for index, path in enumerate(added):
@@ -101,11 +101,11 @@ class PageBudgetTests(unittest.TestCase):
         self.commit("2026-10-24T12:00:00+00:00")
         self.run_git("update-ref", "refs/remotes/origin/main", "HEAD")
         passed, output = self.check()
-        self.assertFalse(passed)
+        self.assertTrue(passed)  # 11-09 用户定：不限新页数量
         self.assertEqual(budget.published_revision(self.root), published)
         self.assertEqual(budget.weekly_baseline(self.root, NOW)[0], self.old)
         self.assertIn("本次新增 4", output)
-        self.assertIn("滚动新增 4 / 3", output)
+        self.assertIn("滚动新增 4（", output)
         self.assertIn("独有率未达标 0 页", output)
 
     def test_publication_time_and_inclusive_cutoff_select_latest_release(self):
@@ -153,7 +153,7 @@ class PageBudgetTests(unittest.TestCase):
         passed, output = self.check()
         self.assertTrue(passed)
         self.assertIn("本次新增 0", output)
-        self.assertIn("滚动新增 0 / 3", output)
+        self.assertIn("滚动新增 0（", output)
 
     def test_missing_tag_keeps_logged_commit_even_after_main_moves(self):
         initial = budget.published_revision(self.root)
@@ -247,7 +247,7 @@ class PageBudgetTests(unittest.TestCase):
                 self.assertIn("本次新增/正文变化 0 页", output)
                 self.write_page("/a/", source)
 
-    def test_rolling_over_budget_only_blocks_when_this_run_adds_urls(self):
+    def test_rolling_additions_are_reported_but_not_capped(self):
         added = [f"/new{i}/" for i in range(5)]
         for i, path in enumerate(added):
             self.write_page(path, page(' '.join(f"word{i}unique{n}" for n in range(20))))
@@ -257,12 +257,12 @@ class PageBudgetTests(unittest.TestCase):
         self.record_publication()
         passed, output = self.check()
         self.assertTrue(passed)
-        self.assertIn("滚动新增 4 / 3", output)
+        self.assertIn("滚动新增 4（", output)
         self.write_map(["/a/", "/b/", *added])
         passed, output = self.check()
-        self.assertFalse(passed)
+        self.assertTrue(passed)
         self.assertIn("本次新增 1", output)
-        self.assertIn("滚动新增 5 / 3", output)
+        self.assertIn("滚动新增 5（", output)
 
     def test_one_new_url_within_rolling_budget_passes(self):
         self.write_page("/new/", page("independent useful original practical reliable clear local complete readable helpful"))
@@ -270,7 +270,7 @@ class PageBudgetTests(unittest.TestCase):
         passed, output = self.check()
         self.assertTrue(passed)
         self.assertIn("本次新增 1", output)
-        self.assertIn("滚动新增 1 / 3", output)
+        self.assertIn("滚动新增 1（", output)
 
     def test_existing_duplicates_warn_and_analytics_changes_do_not_gate(self):
         self.write_page("/a/", page(script="firebase-web-v2.js"))
@@ -318,46 +318,6 @@ class PageBudgetTests(unittest.TestCase):
             with self.subTest(date_attribute=attr):
                 self.assertNotEqual(budget.body_signature(page(f'<a {attr}="/2026-12-25/">text</a>'), None),
                                     budget.body_signature(page(f'<a {attr}="/2026-12-31/">text</a>'), None))
-
-    def test_four_weekly_urls_require_override_and_each_current_dated_reason(self):
-        added = ["/c/", "/c/ja/", "/c/de/", "/c/zh/"]
-        for index, path in enumerate(added):
-            self.write_page(path, page(' '.join(f"unique{index}word{n}" for n in range(20))))
-        # Count pages already released in this week, even though not new this run.
-        self.write_map(["/a/", "/b/", added[0]])
-        self.commit("2026-10-31T13:00:00+00:00")
-        self.run_git("update-ref", "refs/remotes/origin/main", "HEAD")
-        self.record_publication()
-        self.write_map(["/a/", "/b/", *added])
-        passed, output = self.check()
-        self.assertFalse(passed)
-        self.assertIn("新增 4 / 3", output)
-        ledger = self.root / "docs/page-budget.md"
-        with self.assertRaisesRegex(ValueError, "逐网址理由"):
-            self.check("4")
-        ledger.write_text('\n'.join(f"| 2026-10-31 | {path} | Independent task |" for path in added))
-        with self.assertRaisesRegex(ValueError, "缺少当天"):
-            self.check("4")
-        ledger.write_text('\n'.join(f"| 2026-11-01 | {path} | Independent task |" for path in added[1:-1]))
-        with self.assertRaisesRegex(ValueError, "/c/zh/"):
-            self.check("4")
-        with ledger.open("a") as target:
-            target.write(f"\n| 2026-11-01 | {ORIGIN}{added[-1]} | 独立用户任务和核验理由 |\n")
-        passed, output = self.check("4")
-        self.assertTrue(passed)
-        self.assertIn("新增 4 / 4", output)
-        self.assertIn("本次新增/正文变化 3 页", output)
-
-    def test_bad_override_and_empty_or_placeholder_reasons_fail(self):
-        added = {ORIGIN + "/new/"}
-        ledger = self.root / "docs/page-budget.md"
-        for value in ("", "-1", "2", "4.5", "four"):
-            with self.subTest(value=value), self.assertRaises(ValueError):
-                budget.override_limit(value, ledger, added, ORIGIN, NOW.date())
-        for reason in ("", "---", "TODO", "待补充"):
-            ledger.write_text(f"| 2026-11-01 | /new/ | {reason} |")
-            with self.subTest(reason=reason), self.assertRaises(ValueError):
-                budget.override_limit("4", ledger, added, ORIGIN, NOW.date())
 
     def test_reference_tokens_use_shingle_sets_and_cjk_characters(self):
         self.assertEqual(budget.tokens(page("甲 乙 丙 丁 戊 己", lang="zh-Hant")), list("甲乙丙丁戊己"))

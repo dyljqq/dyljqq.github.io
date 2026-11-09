@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the rolling seven-day URL budget and reference five-token uniqueness.
+"""Report new URLs (no count cap since 2026-11-09) and check reference five-token uniqueness.
 
 Read the local publication log; never fetch or submit URLs.
 Run after the site build: python3 tools/check_page_budget.py
@@ -9,7 +9,6 @@ import collections
 import html
 import io
 import json
-import os
 import re
 import subprocess
 import sys
@@ -23,7 +22,6 @@ from build_seo import _lastmod_norm
 from sitemap import NS, sitemap_urls
 
 INITIAL_PUBLISHED = "ecd433cd86c7d06be7bed0ca5522f9e46841fefa"
-DEFAULT_LIMIT = 3
 MIN_UNIQUENESS = 0.4
 # Bump when normalization changes: IndexNow establishes a fresh baseline once.
 BODY_SIGNATURE_VERSION = 1
@@ -228,33 +226,7 @@ def body_signature(source, day):
     return parser.signature()
 
 
-def override_limit(value, ledger, added, origin, today):
-    if value is None:
-        return DEFAULT_LIMIT
-    if not re.fullmatch(r'\d+', value) or int(value) < DEFAULT_LIMIT:
-        raise ValueError(f"ALLOW_NEW_PAGES 必须为不小于 {DEFAULT_LIMIT} 的整数。")
-    limit = int(value)
-    if limit == DEFAULT_LIMIT or not added:
-        return limit
-    if not ledger.exists():
-        raise ValueError("ALLOW_NEW_PAGES 需要 docs/page-budget.md 中当天的逐网址理由。")
-    approved = set()
-    for line in ledger.read_text(encoding="utf-8").splitlines():
-        cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
-        if len(cells) != 3 or cells[0] != today.isoformat():
-            continue
-        url, reason = cells[1:]
-        if url.startswith("/"):
-            url = origin + url
-        if reason and re.search(r'\w', reason) and reason.lower() not in {"todo", "tbd", "理由", "待补", "待补充"}:
-            approved.add(url)
-    missing = sorted(added - approved)
-    if missing:
-        raise ValueError("预算放宽缺少当天日期 / 网址 / 理由记录：\n  " + "\n  ".join(missing))
-    return limit
-
-
-def check(root, now=None, allow=None):
+def check(root, now=None):
     now = now or datetime.now().astimezone()
     origin = json.loads((root / "tools/site.json").read_text(encoding="utf-8"))["site"]["origin"].rstrip("/")
     published_rev = published_revision(root)
@@ -263,10 +235,8 @@ def check(root, now=None, allow=None):
     weekly_added = current - snapshot_urls(root, baseline, origin)
     published = snapshot_urls(root, published_rev, origin)
     added = current - published
-    limit = DEFAULT_LIMIT
-    if added and len(weekly_added) > DEFAULT_LIMIT:
-        limit = override_limit(allow, root / "docs/page-budget.md", added, origin, now.date())
-    print(f"页面预算：已发布基线 {published_rev[:12]}，本次新增 {len(added)}；7 天已发布基线 {baseline[:12]}（截止 {cutoff.isoformat(timespec='seconds')}，无截止前发布用最早发布，记录为空用初始已发布提交），滚动新增 {len(weekly_added)} / {limit}")
+    # 11-09 用户定「去掉页数上限」：不限新页数量，只防重复内容；新增网址只打印，闸门是正文独有率。
+    print(f"页面预算：已发布基线 {published_rev[:12]}，本次新增 {len(added)}；7 天已发布基线 {baseline[:12]}（截止 {cutoff.isoformat(timespec='seconds')}，无截止前发布用最早发布，记录为空用初始已发布提交），滚动新增 {len(weekly_added)}（只报告，不设上限）")
     for url in sorted(weekly_added):
         print(f"  新增 {url}")
 
@@ -297,10 +267,7 @@ def check(root, now=None, allow=None):
         print(f"⚠ 存量独有率 {ratios[url]:.2%} < 40%：{url}")
     for url in failures:
         print(f"✗ 新增/正文变化页面独有率 {ratios[url]:.2%} < 40%：{url}")
-    over_budget = bool(added) and len(weekly_added) > limit
-    if over_budget:
-        print("✗ 7 天新增网址超出预算；放宽须同时设置 ALLOW_NEW_PAGES 并逐网址记录当天理由。")
-    passed = not over_budget and not failures
+    passed = not failures
     print(f"页面预算检查：{'通过' if passed else '失败'}；可索引 {len(current)} 页，本次新增/正文变化 {len(changed)} 页，独有率未达标 {len(failures)} 页，存量警告 {len(warnings)} 页。")
     return passed
 
@@ -310,7 +277,7 @@ def main():
     parser.add_argument("root", nargs="?", type=Path, default=ROOT)
     args = parser.parse_args()
     try:
-        return 0 if check(args.root.resolve(), allow=os.environ.get("ALLOW_NEW_PAGES")) else 1
+        return 0 if check(args.root.resolve()) else 1
     except (ValueError, OSError, ET.ParseError, subprocess.TimeoutExpired) as exc:
         print(f"✗ 页面预算检查失败：{exc}", file=sys.stderr)
         return 1
